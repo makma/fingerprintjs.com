@@ -4,7 +4,12 @@ import 'prismjs/components/prism-javascript';
 import 'prismjs/plugins/line-numbers/prism-line-numbers';
 import $ from 'jquery-slim';
 import 'regenerator-runtime/runtime';
-import Splide from '@splidejs/splide';
+import Swiper, { Navigation, Pagination } from 'swiper';
+import { initFpjsWidget } from './fpjs-widget';
+import 'swiper/swiper-bundle.css';
+
+// configure Swiper to use modules
+Swiper.use([Navigation, Pagination]);
 
 // DOM Elements
 const BODY = $('body');
@@ -17,8 +22,6 @@ const paymentSwitcher = $('.payment-switcher');
 const paymentSwitcherAnnually = $('.payment-switcher__button--annually');
 const paymentSwitcherMonthly = $('.payment-switcher__button--monthly');
 const starCounter = document.querySelectorAll('.btn--github .github-counter');
-const liveDemoMobileButtonsPrev = $('.live-demo--mobile .btn--prev');
-const liveDemoMobileButtonsNext = $('.live-demo--mobile .btn--next');
 const mobileLinksSubmenu = $('.main-links__link--has-submenu');
 
 // Pricing Table
@@ -33,6 +36,9 @@ const pricingTable = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
+  // FPJS widget
+  initFpjsWidget();
+
   // StarCounter
   const getStars = async () => {
     try {
@@ -43,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
           counter.innerHTML = new Intl.NumberFormat('en-US', {
             notation: 'compact',
             compactDisplay: 'short',
+            maximumFractionDigits: 1,
           }).format(json.stargazers_count);
         });
       }
@@ -63,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animation: 'shift-away',
     interactive: true,
     arrow: false,
+    trigger: 'click',
   });
 
   // Mobile menu toggle
@@ -84,22 +92,19 @@ document.addEventListener('DOMContentLoaded', () => {
       BODY.removeClass('isMobileMenuOpen');
     }
 
-    // console.log('Created', proToolsSplide.State.is(proToolsSplide.STATES.CREATED));
-    // console.log('Mounted', proToolsSplide.State.is(proToolsSplide.STATES.MOUNTED));
-    // console.log('Destroyed', proToolsSplide.State.is(proToolsSplide.STATES.DESTROYED));
-    if (window.matchMedia('(max-width: 640px)').matches) {
-      if (proToolsSplide.State.is(proToolsSplide.STATES.DESTROYED)) {
-        proToolsSplide.refresh();
-        proToolsSplide.mount();
-      }
-      if (proToolsSplide.State.is(proToolsSplide.STATES.MOUNTED)) {
-        return;
-      } else if (proToolsSplide.State.is(proToolsSplide.STATES.CREATED)) {
-        proToolsSplide.mount();
-      }
-    } else {
-      proToolsSplide.destroy();
-    }
+    // if (window.matchMedia('(max-width: 640px)').matches) {
+    //   if (proToolsSplide.State.is(proToolsSplide.STATES.DESTROYED)) {
+    //     proToolsSplide.refresh();
+    //     proToolsSplide.mount();
+    //   }
+    //   if (proToolsSplide.State.is(proToolsSplide.STATES.MOUNTED)) {
+    //     return;
+    //   } else if (proToolsSplide.State.is(proToolsSplide.STATES.CREATED)) {
+    //     proToolsSplide.mount();
+    //   }
+    // } else {
+    //   proToolsSplide.destroy();
+    // }
   });
 
   // Range slider
@@ -151,73 +156,86 @@ document.addEventListener('DOMContentLoaded', () => {
 
     rangeSliderInput.trigger('change');
     e.target.classList.add('payment-switcher__button--active');
+
+    if (e.target.dataset.type === 'annually') {
+      document.getElementById('billed_annual_text').textContent = 'billed yearly';
+    } else {
+      document.getElementById('billed_annual_text').textContent = 'billed monthly';
+    }
   }
 
   // Toggle Incognito
   $('.nav__link--logo').click(() => document.documentElement.classList.toggle('incognito'));
 
-  const logoSplide = new Splide('.splide--trusted-by', {
-    type: 'slide',
-    focus: 0,
-    perPage: 6,
-    gap: '2rem',
-    fixedHeight: 48,
+  // Swipers
+  const logoSwiper = new Swiper('#swiper--trusted-by', {
+    spaceBetween: 30,
+    slidesPerView: 6,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
     breakpoints: {
-      425: { perPage: 1 },
-      768: { perPage: 3 },
+      320: { slidesPerView: 1 },
+      768: { slidesPerView: 3 },
+      1024: { slidesPerView: 6 },
     },
-    pagination: true,
   });
-  logoSplide.mount();
 
-  const proToolsSplide = new Splide('.splide--pro-tools', {
-    type: 'loop',
-    perPage: 1,
-    padding: {
-      left: '5rem',
-      right: '5rem',
+  const proToolsSwiper = new Swiper('#swiper--pro-tools', {
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        slidesPerColumn: 1,
+        spaceBetween: 0,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
+      768: {
+        slidesPerView: 2,
+        slidesPerColumn: 3,
+        slidesPerColumnFill: 'row',
+        spaceBetween: 28,
+      },
+      1024: {
+        slidesPerView: 3,
+        slidesPerColumn: 2,
+        spaceBetween: 28,
+        slidesPerColumnFill: 'row',
+      },
     },
-    gap: '2rem',
-    pagination: true,
-    arrows: false,
   });
-  if (window.innerWidth < 641) {
-    proToolsSplide.mount();
-  }
 
-  const liveDemoMobileSplide = new Splide('.splide--live-demo', {
-    type: 'slide',
-    perPage: 1,
-    focus: 0,
-    padding: {
-      left: '5rem',
-      right: '5rem',
-    },
-    gap: '2rem',
-    pagination: true,
-    arrows: false,
-  });
-  liveDemoMobileSplide.mount();
-  liveDemoMobileButtonsPrev.click(() => liveDemoMobileSplide.go('-'));
-  liveDemoMobileButtonsNext.click(() => liveDemoMobileSplide.go('+'));
+  // const proToolsSplide = new Splide('.splide--pro-tools', {
+  //   type: 'loop',
+  //   perPage: 1,
+  //   padding: {
+  //     left: '5rem',
+  //     right: '5rem',
+  //   },
+  //   gap: '2rem',
+  //   pagination: true,
+  //   arrows: false,
+  // });
+  // if (window.innerWidth < 641) {
+  //   proToolsSplide.mount();
+  // }
 
-  // Form States - DEMO ONLY
-  $('.form--get-started').submit((e) => {
-    e.preventDefault();
-    const form = $('.form--get-started');
-    const state = Math.floor(Math.random() * Math.floor(2));
-
-    form.toggleClass('form--success', state === 1);
-    form.toggleClass('form--failed', state === 0);
-
-    if (!!state) {
-      setTimeout(() => {
-        form.removeClass('form--success');
-      }, 1000);
-    } else {
-      setTimeout(() => {
-        form.removeClass('form--failed');
-      }, 1000);
-    }
-  });
+  // const liveDemoMobileSplide = new Splide('.live-demo-mobile-container', {
+  //   type: 'slide',
+  //   perPage: 1,
+  //   focus: 0,
+  //   padding: {
+  //     left: '5rem',
+  //     right: '5rem',
+  //   },
+  //   gap: '2rem',
+  //   pagination: true,
+  //   arrows: false,
+  // });
+  // liveDemoMobileSplide.mount();
+  // liveDemoMobileButtonsPrev.click(() => liveDemoMobileSplide.go('-'));
+  // liveDemoMobileButtonsNext.click(() => liveDemoMobileSplide.go('+'));
 });

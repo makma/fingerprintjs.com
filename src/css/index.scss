@@ -8,8 +8,6 @@
 @import './vendors/code-theme';
 @import './vendors/tippy';
 
-@import './vendors/splide/core/splide-core.scss';
-
 // @import './vendors/gliders';
 @import './vendors/sliders';
 
@@ -40,3 +38,15 @@
 @import './slider';
 @import './live';
 @import './live-mobile';
+
+.swiper-container {
+  padding-bottom: 24px;
+}
+
+.swiper-pagination {
+  bottom: -5px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #202765;
+}
