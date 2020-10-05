@@ -58,8 +58,9 @@ export function initFpjsWidget() {
 
           setTimeout(() => form.removeClass('form--failed'), 2500);
         } else {
-
           form.addClass('form--success');
+        
+          dataLayer.push({ event: 'signupintent.success' });
         }
       });
   });
