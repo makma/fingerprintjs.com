@@ -2,11 +2,11 @@
   "name": "fingerprintjs",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "høly devs",
+  "author": "FingerprintJS, Inc",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server",
     "prestart": "npm run clean",
-    "build": "webpack --mode=production",
+    "build": "webpack --mode=production && cp robots.txt build/",
     "prebuild": "npm run clean",
     "clean": "rimraf build generated",
     "test": "echo \"Error: no test specified\" && exit 1"
