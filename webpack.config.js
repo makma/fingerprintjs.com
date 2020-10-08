@@ -141,9 +141,9 @@ module.exports = {
           to: '.',
           transform: function (content) {
             return content.toString()
-              .replaceAll('{{FPJS_API_TOKEN}}', process.env.FPJS_API_TOKEN)
-              .replaceAll('{{FPJS_ENDPOINT}}', process.env.FPJS_ENDPOINT)
-              .replaceAll('{{FPJS_TOKEN}}', process.env.FPJS_TOKEN);
+              .replace(/\{\{FPJS_API_TOKEN\}\}/g, process.env.FPJS_API_TOKEN)
+              .replace(/\{\{FPJS_ENDPOINT\}\}/g, process.env.FPJS_ENDPOINT)
+              .replace(/\{\{FPJS_TOKEN\}\}/g, process.env.FPJS_TOKEN);
           },
         },
       ],
