@@ -139,6 +139,12 @@ module.exports = {
         {
           from: path.join(__dirname, 'legacy'),
           to: '.',
+          transform: function (content) {
+            return content
+              .replace('{{FPJS_API_TOKEN}}', process.env.FPJS_API_TOKEN)
+              .replace('{{FPJS_ENDPOINT}}', process.env.FPJS_ENDPOINT)
+              .replace('{{FPJS_TOKEN}}', process.env.FPJS_TOKEN);
+          },
         },
       ],
       {

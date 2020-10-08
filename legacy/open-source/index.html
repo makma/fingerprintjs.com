@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Browser Fingerprinting, JavaScript identification, fraud detection">
-  <link rel="preconnect" href="https://f.fingerprintjs.com">
+  <link rel="preconnect" href="{{FPJS_ENDPOINT}}">
   <title>FingerprintJS - Browser fingerprinting and fraud detection</title>
 
   <link rel="shortcut icon" href="/open-source/img/favicon.ico">
@@ -15,8 +15,8 @@
   <script>
     window.fpLayer = window.fpLayer || [];
     function fp() { fpLayer.push(arguments); }
-    fp('config', 'client', 'Z40jzI2Tu8aVZUh73Lyp');
-    fp('config', 'endpoint', 'https://f.fingerprintjs.com')
+    fp('config', 'client', '{{FPJS_TOKEN}}');
+    fp('config', 'endpoint', '{{FPJS_ENDPOINT}}')
     fp('config', 'loaded', function(fp){
       fp.send();
     });
