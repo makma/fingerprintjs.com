@@ -140,7 +140,7 @@ module.exports = {
           from: path.join(__dirname, 'legacy'),
           to: '.',
           transform: function (content) {
-            return content
+            return content.toString()
               .replace('{{FPJS_API_TOKEN}}', process.env.FPJS_API_TOKEN)
               .replace('{{FPJS_ENDPOINT}}', process.env.FPJS_ENDPOINT)
               .replace('{{FPJS_TOKEN}}', process.env.FPJS_TOKEN);
