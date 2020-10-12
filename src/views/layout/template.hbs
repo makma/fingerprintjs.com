@@ -21,7 +21,7 @@
   <% for (var css in htmlWebpackPlugin.files.css) { %>
   <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
   <% } %>
-  <link rel="preconnect" href="https://f.fingerprintjs.com">
+  <link rel="preconnect" href="{{FPJS_ENDPOINT}}">
   <style>
     .container {
       --contentWidth: 920px;
