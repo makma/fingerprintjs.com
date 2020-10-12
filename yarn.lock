@@ -739,9 +739,10 @@
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
 
-"@fp-pro/client@^2.7.5":
-  version "2.7.5"
-  resolved "https://registry.yarnpkg.com/@fp-pro/client/-/client-2.7.5.tgz#d33cee50da6ce973b7dc27f9f96b166c961c7899"
+"@fp-pro/client@^2.7.6":
+  version "2.7.6"
+  resolved "https://registry.yarnpkg.com/@fp-pro/client/-/client-2.7.6.tgz#316b17665c91598521ed1e896a34b7d805adaeed"
+  integrity sha512-NYwfjD5yz9CNtIiA4FNKmCdKjO+aIHoDDbbpDRGOuiWF8gtIUhNSU7d+5ApgjbIfg2yPE+bElLcTBI3gXz7JIA==
 
 "@jimp/bmp@^0.9.8":
   version "0.9.8"
