@@ -27,6 +27,7 @@ const prodPlugins = [
     FPJS_ENDPOINT: process.env.FPJS_ENDPOINT,
     FPJS_REGION: process.env.FPJS_REGION,
     FPJS_DASHBOARD_ENDPOINT: process.env.FPJS_DASHBOARD_ENDPOINT,
+    GITHUB_API_TOKEN: process.env.GITHUB_API_TOKEN,
   }),
 ];
 
@@ -139,12 +140,20 @@ module.exports = {
         {
           from: path.join(__dirname, 'legacy'),
           to: '.',
-          transform: function (content) {
-            return content.toString()
-              .replace(/\{\{FPJS_API_TOKEN\}\}/g, process.env.FPJS_API_TOKEN)
-              .replace(/\{\{FPJS_ENDPOINT\}\}/g, process.env.FPJS_ENDPOINT)
-              .replace(/\{\{FPJS_TOKEN\}\}/g, process.env.FPJS_TOKEN);
+          transform: function (content, path) {
+            if (path.slice(-5) === '.html' || path.slice(-3) === '.js') {
+              return content.toString()
+                .replace(/\{\{FPJS_API_TOKEN\}\}/g, process.env.FPJS_API_TOKEN)
+                .replace(/\{\{FPJS_ENDPOINT\}\}/g, process.env.FPJS_ENDPOINT)
+                .replace(/\{\{FPJS_TOKEN\}\}/g, process.env.FPJS_TOKEN);
+            } else {
+              return content
+            }
           },
+        },
+        {
+          from: path.join(__dirname, 'legacy/open-source/fonts'),
+          to: './open-source/fonts',
         },
       ],
       {
