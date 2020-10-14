@@ -27,6 +27,7 @@ const prodPlugins = [
     FPJS_ENDPOINT: process.env.FPJS_ENDPOINT,
     FPJS_REGION: process.env.FPJS_REGION,
     FPJS_DASHBOARD_ENDPOINT: process.env.FPJS_DASHBOARD_ENDPOINT,
+    GITHUB_API_TOKEN: process.env.GITHUB_API_TOKEN,
   }),
 ];
 
