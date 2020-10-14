@@ -8,6 +8,8 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 import { initFpjsWidget } from './fpjs-widget';
 import 'swiper/swiper-bundle.css';
 
+const githubToken = process.env.GITHUB_API_TOKEN;
+
 // configure Swiper to use modules
 Swiper.use([Navigation, Pagination]);
 
@@ -42,7 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // StarCounter
   const getStars = async () => {
     try {
-      const response = await fetch('https://api.github.com/repos/fingerprintjs/fingerprintjs');
+      const response = await fetch('https://api.github.com/repos/fingerprintjs/fingerprintjs', {
+        headers: {
+          Authorization: `token ${githubToken}`
+        }
+      });
       if (response.ok) {
         let json = await response.json();
         starCounter.forEach((counter) => {
