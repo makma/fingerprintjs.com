@@ -2,11 +2,11 @@
   "name": "fingerprintjs",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "høly devs",
+  "author": "FingerprintJS, Inc",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server",
     "prestart": "npm run clean",
-    "build": "webpack --mode=production",
+    "build": "webpack --mode=production && cp robots.txt build/",
     "prebuild": "npm run clean",
     "clean": "rimraf build generated",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,11 +18,12 @@
     "IE 11"
   ],
   "dependencies": {
-    "@splidejs/splide": "^2.4.14",
     "jquery": "^3.5.1",
-    "jquery-slim": "^3.0.0",
+    "@fp-pro/client": "^2.7.6",
+    "favicons-webpack-plugin": "2.1.0",
     "prismjs": "^1.21.0",
     "select2": "^4.0.13",
+    "swiper": "^6.3.2",
     "tippy.js": "^6.2.6"
   },
   "devDependencies": {
@@ -38,6 +39,7 @@
     "file-loader": "^5.0.2",
     "handlebars": "^4.7.3",
     "handlebars-layouts": "^3.1.4",
+    "handlebars-loader": "^1.7.1",
     "handlebars-webpack-plugin": "https://github.com/mitchheddles/handlebars-webpack-plugin#478592b",
     "html-webpack-plugin": "^3.2.0",
     "ignore-loader": "^0.1.2",

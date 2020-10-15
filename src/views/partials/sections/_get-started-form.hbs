@@ -1,13 +1,13 @@
 <form action='#' class='form form--get-started'>
   <div class='field field-with-button'>
     <label for='email' class='label'>
-      <input type='email' class='input' placeholder='Enter your email' />
+      <input type='email' name='email' required class='input gtm-email-input' placeholder='Enter your email' />
     </label>
-    <button class='btn submit' type='submit'>
-      <span class='btn__label btn__label--desktop-only'>
+    <button class='btn submit gtm-get-started-btn' type='submit'>
+      <span class='btn__label btn__label--desktop-only gtm-get-started-btn'>
         Get Started
       </span>
-      <svg class='btn__icon btn__icon--mobile-only'>
+      <svg class='btn__icon btn__icon--mobile-only gtm-get-started-btn'>
         <use xlink:href='#chevron-right'></use>
       </svg>
     </button>
@@ -24,7 +24,7 @@
     <svg class='form-state__icon'>
       <use xlink:href='#close'></use>
     </svg>
-    <div class='form-state__label'>
+    <div class='form-state__label form-failed-reason'>
       Submit failed. Please try again.
     </div>
   </div>
@@ -33,13 +33,13 @@
       <svg>
         <use xlink:href='#check'></use>
       </svg>
-      10 Days Trial
+      10 Day Trial
     </li>
     <li>
       <svg>
         <use xlink:href='#check'></use>
       </svg>
-      Flexible
+      Cancel Any Time
     </li>
     <li>
       <svg>

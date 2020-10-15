@@ -56,10 +56,10 @@
     }
 
     .splide__pagination__page {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 1rem;
-      border: 2px solid v('brand-water');
+      width: 1rem;
+      height: 1rem;
+      border-radius: 0.5rem;
+      background-color: rgba(14, 17, 43, 0.22);
       @include transition((opacity));
       cursor: pointer;
 
@@ -74,13 +74,9 @@
   }
 }
 
-.splide--live-demo {
+.live-demo-mobile-container {
   visibility: visible;
   margin-bottom: 0;
-
-  @media screen and (max-width: 640px) {
-    margin-bottom: 8rem;
-  }
 
   .splide__track {
     overflow: visible;
@@ -137,4 +133,20 @@
       margin-bottom: 0;
     }
   }
+}
+
+
+
+// SWIPPER
+
+.swiper-container {
+  padding-bottom: 3rem;
+}
+
+.swiper-pagination {
+  bottom: -5px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: v('brand-water');
 }

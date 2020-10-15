@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HandlebarsPlugin = require('handlebars-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -18,10 +19,21 @@ const templateDir = path.join(__dirname, 'generated');
 const buildDir = path.join(__dirname, 'build');
 
 const isProd = mode === 'production';
-const prodPlugins = [new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })];
+const prodPlugins = [
+  new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
+  new webpack.EnvironmentPlugin({
+    FPJS_TOKEN: process.env.FPJS_TOKEN,
+    FPJS_API_TOKEN: process.env.FPJS_API_TOKEN,
+    FPJS_ENDPOINT: process.env.FPJS_ENDPOINT,
+    FPJS_REGION: process.env.FPJS_REGION,
+    FPJS_DASHBOARD_ENDPOINT: process.env.FPJS_DASHBOARD_ENDPOINT,
+    GITHUB_API_TOKEN: process.env.GITHUB_API_TOKEN,
+  }),
+];
 
 module.exports = {
   mode,
+  node: false,
   entry: path.join(sourceDir, 'entry.js'),
   output: {
     path: buildDir,
@@ -38,7 +50,7 @@ module.exports = {
         },
       },
       {
-        test: /\.scss$/,
+        test: /\.scss|css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -84,13 +96,13 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.handlebars$/,
+        loader: 'handlebars-loader',
+      },
     ],
   },
   plugins: [
-    new Dotenv({
-      path: './.env', // Path to .env file (this is the default)
-      safe: true, // load .env.example (defaults to "false" which does not use dotenv-safe)
-    }),
     new HtmlWebpackPlugin({
       template: path.join(sourceDir, 'views', 'layout', 'template.hbs'),
       filename: path.join(templateDir, 'template.hbs'),
@@ -126,6 +138,28 @@ module.exports = {
           from: path.join(sourceDir, 'img/company-logos'),
           to: 'img/company-logos',
         },
+        {
+          from: path.join(__dirname, 'favicon.ico'),
+          to: 'favicon.ico',
+        },
+        {
+          from: path.join(__dirname, 'legacy'),
+          to: '.',
+          transform: function (content, path) {
+            if (path.slice(-5) === '.html' || path.slice(-3) === '.js') {
+              return content.toString()
+                .replace(/\{\{FPJS_API_TOKEN\}\}/g, process.env.FPJS_API_TOKEN)
+                .replace(/\{\{FPJS_ENDPOINT\}\}/g, process.env.FPJS_ENDPOINT)
+                .replace(/\{\{FPJS_TOKEN\}\}/g, process.env.FPJS_TOKEN);
+            } else {
+              return content
+            }
+          },
+        },
+        {
+          from: path.join(__dirname, 'legacy/open-source/fonts'),
+          to: './open-source/fonts',
+        },
       ],
       {
         ignore: ['.DS_Store'],
@@ -137,12 +171,12 @@ module.exports = {
       fallback: 'style-loader',
       use: [{ loader: 'css-loader', options: { minimize: isProd } }],
     }),
-  ].concat(isProd ? prodPlugins : []),
-  resolve: {
-    alias: {
-      vendor: path.resolve(__dirname, 'src/js/vendor/'),
-    },
-  },
+  ].concat(isProd ? prodPlugins : [
+    new Dotenv({
+      path: './.env', // Path to .env file (this is the default)
+      safe: true // load .env.example (defaults to "false" which does not use dotenv-safe)
+    }),
+  ]),
   devServer: {
     contentBase: buildDir,
     open: false,
