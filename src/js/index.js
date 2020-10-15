@@ -2,9 +2,11 @@ import tippy from 'tippy.js';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/plugins/line-numbers/prism-line-numbers';
-import $ from 'jquery-slim';
+import $ from 'jquery';
 import 'regenerator-runtime/runtime';
 import Splide from '@splidejs/splide';
+// import NiceSelect from 'vendor/nice-select2';
+import 'select2';
 
 // DOM Elements
 const BODY = $('body');
@@ -20,6 +22,9 @@ const starCounter = document.querySelectorAll('.btn--github .github-counter');
 const liveDemoMobileButtonsPrev = $('.live-demo--mobile .btn--prev');
 const liveDemoMobileButtonsNext = $('.live-demo--mobile .btn--next');
 const mobileLinksSubmenu = $('.main-links__link--has-submenu');
+const userInputIdentifications = $('.user-input .user-input__input');
+const onDemandPrice = $('.on-demand__price');
+const reservedPrice = $('.reserved__price');
 
 // Pricing Table
 const pricingTable = [
@@ -102,122 +107,155 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Range slider
-  rangeSliderInput.change(handlePriceChange);
-  rangeSliderInput[0].addEventListener('input', handlePriceChange);
+  if (document.body.classList.contains('homepage')) {
+    // Range slider
+    rangeSliderInput.change(handlePriceChange);
+    rangeSliderInput[0].addEventListener('input', handlePriceChange);
 
-  function handlePriceChange(e) {
-    const minValue = Number(e.target.min);
-    const maxValue = Number(e.target.max);
-    const value = Number(e.target.value);
-    const magicNumber = ((value - minValue) * 100) / (maxValue - minValue);
-    const valueLabel = pricingTable[value].label;
-    const newPrice = calculatePrice(pricingTable[value].value, paymentSwitcher[0].dataset.type);
+    function handlePriceChange(e) {
+      const minValue = Number(e.target.min);
+      const maxValue = Number(e.target.max);
+      const value = Number(e.target.value);
+      const magicNumber = ((value - minValue) * 100) / (maxValue - minValue);
+      const valueLabel = pricingTable[value].label;
+      const newPrice = calculatePrice(pricingTable[value].value, paymentSwitcher[0].dataset.type);
 
-    rangeSlider[0].style.setProperty(
-      '--left',
-      `calc(${magicNumber}% + (${15 - magicNumber * 0.3}px))`,
-    );
-    rangeSliderLabelOutput.html(valueLabel);
-    rangeSliderPriceOutput.html(newPrice);
-  }
-
-  function calculatePrice(price, type) {
-    const currencyFormatOptions = {
-      maximumSignificantDigits: 3,
-      style: 'currency',
-      currencyDisplay: 'symbol',
-      currency: 'USD',
-      notation: 'standard',
-    };
-
-    if (type === 'monthly') {
-      return new Intl.NumberFormat('en-US', currencyFormatOptions).format(price / 1000);
+      rangeSlider[0].style.setProperty(
+        '--left',
+        `calc(${magicNumber}% + (${15 - magicNumber * 0.3}px))`,
+      );
+      rangeSliderLabelOutput.html(valueLabel);
+      rangeSliderPriceOutput.html(newPrice);
     }
-    if (type === 'annually') {
-      return new Intl.NumberFormat('en-US', currencyFormatOptions).format((price / 1000) * 0.8);
+
+    // Switch billing types
+    paymentSwitcherAnnually.click(switchToType);
+    paymentSwitcherMonthly.click(switchToType);
+
+    function switchToType(e) {
+      paymentSwitcher[0].dataset.type = e.target.dataset.type;
+
+      paymentSwitcherAnnually.removeClass('payment-switcher__button--active');
+      paymentSwitcherMonthly.removeClass('payment-switcher__button--active');
+
+      rangeSliderInput.trigger('change');
+      e.target.classList.add('payment-switcher__button--active');
     }
-  }
 
-  // Switch billing types
-  paymentSwitcherAnnually.click(switchToType);
-  paymentSwitcherMonthly.click(switchToType);
+    // Toggle Incognito
+    $('.nav__link--logo').click(() => document.documentElement.classList.toggle('incognito'));
 
-  function switchToType(e) {
-    paymentSwitcher[0].dataset.type = e.target.dataset.type;
+    const logoSplide = new Splide('.splide--trusted-by', {
+      type: 'slide',
+      focus: 0,
+      perPage: 6,
+      gap: '2rem',
+      fixedHeight: 48,
+      breakpoints: {
+        425: { perPage: 1 },
+        768: { perPage: 3 },
+      },
+      pagination: true,
+    });
+    logoSplide.mount();
 
-    paymentSwitcherAnnually.removeClass('payment-switcher__button--active');
-    paymentSwitcherMonthly.removeClass('payment-switcher__button--active');
-
-    rangeSliderInput.trigger('change');
-    e.target.classList.add('payment-switcher__button--active');
-  }
-
-  // Toggle Incognito
-  $('.nav__link--logo').click(() => document.documentElement.classList.toggle('incognito'));
-
-  const logoSplide = new Splide('.splide--trusted-by', {
-    type: 'slide',
-    focus: 0,
-    perPage: 6,
-    gap: '2rem',
-    fixedHeight: 48,
-    breakpoints: {
-      425: { perPage: 1 },
-      768: { perPage: 3 },
-    },
-    pagination: true,
-  });
-  logoSplide.mount();
-
-  const proToolsSplide = new Splide('.splide--pro-tools', {
-    type: 'loop',
-    perPage: 1,
-    padding: {
-      left: '5rem',
-      right: '5rem',
-    },
-    gap: '2rem',
-    pagination: true,
-    arrows: false,
-  });
-  if (window.innerWidth < 641) {
-    proToolsSplide.mount();
-  }
-
-  const liveDemoMobileSplide = new Splide('.splide--live-demo', {
-    type: 'slide',
-    perPage: 1,
-    focus: 0,
-    padding: {
-      left: '5rem',
-      right: '5rem',
-    },
-    gap: '2rem',
-    pagination: true,
-    arrows: false,
-  });
-  liveDemoMobileSplide.mount();
-  liveDemoMobileButtonsPrev.click(() => liveDemoMobileSplide.go('-'));
-  liveDemoMobileButtonsNext.click(() => liveDemoMobileSplide.go('+'));
-
-  // Form States - DEMO ONLY
-  $('.form--get-started').submit((e) => {
-    e.preventDefault();
-    const form = $('.form--get-started');
-    const state = Math.floor(Math.random() * Math.floor(2));
-
-    form.toggleClass('form--success', state === 1);
-    form.toggleClass('form--failed', state === 0);
-
-    if (!!state) {
-      setTimeout(() => {
-        form.removeClass('form--success');
-      }, 1000);
-    } else {
-      setTimeout(() => {
-        form.removeClass('form--failed');
-      }, 1000);
+    const proToolsSplide = new Splide('.splide--pro-tools', {
+      type: 'loop',
+      perPage: 1,
+      padding: {
+        left: '5rem',
+        right: '5rem',
+      },
+      gap: '2rem',
+      pagination: true,
+      arrows: false,
+    });
+    if (window.innerWidth < 641) {
+      proToolsSplide.mount();
     }
-  });
+
+    const liveDemoMobileSplide = new Splide('.splide--live-demo', {
+      type: 'slide',
+      perPage: 1,
+      focus: 0,
+      padding: {
+        left: '5rem',
+        right: '5rem',
+      },
+      gap: '2rem',
+      pagination: true,
+      arrows: false,
+    });
+    liveDemoMobileSplide.mount();
+    liveDemoMobileButtonsPrev.click(() => liveDemoMobileSplide.go('-'));
+    liveDemoMobileButtonsNext.click(() => liveDemoMobileSplide.go('+'));
+
+    // Form States - DEMO ONLY
+    $('.form--get-started').submit((e) => {
+      e.preventDefault();
+      const form = $('.form--get-started');
+      const state = Math.floor(Math.random() * Math.floor(2));
+
+      form.toggleClass('form--success', state === 1);
+      form.toggleClass('form--failed', state === 0);
+
+      if (!!state) {
+        setTimeout(() => {
+          form.removeClass('form--success');
+        }, 1000);
+      } else {
+        setTimeout(() => {
+          form.removeClass('form--failed');
+        }, 1000);
+      }
+    });
+  }
+
+  if (document.body.classList.contains('pricing')) {
+    $('.preset__select').select2({
+      width: '100%',
+      minimumResultsForSearch: -1,
+    });
+
+    $('.preset__select').on('select2:select', (e) => {
+      const data = e.params.data;
+      userInputIdentifications.val('');
+      const onDemandPriceValue = calculatePrice(data.id, 'monthly');
+      const reservedPriceValue = calculatePrice(data.id, 'annually');
+
+      // console.log({ onDemandPriceValue, reservedPriceValue });
+      onDemandPrice.text(onDemandPriceValue);
+      reservedPrice.text(reservedPriceValue);
+    });
+
+    userInputIdentifications.on('change', (e) => {
+      const identifications = e.target.value;
+      $('.preset__select').val('').trigger('change.select2');
+
+      const onDemandPriceValue = calculatePrice(identifications, 'monthly');
+      const reservedPriceValue = calculatePrice(identifications, 'annually');
+
+      // console.log({ onDemandPriceValue, reservedPriceValue });
+      onDemandPrice.text(onDemandPriceValue);
+      reservedPrice.text(reservedPriceValue);
+    });
+  }
 });
+
+// COMMON Functions
+function calculatePrice(price, type) {
+  const currencyFormatOptions = {
+    maximumSignificantDigits: 3,
+    style: 'currency',
+    currencyDisplay: 'symbol',
+    currency: 'USD',
+    notation: 'standard',
+  };
+
+  if (type === 'monthly') {
+    return new Intl.NumberFormat('en-US', currencyFormatOptions).format(price / 1000);
+  }
+  if (type === 'annually') {
+    return new Intl.NumberFormat('en-US', currencyFormatOptions).format((price / 1000) * 0.8);
+  }
+}

@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const cssnano = require('cssnano');
-const Dotenv = require('dotenv-webpack')
+const Dotenv = require('dotenv-webpack');
 
 const { makeDataReplacements, registerHandlersHelpers } = require('./webpack.helpers.js');
 
@@ -55,6 +55,10 @@ module.exports = {
             : null,
           {
             loader: 'sass-loader',
+            options: {
+              // Prefer `dart-sass`
+              implementation: require('sass'),
+            },
           },
         ].filter(Boolean),
       },
@@ -85,7 +89,7 @@ module.exports = {
   plugins: [
     new Dotenv({
       path: './.env', // Path to .env file (this is the default)
-      safe: true // load .env.example (defaults to "false" which does not use dotenv-safe)
+      safe: true, // load .env.example (defaults to "false" which does not use dotenv-safe)
     }),
     new HtmlWebpackPlugin({
       template: path.join(sourceDir, 'views', 'layout', 'template.hbs'),
@@ -112,6 +116,7 @@ module.exports = {
         return registerHandlersHelpers(Handlebars);
       },
       onBeforeRender: (Handlebars, data) => {
+        console.log(data);
         return makeDataReplacements(data);
       },
     }),
@@ -133,6 +138,11 @@ module.exports = {
       use: [{ loader: 'css-loader', options: { minimize: isProd } }],
     }),
   ].concat(isProd ? prodPlugins : []),
+  resolve: {
+    alias: {
+      vendor: path.resolve(__dirname, 'src/js/vendor/'),
+    },
+  },
   devServer: {
     contentBase: buildDir,
     open: false,
