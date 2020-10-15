@@ -57,9 +57,25 @@
       grid-template-columns: 1fr;
     }
 
-    &:nth-child(2) {
+    &--on-demand {
+      .subsection-aside {
+        background-color: adjust-color(c('brand-water'), $saturation: -32%, $lightness: +24%);
+        background-image: url('../img/on-demand.png');
+
+        @media screen and (max-width: 860px){
+          background-image: none;
+        }
+      }
+    }
+
+    &--reserved {
       .subsection-aside {
         background-color: v('brand-water');
+        background-image: url('../img/reserved.png');
+
+         @media screen and (max-width: 860px){
+          background-image: none;
+        }
       }
     }
 
@@ -100,7 +116,9 @@
 
     &-aside {
       color: v('white');
-      background-color: adjust-color(c('brand-water'), $saturation: -32%, $lightness: +24%);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 50% bottom;
 
       @media screen and (max-width: 768px) {
         padding: 3rem 3rem 3rem 6rem;
