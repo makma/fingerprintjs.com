@@ -31,11 +31,11 @@
         },
         {
           "title": "Terms of Use",
-          "url": "https://docs.fingerprintjs.com/pro/legal/terms-of-service"
+          "url": "https://dev.fingerprintjs.com/docs/terms-of-service"
         },
         {
           "title": "Privacy Policy",
-          "url": "https://docs.fingerprintjs.com/pro/legal/privacy-policy"
+          "url": "https://dev.fingerprintjs.com/docs/privacy-policy"
         },
         {
           "title": "Log In",
@@ -48,31 +48,31 @@
       "links": [
         {
           "title": "Get Started",
-          "url": "https://docs.fingerprintjs.com/pro/"
+          "url": "https://dev.fingerprintjs.com/docs/introduction"
         },
         {
           "title": "Pro vs Free Version",
-          "url": "https://docs.fingerprintjs.com/pro/pro-vs-free"
+          "url": "https://dev.fingerprintjs.com/docs/pro-vs-free"
         },
         {
           "title": "Browser Fingerprinting",
-          "url": "https://docs.fingerprintjs.com/pro/browser-fingerprinting"
+          "url": "https://dev.fingerprintjs.com/docs/browser-fingerprinting"
         },
         {
           "title": "Incognito Mode Detection",
-          "url": "https://docs.fingerprintjs.com/pro/incognito-private-mode-detection"
+          "url": "https://dev.fingerprintjs.com/docs/incognito-private-mode-detection"
         },
         {
           "title": "Bot Detection",
-          "url": "https://docs.fingerprintjs.com/pro/bot-detection"
+          "url": "https://dev.fingerprintjs.com/docs/bot-detection"
         },
         {
           "title": "Server API",
-          "url": "https://docs.fingerprintjs.com/pro/server-api"
+          "url": "https://dev.fingerprintjs.com/docs/server-api"
         },
         {
           "title": "Legal",
-          "url": "https://docs.fingerprintjs.com/pro/legal/dpa-gdpr"
+          "url": "https://dev.fingerprintjs.com/docs/dpa-gdpr"
         }
       ]
     }
