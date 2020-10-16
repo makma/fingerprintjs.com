@@ -1,24 +1,24 @@
 
-import { FP } from "@fp-pro/client";
+import * as FP from '@fingerprintjs/fingerprintjs-pro';
 import tippy from 'tippy.js';
 import $ from 'jquery-slim';
 import Swiper from 'swiper';
 import mobileTemplate from '../views/partials/demo/mobile.handlebars';
 
 const dashboardEndpoint = process.env.FPJS_DASHBOARD_ENDPOINT;
-const client = process.env.FPJS_TOKEN;
-const token = process.env.FPJS_API_TOKEN;
+const clientToken = process.env.FPJS_TOKEN;
+const apiToken = process.env.FPJS_API_TOKEN;
 const endpoint = process.env.FPJS_ENDPOINT;
 const region = process.env.FPJS_REGION;
 const config = {
-  ip: "full",
-  callbackData: true,
+  ipResolution: "full",
+  extendedResult: true,
   timeout: 30_000,
 };
 
 let activeRequestId;
 
-const fpPromise = FP.load({ client, endpoint, region }).then((fp) => fp.send(config));
+const fpPromise = FP.load({ token: clientToken, endpoint, region }).then((fp) => fp.get(config));
 
 export function initFpjsWidget() {
   fpPromise
@@ -37,7 +37,7 @@ export function initFpjsWidget() {
 
     const form = $('.form--get-started');
     const email = event.currentTarget.elements[0].value;
-  
+
     form.addClass('form--loading');
     // const state = Math.floor(Math.random() * Math.floor(2));
 
@@ -50,7 +50,7 @@ export function initFpjsWidget() {
       .then((response) => response.json())
       .then(({ ok, error }) => {
         form.removeClass('form--loading');
-  
+
         if (!ok) {
           form.addClass('form--failed');
           $('.form-failed-reason').text(error.message || 'Something gone wrong. Please try again later.');
@@ -59,7 +59,7 @@ export function initFpjsWidget() {
           setTimeout(() => form.removeClass('form--failed'), 2500);
         } else {
           form.addClass('form--success');
-        
+
           dataLayer.push({ event: 'signupintent.success' });
         }
       });
@@ -68,11 +68,11 @@ export function initFpjsWidget() {
 
 // Load visit history
 export function loadFpjsHistory(visitorId) {
-  return fetch(`${endpoint}/visitors/${visitorId}?token=${token}&limit=20`)
+  return fetch(`${endpoint}/visitors/${visitorId}?token=${apiToken}&limit=20`)
     .then((response) => response.json())
     .then(({ visits }) => {
       const container = document.getElementById('fpjs_history');
-      
+
       container.innerHTML = '';
       let mobileSlides = '';
       for (const visit of visits) {
@@ -168,7 +168,7 @@ function highLightRequestId(requestId) {
 // Let's use existent UI to update values for every visit history
 // This will help us reduce the bundle size
 function showVisitInfo(visitData, title) {
-  const { visitorId, botProbability, incognito, ip, browserDetails, ipLocation, requestId } = visitData;
+  const { visitorId, bot, incognito, ip, browserDetails, ipLocation, requestId } = visitData;
 
   const visitorIdSpan = document.getElementById('fpjs_visitor_id');
   const botSpan = document.getElementById('fpjs_bot');
@@ -181,7 +181,7 @@ function showVisitInfo(visitData, title) {
 
   visitorIdSpan.textContent = visitorId;
   incognitoSpan.textContent = incognito ? 'Yes' : 'No';
-  botSpan.textContent = getBotDecision(typeof botProbability === 'number' ? botProbability : browserDetails.botProbability);
+  botSpan.textContent = getBotDecision(bot?.probability ?? browserDetails?.botProbability ?? 0);
   ipSpan.textContent = ip;
   browserSpan.textContent = getBrowserName(browserDetails || visitData);
 
@@ -189,7 +189,7 @@ function showVisitInfo(visitData, title) {
   const { latitude, longitude } = ipLocation;
   locationDiv.classList.toggle('-not-available', !latitude || !longitude);
   imgLocationSpan.src = `https://api.mapbox.com/styles/v1/mapbox/${incognito ? 'dark-v10' : 'outdoors-v11'}/static/${longitude},${latitude},7.00,0/400x400?access_token=pk.eyJ1IjoidmFsZW50aW52YXNpbHlldiIsImEiOiJja2ZvMGttN2UxanJ1MzNtcXp5YzNhbWxuIn0.BjZhTdjY812J3OdfgRiZ4A`;
-  
+
   // Title
   if (title) {
     titleSpan.textContent = title;
@@ -269,6 +269,6 @@ function getBotDecision(botProbability) {
   } else if (botProbability < 0.8) {
     return "Probably";
   }
-  
+
   return "Yes";
 }
