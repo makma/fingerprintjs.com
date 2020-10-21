@@ -8,5 +8,7 @@ generated
 build
 .env
 .now
+.zip
+
 
 !legacy/dist/

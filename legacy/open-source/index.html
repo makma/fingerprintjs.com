@@ -12,16 +12,11 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/open-source/css/materialdesignicons.min.css" />
   <link rel="stylesheet" href="/open-source/css/main.css">
-  <script>
-    window.fpLayer = window.fpLayer || [];
-    function fp() { fpLayer.push(arguments); }
-    fp('config', 'client', '{{FPJS_TOKEN}}');
-    fp('config', 'endpoint', '{{FPJS_ENDPOINT}}')
-    fp('config', 'loaded', function(fp){
-      fp.send();
-    });
-  </script>
-  <script async src="https://cdn.fpjs.io/@2/fp.js"></script>
+  <script
+    async
+    src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs-pro@3/dist/fp.min.js"
+    onload="FingerprintJS.load({ token: '{{FPJS_TOKEN}}', endpoint: '{{FPJS_ENDPOINT}}' }).then(fp => fp.get())"
+  ></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134245186-1"></script>
   <script>
@@ -80,7 +75,7 @@
               <i class="mdi mdi-fingerprint"></i> How it works</a>
           </li>
           <li class="nav-item mr-3">
-            <a href="https://github.com/fingerprintjs/fingerprintjs#usage" target="_blank" class="nav-link">
+            <a href="https://github.com/fingerprintjs/fingerprintjs" target="_blank" class="nav-link">
               <i class="mdi mdi-library-books"></i> Documentation</a>
           </li>
         </ul>

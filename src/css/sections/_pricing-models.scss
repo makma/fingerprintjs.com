@@ -1,35 +1,40 @@
 .section--pricing-models {
   counter-reset: subsection;
   background-repeat: no-repeat;
-  background-size: auto;
-  background-image: url('../img/generic-1-1920+.png'), url('../img/generic-2-1920+.png');
-  background-position: 0% 0%, 60vw 80%;
+  background-size: 1400px auto;
+  background-image: url('../img/bg-full.png');
+  background-position: center center;
 
-  @media screen and (max-width: 2560px) {
-    background-image: url('../img/generic-1-1920+.png'), url('../img/generic-2-1920+.png');
-    background-position: -30vw 0%, 60vw 80%;
-  }
+  // background-repeat: no-repeat;
+  // background-size: auto;
+  // background-image: url('../img/generic-1-1920+.png'), url('../img/generic-2-1920+.png');
+  // background-position: 0% 0%, 60vw 80%;
 
-  @media screen and (max-width: 1920px) {
-    background-image: url('../img/generic-1-1920+.png'), url('../img/generic-2-1920+.png');
-    background-position: -50vw 0%, 60vw 80%;
-  }
+  // @media screen and (max-width: 2560px) {
+  //   background-image: url('../img/generic-1-1920+.png'), url('../img/generic-2-1920+.png');
+  //   background-position: -30vw 0%, 60vw 80%;
+  // }
 
-  @media screen and (max-width: 1440px) {
-    background-image: url('../img/generic-1-1366+.png'), url('../img/generic-2-1366+.png');
-    background-position: 0% 0%, 100% 80%;
-  }
+  // @media screen and (max-width: 1920px) {
+  //   background-image: url('../img/generic-1-1920+.png'), url('../img/generic-2-1920+.png');
+  //   background-position: -50vw 0%, 60vw 80%;
+  // }
 
-  @media screen and (max-width: 1024px) {
-    background-image: url('../img/generic-1-768+.png'), url('../img/generic-2-768+.png');
-    background-position: 0% 0%, 100% 100%;
-  }
+  // @media screen and (max-width: 1440px) {
+  //   background-image: url('../img/generic-1-1366+.png'), url('../img/generic-2-1366+.png');
+  //   background-position: 0% 0%, 100% 80%;
+  // }
 
-  @media screen and (max-width: 425px) {
-    background-image: url('../img/use-cases-320+.png');
-    background-position: center;
-    background-size: contain;
-  }
+  // @media screen and (max-width: 1024px) {
+  //   background-image: url('../img/generic-1-768+.png'), url('../img/generic-2-768+.png');
+  //   background-position: 0% 0%, 100% 100%;
+  // }
+
+  // @media screen and (max-width: 425px) {
+  //   background-image: url('../img/use-cases-320+.png');
+  //   background-position: center;
+  //   background-size: contain;
+  // }
 
   .section-header {
     margin-bottom: 4rem;
@@ -62,7 +67,7 @@
         background-color: adjust-color(c('brand-water'), $saturation: -32%, $lightness: +24%);
         background-image: url('../img/on-demand.png');
 
-        @media screen and (max-width: 860px){
+        @media screen and (max-width: 860px) {
           background-image: none;
         }
       }
@@ -73,7 +78,7 @@
         background-color: v('brand-water');
         background-image: url('../img/reserved.png');
 
-         @media screen and (max-width: 860px){
+        @media screen and (max-width: 860px) {
           background-image: none;
         }
       }
