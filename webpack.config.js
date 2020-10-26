@@ -128,7 +128,6 @@ module.exports = {
         return registerHandlersHelpers(Handlebars);
       },
       onBeforeRender: (Handlebars, data) => {
-        console.log(data);
         return makeDataReplacements(data);
       },
     }),
