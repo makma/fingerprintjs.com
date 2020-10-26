@@ -26,6 +26,9 @@ const paymentSwitcherAnnually = $('.payment-switcher__button--annually');
 const paymentSwitcherMonthly = $('.payment-switcher__button--monthly');
 const starCounter = document.querySelectorAll('.btn--github .github-counter');
 const mobileLinksSubmenu = $('.main-links__link--has-submenu');
+const userInputIdentifications = $('.user-input .user-input__input');
+const onDemandPrice = $('.on-demand__price');
+const reservedPrice = $('.reserved__price');
 
 // Pricing Table
 const pricingTable = [
@@ -162,8 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
       minimumResultsForSearch: -1,
     });
 
-    console.log($('.preset__select'));
-
     $('.preset__select').on('select2:select', (e) => {
       const data = e.params.data;
       userInputIdentifications.val('');
@@ -175,14 +176,13 @@ document.addEventListener('DOMContentLoaded', () => {
       reservedPrice.text(reservedPriceValue);
     });
 
-    userInputIdentifications.on('change', (e) => {
+    userInputIdentifications.on('input', (e) => {
       const identifications = e.target.value;
       $('.preset__select').val('').trigger('change.select2');
 
       const onDemandPriceValue = calculatePrice(identifications, 'monthly');
       const reservedPriceValue = calculatePrice(identifications, 'annually');
 
-      // console.log({ onDemandPriceValue, reservedPriceValue });
       onDemandPrice.text(onDemandPriceValue);
       reservedPrice.text(reservedPriceValue);
     });
