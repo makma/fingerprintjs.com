@@ -46,6 +46,13 @@
       width: 100%;
     }
 
+    .field {
+      .input {
+        border: 0;
+        border-radius: 0;
+      }
+    }
+
     .form-description {
       display: flex;
       flex-wrap: wrap;
@@ -64,8 +71,7 @@
         align-items: center;
         opacity: v('faded');
 
-
-        +li {
+        + li {
           margin-left: 2rem;
         }
       }
@@ -76,7 +82,7 @@
         margin-right: 1rem;
 
         @media screen and (max-width: 425px) {
-          margin-right: .5rem;
+          margin-right: 0.5rem;
         }
       }
     }

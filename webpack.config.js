@@ -67,6 +67,10 @@ module.exports = {
             : null,
           {
             loader: 'sass-loader',
+            options: {
+              // Prefer `dart-sass`
+              implementation: require('sass'),
+            },
           },
         ].filter(Boolean),
       },
@@ -124,6 +128,7 @@ module.exports = {
         return registerHandlersHelpers(Handlebars);
       },
       onBeforeRender: (Handlebars, data) => {
+        console.log(data);
         return makeDataReplacements(data);
       },
     }),

@@ -8,8 +8,12 @@
 @import './vendors/code-theme';
 @import './vendors/tippy';
 
+// @import './vendors/splide/core/splide-core.scss';
 // @import './vendors/gliders';
+
 @import './vendors/sliders';
+@import './vendors/select2';
+@import './custom-select';
 
 @import './generic-styles';
 @import './typography';
@@ -20,6 +24,7 @@
 @import './header';
 @import './buttons';
 @import './links';
+@import './lists';
 @import './div';
 @import './nav';
 
@@ -32,21 +37,13 @@
 @import './sections/billing';
 @import './sections/pro-tools';
 @import './sections/stay-protected';
+@import './sections/calculator';
+@import './sections/pricing-models';
 
 @import './footer';
 @import './window';
 @import './slider';
 @import './live';
 @import './live-mobile';
+@import './table';
 
-.swiper-container {
-  padding-bottom: 24px;
-}
-
-.swiper-pagination {
-  bottom: -5px !important;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #202765;
-}

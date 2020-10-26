@@ -2,9 +2,10 @@ import tippy from 'tippy.js';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/plugins/line-numbers/prism-line-numbers';
-import $ from 'jquery-slim';
+import $ from 'jquery';
 import 'regenerator-runtime/runtime';
 import Swiper, { Navigation, Pagination } from 'swiper';
+import 'select2';
 import { initFpjsWidget } from './fpjs-widget';
 import 'swiper/swiper-bundle.css';
 
@@ -46,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const response = await fetch('https://api.github.com/repos/fingerprintjs/fingerprintjs', {
         headers: {
-          Authorization: `token ${githubToken}`
-        }
+          Authorization: `token ${githubToken}`,
+        },
       });
       if (response.ok) {
         let json = await response.json();
@@ -82,13 +83,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Mobile menu toggle
   mobileToggler.click(toggleMobileMenu);
 
-  // Mobile menu dropdowns
+  // Mobile menu drop down
   mobileLinksSubmenu.click(toggleMobileLinksSubmenu);
-
   function toggleMobileLinksSubmenu() {
     this.classList.toggle('isOpen');
   }
-
   function toggleMobileMenu() {
     BODY.toggleClass('isMobileMenuOpen');
   }
@@ -97,151 +96,146 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!window.matchMedia('(max-width: 1024px)').matches) {
       BODY.removeClass('isMobileMenuOpen');
     }
-
-    // if (window.matchMedia('(max-width: 640px)').matches) {
-    //   if (proToolsSplide.State.is(proToolsSplide.STATES.DESTROYED)) {
-    //     proToolsSplide.refresh();
-    //     proToolsSplide.mount();
-    //   }
-    //   if (proToolsSplide.State.is(proToolsSplide.STATES.MOUNTED)) {
-    //     return;
-    //   } else if (proToolsSplide.State.is(proToolsSplide.STATES.CREATED)) {
-    //     proToolsSplide.mount();
-    //   }
-    // } else {
-    //   proToolsSplide.destroy();
-    // }
   });
 
-  // Range slider
-  rangeSliderInput.change(handlePriceChange);
-  rangeSliderInput[0].addEventListener('input', handlePriceChange);
+  if (document.body.classList.contains('homepage')) {
+    // Range slider
+    rangeSliderInput.change(handlePriceChange);
+    rangeSliderInput[0].addEventListener('input', handlePriceChange);
 
-  function handlePriceChange(e) {
-    const minValue = Number(e.target.min);
-    const maxValue = Number(e.target.max);
-    const value = Number(e.target.value);
-    const magicNumber = ((value - minValue) * 100) / (maxValue - minValue);
-    const valueLabel = pricingTable[value].label;
-    const newPrice = calculatePrice(pricingTable[value].value, paymentSwitcher[0].dataset.type);
+    // Switch billing types
+    paymentSwitcherAnnually.click(switchToType);
+    paymentSwitcherMonthly.click(switchToType);
 
-    rangeSlider[0].style.setProperty(
-      '--left',
-      `calc(${magicNumber}% + (${15 - magicNumber * 0.3}px))`,
-    );
-    rangeSliderLabelOutput.html(valueLabel);
-    rangeSliderPriceOutput.html(newPrice);
-  }
+    // Toggle Incognito
+    // $('.nav__link--logo').click(() => document.documentElement.classList.toggle('incognito'));
 
-  function calculatePrice(price, type) {
-    const currencyFormatOptions = {
-      maximumSignificantDigits: 3,
-      style: 'currency',
-      currencyDisplay: 'symbol',
-      currency: 'USD',
-      notation: 'standard',
-    };
+    // Swipers
+    const logoSwiper = new Swiper('#swiper--trusted-by', {
+      spaceBetween: 30,
+      slidesPerView: 6,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        320: { slidesPerView: 1 },
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 6 },
+      },
+    });
 
-    if (type === 'monthly') {
-      return new Intl.NumberFormat('en-US', currencyFormatOptions).format(price / 1000);
-    }
-    if (type === 'annually') {
-      return new Intl.NumberFormat('en-US', currencyFormatOptions).format((price / 1000) * 0.8);
-    }
-  }
-
-  // Switch billing types
-  paymentSwitcherAnnually.click(switchToType);
-  paymentSwitcherMonthly.click(switchToType);
-
-  function switchToType(e) {
-    paymentSwitcher[0].dataset.type = e.target.dataset.type;
-
-    paymentSwitcherAnnually.removeClass('payment-switcher__button--active');
-    paymentSwitcherMonthly.removeClass('payment-switcher__button--active');
-
-    rangeSliderInput.trigger('change');
-    e.target.classList.add('payment-switcher__button--active');
-
-    if (e.target.dataset.type === 'annually') {
-      document.getElementById('billed_annual_text').textContent = 'billed yearly';
-    } else {
-      document.getElementById('billed_annual_text').textContent = 'billed monthly';
-    }
-  }
-
-  // Toggle Incognito
-  $('.nav__link--logo').click(() => document.documentElement.classList.toggle('incognito'));
-
-  // Swipers
-  const logoSwiper = new Swiper('#swiper--trusted-by', {
-    spaceBetween: 30,
-    slidesPerView: 6,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    breakpoints: {
-      320: { slidesPerView: 1 },
-      768: { slidesPerView: 3 },
-      1024: { slidesPerView: 6 },
-    },
-  });
-
-  const proToolsSwiper = new Swiper('#swiper--pro-tools', {
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        slidesPerColumn: 1,
-        spaceBetween: 0,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
+    const proToolsSwiper = new Swiper('#swiper--pro-tools', {
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          slidesPerColumn: 1,
+          spaceBetween: 0,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        },
+        768: {
+          slidesPerView: 2,
+          slidesPerColumn: 3,
+          slidesPerColumnFill: 'row',
+          spaceBetween: 28,
+        },
+        1024: {
+          slidesPerView: 3,
+          slidesPerColumn: 2,
+          spaceBetween: 28,
+          slidesPerColumnFill: 'row',
         },
       },
-      768: {
-        slidesPerView: 2,
-        slidesPerColumn: 3,
-        slidesPerColumnFill: 'row',
-        spaceBetween: 28,
-      },
-      1024: {
-        slidesPerView: 3,
-        slidesPerColumn: 2,
-        spaceBetween: 28,
-        slidesPerColumnFill: 'row',
-      },
-    },
-  });
+    });
+  }
 
-  // const proToolsSplide = new Splide('.splide--pro-tools', {
-  //   type: 'loop',
-  //   perPage: 1,
-  //   padding: {
-  //     left: '5rem',
-  //     right: '5rem',
-  //   },
-  //   gap: '2rem',
-  //   pagination: true,
-  //   arrows: false,
-  // });
-  // if (window.innerWidth < 641) {
-  //   proToolsSplide.mount();
-  // }
+  /*====================================
+  =            PRICING PAGE            =
+  =====================================*/
 
-  // const liveDemoMobileSplide = new Splide('.live-demo-mobile-container', {
-  //   type: 'slide',
-  //   perPage: 1,
-  //   focus: 0,
-  //   padding: {
-  //     left: '5rem',
-  //     right: '5rem',
-  //   },
-  //   gap: '2rem',
-  //   pagination: true,
-  //   arrows: false,
-  // });
-  // liveDemoMobileSplide.mount();
-  // liveDemoMobileButtonsPrev.click(() => liveDemoMobileSplide.go('-'));
-  // liveDemoMobileButtonsNext.click(() => liveDemoMobileSplide.go('+'));
+  if (document.body.classList.contains('pricing')) {
+    $('.preset__select').select2({
+      width: '100%',
+      minimumResultsForSearch: -1,
+    });
+
+    console.log($('.preset__select'));
+
+    $('.preset__select').on('select2:select', (e) => {
+      const data = e.params.data;
+      userInputIdentifications.val('');
+      const onDemandPriceValue = calculatePrice(data.id, 'monthly');
+      const reservedPriceValue = calculatePrice(data.id, 'annually');
+
+      // console.log({ onDemandPriceValue, reservedPriceValue });
+      onDemandPrice.text(onDemandPriceValue);
+      reservedPrice.text(reservedPriceValue);
+    });
+
+    userInputIdentifications.on('change', (e) => {
+      const identifications = e.target.value;
+      $('.preset__select').val('').trigger('change.select2');
+
+      const onDemandPriceValue = calculatePrice(identifications, 'monthly');
+      const reservedPriceValue = calculatePrice(identifications, 'annually');
+
+      // console.log({ onDemandPriceValue, reservedPriceValue });
+      onDemandPrice.text(onDemandPriceValue);
+      reservedPrice.text(reservedPriceValue);
+    });
+  }
+
+  /*=====  End of PRICING PAGE  ======*/
 });
+
+function handlePriceChange(e) {
+  const minValue = Number(e.target.min);
+  const maxValue = Number(e.target.max);
+  const value = Number(e.target.value);
+  const magicNumber = ((value - minValue) * 100) / (maxValue - minValue);
+  const valueLabel = pricingTable[value].label;
+  const newPrice = calculatePrice(pricingTable[value].value, paymentSwitcher[0].dataset.type);
+
+  rangeSlider[0].style.setProperty(
+    '--left',
+    `calc(${magicNumber}% + (${15 - magicNumber * 0.3}px))`,
+  );
+  rangeSliderLabelOutput.html(valueLabel);
+  rangeSliderPriceOutput.html(newPrice);
+}
+
+function calculatePrice(price, type) {
+  const currencyFormatOptions = {
+    maximumSignificantDigits: 3,
+    style: 'currency',
+    currencyDisplay: 'symbol',
+    currency: 'USD',
+    notation: 'standard',
+  };
+
+  if (type === 'monthly') {
+    return new Intl.NumberFormat('en-US', currencyFormatOptions).format(price / 1000);
+  }
+  if (type === 'annually') {
+    return new Intl.NumberFormat('en-US', currencyFormatOptions).format((price / 1000) * 0.8);
+  }
+}
+
+function switchToType(e) {
+  paymentSwitcher[0].dataset.type = e.target.dataset.type;
+
+  paymentSwitcherAnnually.removeClass('payment-switcher__button--active');
+  paymentSwitcherMonthly.removeClass('payment-switcher__button--active');
+
+  rangeSliderInput.trigger('change');
+  e.target.classList.add('payment-switcher__button--active');
+
+  if (e.target.dataset.type === 'annually') {
+    document.getElementById('billed_annual_text').textContent = 'billed yearly';
+  } else {
+    document.getElementById('billed_annual_text').textContent = 'billed monthly';
+  }
+}

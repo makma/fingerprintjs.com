@@ -134,3 +134,19 @@
     }
   }
 }
+
+
+
+// SWIPPER
+
+.swiper-container {
+  padding-bottom: 3rem;
+}
+
+.swiper-pagination {
+  bottom: -5px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: v('brand-water');
+}
