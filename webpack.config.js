@@ -67,6 +67,10 @@ module.exports = {
             : null,
           {
             loader: 'sass-loader',
+            options: {
+              // Prefer `dart-sass`
+              implementation: require('sass'),
+            },
           },
         ].filter(Boolean),
       },

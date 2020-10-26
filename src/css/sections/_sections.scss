@@ -11,3 +11,9 @@
     flex: 1;
   }
 }
+
+.subsection {
+  + .subsection {
+    margin-top: 4rem;
+  }
+}

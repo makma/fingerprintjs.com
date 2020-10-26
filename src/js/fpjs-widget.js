@@ -1,7 +1,7 @@
 
 import * as FP from '@fingerprintjs/fingerprintjs-pro';
 import tippy from 'tippy.js';
-import $ from 'jquery-slim';
+import $ from 'jquery';
 import Swiper from 'swiper';
 import mobileTemplate from '../views/partials/demo/mobile.handlebars';
 
