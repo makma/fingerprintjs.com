@@ -155,10 +155,6 @@ module.exports = {
             }
           },
         },
-        {
-          from: path.join(__dirname, 'legacy/open-source/fonts'),
-          to: './open-source/fonts',
-        },
       ],
       {
         ignore: ['.DS_Store'],

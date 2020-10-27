@@ -9,6 +9,7 @@
     "dell",
     "agoda"
   ],
+  "repo_link": "https://github.com/fingerprintjs/fingerprintjs",
   "footer_links": [
     {
       "title": "General",
@@ -19,7 +20,7 @@
         },
         {
           "title": "Open Source",
-          "url": "/open-source"
+          "url": "https://github.com/fingerprintjs/fingerprintjs"
         },
         {
           "title": "Pricing",
