@@ -1,0 +1,12 @@
+{{#extend "html/template" bodyclass="blog-post"}}
+{{#content 'title'}}
+<title>{{site.title}}</title>
+{{/content}}
+{{#content "body"}}
+{{> partials/header }}
+<main class="main post container">
+    {{> components/blog-post post=singlePost}}
+</main>
+{{> partials/footer }}
+{{/content}}
+{{/extend}}

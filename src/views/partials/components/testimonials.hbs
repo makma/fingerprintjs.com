@@ -1,0 +1,30 @@
+<section class="section section--testimonials">
+    <div class="container">
+    <div class="section-content">
+        {{#each testimonials}}
+            <article class="testimonial">
+                <div class="quote testimonial__quote">
+                    <svg class="quote__icon" width="17" height="14">
+                        <use xlink:href="#quote-left"></use>
+                    </svg>
+                    <p class="quote__quote">
+                        {{quote}}
+                    </p>
+                    {{#if link}}
+                        <a href="{{link.url}}" class="quote__link">{{link.label}} ></a>
+                    {{/if}}
+                </div>
+                <div class="author testimonial__author">
+                    <div class="author__image-container">
+                        <img class="author__image" src="{{author.image}}" alt="{{author.name}}">
+                    </div>
+                    <div class="author__meta">
+                        <div class="author__name">{{author.name}}</div>
+                        <div class="author__title">{{author.title}}</div>
+                    </div>
+                </div>
+            </article>
+        {{/each}}
+    </div>
+    </div>
+</section>

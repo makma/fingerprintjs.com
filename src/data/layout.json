@@ -1,0 +1,95 @@
+{
+  "group2": [
+    {
+      "title": "It’s fast of course",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    },
+    {
+      "title": "It’s also really easy",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    }
+  ],
+  "group3": [
+    {
+      "title": "It’s fast of course",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    },
+    {
+      "title": "It’s also really easy",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    },
+    {
+      "title": "It’s also really easy",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    }
+  ],
+  "group4": [
+    {
+      "title": "It’s fast of course",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    },
+    {
+      "title": "It’s also really easy",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    },
+    {
+      "title": "It’s also really easy",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    },
+    {
+      "title": "It’s also really easy",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    }
+  ],
+  "group2withIcons": [
+    {
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path fill='#202659' fill-rule='evenodd' d='M7.34 25.24l12.51-12.51C18.62 11.14 18 9.63 18 8.19a5.52 5.52 0 0111.05 0c0 2.34-1.64 4.86-4.85 7.6l-.68.56-.67-.57c-.81-.69-1.52-1.37-2.13-2.03l-4.77 4.77 5.18 5.18 2.83-2.82a.67.67 0 01.94.94l-3.77 3.77L15 19.46 8.36 26.1A12.67 12.67 0 0028.66 16 .67.67 0 1130 16 14 14 0 1116 2a.67.67 0 110 1.33c-2.31 0-4.49.62-6.35 1.7l6.08 6.1a.67.67 0 01-.94.93L8.5 5.78C7.5 6.53 6.6 7.42 5.85 8.42l6.8 6.8-7.43 7.43c.59.96 1.3 1.83 2.12 2.6zm-4-9.24c0 1.94.43 3.78 1.21 5.43l6.21-6.21L5.1 9.55A12.62 12.62 0 003.33 16zM23.51 4a4.19 4.19 0 00-4.19 4.19c0 1.76 1.3 3.83 3.92 6.17l.27.24.28-.24c2.48-2.2 3.76-4.17 3.9-5.86l.01-.16v-.15A4.19 4.19 0 0023.52 4zm.08 1.48c1.38 0 2.5 1.15 2.5 2.57a2.54 2.54 0 01-2.5 2.57 2.54 2.54 0 01-2.5-2.57 2.54 2.54 0 012.5-2.57zm0 1.33c-.64 0-1.17.55-1.17 1.24 0 .7.53 1.24 1.17 1.24a1.2 1.2 0 001.16-1.24c0-.7-.53-1.24-1.16-1.24z'/></svg>",
+      "title": "It’s fast of course",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    },
+    {
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path fill='#202659' fill-rule='evenodd' d='M7.34 25.24l12.51-12.51C18.62 11.14 18 9.63 18 8.19a5.52 5.52 0 0111.05 0c0 2.34-1.64 4.86-4.85 7.6l-.68.56-.67-.57c-.81-.69-1.52-1.37-2.13-2.03l-4.77 4.77 5.18 5.18 2.83-2.82a.67.67 0 01.94.94l-3.77 3.77L15 19.46 8.36 26.1A12.67 12.67 0 0028.66 16 .67.67 0 1130 16 14 14 0 1116 2a.67.67 0 110 1.33c-2.31 0-4.49.62-6.35 1.7l6.08 6.1a.67.67 0 01-.94.93L8.5 5.78C7.5 6.53 6.6 7.42 5.85 8.42l6.8 6.8-7.43 7.43c.59.96 1.3 1.83 2.12 2.6zm-4-9.24c0 1.94.43 3.78 1.21 5.43l6.21-6.21L5.1 9.55A12.62 12.62 0 003.33 16zM23.51 4a4.19 4.19 0 00-4.19 4.19c0 1.76 1.3 3.83 3.92 6.17l.27.24.28-.24c2.48-2.2 3.76-4.17 3.9-5.86l.01-.16v-.15A4.19 4.19 0 0023.52 4zm.08 1.48c1.38 0 2.5 1.15 2.5 2.57a2.54 2.54 0 01-2.5 2.57 2.54 2.54 0 01-2.5-2.57 2.54 2.54 0 012.5-2.57zm0 1.33c-.64 0-1.17.55-1.17 1.24 0 .7.53 1.24 1.17 1.24a1.2 1.2 0 001.16-1.24c0-.7-.53-1.24-1.16-1.24z'/></svg>",
+      "title": "It’s also really easy",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    }
+  ],
+  "group3withIcons": [
+    {
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path fill='#202659' fill-rule='evenodd' d='M7.34 25.24l12.51-12.51C18.62 11.14 18 9.63 18 8.19a5.52 5.52 0 0111.05 0c0 2.34-1.64 4.86-4.85 7.6l-.68.56-.67-.57c-.81-.69-1.52-1.37-2.13-2.03l-4.77 4.77 5.18 5.18 2.83-2.82a.67.67 0 01.94.94l-3.77 3.77L15 19.46 8.36 26.1A12.67 12.67 0 0028.66 16 .67.67 0 1130 16 14 14 0 1116 2a.67.67 0 110 1.33c-2.31 0-4.49.62-6.35 1.7l6.08 6.1a.67.67 0 01-.94.93L8.5 5.78C7.5 6.53 6.6 7.42 5.85 8.42l6.8 6.8-7.43 7.43c.59.96 1.3 1.83 2.12 2.6zm-4-9.24c0 1.94.43 3.78 1.21 5.43l6.21-6.21L5.1 9.55A12.62 12.62 0 003.33 16zM23.51 4a4.19 4.19 0 00-4.19 4.19c0 1.76 1.3 3.83 3.92 6.17l.27.24.28-.24c2.48-2.2 3.76-4.17 3.9-5.86l.01-.16v-.15A4.19 4.19 0 0023.52 4zm.08 1.48c1.38 0 2.5 1.15 2.5 2.57a2.54 2.54 0 01-2.5 2.57 2.54 2.54 0 01-2.5-2.57 2.54 2.54 0 012.5-2.57zm0 1.33c-.64 0-1.17.55-1.17 1.24 0 .7.53 1.24 1.17 1.24a1.2 1.2 0 001.16-1.24c0-.7-.53-1.24-1.16-1.24z'/></svg>",
+      "title": "It’s fast of course",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    },
+    {
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path fill='#202659' fill-rule='evenodd' d='M7.34 25.24l12.51-12.51C18.62 11.14 18 9.63 18 8.19a5.52 5.52 0 0111.05 0c0 2.34-1.64 4.86-4.85 7.6l-.68.56-.67-.57c-.81-.69-1.52-1.37-2.13-2.03l-4.77 4.77 5.18 5.18 2.83-2.82a.67.67 0 01.94.94l-3.77 3.77L15 19.46 8.36 26.1A12.67 12.67 0 0028.66 16 .67.67 0 1130 16 14 14 0 1116 2a.67.67 0 110 1.33c-2.31 0-4.49.62-6.35 1.7l6.08 6.1a.67.67 0 01-.94.93L8.5 5.78C7.5 6.53 6.6 7.42 5.85 8.42l6.8 6.8-7.43 7.43c.59.96 1.3 1.83 2.12 2.6zm-4-9.24c0 1.94.43 3.78 1.21 5.43l6.21-6.21L5.1 9.55A12.62 12.62 0 003.33 16zM23.51 4a4.19 4.19 0 00-4.19 4.19c0 1.76 1.3 3.83 3.92 6.17l.27.24.28-.24c2.48-2.2 3.76-4.17 3.9-5.86l.01-.16v-.15A4.19 4.19 0 0023.52 4zm.08 1.48c1.38 0 2.5 1.15 2.5 2.57a2.54 2.54 0 01-2.5 2.57 2.54 2.54 0 01-2.5-2.57 2.54 2.54 0 012.5-2.57zm0 1.33c-.64 0-1.17.55-1.17 1.24 0 .7.53 1.24 1.17 1.24a1.2 1.2 0 001.16-1.24c0-.7-.53-1.24-1.16-1.24z'/></svg>",
+      "title": "It’s also really easy",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    },
+    {
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path fill='#202659' fill-rule='evenodd' d='M7.34 25.24l12.51-12.51C18.62 11.14 18 9.63 18 8.19a5.52 5.52 0 0111.05 0c0 2.34-1.64 4.86-4.85 7.6l-.68.56-.67-.57c-.81-.69-1.52-1.37-2.13-2.03l-4.77 4.77 5.18 5.18 2.83-2.82a.67.67 0 01.94.94l-3.77 3.77L15 19.46 8.36 26.1A12.67 12.67 0 0028.66 16 .67.67 0 1130 16 14 14 0 1116 2a.67.67 0 110 1.33c-2.31 0-4.49.62-6.35 1.7l6.08 6.1a.67.67 0 01-.94.93L8.5 5.78C7.5 6.53 6.6 7.42 5.85 8.42l6.8 6.8-7.43 7.43c.59.96 1.3 1.83 2.12 2.6zm-4-9.24c0 1.94.43 3.78 1.21 5.43l6.21-6.21L5.1 9.55A12.62 12.62 0 003.33 16zM23.51 4a4.19 4.19 0 00-4.19 4.19c0 1.76 1.3 3.83 3.92 6.17l.27.24.28-.24c2.48-2.2 3.76-4.17 3.9-5.86l.01-.16v-.15A4.19 4.19 0 0023.52 4zm.08 1.48c1.38 0 2.5 1.15 2.5 2.57a2.54 2.54 0 01-2.5 2.57 2.54 2.54 0 01-2.5-2.57 2.54 2.54 0 012.5-2.57zm0 1.33c-.64 0-1.17.55-1.17 1.24 0 .7.53 1.24 1.17 1.24a1.2 1.2 0 001.16-1.24c0-.7-.53-1.24-1.16-1.24z'/></svg>",
+      "title": "It’s also really easy",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    }
+  ],
+  "group4withIcons": [
+    {
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path fill='#202659' fill-rule='evenodd' d='M7.34 25.24l12.51-12.51C18.62 11.14 18 9.63 18 8.19a5.52 5.52 0 0111.05 0c0 2.34-1.64 4.86-4.85 7.6l-.68.56-.67-.57c-.81-.69-1.52-1.37-2.13-2.03l-4.77 4.77 5.18 5.18 2.83-2.82a.67.67 0 01.94.94l-3.77 3.77L15 19.46 8.36 26.1A12.67 12.67 0 0028.66 16 .67.67 0 1130 16 14 14 0 1116 2a.67.67 0 110 1.33c-2.31 0-4.49.62-6.35 1.7l6.08 6.1a.67.67 0 01-.94.93L8.5 5.78C7.5 6.53 6.6 7.42 5.85 8.42l6.8 6.8-7.43 7.43c.59.96 1.3 1.83 2.12 2.6zm-4-9.24c0 1.94.43 3.78 1.21 5.43l6.21-6.21L5.1 9.55A12.62 12.62 0 003.33 16zM23.51 4a4.19 4.19 0 00-4.19 4.19c0 1.76 1.3 3.83 3.92 6.17l.27.24.28-.24c2.48-2.2 3.76-4.17 3.9-5.86l.01-.16v-.15A4.19 4.19 0 0023.52 4zm.08 1.48c1.38 0 2.5 1.15 2.5 2.57a2.54 2.54 0 01-2.5 2.57 2.54 2.54 0 01-2.5-2.57 2.54 2.54 0 012.5-2.57zm0 1.33c-.64 0-1.17.55-1.17 1.24 0 .7.53 1.24 1.17 1.24a1.2 1.2 0 001.16-1.24c0-.7-.53-1.24-1.16-1.24z'/></svg>",
+      "title": "It’s fast of course",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    },
+    {
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path fill='#202659' fill-rule='evenodd' d='M7.34 25.24l12.51-12.51C18.62 11.14 18 9.63 18 8.19a5.52 5.52 0 0111.05 0c0 2.34-1.64 4.86-4.85 7.6l-.68.56-.67-.57c-.81-.69-1.52-1.37-2.13-2.03l-4.77 4.77 5.18 5.18 2.83-2.82a.67.67 0 01.94.94l-3.77 3.77L15 19.46 8.36 26.1A12.67 12.67 0 0028.66 16 .67.67 0 1130 16 14 14 0 1116 2a.67.67 0 110 1.33c-2.31 0-4.49.62-6.35 1.7l6.08 6.1a.67.67 0 01-.94.93L8.5 5.78C7.5 6.53 6.6 7.42 5.85 8.42l6.8 6.8-7.43 7.43c.59.96 1.3 1.83 2.12 2.6zm-4-9.24c0 1.94.43 3.78 1.21 5.43l6.21-6.21L5.1 9.55A12.62 12.62 0 003.33 16zM23.51 4a4.19 4.19 0 00-4.19 4.19c0 1.76 1.3 3.83 3.92 6.17l.27.24.28-.24c2.48-2.2 3.76-4.17 3.9-5.86l.01-.16v-.15A4.19 4.19 0 0023.52 4zm.08 1.48c1.38 0 2.5 1.15 2.5 2.57a2.54 2.54 0 01-2.5 2.57 2.54 2.54 0 01-2.5-2.57 2.54 2.54 0 012.5-2.57zm0 1.33c-.64 0-1.17.55-1.17 1.24 0 .7.53 1.24 1.17 1.24a1.2 1.2 0 001.16-1.24c0-.7-.53-1.24-1.16-1.24z'/></svg>",
+      "title": "It’s also really easy",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    },
+    {
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path fill='#202659' fill-rule='evenodd' d='M7.34 25.24l12.51-12.51C18.62 11.14 18 9.63 18 8.19a5.52 5.52 0 0111.05 0c0 2.34-1.64 4.86-4.85 7.6l-.68.56-.67-.57c-.81-.69-1.52-1.37-2.13-2.03l-4.77 4.77 5.18 5.18 2.83-2.82a.67.67 0 01.94.94l-3.77 3.77L15 19.46 8.36 26.1A12.67 12.67 0 0028.66 16 .67.67 0 1130 16 14 14 0 1116 2a.67.67 0 110 1.33c-2.31 0-4.49.62-6.35 1.7l6.08 6.1a.67.67 0 01-.94.93L8.5 5.78C7.5 6.53 6.6 7.42 5.85 8.42l6.8 6.8-7.43 7.43c.59.96 1.3 1.83 2.12 2.6zm-4-9.24c0 1.94.43 3.78 1.21 5.43l6.21-6.21L5.1 9.55A12.62 12.62 0 003.33 16zM23.51 4a4.19 4.19 0 00-4.19 4.19c0 1.76 1.3 3.83 3.92 6.17l.27.24.28-.24c2.48-2.2 3.76-4.17 3.9-5.86l.01-.16v-.15A4.19 4.19 0 0023.52 4zm.08 1.48c1.38 0 2.5 1.15 2.5 2.57a2.54 2.54 0 01-2.5 2.57 2.54 2.54 0 01-2.5-2.57 2.54 2.54 0 012.5-2.57zm0 1.33c-.64 0-1.17.55-1.17 1.24 0 .7.53 1.24 1.17 1.24a1.2 1.2 0 001.16-1.24c0-.7-.53-1.24-1.16-1.24z'/></svg>",
+      "title": "It’s also really easy",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    },
+    {
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><path fill='#202659' fill-rule='evenodd' d='M7.34 25.24l12.51-12.51C18.62 11.14 18 9.63 18 8.19a5.52 5.52 0 0111.05 0c0 2.34-1.64 4.86-4.85 7.6l-.68.56-.67-.57c-.81-.69-1.52-1.37-2.13-2.03l-4.77 4.77 5.18 5.18 2.83-2.82a.67.67 0 01.94.94l-3.77 3.77L15 19.46 8.36 26.1A12.67 12.67 0 0028.66 16 .67.67 0 1130 16 14 14 0 1116 2a.67.67 0 110 1.33c-2.31 0-4.49.62-6.35 1.7l6.08 6.1a.67.67 0 01-.94.93L8.5 5.78C7.5 6.53 6.6 7.42 5.85 8.42l6.8 6.8-7.43 7.43c.59.96 1.3 1.83 2.12 2.6zm-4-9.24c0 1.94.43 3.78 1.21 5.43l6.21-6.21L5.1 9.55A12.62 12.62 0 003.33 16zM23.51 4a4.19 4.19 0 00-4.19 4.19c0 1.76 1.3 3.83 3.92 6.17l.27.24.28-.24c2.48-2.2 3.76-4.17 3.9-5.86l.01-.16v-.15A4.19 4.19 0 0023.52 4zm.08 1.48c1.38 0 2.5 1.15 2.5 2.57a2.54 2.54 0 01-2.5 2.57 2.54 2.54 0 01-2.5-2.57 2.54 2.54 0 012.5-2.57zm0 1.33c-.64 0-1.17.55-1.17 1.24 0 .7.53 1.24 1.17 1.24a1.2 1.2 0 001.16-1.24c0-.7-.53-1.24-1.16-1.24z'/></svg>",
+      "title": "It’s also really easy",
+      "description": "We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"
+    }
+  ]
+}

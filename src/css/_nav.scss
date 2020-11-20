@@ -1,11 +1,7 @@
 .nav--footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  // @include gap(4rem);
 
-  // > * + * {
-  //   margin-left: 4rem;
-  // }
   .menu {
     margin-right: 4rem;
 
@@ -79,7 +75,6 @@
     .contact-social {
       display: flex;
       align-items: flex-end;
-      // @include gap(2rem);
 
       > * + * {
         margin-left: 2rem;
@@ -93,7 +88,6 @@
         &-links {
           display: flex;
           align-items: center;
-          // @include gap();
           margin-top: 1rem;
 
           > * + * {

@@ -1,0 +1,22 @@
+<section class="section section--faq">
+        <header class="section-header">
+            <h1 class="section__title">Frequently Asked Questions</h1>
+        </header>
+        <div class="section-content">
+            <div class="faq container">
+                {{#each faq.faq}}
+                    <div class="faq__group {{#if current}}faq__group--open{{/if}}">
+                        <div class="faq__question">
+                            <h4>{{question}}</h4>
+                            <svg class="faq__question-icon">
+                            <use xlink:href='#chevron-down'></use>
+                        </svg>
+                        </div>
+                        <div class="faq__answer">
+                            {{answer}}
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+</section>

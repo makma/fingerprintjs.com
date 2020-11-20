@@ -1,0 +1,13 @@
+{
+  "title": "A really interesting article title about a new feature",
+  "slug": "/post",
+  "date": "November 13, Friday 👻",
+  "tags": ["Account Fraud", "Feature"],
+  "content": [
+    "<p>Recently, we completed a year-long project rearchitecting and decoupling our backend from the centralized model used previously. We did this migration without slowing down the usual cadence of our releases, and with particular care to avoid any negative effects to the user experience.</p>",
+    "<p>We went from an essentially serverless model in a monolithic service, to deploying and maintaining a new microservice that hosted our app backend endpoints. This allowed Android engineers to have much more control and observability over how we get our data. Over the course of this post, we will talk about our approach to this migration, the strategies that we employed, and the tools we built to support this.</p>",
+    "<figure><img src='https://source.unsplash.com/404x240/weekly' alt=''><figcaption>Photo by @johnsmith_</figcaption></figure>",
+    "<p>Recently, we completed a year-long project rearchitecting and decoupling our backend from the centralized model used previously. We did this migration without slowing down the usual cadence of our releases, and with particular care to avoid any negative effects to the user experience.</p>",
+    "<p>We went from an essentially serverless model in a monolithic service, to deploying and maintaining a new microservice that hosted our app backend endpoints. This allowed Android engineers to have much more control and observability over how we get our data. Over the course of this post, we will talk about our approach to this migration, the strategies that we employed, and the tools we built to support this.</p>"
+  ]
+}

@@ -13,7 +13,6 @@
     display: flex;
     align-items: top;
     justify-content: space-between;
-    // @include gap(2rem);
     position: relative;
 
     > * + * {
@@ -39,7 +38,7 @@
     color: v('white');
     padding-bottom: 4rem;
     margin-bottom: 6rem;
-    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     margin-right: 4rem;
 
     @media screen and (max-width: 425px) {

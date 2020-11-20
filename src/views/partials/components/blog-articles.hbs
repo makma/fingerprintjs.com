@@ -1,0 +1,27 @@
+<section class="section section--blog-articles">
+    <div class="container">
+        <header class="section-header">
+            <h2 class="section__title">Blog Articles</h2>
+        </header>
+        <div class="section-content">
+            {{#each articles}}
+                <article class="article article--blog">
+                    {{#if img}}
+                        <div class="article__image-container">
+                            <img class="article__image" src="{{img}}" alt="">
+                        </div>
+                    {{/if}}
+                    <header class="article__header">
+                        <h3 class="article__title"><a href="{{slug}}">{{title}}</a></h3>
+                        <time class="article__date" datetime="{{date}}">{{date}}</time>
+                        <div class="article__tags">
+                            {{#each tags}}
+                                <span class="article__tag">{{this}}</span>
+                            {{/each}}
+                        </div>
+                    </header>
+                </article> 
+            {{/each}}
+        </div>
+    </div>
+</section>

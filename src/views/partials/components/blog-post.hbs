@@ -1,0 +1,18 @@
+<aside class="post__aside">
+    <header class="post__header">
+        <h1 class="post__title">{{post.title}}</h1>
+        <time class="post__date" timedate="{{post.date}}">{{post.date}}</time>
+        {{#if post.tags}}
+        <div class="post__tags">
+        {{#each post.tags}}
+            <span class="post__tag">{{this}}</span>
+        {{/each}}
+        </div>
+        {{/if}}
+    </header>
+</aside>
+<article class="post__article">
+    {{#each post.content}}
+        {{{this}}}
+    {{/each}}
+</article>

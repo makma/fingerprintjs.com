@@ -8,6 +8,7 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 import 'select2';
 import { initFpjsWidget } from './fpjs-widget';
 import 'swiper/swiper-bundle.css';
+import { faqInit } from './faq';
 
 const githubToken = process.env.GITHUB_API_TOKEN;
 
@@ -181,7 +182,8 @@ document.addEventListener('DOMContentLoaded', () => {
     userInputIdentifications.on('input', (e) => {
       let identifications = parseInt(e.target.value, 10);
       // Don't allow the number of identifications to go below the minimum.
-      identifications = (identifications >= minimumIdentifications) ? identifications : minimumIdentifications;
+      identifications =
+        identifications >= minimumIdentifications ? identifications : minimumIdentifications;
 
       $('.preset__select').val('').trigger('change.select2');
 
@@ -194,6 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /*=====  End of PRICING PAGE  ======*/
+
+  faqInit();
 });
 
 function handlePriceChange(e) {

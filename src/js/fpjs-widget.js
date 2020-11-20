@@ -1,4 +1,3 @@
-
 import * as FP from '@fingerprintjs/fingerprintjs-pro';
 import tippy from 'tippy.js';
 import $ from 'jquery';
@@ -11,7 +10,7 @@ const apiToken = process.env.FPJS_API_TOKEN;
 const endpoint = process.env.FPJS_ENDPOINT;
 const region = process.env.FPJS_REGION;
 const config = {
-  ipResolution: "full",
+  ipResolution: 'full',
   extendedResult: true,
   timeout: 30_000,
 };
@@ -27,9 +26,9 @@ export function initFpjsWidget() {
     .then(() => {
       document.getElementById('fpjs_loader').remove();
       document.getElementById('fpjs_container').classList.add('fingerprint-live-demo__loaded');
-    });
-  // TODO: log errors
-  // .catch(e => window.console && console.log('Error: ', e));
+    })
+    // TODO: log errors
+    .catch((e) => window.console && console.log('Error: ', e));
 
   // Signup Form
   $('.form--get-started').submit((event) => {
@@ -42,19 +41,26 @@ export function initFpjsWidget() {
     // const state = Math.floor(Math.random() * Math.floor(2));
 
     fpPromise
-      .then(({ visitorId }) => fetch(`${dashboardEndpoint}/signup`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, fpjsVisitorId: visitorId }),
-      }))
+      .then(({ visitorId }) =>
+        fetch(`${dashboardEndpoint}/signup`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, fpjsVisitorId: visitorId }),
+        }),
+      )
       .then((response) => response.json())
       .then(({ ok, error }) => {
         form.removeClass('form--loading');
 
         if (!ok) {
           form.addClass('form--failed');
-          $('.form-failed-reason').text(error.message || 'Something gone wrong. Please try again later.');
-          console.log( $('.form-failed-reason'), error.message || 'Something gone wrong. Please try again later.');
+          $('.form-failed-reason').text(
+            error.message || 'Something gone wrong. Please try again later.',
+          );
+          console.log(
+            $('.form-failed-reason'),
+            error.message || 'Something gone wrong. Please try again later.',
+          );
 
           setTimeout(() => form.removeClass('form--failed'), 2500);
         } else {
@@ -102,7 +108,9 @@ export function loadFpjsHistory(visitorId) {
           element.classList.add('history-visits__visit--now');
         }
 
-        element.addEventListener('click', () => showVisitInfo(Object.assign(visit, { visitorId }), title));
+        element.addEventListener('click', () =>
+          showVisitInfo(Object.assign(visit, { visitorId }), title),
+        );
         container.appendChild(element);
 
         const { latitude, longitude } = visit.ipLocation;
@@ -115,8 +123,10 @@ export function loadFpjsHistory(visitorId) {
           incognito: visit.incognito ? 'Yes' : 'No',
           bot: getBotDecision(visit.browserDetails.botProbability),
           className: visit.incognito ? 'live-demo--mobile__incognito' : '',
-          location: `https://api.mapbox.com/styles/v1/mapbox/${visit.incognito ? 'dark-v10' : 'outdoors-v11'}/static/${longitude},${latitude},7.00,0/512x512?access_token=pk.eyJ1IjoidmFsZW50aW52YXNpbHlldiIsImEiOiJja2ZvMGttN2UxanJ1MzNtcXp5YzNhbWxuIn0.BjZhTdjY812J3OdfgRiZ4A`,
-          locationClassName: (latitude && longitude) ? '' : '-not-available',
+          location: `https://api.mapbox.com/styles/v1/mapbox/${
+            visit.incognito ? 'dark-v10' : 'outdoors-v11'
+          }/static/${longitude},${latitude},7.00,0/512x512?access_token=pk.eyJ1IjoidmFsZW50aW52YXNpbHlldiIsImEiOiJja2ZvMGttN2UxanJ1MzNtcXp5YzNhbWxuIn0.BjZhTdjY812J3OdfgRiZ4A`,
+          locationClassName: latitude && longitude ? '' : '-not-available',
         });
       }
 
@@ -158,8 +168,7 @@ function highLightRequestId(requestId) {
     }
   }
 
-
-  const element = document.getElementById(`visit_${activeRequestId = requestId}`);
+  const element = document.getElementById(`visit_${(activeRequestId = requestId)}`);
   if (element) {
     element.classList.add('history-visits__visit--selected');
   }
@@ -188,7 +197,9 @@ function showVisitInfo(visitData, title) {
   // Map
   const { latitude, longitude } = ipLocation;
   locationDiv.classList.toggle('-not-available', !latitude || !longitude);
-  imgLocationSpan.src = `https://api.mapbox.com/styles/v1/mapbox/${incognito ? 'dark-v10' : 'outdoors-v11'}/static/${longitude},${latitude},7.00,0/400x400?access_token=pk.eyJ1IjoidmFsZW50aW52YXNpbHlldiIsImEiOiJja2ZvMGttN2UxanJ1MzNtcXp5YzNhbWxuIn0.BjZhTdjY812J3OdfgRiZ4A`;
+  imgLocationSpan.src = `https://api.mapbox.com/styles/v1/mapbox/${
+    incognito ? 'dark-v10' : 'outdoors-v11'
+  }/static/${longitude},${latitude},7.00,0/400x400?access_token=pk.eyJ1IjoidmFsZW50aW52YXNpbHlldiIsImEiOiJja2ZvMGttN2UxanJ1MzNtcXp5YzNhbWxuIn0.BjZhTdjY812J3OdfgRiZ4A`;
 
   // Title
   if (title) {
@@ -241,23 +252,27 @@ function getVisitTitle(timestamp, now = Date.now()) {
     return pluralize(secondsDiff / (60 * 60 * 24), 'day ago', 'days ago');
   }
 
-  return new Date(timestamp).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  return new Date(timestamp).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
 }
 
 function getBrowserName({ browserName, browserVersion, os, osVersion, device }) {
   let browserStr = browserName;
 
   if (browserVersion) {
-    browserStr += " " + browserVersion;
+    browserStr += ' ' + browserVersion;
   }
   if (os) {
-    browserStr += " on " + os;
+    browserStr += ' on ' + os;
   }
   if (osVersion) {
-    browserStr += " (" + osVersion + ")";
+    browserStr += ' (' + osVersion + ')';
   }
-  if (device && device !== "Unknown" && device !== "Other") {
-    browserStr += (", " + device);
+  if (device && device !== 'Unknown' && device !== 'Other') {
+    browserStr += ', ' + device;
   }
 
   return browserStr;
@@ -265,10 +280,10 @@ function getBrowserName({ browserName, browserVersion, os, osVersion, device }) 
 
 function getBotDecision(botProbability) {
   if (botProbability < 0.6) {
-    return "No";
+    return 'No';
   } else if (botProbability < 0.8) {
-    return "Probably";
+    return 'Probably';
   }
 
-  return "Yes";
+  return 'Yes';
 }

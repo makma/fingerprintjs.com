@@ -1,0 +1,63 @@
+.section--image-text {
+  .section-header {
+    text-align: center;
+    margin-bottom: 10rem;
+  }
+}
+
+/*==================================
+=            IMAGE TEXT            =
+==================================*/
+
+.image-text {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-areas: 'image text';
+  gap: 8rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-repeat: no-repeat;
+  background-size: auto 80%;
+  background-position: left center;
+  background-image: url('../img/features-left-bg.png');
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'image' 'text';
+  }
+
+  &__graphic {
+    grid-area: image;
+  }
+
+  &__header {
+    grid-area: text;
+
+    > * + * {
+      margin-top: 3rem;
+    }
+
+    a {
+      display: inline-block;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  &--right {
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-areas: 'text image';
+    background-position: right center;
+    background-image: url('../img/features-right-bg.png');
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-areas: 'image' 'text';
+    }
+  }
+}
+
+/*=====  End of IMAGE TEXT  ======*/

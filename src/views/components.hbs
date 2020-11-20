@@ -1,0 +1,33 @@
+{{#extend "html/template" bodyclass="pricing"}}
+{{#content 'title'}}
+<title>{{site.title}}</title>
+{{/content}}
+{{#content "body"}}
+{{> partials/header }}
+{{> components/hero }}
+{{> components/blog-articles articles=blog.articles }}
+{{> components/blog-articles articles=blog.articlesWithoutImage }}
+{{> components/inline-cta url="/free-trial"}}
+{{> components/features }}
+{{> components/layout cols='2' data=layout.group2}}
+{{> components/layout cols='2' data=layout.group2withIcons description="We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"}}
+{{> components/layout cols='3' data=layout.group3}}
+{{> components/layout cols='3' data=layout.group3withIcons description="We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"}}
+{{> components/layout cols='4' data=layout.group4}}
+{{> components/layout cols='4' data=layout.group4withIcons description="We only deal with the most fast things here at this website. You know you are interested in our products and services but when will you take the next step?"}}
+{{> components/testimonials testimonials=testimonials.testimonials}}
+<section class="section section--image-text">
+    <div class="container">
+        <header class="section-header">
+            <h2 class="section__title">
+                Get Access to our amazing features
+            </h2>
+        </header>
+    </div>
+        {{> components/image-text}}
+        {{> components/image-text imgRight=true}}
+    </section>
+</div>
+{{> partials/footer }}
+{{/content}}
+{{/extend}}

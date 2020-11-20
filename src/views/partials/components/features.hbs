@@ -1,0 +1,20 @@
+<section class="section section--features">
+    <div class="container">
+        <header class="section-header">
+            <h2 class="section__title">Features available</h2>
+        </header>
+        <div class="section-content">
+            {{#each features.articles}}
+                <article class="article article--feature">
+                    <header class="article__header">
+                        <h3 class="article__title"><a href="{{slug}}">{{title}}</a></h3>
+                        <p class="article__description">
+                            {{description}}
+                        </p>
+                        <a href={{url}} class="article__link">Learn more about this ></a>
+                    </header>
+                </article> 
+            {{/each}}
+        </div>
+    </div>
+</section>

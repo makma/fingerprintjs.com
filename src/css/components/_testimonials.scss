@@ -1,0 +1,105 @@
+.section--testimonials {
+  background-color: v('off-white');
+  background-repeat: no-repeat;
+  background-size: auto 70%;
+  background-image: url('../img/testimonials.png');
+  background-position: left 130%;
+
+  @media screen and (max-width: 640px) {
+    background-image: url('../img/layout-bg.png');
+    background-size: 70% auto;
+    background-position: center bottom;
+  }
+
+  .section-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(var(--contentWidth) / 4), 1fr));
+    gap: 3rem;
+
+    @media screen and (max-width: 640px) {
+      grid-template-columns: 1fr;
+      gap: 6rem;
+    }
+  }
+
+  /*====================================
+    =            TESTIMONIALS            =
+    =====================================*/
+
+  .testimonial {
+    &__quote {
+      margin-bottom: 2rem;
+    }
+
+    .quote {
+      padding: 3rem 3rem 3rem 9rem;
+      border-radius: 1rem;
+      background-color: v('white');
+      box-shadow: 0 3rem 5rem 0 adjust-color(c('brand-water'), $alpha: -0.9);
+      position: relative;
+
+      @media screen and (max-width: 640px) {
+        padding: 3rem;
+      }
+
+      &__icon {
+        position: absolute;
+        top: 3rem;
+        left: 3rem;
+
+        @media screen and (max-width: 640px) {
+          position: static;
+        }
+      }
+
+      &__quote {
+        opacity: v('faded');
+        font-style: italic;
+
+        @media screen and (max-width: 640px) {
+          margin-top: 1rem;
+        }
+      }
+
+      &__link {
+        display: block;
+        text-align: right;
+        margin-top: 4rem;
+        font-size: 1.75rem;
+        font-weight: v('semi');
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .author {
+      display: flex;
+      align-items: flex-start;
+
+      &__image-container {
+        flex: 0 0 5rem;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 2.5rem;
+        overflow: hidden;
+        @include ar(1, 1, true);
+        margin-right: 2rem;
+      }
+
+      &__name {
+        font-weight: v('normal');
+      }
+
+      &__title {
+        font-size: 1.75rem;
+        opacity: v('extra-faded');
+        font-weight: v('semi');
+      }
+    }
+  }
+
+  /*=====  End of TESTIMONIALS  ======*/
+}

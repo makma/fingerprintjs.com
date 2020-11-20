@@ -1,0 +1,131 @@
+.main {
+  &.post {
+    display: grid;
+    grid-template-columns: 304px 1fr;
+    grid-template-areas: 'aside content';
+    gap: 7rem;
+    position: relative;
+
+    @media screen and (max-width: 640px) {
+      grid-template-columns: 1fr;
+      grid-template-areas: 'aside' 'content';
+    }
+  }
+}
+
+/*============================
+=            POST            =
+=============================*/
+
+.post {
+  &__aside,
+  &__article {
+    padding: 12rem 0;
+    @media screen and (max-width: 640px) {
+      padding: 6rem 0;
+    }
+  }
+
+  &__aside {
+    grid-area: aside;
+    z-index: 1;
+
+    @media screen and (max-width: 640px) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__article {
+    grid-area: content;
+
+    @media screen and (max-width: 640px) {
+      padding-top: 0;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  &__date {
+    opacity: v('faded');
+  }
+
+  &__tags {
+    margin-top: 2rem;
+  }
+
+  &__tag {
+    display: inline-flex;
+    background-color: v('off-white');
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+    font-weight: v('semi');
+    color: v('brand-water');
+    opacity: v('faded');
+    padding: 0 0.5rem;
+    border-radius: 0.25rem;
+    transform: translateY(0.5rem);
+
+    + .post__tag {
+      margin: 0 0.5rem 0.5rem 0;
+    }
+  }
+
+  &__article {
+    color: transparentize(c('brand-water'), 0.3);
+
+    &:before {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 1440px;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      background-repeat: no-repeat;
+      background-size: 70% auto;
+      background-image: url('../img/hero-bg.png');
+      background-position: right center;
+
+      @media screen and (max-width: 640px) {
+        background-image: url('../img/testimonials.png');
+        background-position: center calc(100% + 100px);
+      }
+    }
+
+    /*=======================================
+    =            POST TYPOGRAPHY            =
+    ========================================*/
+
+    p {
+      font-size: 1.75rem;
+      line-height: 1.43;
+
+      + p {
+        margin-top: 2rem;
+      }
+    }
+
+    figure {
+      padding: 0;
+      margin: 5rem 0;
+    }
+
+    figcaption {
+      font-size: 1.75rem;
+      line-height: 1.43;
+      margin-top: 1rem;
+      opacity: v('faded');
+    }
+
+    /*=====  End of POST TYPOGRAPHY  ======*/
+  }
+}
+
+/*=====  End of POST  ======*/

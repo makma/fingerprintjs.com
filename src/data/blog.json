@@ -1,0 +1,45 @@
+{
+  "articles": [
+    {
+      "img": "https://source.unsplash.com/random/580x340",
+      "title": "You could get started in as little as three days",
+      "slug": "/post",
+      "date": "November 13, Friday 👻",
+      "tags": ["Account Fraud", "Feature"]
+    },
+    {
+      "img": "https://source.unsplash.com/random/580x340",
+      "title": "DevOps: A Job Title or a School of Thought?",
+      "slug": "/post",
+      "date": "November 13, Friday 👻",
+      "tags": ["Dev Ops", "Job Opening"]
+    },
+    {
+      "img": "https://source.unsplash.com/random/580x340",
+      "title": "New Account Fraud",
+      "slug": "/post",
+      "date": "November 13, Friday 👻",
+      "tags": ["Account Fraud", "Feature"]
+    }
+  ],
+  "articlesWithoutImage": [
+    {
+      "title": "You could get started in as little as three days",
+      "slug": "/post",
+      "date": "November 13, Friday 👻",
+      "tags": ["Account Fraud", "Feature"]
+    },
+    {
+      "title": "DevOps: A Job Title or a School of Thought?",
+      "slug": "/post",
+      "date": "November 13, Friday 👻",
+      "tags": ["Dev Ops", "Job Opening"]
+    },
+    {
+      "title": "New Account Fraud",
+      "slug": "/post",
+      "date": "November 13, Friday 👻",
+      "tags": ["Account Fraud", "Feature"]
+    }
+  ]
+}

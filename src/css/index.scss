@@ -1,15 +1,9 @@
-// @use "sass:color" as *;
-// @use "./mixins" as *;
-
 @import './variables';
 @import './mixins';
 
 @import './vendors/normalize.scss';
 @import './vendors/code-theme';
 @import './vendors/tippy';
-
-// @import './vendors/splide/core/splide-core.scss';
-// @import './vendors/gliders';
 
 @import './vendors/sliders';
 @import './vendors/select2';
@@ -20,7 +14,6 @@
 @import './form-elements';
 @import './forms';
 @import './grid';
-// @import './container';
 @import './header';
 @import './buttons';
 @import './links';
@@ -40,10 +33,20 @@
 @import './sections/calculator';
 @import './sections/pricing-models';
 
+@import './components/faq';
+@import './components/sign-up';
+@import './components/hero';
+@import './components/blog-articles';
+@import './components/features';
+@import './components/inline-cta';
+@import './components/layout';
+@import './components/testimonials';
+@import './components/single-post';
+@import './components/image-text';
+
 @import './footer';
 @import './window';
 @import './slider';
 @import './live';
 @import './live-mobile';
 @import './table';
-

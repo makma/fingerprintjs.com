@@ -1,0 +1,40 @@
+{
+  "testimonials": [
+    {
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, inventore?",
+      "author": {
+        "image": "https://source.unsplash.com/80x80/weekly?portrait",
+        "name": "Robert",
+        "title": "Senior Developer at TechCompany"
+      },
+      "link": {
+        "url": "/testimonial-url",
+        "label": "Read Robert's story"
+      }
+    },
+    {
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, inventore?",
+      "author": {
+        "image": "https://source.unsplash.com/80x80/weekly?portrait",
+        "name": "Robert",
+        "title": "Senior Developer at TechCompany"
+      },
+      "link": {
+        "url": "/testimonial-url",
+        "label": "Read Robert's story"
+      }
+    },
+    {
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, inventore?",
+      "author": {
+        "image": "https://source.unsplash.com/80x80/weekly?portrait",
+        "name": "Robert",
+        "title": "Senior Developer at TechCompany"
+      },
+      "link": {
+        "url": "/testimonial-url",
+        "label": "Read Robert's story"
+      }
+    }
+  ]
+}

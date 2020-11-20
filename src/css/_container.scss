@@ -1,0 +1,14 @@
+.container {
+  --contentWidth: 920px;
+  padding: 0 Max(2rem, 50vw - var(--contentWidth) / 2); // Capital Max to trick SASS to not execute it's own function but let native CSS handle it
+}
+
+.container--large {
+  --contentWidth: 1232px;
+}
+
+/* 
+This file is not even used, the style above is hardcoded in template.hbs as <style> tag, 
+sadly while in dev mode works, when building fails if it's loaded. 
+Probably something to do with webpack. 
+*/

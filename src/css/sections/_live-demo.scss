@@ -1,5 +1,4 @@
 .section--live-demo {
-  // min-height: 50vh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -8,7 +7,6 @@
   background-position: 35vw 40%;
   background-image: url('../img/bg-full.png');
 
-
   @media (min-width: 641px) and (max-width: 1024px) {
     background-position: center bottom;
   }
@@ -16,7 +14,6 @@
   @media (max-width: 640px) {
     background-position: center 80vh;
   }
-
 
   @media screen and (max-width: 1024px) {
     display: block;
@@ -30,7 +27,7 @@
     align-items: center;
     @include gap(5rem);
 
-    >*+* {
+    > * + * {
       @media screen and (max-width: 1024px) {
         margin-top: 10rem;
         margin-left: 0rem;
@@ -79,8 +76,6 @@
   }
 
   .section-header {
-    // position: relative;
-    // z-index: 1;
     max-width: 50rem;
 
     @media screen and (max-width: 1024px) {

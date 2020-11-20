@@ -1,0 +1,27 @@
+<section class="section section--layout">
+    <div class="container">
+        <header class="section-header">
+            <h2 class="section__title">Here are the <strong class="primary">main things</strong> you need to know about the whole process</h2>
+            {{#if description}}
+            <p class="section__description">
+                {{description}}
+            </p>
+            {{/if}}
+        </header>
+        <div class="section-content layout layout--of-{{cols}}">
+            {{#each data}}
+                <article class="article article--card">
+                    {{#if icon}}
+                        <div class="article__icon-container">
+                            {{{icon}}}
+                        </div>
+                    {{/if}}
+                    <header class="article__header">
+                        <h3 class="article__title">{{title}}</h3>
+                    </header>
+                    <p class="article__description">{{description}}</p>
+                </article>
+            {{/each}}
+        </div>
+    </div>
+</section>

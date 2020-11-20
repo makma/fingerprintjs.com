@@ -1,0 +1,17 @@
+{
+  "faq": [
+    {
+      "question": "What is FingerprintJS?",
+      "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum porro, dolor enim, autem facere, veritatis inventore rerum sed aspernatur nulla debitis quisquam? Non adipisci, cumque quis velit corrupti quidem quas voluptatibus quaerat hic sit! Consequuntur, magni esse, corporis doloremque amet cupiditate repudiandae illo eos blanditiis adipisci earum qui nihil ducimus temporibus nam dolores quam debitis, nemo cum incidunt tempore fugiat. Ullam totam similique modi sed voluptatum. Aliquam asperiores, similique unde vel reiciendis sit nostrum voluptas doloribus. Veritatis optio reiciendis pariatur?",
+      "current": true
+    },
+    {
+      "question": "How does FingerprintJS work?",
+      "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum porro, dolor enim, autem facere, veritatis inventore rerum sed aspernatur nulla debitis quisquam? Non adipisci, cumque quis velit corrupti quidem quas voluptatibus quaerat hic sit! Consequuntur, magni esse, corporis doloremque amet cupiditate repudiandae illo eos blanditiis adipisci earum qui nihil ducimus temporibus nam dolores quam debitis, nemo cum incidunt tempore fugiat. Ullam totam similique modi sed voluptatum. Aliquam asperiores, similique unde vel reiciendis sit nostrum voluptas doloribus. Veritatis optio reiciendis pariatur?"
+    },
+    {
+      "question": "Is FingerprintJS a fit for my business?",
+      "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum porro, dolor enim, autem facere, veritatis inventore rerum sed aspernatur nulla debitis quisquam? Non adipisci, cumque quis velit corrupti quidem quas voluptatibus quaerat hic sit! Consequuntur, magni esse, corporis doloremque amet cupiditate repudiandae illo eos blanditiis adipisci earum qui nihil ducimus temporibus nam dolores quam debitis, nemo cum incidunt tempore fugiat. Ullam totam similique modi sed voluptatum. Aliquam asperiores, similique unde vel reiciendis sit nostrum voluptas doloribus. Veritatis optio reiciendis pariatur?"
+    }
+  ]
+}

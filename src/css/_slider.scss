@@ -30,7 +30,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // @include gap(2rem);
     position: relative;
     height: 24px;
     margin-bottom: 1rem;
@@ -91,10 +90,12 @@
     // Webkit (Chrome / Safari etc.)
     &::-webkit-slider-runnable-track {
       all: unset;
-      background-image: linear-gradient(to right,
-          v('brand-fire') var(--left),
-          v('transparent') var(--left),
-          v('transparent'));
+      background-image: linear-gradient(
+        to right,
+        v('brand-fire') var(--left),
+        v('transparent') var(--left),
+        v('transparent')
+      );
       width: 100%;
       height: 1.25rem;
       border-radius: 1rem;
@@ -116,10 +117,12 @@
     // Firefox
     &::-moz-range-track {
       all: unset;
-      background-image: linear-gradient(to right,
-          v('brand-fire') var(--left),
-          v('transparent') var(--left),
-          v('transparent'));
+      background-image: linear-gradient(
+        to right,
+        v('brand-fire') var(--left),
+        v('transparent') var(--left),
+        v('transparent')
+      );
       width: 100%;
       height: 1.25rem;
       border-radius: 1rem;

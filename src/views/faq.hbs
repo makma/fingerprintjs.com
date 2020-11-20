@@ -1,0 +1,11 @@
+{{#extend "html/template" bodyclass="frequently-asked-questions"}}
+{{#content 'title'}}
+<title>{{site.title}}</title>
+{{/content}}
+{{#content "body"}}
+{{> partials/header }}
+{{> components/faq }}
+{{> components/signup }}
+{{> partials/footer }}
+{{/content}}
+{{/extend}}

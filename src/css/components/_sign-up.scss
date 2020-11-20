@@ -1,0 +1,75 @@
+/*===============================
+=            SIGN UP            =
+================================*/
+
+.section--sign-up {
+  --padding: 0;
+  background-color: v('off-white');
+  padding: v('padding') 0;
+  position: relative;
+
+  @media screen and (max-width: 768px) {
+    --padding: 5rem;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+
+    > * + * {
+      margin-left: 5rem;
+    }
+  }
+
+  .section-header {
+    flex: 1;
+    min-width: 390px;
+
+    @media screen and (max-width: 768px) {
+      min-width: unset;
+    }
+  }
+
+  .section__title {
+    font-weight: v('normal');
+    font-size: clamp(3rem, calc((32 / 1200) * 100vw), 4rem);
+  }
+
+  .section-content {
+    flex: auto;
+    min-height: 320px;
+    max-height: 320px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center center;
+    background-image: url('../img/signup-bg.png');
+
+    img {
+      width: auto;
+      height: 100%;
+      max-height: 300px;
+    }
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .form--get-started {
+    display: flex;
+    flex-direction: column;
+
+    .form-description {
+      justify-content: flex-start;
+      order: -1;
+      margin: 1rem 0 4rem;
+    }
+  }
+}
+
+/*=====  End of SIGN UP  ======*/

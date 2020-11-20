@@ -1,0 +1,28 @@
+.section--hero {
+  --padding: 16rem;
+  padding: v('padding') 2rem;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-image: url('../img/hero-bg.png');
+  background-position: center center;
+
+  @media screen and (max-width: 768px) {
+    --padding: 5rem;
+  }
+
+  .section__cta {
+    margin-top: 6rem;
+  }
+
+  .section__title {
+    font-size: clamp(3rem, calc((32 / 1200) * 100vw), 4rem);
+  }
+
+  .section__description {
+    max-width: 70ch;
+    margin: 0 auto;
+    font-size: clamp(2rem, calc((24 / 1200) * 100vw), 3rem);
+    margin-top: 2rem;
+  }
+}

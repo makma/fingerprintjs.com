@@ -2,6 +2,15 @@ a {
   text-decoration: none;
   color: inherit;
 
+  &.primary {
+    color: v('brand-fire');
+    @include transition((color));
+
+    &:hover {
+      color: adjust-color(c('brand-fire'), $lightness: -10%);
+    }
+  }
+
   &.link {
     position: relative;
     font-weight: v('semi');
@@ -22,6 +31,10 @@ a {
       &:before {
         opacity: 0;
       }
+    }
+
+    &--primary {
+      color: v('brand-fire');
     }
   }
 }

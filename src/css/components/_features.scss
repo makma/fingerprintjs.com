@@ -1,0 +1,79 @@
+.section--features {
+  background-repeat: no-repeat;
+  background-size: auto 80%;
+  background-position: left center, right center;
+  background-image: url('../img/features-left-bg.png'), url('../img/features-right-bg.png');
+
+  @media screen and (max-width: 1024px) {
+    background-image: url('../img/features-left-bg.png');
+  }
+
+  @media screen and (max-width: 525px) {
+    background-image: url('../img/layout-bg-mobile.png');
+    background-position: center bottom;
+    background-size: 100% auto;
+  }
+
+  .section__title {
+    font-size: 4rem;
+  }
+
+  .section-header {
+    margin-bottom: 6rem;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .section-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(var(--contentWidth) / 4), 1fr));
+    column-gap: 6rem;
+    row-gap: 3rem;
+
+    @media screen and (max-width: 768px) {
+      gap: 6rem;
+    }
+  }
+}
+
+/*====================================
+=            FEATURE ARTICLE            =
+====================================*/
+
+.article--feature {
+  &:hover {
+    .article__link {
+      opacity: 1;
+    }
+  }
+
+  .article__title {
+    margin-bottom: 1.5rem;
+  }
+
+  .article__description {
+    font-size: 1.75rem;
+    opacity: v('faded');
+  }
+
+  .article__link {
+    display: block;
+    font-weight: v('semi');
+    margin-top: 2rem;
+    opacity: 0;
+    color: v('brand-fire');
+    @include transition((color, opacity));
+
+    @media screen and (max-width: 768px) {
+      opacity: 1;
+    }
+
+    &:hover {
+      color: adjust-color(c('brand-fire'), $lightness: -10%);
+    }
+  }
+}
+
+/*=====  End of FEATURE ARTICLE  ======*/

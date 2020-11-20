@@ -5,11 +5,7 @@
 
   @for $i from 1 to 11 {
     &-col-#{$i} {
-      // grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
-      grid-template-columns: repeat(
-        auto-fill,
-        minmax(calc(1200px / (#{$i} + 1)), 1fr)
-      );
+      grid-template-columns: repeat(auto-fill, minmax(calc(1200px / (#{$i} + 1)), 1fr));
     }
   }
 

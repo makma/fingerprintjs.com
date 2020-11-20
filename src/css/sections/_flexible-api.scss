@@ -15,7 +15,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // @include gap(7rem);
 
     > * + * {
       @media screen and (min-width: 1025px) {
@@ -55,12 +54,10 @@
   }
 }
 
-
 .tools-integrations {
   display: flex;
   align-items: flex-start;
   color: #ffffff;
-  // @include gap(2rem);
 
   > * + * {
     margin-top: 2rem;
@@ -73,13 +70,11 @@
 
   @media screen and (max-width: 640px) {
     flex-wrap: wrap;
-    // @include gap(4rem);
   }
 }
 
 .tools-integrations-item {
   display: block;
-  // width: Max(100%, 250px);
 
   &__icon-container {
     background-color: adjust-color(c('brand-water'), $saturation: -10%, $lightness: 25%);
