@@ -10,4 +10,4 @@ static/admin/*.bundle.*
 yarn-error.log
 .env
 .env.*
-src/__generated__/
+src/__generated__
