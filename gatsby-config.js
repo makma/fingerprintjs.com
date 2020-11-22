@@ -82,7 +82,12 @@ module.exports = {
         ref: true,
       },
     },
-    'gatsby-plugin-typegen',
+    {
+      resolve: 'gatsby-plugin-typegen',
+      options: {
+        outputPath: 'src/__generated__/gatsby-types.d.ts',
+      },
+    },
     'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-netlify-cms',
