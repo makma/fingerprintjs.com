@@ -75,10 +75,6 @@ export function LayoutTemplate({ children, siteMetadata }: LayoutTemplateProps) 
   MIXPANEL_CUSTOM_LIB_URL:'file:'===c.location.protocol&&'//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js'.match(/^\\/\\//)?'https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js':'//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js';d=c.getElementsByTagName('script')[0];d.parentNode.insertBefore(b,d)}})(document,window.mixpanel||[]);
   mixpanel.init('1d10e0bdf9a00c159ed6facf2fafef82', {batch_requests: true});mixpanel.track('Homepage');`}
         </script>
-        <link
-          href='https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'
-          rel='stylesheet'
-        />
       </Helmet>
       <Header />
       <div>{children}</div>
