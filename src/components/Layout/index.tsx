@@ -4,7 +4,12 @@ import Footer from '../Footer'
 import Header from '../Header'
 
 import useSiteMetadata from '../../hooks/useSiteMetadata'
-import { GATSBY_FPJS_ENDPOINT, GATSBY_GTM_TOKEN, GATSBY_ROLLBAR_ACCESS_TOKEN } from '../../constants/env'
+import {
+  GATSBY_FPJS_ENDPOINT,
+  GATSBY_GTM_TOKEN,
+  GATSBY_ROLLBAR_ACCESS_TOKEN,
+  GATSBY_OPTIMIZE_TOKEN,
+} from '../../constants/env'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -25,6 +30,7 @@ export function LayoutTemplate({ children, siteMetadata }: LayoutTemplateProps) 
   const fpjsEndpoint = GATSBY_FPJS_ENDPOINT
   const rollbarAccessToken = GATSBY_ROLLBAR_ACCESS_TOKEN
   const gtmToken = GATSBY_GTM_TOKEN
+  const optimizeToken = GATSBY_OPTIMIZE_TOKEN
 
   return (
     <>
@@ -49,6 +55,7 @@ export function LayoutTemplate({ children, siteMetadata }: LayoutTemplateProps) 
         <meta property='twitter:title' content={title} />
         <meta property='twitter:description' content={description} />
         <meta property='twitter:image' content={image} />
+        <script src={`https://www.googleoptimize.com/optimize.js?id=${optimizeToken}`} />
         <script>
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','${gtmToken}');`}
         </script>
