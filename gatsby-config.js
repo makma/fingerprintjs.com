@@ -83,6 +83,18 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        test: /\.js$|\.ts$|\.tsx$/,
+        exclude: /(node_modules|.cache|public)/,
+        stages: ['develop'],
+        options: {
+          emitWarning: true,
+          failOnError: false,
+        },
+      },
+    },
+    {
       resolve: 'gatsby-plugin-typegen',
       options: {
         outputPath: 'src/__generated__/gatsby-types.d.ts',
