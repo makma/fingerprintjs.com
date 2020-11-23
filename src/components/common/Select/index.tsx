@@ -37,6 +37,7 @@ export default function CustomSelect<P>(props: Props<P>) {
     }),
     singleValue: (provided) => ({
       ...provided,
+      fontSize: '20px', //TODO: [DI]: Make customizable by props
       fontWeight: 'bold',
     }),
   }
