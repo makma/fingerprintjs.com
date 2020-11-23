@@ -4,7 +4,7 @@ import Footer from '../Footer'
 import Header from '../Header'
 
 import useSiteMetadata from '../../hooks/useSiteMetadata'
-import { GATSBY_FPJS_ENDPOINT, GATSBY_ROLLBAR_ACCESS_TOKEN } from '../../constants/env'
+import { GATSBY_FPJS_ENDPOINT, GATSBY_GTM_TOKEN, GATSBY_ROLLBAR_ACCESS_TOKEN } from '../../constants/env'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -24,6 +24,7 @@ export function LayoutTemplate({ children, siteMetadata }: LayoutTemplateProps) 
   const { title, description, url, image } = siteMetadata
   const fpjsEndpoint = GATSBY_FPJS_ENDPOINT
   const rollbarAccessToken = GATSBY_ROLLBAR_ACCESS_TOKEN
+  const gtmToken = GATSBY_GTM_TOKEN
 
   return (
     <>
@@ -49,7 +50,7 @@ export function LayoutTemplate({ children, siteMetadata }: LayoutTemplateProps) 
         <meta property='twitter:description' content={description} />
         <meta property='twitter:image' content={image} />
         <script>
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-NCCSJM5');`}
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','${gtmToken}');`}
         </script>
         <link
           href='https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'
