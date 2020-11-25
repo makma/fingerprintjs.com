@@ -16,9 +16,9 @@ export default function LiveDemoSection() {
             <em> 99.5% accurate </em>
             browser fingerprinting as a service.
           </p>
-          <GetStartedForm className={styles.form} />
+          <GetStartedForm />
         </header>
-        <div className={styles.content}>
+        <div className={styles.content} style={{ position: 'relative' }}>
           <FpjsWidget />
         </div>
       </Container>
