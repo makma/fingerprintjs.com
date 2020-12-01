@@ -23,4 +23,9 @@ block2:
   ctaText: Learn more
   ctaUrl: https://fingerprintjs.com/pricing
   isCtaButton: false
+inlineCta:
+  title: Call to action
+  subtitle: It's calling you to action
+  buttonText: Action!
+  buttonHref: /
 ---
