@@ -32,7 +32,7 @@ cardSection:
     - title: Prevent Gift Card & Coupon Abuse
       content: Detect visitors using stolen or fake identities to ensure that your
         coupons and promotions are used legitimately by real customers.
-      icon: /img/uploads/anonymous_user_identification.svg
+      icon: /img/uploads/anonymous_user_identification.png
     - title: Avoid Merchant Penalties
       content: Stay within chargeback limits and avoid merchant penalties imposed by
         payment service providers.
