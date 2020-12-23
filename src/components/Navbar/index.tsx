@@ -9,17 +9,8 @@ export default function Navbar() {
     <div className={nav.top}>
       <Container size='large'>
         <nav className={nav.secondary}>
-          <Link className={nav.link} to={PATH.demoUrl}>
-            Technical Demo
-          </Link>
           <Link className={nav.link} to={PATH.blog}>
             Blog
-          </Link>
-          <a className={nav.link} href={URL.githubRepoUrl} target='_blank' rel='noreferrer'>
-            Open Source
-          </a>
-          <Link className={nav.link} to={PATH.pricingUrl}>
-            Pricing
           </Link>
           <a className={nav.link} href={DOC_URL.documentationUrl}>
             Docs
