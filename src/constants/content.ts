@@ -5,6 +5,7 @@ export const PATH = {
   pricingUrl: '/pricing/',
   ecommerce: 'ecommerce/',
   whyFpjs: '/why-fpjs/',
+  blog: '/blog/',
 } as const
 
 export const URL = {
