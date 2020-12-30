@@ -67,8 +67,8 @@ For a fingerprint to be useful as a method of identifying visitors, it needs to 
 
 For the 5 out of 1,000 that are not correctly identified, they can be described as either false positives or false negatives:
 
-False positive: multiple unique visitors are given the same fingerprint
-False negative: one visitor over multiple visits are given different fingerprints
+* False positive: multiple unique visitors are given the same fingerprint
+* False negative: one visitor over multiple visits are given different fingerprints
 
 To reduce false positives and false negatives, your fingerprint should combine not only many signals, but the right combination of signals that balance both uniqueness and stability. If a signal is highly unique, it will reduce your chances of a false negative, whereas stable signals will reduce your chances of a false positive.
 
