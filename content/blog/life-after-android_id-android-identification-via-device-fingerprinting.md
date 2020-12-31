@@ -9,7 +9,10 @@ metadata:
   image: /img/uploads/4.png
 featured: false
 publishDate: 12.08.2020 4:18 PM
-title: 'Life after ANDROID_ID: Android Identification via Device Fingerprinting'
+title: "Life after ANDROID_ID: Android Identification via Device Fingerprinting"
+tags:
+  - java
+  - fingerprinting
 ---
 
 ![Device Fingerprinting For Android](/img/uploads/4.png 'Fingerprint Android')
