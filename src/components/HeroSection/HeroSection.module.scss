@@ -1,0 +1,48 @@
+.liveDemo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-left: max(3rem, 50vw - 460px);
+  padding-right: max(3rem, 50vw - 460px);
+
+  text-align: center;
+
+  background-repeat: no-repeat;
+  background-size: 1400px auto;
+
+  overflow: hidden;
+
+  // We need !important to be able to change the background image opacity
+  // https://stackoverflow.com/a/62255366
+  &:before,
+  &:after {
+    opacity: 0.15 !important;
+  }
+
+  @include media('<=desktop') {
+    padding-bottom: 3rem;
+  }
+}
+
+.header {
+  @include media('<=phoneLandscape') {
+    padding: 0 3rem;
+  }
+}
+
+.title {
+  @include media('<=phone') {
+    font-size: 4rem;
+  }
+}
+
+.description {
+  font-size: 3rem;
+  margin: 8rem 0;
+}
+
+.form {
+  width: 70%;
+}

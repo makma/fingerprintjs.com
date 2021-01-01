@@ -13,9 +13,15 @@ import styles from './GetStartedForm.module.scss'
 
 interface GetStartedFormProps {
   className?: string | string[]
+  bullets?: string[]
+  wide?: boolean
 }
 
-export default function GetStartedForm({ className }: GetStartedFormProps) {
+export default function GetStartedForm({
+  className,
+  bullets = ['10 Day Trial', 'Cancel Any Time', 'API & Webhooks'],
+  wide,
+}: GetStartedFormProps) {
   const { visitorData } = useVisitorData()
   const visitorId = visitorData?.visitorId
   const dashboardEndpoint = FPJS_DASHBOARD_ENDPOINT
@@ -52,29 +58,34 @@ export default function GetStartedForm({ className }: GetStartedFormProps) {
         styles.getStarted,
         { [styles.success]: formState === FormState.Success },
         { [styles.failed]: formState === FormState.Failed },
-        { [styles.loading]: formState === FormState.Loading }
+        { [styles.loading]: formState === FormState.Loading },
+        { [styles.wide]: wide }
       )}
       onSubmit={handleSubmit}
     >
       {(formState === FormState.Default || formState === FormState.Loading) && (
         <div className={classNames(styles.field, styles.withButton)}>
-          <label htmlFor='email' className={styles.label} aria-label='Enter your email'>
+          <label
+            htmlFor='email'
+            className={classNames(styles.label, { [styles.wideLabel]: wide })}
+            aria-label='Enter your email'
+          >
             <input
               type='email'
               name='email'
               required
-              className={classNames(styles.field, 'gtm-email-input')}
-              placeholder='Enter your email'
+              className={classNames(styles.field, { [styles.wideField]: wide }, 'gtm-email-input')}
+              placeholder='E-Mail'
               value={email}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
             />
           </label>
           <Button
-            className={classNames(styles.submit, 'gtm-get-started-btn')}
+            className={classNames(styles.submit, { [styles.wideSubmit]: wide }, 'gtm-get-started-btn')}
             type='submit'
             mobileIcon={<ChevronRightSvg className='gtm-get-started-btn' />}
           >
-            Get Started
+            {wide ? 'Start 10 Day Free Trial' : 'Get Started'}
           </Button>
         </div>
       )}
@@ -91,18 +102,12 @@ export default function GetStartedForm({ className }: GetStartedFormProps) {
         </div>
       )}
       <ul className={styles.description}>
-        <li>
-          <CheckSvg />
-          10 Day Trial
-        </li>
-        <li>
-          <CheckSvg />
-          Cancel Any Time
-        </li>
-        <li>
-          <CheckSvg />
-          API &amp; Webhooks
-        </li>
+        {bullets.map((bullet) => (
+          <li key={bullet}>
+            <CheckSvg />
+            {bullet}
+          </li>
+        ))}
       </ul>
     </form>
   )

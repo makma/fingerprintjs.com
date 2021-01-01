@@ -15,11 +15,6 @@ export default function ClientsSection() {
   return (
     <Section className={styles.clients}>
       <Container>
-        <header className={styles.header}>
-          <h2 className={styles.title}>
-            <strong>FingerprintJS</strong> is trusted by public companies and innovative startups.
-          </h2>
-        </header>
         <Swiper
           className={styles.content}
           id='swiper-clients'
