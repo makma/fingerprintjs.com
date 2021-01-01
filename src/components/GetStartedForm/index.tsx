@@ -9,17 +9,35 @@ import { FPJS_DASHBOARD_ENDPOINT } from '../../constants/env'
 import { useVisitorData } from '../../context/FpjsContext'
 import { sendEvent } from '../../helpers/gtm'
 import { Forms, useForm } from '../../hooks/useForm'
+import Tippy from '@tippyjs/react'
+import { ReactComponent as InfoSvg } from '../../img/info.svg'
+
 import styles from './GetStartedForm.module.scss'
 
 interface GetStartedFormProps {
   className?: string | string[]
-  bullets?: string[]
+  bullets?: { text: string; info?: string | React.ReactNode }[]
   wide?: boolean
 }
 
 export default function GetStartedForm({
   className,
-  bullets = ['10 Day Trial', 'Cancel Any Time', 'API & Webhooks'],
+  bullets = [
+    { text: '10 Day Trial' },
+    { text: 'API & Webhooks' },
+    {
+      text: 'Cancel Any Time',
+      info: (
+        <span>
+          FingerprintJS is GDPR/CCPA compliant. Our technology is intended to be used for fraud detection only - for
+          this use case, no user consent is required.
+          <br />
+          Any use outside of fraud detection would need to comply with GDPR/CCPA user consent rules. We never
+          automatically track traffic, and never do cross-domain tracking.
+        </span>
+      ),
+    },
+  ],
   wide,
 }: GetStartedFormProps) {
   const { visitorData } = useVisitorData()
@@ -103,9 +121,14 @@ export default function GetStartedForm({
       )}
       <ul className={styles.description}>
         {bullets.map((bullet) => (
-          <li key={bullet}>
-            <CheckSvg />
-            {bullet}
+          <li key={bullet.text}>
+            <CheckSvg className={styles.check} />
+            {bullet.text}
+            {bullet.info && (
+              <Tippy content={bullet.info}>
+                <InfoSvg tabIndex={0} className={styles.infoIcon} />
+              </Tippy>
+            )}
           </li>
         ))}
       </ul>
