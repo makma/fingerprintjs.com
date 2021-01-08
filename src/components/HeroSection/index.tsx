@@ -17,26 +17,7 @@ export default function HeroSection() {
       <p className={styles.description}>
         Identify your web visitors using the most accurate, developer-friendly identification API.
       </p>
-      <GetStartedForm
-        className={styles.form}
-        bullets={[
-          { text: 'Over 6,000 Websites' },
-          { text: '300M Monthly Requests' },
-          {
-            text: 'GDPR and CCPA Compliant',
-            info: (
-              <span>
-                FingerprintJS is GDPR/CCPA compliant. Our technology is intended to be used for fraud detection only -
-                for this use case, no user consent is required.
-                <br />
-                Any use outside of fraud detection would need to comply with GDPR/CCPA user consent rules. We never
-                automatically track traffic, and never do cross-domain tracking.
-              </span>
-            ),
-          },
-        ]}
-        wide
-      />
+      <GetStartedForm className={styles.form} variant='wide' />
     </Section>
   )
 }

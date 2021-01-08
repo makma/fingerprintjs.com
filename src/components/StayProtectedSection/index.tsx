@@ -14,7 +14,7 @@ export default function StayProtectedSection() {
             Pro
           </h2>
           <p className={styles.subtitle}>Starting today is better than starting tomorrow</p>
-          <GetStartedForm className={styles.form} />
+          <GetStartedForm className={styles.form} variant='wide' />
         </header>
       </Container>
     </Section>

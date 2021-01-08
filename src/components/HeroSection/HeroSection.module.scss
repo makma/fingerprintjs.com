@@ -45,6 +45,9 @@
 
 .form {
   width: 70%;
+  @include media('<=phoneLandscape') {
+    width: 100%;
+  }
 }
 
 .desktopOnly {
