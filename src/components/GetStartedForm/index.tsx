@@ -23,10 +23,10 @@ interface GetStartedFormProps {
 export default function GetStartedForm({
   className,
   bullets = [
-    { text: '10 Day Trial' },
-    { text: 'API & Webhooks' },
+    { text: 'Over 6,000 Websites' },
+    { text: '300M Monthly Requests' },
     {
-      text: 'Cancel Any Time',
+      text: 'GDPR and CCPA Compliant',
       info: (
         <span>
           FingerprintJS is GDPR/CCPA compliant. Our technology is intended to be used for fraud detection only - for
@@ -103,7 +103,7 @@ export default function GetStartedForm({
             type='submit'
             mobileIcon={<ChevronRightSvg className='gtm-get-started-btn' />}
           >
-            {wide ? 'Start 10 Day Free Trial' : 'Get Started'}
+            {wide ? 'Start 10 Day Free Trial' : 'Start Free Trial'}
           </Button>
         </div>
       )}
