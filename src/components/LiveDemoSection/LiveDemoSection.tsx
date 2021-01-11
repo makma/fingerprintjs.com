@@ -10,7 +10,7 @@ export default function LiveDemoSection() {
 
   return (
     <Section className={styles.root} backgroundImageFluid={mainBackground}>
-      <h1>Technical Demo</h1>
+      <h1 className={styles.header}>Technical Demo</h1>
       <FpjsWidget />
     </Section>
   )
