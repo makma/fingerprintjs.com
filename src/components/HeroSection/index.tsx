@@ -5,6 +5,7 @@ import { useMainBackgroundImage } from '../../hooks/useBackgroundImage'
 
 import styles from './HeroSection.module.scss'
 
+// Main A/B test changes.
 export default function HeroSection() {
   const { mainBackground } = useMainBackgroundImage()
 
