@@ -13,8 +13,8 @@ hero:
   title: Empowering developers to solve fraud at the source
   description: As opposed to top-down, enterprise-focused fraud prevention
     platforms, FingerprintJS prevents digital fraud by uniquely and accurately
-    identifying users, and empowering technical teams to use that data to in a
-    way that works for their applications.
+    identifying users, and empowering technical teams to use that data in a way
+    that works for their applications.
   ctaText: Start Free Trial
   ctaHref: https://dashboard.fingerprintjs.com
 cardSection:
