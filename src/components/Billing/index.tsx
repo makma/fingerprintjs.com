@@ -14,7 +14,7 @@ import { PATH } from '../../constants/content'
 
 const sliderConfig = {
   min: 0,
-  max: 6,
+  max: 5,
   def: 0,
 }
 
@@ -22,9 +22,11 @@ export default function Billing() {
   const sliderTable = pricingTable.map(({ label, value }) => {
     return { label, value } as SliderValue
   })
+  sliderTable.push({ label: '10M+', value: Infinity })
+
   const defaultValue = 0
   const [sliderValue, setSliderValue] = useState(defaultValue)
-  const [monthlyPayment, setMonthlyPayment] = useState(pricingTable[sliderValue].label)
+  const [monthlyPaymentLabel, setMonthlyPaymentLabel] = useState(pricingTable[defaultValue].label)
   const [paymentType, setPaymentType] = useState<PaymentType>(PaymentType.Monthly)
   const [isContactSalesModalOpen, setIsContactSalesModalOpen] = useState(false)
 
@@ -39,8 +41,13 @@ export default function Billing() {
   }
 
   const recalculatePricing = (value: number, paymentType: PaymentType) => {
+    if (value === Infinity) {
+      setMonthlyPaymentLabel('Custom pricing')
+      return
+    }
+
     const newPrice = handlePriceChange(value, paymentType)
-    setMonthlyPayment(newPrice)
+    setMonthlyPaymentLabel(newPrice)
   }
 
   useEffect(() => {
@@ -81,30 +88,54 @@ export default function Billing() {
             </div>
             <div className={styles.payment}>
               <div>
-                <span className={styles.price}>{monthlyPayment} </span>
-                per month
+                <span className={styles.price}>{monthlyPaymentLabel} </span>
+                {sliderValue !== sliderConfig.max && 'per month'}
               </div>
-              <div className={styles.billed}>billed {paymentType === PaymentType.Annually ? 'yearly' : 'monthly'}</div>
-              <div className={styles.switcher} data-type='annually'>
-                <button
-                  className={classNames(styles.button, { [styles.active]: paymentType === PaymentType.Annually })}
-                  onClick={handlePaymentTypeChange(PaymentType.Annually)}
-                  data-type='annually'
-                >
-                  Pay Annually
-                </button>
-                <button
-                  className={classNames(styles.button, { [styles.active]: paymentType === PaymentType.Monthly })}
-                  onClick={handlePaymentTypeChange(PaymentType.Monthly)}
-                  data-type='monthly'
-                >
-                  Pay Monthly
-                </button>
-              </div>
-              <p className={styles.description}>
-                With annual pricing you lock in an annual price with a discount by prepaying. This plan is recommended
-                for users with predictable or high traffic volumes.
-              </p>
+              {sliderValue !== sliderConfig.max ? (
+                <>
+                  <div className={styles.billed}>
+                    billed {paymentType === PaymentType.Annually ? 'yearly' : 'monthly'}
+                  </div>
+                  <div className={styles.switcher} data-type='annually'>
+                    <button
+                      className={classNames(styles.button, { [styles.active]: paymentType === PaymentType.Annually })}
+                      onClick={handlePaymentTypeChange(PaymentType.Annually)}
+                      data-type='annually'
+                    >
+                      Pay Annually
+                    </button>
+                    <button
+                      className={classNames(styles.button, { [styles.active]: paymentType === PaymentType.Monthly })}
+                      onClick={handlePaymentTypeChange(PaymentType.Monthly)}
+                      data-type='monthly'
+                    >
+                      Pay Monthly
+                    </button>
+                  </div>
+                  <p className={styles.description}>
+                    With annual pricing you lock in an annual price with a discount by prepaying. This plan is
+                    recommended for users with predictable or high traffic volumes.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <div className={styles.billed}>talk to our sales team</div>
+                  <div className={styles.switcher}>
+                    <Button
+                      onClick={() => setIsContactSalesModalOpen(true)}
+                      variant='outline'
+                      className={styles.contactSales}
+                    >
+                      Contact Sales
+                    </Button>
+                  </div>
+
+                  <p className={styles.description}>
+                    For high traffic websites requiring more than 10M API calls per month, contact our sales team for
+                    custom pricing.
+                  </p>
+                </>
+              )}
             </div>
           </div>
           <div className={styles.link}>

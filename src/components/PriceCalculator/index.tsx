@@ -14,10 +14,15 @@ export default function PriceCalculator() {
     label: numberFormatter.format(entry.value),
     value: entry.value,
   }))
+  selectOptions.push({ label: `${numberFormatter.format(10000000)}+`, value: Infinity })
 
   const [selectedPreset, setSelectedPreset] = useState(selectOptions[0])
   const [customCount, setCustomCount] = useState<number | undefined>(undefined)
   const [isContactSalesModalOpen, setIsContactSalesModalOpen] = useState(false)
+
+  function isCustomPricing() {
+    return (!customCount && selectedPreset.value === Infinity) || (customCount && customCount >= 10000000)
+  }
 
   function onPresetSelected(newPreset: ValuePreset): void {
     setSelectedPreset(newPreset)
@@ -32,6 +37,12 @@ export default function PriceCalculator() {
     } else {
       setCustomCount(undefined)
     }
+  }
+
+  function getPrice(paymentType: PaymentType) {
+    return customCount === undefined
+      ? calculatePrice(selectedPreset.value, paymentType)
+      : calculatePrice(customCount >= minimumIdentifications ? customCount : minimumIdentifications, paymentType)
   }
 
   return (
@@ -61,33 +72,22 @@ export default function PriceCalculator() {
         </Column>
         <Column title={'On-Demand'}>
           <Price
-            value={
-              customCount === undefined
-                ? calculatePrice(selectedPreset.value, PaymentType.Monthly)
-                : calculatePrice(
-                    customCount >= minimumIdentifications ? customCount : minimumIdentifications,
-                    PaymentType.Monthly
-                  )
-            }
+            value={isCustomPricing() ? 'Custom' : getPrice(PaymentType.Monthly)}
             description='Pay as you go, cancel any time'
           />
         </Column>
         <Column title='Reserved'>
           <Price
-            value={
-              customCount === undefined
-                ? calculatePrice(selectedPreset.value, PaymentType.Annually)
-                : calculatePrice(
-                    customCount >= minimumIdentifications ? customCount : minimumIdentifications,
-                    PaymentType.Annually
-                  )
-            }
+            value={isCustomPricing() ? 'Custom' : getPrice(PaymentType.Annually)}
             description='Requires a 12 month prepay'
           />
         </Column>
         <Column title='Enterprise License'>
-          <div className={styles.description}>Enterprise support license with SLA</div>
-
+          {isCustomPricing() ? (
+            <div className={styles.description}>Custom pricing for high traffic websites</div>
+          ) : (
+            <div className={styles.description}>Enterprise support license with SLA</div>
+          )}
           <Button variant='outline' small onClick={() => setIsContactSalesModalOpen(true)}>
             Contact Sales
           </Button>
