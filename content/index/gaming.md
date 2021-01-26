@@ -44,9 +44,9 @@ blocks:
     content: Cheating in online gaming can ruin the fun for your ethical players,
       and can be notoriously difficult to stop.   Prevent fraud at its source by
       creating a unique ID for your visitors, associating their activity across
-      browsers, incognito mode, and other cloaking methods. By understanding
-      your visitors' browsing behavior, you can identify common patterns of
-      fraud and require additional authentication as needed.
+      visits, incognito mode, and other cloaking methods. By understanding your
+      visitors' browsing behavior, you can identify common patterns of fraud and
+      require additional authentication as needed.
     image: /img/uploads/fpjs-flowchart-smaller.png
     isImageAfterText: true
     ctaText: Read our documentation
