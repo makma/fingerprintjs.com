@@ -14,8 +14,24 @@
   &:after {
     opacity: 0.2 !important;
   }
+
+  min-width: 600px;
+  z-index: 0;
+
+  @include media('<=desktop') {
+    max-width: 100%;
+    min-width: unset;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  @include media('<=phoneLandscape') {
+    display: block;
+  }
 }
 
 .header {
   margin-bottom: 3rem;
+  text-align: center;
 }
