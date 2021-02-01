@@ -12,7 +12,7 @@ export interface SubHeaderElement {
   size?: SubHeaderTextSize
   weight?: SubHeaderWeight
 }
-export interface SubHeader {
+export interface SubHeaderProps {
   title: SubHeaderElement
   subtitle?: SubHeaderElement
   label?: SubHeaderElement
@@ -20,7 +20,7 @@ export interface SubHeader {
   className?: string
 }
 
-export default function SubHeaderComponent({ title, subtitle, label, align = 'center', className }: SubHeader) {
+export default function SubHeader({ title, subtitle, label, align = 'center', className }: SubHeader) {
   const subtitleComponent =
     subtitle &&
     (typeof subtitle.text === 'string' ? (

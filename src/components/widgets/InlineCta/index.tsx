@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '../../common/Button'
 import Container from '../../common/Container'
 import Section from '../../common/Section'
-import SubHeaderComponent from '../SubHeader'
+import SubHeader from '../SubHeader'
 import classNames from 'classnames'
 
 import styles from './InlineCta.module.scss'
@@ -13,7 +13,7 @@ export interface Action {
   action: string | (() => void)
   type?: 'link' | 'button'
 }
-export interface InlineCta {
+export interface InlineCtaProps {
   title: string
   subtitle: React.ReactNode
   primaryAction: Action
@@ -22,18 +22,18 @@ export interface InlineCta {
   className?: string
 }
 
-export default function InlineCtaComponent({
+export default function InlineCta({
   title,
   subtitle,
   primaryAction,
   secondaryAction,
   size = 'large',
   className,
-}: InlineCta) {
+}: InlineCtaProps) {
   return (
     <Section className={classNames(styles.root, className)}>
       <Container size={size} className={styles.container}>
-        <SubHeaderComponent
+        <SubHeader
           title={{ text: title, size: 'large', weight: 'primary' }}
           subtitle={{ text: subtitle, size: 'normal' }}
           align='left'

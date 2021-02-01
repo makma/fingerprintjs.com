@@ -2,12 +2,12 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import { DangerouslyRenderHtmlContent, MarkdownContent } from '../components/Content/Content'
 import { PreviewTemplateComponentProps } from 'netlify-cms-core'
-import InlineCtaComponent, { InlineCta } from '../components/widgets/InlineCta'
+import InlineCta, { InlineCtaProps } from '../components/widgets/InlineCta'
 import Hero, { HeroProps } from '../components/widgets/Hero'
 import { LayoutTemplate } from '../components/Layout'
 import { ArrayElement, GeneratedPageContext } from '../helpers/types'
 import AlternatingImagesText, { BlockWithImage } from '../components/widgets/AlternatingImagesText'
-import CardSectionComponent, { CardSection } from '../components/widgets/CardSection'
+import CardSection, { CardSectionProps } from '../components/widgets/CardSection'
 import { Card } from '../components/widgets/CardGrid'
 import { BASE_URL } from '../constants/content'
 import Section from '../components/common/Section'
@@ -127,8 +127,8 @@ export const pageQuery = graphql`
 export interface StaticPageContentTemplateProps {
   metadata: GatsbyTypes.SiteSiteMetadata
   invertContent: boolean
-  inlineCta: InlineCta
-  cardSection: CardSection
+  inlineCta: InlineCtaProps
+  cardSection: CardSectionProps
   blocks: BlockWithImage[]
   hero: HeroProps
   breadcrumbs?: Array<Breadcrumb>
@@ -150,15 +150,15 @@ export function StaticPageContentTemplate({
         {invertContent ? (
           <>
             {blocks.length > 0 && <AlternatingImagesText title={''} blocks={blocks} className={styles.widget} />}
-            <CardSectionComponent {...cardSection} className={styles.widget} />
+            <CardSection {...cardSection} className={styles.widget} />
           </>
         ) : (
           <>
-            <CardSectionComponent {...cardSection} className={styles.widget} />
+            <CardSection {...cardSection} className={styles.widget} />
             {blocks.length > 0 && <AlternatingImagesText title={''} blocks={blocks} className={styles.widget} />}
           </>
         )}
-        <InlineCtaComponent {...inlineCta} />
+        <InlineCta {...inlineCta} />
       </Section>
     </LayoutTemplate>
   )
@@ -221,7 +221,7 @@ function mapToHero(queryHero: QueryHero): HeroProps {
 type QueryCardSection = NonNullable<
   NonNullable<GatsbyTypes.StaticPageContentQuery['markdownRemark']>['frontmatter']
 >['cardSection']
-function mapToCardSection(queryCardSection: QueryCardSection, preview = false): CardSection {
+function mapToCardSection(queryCardSection: QueryCardSection, preview = false): CardSectionProps {
   return {
     title: queryCardSection?.title ?? 'Vivamus at ex a mi bibendum sollicitudin sit amet laoreet mi.',
     subtitle: queryCardSection?.subtitle ?? '',
@@ -244,7 +244,7 @@ function mapToCardSection(queryCardSection: QueryCardSection, preview = false): 
             ),
           } as Card)
       ) ?? [],
-  } as CardSection
+  } as CardSectionProps
 }
 
 type QueryBlock = ArrayElement<
@@ -281,7 +281,7 @@ function mapToBlocks(queryBlocks: QueryBlock[], preview = false): BlockWithImage
 type QueryInlineCta = NonNullable<
   NonNullable<GatsbyTypes.StaticPageContentQuery['markdownRemark']>['frontmatter']
 >['inlineCta']
-function mapToInlineCta(queryInlineCta: QueryInlineCta, preview = false): InlineCta {
+function mapToInlineCta(queryInlineCta: QueryInlineCta, preview = false): InlineCtaProps {
   return {
     title: queryInlineCta?.title ?? 'Quisque arcu urna, tempor aliquet mi eget.',
     subtitle: preview ? (
@@ -296,5 +296,5 @@ function mapToInlineCta(queryInlineCta: QueryInlineCta, preview = false): Inline
       <DangerouslyRenderHtmlContent content={queryInlineCta?.markdown__Subtitle ?? ''} className={ctaStyles.content} />
     ),
     primaryAction: { name: queryInlineCta?.buttonText ?? 'Lorem ipsum', action: queryInlineCta?.buttonHref ?? '/' },
-  } as InlineCta
+  } as InlineCtaProps
 }
