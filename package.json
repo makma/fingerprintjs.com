@@ -22,8 +22,16 @@
     "last 2 versions",
     "IE 11"
   ],
+  "bundlewatch": {
+    "files": [
+      {
+        "path": "public/**/*.js",
+        "maxSize": "1.5MB"
+      }
+    ]
+  },
   "dependencies": {
-    "@fingerprintjs/fingerprintjs-pro": "^3.3.0-dev.1",
+    "@fingerprintjs/fingerprintjs-pro": "^3.3.0-dev.3",
     "@loadable/component": "^5.14.1",
     "@tippyjs/react": "^4.2.0",
     "classnames": "^2.2.6",
@@ -81,6 +89,7 @@
     "babel-plugin-prismjs": "^2.0.1",
     "babel-preset-gatsby": "^0.7.0",
     "babel-preset-react-app": "^10.0.0",
+    "bundlewatch": "^0.3.2",
     "css-loader": "^5.0.1",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
@@ -102,9 +111,12 @@
     "build": "gatsby build",
     "develop": "yarn clean && gatsby develop",
     "lint": "tsc --noEmit && eslint . --ext .ts,.tsx,.js",
+    "lint:ci": "tsc --noEmit && eslint . --ext .ts,.tsx,.js --max-warnings=0",
     "lint:fix": "eslint . --ext .ts,.tsx,.js --quiet --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006 -s ./static",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prettier": "prettier -c .",
+    "prettier:fix": "prettier --write --loglevel=error ."
   }
 }

@@ -1,25 +1,21 @@
-import React, { useState } from 'react'
-
+import React from 'react'
 import classNames from 'classnames'
 import { ReactComponent as AccountFraudSvg } from './account_fraud.svg'
 import { ReactComponent as PaymentProcessingSvg } from './payment_processing.svg'
 import { ReactComponent as ECommerceSvg } from './e_commerce.svg'
 import { ReactComponent as CryptoCurrencySvg } from './cryptocurrency.svg'
 import { ReactComponent as GamingSvg } from './gaming.svg'
-import { ReactComponent as CustomSolutionSvg } from './custom_solution.svg'
+import { ReactComponent as PaywallSvg } from './paywall.svg'
 import Container from '../common/Container'
 import Section from '../common/Section'
 import { useMainBackgroundImage } from '../../hooks/useBackgroundImage'
 import { Link } from 'gatsby'
-import Modal from '../common/Modal'
-import ContactSalesForm from '../ContactSalesForm'
 import { PATH } from '../../constants/content'
 
 import styles from './UseCasesSection.module.scss'
 
 export default function UseCasesSection() {
   const { mainBackground } = useMainBackgroundImage()
-  const [isContactSalesModalOpen, setIsContactSalesModalOpen] = useState(false)
 
   return (
     <>
@@ -61,16 +57,13 @@ export default function UseCasesSection() {
               Catch users trying to break your system via multiple accounts, devices, and IP addresses to unjustly
               enrich themselves.
             </UseCase>
-            <UseCase onClick={() => setIsContactSalesModalOpen(true)} icon={CustomSolutionSvg} title='Custom Solution'>
-              We can build a custom solution that works for your industry.
+            <UseCase link={PATH.paywall} icon={PaywallSvg} title='Paywall'>
+              Internet savvy users know how to get unlimited views of your content with incognito windows. Make sure
+              that your invested users pay a fair price for your content.
             </UseCase>
           </div>
         </Container>
       </Section>
-
-      <Modal title='Contact Sales' open={isContactSalesModalOpen} onClose={() => setIsContactSalesModalOpen(false)}>
-        <ContactSalesForm />
-      </Modal>
     </>
   )
 }

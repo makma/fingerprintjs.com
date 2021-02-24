@@ -20,11 +20,12 @@
   }
 
   .form {
+    max-width: 55%;
     margin: 0 auto;
     width: 70%;
 
-    @include media('<=phoneLandscape') {
-      width: 100%;
+    @include media('<=tablet') {
+      max-width: 85vw;
     }
 
     .formDescription {

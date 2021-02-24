@@ -25,8 +25,8 @@ interface GetStartedFormProps {
 export default function GetStartedForm({
   className,
   bullets = [
-    { text: 'Over 6,000 Websites' },
-    { text: '300M Monthly Requests' },
+    { text: '10 Day Trial' },
+    { text: 'Money back guarantee' },
     {
       text: 'GDPR and CCPA Compliant',
       info: (

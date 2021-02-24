@@ -8,9 +8,22 @@
 
   overflow: hidden;
 
-  // We need !important to be able to change the background image opacity
-  // https://stackoverflow.com/a/62255366
-  &:before,
+  @include media('>desktop') {
+    padding: 13rem 0 14rem;
+  }
+
+  @include media('>phoneLandscape', '<=desktop') {
+    background-position: center bottom;
+  }
+
+  @include media('<phoneLandscape') {
+    background-position: center 80vh;
+  }
+
+  // This is workaround for https://github.com/timhagn/gatsby-background-image/issues/71
+  // we need to manually assign responsive styles to pesudo-elements because this plugin doesn't support media queries out-of-the-box
+  // and we need !important as a workaround to a bug inside this plugin
+  &::before,
   &:after {
     opacity: 0.2 !important;
   }
@@ -28,6 +41,18 @@
 
   @include media('<=phoneLandscape') {
     display: block;
+  }
+}
+.header {
+  max-width: 60rem;
+
+  @include media('<=desktop') {
+    text-align: center;
+    max-width: 65rem;
+  }
+
+  @include media('<=phoneLandscape') {
+    padding: 0 3rem;
   }
 }
 
