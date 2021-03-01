@@ -1,15 +1,43 @@
-.root {
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  @include gap(5rem);
+
+  > * + * {
+    @include media('<=desktop') {
+      margin-top: 10rem;
+      margin-left: 0rem;
+    }
+
+    @include media('<=tabletWide') {
+      margin-top: 5rem;
+    }
+  }
+
+  @include media('<=desktop') {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0;
+  }
+
+  @include media('<=phoneLandscape') {
+    padding: 0;
+  }
+}
+
+.liveDemo {
   display: flex;
-  flex-direction: column;
   align-items: center;
 
   background-repeat: no-repeat;
   background-size: 1400px auto;
+  background-position: 35vw 40%;
 
   overflow: hidden;
 
   @include media('>desktop') {
-    padding: 13rem 0 14rem;
+    padding: 1rem 0 1rem;
   }
 
   @include media('>phoneLandscape', '<=desktop') {
@@ -25,10 +53,28 @@
   // and we need !important as a workaround to a bug inside this plugin
   &::before,
   &:after {
-    opacity: 0.2 !important;
+    @include media('>phoneLandscape', '<=desktop') {
+      background-position: center bottom !important;
+    }
+
+    @include media('<phoneLandscape') {
+      background-position: center 80vh !important;
+    }
   }
 
-  min-width: 600px;
+  @include media('<=desktop') {
+    display: block;
+    min-height: unset;
+    padding-bottom: 3rem;
+  }
+}
+
+.header,
+.content {
+  flex: 1;
+}
+
+.content {
   z-index: 0;
 
   @include media('<=desktop') {
@@ -56,7 +102,16 @@
   }
 }
 
-.header {
-  margin-bottom: 3rem;
+.title {
   text-align: center;
+  padding-bottom: 1rem;
+
+  @include media('<=phone') {
+    font-size: 4rem;
+  }
+}
+
+.description {
+  font-size: 3rem;
+  margin: 3rem 0 5rem 0;
 }

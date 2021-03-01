@@ -4,7 +4,7 @@ import Footer from '../Footer'
 import Header from '../Header'
 
 import useSiteMetadata from '../../hooks/useSiteMetadata'
-import { BRANCH, FPJS_ENDPOINT, GTM_TOKEN, OPTIMIZE_TOKEN } from '../../constants/env'
+import { FPJS_ENDPOINT, GTM_TOKEN, OPTIMIZE_TOKEN } from '../../constants/env'
 import { sendEvent } from '../../helpers/gtm'
 import { withTrailingSlash } from '../../helpers/url'
 import { BASE_URL } from '../../constants/content'

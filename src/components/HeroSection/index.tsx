@@ -1,5 +1,4 @@
 import React from 'react'
-import GetStartedForm from '../GetStartedForm'
 import Section from '../common/Section'
 import { useMainBackgroundImage } from '../../hooks/useBackgroundImage'
 
@@ -18,7 +17,6 @@ export default function HeroSection() {
       <p className={styles.description}>
         Identify your web visitors using the most accurate, developer-friendly identification API.
       </p>
-      <GetStartedForm className={styles.form} variant='wide' />
     </Section>
   )
 }
