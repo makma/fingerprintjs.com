@@ -132,3 +132,5 @@ We would love to hear your questions and get feedback from the developer communi
 * Need more accurate browser fingerprinting for your business? Try FingerprintJS Pro for [99.5% fingerprinting accuracy](https://fingerprintjs.com/)
 * [Email us](mailto:sales@fingerprintjs.com) your questions
 * Sign up for our [newsletter](https://mailchi.mp/708d84efc0c1/updates-signup) for updates
+
+![Graphic of signals by stability and uniqueness](/img/uploads/fp_logo_cmyk_color.jpg)
