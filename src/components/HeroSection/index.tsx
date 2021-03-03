@@ -9,7 +9,7 @@ export default function HeroSection() {
   const { mainBackground } = useMainBackgroundImage()
 
   return (
-    <Section className={styles.liveDemo} backgroundImageFluid={mainBackground}>
+    <Section className={styles.root} backgroundImageFluid={mainBackground}>
       <h1 className={styles.title}>
         99.5% Accurate Browser Fingerprinting <br className={styles.desktopOnly} />
         as a Service

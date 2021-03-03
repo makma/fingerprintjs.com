@@ -1,4 +1,4 @@
-.liveDemo {
+.root {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,12 +27,6 @@
   }
 }
 
-.header {
-  @include media('<=phoneLandscape') {
-    padding: 0 3rem;
-  }
-}
-
 .title {
   @include media('<=phone') {
     font-size: 4rem;
@@ -42,13 +36,6 @@
 .description {
   font-size: 3rem;
   margin: 4rem 0;
-}
-
-.form {
-  width: 70%;
-  @include media('<=phoneLandscape') {
-    width: 100%;
-  }
 }
 
 .desktopOnly {
