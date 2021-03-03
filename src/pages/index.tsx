@@ -3,6 +3,7 @@ import { Layout } from '../components/Layout'
 import ClientsSection from '../components/ClientsSection'
 import HeroSection from '../components/HeroSection'
 import LiveDemoSection from '../components/LiveDemoSection'
+import GetStartedSection from '../components/GetStartedSection/GetStartedSection'
 import MadeForDevelopersSection from '../components/MadeForDevelopersSection'
 import ServerApiSection from '../components/ServerApiSection'
 import UseCasesSection from '../components/UseCasesSection'
@@ -14,6 +15,7 @@ export const IndexPageTemplate = () => (
   <div>
     <HeroSection />
     <LiveDemoSection />
+    <GetStartedSection />
     <ClientsSection />
     <MadeForDevelopersSection />
     <ServerApiSection />

@@ -1,0 +1,35 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 6rem;
+  padding-left: max(3rem, 50vw - 460px);
+  padding-right: max(3rem, 50vw - 460px);
+
+  text-align: center;
+
+  background-repeat: no-repeat;
+  background-size: 1400px auto;
+
+  overflow: hidden;
+
+  // We need !important to be able to change the background image opacity
+  // https://stackoverflow.com/a/62255366
+  &:before,
+  &:after {
+    opacity: 0.2 !important;
+  }
+
+  @include media('<=desktop') {
+    padding-bottom: 3rem;
+  }
+}
+
+.form {
+  width: 70%;
+  @include media('<=phoneLandscape') {
+    width: 100%;
+  }
+}

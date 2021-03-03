@@ -36,7 +36,7 @@
   overflow: hidden;
 
   @include media('>desktop') {
-    padding: 1rem 0 1rem;
+    padding: 1rem 0 6rem;
   }
 
   @include media('>phoneLandscape', '<=desktop') {
@@ -64,6 +64,7 @@
   @include media('<=desktop') {
     display: block;
     min-height: unset;
+    padding-top: 3rem;
     padding-bottom: 3rem;
   }
 }
@@ -91,6 +92,9 @@
 
   @include media('<=desktop') {
     margin-bottom: 3rem;
+  }
+
+  @include media('>phoneLandscape', '<=desktop') {
     font-size: 4.5rem;
   }
 
