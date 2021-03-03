@@ -3,6 +3,11 @@
   padding-bottom: 56.25%;
   position: relative;
   height: 352px;
+
+  @include media('<=desktop') {
+    height: 0;
+    width: 100%;
+  }
 }
 
 .videoResponsive iframe {
