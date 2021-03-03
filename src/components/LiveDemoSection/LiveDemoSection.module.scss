@@ -29,43 +29,16 @@
 .liveDemo {
   display: flex;
   align-items: center;
-
-  background-repeat: no-repeat;
-  background-size: 1400px auto;
-
   overflow: hidden;
 
   @include media('>desktop') {
     padding: 1rem 0 6rem;
   }
 
-  @include media('>phoneLandscape', '<=desktop') {
-    background-position: center bottom;
-  }
-
-  @include media('<phoneLandscape') {
-    background-position: center 80vh;
-  }
-
-  // This is workaround for https://github.com/timhagn/gatsby-background-image/issues/71
-  // we need to manually assign responsive styles to pesudo-elements because this plugin doesn't support media queries out-of-the-box
-  // and we need !important as a workaround to a bug inside this plugin
-  &::before,
-  &:after {
-    @include media('>phoneLandscape', '<=desktop') {
-      background-position: center bottom !important;
-    }
-
-    @include media('<phoneLandscape') {
-      background-position: center 80vh !important;
-    }
-  }
-
   @include media('<=desktop') {
     display: block;
     min-height: unset;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding: 3rem 0 3rem;
   }
 }
 
