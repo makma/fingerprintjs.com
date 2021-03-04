@@ -4,8 +4,9 @@ import styles from './YoutubeEmbed.module.scss'
 
 interface YoutubeEmbedProps {
   embedId: string
+  iframeTitle: string
 }
-export default function YoutubeEmbed({ embedId }: YoutubeEmbedProps) {
+export default function YoutubeEmbed({ embedId, iframeTitle }: YoutubeEmbedProps) {
   return (
     <div className={styles.videoResponsive}>
       <iframe
@@ -15,7 +16,7 @@ export default function YoutubeEmbed({ embedId }: YoutubeEmbedProps) {
         frameBorder='0'
         allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
         allowFullScreen
-        title='Embedded youtube'
+        title={iframeTitle}
       />
     </div>
   )

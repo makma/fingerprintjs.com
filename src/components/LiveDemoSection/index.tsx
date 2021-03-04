@@ -12,7 +12,7 @@ export default function LiveDemoSection() {
       <Container size='large' className={styles.container}>
         <div className={styles.content}>
           <h2 className={styles.title}>Getting Started With FingerprintJS Pro</h2>
-          <YoutubeEmbed embedId='jWX9P5_jZn8' />
+          <YoutubeEmbed embedId='jWX9P5_jZn8' iframeTitle='Tutorial Video' />
         </div>
         <div className={styles.content}>
           <h2 className={styles.title}>Technical Demo</h2>
