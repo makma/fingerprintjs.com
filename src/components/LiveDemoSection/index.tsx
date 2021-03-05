@@ -3,6 +3,7 @@ import FpjsWidget from '../FpjsWidget'
 import Container from '../common/Container'
 import Section from '../common/Section'
 import YoutubeEmbed from '../YoutubeVideo/YoutubeVideo'
+import { YOUTUBE_IDS } from '../../constants/content'
 
 import styles from './LiveDemoSection.module.scss'
 
@@ -12,7 +13,7 @@ export default function LiveDemoSection() {
       <Container size='large' className={styles.container}>
         <div className={styles.content}>
           <h2 className={styles.title}>Getting Started With FingerprintJS Pro</h2>
-          <YoutubeEmbed embedId='jWX9P5_jZn8' iframeTitle='Tutorial Video' iframeHeight={315} iframeWidth={560} />
+          <YoutubeEmbed embedId={YOUTUBE_IDS.videoTutorialId} iframeTitle='Tutorial Video' iframeHeight={315} iframeWidth={560} />
         </div>
         <div className={styles.content}>
           <h2 className={styles.title}>Technical Demo</h2>
