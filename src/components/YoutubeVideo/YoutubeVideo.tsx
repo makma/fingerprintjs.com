@@ -1,14 +1,14 @@
 import React from 'react'
 
-import styles from './YoutubeVideo.module.scss'
+import styles from './YouTubeVideo.module.scss'
 
-interface YoutubeVideoProps {
+interface YouTubeVideoProps {
   embedId: string
   iframeTitle: string
   iframeWidth: number
   iframeHeight: number
 }
-export default function YoutubeVideo({ embedId, iframeTitle, iframeWidth, iframeHeight }: YoutubeVideoProps) {
+export default function YouTubeVideo({ embedId, iframeTitle, iframeWidth, iframeHeight }: YouTubeVideoProps) {
   return (
     <div className={styles.root}>
       <iframe

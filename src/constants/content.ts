@@ -41,7 +41,7 @@ export const DOC_URL = {
   privacyPolicyUrl: 'https://dev.fingerprintjs.com/docs/privacy-policy/',
 } as const
 
-export const YOUTUBE_IDS = { videoTutorialId: 'jWX9P5_jZn8' } as const
+export const YOUTUBE = { videoTutorialId: 'jWX9P5_jZn8' } as const
 
 export const useCaseLinks = [
   { title: 'Account Takeover', url: PATH.accountTakeover, isLocal: true },
