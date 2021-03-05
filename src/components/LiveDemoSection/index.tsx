@@ -2,7 +2,7 @@ import React from 'react'
 import FpjsWidget from '../FpjsWidget'
 import Container from '../common/Container'
 import Section from '../common/Section'
-import YoutubeEmbed from '../YoutubeEmbed/YoutubeEmbed'
+import YoutubeEmbed from '../YoutubeVideo/YoutubeVideo'
 
 import styles from './LiveDemoSection.module.scss'
 
