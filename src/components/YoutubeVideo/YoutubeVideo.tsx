@@ -10,7 +10,7 @@ interface YoutubeVideoProps {
 }
 export default function YoutubeVideo({ embedId, iframeTitle, iframeWidth, iframeHeight }: YoutubeVideoProps) {
   return (
-    <div className={styles.videoResponsive}>
+    <div className={styles.root}>
       <iframe
         width={iframeWidth}
         height={iframeHeight}
