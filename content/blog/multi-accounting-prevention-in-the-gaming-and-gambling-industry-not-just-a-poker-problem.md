@@ -36,28 +36,26 @@ Poker-king’s article on multi-accounting claims that poker rooms are much more
 
 ## Multi-accounting in the online gambling industry
 
-All online gambling services are at risk of multi-accounting due to the financial incentive available to players if they can cheat the system. Some reasons for multi-accounting on gambling sites include:
+All online gambling services are at risk of multi-accounting and other forms of gaming fraud due to the financial incentive available to players if they can cheat the system. Some reasons for multi-accounting on gambling sites include:
 
-Chip dumping: this occurs if a player uses one of their accounts to deliberately lose its chips to another player. This can be done to boost one account’s ability to win a major tournament. It has also been used as a technique to launder money online, but that would typically occur between two separate parties.
-
-Affiliate fraud: some gambling websites offer bonuses when current users invite friends to start playing. If one user creates multiple accounts, they can benefit from affiliate and initial signup bonuses without actually increasing the player base for the service.
+* **Chip dumping:** this occurs if a player uses one of their accounts to deliberately lose its chips to another player. This can be done to boost one account’s ability to win a major tournament. It has also been used as a technique to launder money online, but that would typically occur between two separate parties.
+* **Affiliate fraud:** some gambling websites offer bonuses when current users invite friends to start playing. If one user creates multiple accounts, they can benefit from affiliate and initial signup bonuses without actually increasing the player base for the service.
 
 ## Multi-accounting in gaming
 
 Multi-accounting can be commonly found in online games as well. There are a few reasons why online gamers may feel incentivized to create multiple accounts:
 
-Promo abuse: if the game offers bonuses to new players like rare or useful items that can be traded or otherwise shared, players may create many accounts to enrich their main login. Alternatively, they might stockpile valuable resources and sell them on third-party marketplaces. Promo abuse can offset the balance of fairness in an online game, making it hard for players who don’t cheat or pay third parties to progress at the same rate.
-Circumvent bans and blocks: players who have a history of cheating, griefing or trolling other players may try to get around their bans by creating new accounts. This can have a very negative impact on players who are targeted by these bad actors.
-Smurfing: in highly competitive online games, high ranked players often create ‘smurf’ accounts where they can practice and try new techniques without affecting their rankings. This typically means that low ranked players will face up against significantly stronger opponents, which can be demoralizing and detrimental to their experience within the game.
+* **Promo abuse:** if the game offers bonuses to new players like rare or useful items that can be traded or otherwise shared, players may create many accounts to enrich their main login. Alternatively, they might stockpile valuable resources and sell them on third-party marketplaces. Promo abuse can offset the balance of fairness in an online game, making it hard for players who don’t cheat or pay third parties to progress at the same rate.
+* **Circumvent bans and blocks:** players who have a history of cheating, griefing or trolling other players may try to get around their bans by creating new accounts. This can have a very negative impact on players who are targeted by these bad actors.
+* **Smurfing:** in highly competitive online games, high ranked players often create ‘smurf’ accounts where they can practice and try new techniques without affecting their rankings. This typically means that low ranked players will face up against significantly stronger opponents, which can be demoralizing and detrimental to their experience within the game.
 
 ## How To Prevent Multi-accounting
 
 The best way to prevent multi-accounting is increase the difficulty for players to create multiple accounts. There are two main ways to do this:
 
-Deduplicate based on sign-up information: make sure new accounts are unique by requiring additional details about the player. Allowing for only one account per email, or using SSO services from Google or Facebook could make it more difficult for new players to quickly churn out new accounts. However, if players can simply create new email addresses or randomize other pieces of information about themselves, this step is easily circumvented.
-
-Identify when multiple accounts are being created in the same browser: this can be done by using cookies or fingerprinting techniques to create an identifier that can link login and account creation attempts together across sessions. To do this, you must be able to accurately identify visitor traffic, even when those visitors are trying to conceal their identity through VPNs, virtual machines and other spoofing techniques.
+* **Deduplicate based on sign-up information:** make sure new accounts are unique by requiring additional details about the player. Allowing for only one account per email, or using SSO services from Google or Facebook could make it more difficult for new players to quickly churn out new accounts. However, if players can simply create new email addresses or randomize other pieces of information about themselves, this step is easily circumvented.
+* **Identify when multiple accounts are being created in the same browser:** this can be done by using cookies or fingerprinting techniques to create an identifier that can link login and account creation attempts together across sessions. To do this, you must be able to accurately identify visitor traffic, even when those visitors are trying to conceal their identity through VPNs, virtual machines and other spoofing techniques.
 
 FingerprintJS Pro is a visitor identification service that provides 99.5% accurate visitorIDs using browser fingerprinting, cookies, server-side identification techniques and more. Using our API, gaming and gambling websites can cross-check users creating new accounts to see if they are already associated with multiple logins, and require additional authentication or block account creation as necessary.
 
-We work with many gambling and gaming companies around the world to stop multi-accounting, making their communities a more fun and equitable place to play. Try our 10-day free trial of FingerprintJS Pro and get unlimited access to our API.
+We work with many gambling and gaming companies around the world to stop multi-accounting, making their communities a more fun and equitable place to play. Try our [10-day free trial](https://dashboard.fingerprintjs.com/signup) of FingerprintJS Pro and get unlimited access to our API.
