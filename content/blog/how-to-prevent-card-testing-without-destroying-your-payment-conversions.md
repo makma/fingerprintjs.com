@@ -14,22 +14,22 @@ title: How to Prevent Card Testing Without Destroying Your Payment Conversions
 tags:
   - fingerprinting
 ---
-Nothing is worse than becoming a victim of fraudulent acts. Imagine your online business is suddenly getting tons of new small purchases, which would usually be cause for celebration. But as soon as you check each activity, you notice many of these purchases are being declined by the payment processor, and disputes for unauthorized purchases start rolling in. Investigating further, you realize it’s all a sham.
+Imagine your online business is suddenly getting tons of new small purchases. As soon as you check each activity, you notice many of these purchases are being declined by the payment processor, and disputes for unauthorized purchases start rolling in. Investigating further, you realize it’s all a sham.
 
 
-You might try to stay optimistic these fake purchases will eventually stop, or you may manually block IP addresses associated with the attackers. No matter your next step, you stand to lose money from chargeback and authorization fees and possibly face blacklisting from your payment provider in the future. This nightmare of a scenario isn’t even uncommon, as many unlucky businesses fall prey to these incidents. 
+You might try to stay optimistic that these fake purchases will eventually stop, or you may manually block IP addresses associated with the attackers. No matter your next step, you stand to lose money from chargeback and authorization fees and possibly face blacklisting from your payment provider. This nightmare of a scenario isn’t even uncommon, as many unlucky businesses fall prey to these incidents. 
 
 
 If this has happened to your website, you may have fallen victim to credit card testing fraud.
 
 
-##What Is Card Testing?
+## What Is Card Testing?
 
 
 When cybercriminals get their hands on a stolen credit card number, often through purchasing lists of cards on the dark web, the first thing they will do is check if the information they have is valid or not. To do this, they will make small purchases on an unsuspecting merchant’s website. If the transaction goes through, the cybercriminal will know that they can make another large purchase using the same card.
 
 
-##Card Testing and Microtransactions
+## Card Testing and Microtransactions
 
 
 Card testing fraud can happen to any website offering online purchases. However, the practice is a primary concern for companies that have small transaction sizes or microtransactions. There are two main reasons why card testing is a problem for these types of businesses:
@@ -72,34 +72,36 @@ Disrupt legitimate transactions – This deceptive practice may spike your websi
 When companies struggle with card testing, they have a tough decision between keeping their transaction process simpler and facing those adverse effects listed above. You could require additional information for purchases but could end up losing more paying customers due to increased friction in the payment process. Payment fraud prevention is a delicate balance between offering comfort and convenience and keeping customers safe.
 
 
-##Methods to Reduce Card Testing
+## Methods to Reduce Card Testing
 
 
 If you notice card testers exploiting your business, you need to stop or reduce this fraudulent act as soon as possible. A few modifications to your internal systems and payment processes can go a long way to screen attempts at card testing. Here are some of the methods to follow for payment fraud prevention.
 
 
-IP address blocking
+### IP address blocking
 
 
 Fraudsters usually acquire the stolen card number from the dark web. That means the card testing attempt often happens outside a cardholder’s original country, making it useful to cross-check a credit card’s issuing location and the purchaser’s geolocation via IP. Website owners can also monitor returning IP addresses and block payment attempts if multiple orders from a specific IP happens within a short time frame. However, with VPNs and other IP address spoofing techniques, this one-size-fits-all technique can miss more sophisticated card testers.
 
 
-Browser fingerprinting
+### Browser fingerprinting
 
 
 Browser or device fingerprinting combines dozens of available signals collected from a visitor’s browser to generate a unique ID, or fingerprint. Browser fingerprinting can be a useful tool in addition to IP address tracking in determining if a fraudster is returning to make multiple transactions on different credit cards, or has been previously associated with fraudulent activity. A user’s fingerprint is unique, making fraudulent requests and operations stand out.
 
 
-Cookies
+### Cookies
 
 
 Cookies are another way that websites can separate trusted users from fraudsters. New visitors without a cookie can be asked for additional information on payment, while trusted traffic can be given a more streamlined payment process. However, cookies on their own are unlikely to catch repeat behavior from card testers, as cybercriminals usually clear their cookies 90 percent of the time. 
+
+### FingerprintJS Pro API
 
 
 Using an external service like FingerprintJS is a good strategy for payment fraud prevention. FingerprintJS uses multiple identification techniques including browser fingerprinting, cookies, IP, as well as other server-side techniques. VisitorIDs generated by FingerprintJS are 99.5% percent accurate at identifying users across sessions and spoofing attempts, making it possible to catch fraudsters no matter how they try to hide.
 
 
-##How to Use FingerprintJS to Prevent Card Testing
+## How to Use FingerprintJS to Prevent Card Testing
 
 
 FingerprintJS provides a solution to identify fraudsters and prevent them from doing test purchases on your website without destroying your payment conversion. 
