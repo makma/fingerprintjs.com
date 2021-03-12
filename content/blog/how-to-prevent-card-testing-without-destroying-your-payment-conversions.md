@@ -47,7 +47,7 @@ Businesses such as online games or mobile games are typical targets since they o
 Since microtransactions are small purchases and often intended to be made frequently by customers, the seller often doesn’t ask for additional billing info to verify the cardholder, such as the billing address. Unfortunately, this slight gap is enough for cybercriminals to squeeze through. With fewer hurdles blocking their way, fraudsters won’t usually face any problems making a small purchase to begin card testing.
 
 
-##What Are the Negative Effects of Card Testing Fraud on Merchants?
+## What Are the Negative Effects of Card Testing Fraud?
 
 
 If fraudsters are using stolen cards to purchase on your website, why is it a problem for you? It’s not like you’re the one performing this fraudulent act. Moreover, doesn’t card testing mean you’re earning money from all those test purchases? While this might seem like the case, card testing fraud is dangerous for merchants.
