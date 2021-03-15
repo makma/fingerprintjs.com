@@ -127,7 +127,9 @@ Don’t forget to run the migration after you’ve created it.
 Now you can store the visitorID in the database, so you’ll need to add some logic so you can save it. Go back to the insert statement at line 48 in index.js and modify it so that it reads: 
 
 ```
-const result = await client.query('insert into users(email, visitor_id) values($1, $2) returning *', [email, visitorId])
+const result = await client.query(
+'insert into users(email, visitor_id)
+values($1, $2) returning *', [email, visitorId])
 
 
 ```
@@ -137,7 +139,8 @@ Finally, you need to check if the visitorID is already in the system, and if so,
 ```
 
 
-const hasVisitorId = (await client.query('select * from users where visitor_id = $1', [visitorId])).rows.length > 0
+const hasVisitorId = (await client.query(
+'select * from users where visitor_id = $1', [visitorId])).rows.length > 0
 
 if (hasVisitorId) {
   throw new Error('Looks like you already have an account, please sign in')
