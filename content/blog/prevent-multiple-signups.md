@@ -66,7 +66,7 @@ Open the template for your signup page – which is  [views/signup.hbs](https:/
 ></script>
 ```
 
-**Note that for ({token:’your-browser-token’}) you will need to enter the alphanumeric token code from your dashboard.** Also, if you look at the main branch, you’ll notice that the token is stored in the .env variables and not directly in the code. This is a much more secure way of storing your tokens but if you just want to do some local testing, you can leave it in the code.
+**Note that for `({token:’your-browser-token’})` you will need to enter the alphanumeric token code from your dashboard.** Also, if you look at the main branch, you’ll notice that the token is stored in the `.env` variables and not directly in the code. This is a much more secure way of storing your tokens but if you just want to do some local testing, you can leave it in the code.
 
 Save the page after you’ve installed the snippet, then open your browser’s developer console and load the site. You should see an alphanumeric hash in the console.
 
@@ -74,9 +74,9 @@ Save the page after you’ve installed the snippet, then open your browser’s d
 
 ![](/img/uploads/image5.png)
 
-This hash is called a `visitorID` and it will be identical for the same browser on the same device in private and normal mode every time a user accesses the page.
+This hash is called a visitorID and it will be identical for the same browser on the same device in private and normal mode every time a user accesses the page.
 
-Now that you’ve received the `visitorID` you can start sending it to your server along with the signup email.
+Now that you’ve received the visitorID you can start sending it to your server along with the signup email.
 
 Open the `signup.hbs` again, go to line 43 and add a line with a hidden form field.
 
@@ -104,7 +104,7 @@ And we’re done! That’s it for the frontend.
 
 ## Backend
 
-Now you’ll want to process the visitorID on your server. Open index.js on line 41 and add visitorId (or whatever you called the name attribute of that hidden form field) to the destructuring of the request body:
+Now you’ll want to process the visitorID on your server. Open [`index.js`](https://github.com/fingerprintjs/multiple-signup-demo/compare/initial-project-setup...fpjs-integration#diff-e727e4bdf3657fd1d798edcd6b099d6e092f8573cba266154583a746bba0f346) on line 41 and add `visitorId` (or whatever you called the name attribute of that hidden form field) to the destructuring of the request body:
 
 ```
 const {email, visitorId} = req.body
@@ -112,7 +112,7 @@ const {email, visitorId} = req.body
 
 Next, you’ll need to store this value in the database in order to be able to check if a user with a visitorID has already signed up. To add a new column to a database table you’ll need to create a migration.
 
-You can call the migration whatever you want, but to be consistent with the initial migration you might want to call it something like 0002_add_visitor_id.sql.
+You can call the migration whatever you want, but to be consistent with the initial migration you might want to call it something like `0002_add_visitor_id.sql`.
 
 The database has a table called users, so the migration for adding a column should look like this:
 
