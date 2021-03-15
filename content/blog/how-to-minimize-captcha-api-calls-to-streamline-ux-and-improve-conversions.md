@@ -3,7 +3,7 @@ templateKey: long-form-content
 metadata:
   title: How to minimize CAPTCHA API calls with user identification - FingerprintJS
   image: /img/uploads/crosswalks.png
-  url: reduce-captcha
+  url: https://fingerprintjs.com/blog/reduce-captcha
   description: Looking for CAPTCHA alternatives? With user identification, you can
     reduce your need for CAPTCHA technology to catch bots and spam filling out
     forms on your website.
