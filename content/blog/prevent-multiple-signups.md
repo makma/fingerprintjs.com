@@ -23,7 +23,7 @@ This guide will show you how to do that in a few easy steps with FingerprintJS P
 
 You can watch the full tutorial on Youtube or read the instructions below. 
 
-[![](/img/uploads/watch-tutorial-youtube.png)](https://www.youtube.com/watch?v=jWX9P5_jZn8)
+[Watch the tutorial on Youtube now!](https://www.youtube.com/watch?v=jWX9P5_jZn8)
 
 ## Project setup
 
