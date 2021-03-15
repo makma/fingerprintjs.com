@@ -12,6 +12,7 @@ publishDate: 2021-03-15T16:23:06.733Z
 title: How to minimize CAPTCHA API calls to streamline UX and improve conversions
 tags:
   - fingerprinting
+  - bot attacks
 ---
 CAPTCHAs make it more difficult for bots to submit fraudulent information via online forms, but they can also get in the way of humans interacting with your website.
 
