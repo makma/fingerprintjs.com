@@ -2,7 +2,7 @@
 templateKey: long-form-content
 metadata:
   title: Why It’s Not Just Netflix Losing Money From Subscription Sharing
-  url: prevent-subscription-sharing-netflix
+  url: https://fingerprintjs.com/blog/prevent-subscription-sharing-netflix
   description: Many websites are losing significant revenue from account sharing
     and may not even know the extent of the problem. In this article, we go over
     why subscription sharing might be costing your business more than you
