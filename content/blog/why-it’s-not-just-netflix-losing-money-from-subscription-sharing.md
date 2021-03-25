@@ -15,15 +15,17 @@ tags:
   - fingerprinting
   - web
 ---
-**Why It's Not Just Netflix Losing Money From Subscription Sharing**
-====================================================================
+
 
 We are all guilty of it. At some point, you have probably borrowed a friend's subscription to access exclusive services like Netflix and Spotify.
 
 But it's not just music or movie subscription businesses hurting from credential sharing - many more websites are losing significant revenue and may not even know the extent of the problem.
 
- **Netflix's account sharing problem**
-======================================
+
+
+## Netflix's account sharing problem
+
+
 
 Of the 200 million-plus paid subscribers of Netflix, roughly 46-percent have shared their passwords at least once, [**says a study by Magid**](https://www.wired.com/story/netflix-password-sharing-crackdown/). The popular streaming service also has an estimated 24 million long-term "pirates" who use shared accounts for up to 26 months on average.
 
@@ -36,11 +38,11 @@ Subscription sharing is when a paying customer shares their login credentials to
 
 Based on a [**Parks Associate report**](https://www.parksassociates.com/blog/article/pr-01152020), there are two main types of credential sharing:
 
-1.  **Casual Sharing**
+### 1. Casual Sharing
 
 This arrangement happens when there is no intent to profit from the practice. For example, if you lend or share your Netflix account to a family member or friend and don't charge them for it.
 
-1.  **Pirating**
+### 2. Pirating
 
 Pirating occurs when a malicious actor shares access to a compromised paying account for a fee without the customer's knowledge. While casual sharing is in a bit of a gray area legally, pirating passwords is illegal based on the U.S. [**Computer Fraud and Abuse Act (CFAA)**](https://www.nacdl.org/Landing/ComputerFraudandAbuseAct). 
 
@@ -100,7 +102,7 @@ Every time we use a browser, be it on our desktop or mobile device, websites hav
 
 Whenever a user uses a webpage to log in to the software or app, the fingerprinting function collects data, which can then be stored in a database. When the same user returns to the website, the system can compare the visitor history and associate past sessions with the user.
 
-Identification accuracy for preventing account sharing
+## Identification accuracy for preventing account sharing
 
 Browser fingerprinting on its own can be highly accurate (up to 90% in some studies). However, there is always a margin of error, resulting in either false positive or false negative identifications.
 
@@ -132,8 +134,9 @@ IP addresses can be used to identify a visitor, but there are some instances whe
 **Why Choose FingerprintJS?**
 -----------------------------
 
-From what we learned so far, the first step in limiting the effects of shared passwords and subscription sharing is to create an accurate visitor identification system. By doing so, you can be sure that the one using the service is, in fact, the person who subscribed to it.
+The first step in limiting the effects of shared passwords and subscription sharing is to create an accurate visitor identification system. By doing so, you can be sure that the one using the service is, in fact, the person who subscribed to it.
 
-FingerprintJS Pro is the most accurate user identification service on the market. It has a 99.5% visitor identification accuracy that relies on a combination of browser fingerprinting, IP address, cookies, and other server-side identification techniques to identify users correctly. Generated VisitorIDs are accurate even for visitors using incognito browsing, Virtual Private Networks (VPNs), and other spoofing techniques.
+[FingerprintJS Pro](https://fingerprintjs.com/) is the most accurate user identification service on the market. It has a 99.5% visitor identification accuracy that relies on a combination of browser fingerprinting, IP address, cookies, and other server-side identification techniques to identify users correctly. Generated VisitorIDs are accurate even for visitors using incognito browsing, Virtual Private Networks (VPNs), and other spoofing techniques.
+
 
 Whatever your identification solution may be, we hope the techniques outlined in this article can help your business prevent subscription sharing.
