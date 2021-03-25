@@ -27,7 +27,7 @@ But it's not just music or movie subscription businesses hurting from credential
 
 
 
-Of the 200 million-plus paid subscribers of Netflix, roughly 46-percent have shared their passwords at least once, [**says a study by Magid**](https://www.wired.com/story/netflix-password-sharing-crackdown/). The popular streaming service also has an estimated 24 million long-term "pirates" who use shared accounts for up to 26 months on average.
+Of the 200 million-plus paid subscribers of Netflix, roughly 46-percent have shared their passwords at least once, [**a study by Magid found**](https://www.wired.com/story/netflix-password-sharing-crackdown/). The popular streaming service also has an estimated 24 million long-term "pirates" who use shared accounts for up to 26 months on average.
 
 According to a [**survey by Cordcutting.com**](https://cordcutting.com/research/subscription-mooching/), Netflix loses an estimated $2.3 billion on shared passwords each year because of these unregulated activities. It's no wonder that Netflix has begun to test blocking users suspected of subscription sharing. [**Netflix recently tested out a new feature**](https://edition.cnn.com/2021/03/11/media/netflix-password-sharing-prevention/index.html) where users need to verify that they are authorized to use the account via a text or email notification for them to continue watching. 
 
