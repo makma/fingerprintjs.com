@@ -114,9 +114,11 @@ A false positive is when the same fingerprint is assigned to multiple unique vis
 
 For subscription sharing, while the ideal identification solution would be as accurate as possible, false negatives are of higher concern. They should be avoided at all costs, as businesses don't want to falsely accuse customers of sharing their login credentials.
 
-The best way to ensure a high enough accuracy is to use multiple identification methods that further increase the system's accuracy.
+The best way to ensure a high enough accuracy is to use multiple identification methods that further increase the system's accuracy. 
+
 
 ## Other Methods to Accurately Identify a User
+
 
 
 Below are some additional identification techniques that can be used to uniquely identify web visitors:
