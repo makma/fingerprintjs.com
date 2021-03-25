@@ -31,8 +31,9 @@ Of the 200 million-plus paid subscribers of Netflix, roughly 46-percent have sha
 
 According to a [**survey by Cordcutting.com**](https://cordcutting.com/research/subscription-mooching/), Netflix loses an estimated $2.3 billion on shared passwords each year because of these unregulated activities. It's no wonder that Netflix has begun to test blocking users suspected of subscription sharing. [**Netflix recently tested out a new feature**](https://edition.cnn.com/2021/03/11/media/netflix-password-sharing-prevention/index.html) where users need to verify that they are authorized to use the account via a text or email notification for them to continue watching. 
 
-**What Exactly Is Subscription Sharing? **
-------------------------------------------
+## What Exactly Is Subscription Sharing?
+
+
 
 Subscription sharing is when a paying customer shares their login credentials to another person so the latter can also benefit from the service without having to purchase a license. Most digital subscriptions boil down to just a username (email) and a password, making it very easy for users to share their accounts.
 
@@ -46,8 +47,10 @@ This arrangement happens when there is no intent to profit from the practice. Fo
 
 Pirating occurs when a malicious actor shares access to a compromised paying account for a fee without the customer's knowledge. While casual sharing is in a bit of a gray area legally, pirating passwords is illegal based on the U.S. [**Computer Fraud and Abuse Act (CFAA)**](https://www.nacdl.org/Landing/ComputerFraudandAbuseAct). 
 
-**Subscription Sharing Affects Many Industries **
--------------------------------------------------
+## Subscription Sharing Affects Many Industries
+
+
+
 
 It's not just Netflix and other Video on Demand (VOD) companies losing money because of subscription sharing. Many Software-as-a-Service (SaaS) companies also lose revenue because of such practices. Some industries commonly affected include:
 
@@ -56,8 +59,9 @@ It's not just Netflix and other Video on Demand (VOD) companies losing money bec
 
 These businesses often don't know the extent of their password sharing problem as it is notoriously hard to measure. While most keep a close eye on the number of registered accounts, they don't know exactly how many individual users are using one login. 
 
-**Security Risks of Subscription Sharing**
-------------------------------------------
+## Security Risks of Subscription Sharing
+
+
 
 While affected companies may lose potential revenue to account sharing, others feel the brunt of the problem more dramatically. One of the main risks of sharing passwords is that it can compromise account security. The user's private information is at a much higher risk of falling into the wrong hands the more a login is shared.
 
@@ -66,8 +70,8 @@ While affected companies may lose potential revenue to account sharing, others f
 -   The original owner may lose ownership of the account entirely, especially if the malicious actor chooses to change their password. Even worse, if they use the same password on online marketplaces like Amazon, they may make purchases using their credit card information.
 -   People who have access to a shared subscription might sell the login information. Hackers can sell logins to users who want the same service at a fraction of a cost or use the logins to take over more valuable accounts.
 
-What Companies Block Subscription Sharing Today?
-------------------------------------------------
+## What Companies Block Subscription Sharing Today?
+
 
 In the past, Netflix and other VODs appeared neutral about the issue since they also receive some marketing benefits from subscription sharing between friends. However, some subscriptions like the New York Times do put statements in their policies that subscribers can't share their registration login credentials.
 
@@ -75,8 +79,8 @@ Where companies do have subscription sharing policies, the details can vary sign
 
 We recently worked with a global education technology company on instituting subscription sharing using our visitor identification service - you can read about their implementation in our case study.
 
-**How to Combat the Negative Impact of Subscription Sharing**
--------------------------------------------------------------
+## How to Combat the Negative Impact of Subscription Sharing
+
 
 Curbing subscription sharing can be pretty tricky, as companies run the risk of either frustrating paying customers or failing to change behavior at all. If a company's method of catching subscription sharers is too strict, a user's access may be limited when they access their account via a different device. On the other hand, if the rules are too lenient, sharers can easily bypass restrictions and continue sharing their login.
 
@@ -84,8 +88,8 @@ One of the most effective ways of limiting password sharing is to institute a vi
 
 To accurately identify web visitors with today's browser and device security settings requires multiple techniques. The most advanced systems combine browser fingerprinting, cookies, geolocation, and other server-side identification techniques to generate visitorIDs.
 
-**How Browser Fingerprinting Works**
-------------------------------------
+## How Browser Fingerprinting Works
+
 
 A core technology for visitor identification is browser fingerprinting. It accurately identifies users by collecting signals via the browser and combines them into a unique visitorID. Brower fingerprints are difficult to spoof via VPNs, clearing cookies, or incognito browsing, making them a powerful tool to catch even the sneakiest of visitors.
 
@@ -112,8 +116,8 @@ For subscription sharing, while the ideal identification solution would be as ac
 
 The best way to ensure a high enough accuracy is to use multiple identification methods that further increase the system's accuracy.
 
-**Other Methods to Accurately Identify a User **
-------------------------------------------------
+## Other Methods to Accurately Identify a User
+
 
 Below are some additional identification techniques that can be used to uniquely identify web visitors:
 
@@ -131,8 +135,10 @@ Device identification refers to methods that identify a specific computer or mob
 
 IP addresses can be used to identify a visitor, but there are some instances where it will not be accurate. For example, university campuses will often have a small handful of IP addresses, making distinctions between students impossible.
 
-**Why Choose FingerprintJS?**
------------------------------
+
+
+## Why Choose FingerprintJS?
+
 
 The first step in limiting the effects of shared passwords and subscription sharing is to create an accurate visitor identification system. By doing so, you can be sure that the one using the service is, in fact, the person who subscribed to it.
 
