@@ -129,11 +129,11 @@ Cookies store a unique identifier hash within the browser every time a user firs
 
 The problem with relying solely on cookies is that they can be cleared in browser settings. Ad Blockers can also disable them by default, and even the user can refuse to be cookies as part of the CCPA and [**General Data Protection Regulation (GDPR)**](https://gdpr-info.eu/). 
 
-1.  **Device Identification**
+2.  **Device Identification**
 
 Device identification refers to methods that identify a specific computer or mobile device model that the visitor uses. This technique could have been helpful since it narrows down the account usage or access to a few devices. However, it is still pretty inaccurate as there isn't a foolproof system of tying browsing sessions between browsers or web and native applications.
 
-1.  **IP Address**
+3.  **IP Address**
 
 IP addresses can be used to identify a visitor, but there are some instances where it will not be accurate. For example, university campuses will often have a small handful of IP addresses, making distinctions between students impossible.
 
@@ -144,7 +144,7 @@ IP addresses can be used to identify a visitor, but there are some instances whe
 
 The first step in limiting the effects of shared passwords and subscription sharing is to create an accurate visitor identification system. By doing so, you can be sure that the one using the service is, in fact, the person who subscribed to it.
 
-[FingerprintJS Pro](https://fingerprintjs.com/) is the most accurate user identification service on the market. It has a 99.5% visitor identification accuracy that relies on a combination of browser fingerprinting, IP address, cookies, and other server-side identification techniques to identify users correctly. Generated VisitorIDs are accurate even for visitors using incognito browsing, Virtual Private Networks (VPNs), and other spoofing techniques.
+[FingerprintJS Pro](https://fingerprintjs.com/) is the most accurate user identification service on the market. It has a 99.5% visitor identification accuracy that relies on a combination of browser fingerprinting, IP address, cookies, and other server-side identification techniques to identify users correctly. Generated VisitorIDs are accurate even for visitors using incognito browsing, Virtual Private Networks (VPNs), and other spoofing techniques. 
 
 
 Whatever your identification solution may be, we hope the techniques outlined in this article can help your business prevent subscription sharing.
