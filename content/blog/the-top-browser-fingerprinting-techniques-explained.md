@@ -23,7 +23,7 @@ Browser fingerprinting can be used to stop fraudsters from attempting to hack, s
 
 With browser fingerprinting, a lot of information can be gathered from the browser: the user’s device model, its operating system, its browser version, browser extensions, user timezone, preferred language settings, ad blocker used, screen size and resolution, and all the granular tech specs of his CPU, graphics card, and so on.
 
-Browser fingerprinting technology can capture more than enough specifics about a user’s device and settings to pinpoint them in a sea of internet users. 
+Browser fingerprinting technology can capture more than enough specifics about a user’s device and settings to pinpoint them in a sea of internet users. Read our beginner's guide to learn more about [how browser fingerprinting works](https://fingerprintjs.com/blog/what-is-browser-fingerprinting/) and how each signal adds to a fingerprint's overall accuracy and stability.
 
 FingerprintJS’s browser fingerprinting technology employs several cutting-edge browser identification methods to gather over 100 individual signals. These signals are combined with server-side analysis and deduplication to generate a visitorID, providing a persistent and useful abstraction of a browser fingerprint, which can be volatile if a user changes settings or updates software on their device. 
 
@@ -38,8 +38,6 @@ Like any other browser fingerprinting technique, the scripts used for canvas fin
 ### Rendering Fingerprinting and WebGL Fingerprinting
 
 These two techniques are very similar to Canvas fingerprinting because they both use the browser to render text and images off-screen. These images are then used to differentiate users based on their graphics drivers and device hardware.
-
-
 
 ### Device Fingerprinting
 
