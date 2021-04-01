@@ -17,7 +17,7 @@ tags:
 ---
 Also known as online fingerprinting, browser fingerprinting is a tracking and identification method websites use to associate individual browsing sessions with one site visitor. Using Javascript, a plethora of data can be collected about a user’s browser and device. When these pieces of information are stitched together, they reveal a unique combination of information that forms every user’s very own ‘digital fingerprint.’ The browser fingerprint is traceable across browsing sessions, even when the user enters incognito browsing or uses a VPN to access a site.
 
-Browser fingerprinting can be used to stop fraudsters from attempting to hack, spam, or spoof website owners by accurately identifying site users. Browser fingerprinting is more difficult to circumvent than cookies, as a user’s fingerprint does not change between incognito browsing sessions, or clearing browser data. To generate a browser fingerprint with enough accuracy (or entropy) to uniquely identify a web visitor, the script must use a variety of browser fingerprinting techniques to gather data (called signals) that would vary between visitors. While many visitors to a website may have the same model of iphone, the software and drivers installed, geolocation, browser and OS version, and even minute variances in the hardware could be different. Each browser fingerprinting technique is able to gather one or more of these signals that aim to identify these small variances between users.
+Browser fingerprinting can be used to stop fraudsters from attempting to hack, spam, or spoof website owners by accurately identifying site users. Browser fingerprinting is more difficult to circumvent than cookies, as a user’s fingerprint does not change between incognito browsing sessions, or clearing browser data. To generate a browser fingerprint with enough accuracy (or entropy) to uniquely identify a web visitor, the script must use a variety of browser fingerprinting techniques to gather data (called signals) that would vary between visitors. While many visitors to a website may have the same model of iPhone, the software and drivers installed, geolocation, browser and OS version, and even minute variances in the hardware could be different. Each browser fingerprinting technique is able to gather one or more of these signals that aim to identify these small variances between users.
 
 ## **What Information is Gathered?**
 
@@ -33,11 +33,13 @@ FingerprintJS’s browser fingerprinting technology employs several cutting-edge
 
 This browser fingerprinting technique takes advantage of the HTML5 canvas element to identify variances in a user’s GPU, graphics drivers, or graphics card. First, the browser fingerprinting script draws an image, often overlaid with text. Then, the script captures how the user’s browser has rendered the image and text. Every device with different hardware and drivers will render the image slightly differently, distorting its color and shape. A hash is then computed using the rendered image’s data, which serves as the ‘canvas fingerprint.’
 
-Like any other browser fingerprinting technique, the scripts used for canvas fingerprinting operate in the background to keep the user from realizing that the fingerprinting is occuring. This fingerprinting technique is both accurate and not too processing intensive, making it one of the most employed techniques in browser fingerprinting scripts.
+Like any other browser fingerprinting technique, the scripts used for canvas fingerprinting operate in the background to keep the user from realizing that the fingerprinting is occurring. This fingerprinting technique is both accurate and not too processing intensive, making it one of the most employed techniques in browser fingerprinting scripts.
 
 ### Rendering Fingerprinting and WebGL Fingerprinting
 
 These two techniques are very similar to Canvas fingerprinting because they both use the browser to render text and images off-screen. These images are then used to differentiate users based on their graphics drivers and device hardware.
+
+
 
 ### Device Fingerprinting
 
@@ -47,7 +49,7 @@ Though this fingerprinting technique is often confused with browser fingerprinti
 
 While other fingerprinting techniques force browsers to render a text or image, this technique checks how their devices play sound. After which, it uses the resulting sound waves to store information on how the devices’ audio stack, including its driver specifications, software, and sound hardware, is utilized. 
 
-To learn more about audio fingerprinting, read our in-depth tutorial on how audio fingerprinting works using the Web Audio API. 
+To learn more about audio fingerprinting, read our in-depth tutorial on [how audio fingerprinting works ](https://fingerprintjs.com/blog/audio-fingerprinting/)using the Web Audio API. 
 
 ## Putting it all together
 
@@ -67,4 +69,4 @@ If your users are often the target of phishing scams, you can require email or t
 
 For virtually all types of fraud, the first step in stopping the malicious activity on your website is accurate user identification technology. That way, you can accurately single out the apples while keeping your trusted users satisfied with your website performance. 
 
-Whether you have a newly-built website or you’ve been in the online industry for years, you can safeguard your leads, clients, and business if you can stop fraud at the source. Try FingerprintJS Pro free for 10 days with no restrictions to see what accurate user identification technology can do for you.
+Whether you have a newly-built website or you’ve been in the online industry for years, you can safeguard your leads, clients, and business if you can stop fraud at the source. Try FingerprintJS Pro [free for 10 days](https://dashboard.fingerprintjs.com/signup/) with no restrictions to see what accurate user identification technology can do for you.
