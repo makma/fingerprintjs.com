@@ -15,9 +15,15 @@ tags:
   - fingerprinting
   - js
 ---
+![](/img/uploads/tw-ad-2-hd.png)
+
+<b>To generate a highly accurate browser fingerprint, many techniques are used to gather information about the user that can differentiate them from millions of others online. In this article, we review some of the most common methods used in a browser fingerprinting script.</b>
+
 Also known as online fingerprinting, browser fingerprinting is a tracking and identification method websites use to associate individual browsing sessions with one site visitor. Using Javascript, a plethora of data can be collected about a user’s browser and device. When these pieces of information are stitched together, they reveal a unique combination of information that forms every user’s very own ‘digital fingerprint.’ The browser fingerprint is traceable across browsing sessions, even when the user enters incognito browsing or uses a VPN to access a site.
 
-![Graphic of browser fingerprinting](/img/uploads/audio-fp-browser-fingerprinting-image.png)
+![Graphic of browser fingerprinting](/img/uploads/audio-fp-browser-fingerprinting-image.png "Graphic of browser fingerprinting")
+
+
 
 Browser fingerprinting can be used to stop fraudsters from attempting to hack, spam, or spoof website owners by accurately identifying site users. Browser fingerprinting is more difficult to circumvent than cookies, as a user’s fingerprint does not change between incognito browsing sessions, or clearing browser data. To generate a browser fingerprint with enough accuracy (or entropy) to uniquely identify a web visitor, the script must use a variety of browser fingerprinting techniques to gather data (called signals) that would vary between visitors. While many visitors to a website may have the same model of iPhone, the software and drivers installed, geolocation, browser and OS version, and even minute variances in the hardware could be different. Each browser fingerprinting technique is able to gather one or more of these signals that aim to identify these small variances between users.
 
