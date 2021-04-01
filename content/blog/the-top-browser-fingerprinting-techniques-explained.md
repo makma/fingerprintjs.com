@@ -19,6 +19,9 @@ Also known as online fingerprinting, browser fingerprinting is a tracking and id
 
 Browser fingerprinting can be used to stop fraudsters from attempting to hack, spam, or spoof website owners by accurately identifying site users. Browser fingerprinting is more difficult to circumvent than cookies, as a user’s fingerprint does not change between incognito browsing sessions, or clearing browser data. To generate a browser fingerprint with enough accuracy (or entropy) to uniquely identify a web visitor, the script must use a variety of browser fingerprinting techniques to gather data (called signals) that would vary between visitors. While many visitors to a website may have the same model of iPhone, the software and drivers installed, geolocation, browser and OS version, and even minute variances in the hardware could be different. Each browser fingerprinting technique is able to gather one or more of these signals that aim to identify these small variances between users.
 
+![Graphic of browser fingerprinting](/img/uploads/audio-fp-browser-fingerprinting-image.png)
+
+
 ## **What Information is Gathered?**
 
 With browser fingerprinting, a lot of information can be gathered from the browser: the user’s device model, its operating system, its browser version, browser extensions, user timezone, preferred language settings, ad blocker used, screen size and resolution, and all the granular tech specs of his CPU, graphics card, and so on.
