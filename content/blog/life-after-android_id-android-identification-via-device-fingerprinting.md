@@ -16,7 +16,7 @@ tags:
 authors:
   - Savannah Copland
 ---
-![Device Fingerprinting For Android](/img/uploads/4.png)
+![Device Fingerprinting For Android](/img/uploads/4.png "Device Fingerprinting For Android")
 
 **Last week, our team launched Fingerprint Android, an open-source library for accurately identifying Android devices using all available signals.**
 
