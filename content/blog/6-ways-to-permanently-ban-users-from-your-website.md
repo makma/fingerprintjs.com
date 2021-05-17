@@ -15,7 +15,7 @@ tags:
 authors:
   - Savannah Copland
 ---
-![Permanently ban users from your website with FingerprintJS](/img/uploads/ban-from-website.png)
+![Permanently ban users from your website with FingerprintJS](/img/uploads/ban-from-website.png "Permanently ban users from your website with FingerprintJS")
 
 While having user-generated content is a great way to add interactivity and community to your website, it unfortunately leaves you open to abuse from malicious users. Nudity, harassment, spam, advertising, or even malware and viruses are just some of the unwanted content you may have to deal with. Sometimes, measures like content moderation and warnings can help keep your users in line. But in many cases, these offenders are aggressive and cunning with their approach, and you’ll have to take the extreme step of permanently banning them.
 
@@ -87,7 +87,7 @@ A disposable or temporary email domain is a service that allows users to receive
 
 If your site is hosted on WordPress, [following this process to block disposable email addresses](https://www.wpbeginner.com/plugins/how-to-block-disposable-email-addresses-in-wordpress/). For others, you can simply include this as an email validation check for your sign-up and login forms. Here’s a [list of disposable email domains](https://gist.github.com/michenriksen/8710649) you can start with.
 
-![How to ban email domains using the Ban Hammer plugin](https://i.imgur.com/qzPufLM.png “Image via [wpbeginner.com](/img/uploads/qzpuflm.png)
+![How to ban email domains using the Ban Hammer plugin- Image via wpbeginner.com](/img/uploads/qzpuflm.png "How to ban email domains using the Ban Hammer plugin")
 
 The downside of this method is that you may end up blocking access for genuine users who use disposable email addresses to sign up for forums and online communities to protect their primary inbox from spam.
 
@@ -99,13 +99,13 @@ Putting a user in stealth mode—sometimes referred to as a shadowban or hellban
 
 Again, if you use WordPress, you can use plugins like [MarkTroll](https://wordpress.org/plugins/marktroll/#description) and [FreeBan](https://downloadfreewpplugins.com/wordpress/feenban/). With Disqus, you can [mark any user as shadowbanned](https://blog.disqus.com/introducing-shadow-banning-and-timeouts) from the admin dashboard.
 
-![The WordPress MarkTroll plugin](https://i.imgur.com/JU90J5K.png)
+![The WordPress MarkTroll plugin](https://i.imgur.com/JU90J5K.png "The WordPress MarkTroll plugin")
 
 The stealth mode method is very effective and stalls problematic users for a long time, even though they may eventually catch on and discover that something is wrong. Also, a problematic user who does eventually discover they are shadowbanned can simply create a new account and continue their activities.
 
 ## 6. FingerprintJS
 
-![FingerprintJS](https://i.imgur.com/CiCEyYz.png)
+![FingerprintJS](https://i.imgur.com/CiCEyYz.png "FingerprintJS")
 
 [FingerprintJS](https://fingerprintjs.com/) is a browser fingerprinting API as a service platform that can be used to uniquely identify users.
 
