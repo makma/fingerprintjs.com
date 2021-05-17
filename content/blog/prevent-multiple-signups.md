@@ -1,7 +1,7 @@
 ---
 templateKey: long-form-content
 metadata:
-  title: "[VIDEO TUTORIAL] How to prevent multiple signups with FingerprintJS Pro"
+  title: How to prevent multiple signups with FingerprintJS [Video]
   description: Protect your free trial offer forms from signup abuse. In this
     step-by-step tutorial, catch visitors who have filled out a form previously
     using FingerprintJS Pro.
