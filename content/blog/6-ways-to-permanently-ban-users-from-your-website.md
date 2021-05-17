@@ -15,17 +15,15 @@ tags:
 authors:
   - Savannah Copland
 ---
-# 6 Ways to Permanently Ban Users from Your Website
-
 While having user-generated content is a great way to add interactivity and community to your website, it unfortunately leaves you open to abuse from malicious users. Nudity, harassment, spam, advertising, or even malware and viruses are just some of the unwanted content you may have to deal with. Sometimes, measures like content moderation and warnings can help keep your users in line. But in many cases, these offenders are aggressive and cunning with their approach, and you’ll have to take the extreme step of permanently banning them.
 
 In order to permanently ban a user, you’ll need to make sure they have a unique identifier. In this article, we’ll compare six methods through which you can block specific users from accessing your website content via various unique identifiers — including [FingerprintJS](http://fingerprintjs.com/), an easy solution for comprehensive user identification. 
 
 ## 1. IP Address Ban
 
-One way to block users from having the ability to visit your site is to simply ban their IP addresses. Depending on your forum or commenting host, like [WordPress](https://securityboulevard.com/2020/06/how-to-block-ip-addresses-to-protect-your-wordpress-site/) or [Disqus](https://help.disqus.com/en/articles/1717166-using-the-ban-user-and-trust-user-controls), you’ll be able to locate the IP address of a user from the admin dashboard or server logs. For other platforms, simply run a browser search for *how to find IP address on [your platform]*. 
+One way to block users from having the ability to visit your site is to simply ban their IP addresses. Depending on your forum or commenting host, like [WordPress](https://securityboulevard.com/2020/06/how-to-block-ip-addresses-to-protect-your-wordpress-site/) or [Disqus](https://help.disqus.com/en/articles/1717166-using-the-ban-user-and-trust-user-controls), you’ll be able to locate the IP address of a user from the admin dashboard or server logs. For other platforms, simply run a browser search for *how to find IP address on \[your platform]*. 
 
-![How to locate the IP address of a user in WordPress via the comments, via wpbeginner](https://i.imgur.com/XrzSwwb.png “Image via [wpbeginner.com](https://www.wpbeginner.com/)”)
+![How to locate the IP address of a user in WordPress via the comments, via wpbeginner](https://i.imgur.com/XrzSwwb.png “Image via [wpbeginner.com](/img/uploads/xrzswwb.png)
 
 After you’ve tracked down the IP addresses of the malicious users you’d like to block, there are several ways to implement the block. Again, depending on your hosting provider or content management system, you can either block the IP address via their platform, [cPanel](https://www.tutorialspoint.com/cpanel/cpanel_ip_blocker.htm), or even manually [using your `.htaccess` file](https://htaccessbook.com/block-ip-address/).
 
@@ -49,7 +47,6 @@ Suppose you’re dealing with a Node.js-based app. You’d do something like:
    res.status(200).json({data: 'Welcome to the blog'})
 });
 request.cookies
-
 ```
 
 While the cookie method is more effective than the IP ban method, it’s not foolproof either. Tech-savvy malicious users can easily go to their browser settings and delete cookies from your website, use ad blockers to disable cookies by default, or revoke consent to being cookied, thus once again regaining access to your site.
@@ -76,7 +73,6 @@ function login($username, $email_address, $password){
       //show error message and deny access
   }
 }
-
 ```
 
 Again, the major limitation to this method is that a persistent user can simply go ahead and create a new account using a different email address and username. 
@@ -89,7 +85,7 @@ A disposable or temporary email domain is a service that allows users to receive
 
 If your site is hosted on WordPress, [following this process to block disposable email addresses](https://www.wpbeginner.com/plugins/how-to-block-disposable-email-addresses-in-wordpress/). For others, you can simply include this as an email validation check for your sign-up and login forms. Here’s a [list of disposable email domains](https://gist.github.com/michenriksen/8710649) you can start with.
 
-![How to ban email domains using the Ban Hammer plugin](https://i.imgur.com/qzPufLM.png “Image via [wpbeginner.com](https://www.wpbeginner.com/)”)
+![How to ban email domains using the Ban Hammer plugin](https://i.imgur.com/qzPufLM.png “Image via [wpbeginner.com](/img/uploads/qzpuflm.png)
 
 The downside of this method is that you may end up blocking access for genuine users who use disposable email addresses to sign up for forums and online communities to protect their primary inbox from spam.
 
@@ -112,6 +108,7 @@ The stealth mode method is very effective and stalls problematic users for a lon
 [FingerprintJS](https://fingerprintjs.com/) is a browser fingerprinting API as a service platform that can be used to uniquely identify users.
 
 Browser fingerprinting is a tracking method that uses JavaScript scripts to collect information that can identify a user. These scripts run in the background, aggregating unique information about the user’s device and browser, such as:
+
 * Operating system
 * Browser
 * Installed software
@@ -135,7 +132,6 @@ Like a number of JavaScript libraries, FingerprintJS is easy to use and has exte
 npm i @fingerprintjs/fingerprintjs
 # or
 yarn add @fingerprintjs/fingerprintjs
-
 ```
 
 Then import it and invoke it on page load:
@@ -155,7 +151,6 @@ import FingerprintJS from '@fingerprintjs/fingerprintjs';
   const visitorId = result.visitorId;
   console.log(visitorId);
 })();
-
 ```
 
 The script above should preferably be included in the root folder of all the JS files like `index.js`.
