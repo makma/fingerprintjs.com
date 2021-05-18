@@ -15,6 +15,8 @@ tags:
 authors:
   - Savannah Copland
 ---
+![](/img/uploads/free-tier.png)
+
 As a developer-first company, we wanted to make it as easy as possible for individual engineers to explore our product. To do this, we made some changes to our pricing:
 
 * **A  new 100% free forever plan** with up to 1,000 unique visitor identifications per month and unlimited API calls.
