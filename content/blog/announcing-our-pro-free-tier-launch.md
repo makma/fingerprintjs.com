@@ -29,4 +29,4 @@ Whether you are working on a personal project or an anti-fraud solution for your
 
 **[Sign up for a free account](https://dashboard.fingerprintjs.com/signup)**
 
-Have questions? Reach out to us at [support@fingerprintjs.com](mailto:support@fingerprintjs.com)
+<i>Have questions? Reach out to us at [support@fingerprintjs.com](mailto:support@fingerprintjs.com)</i>
