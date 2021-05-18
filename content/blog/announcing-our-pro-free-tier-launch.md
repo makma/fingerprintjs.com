@@ -1,7 +1,7 @@
 ---
 templateKey: long-form-content
 metadata:
-  title: Announcing our free tier launch - FingerprintJS
+  title: Announcing Pro Free Tier  - FingerprintJS
   description: "Making accurate visitor identification accessible for all with a
     longer unlimited trial period, a free forever tier and no credit card
     required. "
@@ -9,7 +9,7 @@ metadata:
   image: /img/uploads/free-tier.png
 featured: false
 publishDate: 2021-05-18T19:26:17.695Z
-title: Announcing our Pro free tier launch
+title: Announcing FingerprintJS Pro Free Tier
 tags:
   - fingerprinting
 authors:
