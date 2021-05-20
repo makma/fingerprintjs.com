@@ -25,7 +25,7 @@ In order to permanently ban a user, you’ll need to make sure they have a uniqu
 
 One way to block users from having the ability to visit your site is to simply ban their IP addresses. Depending on your forum or commenting host, like [WordPress](https://securityboulevard.com/2020/06/how-to-block-ip-addresses-to-protect-your-wordpress-site/) or [Disqus](https://help.disqus.com/en/articles/1717166-using-the-ban-user-and-trust-user-controls), you’ll be able to locate the IP address of a user from the admin dashboard or server logs. For other platforms, simply run a browser search for *how to find IP address on \[your platform]*. 
 
-![How to locate the IP address of a user in WordPress via the comments, via wpbeginner](https://i.imgur.com/XrzSwwb.png “Image via [wpbeginner.com"](/img/uploads/xrzswwb.png)
+![How to locate the IP address of a user in WordPress via the comments, via wpbeginner](/img/uploads/xrzswwb.png)
 
 After you’ve tracked down the IP addresses of the malicious users you’d like to block, there are several ways to implement the block. Again, depending on your hosting provider or content management system, you can either block the IP address via their platform, [cPanel](https://www.tutorialspoint.com/cpanel/cpanel_ip_blocker.htm), or even manually [using your `.htaccess` file](https://htaccessbook.com/block-ip-address/).
 
