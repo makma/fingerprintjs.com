@@ -22,7 +22,7 @@ Similarly, regulations like GDPR and CCPA are adding legal hurdles for companies
 
 More privacy is generally a good thing for legitimate users. It means fewer opportunities for their personal data to be stolen, it can decrease the risk of identity theft, and it gives them more control over how their data can be used.
 
-**But, increased browser privacy also comes with a hidden cost. By preventing cookies and other tracking mechanisms, it's very hard for web application developers to figure out whether a visitor is a real user or a fraudulent bot.** This leads developers to rely heavily on multi-factor authentication methods, which slow down and frustrate users. It also increases the cost of building and maintaining applications - costs likely passed on to users in one form or another.
+*But, increased browser privacy also comes with a hidden cost. By preventing cookies and other tracking mechanisms, it's very hard for web application developers to figure out whether a visitor is a real user or a fraudulent bot.* This leads developers to rely heavily on multi-factor authentication methods, which slow down and frustrate users. It also increases the cost of building and maintaining applications - costs likely passed on to users in one form or another.
 
 There is another way to identify users without intrusive cookies. In this article, I'll share a technique called *browser fingerprinting* and discuss how it can be used to prevent fraud in modern browsers. I'll also share an overview of the privacy settings that impact fingerprinting in each of the three major web browsers (Chrome, Safari, and Firefox). Finally, I'll share how fingerprinting must continue to evolve as privacy measures do.
 
