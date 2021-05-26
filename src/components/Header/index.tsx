@@ -10,6 +10,7 @@ import Container from '../common/Container'
 import { isBrowser } from '../../helpers/detector'
 import Modal from '../../components/common/Modal'
 import ContactSalesForm from '../../components/ContactSalesForm'
+import HeaderBar from '../../components/HeaderBar/HeaderBar'
 import { useCaseLinks } from '../../constants/content'
 import classNames from 'classnames'
 import { URL } from '../../constants/content'
@@ -20,7 +21,12 @@ import { ReactComponent as LogoSvg } from './fpjs.svg'
 
 import styles from './Header.module.scss'
 
-export default function Header() {
+interface HeaderProps {
+  headerBarTitle?: string
+  headerBarLinkText?: string
+  headerBarLinkUrl?: string
+}
+export default function Header({ headerBarTitle, headerBarLinkText, headerBarLinkUrl }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isContactSalesModalOpen, setIsContactSalesModalOpen] = useState(false)
 
@@ -46,6 +52,11 @@ export default function Header() {
   return (
     <>
       <header className={styles.header}>
+        {headerBarTitle && (
+          <HeaderBar linkText={headerBarLinkText} linkUrl={headerBarLinkUrl}>
+            {headerBarTitle}
+          </HeaderBar>
+        )}
         <Navbar />
         <div className={styles.nav}>
           <Container size='large'>

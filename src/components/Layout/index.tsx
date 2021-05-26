@@ -17,15 +17,33 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const siteMetadata = useSiteMetadata()
 
-  return <LayoutTemplate siteMetadata={siteMetadata}>{children}</LayoutTemplate>
+  return (
+    <LayoutTemplate
+      siteMetadata={siteMetadata}
+      headerBarTitle='Venturebeat: FingerprintJS raises $8 million for fraud prevention'
+      headerBarLinkText='Read article →'
+      headerBarLinkUrl='https://venturebeat.com/2021/02/11/fingerprintjs-raises-8-million-to-expand-its-enterprise-identification-api/'
+    >
+      {children}
+    </LayoutTemplate>
+  )
 }
 
 interface LayoutTemplateProps extends LayoutProps {
   siteMetadata: GatsbyTypes.SiteSiteMetadata
+  headerBarTitle?: string
+  headerBarLinkText?: string
+  headerBarLinkUrl?: string
 }
 
 // We need this to not use static GraphQL queries in order use it in CMS preview (it runs it in browser directly)
-export function LayoutTemplate({ children, siteMetadata }: LayoutTemplateProps) {
+export function LayoutTemplate({
+  children,
+  siteMetadata,
+  headerBarTitle,
+  headerBarLinkText,
+  headerBarLinkUrl,
+}: LayoutTemplateProps) {
   const { title, description, siteUrl, image } = siteMetadata
   const fpjsEndpoint = FPJS_ENDPOINT
   const gtmToken = GTM_TOKEN
@@ -71,7 +89,11 @@ export function LayoutTemplate({ children, siteMetadata }: LayoutTemplateProps) 
         />
         <link rel='preconnect' href={fpjsEndpoint} />
       </Helmet>
-      <Header />
+      <Header
+        headerBarTitle={headerBarTitle}
+        headerBarLinkText={headerBarLinkText}
+        headerBarLinkUrl={headerBarLinkUrl}
+      />
       {children}
       <Footer />
     </>
