@@ -2,9 +2,10 @@
 title: payment-fraud
 templateKey: static-page-content
 metadata:
-  title: Payment Fraud Prevention For Websites - FingerprintJS
-  description: Prevent chargebacks, card testing, CNP fraud and more with 99.5%
-    accurate browser fingerprinting as a service.
+  title: "Payment Fraud Prevention: User Identification | FingerprintJS"
+  description: Prevent Payment Fraud With FingerprintJS' Accurate User
+    Identification. Prevent Coupon & Promo Abuse, Card Testing, Card Cracking &
+    More.
   url: https://fingerprintjs.com/payment-fraud
   image: /img/uploads/fpjs_cover3.png
 invertContent: false
