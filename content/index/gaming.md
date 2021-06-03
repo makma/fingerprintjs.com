@@ -18,8 +18,11 @@ hero:
   ctaHref: https://dashboard.fingerprintjs.com/signup
   openCtaNewTab: false
 cardSection:
-  title: "Stop fraud by adding fingerprinting to your tech stack:"
-  subtitle: ""
+  title: Stop gaming fraud by adding fingerprinting to your tech stack
+  subtitle: "Fraud in online gaming can be challenging to prevent as players are
+    be highly incentivized to cheat. Accurate visitor identification empowers
+    developer teams to identify and mitigate threats from the login screen to
+    payment. "
   cards:
     - icon: /img/uploads/account_fraud.png
       title: Eliminate account takeover attempts
@@ -40,11 +43,11 @@ cardSection:
 
 
         [Multi-accounting prevention >](https://fingerprintjs.com/blog/stop-multi-accounting-gaming/)
-    - title: Avoid merchant penalties
+    - title: Prevent gaming payment fraud
       markdown__Content: >-
-        Only require additional authentication for suspicious or new players
-        while allowing micro-transactions and quick payments to proceed with
-        ease for everyone else. 
+        Avoid merchant penalties from chargebacks while only requiring
+        additional authentication for suspicious players. Keep
+        micro-transactions flowing while reducing payment fraud.
 
 
         [Read about how to stop card testing >](https://fingerprintjs.com/blog/stop-card-testing/)
