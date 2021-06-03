@@ -2,10 +2,9 @@
 title: ecommerce
 templateKey: static-page-content
 metadata:
-  title: Ecommerce Fraud Prevention API - FingerprintJS
-  description: "Detect and prevent ecommerce fraud with our browser fingerprinting
-    API for user identification. Catch account and payment fraud before it costs
-    your business money. "
+  title: Ecommerce Fraud Prevention | FingerprintJS
+  description: Prevent Ecommerce Fraud With FingerprintJS Browser Fingerprinting.
+    Prevent Gift Card & Coupon Abuse, Avoid Merchant Penalties & More.
   url: https://fingerprintjs.com/ecommerce
   image: /img/uploads/fpjs_cover3.png
 invertContent: false
