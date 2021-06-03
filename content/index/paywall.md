@@ -2,11 +2,10 @@
 title: paywall
 templateKey: static-page-content
 metadata:
-  title: Paywall Solution - FingerprintJS
-  description: Internet savvy users know how to circumvent your paywall and get
-    unlimited views of your content with incognito windows. Make sure that your
-    invested users pay a fair price for your content, based on your custom
-    paywall rules.
+  title: Paywall Security Software | For Developers | FingerprintJS
+  description: Secure Your Paywall Solution With FingerprintJS User
+    Identification. Enable Anonymous User Identification, Geolocation, Incognito
+    Mode Detection & More.
   url: https://fingerprintjs.com/paywall
   image: /img/uploads/fpjs_cover3.png
 invertContent: false
