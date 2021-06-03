@@ -28,14 +28,19 @@ cardSection:
       title: Credential Stuffing Prevention
       markdown__Content: Users that re-use passwords across multiple services are at
         risk of having their accounts accessed by fraudsters who purchased or
-        hacked their account information from elsewhere. Catch these attempts by
-        associating multiple login attempts from bot networks.
+        hacked their account information from elsewhere. These fraudsters may
+        then test thousands of login credentials on your site to gain access.
+        Stop the threat by associating multiple login attempts from bot networks
+        and preventing additional attempts from related visitorIDs using
+        FingerprintJS Pro.
     - icon: /img/uploads/incognito.svg
       title: Phishing Attack Prevention
-      markdown__Content: Social engineering is still one of the most reliable methods
-        for fraudsters to access accounts. Require new visitors to provide
-        additional authentication to stop phished accounts from being accessed
-        easily.
+      markdown__Content: Social engineering is among the most reliable methods for
+        fraudsters to access accounts of your trusted customers. Phishing
+        techniques can also be notoriously difficult to prevent. Websites can
+        stop phishing fraud with FingerprintJS Pro's accurate visitor
+        identification by requiring new and untrusted visitors to provide
+        additional authentication before accessing their accounts.
 blocks:
   - subheader: Stop account takeover at the source
     markdown__Content: Account fraud can take many forms. Whether by brute force or
