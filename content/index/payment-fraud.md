@@ -30,7 +30,8 @@ cardSection:
         cards through multiple small purchases.
     - title: Card Cracking
       markdown__Content: Stop malicious actors from testing combinations of expiry
-        dates, postal codes, and CVVs with lists of purchased PANs.
+        dates, postal codes, and CVVs with lists of purchased PANs. Make credit
+        card payment fraud a problem of the past.
       icon: /img/uploads/bot_detection.png
     - title: Friendly Fraud
       markdown__Content: Sometimes a real user will dispute payments even though they
