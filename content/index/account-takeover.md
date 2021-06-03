@@ -13,7 +13,9 @@ hero:
   title: Account Takeover Prevention
   description: Powerful account takeover protection for any web application. Keep
     your customers' accounts safe by accurately identifying threats before they
-    cause damage.
+    cause damage with FingerprintJS Pro's 99.5% accurate visitor identification.
+    Designed for developer teams to build fraud prevention workflows that
+    protect the login process without hindering customer experience.
   ctaText: Sign Up Now
   ctaHref: https://dashboard.fingerprintjs.com/signup
   openCtaNewTab: false
