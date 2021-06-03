@@ -19,9 +19,9 @@ authors:
 ---
 ![Bot detection radar](/img/uploads/bot-detection.png "Bot detection radar")
 
-In 2020, [more than one-third](https://ppcprotect.com/how-many-of-the-internets-users-are-robots/) of internet traffic was *bot traffic*. Some of these bots serve a useful purpose as search engine crawlers, uptime monitors, and podcast feed fetchers. Others attempt to impersonate real users, steal data, or fill your website's comments with spam.
+In 2020, [more than one-third](https://ppcprotect.com/how-many-of-the-internets-users-are-robots/) of internet traffic was **bot traffic**. Some of these bots serve a useful purpose as search engine crawlers, uptime monitors, and podcast feed fetchers. Others attempt to impersonate real users, steal data, or fill your website's comments with spam.
 
-Unfortunately, *bad bot detection* is really hard because these malicious bots are good at impersonating legitimate users.
+Unfortunately, **bad bot detection** is really hard because these malicious bots are good at impersonating legitimate users.
 
 > "Sophisticated bots look and act like humans when they visit websites, click on ads, fill out forms, take over accounts, and commit payment fraud...causing billions of dollars in losses to companies and impacting the customer experience." - [Dan Lowden](https://www.techradar.com/news/sophisticated-bots-pose-a-massive-threat), CMO at White Ops
 
@@ -37,7 +37,7 @@ Good bots will [declare themselves in the `User-Agent` HTTP header](https://webs
 * **IP address blacklists** can be used to block all traffic from servers or geographies where bad bots are more likely to originate.
 * **Suspicious URL requests** such as users randomly trying paths on your site in an attempt to find unsecured login or admin pages might indicate a bot.
 * **Machine learning models** can be trained to detect likely bots based on other known bot traffic.
-* **Fingerprinting** allows you to track *known* users (even without cookies) and implement deterrents to bots without a known fingerprint. Fingerprinting can also help you spot many requests that come from a single bot attempting to obscure its IP address or origin.
+* **Fingerprinting** allows you to track **known** users (even without cookies) and implement deterrents to bots without a known fingerprint. Fingerprinting can also help you spot many requests that come from a single bot attempting to obscure its IP address or origin.
 
 Bots are getting [much more sophisticated](https://datadome.co/bot-management-protection/bot-detection-how-to-identify-bot-traffic-to-your-website/), so you’ll likely have to use more than one of these techniques, especially if your company is a high-value target like a financial institution, payment processor, or large enterprise.
 
@@ -180,7 +180,7 @@ Refresh or restart your React application. Now, when you enter a username that d
 
 ![Your fingerprint does not match this username](https://i.imgur.com/RL96eBQ.png)
 
-On the other hand, when your username *does* match the known visitor ID, you will see a success message:
+On the other hand, when your username **does** match the known visitor ID, you will see a success message:
 
 ![Your fingerprint does match this username](https://i.imgur.com/gFcmQ4o.png)
 
