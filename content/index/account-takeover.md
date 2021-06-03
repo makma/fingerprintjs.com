@@ -2,10 +2,10 @@
 title: account-takeover
 templateKey: static-page-content
 metadata:
-  title: Account Takeover Prevention API For Websites - FingerprintJS
-  description: Prevent account fraud with 99.5% accurate browser fingerprinting as
-    a service. Catch fraudsters, phishers, bot networks and spammers before they
-    can breach your customer's accounts.
+  title: Prevent Account Takeover | For Developers | FingerprintJS
+  description: Prevent Account Takeover With FingerprintJS Browser Fingerprinting
+    API. Identify Malicious Acts Such As Credential Stuffing, Phishing &
+    Identity Theft.
   url: https://fingerprintjs.com/account-takeover
   image: /img/uploads/fpjs_cover3.png
 invertContent: false
