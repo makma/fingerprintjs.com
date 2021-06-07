@@ -27,5 +27,4 @@ After all, it is developer teams on the "front-lines" that truly understand thei
 
 We are truly excited to continue to working on further solutions that empower developers - there is much more to come.
 
-**Want to learn more about our raise?** Read our full article on Venturebeat 👇
-<https://lnkd.in/eJhwtVS>
+**Want to learn more about our raise?** [Read our full article](https://venturebeat.com/2021/02/11/fingerprintjs-raises-8-million-to-expand-its-enterprise-identification-api/) on Venturebeat.
