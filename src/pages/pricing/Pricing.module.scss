@@ -53,6 +53,10 @@
 
   .subtitle {
     grid-area: sub;
+
+    line-height: 1.5;
+    font-family: var(--ff-sans);
+    font-weight: var(--normal);
   }
 
   .description {

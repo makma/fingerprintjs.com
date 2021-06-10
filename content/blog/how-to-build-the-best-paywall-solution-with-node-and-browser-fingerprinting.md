@@ -7,6 +7,8 @@ metadata:
   description: Tired of leaky paywalls? Build a custom paywall solution for your
     website with our step-by-step guide.
   image: /img/uploads/paywall-banner.png
+  imageAlt: Paywall software solution
+  imageTitle: Paywall software solution
 featured: false
 publishDate: 2021-05-12T16:26:22.579Z
 title: How to Build the Best Paywall Solution with Node and Browser Fingerprinting
@@ -14,7 +16,7 @@ tags:
   - fingerprinting
   - js
 authors:
-  - Savannah Copland
+  - Lukonde Mwila
 ---
 ![Paywall notification](/img/uploads/paywall-banner.png "Paywall notification")
 

@@ -6,6 +6,8 @@ metadata:
     IP, email address, browser fingerprint and more.
   url: https://fingerprintjs.com/blog/permanently-ban-users/
   image: /img/uploads/ban-from-website.png
+  imageAlt: How to ban users from your website
+  imageTitle: How to ban users from your website
 featured: true
 publishDate: 2021-05-17T20:01:48.851Z
 title: 6 Ways to Permanently Ban Users from Your Website
@@ -13,7 +15,7 @@ tags:
   - web
   - fingerprinting
 authors:
-  - Savannah Copland
+  - Linda Ikechukwu
 ---
 ![Permanently ban users from your website with FingerprintJS](/img/uploads/ban-from-website.png "Permanently ban users from your website with FingerprintJS")
 
