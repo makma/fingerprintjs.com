@@ -17,7 +17,7 @@ tags:
 authors:
   - James Konik
 ---
-# Guide to Canvas Fingerprinting
+![Canvas fingerprinting](/img/uploads/canvas-fingerprinting.png "Canvas fingerprinting")
 
 Identifying users on your website has many uses. From tracking engagement to preventing fraud, knowing how users interact with your application is a powerful tool for developers and businesses.
 
@@ -26,6 +26,7 @@ But, many users don’t want to be identified. Some are concerned with privacy a
 While respecting your users’ privacy is the right thing to do, you cannot turn a blind eye to malicious users. So, web developers have had to get creative when it comes to identification online.
 
 ## What is Canvas Fingerprinting?
+
 Browsers have a lot of information that might seem trivial but can be used to create a fingerprint to identify people with a high degree of accuracy. This is called a “browser fingerprint,” and statistics show that if you put this information together, your browser fingerprint will only match [1 in 286,777](https://pixelprivacy.com/resources/browser-fingerprinting/) others.
 
 Canvas fingerprinting is a specific kind of browser fingerprinting. In HTML5, drawing operations can render differently depending on your computer’s software and hardware characteristics. So, you can run JavaScript code that can render an image and use it to make a unique fingerprint.
@@ -33,24 +34,29 @@ Canvas fingerprinting is a specific kind of browser fingerprinting. In HTML5, dr
 Data [suggests over 5%](https://securehomes.esat.kuleuven.be/~gacar/persistent/index.html) of the web’s most popular sites use canvas fingerprinting, so the technique is not unusual.
 
 ## Use Cases for Canvas Fingerprinting
+
 Understanding and tracking your users can be helpful for several reasons:
 
 ### Preventing Abuse
+
 A key reason is to prevent abuse. Identifying computers associated with spam or malicious activity makes it harder for them to cause problems. You can block potential bad actors or limit their access to your site.
 
 Abuse could be anything from a user creating multiple accounts on a site where it isn’t allowed, repeatedly trying different passwords, or attempting multiple verification codes for a stolen credit card.
 
 ### Secure User Accounts
+
 You can also use fingerprints to identify legitimate users. If a user’s fingerprint is identical, or at least similar from session to session, you can be reasonably confident the user is legitimate. If you detect a change, you can take steps to verify their identity. This could take the form of an email confirmation, a captcha, or contacting them via a device if two-factor authentication is available.
 
 You can also detect people accessing your site repeatedly to make sure paywall and rate limits are respected. Gaming or e-commerce sites can use fingerprints to help confirm users are who they say they are.
 
 ### Site Personalization
+
 Like cookies, fingerprints can be used to identify users and give them content that their previous behavior suggests they will like. This could mean showing them ads for products or services they have expressed an interest in before. With the [phase out of third-party cookies](https://blog.hubspot.com/marketing/third-party-cookie-phase-out), fingerprinting is an even more useful tool now.
 
 This article will show you how canvas fingerprinting works and how you can use it to enhance your site’s user identification and security. You’ll see how fingerprints are generated, learn what they look like. Finally, I’ll show you how to create one yourself in JavaScript.
 
 ## Deconstructing a Canvas Fingerprint
+
 The HTML5 canvas lets developers perform drawing operations on a rectangular area of the screen. Different systems handle these operations differently, and those [differences between systems](https://www.andreafortuna.org/2017/11/06/what-is-canvas-fingerprinting-and-how-the-companies-use-it-to-track-you-online/) can stack up.
 
 Browser-based differences have long been the bane of web developers, with teams spending hours trying to identify and eliminate them. In this case, however, you can exploit them. Using the variability of operations between systems, you can generate unique images regardless of the user’s IP address, headers, cookie settings, or other potentially identifying information.
@@ -64,6 +70,7 @@ This is why many canvas fingerprints use a string of text that uses all the lett
 The output from a canvas fingerprint is then used to generate a [hash code](https://github.com/artem0/canvas-fingerprinting), which can be stored to identify the user. Though the hash is unique, the same browser should come up with the same one each time.
 
 ## How to Generate a Canvas Fingerprint
+
 There are several methods for generating a canvas fingerprint, but the basic idea is to draw a blank rectangle and then apply various operations, such as colored lines, overlays, and anti-aliasing filters.
 
 Drawing shapes in HTML with different fill styles can also produce differences, particularly around the edges or where they intersect.
@@ -73,6 +80,7 @@ For further variety, you can use other characters, like those from Asian fonts, 
 Making the code generate a unique hash [is a challenge](https://stackoverflow.com/questions/25508970/canvas-fingerprinting-on-chrome), and it’s not easy to confirm how well your code does this. That’s why using an established library like [FingerprintJS](https://fingerprintjs.com/) can make generating canvas fingerprints much easier.
 
 ## Canvas Fingerprinting Examples
+
 If you decide to generate your own canvas fingerprint, you’ll need to write JavaScript as you want the canvas operations to run in your user’s browser.
 
 The following code will generate a canvas fingerprint:
@@ -137,7 +145,8 @@ As you can see in the following examples (from [Codepen](https://codepen.io/jon/
 
 ![Example of a canvas fingerprint showing hash number](https://i.imgur.com/v3RIe4y.png)
 
-## Conclusion 
+## Conclusion
+
 Canvas fingerprinting is a useful tool for understanding visitors and keeping your web application secure. It isn’t a perfect solution on its own, but it’s a valuable piece in the ecosystem of tools available.
 
 With the right mix of ingenuity (and JavaScript), you can identify people and monitor their behavior across sessions, flagging suspicious activity to help your team react to threats faster. You can also maintain consistency for returning visitors, serving them content most relevant to them and increasing engagement along the way.
