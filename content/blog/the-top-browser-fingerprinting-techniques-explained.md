@@ -55,7 +55,7 @@ WebGL fingerprinting is very similar to Canvas fingerprinting as they both use t
 
 ### Media Device Fingerprinting
 
-This technique uncovers a list of all the stored media devices and their respective IDs on a user’s laptop or PC. This includes all internal media components like video cards, audio cards, and all connected or linked devices like headphones. 
+This technique uncovers a list of all the connected media devices and their respective IDs on a user’s laptop or PC. This includes all internal media components like video cards, audio cards, and all connected or linked devices like headphones. 
 
 Media device fingerprinting is not widely used in fingerprinting functions as it requires the user to grant access to their microphone and camera to get a full list of connected devices. As such, this technique is useful for services that innately require webcam or microphone access, such as video chat services.
 
