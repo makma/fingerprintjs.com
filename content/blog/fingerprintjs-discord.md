@@ -30,4 +30,4 @@ We are excited to get this new community off the ground with your help. Everyone
 * Get notifications about releases, updates, and other relevant news
 * Let others know about you and any awesome projects you’ve built
 
-**[JOIN NOW](https://discord.gg/ad6R2ttHVX)**
+### [Join Today!](https://discord.gg/ad6R2ttHVX)
