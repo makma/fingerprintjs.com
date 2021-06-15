@@ -16,6 +16,8 @@ tags:
 authors:
   - Savannah Copland
 ---
+*Join our Discord to discuss our Javascript browser fingerprinting library, FingerprintJS Pro and all things anti-fraud.*
+
 ![FingerprintJS Discord Launch](/img/uploads/fingerprintjs-discord.png "FingerprintJS Discord Launch")
 
 Join our community Discord to talk and learn about all things FingerprintJS. We welcome discussions around our open source fingerprinting libraries, our Pro paid offering, as well as anything to do with visitor identification and anti-fraud.
