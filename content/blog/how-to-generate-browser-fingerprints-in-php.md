@@ -14,7 +14,7 @@ title: How to Generate Browser Fingerprints in PHP
 tags:
   - fingerprinting
 authors:
-  - Savannah Copland
+  - Aniket Bhattacharyea
 ---
 # How to Use Browser Fingerprints in PHP
 
