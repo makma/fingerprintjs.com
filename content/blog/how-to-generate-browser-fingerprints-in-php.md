@@ -16,7 +16,7 @@ tags:
 authors:
   - Aniket Bhattacharyea
 ---
-# How to Use Browser Fingerprints in PHP
+![](/img/uploads/browser-fingerprints-in-php-1-.png)
 
 Almost every web developer has to combat fraud at some point. Attacks might include malicious users trying to brute force passwords, place fraudulent orders, initiate bot attacks, or bypass your site’s paywall.
 
@@ -26,9 +26,9 @@ Traditional methods of tracking users in PHP often fall short when trying to pre
 
 Browser fingerprinting has a number of useful applications — from helping block malicious users to fighting bank fraud:
 
-- **Combating Malicious Users** - Browser fingerprints can be used to identify when a user trying to register is a bot rather than a real person. Fingerprints can also help detect when a legitimate account is being used by a malicious user.
-- **Preventing Financial Fraud** - You can use fingerprints to detect and stop malicious users from testing stolen credit cards by making many small purchases on your site from different credit cards.
-- **Enforcing paywalls** - Sometimes, tech-savvy readers use incognito mode or delete their cookies to bypass paywalls and access restricted content. Using browser fingerprints, you can catch users bypassing your paywall to make sure your business isn’t losing revenue.
+* **Combating Malicious Users** - Browser fingerprints can be used to identify when a user trying to register is a bot rather than a real person. Fingerprints can also help detect when a legitimate account is being used by a malicious user.
+* **Preventing Financial Fraud** - You can use fingerprints to detect and stop malicious users from testing stolen credit cards by making many small purchases on your site from different credit cards.
+* **Enforcing paywalls** - Sometimes, tech-savvy readers use incognito mode or delete their cookies to bypass paywalls and access restricted content. Using browser fingerprints, you can catch users bypassing your paywall to make sure your business isn’t losing revenue.
 
 ## Browser Fingerprinting in PHP
 
@@ -278,7 +278,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 You can test FingerprintJS by registering a user and trying to register another user. Using your FingerprintJS fingerprint, you will see the error message even if you use incognito mode, restart your browser, or disable cookies.
 
-_You can find all the above code for using FingerprintJS inside the `fingerprintjs` directory in [this GitHub repository](https://github.com/heraldofsolace/FingerprintJS-PHP)._
+*You can find all the above code for using FingerprintJS inside the `fingerprintjs` directory in [this GitHub repository](https://github.com/heraldofsolace/FingerprintJS-PHP).*
 
 ## Advantages of FingerprintJS
 
@@ -296,7 +296,7 @@ The problem with session tracking is that it’s tied to a session ID stored in 
 
 Additionally, sessions are not permanent. Once the browser is closed, the session data is deleted. This means that users can just restart their browser and register again.
 
-_If you’d like to demonstrate this behavior and compare it to the fingerprint example above, see the code inside the `session` directory in [this GitHub repository](https://github.com/heraldofsolace/FingerprintJS-PHP)._
+*If you’d like to demonstrate this behavior and compare it to the fingerprint example above, see the code inside the `session` directory in [this GitHub repository](https://github.com/heraldofsolace/FingerprintJS-PHP).*
 
 ### Fingerprinting vs. HTTP Cookies
 
@@ -308,7 +308,7 @@ Just like in session tracking, cookies will not work as intended in incognito mo
 
 Also, cookies are not permanent and can be cleared by the user or by the browser. For example, most major browsers provide an option to clear cookies automatically when the browser is closed. Finally, cookies can be [blocked by the browser entirely](https://proprivacy.com/ruinmysearchhistory/how-to-block-cookies).
 
-_You can find a code sample using HTTP cookies inside the `cookie` directory in this [GitHub](https://github.com/heraldofsolace/FingerprintJS-PHP) repo._
+*You can find a code sample using HTTP cookies inside the `cookie` directory in this [GitHub](https://github.com/heraldofsolace/FingerprintJS-PHP) repo.*
 
 ### Fingerprinting vs. IP Tracking
 
@@ -316,7 +316,7 @@ An [IP or Internet Protocol address](https://en.wikipedia.org/wiki/IP_address) i
 
 Unfortunately, an IP address can be easily spoofed. Users can set them manually when browsing, even if they're not using a proxy server. IP address tracking can also be inaccurate because different devices can have the same IP address when they share the same router. For example, in a university or organization network, multiple devices often share the same IP address.
 
-_You can find a code sample using IP tracking inside the directory `ip` in the [GitHub repository here](https://github.com/heraldofsolace/FingerprintJS-PHP)._
+*You can find a code sample using IP tracking inside the directory `ip` in the [GitHub repository here](https://github.com/heraldofsolace/FingerprintJS-PHP).*
 
 ## Conclusion
 
