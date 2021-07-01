@@ -389,13 +389,12 @@ The process of checking CSS selectors runs on the main thread. The algorithm use
 
 We've measured the time it takes several old devices to check different numbers of CSS selectors per filter. We test only in the browsers where it makes sense to identify visitors by ad blockers. The tests were conducted in cold browsers on a complex page (about 500 KB of uncompressed CSS code). The results:
 
-|     |     |     |     |
+|     |  MacBook Pro 2015 (Core i7), macOS 11, Safari 14   |  iPhone SE1, iOS 13, Safari 13   |  Pixel 2, Android 9, Chrome 89   |
 | --- | --- | --- | --- |
-|     |     |     |     |
-|     |     |     |     |
-|     |     |     |     |
-|     |     |     |     |
-|     |     |     |     |
+|  1 selector per filter (45 in total)   |  3.1ms   |  10ms   |   5.7ms  |
+|   At most 5 selectors per filter (210 in total)  |   9ms  |  27ms   |   17ms  |
+|   At most 10 selectors per filter (401 in total  |  20ms  |  20ms   |  36ms   |
+|    All selectors (23029 in total) | ≈7000ms    |  ≈19000ms   |  ≈2600ms   |
 
 The more CSS selectors the algorithm checks, the more accurate the result will be. But a large number of CSS selectors increases the execution time and the code size. We have chosen to check 5 selectors per filter as a good balance between performance, stability and the code size.
 
