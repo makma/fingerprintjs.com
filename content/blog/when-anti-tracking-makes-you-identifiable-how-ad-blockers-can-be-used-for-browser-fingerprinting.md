@@ -158,7 +158,8 @@ Your chosen selectors should contain no < embed>, no fixed positioning, no pseud
 
 You can see some of the selectors blocked by your browser in the interactive demo below:
 
-<iframe style="width: calc(100% + 40px); height: 75vh; min-height: 360px; margin-left: -20px; margin-right: -20px;" scrolling="no" src="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=selectors" frameborder="no"></iframe>
+<h3 style="text-align: center;">Interactive Demo<h3/>
+<iframe style="width: calc(100% + 40px); height: 75vh; min-height: 360px; margin-left: -20px; margin-right: -20px; border: 4px solid #434875; border-radius: 10px;" scrolling="no" src="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=selectors" frameborder="no"></iframe>
 
 ### Data source 2: getting the list of ad blocking filters
 
@@ -330,7 +331,7 @@ getActiveFilters(...).then(activeFilters => {
 ```
 
 
-<iframe style="width: calc(100% + 40px); height: 75vh; min-height: 360px; margin-left: -20px; margin-right: -20px;" scrolling="no" src="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=filters" frameborder="no"></iframe>
+<iframe style="width: calc(100% + 40px); height: 75vh; min-height: 360px; margin-left: -20px; margin-right: -20px; border: 4px solid #434875; border-radius: 10px;" scrolling="no" src="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=filters" frameborder="no"></iframe>
 
 As we mentioned above, the filter lists themselves are updated frequently. The updates can make the fingerprint change. The fuzzy algorithm mitigates this problem, but the underlying selectors will need to be updated eventually. So, you will need to repeat the process of collecting unique selectors after some time to actualize the data and keep the fingerprinting accuracy high.
 
