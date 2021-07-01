@@ -51,7 +51,7 @@ In this section we’ll go fairly deep into the internals of ad blockers as it w
 Ad blockers typically run as extensions built on top of browser APIs:
 
 * [Google Chrome](https://developer.chrome.com/docs/extensions/reference/) and other Chromium-based browsers: Extensions are JavaScript applications that run in a sandboxed environment with additional browser APIs available only to browser extensions.  There are two ways ad blockers can block content. The first one is element hiding and the second one is resource blocking:
-* * Element hiding is done either by injecting CSS code, or by using DOM APIs such as [querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll) or [removeChild](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild).
+  * Element hiding is done either by injecting CSS code, or by using DOM APIs such as [querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll) or [removeChild](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild).
   * Resource blocking employs a different technique. Instead of rendering elements on a page and then hiding them, extensions block the resources on a browser networking level. To plug into browser networking, ad blockers will intercept requests as they happen or use declarative blocking rules defined beforehand. Request interception utilizes [webRequest](https://developer.chrome.com/docs/extensions/reference/webRequest/) API, which is the most privacy violating technique. It works by reading every request that a browser is making and deciding on the fly if it represents an ad and should be blocked. The declarative approach utilizes [declarativeNetRequest](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/) API to preemptively instruct browsers what needs to be blocked. This happens without reading actual requests, thus providing more privacy.
 * [Firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions): This API is almost the same as in Google Chrome. The only notable difference is the lack of [declarativeNetRequest](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/) API.
 * [Safari](https://developer.apple.com/documentation/safariservices/safari_web_extensions): Unlike Chrome or Firefox, Safari extensions are native applications. Safari provides [a declarative API](https://developer.apple.com/documentation/safariservices/creating_a_content_blocker) for ad blockers. Ad blockers create static lists of things that describe what to block, and pass them to Safari. A list will contain rules that tell what network requests, HTML elements or cookies to block. A list content may also depend on user settings. Ad blockers have no way of accessing browsing history in Safari. You can watch [a video by Apple with a detailed explanation](https://developer.apple.com/videos/play/wwdc2015/511/).
@@ -297,18 +297,25 @@ To make a fingerprint using selectors only, we take a list of selectors, check w
 
 ```js
 // See the snippet above
+
 getBlockedSelectors(...)
-  .then(blockedSelectors => {
-    // See the murmurHash3 implementation at
-    // https://github.com/karanlyons/murmurHash3.js
-    const fingerprint = murmurHash3.x86.hash128(
-      JSON.stringify(blockedSelectors)
-    )
 
-    console.log(fingerprint)
-  })
+  .then(blockedSelectors => {
+
+    // See the murmurHash3 implementation at
+
+    // https://github.com/karanlyons/murmurHash3.js
+
+    const fingerprint = murmurHash3.x86.hash128(
+
+      JSON.stringify(blockedSelectors)
+
+    )
+
+    console.log(fingerprint)
+
+  })
 ```
-
 
 This fingerprint is very sensitive but not stable. The CSS code of the page can accidentally hide a test HTML element and thus change the result. Also, as the community updates the filters quite often, every small update can add or remove a CSS selector rule, which will change the whole fingerprint. So, a fingerprint based on selectors alone can only be used for short-term identification.
 
@@ -318,17 +325,23 @@ To mitigate the instability of CSS selectors alone, you can use the list of filt
 
 ```js
 // See the snippet above
-getActiveFilters(...).then(activeFilters => {
-  // See the murmurHash3 implementation at
-  // https://github.com/karanlyons/murmurHash3.js
-  const fingerprint = murmurHash3.x86.hash128(
-    JSON.stringify(activeFilters)
-  )
 
-  console.log(fingerprint)
+getActiveFilters(...).then(activeFilters => {
+
+  // See the murmurHash3 implementation at
+
+  // https://github.com/karanlyons/murmurHash3.js
+
+  const fingerprint = murmurHash3.x86.hash128(
+
+    JSON.stringify(activeFilters)
+
+  )
+
+  console.log(fingerprint)
+
 })
 ```
-
 
 <iframe style="width: calc(100% + 40px); height: 75vh; min-height: 360px; margin-left: -20px; margin-right: -20px;" scrolling="no" src="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=filters" frameborder="no"></iframe>
 
