@@ -150,7 +150,6 @@ getBlockedSelectors(['.advertisement', 'img[alt="Promo"]'])
   })
 ```
 
-
 To determine which CSS selectors to check, you can download some of [the most popular filters](https://github.com/fingerprintjs/fingerprintjs/blob/f1174cf83e2ec94d0c576d4caabf9ebbcf41fccc/docs/content_blockers.md#list-of-filters) and extract the CSS selectors that are blocked on all websites. The rules for such selectors start with ##.
 
 Your chosen selectors should contain no <embed>, no fixed positioning, no pseudo classes and no combinators. The offsetParent check will not work with either <embed> or fixed positioning. Selectors with combinators require a sophisticated script for building test HTML elements, and since there are only a few selectors with combinators, it isn't worth writing such a script. Finally, you should test only unique selectors across all the filters to avoid duplicate work. You can see a script that we use to parse the unique selectors from the filters [here](https://github.com/fingerprintjs/fingerprintjs/blob/f1174cf83e2ec94d0c576d4caabf9ebbcf41fccc/resources/content_blocking/make_selectors_tester.ts).
@@ -201,7 +200,6 @@ You can see how we handle such filters in our [GitHub repository](https://github
 This part will run in the browser. In a perfect world we would only need to check whether a single selector from each of the filters is blocked. When a unique selector is blocked, you can be sure that the person uses the filter. Likewise, if a unique selector isn't blocked, you can be sure the person doesn't use the filter.
 
 ```js
-
 const uniqueSelectorsOfFilters = {
 
   easyList: '\[lazy-ad="leftthin_banner"]',
@@ -241,7 +239,6 @@ getActiveFilters(uniqueSelectorsOfFilters)
     console.log(activeFilters)
 
   })
-
 ```
 
 In practice, the result may sometimes be incorrect because of wrong detection of blocked selectors. It can happen for several reasons: ad blockers can update their filters, they can experience glitches, or page CSS can interfere with the process.
@@ -249,7 +246,6 @@ In practice, the result may sometimes be incorrect because of wrong detection of
 In order to mitigate the impact of unexpected behavior, we can use fuzzy logic. For example, if more than 50% of unique selectors associated with one filter are blocked, we will assume the filter is enabled. An example code that checks which of the given filters are enabled using a fuzzy logic:
 
 ```js
-
 const uniqueSelectorsOfFilters = {
 
   easyList: \['[lazy-ad="leftthin_banner"]', '#ad_300x250_2'],
@@ -305,7 +301,6 @@ getActiveFilters(uniqueSelectorsOfFilters)
     console.log(activeFilters)
 
   })
-
 ```
 
 ## Ad blocker fingerprinting
@@ -335,7 +330,6 @@ You can make a fingerprint solely from the information that we’ve gotten from 
 To make a fingerprint using selectors only, we take a list of selectors, check which of them are blocked and hash the result:
 
 ```js
-
 // See the snippet above
 
 getBlockedSelectors(...)
@@ -355,7 +349,6 @@ getBlockedSelectors(...)
     console.log(fingerprint)
 
   })
-
 ```
 
 This fingerprint is very sensitive but not stable. The CSS code of the page can accidentally hide a test HTML element and thus change the result. Also, as the community updates the filters quite often, every small update can add or remove a CSS selector rule, which will change the whole fingerprint. So, a fingerprint based on selectors alone can only be used for short-term identification.
@@ -365,7 +358,6 @@ This fingerprint is very sensitive but not stable. The CSS code of the page can 
 To mitigate the instability of CSS selectors alone, you can use the list of filters instead to generate a fingerprint. The list of filters that a person uses is only likely to change if they switch ad blockers, or if their installed ad blocker undergoes a significant update. To make a fingerprint, get the list of enabled filters and hash it:
 
 ```js
-
 // See the snippet above
 
 getActiveFilters(...).then(activeFilters => {
@@ -383,7 +375,6 @@ getActiveFilters(...).then(activeFilters => {
   console.log(fingerprint)
 
 })
-
 ```
 
 <iframe style="width: calc(100% + 40px); height: 75vh; min-height: 360px; margin-left: -20px; margin-right: -20px;" scrolling="no" src="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=filters" frameborder="no"></iframe>
