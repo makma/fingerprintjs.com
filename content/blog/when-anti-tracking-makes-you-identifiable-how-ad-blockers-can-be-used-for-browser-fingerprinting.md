@@ -318,8 +318,6 @@ There are dozens of ad blockers available. For example, AdBlock, uBlock Origin, 
 
 An example of an ad blocker customization:
 
-(download the image below from <https://drive.google.com/file/d/1yU4XrQS5T8S4jhn0EpcASYkrRg2wvTc8>)
-
 ![](https://lh5.googleusercontent.com/f5MruH7ljrLz1KFZ6-jur6_jxVNE4rMaEik1S-DvSAcp5d3Li1nXL0rmUktIFuOMDGVT0xsXGrqjrL_IJV0ybnIZhHZjq0La_txIRYK84K3Wz7KDE6197yiJBA9PchDgoX2j1P5h)
 
 A good browser fingerprint should stay the same when a user goes from regular to incognito (private) mode of the browser. Thus, ad blockers can provide a useful source of entropy only for browsers and operating systems where ad blockers are enabled by default in incognito mode:
@@ -387,8 +385,6 @@ getActiveFilters(...).then(activeFilters => {
 })
 
 ```
-
-(a demo here; the embed code is right below)
 
 <iframe style="width: calc(100% + 40px); height: 75vh; min-height: 360px; margin-left: -20px; margin-right: -20px;" scrolling="no" src="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=filters" frameborder="no"></iframe>
 
