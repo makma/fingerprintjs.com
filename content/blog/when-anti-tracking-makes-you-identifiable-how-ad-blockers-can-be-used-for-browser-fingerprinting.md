@@ -201,45 +201,31 @@ This part will run in the browser. In a perfect world we would only need to chec
 
 ```js
 const uniqueSelectorsOfFilters = {
-
-  easyList: '\[lazy-ad="leftthin_banner"]',
-
-  fanboyAnnoyances: '#feedback-tab'
-
+  easyList: '[lazy-ad="leftthin_banner"]',
+  fanboyAnnoyances: '#feedback-tab'
 }
 
 async function getActiveFilters(uniqueSelectors) {
+  const selectorArray = Object.values(uniqueSelectors)
 
-  const selectorArray = Object.values(uniqueSelectors)
+  // See the snippet above
+  const blockedSelectors = new Set(
+    await getBlockedSelectors(selectorArray)
+  )
 
-  // See the snippet above
-
-  const blockedSelectors = new Set(
-
-    await getBlockedSelectors(selectorArray)
-
-  )
-
-  return Object.keys(uniqueSelectors)
-
-    .filter(filterName => {
-
-      const selector = uniqueSelectors\[filterName]
-
-      return blockedSelectors.has(selector)
-
-    })
-
+  return Object.keys(uniqueSelectors)
+    .filter(filterName => {
+      const selector = uniqueSelectors[filterName]
+      return blockedSelectors.has(selector)
+    })
 }
 
 getActiveFilters(uniqueSelectorsOfFilters)
-
-  .then(activeFilters => {
-
-    console.log(activeFilters)
-
-  })
+  .then(activeFilters => {
+    console.log(activeFilters)
+  })
 ```
+
 
 In practice, the result may sometimes be incorrect because of wrong detection of blocked selectors. It can happen for several reasons: ad blockers can update their filters, they can experience glitches, or page CSS can interfere with the process.
 
@@ -247,61 +233,41 @@ In order to mitigate the impact of unexpected behavior, we can use fuzzy logic. 
 
 ```js
 const uniqueSelectorsOfFilters = {
-
-  easyList: \['[lazy-ad="leftthin_banner"]', '#ad_300x250_2'],
-
-  fanboyAnnoyances: \['#feedback-tab', '#taboola-below-article']
-
+  easyList: ['[lazy-ad="leftthin_banner"]', '#ad_300x250_2'],
+  fanboyAnnoyances: ['#feedback-tab', '#taboola-below-article']
 }
 
 async function getActiveFilters(uniqueSelectors) {
+  // Collect all the selectors into a plain array
+  const allSelectors = [].concat(
+    ...Object.values(uniqueSelectors)
+  )
 
-  // Collect all the selectors into a plain array
+  const blockedSelectors = new Set(
+    await getBlockedSelectors(allSelectors)
+  )
 
-  const allSelectors = \[].concat(
+  return Object.keys(uniqueSelectors)
+    .filter(filterName => {
+      const selectors = uniqueSelectors[filterName]
+      let blockedSelectorCount = 0
 
-    ...Object.values(uniqueSelectors)
+      for (const selector of selectors) {
+        if (blockedSelectors.has(selector)) {
+          ++blockedSelectorCount
+        }
+      }
 
-  )
-
-  const blockedSelectors = new Set(
-
-    await getBlockedSelectors(allSelectors)
-
-  )
-
-  return Object.keys(uniqueSelectors)
-
-    .filter(filterName => {
-
-      const selectors = uniqueSelectors\[filterName]
-
-      let blockedSelectorCount = 0
-
-      for (const selector of selectors) {
-
-        if (blockedSelectors.has(selector)) {
-
-          ++blockedSelectorCount
-
-        }
-
-      }
-
-      return blockedSelectorCount > selectors.length * 0.5
-
-    })
-
+      return blockedSelectorCount > selectors.length * 0.5
+    })
 }
 
 getActiveFilters(uniqueSelectorsOfFilters)
-
-  .then(activeFilters => {
-
-    console.log(activeFilters)
-
-  })
+  .then(activeFilters => {
+    console.log(activeFilters)
+  })
 ```
+
 
 ## Ad blocker fingerprinting
 
