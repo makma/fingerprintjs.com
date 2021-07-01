@@ -297,25 +297,18 @@ To make a fingerprint using selectors only, we take a list of selectors, check w
 
 ```js
 // See the snippet above
-
 getBlockedSelectors(...)
+  .then(blockedSelectors => {
+    // See the murmurHash3 implementation at
+    // https://github.com/karanlyons/murmurHash3.js
+    const fingerprint = murmurHash3.x86.hash128(
+      JSON.stringify(blockedSelectors)
+    )
 
-  .then(blockedSelectors => {
-
-    // See the murmurHash3 implementation at
-
-    // https://github.com/karanlyons/murmurHash3.js
-
-    const fingerprint = murmurHash3.x86.hash128(
-
-      JSON.stringify(blockedSelectors)
-
-    )
-
-    console.log(fingerprint)
-
-  })
+    console.log(fingerprint)
+  })
 ```
+
 
 This fingerprint is very sensitive but not stable. The CSS code of the page can accidentally hide a test HTML element and thus change the result. Also, as the community updates the filters quite often, every small update can add or remove a CSS selector rule, which will change the whole fingerprint. So, a fingerprint based on selectors alone can only be used for short-term identification.
 
@@ -325,23 +318,17 @@ To mitigate the instability of CSS selectors alone, you can use the list of filt
 
 ```js
 // See the snippet above
-
 getActiveFilters(...).then(activeFilters => {
+  // See the murmurHash3 implementation at
+  // https://github.com/karanlyons/murmurHash3.js
+  const fingerprint = murmurHash3.x86.hash128(
+    JSON.stringify(activeFilters)
+  )
 
-  // See the murmurHash3 implementation at
-
-  // https://github.com/karanlyons/murmurHash3.js
-
-  const fingerprint = murmurHash3.x86.hash128(
-
-    JSON.stringify(activeFilters)
-
-  )
-
-  console.log(fingerprint)
-
+  console.log(fingerprint)
 })
 ```
+
 
 <iframe style="width: calc(100% + 40px); height: 75vh; min-height: 360px; margin-left: -20px; margin-right: -20px;" scrolling="no" src="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=filters" frameborder="no"></iframe>
 
