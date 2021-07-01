@@ -17,7 +17,7 @@ title: "When anti-tracking makes you identifiable: how ad blockers can be used
 tags:
   - fingerprinting
 authors:
-  - Savannah Copland
+  - Sergey Mostsevenko
 ---
 ![Ad blocker fingerprinting](https://lh6.googleusercontent.com/FwfigX3pRuM1tkC_T1Emaj30G1bVAIQguQy9jzgTmQHV4cKqAXl3tLVJpfpAgbJxHFn31fBZH5reu8Ull8TGYq9QalIKwkbm6XDSgmzsEaoiM7glRplHdQSaZMesWtcWOKRZn5qr "Ad blocker fingerprinting")
 
