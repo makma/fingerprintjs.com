@@ -200,7 +200,7 @@ You can see how we handle such filters in our [GitHub repository](https://github
 
 This part will run in the browser. In a perfect world we would only need to check whether a single selector from each of the filters is blocked. When a unique selector is blocked, you can be sure that the person uses the filter. Likewise, if a unique selector isn't blocked, you can be sure the person doesn't use the filter.
 
-\`\``js
+```js
 
 const uniqueSelectorsOfFilters = {
 
@@ -242,13 +242,13 @@ getActiveFilters(uniqueSelectorsOfFilters)
 
   })
 
-\`\``
+```
 
 In practice, the result may sometimes be incorrect because of wrong detection of blocked selectors. It can happen for several reasons: ad blockers can update their filters, they can experience glitches, or page CSS can interfere with the process.
 
 In order to mitigate the impact of unexpected behavior, we can use fuzzy logic. For example, if more than 50% of unique selectors associated with one filter are blocked, we will assume the filter is enabled. An example code that checks which of the given filters are enabled using a fuzzy logic:
 
-\`\``js
+```js
 
 const uniqueSelectorsOfFilters = {
 
@@ -306,7 +306,7 @@ getActiveFilters(uniqueSelectorsOfFilters)
 
   })
 
-\`\``
+```
 
 ## Ad blocker fingerprinting
 
@@ -336,7 +336,7 @@ You can make a fingerprint solely from the information that we’ve gotten from 
 
 To make a fingerprint using selectors only, we take a list of selectors, check which of them are blocked and hash the result:
 
-\`\``js
+```js
 
 // See the snippet above
 
@@ -358,7 +358,7 @@ getBlockedSelectors(...)
 
   })
 
-\`\``
+```
 
 This fingerprint is very sensitive but not stable. The CSS code of the page can accidentally hide a test HTML element and thus change the result. Also, as the community updates the filters quite often, every small update can add or remove a CSS selector rule, which will change the whole fingerprint. So, a fingerprint based on selectors alone can only be used for short-term identification.
 
@@ -366,7 +366,7 @@ This fingerprint is very sensitive but not stable. The CSS code of the page can 
 
 To mitigate the instability of CSS selectors alone, you can use the list of filters instead to generate a fingerprint. The list of filters that a person uses is only likely to change if they switch ad blockers, or if their installed ad blocker undergoes a significant update. To make a fingerprint, get the list of enabled filters and hash it:
 
-\`\``js
+```js
 
 // See the snippet above
 
@@ -386,7 +386,7 @@ getActiveFilters(...).then(activeFilters => {
 
 })
 
-\`\``
+```
 
 (a demo here; the embed code is right below)
 
