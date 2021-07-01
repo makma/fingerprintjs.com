@@ -1,0 +1,50 @@
+.container {
+  --contentWidth: 610px;
+  background-color: v('brand-water');
+  color: v('white');
+
+  padding-top: rem(11px);
+  padding-bottom: rem(12px);
+
+  @include media('<=phone') {
+    padding: rem(11px) rem(5px) rem(12px);
+  }
+}
+
+.headerBar {
+  display: flex;
+  justify-content: space-between;
+
+  @include media('<tablet') {
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: center;
+  }
+}
+
+.text,
+.link {
+  font-size: rem(14px);
+  text-align: center;
+
+  @include media('<tablet') {
+    font-size: rem(12px);
+  }
+
+  @include media('<phone') {
+    font-size: rem(11px);
+  }
+}
+
+.link {
+  @include transition((opacity));
+  @include transition-duration(0.2s);
+
+  &:hover {
+    opacity: v('muted');
+  }
+
+  @include media('<tablet') {
+    padding-top: rem(8px);
+  }
+}
