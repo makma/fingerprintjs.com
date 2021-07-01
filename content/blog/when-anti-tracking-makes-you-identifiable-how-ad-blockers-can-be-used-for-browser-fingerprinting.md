@@ -10,7 +10,7 @@ metadata:
   imageAlt: ad blocker fingerprinting
   imageTitle: ad blocker fingerprinting
   image: /img/uploads/cover.png
-featured: false
+featured: true
 publishDate: 2021-07-01T13:48:02.818Z
 title: "When anti-tracking makes you identifiable: how ad blockers can be used
   for browser fingerprinting"
