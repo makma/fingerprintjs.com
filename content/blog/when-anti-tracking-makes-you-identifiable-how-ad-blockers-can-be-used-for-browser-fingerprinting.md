@@ -62,7 +62,7 @@ Android browsers are a special case, in that they generally lack extension APIs.
 
 Ad blockers prevent ads from being shown by looking for specific elements to block within the site’s contents. To identify these advertising elements, ad blockers use collections of rules called "filters" to decide what to block.
 
-![](https://lh5.googleusercontent.com/w4qO5U7HQl2sBCMJE6gnuhCQLbOE0UW8I0a_cRKekJ2AK-A-YjA_csDCPFtWMb0KRILbmoHEUO2XEHcs0go6v6fgfVHUzcBMds7MFScZfot1e6B4ccaykOjf2vC4lTlZG9N6Dpzc)
+![How ad blocker filters work](https://lh5.googleusercontent.com/w4qO5U7HQl2sBCMJE6gnuhCQLbOE0UW8I0a_cRKekJ2AK-A-YjA_csDCPFtWMb0KRILbmoHEUO2XEHcs0go6v6fgfVHUzcBMds7MFScZfot1e6B4ccaykOjf2vC4lTlZG9N6Dpzc "How ad blocker filters work")
 
 Usually these filters are maintained by the open source community. Like any other project, filters are created by different people for different needs. For example, French websites often use local ad systems that are not known worldwide and are not blocked by general ad filters, so developers in France will want to create a filter to block ads on French websites. Some filter maintainers can have privacy concerns and thus create filters that block trackers.
 
@@ -70,7 +70,7 @@ A filter is usually a text file that follows a common standard called "[AdBlock 
 
 A blocking rule example is shown below:
 
-![](https://lh5.googleusercontent.com/54P_Mlf61BTLLYMCsYn3Sd35mrIXHTymQrXvnS09ZKA0r-CahOU2n2dwqMhVau1gkqPByS2PpGRQmylrgBe16pV6i1KRjts_fII7_OB5_UUiDq4G-DivaKdiB3Biw3vCINPWwOK9)
+![Ad blocker blocking rule](https://lh5.googleusercontent.com/54P_Mlf61BTLLYMCsYn3Sd35mrIXHTymQrXvnS09ZKA0r-CahOU2n2dwqMhVau1gkqPByS2PpGRQmylrgBe16pV6i1KRjts_fII7_OB5_UUiDq4G-DivaKdiB3Biw3vCINPWwOK9 "Ad blocker blocking rule")
 
 The most common sets of filters used by AdBlock, AdGuard and other ad blockers include:
 
@@ -103,101 +103,55 @@ This approach can generate false positives when there are a lot of HTML elements
 
 Here is an example code that checks which selectors are blocked:
 
-\`\``js
-
+```js
 async function getBlockedSelectors(allSelectors) {
+  // A storage for the test elements
+  const elements = new Array(allSelectors.length)
 
-  // A storage for the test elements
+  const blockedSelectors = []
 
-  const elements = new Array(allSelectors.length)
+  try {
+    // First create all elements that can be blocked
+    for (let i = 0; i < allSelectors.length; ++i) {
+      const container = document.createElement('div')
+      const element = selectorToElement(allSelectors[i])
+      elements[i] = element
+      container.appendChild(element)
+      document.body.appendChild(container)
+    }
 
+    // Then wait for the ad blocker to hide the element
+    await new Promise(resolve => setTimeout(resolve, 10))
 
+    // Then check which of the elements are blocked
+    for (let i = 0; i < allSelectors.length; ++i) {
+      if (!elements[i].offsetParent) {
+        blockedSelectors.push(allSelectors[i])
+      }
+    }
+  } finally {
+    // Then remove the elements
+    for (const element of elements) {
+      if (element) {
+        element.parentNode.remove()
+      }
+    }
+  }
 
-  const blockedSelectors = \[]
-
-
-
-  try {
-
-    // First create all elements that can be blocked
-
-    for (let i = 0; i < allSelectors.length; ++i) {
-
-      const container = document.createElement('div')
-
-      const element = selectorToElement(allSelectors\[i])
-
-      elements\[i] = element
-
-      container.appendChild(element)
-
-      document.body.appendChild(container)
-
-    }
-
-
-
-    // Then wait for the ad blocker to hide the element
-
-    await new Promise(resolve => setTimeout(resolve, 10))
-
-
-
-    // Then check which of the elements are blocked
-
-    for (let i = 0; i < allSelectors.length; ++i) {
-
-      if (!elements\[i].offsetParent) {
-
-        blockedSelectors.push(allSelectors\[i])
-
-      }
-
-    }
-
-  } finally {
-
-    // Then remove the elements
-
-    for (const element of elements) {
-
-      if (element) {
-
-        element.parentNode.remove()
-
-      }
-
-    }
-
-  }
-
-
-
-  return blockedSelectors
-
+  return blockedSelectors
 }
-
-
 
 // Creates a DOM element that matches the given selector
-
 function selectorToElement(selector) {
-
-  // See the implementation at https://bit.ly/3yg1zhX
-
+  // See the implementation at https://bit.ly/3yg1zhX
 }
 
+getBlockedSelectors(['.advertisement', 'img[alt="Promo"]'])
+  .then(blockedSelectors => {
+    console.log(blockedSelectors)
+  })
+```
 
-
-getBlockedSelectors(\['.advertisement', 'img[alt="Promo"]'])
-
-  .then(blockedSelectors => {
-
-    console.log(blockedSelectors)
-
-  })
-
-\`\``
 
 To determine which CSS selectors to check, you can download some of [the most popular filters](https://github.com/fingerprintjs/fingerprintjs/blob/f1174cf83e2ec94d0c576d4caabf9ebbcf41fccc/docs/content_blockers.md#list-of-filters) and extract the CSS selectors that are blocked on all websites. The rules for such selectors start with ##.
 
@@ -258,13 +212,9 @@ const uniqueSelectorsOfFilters = {
 
 }
 
-
-
 async function getActiveFilters(uniqueSelectors) {
 
   const selectorArray = Object.values(uniqueSelectors)
-
-
 
   // See the snippet above
 
@@ -273,8 +223,6 @@ async function getActiveFilters(uniqueSelectors) {
     await getBlockedSelectors(selectorArray)
 
   )
-
-
 
   return Object.keys(uniqueSelectors)
 
@@ -287,8 +235,6 @@ async function getActiveFilters(uniqueSelectors) {
     })
 
 }
-
-
 
 getActiveFilters(uniqueSelectorsOfFilters)
 
@@ -314,8 +260,6 @@ const uniqueSelectorsOfFilters = {
 
 }
 
-
-
 async function getActiveFilters(uniqueSelectors) {
 
   // Collect all the selectors into a plain array
@@ -326,15 +270,11 @@ async function getActiveFilters(uniqueSelectors) {
 
   )
 
-
-
   const blockedSelectors = new Set(
 
     await getBlockedSelectors(allSelectors)
 
   )
-
-
 
   return Object.keys(uniqueSelectors)
 
@@ -343,8 +283,6 @@ async function getActiveFilters(uniqueSelectors) {
       const selectors = uniqueSelectors\[filterName]
 
       let blockedSelectorCount = 0
-
-
 
       for (const selector of selectors) {
 
@@ -356,15 +294,11 @@ async function getActiveFilters(uniqueSelectors) {
 
       }
 
-
-
       return blockedSelectorCount > selectors.length * 0.5
 
     })
 
 }
-
-
 
 getActiveFilters(uniqueSelectorsOfFilters)
 
@@ -422,8 +356,6 @@ getBlockedSelectors(...)
 
     )
 
-
-
     console.log(fingerprint)
 
   })
@@ -451,8 +383,6 @@ getActiveFilters(...).then(activeFilters => {
     JSON.stringify(activeFilters)
 
   )
-
-
 
   console.log(fingerprint)
 
