@@ -154,11 +154,11 @@ To determine which CSS selectors to check, you can download some of [the most po
 
 Your chosen selectors should contain no <embed>, no fixed positioning, no pseudo classes and no combinators. The offsetParent check will not work with either <embed> or fixed positioning. Selectors with combinators require a sophisticated script for building test HTML elements, and since there are only a few selectors with combinators, it isn't worth writing such a script. Finally, you should test only unique selectors across all the filters to avoid duplicate work. You can see a script that we use to parse the unique selectors from the filters [here](https://github.com/fingerprintjs/fingerprintjs/blob/f1174cf83e2ec94d0c576d4caabf9ebbcf41fccc/resources/content_blocking/make_selectors_tester.ts).
 
-Some of the selectors blocked by your browser:
-
-(an interactive demo that prints the selectors blocked by the current browser; the reader can choose to see either all selectors or only the blocked selectors; see the embed code below)
+You can see some of the selectors blocked by your browser in the interactive demo below:
 
 <iframe style="width: calc(100% + 40px); height: 75vh; min-height: 360px; margin-left: -20px; margin-right: -20px;" scrolling="no" src="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=selectors" frameborder="no"></iframe>
+
+\---
 
 ### Data source 2: getting the list of ad blocking filters
 
