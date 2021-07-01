@@ -113,7 +113,7 @@
     "clean": "gatsby clean",
     "start": "yarn develop",
     "build": "gatsby build",
-    "noIndexBuild": "gatsby build && echo 'User-agent: *\nDisallow: /' > dist/robots.txt",
+    "noIndexBuild": "gatsby build && echo 'User-agent: *\nDisallow: /' > public/robots.txt",
     "develop": "yarn clean && gatsby develop",
     "lint": "tsc --noEmit && eslint . --ext .ts,.tsx,.js",
     "lint:ci": "tsc --noEmit && eslint . --ext .ts,.tsx,.js --max-warnings=0",
