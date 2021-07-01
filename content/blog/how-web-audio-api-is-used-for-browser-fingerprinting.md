@@ -15,6 +15,7 @@ title: How the Web Audio API is used for browser fingerprinting
 tags:
   - fingerprinting
   - js
+  - engineering
 authors:
   - Savannah Copland
 ---
