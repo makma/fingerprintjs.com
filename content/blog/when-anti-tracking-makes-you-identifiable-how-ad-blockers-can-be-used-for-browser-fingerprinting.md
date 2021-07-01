@@ -313,7 +313,7 @@ There are dozens of ad blockers available. For example, AdBlock, uBlock Origin, 
 
 An example of an ad blocker customization:
 
-![Ad blocker settings](https://lh5.googleusercontent.com/f5MruH7ljrLz1KFZ6-jur6_jxVNE4rMaEik1S-DvSAcp5d3Li1nXL0rmUktIFuOMDGVT0xsXGrqjrL_IJV0ybnIZhHZjq0La_txIRYK84K3Wz7KDE6197yiJBA9PchDgoX2j1P5h "Ad blocker settings")
+![Ad blocker settings](/img/uploads/rect885.png "Ad blocker settings")
 
 A good browser fingerprint should stay the same when a user goes from regular to incognito (private) mode of the browser. Thus, ad blockers can provide a useful source of entropy only for browsers and operating systems where ad blockers are enabled by default in incognito mode:
 
