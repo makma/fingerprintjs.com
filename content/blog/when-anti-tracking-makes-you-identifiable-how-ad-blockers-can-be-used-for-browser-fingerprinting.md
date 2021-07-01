@@ -158,8 +158,8 @@ Your chosen selectors should contain no < embed>, no fixed positioning, no pseud
 
 You can see some of the selectors blocked by your browser in the interactive demo below:
 
-<h3 style="text-align: center;">Interactive Demo<h3/>
-<iframe style="width: calc(100% + 40px); height: 75vh; min-height: 360px; margin-left: -20px; margin-right: -20px; border: 4px solid #434875; border-radius: 10px;" scrolling="no" src="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=selectors" frameborder="no"></iframe>
+<h3 style="width: calc(100% + 40px);margin-left: -20px;margin-bottom: 0;background: #202765; margin-right: -20px;border: 4px solid #202765;border-top-right-radius: 10px;border-top-left-radius: 10px; text-align: center; color: #FFFF; font-size: 2rem; padding: 7px 0 5px;">Interactive Demo<h3/>
+<iframe style="width: calc(100% + 40px); height: 75vh; min-height: 360px; margin-left: -20px; margin-right: -20px; border: 3px solid #434875; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px" scrolling="no" src="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=selectors" frameborder="no"></iframe>
 
 ### Data source 2: getting the list of ad blocking filters
 
@@ -227,7 +227,6 @@ getActiveFilters(uniqueSelectorsOfFilters)
   })
 ```
 
-
 In practice, the result may sometimes be incorrect because of wrong detection of blocked selectors. It can happen for several reasons: ad blockers can update their filters, they can experience glitches, or page CSS can interfere with the process.
 
 In order to mitigate the impact of unexpected behavior, we can use fuzzy logic. For example, if more than 50% of unique selectors associated with one filter are blocked, we will assume the filter is enabled. An example code that checks which of the given filters are enabled using a fuzzy logic:
@@ -269,7 +268,6 @@ getActiveFilters(uniqueSelectorsOfFilters)
   })
 ```
 
-
 ## Ad blocker fingerprinting
 
 Once you collect enough data, you can generate a visitor fingerprint.
@@ -310,7 +308,6 @@ getBlockedSelectors(...)
   })
 ```
 
-
 This fingerprint is very sensitive but not stable. The CSS code of the page can accidentally hide a test HTML element and thus change the result. Also, as the community updates the filters quite often, every small update can add or remove a CSS selector rule, which will change the whole fingerprint. So, a fingerprint based on selectors alone can only be used for short-term identification.
 
 ### Using Filter Lists
@@ -329,7 +326,6 @@ getActiveFilters(...).then(activeFilters => {
   console.log(fingerprint)
 })
 ```
-
 
 <iframe style="width: calc(100% + 40px); height: 75vh; min-height: 360px; margin-left: -20px; margin-right: -20px; border: 4px solid #434875; border-radius: 10px;" scrolling="no" src="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=filters" frameborder="no"></iframe>
 
