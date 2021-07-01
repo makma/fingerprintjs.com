@@ -160,8 +160,6 @@ You can see some of the selectors blocked by your browser in the interactive dem
 
 <iframe style="width: calc(100% + 40px); height: 75vh; min-height: 360px; margin-left: -20px; margin-right: -20px;" scrolling="no" src="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=selectors" frameborder="no"></iframe>
 
-\---
-
 ### Data source 2: getting the list of ad blocking filters
 
 A better way to get identification entropy from ad blockers is detecting which filters an ad blocker uses. This is done by identifying unique CSS selectors for each filter, so that if a unique selector is blocked, you can be sure a visitor is using that filter.
