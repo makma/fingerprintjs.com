@@ -16,6 +16,7 @@ title: "When anti-tracking makes you identifiable: how ad blockers can be used
   for browser fingerprinting"
 tags:
   - fingerprinting
+  - engineering
 authors:
   - Sergey Mostsevenko
 ---
