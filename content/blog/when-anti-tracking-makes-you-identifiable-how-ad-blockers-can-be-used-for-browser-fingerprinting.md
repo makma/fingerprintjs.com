@@ -159,11 +159,35 @@ Your chosen selectors should contain no < embed>, no fixed positioning, no pseud
 
 <p style="margin-bottom: 0.5em;">You can see some of the selectors blocked by your browser in an interactive demo:</p>
 
-<p style="text-align: center; margin-top: 0.5em;">
-  <a href="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=selectors" target="_blank" style="display: inline-block; max-width: 100%; color: var(--white, #fff); background: var(--brand-fire, #f04405); text-decoration: none; padding: 0.5em 1.5em; border-radius: 0.5em; font-weight: var(--semi, 600);">
-    See the demo
-  </a>
+<p style="
+   position: relative;
+   width: 100%;">
+   <img style="
+      width: 100%;
+      height: auto;" 
+      src="/img/uploads/ad-demo.png" alt="ad-demo">
+   <a style="
+      white-space: nowrap;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      background: var(--brand-fire, #f04405);
+      color: var(--white, #fff);
+      text-decoration: none;
+      font-weight: var(--semi, 600);
+      text-align: center;
+      font-size: 20px;
+      padding: 13.33px 32px 16px 32px;
+      border: none;
+      cursor: pointer;
+      border-radius: 0.5em;"
+      href="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=selectors"
+      target="_blank"
+      > See the demo </a>
 </p>
+
 
 ### Data source 2: getting the list of ad blocking filters
 
@@ -331,10 +355,33 @@ getActiveFilters(...).then(activeFilters => {
 })
 ```
 
-<p style="text-align: center;">
-  <a href="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=filters" target="_blank" style="display: inline-block; max-width: 100%; color: var(--white, #fff); background: var(--brand-fire, #f04405); text-decoration: none; padding: 0.5em 1.5em; border-radius: 0.5em; font-weight: var(--semi, 600);">
-    See the demo
-  </a>
+<p style="
+   position: relative;
+   width: 100%;">
+   <img style="
+      width: 100%;
+      height: auto;" 
+      src="/img/uploads/ad-demo2.png" alt="ad-demo">
+   <a style="
+      white-space: nowrap;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      background: var(--brand-fire, #f04405);
+      color: var(--white, #fff);
+      text-decoration: none;
+      font-weight: var(--semi, 600);
+      font-size: 20px;
+      text-align: center;
+      padding: 13.33px 32px 16px 32px;
+      border: none;
+      cursor: pointer;
+      border-radius: 0.5em;"
+      href="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=filters"
+      target="_blank"
+      > See the demo </a>
 </p>
 
 As we mentioned above, the filter lists themselves are updated frequently. The updates can make the fingerprint change. The fuzzy algorithm mitigates this problem, but the underlying selectors will need to be updated eventually. So, you will need to repeat the process of collecting unique selectors after some time to actualize the data and keep the fingerprinting accuracy high.
