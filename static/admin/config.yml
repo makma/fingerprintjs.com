@@ -160,3 +160,103 @@ collections:
         { label: Photo, name: photo, widget: image },
         { label: Bio, name: markdown__bio, widget: markdown, required: false },
       ]
+  - name: 'caseStudy'
+    label: 'Case Study'
+    folder: 'content/case-study'
+    create: true
+    delete: true
+    fields:
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'case-study-content' }
+      - { label: Publish date, name: publishDate, widget: datetime }
+      - { label: Title, name: title, widget: string }
+      - {
+          label: Metadata,
+          name: metadata,
+          widget: object,
+          fields:
+            [
+              { label: Title, name: title, widget: string },
+              { label: Description, name: description, widget: string },
+              { label: URL, name: url, widget: string },
+            ],
+        }
+      - {
+          label: Header,
+          name: header,
+          widget: object,
+          fields:
+            [
+              { label: Label, name: subLabel, widget: string, default: 'Case Study' },
+              { label: Title, name: subTitle, widget: string },
+              { label: Description, name: markdown__Content, widget: markdown },
+              {
+                label: PDF,
+                name: pdf,
+                widget: file,
+                media_folder: '/static/pdf/case-study',
+                public_folder: '/pdf/case-study',
+              },
+            ],
+        }
+      - {
+          label: Summary,
+          name: summary,
+          widget: object,
+          fields:
+            [
+              {
+                label: Results,
+                name: results,
+                widget: list,
+                fields:
+                  [
+                    {
+                      label: Icon,
+                      name: icon,
+                      widget: image,
+                      media_folder: '/static/img/uploads',
+                      public_folder: '/img/uploads',
+                    },
+                    { label: Icon Alt, name: iconAlt, widget: string, required: false },
+                    { label: Icon Title, name: iconTitle, widget: string, required: false },
+                    { label: Title, name: title, widget: string },
+                    { label: Content, name: markdown__Content, widget: markdown },
+                  ],
+              },
+              {
+                label: Overview,
+                name: overviewSection,
+                widget: object,
+                fields:
+                  [
+                    { label: Description, name: description, widget: string },
+                    {
+                      label: Bullets,
+                      name: bullets,
+                      widget: list,
+                      fields:
+                        [
+                          { label: Value, name: value, widget: string },
+                          { label: Description, name: description, widget: string },
+                        ],
+                    },
+                  ],
+              },
+            ],
+        }
+      - { label: Body, name: body, widget: markdown }
+      - {
+          label: Footer,
+          name: footer,
+          widget: object,
+          fields:
+            [
+              { label: Cta Title, name: ctaTitle, widget: string, default: 'Get in Touch' },
+              {
+                label: Cta Subtitle,
+                name: ctaSubtitle,
+                widget: string,
+                default: 'Learn how FingerprintJS Pro can help your business build a custom solution to prevent online fraud.',
+              },
+            ],
+        }
