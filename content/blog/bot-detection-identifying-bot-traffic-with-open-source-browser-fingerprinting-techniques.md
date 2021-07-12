@@ -192,4 +192,4 @@ In this way, you can use a browser fingerprint to help you identify and mitigate
 
 As attackers improve the techniques they use to create more sophisticated bots, software engineers have to continue updating their software to keep up. While it's possible to build some of this in-house, leaning on proven, thoroughly-tested libraries like [FingerprintJS](https://fingerprintjs.com/)  will save you a lot of time.
 
-In addition to the free, open-source library, [FingerprintJS has a pro version](https://fingerprintjs.com/) that includes [bot detection](https://dev.fingerprintjs.com/v2.0.0/docs/bot-detection), advanced browser fingerprinting, and anonymous user identification. This makes your job as an application developer even easier because you can lean on FingerprintJS's expertise rather than keeping up with the changing bot detection landscape yourself.
+In addition to the free, open-source library, [FingerprintJS has a pro version](https://fingerprintjs.com/) that includes [bot detection](https://dev.fingerprintjs.com/v2.0.0/docs/bot-detection), advanced browser fingerprinting, and anonymous user identification.
