@@ -1,0 +1,62 @@
+.root {
+  display: flex;
+}
+
+.publishDate {
+  opacity: v('muted');
+
+  margin-top: rem(3px);
+  margin-right: rem(25px);
+
+  font-size: rem(14px);
+}
+
+.link {
+  padding-right: rem(15px);
+}
+
+.link,
+.button {
+  cursor: pointer;
+
+  &:hover {
+    svg {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+
+  svg {
+    opacity: 0.5;
+    @include transition((opacity));
+    @include transition((transform));
+    @include transition-duration(0.2s);
+  }
+}
+
+.button {
+  height: 24px;
+  width: 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 32px;
+
+  @include transition(background);
+  @include transition-duration(0.2s);
+  @include transition-timing-function(ease-out);
+
+  &:active {
+    background: rgba(0, 0, 0, 0.07);
+  }
+
+  svg {
+    margin: 0 auto;
+    display: block;
+    outline: none;
+  }
+}
+
+.fbIcon {
+  padding-right: rem(10px);
+}
