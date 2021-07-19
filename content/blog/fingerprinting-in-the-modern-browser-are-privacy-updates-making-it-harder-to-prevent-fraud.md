@@ -118,7 +118,7 @@ As in Chrome, Firefox users can change the permissions given to each website the
 
 ![Firefox operating system permissions](https://i.imgur.com/pSUB3Dt.png)
 
-Finally, there are thousands of Firefox extensions that give users more fine-grained [control over their privacy](https://addons.mozilla.org/en-US/firefox/search/?q=privacy). Users can also install the [AmIUnique addon](https://addons.mozilla.org/en-US/firefox/addon/amiunique/) to see how unique their browser is among the millions of fingerprints collected by [AmIUnique](https://amiunique.org/). This knowledge can be used by malicious users to tweak their settings further to obscure their identity.
+Finally, there are thousands of Firefox extensions that give users more fine-grained [control over their privacy](https://addons.mozilla.org/en-US/firefox/search/?q=privacy). Users can also install the [AmIUnique add-on](https://addons.mozilla.org/en-US/firefox/addon/amiunique/) to see how unique their browser is among the millions of fingerprints collected by [AmIUnique](https://amiunique.org/). This knowledge can be used by malicious users to tweak their settings further to obscure their identity.
 
 Even with some pretty strict fingerprinting protections in place, Doug Leith [found shortcomings in Firefox’s privacy configuration](https://arstechnica.com/information-technology/2020/03/study-ranks-edges-default-privacy-settings-the-lowest-of-all-major-browsers/) too. For example, Firefox transmits identifying information during [telemetry data reporting](https://support.mozilla.org/en-US/kb/telemetry-clientid) which is on by default.
 
