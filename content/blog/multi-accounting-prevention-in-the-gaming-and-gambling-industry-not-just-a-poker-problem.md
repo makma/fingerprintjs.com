@@ -17,7 +17,8 @@ title: "Multi-accounting prevention in the gaming and gambling industry: not
 tags:
   - fingerprinting
   - gambling
-  - gaming
+  - account sharing
+  - gaming fraud
 authors:
   - Savannah Copland
 ---

@@ -15,6 +15,8 @@ title: "Bot Detection: Identifying Bot Traffic with Open-source Browser
   Fingerprinting Techniques"
 tags:
   - bot attacks
+  - account takeover
+  - payment fraud
   - fingerprinting
 authors:
   - Karl Hughes

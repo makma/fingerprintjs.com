@@ -8,6 +8,9 @@ metadata:
     Identity Theft.
   url: https://fingerprintjs.com/account-takeover
   image: /img/uploads/fpjs_cover3.png
+relatedTitle: Related Articles
+tags:
+  - account takeover
 invertContent: false
 hero:
   title: Account Takeover Prevention
@@ -74,8 +77,8 @@ blocks:
     ctaUrl: https://dashboard.fingerprintjs.com/signup
 inlineCta:
   title: FingerprintJS for account takeover protection
-  markdown__Subtitle: 'Start your free 30-day trial and get 100% of features with no usage
-    limits. '
+  markdown__Subtitle: "Start your free 30-day trial and get 100% of features with
+    no usage limits. "
   buttonText: Get Started
   buttonHref: https://dashboard.fingerprintjs.com/signup
 ---

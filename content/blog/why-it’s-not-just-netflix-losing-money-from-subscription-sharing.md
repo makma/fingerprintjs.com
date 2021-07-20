@@ -16,6 +16,7 @@ title: Why It’s Not Just Netflix Losing Money From Subscription Sharing
 tags:
   - fingerprinting
   - web
+  - account sharing
 authors:
   - Savannah Copland
 ---

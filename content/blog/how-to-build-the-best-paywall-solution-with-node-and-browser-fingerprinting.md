@@ -15,6 +15,7 @@ title: How to Build the Best Paywall Solution with Node and Browser Fingerprinti
 tags:
   - fingerprinting
   - js
+  - paywall
 authors:
   - Lukonde Mwila
 ---

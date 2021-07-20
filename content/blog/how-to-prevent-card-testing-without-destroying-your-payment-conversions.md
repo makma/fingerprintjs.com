@@ -13,8 +13,10 @@ featured: false
 publishDate: 2021-03-12T13:35:01.712Z
 title: How to Prevent Card Testing Without Destroying Your Payment Conversions
 tags:
-  - fingerprinting
   - payment fraud
+  - ecommerce fraud
+  - cryptocurrency fraud
+  - gaming fraud
 authors:
   - Savannah Copland
 ---

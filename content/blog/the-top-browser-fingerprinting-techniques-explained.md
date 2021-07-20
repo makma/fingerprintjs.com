@@ -16,6 +16,7 @@ title: The Top Browser Fingerprinting Techniques Explained
 tags:
   - fingerprinting
   - js
+  - paywall
 authors:
   - Savannah Copland
 ---

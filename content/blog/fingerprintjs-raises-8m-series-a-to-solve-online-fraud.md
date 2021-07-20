@@ -13,7 +13,7 @@ featured: false
 publishDate: 2021-02-11T14:30:32.339Z
 title: FingerprintJS Raises $8M Series A to Solve Online Fraud
 tags:
-  - fingerprinting
+  - announcements
 authors:
   - Savannah Copland
 ---

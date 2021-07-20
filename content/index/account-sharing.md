@@ -7,6 +7,9 @@ metadata:
     browser fingerprinting API built for developer teams
   url: https://fingerprintjs.com/account-sharing
   image: /img/uploads/fpjs_cover3.png
+relatedTitle: Related Articles
+tags:
+  - account sharing
 invertContent: false
 hero:
   title: Account Sharing Prevention For Subscription Businesses

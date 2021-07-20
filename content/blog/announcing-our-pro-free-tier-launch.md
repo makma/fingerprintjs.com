@@ -14,10 +14,11 @@ publishDate: 2021-05-18T19:26:17.695Z
 title: Announcing FingerprintJS Pro Free Tier
 tags:
   - fingerprinting
+  - announcements
 authors:
   - Savannah Copland
 ---
-![](/img/uploads/free-tier.png)
+![FingerprintJS Pro free tier announcement](/img/uploads/free-tier.png "FingerprintJS Pro free tier announcement")
 
 As a developer-first company, we wanted to make it as easy as possible for individual engineers to explore our product. To do this, we made some changes to our pricing:
 

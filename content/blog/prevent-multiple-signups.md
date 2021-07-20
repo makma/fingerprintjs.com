@@ -14,6 +14,9 @@ publishDate: 2021-03-16T18:09:51.690Z
 title: "How to Prevent Multiple Signups With FingerprintJS Pro "
 tags:
   - fingerprinting
+  - account sharing
+  - paywall
+  - engineering
 authors:
   - Savannah Copland
 ---

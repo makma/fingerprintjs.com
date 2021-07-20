@@ -16,6 +16,7 @@ tags:
   - fingerprinting
   - js
   - engineering
+  - web
 authors:
   - Savannah Copland
 ---

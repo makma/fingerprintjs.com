@@ -15,6 +15,9 @@ title: "Fingerprinting in the Modern Browser: Are Privacy Updates Making It
   Harder to Prevent Fraud?"
 tags:
   - fingerprinting
+  - account takeover
+  - paywall
+  - payment fraud
 authors:
   - Karl Hughes
 ---

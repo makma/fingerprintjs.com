@@ -8,6 +8,10 @@ metadata:
     fraudulent actors and build custom authentication workflows.
   url: https://fingerprintjs.com/why-fpjs
   image: /img/uploads/fpjs_cover3.png
+relatedTitle: Related Articles
+tags:
+  - engineering
+  - fingerprinting
 invertContent: false
 hero:
   title: Empowering developers to solve fraud at the source

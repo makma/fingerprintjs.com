@@ -19,7 +19,6 @@ interface BlogTagProps {
 }
 export default function BlogTag({ data, pageContext }: BlogTagProps) {
   const { edges: posts } = data.allMarkdownRemark
-
   const { currentPage, numPages, tag } = pageContext
   const breadcrumbs = pageContext.breadcrumb.crumbs.filter(({ pathname }) => pathname !== '/blog/tag')
   const { pathname } = useLocation()
@@ -55,7 +54,7 @@ export default function BlogTag({ data, pageContext }: BlogTagProps) {
               .map((post) => ({ ...post, activeTag: tag }))}
           />
 
-          <PaginationNav currentPage={currentPage} numPages={numPages} basePath={`/blog/tag/${tag}`} />
+          <PaginationNav currentPage={currentPage} numPages={numPages} basePath={`/blog/tag/${tag}/`} />
         </Container>
       </Section>
     </LayoutTemplate>
@@ -67,7 +66,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/(blog)/.*\\.md$/" }
-        frontmatter: { tags: { in: [$tag] } }
+        frontmatter: { tags: { in: [$tag] }, templateKey: {eq: "long-form-content"} }
       }
       sort: { order: DESC, fields: frontmatter___publishDate }
       limit: $limit

@@ -14,6 +14,8 @@ title: 6 Ways to Permanently Ban Users from Your Website
 tags:
   - web
   - fingerprinting
+  - account sharing
+  - account takeover
 authors:
   - Linda Ikechukwu
 ---

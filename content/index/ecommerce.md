@@ -7,6 +7,10 @@ metadata:
     Prevent Gift Card & Coupon Abuse, Avoid Merchant Penalties & More.
   url: https://fingerprintjs.com/ecommerce
   image: /img/uploads/fpjs_cover3.png
+relatedTitle: Related Articles
+tags:
+  - ecommerce fraud
+  - fingerprinting
 invertContent: false
 hero:
   title: E-commerce Fraud Prevention

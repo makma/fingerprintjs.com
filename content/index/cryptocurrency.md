@@ -8,6 +8,10 @@ metadata:
     fraudulent purchases.
   url: https://fingerprintjs.com/cryptocurrency
   image: /img/uploads/fpjs_cover3.png
+relatedTitle: Related Articles
+tags:
+  - cryptocurrency fraud
+  - engineering
 invertContent: false
 hero:
   title: Stop cryptocurrency fraud in its tracks
@@ -63,8 +67,8 @@ blocks:
     ctaUrl: https://dashboard.fingerprintjs.com/signup
 inlineCta:
   title: Try FingerprintJS Free
-  markdown__Subtitle: Installation of FingerprintJS' Javascript agent is easy. Start
-    collecting unique VisitorIDs in minutes with our 30-day free trial.
+  markdown__Subtitle: Installation of FingerprintJS' Javascript agent is easy.
+    Start collecting unique VisitorIDs in minutes with our 30-day free trial.
   buttonText: Get Started
   buttonHref: https://dashboard.fingerprintjs.com/signup
 ---
