@@ -1,6 +1,6 @@
 import { BRANCH } from './env'
 
-export const BASE_URL = 'https://fingerprintjs.com/'
+export const BASE_URL = 'https://fingerprintjs.com'
 
 export const PATH = {
   demoUrl: '/demo/',
