@@ -181,11 +181,10 @@ Your chosen selectors should contain no < embed>, no fixed positioning, no pseud
       border: none;
       cursor: pointer;
       border-radius: 0.5em;"
-      href="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=selectors"
+      href="https://fingerprintjs.github.io/blog-adblocker-fingerprinting-demo/?demo=selectors"
       target="_blank"
       > See the demo </a>
 </p>
-
 
 ### Data source 2: getting the list of ad blocking filters
 
@@ -377,7 +376,7 @@ getActiveFilters(...).then(activeFilters => {
       border: none;
       cursor: pointer;
       border-radius: 0.5em;"
-      href="https://fingerprintjs.github.io/adblocker-fingerprint-article-demos/?demo=filters"
+      href="https://fingerprintjs.github.io/blog-adblocker-fingerprinting-demo/?demo=filters"
       target="_blank"
       > See the demo </a>
 </p>
