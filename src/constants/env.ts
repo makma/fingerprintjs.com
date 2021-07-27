@@ -48,7 +48,7 @@ export const BRANCH = process.env.BRANCH
 
 export const HOST =
   getContextEnv<string>({
-    [NetlifyContext.Production]: process.env.URL,
+    [NetlifyContext.Production]: 'https://fingerprintjs.com',
     [NetlifyContext.DeployPreview]: process.env.DEPLOY_PRIME_URL,
   }) ?? 'https://fingerprintjs.com'
 
