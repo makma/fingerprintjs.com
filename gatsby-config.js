@@ -1,6 +1,17 @@
 const path = require('path')
+let baseUrl
 
-const baseUrl = process.env.DEPLOY_PRIME_URL ?? 'https://fingerprintjs.com'
+switch (process.env.CONTEXT) {
+  case 'production':
+    baseUrl = process.env.URL
+    break
+  case 'deploy-preview':
+    baseUrl = process.env.DEPLOY_PRIME_URL
+    break
+  default:
+    baseUrl = 'https://fingerprintjs.com'
+    break
+}
 
 const resolvePath = (directoryName, pathName) => {
   const result = path.join(directoryName, pathName)
@@ -22,7 +33,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
-        allowList: ['BRANCH', 'CONTEXT', 'DEPLOY_PRIME_URL'],
+        allowList: ['BRANCH', 'CONTEXT', 'URL', 'DEPLOY_PRIME_URL'],
       },
     },
     'gatsby-plugin-sitemap',
