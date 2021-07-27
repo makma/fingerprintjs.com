@@ -45,6 +45,7 @@ export const MAPBOX_ACCESS_TOKEN = process.env.GATSBY_MAPBOX_ACCESS_TOKEN
 export const ROLLBAR_ACCESS_TOKEN = process.env.GATSBY_ROLLBAR_ACCESS_TOKEN
 export const FPJS_LEAD_URL = process.env.GATSBY_FPJS_LEAD_URL ?? ''
 export const BRANCH = process.env.BRANCH
+export const HOST = process.env.DEPLOY_PRIME_URL ?? 'https://fingerprintjs.com'
 
 function getNetlifyContext(): NetlifyContext {
   switch (process.env.CONTEXT) {
