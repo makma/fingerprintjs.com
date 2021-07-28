@@ -17,7 +17,7 @@ tags:
 authors:
   - Savannah Copland
 ---
-## Introduction
+![CNP fraud prevention](/img/uploads/cnp-fraud-prevention_.png "CNP fraud prevention")
 
 The continuing rise of online shopping brings a whole new level of convenience to people’s lives, but it has a down side. Credit card fraud is a multi-billion dollar problem, and can be incredibly hard for online businesses to detect in real time.
 
@@ -40,9 +40,7 @@ CNP fraud is particularly hard to detect online when there are no extra measures
 One of the first problems credit card holders have as victims of CNP fraud is realizing it’s happened in the first place. A victim will still have the CNP credit card with them, but its details will have been obtained. This often happens through skimming, hacking and phishing:
 
 * Skimming is when the card details have been obtained off the physical card itself, often when it’s been used legitimately. ATMs are a common place where this happens.
-
 * Hacking is when computer systems are illegally accessed and the stored details of credit cards are stolen. Those details can then be used by the hackers for CNP fraud, or they can be sold to other criminals.
-
 * Phishing happens when scammers present as legitimate companies or authority figures and convince credit card holders to give out their card details. It commonly occurs through email or phone scams.
 
 ## Tips to prevent CNP fraud and prevent your business against chargebacks
