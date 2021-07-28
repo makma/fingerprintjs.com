@@ -35,8 +35,10 @@ cardSection:
       iconTitle: Account takeover alert
     - icon: /img/uploads/payment_processing.png
       title: Reduce chargebacks linked to CNP fraud
-      markdown__Content: "Reduce your chargeback rates by detecting and preventing
-        purchases from stolen cards before they hurt your bottom line. "
+      markdown__Content: Reduce your chargeback rates from [CNP
+        fraud](https://fingerprintjs.com/blog/cnp-fraud-prevention-to-protect-chargebacks/)
+        by detecting and preventing purchases from stolen cards before they hurt
+        your bottom line.
       iconAlt: Payment processing fraud
       iconTitle: Payment processing fraud
     - title: Prevent gift card & coupon abuse
