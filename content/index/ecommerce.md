@@ -10,7 +10,6 @@ metadata:
 relatedTitle: Related Articles
 tags:
   - ecommerce fraud
-  - fingerprinting
 invertContent: false
 hero:
   title: E-commerce Fraud Prevention
