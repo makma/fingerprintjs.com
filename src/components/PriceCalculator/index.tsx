@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Select from '../common/Select'
 import classNames from 'classnames'
 import { minimumIdentifications, freeApiCalls, pricingTable, calculatePrice } from '../../helpers/pricing'
-import { PaymentType } from '../../types/PaymentType'
 import Button from '../../components/common/Button'
 import Modal from '../../components/common/Modal'
 import ContactSalesForm from '../../components/ContactSalesForm'
@@ -40,19 +39,19 @@ export default function PriceCalculator() {
     }
   }
 
-  function getPrice(paymentType: PaymentType) {
+  function getPrice() {
     return customCount === undefined
-      ? calculatePrice(selectedPreset.value, paymentType)
-      : calculatePrice(customCount >= minimumIdentifications ? customCount : minimumIdentifications, paymentType)
+      ? calculatePrice(selectedPreset.value)
+      : calculatePrice(customCount >= minimumIdentifications ? customCount : minimumIdentifications)
   }
 
-  function getPriceValue(paymentType: PaymentType) {
+  function getPriceValue() {
     if (isFree) {
       return '$0'
     } else if (isCustomPricing) {
       return 'Custom'
     } else {
-      return getPrice(paymentType)
+      return getPrice()
     }
   }
 
@@ -83,7 +82,7 @@ export default function PriceCalculator() {
         </Column>
         <Column title={'On-Demand'}>
           <Price
-            value={getPriceValue(PaymentType.Monthly)}
+            value={getPriceValue()}
             description={isFree ? 'Free up to 20,000 monthly API calls' : 'Pay as you go, cancel any time'}
           />
         </Column>

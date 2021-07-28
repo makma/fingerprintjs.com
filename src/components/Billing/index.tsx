@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
-import classNames from 'classnames'
-import { PaymentType } from '../../types/PaymentType'
 import { handlePriceChange, pricingTable } from '../../helpers/pricing'
 import Container from '../common/Container'
 import Section from '../common/Section'
@@ -26,32 +24,26 @@ export default function Billing() {
   const defaultValue = 0
   const [sliderValue, setSliderValue] = useState(defaultValue)
   const [monthlyPaymentLabel, setMonthlyPaymentLabel] = useState(pricingTable[defaultValue].label)
-  const [paymentType, setPaymentType] = useState<PaymentType>(PaymentType.Monthly)
   const [isContactSalesModalOpen, setIsContactSalesModalOpen] = useState(false)
 
   const handleSliderChange = (newValue: number) => {
     setSliderValue(newValue)
-    recalculatePricing(sliderTable[newValue].value, paymentType)
+    recalculatePricing(sliderTable[newValue].value)
   }
 
-  const handlePaymentTypeChange = (type: PaymentType) => () => {
-    setPaymentType(type)
-    recalculatePricing(sliderTable[sliderValue].value, type)
-  }
-
-  const recalculatePricing = (value: number, paymentType: PaymentType) => {
+  const recalculatePricing = (value: number) => {
     if (value === Infinity) {
       setMonthlyPaymentLabel('Custom pricing')
       return
     }
 
-    const newPrice = handlePriceChange(value, paymentType)
+    const newPrice = handlePriceChange(value)
     setMonthlyPaymentLabel(newPrice)
   }
 
   useEffect(() => {
-    recalculatePricing(sliderTable[sliderValue].value, paymentType)
-  }, [paymentType, sliderTable, sliderValue])
+    recalculatePricing(sliderTable[sliderValue].value)
+  }, [sliderTable, sliderValue])
 
   return (
     <>

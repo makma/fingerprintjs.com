@@ -4,7 +4,7 @@ import styles from './Card.module.scss'
 
 interface PricingCardProps {
   title: string
-  description?: string
+  description: string
   sectionClasses: string | string[]
   children: React.ReactNode
 }

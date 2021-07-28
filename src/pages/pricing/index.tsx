@@ -112,7 +112,11 @@ function PricingModelsSection({ mainBackground }: { mainBackground: SectionProps
             </div>
           </div>
         </PricingCard>
-        <PricingCard title='Annual' sectionClasses={styles.annual}>
+        <PricingCard
+          title='Annual'
+          description='Our 1 year prepaid plan has several advantages compared to the on-demand model.'
+          sectionClasses={styles.annual}
+        >
           <ul className={styles.arrowList}>
             <li>Unused API calls are carried over from month to month</li>
           </ul>
