@@ -59,9 +59,6 @@ export default function Billing() {
         <Container size='large'>
           <header className={styles.header}>
             <h2 className={styles.title}>Predictable &amp; Transparent Billing</h2>
-            <Link to={PATH.pricingUrl}>
-              <Button variant='outline'>Detailed Pricing</Button>
-            </Link>
           </header>
           <div className={styles.content}>
             <div className={styles.idsPerMonth}>
@@ -92,28 +89,20 @@ export default function Billing() {
               </div>
               {sliderValue !== sliderConfig.max ? (
                 <>
-                  <div className={styles.billed}>
-                    billed {paymentType === PaymentType.Annually ? 'yearly' : 'monthly'}
-                  </div>
-                  <div className={styles.switcher} data-type='annually'>
-                    <button
-                      className={classNames(styles.button, { [styles.active]: paymentType === PaymentType.Annually })}
-                      onClick={handlePaymentTypeChange(PaymentType.Annually)}
-                      data-type='annually'
-                    >
-                      Pay Annually
-                    </button>
-                    <button
-                      className={classNames(styles.button, { [styles.active]: paymentType === PaymentType.Monthly })}
-                      onClick={handlePaymentTypeChange(PaymentType.Monthly)}
-                      data-type='monthly'
-                    >
-                      Pay Monthly
-                    </button>
+                  <div className={styles.billed}>billed monthly</div>
+                  <div className={styles.switcher}>
+                    <Button href={PATH.pricingUrl} variant='outline' className={styles.detailedPricing}>
+                      Detailed Pricing
+                    </Button>
                   </div>
                   <p className={styles.description}>
-                    With annual pricing you lock in an annual price with a discount by prepaying. This plan is
-                    recommended for users with predictable or high traffic volumes.
+                    For annual pricing plans,{' '}
+                    <a
+                      onClick={() => setIsContactSalesModalOpen(true)}
+                      style={{ cursor: 'pointer', textDecoration: 'underline' }}
+                    >
+                      contact sales
+                    </a>
                   </p>
                 </>
               ) : (

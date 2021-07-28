@@ -88,10 +88,10 @@ export default function PriceCalculator() {
           />
         </Column>
         <Column title='Annual'>
-          <Price
-            value={getPriceValue(PaymentType.Annually)}
-            description={isFree ? 'Free up to 20,000 monthly API calls' : 'Requires a 12 month prepay'}
-          />
+          <div className={styles.description}>Requires a 12 month prepay</div>
+          <Button variant='outline' small onClick={() => setIsContactSalesModalOpen(true)}>
+            Contact Sales
+          </Button>
         </Column>
         <Column title='Enterprise License'>
           {isCustomPricing ? (
