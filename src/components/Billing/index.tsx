@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'gatsby'
 import { handlePriceChange, pricingTable } from '../../helpers/pricing'
 import Container from '../common/Container'
 import Section from '../common/Section'
@@ -117,11 +116,6 @@ export default function Billing() {
                 </>
               )}
             </div>
-          </div>
-          <div className={styles.link}>
-            <Link to={PATH.pricingUrl}>
-              <Button variant='outline'>Detailed Pricing</Button>
-            </Link>
           </div>
         </Container>
       </Section>

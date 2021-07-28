@@ -33,15 +33,6 @@
     }
   }
 
-  .link {
-    text-align: center;
-    margin-top: 5rem;
-
-    @include media('>desktop') {
-      display: none;
-    }
-  }
-
   .content {
     display: flex;
     flex-wrap: wrap;
@@ -162,15 +153,6 @@
           }
         }
       }
-    }
-  }
-
-  .link {
-    text-align: center;
-    margin-top: 5rem;
-
-    @include media('>desktop') {
-      display: none;
     }
   }
 }
