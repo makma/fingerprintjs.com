@@ -13,7 +13,8 @@ featured: false
 publishDate: 2021-07-27T04:53:32.707Z
 title: "CNP fraud prevention: Tips to protect your business against chargebacks"
 tags:
-  - fingerprinting
+  - payment fraud
+  - ecommerce fraud
 authors:
   - Savannah Copland
 ---
