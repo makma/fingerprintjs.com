@@ -18,6 +18,8 @@ tags:
 authors:
   - Savannah Copland
 ---
+![Gift card fraud prevention](/img/uploads/gift-card-fraud-prevention_.png "Gift card fraud prevention")
+
 Gift cards are an easy, flexible option for gift-givers all over the world, but what makes them so useful also makes them easily exploited by scammers. 
 
 The number of gift cards being sold is on the rise, with [U.S. online retailers selling nearly 7,000 in just the month of May in 2020](https://www.digitalcommerce360.com/2020/11/09/online-gift-card-sales-to-boom-for-the-2020-holiday-season/). This spike is expected to be a result of Covid-19, but the numbers are still rising at [more than double earlier in 2020](https://www.digitalcommerce360.com/2020/11/09/online-gift-card-sales-to-boom-for-the-2020-holiday-season/).
