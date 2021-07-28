@@ -20,7 +20,7 @@ export default function ReadStudyCaseSection() {
             <ChooseAnswerSVG />
           </section>
           <section className={styles.descriptionSection}>
-            <h1 className={styles.title}>How One Edtech Company Unearthed $4M+ in new revenue</h1>
+            <h1 className={styles.title}>How One Edtech Company Unearthed $10M+ in new revenue</h1>
             <p className={styles.description}>
               Our client was struggling to prevent account sharing despite having a dedicated anti-fraud team
             </p>
