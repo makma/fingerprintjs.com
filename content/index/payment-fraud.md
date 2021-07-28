@@ -11,7 +11,6 @@ metadata:
 relatedTitle: Related Articles
 tags:
   - payment fraud
-  - ecommerce fraud
 invertContent: false
 hero:
   title: Payment Fraud Prevention and Detection
