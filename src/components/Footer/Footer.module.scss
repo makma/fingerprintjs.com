@@ -54,7 +54,6 @@
 
       @include media('<=phone') {
         grid-template-columns: 1fr;
-        text-align: center;
       }
 
       margin-right: 24px;

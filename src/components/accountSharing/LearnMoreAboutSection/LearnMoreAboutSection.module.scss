@@ -1,0 +1,136 @@
+.root {
+  overflow: hidden;
+
+  padding: 0 0 rem(92px) 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include media('<=desktop') {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.imageSection {
+  @include media('<=phoneLandscape') {
+    display: none;
+  }
+}
+
+.imageSectionMobile {
+  @include media('>phoneLandscape') {
+    display: none;
+  }
+}
+.imageSection,
+.imageSectionMobile {
+  @include media('>desktop') {
+    padding-right: rem(61px);
+  }
+  @include media('<=desktop') {
+    padding-bottom: rem(48px);
+  }
+
+  position: relative;
+
+  img {
+    border-radius: rem(16px);
+  }
+}
+.infoSection {
+  background-color: v('brand-water');
+  border-radius: rem(8px);
+
+  position: absolute;
+  bottom: 5.5%;
+  left: 4%;
+  padding: rem(22px) rem(32px) rem(16px) rem(22px);
+
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(23px);
+
+  @include media('<=desktop') {
+    bottom: 17.5%;
+    left: 10%;
+  }
+
+  @include media('<=phone') {
+    padding: rem(22px) rem(14px) rem(16px) rem(14px);
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+  .imageWrapper {
+    height: rem(40px);
+    width: rem(40px);
+    text-align: center;
+  }
+
+  .infoDescription {
+    font-family: v(ff-sans);
+    font-size: rem(14px);
+    line-height: 140%;
+    color: v('white');
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+
+    margin-left: rem(14px);
+  }
+}
+
+.descriptionSection {
+  @include media('>phone') {
+    margin-right: rem(100px);
+  }
+
+  .title {
+    font-size: rem(32px);
+    font-weight: v('bold');
+    line-height: 130%;
+
+    padding-bottom: rem(16px);
+
+    @include media('<=desktop') {
+      font-size: rem(30px);
+    }
+
+    @include media('<=tablet') {
+      font-size: rem(28px);
+      line-height: 120%;
+    }
+  }
+
+  .description {
+    font-family: v(ff-sans);
+    font-size: rem(16px);
+    line-height: 150%;
+    color: adjust-color(c('brand-water'), $alpha: -0.3);
+
+    padding-bottom: rem(48px);
+
+    @include media('<=phone') {
+      padding-bottom: rem(24px);
+    }
+
+    @include media('<=tablet') {
+      font-size: rem(14px);
+    }
+  }
+
+  .tagSection {
+    list-style: inside url(/img/uploads/Elipse.svg);
+  }
+  .tag {
+    font-family: v(ff-sans);
+    font-size: rem(20px);
+    font-weight: v('semi');
+    margin-bottom: rem(13px);
+  }
+}

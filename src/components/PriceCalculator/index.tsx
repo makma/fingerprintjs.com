@@ -99,7 +99,7 @@ export default function PriceCalculator() {
           ) : (
             <div className={styles.description}>Enterprise support license with SLA</div>
           )}
-          <Button variant='outline' small onClick={() => setIsContactSalesModalOpen(true)}>
+          <Button variant='outline' size='small' onClick={() => setIsContactSalesModalOpen(true)}>
             Contact Sales
           </Button>
         </Column>

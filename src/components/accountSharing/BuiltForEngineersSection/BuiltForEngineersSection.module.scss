@@ -1,0 +1,113 @@
+.root {
+  overflow: hidden;
+
+  padding: 0 0 rem(128px) 0;
+
+  @include media('<=phoneLandscape') {
+    padding: 0 0 rem(96px) 0;
+  }
+
+  @include media('>phoneLandscape') {
+    background-image: url('../../../img/accuracy-bg.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+}
+
+.titleContainer {
+  text-align: center;
+
+  padding-bottom: rem(80px);
+  --contentWidth: 700px;
+
+  @include media('>phoneLandscape') {
+    padding-top: rem(65px);
+  }
+  @include media('<=phoneLandscape') {
+    text-align: left;
+  }
+
+  .title {
+    font-size: rem(32px);
+    font-weight: v('bold');
+    line-height: 130%;
+
+    margin-bottom: rem(16px);
+
+    @include media('<=desktop') {
+      font-size: rem(30px);
+    }
+
+    @include media('<=tablet') {
+      font-size: rem(28px);
+    }
+  }
+
+  .description {
+    font-family: v(ff-sans);
+    font-size: rem(16px);
+    color: adjust-color(c('brand-water'), $alpha: -0.3);
+    line-height: 150%;
+
+    max-width: rem(604px);
+    margin: auto;
+
+    @include media('<=tablet') {
+      font-size: rem(14px);
+    }
+  }
+}
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  @include gap(rem(24px));
+  background: v('white');
+
+  @include media('<desktop') {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: auto;
+  }
+
+  @include media('<=phoneLandscape') {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+
+    padding: rem(32px);
+    width: 100%;
+
+    box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
+    border-radius: rem(16px);
+
+    .iconWrapper {
+      height: 40px;
+      width: 40px;
+      margin-bottom: rem(24px);
+    }
+
+    .cardTitle {
+      font-size: rem(20px);
+      font-weight: v('bold');
+      line-height: 130%;
+      margin-bottom: rem(8px);
+    }
+
+    .cardDescription {
+      font-size: rem(16px);
+      line-height: 150%;
+      color: adjust-color(c('brand-water'), $alpha: -0.3);
+    }
+  }
+}
+
+.imageSection,
+.imageSectionMobile {
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
