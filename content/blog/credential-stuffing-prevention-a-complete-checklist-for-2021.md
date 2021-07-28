@@ -15,6 +15,7 @@ title: "Credential Stuffing Prevention: A complete checklist for 2021"
 tags:
   - account takeover
   - cryptocurrency fraud
+  - ecommerce fraud
 authors:
   - Savannah Copland
 ---
