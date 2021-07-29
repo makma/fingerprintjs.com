@@ -325,7 +325,7 @@ FingerprintJS is helpful in many use cases, including:
 
 ![Code Snippet from FingerprintJS](https://i.imgur.com/mZhJ6x1.png)
 
-This snippet loads the FingerprintJS script to your webpage from the CDN. Once it’s loaded, you can load FingerprintJS with the token given to your account (it’s part of the code in the snippet). 
+This snippet loads the FingerprintJS script to your webpage from the CDN. Once it’s loaded, you can start using FingerprintJS with the token given to your account (it’s part of the code in the snippet). 
 
 Before adding this code to your website, make sure to check your email and verify your email address with FingerprintJS first. This is necessary for the subscription to take effect.
 
@@ -335,19 +335,13 @@ Once you’ve verified your email, go ahead and add this script to any of your w
 
 You can see that one user is already detected, and that user is you!
 
-The next step is to get your Server API tokens. Go to **Tokens** in the sidebar of the dashboard. You’ll see two tokens: one has the type `API` and the other `Browser`.
-
-![Tokens in FingerprintJS Account](https://i.imgur.com/qR3FaTO.png)
-
-Copy the token of type `API`. You’ll need to use it next to be able to determine if the user is in Incognito mode or not.
-
-Now, return to the code. We can pass the ["extendedResult"](https://dev.fingerprintjs.com/docs/js-agent#extendedresult) option in the "get" method to return details about the visitor, including whether they are using Incognito or not. Where before we were simply logging the visitorId, now we will be accessing the incognito property.
+We can pass the ["extendedResult"](https://dev.fingerprintjs.com/docs/js-agent#extendedresult) option in the "get" method to return details about the visitor, including whether they are using Incognito or not.
 
 This will be the code snippet now:
 
 ```js
 function initFingerprintJS() {
-	FingerprintJS.load({ token: 'fNmQOkVpBOuulYZhhVuv' })
+	FingerprintJS.load({ token: 'fNmQOkVpWOuulOZhhYuv' })
 		.then(fp => fp.get({extendedResult: true}))
 		.then(result => {
                 //check if incognito was detected
@@ -358,22 +352,10 @@ function initFingerprintJS() {
 }
 ```
 
-Next, parse the JSON response. If everything is correct, the response should have two parameters:
+If everything is correct, the response should include multiple parameters including browser and device details. For our purposes we only need to focus on two parameters:
 
 1. **visitorID:** The ID of the visitor you just passed.
-2. **visits**: An array of visits by the user. Since you sent the request ID, it acts as a filter and it returns only the current visit, so the array will have only one element.
-
-Then, after parsing the JSON response, check if the data received is correct, and check the object inside the `visits` array. It should have a bunch of parameters like `ip`, `ipLocation`, `browserDetails`, and most important in this case, `incognito`. If the user is in Incognito mode, its value will be `true`, otherwise `false`.
-
-```js
-.then((res) => res.json()) //parse JSON
-.then(data => {
-    //check if all data are correct
-    if(data.visits && data.visits.length) {
-        document.getElementById('answer').innerText = data.visits[0].incognito ? 'Yes' : 'No'
-    }
-})
-```
+2. **incognito**: A true or false value that shows whether a visitor is using incognito mode. If the user is in Incognito mode, its value will be `true`, otherwise `false`.
 
 Finally, to see the “answer,” add the following in the HTML:
 
