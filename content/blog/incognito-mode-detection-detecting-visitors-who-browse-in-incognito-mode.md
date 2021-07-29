@@ -26,7 +26,7 @@ We’ll go over four methods of detecting visitors using Incognito mode and disc
 
 ## Method 1: Access Timings
 
-This method was discovered by [Jesse Li](https://blog.jse.li/posts/chrome-76-incognito-filesystem-timing/). When the browser is in Incognito mode, the Filesystem API writes are faster in Chrome. This is due to the fact that Chrome uses a temporary filesystem with a limited storage quota of 120 MB.
+This method was discovered by [Jesse Li](https://blog.jse.li/posts/chrome-76-incognito-filesystem-timing/). When the browser is in Incognito mode, the [Filesystem API](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem) writes are faster in Chrome. This is due to the fact that Chrome uses a temporary filesystem with a limited storage quota of 120 MB.
 
 To test this, first create an array of randomly generated large strings:
 
@@ -155,7 +155,7 @@ Also, after repeated testing on Chrome, the same behavior pertained but the resu
 
 ## Method 2: Filesystem Quotas
 
-Another method to detect whether the user is in Incognito mode or not is the `StoreManager` API’s method `estimate`. This method estimates how much storage the website is using and how much is available for it to use. 
+Another method to detect whether the user is in Incognito mode or not is the [StorageManager API](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager) method `estimate`. This method estimates how much storage the website is using and how much is available for it to use. 
 
 The code for this method is simple. If the estimated storage available is less than 120 MB, then the user is in Incognito mode.
 
@@ -208,7 +208,7 @@ This method is now outdated and should not be used, as it does not work on any c
 
 ## Method 3: IndexedDB API
 
-The IndexedDB API is used for storing large data like files and blobs. This method is simple. Basically, if IndexedDB is available, the browser is not in Incognito mode. [This was first detected on Firefox 60](https://bugzilla.mozilla.org/show_bug.cgi?id=1571016).
+The [IndexedDB API](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) is used for storing large data like files and blobs. This method is simple. Basically, if IndexedDB is available, the browser is not in Incognito mode. [This was first detected on Firefox 60](https://bugzilla.mozilla.org/show_bug.cgi?id=1571016).
 
 More specifically, if the method `indexedDB.open` does not throw an error, then the browser is not using Incognito mode. You can test this by creating a script with the following code:
 
@@ -325,7 +325,7 @@ FingerprintJS is helpful in many use cases, including:
 
 ![Code Snippet from FingerprintJS](https://i.imgur.com/mZhJ6x1.png)
 
-This code adds the FingerprintJS CDN to your webpage. Once it’s loaded, you can load FingerprintJS with the token given to your account (it’s part of the code in the snippet). 
+This snippet loads the FingerprintJS script to your webpage from the CDN. Once it’s loaded, you can load FingerprintJS with the token given to your account (it’s part of the code in the snippet). 
 
 Before adding this code to your website, make sure to check your email and verify your email address with FingerprintJS first. This is necessary for the subscription to take effect. Also, make sure not to close the email verification page page, as you’ll use it to detect whether the code is working or not.
 
@@ -370,7 +370,7 @@ function initFingerprintJS() {
     }
 ```
 
-We’re sending the request to the endpoint using Fetch API. The first parameter you’re passing is the visitor ID, the second is the request ID. You’re also passing the token as a query parameter for simplicity, however, FingerprintJS [recommends](https://dev.fingerprintjs.com/docs/server-api#auth-header) sending it as `Auth-Token` header in production.
+We’re sending the request to the endpoint using [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). The first parameter you’re passing is the visitor ID, the second is the request ID. You’re also passing the token as a query parameter for simplicity, however, FingerprintJS [recommends](https://dev.fingerprintjs.com/docs/server-api#auth-header) sending it as `Auth-Token` header in production.
 
 ```js
 fetch('https://api.fpjs.io/visitors/' + result.visitorId + '?request_id=' + result.requestId + '&token=muYuVokUUfQFJgXmEvvg', {
