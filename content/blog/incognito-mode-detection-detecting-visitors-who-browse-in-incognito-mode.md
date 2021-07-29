@@ -10,7 +10,7 @@ metadata:
   imageTitle: Incognito mode detection
 featured: true
 publishDate: 2021-07-29T04:48:39.490Z
-title: "Incognito Mode Detection: Detecting Visitors Who Browse in Incognito Mode"
+title: "Incognito Mode Detection: Detecting Visitors Who Browse in Private Mode"
 tags:
   - fingerprinting
   - engineering
