@@ -2,7 +2,7 @@
 templateKey: long-form-content
 metadata:
   title: "Incognito Mode Detection: Detecting Visitors Who Browse in Private Mode"
-  url: https://fingerprintjs.com/blog/incognito-mode-detection
+  url: https://fingerprintjs.com/blog/incognito-mode-detection/
   description: Find out how to use Javascript techniques to determine if a website
     visitor is using incognito mode to access a page.
   image: /img/uploads/incognito-mode.png
