@@ -16,7 +16,7 @@ tags:
   - engineering
   - account takeover
 authors:
-  - Piero Borrelli
+  - Shahed Nasser
 ---
 ![Incognito mode detection](/img/uploads/incognito-mode.png "Incognito mode detection")
 
