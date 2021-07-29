@@ -14,7 +14,7 @@ title: "Incognito Mode Detection: Detecting Visitors Who Browse in Private Mode"
 tags:
   - fingerprinting
   - engineering
-  - account takeover
+  - paywall
 authors:
   - Shahed Nasser
 ---
