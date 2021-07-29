@@ -430,11 +430,13 @@ and when using it:
 * Samsung Internet 11.1+
 * Android Browser 4.1+
 
+For an up-to-date list of currently supported versions, visit [this link](https://dev.fingerprintjs.com/docs/browser-support).
+
 Some old browsers like IE11 and Android Browser 4.1 will need a [Promise polyfill](https://dev.fingerprintjs.com/docs/browser-support#old-browsers-requirements) before using it.
 
 ### Comparing This Method to Previous Ones
 
-Using FingerprintJS is definitely a better solution than previous methods. First, setting up FingerprintJS and adding the code to your website is a five-minute process. It’s very easy and does not rely on “hacks” or different methods based on which browser the user might be using.
+Using FingerprintJS is definitely a better solution than previous methods. First, setting up FingerprintJS and adding the code to your website is a five-minute process. It’s very easy and does not rely on “quirks” or different methods based on which browser the user might be using.
 
 Second, FingerprintJS is the only method that’s capable of detecting Incognito mode on *all* major browsers. All the other methods detect Incognito mode only on some browsers, and most are outdated and don’t work anymore.
 
