@@ -327,7 +327,7 @@ FingerprintJS is helpful in many use cases, including:
 
 This snippet loads the FingerprintJS script to your webpage from the CDN. Once it’s loaded, you can load FingerprintJS with the token given to your account (it’s part of the code in the snippet). 
 
-Before adding this code to your website, make sure to check your email and verify your email address with FingerprintJS first. This is necessary for the subscription to take effect. Also, make sure not to close the email verification page page, as you’ll use it to detect whether the code is working or not.
+Before adding this code to your website, make sure to check your email and verify your email address with FingerprintJS first. This is necessary for the subscription to take effect.
 
 Once you’ve verified your email, go ahead and add this script to any of your webpages. If everything is correct, the same page that showed you the code snippet should take you to the dashboard:
 
@@ -341,44 +341,21 @@ The next step is to get your Server API tokens. Go to **Tokens** in the sidebar 
 
 Copy the token of type `API`. You’ll need to use it next to be able to determine if the user is in Incognito mode or not.
 
-Now, return to the code. First, the code snippet was just logging `result.visitorId`. Instead of doing that, send a request to `https://api.fpjs.io/visitors/`, passing it the visitor ID, request ID, and the token you just copied. It will return details about the visitor, including whether they are using Incognito or not.
+Now, return to the code. We can pass the "extendedResult" option in the "get" method to return details about the visitor, including whether they are using Incognito or not. Where before we were simply logging the visitorId, now we will be accessing the incognito property.
 
 This will be the code snippet now:
 
 ```js
 function initFingerprintJS() {
-    FingerprintJS.load({token: 'fNmQOkVpBOuulYZhhVuv'})
-    .then(fp => fp.get())
-    .then(result => {
-            //send a request to FingerprintJS server
-            //to detect if the user is using Incognito Mode
-            fetch('https://api.fpjs.io/visitors/' + result.visitorId + '?request_id=' + result.requestId + '&token=muYuVokUUfQFJgXmEvvg', {
-                'method': 'GET',
-                headers: {
-                    'Accept': 'application/json',
-                }
-            })
-            .then((res) => res.json())
-            .then(data => {
-                //if the request is successful, check if the user is using icognito
-                if(data.visits && data.visits.length) {
-                document.getElementById('answer').innerText = data.visits[0].incognito ? 'Yes' : 'No'
-                }
-            })
-            .catch(err => console.error(err))
-        });
-    }
-```
-
-We’re sending the request to the endpoint using [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). The first parameter you’re passing is the visitor ID, the second is the request ID. You’re also passing the token as a query parameter for simplicity, however, FingerprintJS [recommends](https://dev.fingerprintjs.com/docs/server-api#auth-header) sending it as `Auth-Token` header in production.
-
-```js
-fetch('https://api.fpjs.io/visitors/' + result.visitorId + '?request_id=' + result.requestId + '&token=muYuVokUUfQFJgXmEvvg', {
-    'method': 'GET',
-    headers: {
-        'Accept': 'application/json',
-    }
-})
+	FingerprintJS.load({ token: 'fNmQOkVpBOuulYZhhVuv' })
+		.then(fp => fp.get({extendedResult: true}))
+		.then(result => {
+                //check if incognito was detected
+			document.getElementById('answer').innerText =
+				result.incognito ? 'Yes' : 'No'
+		})
+		.catch(err => console.error(err))
+}
 ```
 
 Next, parse the JSON response. If everything is correct, the response should have two parameters:
