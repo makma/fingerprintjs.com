@@ -365,7 +365,7 @@ Finally, to see the “answer,” add the following in the HTML:
 
 Now, you’re ready to detect whether visitors are using Incognito mode or not.
 
-Let’s test this on different major browsers. Also, you can test using the live version deployed [here](https://fingerprintjs-test.netlify.app/).
+Let’s test this on different major browsers. Also, you can test using the live version deployed [here](https://fingerprintjs.com/demo).
 
 ### Testing on Chrome
 
@@ -419,7 +419,7 @@ and when using it:
 
 ### Browser Support
 
-According to [FingerprintJS](https://dev.fingerprintjs.com/docs/browser-support), the following browsers and their versions are supported:
+[FingerprintJS](https://dev.fingerprintjs.com/docs/browser-support) supports the following browsers and their versions are supported:
 
 * Internet Explorer 11
 * Edge 18 and 85+
