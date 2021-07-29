@@ -345,8 +345,8 @@ function initFingerprintJS() {
 		.then(fp => fp.get({extendedResult: true}))
 		.then(result => {
                 //check if incognito was detected
-			document.getElementById('answer').innerText =
-				result.incognito ? 'Yes' : 'No'
+		document.getElementById('answer').innerText =
+		result.incognito ? 'Yes' : 'No'
 		})
 		.catch(err => console.error(err))
 }
