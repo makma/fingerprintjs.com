@@ -341,7 +341,7 @@ The next step is to get your Server API tokens. Go to **Tokens** in the sidebar 
 
 Copy the token of type `API`. You’ll need to use it next to be able to determine if the user is in Incognito mode or not.
 
-Now, return to the code. We can pass the "extendedResult" option in the "get" method to return details about the visitor, including whether they are using Incognito or not. Where before we were simply logging the visitorId, now we will be accessing the incognito property.
+Now, return to the code. We can pass the ["extendedResult"](https://dev.fingerprintjs.com/docs/js-agent#extendedresult) option in the "get" method to return details about the visitor, including whether they are using Incognito or not. Where before we were simply logging the visitorId, now we will be accessing the incognito property.
 
 This will be the code snippet now:
 
