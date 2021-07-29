@@ -8,7 +8,7 @@ metadata:
   image: /img/uploads/incognito-mode.png
   imageAlt: Incognito mode detection
   imageTitle: Incognito mode detection
-featured: false
+featured: true
 publishDate: 2021-07-29T04:48:39.490Z
 title: "Incognito Mode Detection: Detecting Visitors Who Browse in Incognito Mode"
 tags:
