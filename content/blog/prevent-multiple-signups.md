@@ -44,7 +44,7 @@ Check out the `initial-project-setup` branch and keep adding to the code as we g
 
 ## Getting a token
 
-To begin, you’ll need a FingerprintJS Pro subscription. If you don’t have one, you can [start a free trial](https://dashboard.fingerprintjs.com/signup/) with unlimited API requests for the first 30 days.
+To begin, you’ll need a FingerprintJS Pro subscription. If you don’t have one, you can [start a free trial](https://dashboard.fingerprintjs.com/signup) with unlimited API requests for the first 30 days.
 
 Once you have an account, open the dashboard and take a look at the Subscription menu on the left side of the window. Click the Tokens label and copy any active browser token. 
 
@@ -52,11 +52,11 @@ Once you have an account, open the dashboard and take a look at the Subscription
 
 ## Frontend
 
-You’ll need to install the Javascript agent code to your website in order to identify visitors. You can find the code for the snippet in your dashboard or in our [Quickstart guide](https://dev.fingerprintjs.com/docs/quick-start-guide). 
+You’ll need to install the Javascript agent code to your website in order to identify visitors. You can find the code for the snippet in your dashboard or in our [Quickstart guide](https://dev.fingerprintjs.com/docs/quick-start-guide). 
 
 You can either download the snippet from the CDN or install the NPM package. This tutorial uses the CDN version.
 
-Open the template for your signup page – which is  [views/signup.hbs](https://github.com/fingerprintjs/multiple-signup-demo/compare/initial-project-setup...fpjs-integration#diff-57854b4693d7efc8a7cc138e3429fdb5d5ccd5a8fe927a9c3633ac455f9d7b6f) for this tutorial – and paste the JavaScript snippet to the bottom of the file:
+Open the template for your signup page – which is  [views/signup.hbs](https://github.com/fingerprintjs/multiple-signup-demo/compare/initial-project-setup...fpjs-integration#diff-57854b4693d7efc8a7cc138e3429fdb5d5ccd5a8fe927a9c3633ac455f9d7b6f) for this tutorial – and paste the JavaScript snippet to the bottom of the file:
 
 ```javascript
 <script>
