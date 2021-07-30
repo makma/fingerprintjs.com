@@ -142,6 +142,7 @@ module.exports = {
             `X-XSS-Protection: 1; mode=block`,
             `X-Content-Type-Options: nosniff`,
             `Referrer-Policy: no-referrer-when-downgrade`,
+            `Cache-Control: max-age=900`,
           ],
         },
       },
