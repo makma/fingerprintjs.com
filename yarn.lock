@@ -1530,18 +1530,18 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fingerprintjs/fingerprintjs-pro@^3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@fingerprintjs/fingerprintjs-pro/-/fingerprintjs-pro-3.4.0.tgz#64fa46af4c52c613fdf9a43e419033b6ee3e8378"
-  integrity sha512-XdVi4YvDz7RDPlX36FNKtN7K7AmxJ7OEJw+O6biXnfGVB0+X/OVDh89hJSMTFu80qOvsEpFzCcDenRGMjYLlLg==
+"@fingerprintjs/fingerprintjs-pro@^3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@fingerprintjs/fingerprintjs-pro/-/fingerprintjs-pro-3.5.0.tgz#313d91ccad37a5d652e9d27da51ea8b7d664bf74"
+  integrity sha512-PfFc0+psaqVkPOWlxOl8R/WSz9yE/lpw2oxRTxq8CkW4DjBxIcrozBfZrR1ya+anItwG3j/MEQCJPn7hdx1mCQ==
   dependencies:
-    "@fingerprintjs/fingerprintjs" "3.2.0"
+    "@fingerprintjs/fingerprintjs" "3.3.0"
     tslib "^2.0.1"
 
-"@fingerprintjs/fingerprintjs@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@fingerprintjs/fingerprintjs/-/fingerprintjs-3.2.0.tgz#de2f5abef524331db22b1745858e1b22bf5e86c6"
-  integrity sha512-uvjJIRLrDPHV9jA5+1X23o6o+PpxVzre/uZcrfuTBRnQMWM7lWkgj92GWeCG2GZKkkIbKTdAemWc0u5V7A5U8Q==
+"@fingerprintjs/fingerprintjs@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@fingerprintjs/fingerprintjs/-/fingerprintjs-3.3.0.tgz#d15c2fab8e0d9138bcb8efa1429dd780f93bb945"
+  integrity sha512-2kw2yVrfMKd0YvmYAdNxhGytNhhLvChqNAbBZWMglYVw2J95Jm50ketK5yS1C8SJmqG2nFJgeuWvYXeZEh+b8g==
   dependencies:
     tslib "^2.0.1"
 
