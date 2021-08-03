@@ -10,7 +10,13 @@ export default function DemoSection() {
   const { mainBackground } = useMainBackgroundImage()
 
   return (
-    <Section className={styles.demoSection} backgroundImageFluid={mainBackground}>
+    <Section
+      className={styles.demoSection}
+      backgroundImageFluid={mainBackground}
+      cssBackgroundPosition='center 65%'
+      cssBackgroundRepeat='no-repeat'
+      cssBackgroundSize='1024px auto'
+    >
       <Container size='large' className={styles.demoContainer}>
         <div className={styles.card}>
           <CardHeader title='Technical demo'>

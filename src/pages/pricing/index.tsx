@@ -59,7 +59,13 @@ function SectionHeader({ title, subtitle, description, invertOrder = false }: Se
 
 function CalculatorSection({ mainBackground }: { mainBackground: SectionProps['backgroundImageFluid'] }) {
   return (
-    <Section className={styles.calculator} backgroundImageFluid={mainBackground}>
+    <Section
+      className={styles.calculator}
+      backgroundImageFluid={mainBackground}
+      cssBackgroundPosition='center 75%'
+      cssBackgroundRepeat='no-repeat'
+      cssBackgroundSize='1400px auto'
+    >
       <Container>
         <SectionHeader
           title='Calculator'
@@ -74,7 +80,13 @@ function CalculatorSection({ mainBackground }: { mainBackground: SectionProps['b
 
 function PricingModelsSection({ mainBackground }: { mainBackground: SectionProps['backgroundImageFluid'] }) {
   return (
-    <Section className={styles.pricing} backgroundImageFluid={mainBackground}>
+    <Section
+      className={styles.pricing}
+      backgroundImageFluid={mainBackground}
+      cssBackgroundPosition='50%'
+      cssBackgroundRepeat='no-repeat'
+      cssBackgroundSize='1400px auto'
+    >
       <Container>
         <SectionHeader title='Pricing Models' invertOrder />
         <PricingCard

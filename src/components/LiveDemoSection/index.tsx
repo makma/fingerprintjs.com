@@ -11,7 +11,13 @@ export default function LiveDemoSection() {
   const { mainBackground } = useMainBackgroundImage()
 
   return (
-    <Section className={styles.liveDemo} backgroundImageFluid={mainBackground}>
+    <Section
+      className={styles.liveDemo}
+      backgroundImageFluid={mainBackground}
+      cssBackgroundPosition='35vw 40%'
+      cssBackgroundRepeat='no-repeat'
+      cssBackgroundSize='1400px auto'
+    >
       <Container size='large' className={styles.container}>
         <header className={styles.header}>
           <h1 className={styles.title}>Browser Fingerprinting API</h1>
