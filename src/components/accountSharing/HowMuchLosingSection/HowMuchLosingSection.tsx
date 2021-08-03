@@ -15,15 +15,15 @@ export default function HowMuchLosingSection() {
           <EmailMobileSVG className={styles.heroImage} />
         </section>
         <section className={styles.descriptionSection}>
-          <h1 className={styles.title}>How Much Are You Losing From Account Sharing?</h1>
+          <h1 className={styles.title}>How Much Revenue Are You Leaving On The Table From Account Sharing?</h1>
           <p className={styles.description}>
-            Subscription sharing costs businesses over 9.1 billion a year. It is impossible to measure the cost to your
-            business without accurate detection.
+            Subscription sharing costs businesses over 9.1 billion a year and opens you up to security vulnerabilities.
+            It is impossible to measure the true costs to your business without an accurate detection method.
           </p>
           <p className={styles.description}>
-            Assess the extent of account sharing for your website by booking a call with our sales team. We will work
-            with your team to set up a trial of FingerprintJS Account Sharing Prevention and help to estimate the impact
-            on your business.
+            Let us scope out the extent of your account sharing problem by booking a call with us. We will work with
+            your team to set up a trial of FingerprintJS Account Sharing Prevention and determine the revenue impact to
+            your business.
           </p>
         </section>
         <section className={styles.imageSection}>

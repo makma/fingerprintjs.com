@@ -26,10 +26,11 @@ export default function HeroSection() {
               <br />
               revenue from your
               <br />
-              existing customers
+              existing users
             </h2>
             <p className={styles.description}>
-              Ensure your users pay their fair share with FingerprintJS Account Sharing Prevention
+              Easily detect account sharing users and convert them into happy customers while keeping customer
+              satisfaction high
             </p>
             <Button
               onClick={() => setIsContactSalesModalOpen(true)}
@@ -37,7 +38,7 @@ export default function HeroSection() {
               size='big'
               className={styles.button}
             >
-              Talk to sales
+              Contact Us
             </Button>
           </section>
           <section className={styles.imageSection}>

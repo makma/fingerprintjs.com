@@ -42,6 +42,7 @@ export const DOC_URL = {
   termOfUseUrl: 'https://dev.fingerprintjs.com/docs/terms-of-service/',
   privacyPolicyUrl: 'https://dev.fingerprintjs.com/docs/privacy-policy/',
   browserSupportUrl: 'https://dev.fingerprintjs.com/docs/browser-support/',
+  webhooksUrl: 'https://dev.fingerprintjs.com/docs/webhooks',
 } as const
 
 export const useCaseLinks = [

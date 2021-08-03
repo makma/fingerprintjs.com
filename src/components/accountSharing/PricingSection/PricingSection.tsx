@@ -45,7 +45,7 @@ export default function PricingSection() {
             leftTitle='Visitor-Login Mapping'
             leftContent='Fully identify shared accounts and assess the extent of sharing within your customer base by mapping our 99.5% accurate visitorIDs to your logins'
             rightTitle='Account Sharing Identification'
-            rightContent='Flag accounts that are highly likely to be shared.  Set up custom logic that makes sense for your business and be notified when rules are triggered'
+            rightContent='Flag accounts that are being shared. Convert account sharing users into paying customers by setting up custom logic and rules that make sense for your business.'
             btnText='Talk to Sales'
             onClick={() => setIsContactSalesModalOpen(true)}
             variant='primary'

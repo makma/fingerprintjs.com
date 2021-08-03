@@ -1,6 +1,7 @@
 import React from 'react'
 import Section from '../../common/Section'
 import Container from '../../common/Container'
+import { URL, DOC_URL, MAILTO } from '../../../constants/content'
 
 import { ReactComponent as PlaySVG } from './PlaySVG.svg'
 import { ReactComponent as ApiWebhooksSVG } from './ApiWebhooksSVG.svg'
@@ -22,23 +23,31 @@ export default function BuiltForEngineersSection() {
       <Container size='large' className={styles.cardsContainer}>
         <Card
           icon={<PlaySVG />}
-          title='Quick Start'
-          description='Our lightweight Javascript agent can be installed in minutes. Create an account for free with no credit card required and start collecting visitorIDs immediately.'
+          title='Start For Free'
+          description='Our lightweight Javascript agent can be installed in minutes. Create an account for free with no credit card.'
+          linkText='Start Free Trial →'
+          linkHref={URL.dashboardLoginUrl}
         />
         <Card
           icon={<ApiWebhooksSVG />}
           title='Webhooks'
-          description='Receive instant notifications delivered securely to your backend systems, ideal for building scalable and asynchronous processes.'
+          description='Receive instant notifications delivered securely to your backend systems, ideal for building scalable.'
+          linkText='View Documentation →'
+          linkHref={DOC_URL.webhooksUrl}
         />
         <Card
           icon={<DocSVG />}
           title='Documentation'
           description='Extensive guides make it easy for developer teams to get up to speed with FingerprintJS, fast.'
+          linkText='Read Quick Start Guide →'
+          linkHref={DOC_URL.getStartedUrl}
         />
         <Card
           icon={<TalkSVG />}
-          title='Support'
+          title='Contact Support'
           description='Get in touch via chat and email and get technical help within 1 business day.'
+          linkText='Contact Support →'
+          linkHref={MAILTO.mailToUrl}
         />
       </Container>
     </Section>
@@ -49,8 +58,10 @@ interface CardProps {
   icon: React.ReactNode
   title: string
   description: string
+  linkText: string
+  linkHref: string
 }
-function Card({ icon, title, description }: CardProps) {
+function Card({ icon, title, description, linkText, linkHref }: CardProps) {
   return (
     <div className={styles.card}>
       <div className={styles.iconWrapper}>
@@ -58,6 +69,9 @@ function Card({ icon, title, description }: CardProps) {
       </div>
       <h1 className={styles.cardTitle}>{title}</h1>
       <p className={styles.cardDescription}>{description}</p>
+      <a href={linkHref} className={styles.cardLink}>
+        {linkText}
+      </a>
     </div>
   )
 }
