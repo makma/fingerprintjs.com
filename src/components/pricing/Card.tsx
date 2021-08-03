@@ -4,7 +4,7 @@ import styles from './Card.module.scss'
 
 interface PricingCardProps {
   title: string
-  description: string
+  description?: string
   sectionClasses: string | string[]
   children: React.ReactNode
 }
@@ -15,7 +15,7 @@ export default function PricingCard({ title, description, sectionClasses, childr
       <aside className={styles.aside}>
         <header className={styles.header}>
           <h3 className={styles.title}>{title}</h3>
-          <p className={styles.description}>{description}</p>
+          {description && <p className={styles.description}>{description}</p>}
         </header>
       </aside>
       <div className={styles.content}>{children}</div>

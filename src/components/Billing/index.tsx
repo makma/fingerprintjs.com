@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'gatsby'
-import classNames from 'classnames'
-import { PaymentType } from '../../types/PaymentType'
 import { handlePriceChange, pricingTable } from '../../helpers/pricing'
 import Container from '../common/Container'
 import Section from '../common/Section'
@@ -26,32 +23,26 @@ export default function Billing() {
   const defaultValue = 0
   const [sliderValue, setSliderValue] = useState(defaultValue)
   const [monthlyPaymentLabel, setMonthlyPaymentLabel] = useState(pricingTable[defaultValue].label)
-  const [paymentType, setPaymentType] = useState<PaymentType>(PaymentType.Monthly)
   const [isContactSalesModalOpen, setIsContactSalesModalOpen] = useState(false)
 
   const handleSliderChange = (newValue: number) => {
     setSliderValue(newValue)
-    recalculatePricing(sliderTable[newValue].value, paymentType)
+    recalculatePricing(sliderTable[newValue].value)
   }
 
-  const handlePaymentTypeChange = (type: PaymentType) => () => {
-    setPaymentType(type)
-    recalculatePricing(sliderTable[sliderValue].value, type)
-  }
-
-  const recalculatePricing = (value: number, paymentType: PaymentType) => {
+  const recalculatePricing = (value: number) => {
     if (value === Infinity) {
       setMonthlyPaymentLabel('Custom pricing')
       return
     }
 
-    const newPrice = handlePriceChange(value, paymentType)
+    const newPrice = handlePriceChange(value)
     setMonthlyPaymentLabel(newPrice)
   }
 
   useEffect(() => {
-    recalculatePricing(sliderTable[sliderValue].value, paymentType)
-  }, [paymentType, sliderTable, sliderValue])
+    recalculatePricing(sliderTable[sliderValue].value)
+  }, [sliderTable, sliderValue])
 
   return (
     <>
@@ -59,9 +50,6 @@ export default function Billing() {
         <Container size='large'>
           <header className={styles.header}>
             <h2 className={styles.title}>Predictable &amp; Transparent Billing</h2>
-            <Link to={PATH.pricingUrl}>
-              <Button variant='outline'>Detailed Pricing</Button>
-            </Link>
           </header>
           <div className={styles.content}>
             <div className={styles.idsPerMonth}>
@@ -92,28 +80,20 @@ export default function Billing() {
               </div>
               {sliderValue !== sliderConfig.max ? (
                 <>
-                  <div className={styles.billed}>
-                    billed {paymentType === PaymentType.Annually ? 'yearly' : 'monthly'}
-                  </div>
-                  <div className={styles.switcher} data-type='annually'>
-                    <button
-                      className={classNames(styles.button, { [styles.active]: paymentType === PaymentType.Annually })}
-                      onClick={handlePaymentTypeChange(PaymentType.Annually)}
-                      data-type='annually'
-                    >
-                      Pay Annually
-                    </button>
-                    <button
-                      className={classNames(styles.button, { [styles.active]: paymentType === PaymentType.Monthly })}
-                      onClick={handlePaymentTypeChange(PaymentType.Monthly)}
-                      data-type='monthly'
-                    >
-                      Pay Monthly
-                    </button>
+                  <div className={styles.billed}>billed monthly</div>
+                  <div className={styles.switcher}>
+                    <Button href={PATH.pricingUrl} variant='outline' className={styles.detailedPricing}>
+                      Detailed Pricing
+                    </Button>
                   </div>
                   <p className={styles.description}>
-                    With annual pricing you lock in an annual price with a discount by prepaying. This plan is
-                    recommended for users with predictable or high traffic volumes.
+                    For annual pricing plans,{' '}
+                    <a
+                      onClick={() => setIsContactSalesModalOpen(true)}
+                      style={{ cursor: 'pointer', textDecoration: 'underline' }}
+                    >
+                      contact sales
+                    </a>
                   </p>
                 </>
               ) : (
@@ -136,11 +116,6 @@ export default function Billing() {
                 </>
               )}
             </div>
-          </div>
-          <div className={styles.link}>
-            <Link to={PATH.pricingUrl}>
-              <Button variant='outline'>Detailed Pricing</Button>
-            </Link>
           </div>
         </Container>
       </Section>
