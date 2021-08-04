@@ -97,7 +97,7 @@ blocks:
     ctaText: Read our documentation
     ctaUrl: https://dev.fingerprintjs.com/docs
 inlineCta:
-  title: Try FingerprintJS free for 30 days
+  title: Try FingerprintJS free for 10 days
   subtitle: Suspendisse vitae justo viverra, porttitor eros quis, lobortis libero.
     Suspendisse semper vulputate nisl, vitae blandit lacus molestie eu. Ut elit
     mi, semper et mollis in, sodales vel sem. Donec maximus condimentum sodales.

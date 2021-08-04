@@ -2,7 +2,7 @@ import React from 'react'
 import Section from '../../common/Section'
 import Container from '../../common/Container'
 import Button from '../../common/Button'
-import { PATH } from '../../../constants/content'
+import { DEFAULT_TRIAL_DAYS, PATH } from '../../../constants/content'
 
 import styles from './PricingSection.module.scss'
 
@@ -11,7 +11,7 @@ export default function PricingSection() {
     <ul className={styles.bulletList}>
       <li>Transparent pricing</li>
       <li>Monthly and annual plans</li>
-      <li>Unlimited API calls for 30 days</li>
+      <li>Unlimited API calls for {DEFAULT_TRIAL_DAYS} days</li>
       <li>Money back guarantee</li>
     </ul>
   )

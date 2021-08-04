@@ -56,3 +56,6 @@ export const useCaseLinks = [
 ]
 
 export const defaultDataLayer = [{ branch: BRANCH }]
+
+// When changing this, some markdown files need to be changed as well.
+export const DEFAULT_TRIAL_DAYS = 10

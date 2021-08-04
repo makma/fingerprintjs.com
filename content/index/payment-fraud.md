@@ -87,7 +87,7 @@ blocks:
 inlineCta:
   title: Start your free trial today
   markdown__Subtitle: "Install our Javascript snippet on your website and start
-    collecting visitorIDs free for 30 days. "
+    collecting visitorIDs free for 10 days. "
   buttonText: Get Started
   buttonHref: https://dashboard.fingerprintjs.com/signup
 ---

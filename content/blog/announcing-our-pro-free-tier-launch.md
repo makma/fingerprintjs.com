@@ -23,7 +23,7 @@ authors:
 As a developer-first company, we wanted to make it as easy as possible for individual engineers to explore our product. To do this, we made some changes to our pricing:
 
 * **A  new 100% free forever plan** with up to 1,000 unique visitor identifications per month and unlimited API calls.
-* **For your first 30 days,  try FingerprintJS Pro with no limits.** This means both unlimited unique visitor identifications and API calls. Once your trial ends you can upgrade to a [paid plan](https://fingerprintjs.com/pricing/) or remain on the free plan uninterrupted.
+* **For your first 10 days,  try FingerprintJS Pro with no limits.** This means both unlimited unique visitor identifications and API calls. Once your trial ends you can upgrade to a [paid plan](https://fingerprintjs.com/pricing/) or remain on the free plan uninterrupted.
 * **No credit card required for sign-up.** 
 
 Whether you are working on a personal project or an anti-fraud solution for your day job, we hope our free tier and flexible trial period will make accurate visitor identification more accessible for all.\

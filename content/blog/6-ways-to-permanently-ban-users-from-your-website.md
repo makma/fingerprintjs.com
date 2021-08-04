@@ -161,7 +161,7 @@ import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
 The script above should preferably be included in the root folder of all the JS files like `index.js`.
 
-When you add a user’s unique visitor ID to a ban list with FingerprintJS, it’s difficult for them to circumvent it unless they frequently switch devices. [FingerprintJS](https://fingerprintjs.com/) provides an open-source and paid solution for fingerprinting your users. Their service has 99.5% accuracy, and you can try it without usage limits for 30 days. 
+When you add a user’s unique visitor ID to a ban list with FingerprintJS, it’s difficult for them to circumvent it unless they frequently switch devices. [FingerprintJS](https://fingerprintjs.com/) provides an open-source and paid solution for fingerprinting your users. Their service has 99.5% accuracy, and you can try it without usage limits for 10 days. 
 
 ## Conclusion
 

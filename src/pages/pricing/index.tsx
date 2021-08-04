@@ -6,7 +6,7 @@ import classNames from 'classnames'
 import Container from '../../components/common/Container'
 import PricingCard from '../../components/pricing/Card'
 import BannerWithCTA from '../../components/BannerWithCTA/BannerWithCTA'
-import { URL } from '../../constants/content'
+import { DEFAULT_TRIAL_DAYS, URL } from '../../constants/content'
 import { useMainBackgroundImage } from '../../hooks/useBackgroundImage'
 import BreadcrumbsSEO from '../../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../../helpers/types'
@@ -142,7 +142,7 @@ function BannerSection() {
     <Section className={styles.bannerSection}>
       <Container>
         <BannerWithCTA title='New To FingerprintJS Pro?' ctaText='Try For Free' ctaHref={URL.signupUrl}>
-          Start a free trial with unlimited API requests for the first 30 days.
+          Start a free trial with unlimited API requests for the first {DEFAULT_TRIAL_DAYS} days.
         </BannerWithCTA>
       </Container>
     </Section>

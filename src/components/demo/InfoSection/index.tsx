@@ -10,7 +10,7 @@ import { ReactComponent as IncognitoDetectionSvg } from '../../../img/incognito_
 import Section from '../../../components/common/Section'
 import styles from './InfoSection.module.scss'
 import { Link } from 'gatsby'
-import { PATH, URL } from '../../../constants/content'
+import { DEFAULT_TRIAL_DAYS, PATH, URL } from '../../../constants/content'
 
 interface FeaturesBlockProps {
   features: { icon: React.ReactNode; title: string }[]
@@ -88,7 +88,7 @@ const faq = [
         by empowering technical teams to build fraud prevention into their applications with our API, webhooks, and
         unparalleled identification accuracy. <br />
         <br />
-        You can try FingerprintJS Pro with all features and no usage limits for 30 days. Simply{' '}
+        You can try FingerprintJS Pro with all features and no usage limits for {DEFAULT_TRIAL_DAYS} days. Simply{' '}
         <a href={URL.signupUrl} className={styles.link}>
           sign up for our trial
         </a>

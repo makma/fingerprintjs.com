@@ -15,6 +15,7 @@ import { useUtmParams } from '../../hooks/useUtmParams'
 import { isBrowser } from '../../helpers/detector'
 
 import styles from './GetStartedForm.module.scss'
+import { DEFAULT_TRIAL_DAYS } from '../../constants/content'
 
 interface GetStartedFormProps {
   className?: string | string[]
@@ -101,7 +102,7 @@ export default function GetStartedForm({ className }: GetStartedFormProps) {
       <ul className={styles.description}>
         <li>
           <CheckSvg className={styles.check} />
-          Unlimited API calls for 30 days
+          Unlimited API calls for {DEFAULT_TRIAL_DAYS} days
         </li>
         <li>
           <CheckSvg className={styles.check} />
