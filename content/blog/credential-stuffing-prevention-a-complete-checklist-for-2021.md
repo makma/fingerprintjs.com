@@ -79,7 +79,7 @@ The reason a captcha generator is effective is because it randomizes a correct r
 
 ### IP Blocking
 
-IP blocking is another security measure that involves black listing users from connecting to a web host. It means that website hosts can essentially turn off access to users based in a specific region, rendering them unable to even get onto the site. 
+IP blocking is another security measure that involves denying users from connecting to a web host. It means that website hosts can essentially turn off access to users based in a specific region, rendering them unable to even get onto the site. 
 
 Blocking IP addresses is particularly effective when you can identify suspect IP addresses that are repeatedly attempting to access your accounts. However, it doesn’t work as well when those IP addresses are being randomized or changed.
 
