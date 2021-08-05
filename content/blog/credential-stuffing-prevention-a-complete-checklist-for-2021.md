@@ -104,7 +104,7 @@ There are a handful of more elaborate protection measures you can take to protec
 
 ## Conclusion
 
-Credential stuffing prevention is actually really simple, and in a time where cybersecurity risks are only increasing, businesses need to be able to secure customer data. The embarrassment of being the source of a data leak is lasting, and it can be a serious blow to any business. 
+Credential stuffing prevention is actually really simple, and in a time when cybersecurity risks are only increasing, businesses need to be able to secure customer data. The embarrassment of being the source of a data leak is lasting, and it can be a serious blow to any business. 
 
 Cybersecurity and protecting data online is a responsibility websites and businesses have for their account holders, but also for individuals themselves. 
 
