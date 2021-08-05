@@ -34,7 +34,7 @@ Gift card fraud involves using stolen credit card details to purchase gift cards
 
 Part of the reason gift card fraud is popular among scammers is its anonymity. By using credit card information to purchase a gift card, a fraudster essentially keeps stolen cash without having spent it.
 
-It’s particularly common over peak periods. Holiday season, Christmas and Thanksgiving are all times where people do a lot of shopping, which means fraudsters can more easily hide beneath the collective weight of thousands of other shoppers.
+It’s particularly common over peak periods. Holiday season, Christmas and Thanksgiving are all times when people do a lot of shopping, which means fraudsters can more easily hide beneath the collective weight of thousands of other shoppers.
 
 An increase in online shopping since the COVID pandemic is widely expected to result in a spike in CNP scams, which includes gift card fraud. 
 
@@ -80,7 +80,7 @@ Tracking stolen gift cards is something that a lot of businesses fail to conside
 
 ## How can merchants prevent gift card fraud?
 
-Gift card fraud detection requires a high level of vigilance in regards to gift card purchases and monitoring. Because the nature of gift cards make them able to be exploited by scammers, merchants do need to actively consider key steps to protecting themselves.
+Gift card fraud detection requires a high level of vigilance in regard to gift card purchases and monitoring. Because the nature of gift cards make them able to be exploited by scammers, merchants do need to actively consider key steps to protecting themselves.
 
 By taking a proactive approach, particularly around the time that gift cards were obtained, retailers can identify patterns of behavior that can suggest impending gift card fraud.
 
