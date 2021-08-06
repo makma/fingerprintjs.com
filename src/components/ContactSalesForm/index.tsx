@@ -5,6 +5,7 @@ import styles from './ContactSalesForm.module.scss'
 
 export default function ContactSalesForm() {
   const [website, setWebsite] = useState('')
+  const leadSource = 'Contact Us Form'
   return (
     <form
       className={styles.contactSalesForm}
@@ -14,6 +15,7 @@ export default function ContactSalesForm() {
       <div className={styles.form}>
         <input hidden={true} name='oid' value='00D4x000006rShv' />
         <input hidden={true} name='retURL' value='https://fingerprintjs.com/contact-sales/confirm' />
+        <input hidden={true} id='lead_source' name='lead_source' value={leadSource} />
 
         <label className={styles.label} htmlFor='first_name'>
           Your name
