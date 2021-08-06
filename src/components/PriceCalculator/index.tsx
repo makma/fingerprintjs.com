@@ -3,10 +3,9 @@ import Select from '../common/Select'
 import classNames from 'classnames'
 import { minimumIdentifications, freeApiCalls, pricingTable, calculatePrice } from '../../helpers/pricing'
 import Button from '../../components/common/Button'
-import Modal from '../../components/common/Modal'
-import ContactSalesForm from '../../components/ContactSalesForm'
 import { numberFormatter } from '../../helpers/format'
 import styles from './PriceCalculator.module.scss'
+import { PATH } from '../../constants/content'
 
 export default function PriceCalculator() {
   const selectOptions = pricingTable.map((entry) => ({
@@ -16,7 +15,6 @@ export default function PriceCalculator() {
 
   const [selectedPreset, setSelectedPreset] = useState(selectOptions[0])
   const [customCount, setCustomCount] = useState<number | undefined>(undefined)
-  const [isContactSalesModalOpen, setIsContactSalesModalOpen] = useState(false)
 
   const isCustomPricing =
     (!customCount && selectedPreset.value === Infinity) || (customCount && customCount >= 10000000)
@@ -56,58 +54,52 @@ export default function PriceCalculator() {
   }
 
   return (
-    <>
-      <div className={styles.wrapper}>
-        <Column title='How many identifications per month do you need?'>
-          <div className={styles.presetSelector}>
-            <div className={styles.description}>
-              <strong>Select from preset</strong>
-            </div>
-            <Select<ValuePreset>
-              value={customCount === undefined ? selectedPreset : null}
-              options={selectOptions}
-              onChange={onPresetSelected}
-            />
+    <div className={styles.wrapper}>
+      <Column title='How many identifications per month do you need?'>
+        <div className={styles.presetSelector}>
+          <div className={styles.description}>
+            <strong>Select from preset</strong>
           </div>
-          <div className={styles.customInput}>
-            <div className={styles.description}>Or type a specific number</div>
-            <input
-              value={customCount ?? ''}
-              onChange={(e) => onCustomCountChanged(e.target.value)}
-              type='number'
-              name='identification-user-input'
-              placeholder='ex. 630,000'
-            />
-          </div>
-        </Column>
-        <Column title={'On-Demand'}>
-          <Price
-            value={getPriceValue()}
-            description={isFree ? 'Free up to 20,000 monthly API calls' : 'Pay as you go, cancel any time'}
+          <Select<ValuePreset>
+            value={customCount === undefined ? selectedPreset : null}
+            options={selectOptions}
+            onChange={onPresetSelected}
           />
-        </Column>
-        <Column title='Annual'>
-          <div className={styles.description}>Requires a 12 month prepay</div>
-          <Button variant='outline' size='small' onClick={() => setIsContactSalesModalOpen(true)}>
-            Contact Sales
-          </Button>
-        </Column>
-        <Column title='Enterprise License'>
-          {isCustomPricing ? (
-            <div className={styles.description}>Custom pricing for high traffic websites</div>
-          ) : (
-            <div className={styles.description}>Enterprise support license with SLA</div>
-          )}
-          <Button variant='outline' size='small' onClick={() => setIsContactSalesModalOpen(true)}>
-            Contact Sales
-          </Button>
-        </Column>
-      </div>
-
-      <Modal title='Contact Sales' open={isContactSalesModalOpen} onClose={() => setIsContactSalesModalOpen(false)}>
-        <ContactSalesForm />
-      </Modal>
-    </>
+        </div>
+        <div className={styles.customInput}>
+          <div className={styles.description}>Or type a specific number</div>
+          <input
+            value={customCount ?? ''}
+            onChange={(e) => onCustomCountChanged(e.target.value)}
+            type='number'
+            name='identification-user-input'
+            placeholder='ex. 630,000'
+          />
+        </div>
+      </Column>
+      <Column title={'On-Demand'}>
+        <Price
+          value={getPriceValue()}
+          description={isFree ? 'Free up to 20,000 monthly API calls' : 'Pay as you go, cancel any time'}
+        />
+      </Column>
+      <Column title='Annual'>
+        <div className={styles.description}>Requires a 12 month prepay</div>
+        <Button variant='outline' size='small' href={PATH.contactSales}>
+          Contact Sales
+        </Button>
+      </Column>
+      <Column title='Enterprise License'>
+        {isCustomPricing ? (
+          <div className={styles.description}>Custom pricing for high traffic websites</div>
+        ) : (
+          <div className={styles.description}>Enterprise support license with SLA</div>
+        )}
+        <Button variant='outline' size='small' href={PATH.contactSales}>
+          Contact Sales
+        </Button>
+      </Column>
+    </div>
   )
 }
 

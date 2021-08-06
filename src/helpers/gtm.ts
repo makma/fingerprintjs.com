@@ -57,11 +57,3 @@ export function enableAnalytics() {
 export function trackEmbeddedFormSubmit() {
   sendEvent({ action: EventAction.IntentSuccess, category: EventCategory.Signup, label: EventLabel.FormFill })
 }
-
-export function trackLeadSubmit(success = true) {
-  sendEvent({
-    action: EventAction.LeadSubmit,
-    category: EventCategory.Lead,
-    label: success ? EventLabel.Success : EventLabel.Error,
-  })
-}

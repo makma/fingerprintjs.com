@@ -15,6 +15,7 @@ export const PATH = {
   blog: '/blog/',
   paywall: '/paywall/',
   caseStudies: '/case-studies/',
+  contactSales: '/contact-sales/',
 } as const
 
 export const URL = {

@@ -1,11 +1,125 @@
 .root {
-  padding: 25rem 0;
+  padding: rem(30px) 0 0 0;
+}
 
-  @include media('<tablet') {
-    padding: 14rem 0;
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: rem(170px);
+  padding-bottom: rem(60px);
+
+  background-image: url('../../img/ellipseBG.svg');
+  background-position: calc(50% - 450px) 100%;
+  background-repeat: no-repeat;
+
+  @include media('<=desktop') {
+    column-gap: rem(75px);
+  }
+
+  @include media('<=tabletWide') {
+    column-gap: rem(30px);
+  }
+
+  @include media('<=tablet') {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-image: url('../../img/ellipseMobileBG.svg');
+    background-position: top left;
+  }
+
+  @include media('<=phone') {
+    background-position: center left;
+    background-size: contain;
   }
 }
 
-.header {
-  margin-bottom: 4rem;
+.clients {
+  padding-top: rem(85px);
+  max-width: rem(400px);
+
+  @include media('<=tablet') {
+    padding-top: rem(88px);
+  }
+
+  .title {
+    text-align: center;
+    font-family: v(ff-sans);
+    font-size: rem(14px);
+    line-height: 140%;
+    color: adjust-color(c('brand-water'), $alpha: -0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+
+    padding-bottom: rem(60px);
+  }
+
+  .content {
+    display: grid;
+    row-gap: rem(60px);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .logo {
+    height: rem(48px);
+    max-width: rem(110px);
+    width: 100%;
+    object-fit: contain;
+  }
+  .slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.form {
+  padding: rem(32px);
+  max-width: rem(560px);
+  background-color: v('white');
+  box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
+  border-radius: 16px;
+
+  .header {
+    font-size: rem(32px);
+  }
+  .subHeader {
+    padding-top: rem(16px);
+    padding-bottom: rem(8px);
+
+    font-family: v(ff-sans);
+    font-size: rem(16px);
+    font-weight: v('normal');
+    line-height: 150%;
+    color: adjust-color(c('brand-water'), $alpha: -0.3);
+  }
+}
+
+.dataSent {
+  padding: rem(40px);
+  max-width: rem(560px);
+  background-color: v('white');
+  box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: rem(24px);
+
+  @include media('<=tablet') {
+    width: 100%;
+    padding: rem(250px) rem(10px);
+  }
+
+  .message {
+    font-family: v(ff-sans);
+    font-size: rem(20px);
+    font-weight: v('semi');
+    line-height: 130%;
+    text-align: center;
+  }
 }
