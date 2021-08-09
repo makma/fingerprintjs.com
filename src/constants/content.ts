@@ -22,7 +22,7 @@ export const URL = {
   githubRepoUrl: 'https://github.com/fingerprintjs/fingerprintjs/',
   githubApiUrl: 'https://api.github.com/repos/fingerprintjs/fingerprintjs',
   dashboardLoginUrl: 'https://dashboard.fingerprintjs.com/login',
-  careersUrl: 'https://fingerprintjs.breezy.hr/',
+  careersUrl: 'https://careers.fingerprintjs.com/',
   linkedinUrl: 'https://www.linkedin.com/company/fingerprintjs/',
   twitterUrl: 'https://twitter.com/FingerprintJs/',
   signupUrl: 'https://dashboard.fingerprintjs.com/signup',
