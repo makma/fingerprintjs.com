@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import Button from '../common/Button'
+import { useUtmParams } from '../../hooks/useUtmParams'
+import { isBrowser } from '../../helpers/detector'
 
 import styles from './ContactSalesForm.module.scss'
 
 export default function ContactSalesForm() {
   const [website, setWebsite] = useState('')
   const leadSource = 'Contact Us Form'
+  const utmInfo = useUtmParams()
+  const referrer = isBrowser() ? document.referrer : null
+
   return (
     <form
       className={styles.contactSalesForm}
@@ -16,6 +21,26 @@ export default function ContactSalesForm() {
         <input hidden={true} name='oid' value='00D4x000006rShv' />
         <input hidden={true} name='retURL' value='https://fingerprintjs.com/contact-sales/confirm' />
         <input hidden={true} id='lead_source' name='lead_source' value={leadSource} />
+
+        {utmInfo.utm_campaign && (
+          <input hidden={true} id='utm_campaign__c' name='utm_campaign__c' value={utmInfo.utm_campaign} />
+        )}
+
+        {utmInfo.utm_content && (
+          <input hidden={true} id='utm_content__c' name='utm_content__c' value={utmInfo.utm_content} />
+        )}
+
+        {utmInfo.utm_medium && (
+          <input hidden={true} id='utm_medium__c' name='utm_medium__c' value={utmInfo.utm_medium} />
+        )}
+
+        {utmInfo.utm_source && (
+          <input hidden={true} id='utm_source__c' name='utm_source__c' value={utmInfo.utm_source} />
+        )}
+
+        {utmInfo.utm_term && <input hidden={true} id='utm_term__c' name='utm_term__c' value={utmInfo.utm_term} />}
+
+        {referrer && <input hidden={true} id='referral_url__c' name='referral_url__c' value={referrer} />}
 
         <label className={styles.label} htmlFor='first_name'>
           Your name

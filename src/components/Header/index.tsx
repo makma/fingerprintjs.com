@@ -74,7 +74,7 @@ export default function Header({ headerBarTitle, headerBarLinkText, headerBarLin
             <div className={styles.navRight}>
               <GithubButton className={styles.desktopOnly} />
               <Button
-                href={PATH.contactSales}
+                href={`${PATH.contactSales}${buildQueryString(utmInfo)}`}
                 variant='outline'
                 className={classNames(styles.desktopOnly, styles.button)}
               >
