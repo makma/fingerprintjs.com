@@ -80,6 +80,7 @@ export default function GetStartedForm({ className }: GetStartedFormProps) {
           </label>
           <Button
             className={classNames(styles.submit, 'gtm-get-started-btn')}
+            label='Submit Email'
             type='submit'
             mobileIcon={<ChevronRightSvg className='gtm-get-started-btn' />}
           >
