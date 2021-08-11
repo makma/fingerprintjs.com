@@ -14,6 +14,8 @@ import RelatedArticles from '../components/RelatedArticles/RelatedArticles'
 import { mapToPost, PostProps } from '../components/Post/Post'
 import PreviewProviders from '../cms/PreviewProviders'
 import AuthorComponent, { Author } from '../components/Author/Author'
+import HeroImageComponent, { HeroImageComponentProps } from '../components/HeroImage/HeroImage'
+
 import ActionBar, { ActionBarProps } from '../components/ActionBar/ActionBar'
 import { ImageInfo } from '../components/common/PreviewCompatibleImage/PreviewCompatibleImage'
 
@@ -37,6 +39,7 @@ export default function LongFormContent({ data, pageContext }: LongFormContentPr
 
   const metadata = mapToMetadata(data.markdownRemark.frontmatter.metadata)
   const post = mapToPost(data.markdownRemark)
+  const heroImage = mapToHeroImage(data.markdownRemark.frontmatter.heroImage)
   const authors = mapToAuthors(data.markdownRemark.fields?.authors)
   const body = data.markdownRemark.html
   const publishDate = data.markdownRemark.frontmatter.publishDate
@@ -46,6 +49,7 @@ export default function LongFormContent({ data, pageContext }: LongFormContentPr
     <LongFormContentTemplate
       contentComponent={DangerouslyRenderHtmlContent}
       metadata={metadata}
+      heroImage={heroImage}
       post={post}
       body={body}
       breadcrumbs={pageContext.breadcrumb.crumbs}
@@ -90,6 +94,17 @@ export const pageQuery = graphql`
         tags
         featured
         publishDate
+        heroImage {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+          imageAlt
+          imageTitle
+        }
       }
     }
   }
@@ -97,6 +112,7 @@ export const pageQuery = graphql`
 
 export interface TemplateProps {
   metadata: GatsbyTypes.SiteSiteMetadata
+  heroImage: HeroImageComponentProps
   post: PostProps
   body: string | React.ReactNode
   contentComponent?: React.FunctionComponent<{ content: string | React.ReactNode; className?: string }>
@@ -107,6 +123,7 @@ export interface TemplateProps {
 }
 export function LongFormContentTemplate({
   metadata,
+  heroImage,
   post,
   body,
   contentComponent,
@@ -141,7 +158,7 @@ export function LongFormContentTemplate({
               ))}
             </div>
           )}
-
+          {heroImage.image && <HeroImageComponent {...heroImage} />}
           <ContentComponent content={body} className={styles.content} />
         </Container>
 
@@ -155,12 +172,14 @@ export function LongFormContentTemplate({
 
 export function LongFormContentPreview({ entry, widgetFor }: PreviewTemplateComponentProps) {
   const metadata = entry.getIn(['data', 'metadata'])?.toObject() as QueryMetadata
+  const heroImage = entry.getIn(['data', 'heroImage'])?.toJS() as QueryHeroImage
   const actionBar = entry.getIn(['data'])?.toJS() as QueryActionBar
 
   return (
     <PreviewProviders>
       <LongFormContentTemplate
         metadata={mapToMetadata(metadata)}
+        heroImage={mapToHeroImage(heroImage)}
         post={mapToPost({ frontmatter: entry.get('data').toObject() })}
         body={widgetFor('body') ?? <></>}
         actionBar={mapToAction(actionBar)}
@@ -202,4 +221,15 @@ function mapToAction(queryAction: QueryActionBar): ActionBarProps {
     description: queryAction?.metadata?.description ?? '',
     tags: queryAction?.tags ?? '',
   } as ActionBarProps
+}
+
+type QueryHeroImage = NonNullable<
+  NonNullable<GatsbyTypes.LongFormContentQuery['markdownRemark']>['frontmatter']
+>['heroImage']
+function mapToHeroImage(queryHeroImage: QueryHeroImage): HeroImageComponentProps {
+  return {
+    image: queryHeroImage?.image as ImageInfo,
+    imageAlt: queryHeroImage?.imageAlt,
+    imageTitle: queryHeroImage?.imageTitle,
+  } as HeroImageComponentProps
 }

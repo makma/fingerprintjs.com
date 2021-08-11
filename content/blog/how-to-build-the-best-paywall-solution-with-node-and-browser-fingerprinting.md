@@ -18,9 +18,11 @@ tags:
   - paywall
 authors:
   - Lukonde Mwila
+heroImage:
+  image: /img/uploads/paywall-banner.png
+  imageAlt: Paywall notification
+  imageTitle: Paywall notification
 ---
-![Paywall notification](/img/uploads/paywall-banner.png "Paywall notification")
-
 As online publications transition from monetization through digital advertising to charging consumers directly for their content, paywalls are becoming commonplace. And right on their heels are myriad innovations in circumventing them. For developers tasked with restricting site access to subscribers, it’s important to not only keep up with current paywall architecture, but also the latest tricks for getting around them. If you’re going to build a paywall that works, you have to know what you’re guarding against.
 
 There are varying levels of restriction when it comes to paywalls. They can be grouped into two categories:

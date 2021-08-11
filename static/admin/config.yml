@@ -149,6 +149,17 @@ collections:
         displayFields: ['title']
         multiple: true
         default: ['Savannah Copland']
+      - {
+          label: Hero image,
+          name: heroImage,
+          widget: object,
+          fields:
+            [
+              { label: Image, name: image, widget: image, required: false },
+              { label: Image Alt, name: imageAlt, widget: string, required: false },
+              { label: Image Title, name: imageTitle, widget: string, required: false },
+            ],
+        }
       - { label: Body, name: body, widget: markdown }
   - name: 'tag'
     label: 'Tag'

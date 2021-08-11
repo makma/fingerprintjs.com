@@ -18,9 +18,11 @@ tags:
   - js
 authors:
   - Karl Hughes
+heroImage:
+  image: /img/uploads/how-to-cut-your-twilio-sms-cost-1-.png
+  imageAlt: Twilio 2FA
+  imageTitle: Twilio 2FA
 ---
-![Twilio 2FA](/img/uploads/how-to-cut-your-twilio-sms-cost-1-.png "Twilio 2FA")
-
 Single-factor authentication—typically, username and password—is the most common way to authenticate users online. But, the proliferation of data breaches has led many more companies to rethink this standard. Without a second form of authentication, anyone with your username and password can access your account, leaving you vulnerable to brute force attacks and data leaks.
 
 [Two-factor authentication (2FA)](https://www.csoonline.com/article/3239144/2fa-explained-how-to-enable-it-and-how-it-works.html) adds an extra layer of security to your account and helps safeguard your accounts online. 2FA divides authentication into two steps:

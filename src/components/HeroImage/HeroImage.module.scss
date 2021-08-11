@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  align-items: center;
+
+  padding-bottom: rem(48px);
+
+  @include media('<=phoneLandscape') {
+    padding-bottom: rem(42px);
+  }
+}
+
+.image {
+  flex: auto;
+
+  img {
+    border-radius: rem(16px);
+  }
+}

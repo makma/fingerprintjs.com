@@ -18,9 +18,11 @@ tags:
   - account takeover
 authors:
   - Linda Ikechukwu
+heroImage:
+  image: /img/uploads/ban-from-website.png
+  imageAlt: Permanently ban users from your website with FingerprintJS
+  imageTitle: Permanently ban users from your website with FingerprintJS
 ---
-![Permanently ban users from your website with FingerprintJS](/img/uploads/ban-from-website.png "Permanently ban users from your website with FingerprintJS")
-
 While having user-generated content is a great way to add interactivity and community to your website, it unfortunately leaves you open to abuse from malicious users. Nudity, harassment, spam, advertising, or even malware and viruses are just some of the unwanted content you may have to deal with. Sometimes, measures like content moderation and warnings can help keep your users in line. But in many cases, these offenders are aggressive and cunning with their approach, and you’ll have to take the extreme step of permanently banning them.
 
 In order to permanently ban a user, you’ll need to make sure they have a unique identifier. In this article, we’ll compare six methods through which you can block specific users from accessing your website content via various unique identifiers — including [FingerprintJS](http://fingerprintjs.com/), an easy solution for comprehensive user identification. 

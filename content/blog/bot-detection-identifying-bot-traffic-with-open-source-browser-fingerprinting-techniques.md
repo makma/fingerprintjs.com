@@ -20,9 +20,11 @@ tags:
   - fingerprinting
 authors:
   - Karl Hughes
+heroImage:
+  image: /img/uploads/bot-detection.png
+  imageAlt: Bot detection radar
+  imageTitle: Bot detection radar
 ---
-![Bot detection radar](/img/uploads/bot-detection.png "Bot detection radar")
-
 In 2020, [more than one-third](https://ppcprotect.com/how-many-of-the-internets-users-are-robots/) of internet traffic was **bot traffic**. Some of these bots serve a useful purpose as search engine crawlers, uptime monitors, and podcast feed fetchers. Others attempt to impersonate real users, steal data, or fill your website's comments with spam.
 
 Unfortunately, **bad bot detection** is really hard because these malicious bots are good at impersonating legitimate users.

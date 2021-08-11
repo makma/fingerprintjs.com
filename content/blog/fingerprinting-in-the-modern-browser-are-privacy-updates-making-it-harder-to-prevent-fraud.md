@@ -20,9 +20,11 @@ tags:
   - payment fraud
 authors:
   - Karl Hughes
+heroImage:
+  image: /img/uploads/modern-browser.png
+  imageAlt: Browser fingerprinting privacy
+  imageTitle: Browser fingerprinting privacy
 ---
-![Browser fingerprinting privacy](/img/uploads/modern-browser.png "Browser fingerprinting privacy")
-
 The trend in web browsers over the past few years has generally been in favor of more privacy for users. Almost all mainstream browsers ([Safari](https://www.infoq.com/news/2020/04/safari-third-party-cookies-block/), [Firefox](https://blog.mozilla.org/blog/2021/02/23/latest-firefox-release-includes-multiple-picture-in-picture-and-total-cookie-protection/), [Brave](https://support.brave.com/hc/en-us/articles/360050634931-How-Do-I-Manage-Cookies-In-Brave-), and [Chrome](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)) now block third-party cookies which enabled tracking across multiple sites, and Chrome uses encrypted traffic (via HTTPS) by default.
 
 Similarly, regulations like GDPR and CCPA are adding legal hurdles for companies that want to gather user data online. Cookie consent boxes are now ubiquitous (despite the fact that [they're rarely implemented correctly](https://www.zdnet.com/article/cookie-consent-most-websites-break-law-by-making-it-hard-to-reject-all-tracking/)), and companies in many jurisdictions are now responsible for allowing users the [right to be forgotten](https://en.wikipedia.org/wiki/Right_to_be_forgotten).

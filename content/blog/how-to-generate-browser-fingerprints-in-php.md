@@ -16,9 +16,9 @@ tags:
   - web
 authors:
   - Aniket Bhattacharyea
+heroImage:
+  image: /img/uploads/browser-fingerprints-in-php-1-.png
 ---
-![](/img/uploads/browser-fingerprints-in-php-1-.png)
-
 Almost every web developer has to combat fraud at some point. Attacks might include malicious users trying to brute force passwords, place fraudulent orders, initiate bot attacks, or bypass your site’s paywall.
 
 Traditional methods of tracking users in PHP often fall short when trying to prevent fraud. This is where [browser fingerprinting comes in](https://fingerprintjs.com/blog/what-is-browser-fingerprinting/). Fingerprinting is a technique that generates a highly accurate identifier that can uniquely identify someone based on their browser and device settings.

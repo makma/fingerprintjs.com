@@ -19,9 +19,11 @@ tags:
   - payment fraud
 authors:
   - James Konik
+heroImage:
+  image: /img/uploads/canvas-fingerprinting.png
+  imageAlt: Canvas fingerprinting
+  imageTitle: Canvas fingerprinting
 ---
-![Canvas fingerprinting](/img/uploads/canvas-fingerprinting.png "Canvas fingerprinting")
-
 Identifying users on your website has many uses. From tracking engagement to preventing fraud, knowing how users interact with your application is a powerful tool for developers and businesses.
 
 But, many users don’t want to be identified. Some are concerned with privacy and the spread of their data online, and others are trying to commit fraud, gain control of other users’ accounts, or steal data from your website. These users might take steps like disabling their cookies, anonymizing their IP addresses, or using browser plugins to prevent tracking measures.

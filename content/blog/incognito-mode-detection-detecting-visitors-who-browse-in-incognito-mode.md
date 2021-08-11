@@ -17,9 +17,11 @@ tags:
   - paywall
 authors:
   - Shahed Nasser
+heroImage:
+  image: /img/uploads/incognito-mode.png
+  imageAlt: Incognito mode detection
+  imageTitle: Incognito mode detection
 ---
-![Incognito mode detection](/img/uploads/incognito-mode.png "Incognito mode detection")
-
 Browsers attempt to ensure a user’s privacy by offering Incognito mode, which allows the user to surf the internet without worrying about their history, cookies, or the information they enter being saved permanently. However, in a lot of business use cases, this can end up being harmful. Visitors may use Incognito mode to gain unlimited access to content, bypassing paywalls undetected. 
 
 We’ll go over four methods of detecting visitors using Incognito mode and discuss which browsers support these methods. In the end, we’ll compare these methods to using [FingerprintJS](https://fingerprintjs.com/), which makes it all easier.

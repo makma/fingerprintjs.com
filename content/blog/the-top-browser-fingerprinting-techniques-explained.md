@@ -19,9 +19,11 @@ tags:
   - paywall
 authors:
   - Savannah Copland
+heroImage:
+  image: /img/uploads/tw-ad-2-hd.png
+  imageAlt: Screenshot of FingerprintJS visitorID data
+  imageTitle: Screenshot of FingerprintJS visitorID data
 ---
-![Screenshot of FingerprintJS visitorID data](/img/uploads/tw-ad-2-hd.png "Screenshot of FingerprintJS visitorID data")
-
 <b>To generate a highly accurate browser fingerprint, many techniques are used to gather information about the user that can differentiate them from millions of others online. In this article, we review some of the most common methods used in a browser fingerprinting script.</b>
 
 Also known as online fingerprinting, browser fingerprinting is a tracking and identification method websites use to associate individual browsing sessions with one site visitor. Using Javascript, a plethora of data can be collected about a user’s browser and device. When these pieces of information are stitched together, they reveal a unique combination of information that forms every user’s very own ‘digital fingerprint.’ The browser fingerprint is traceable across browsing sessions, even when the user enters incognito browsing or uses a VPN to access a site.
