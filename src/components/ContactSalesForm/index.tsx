@@ -17,31 +17,27 @@ export default function ContactSalesForm() {
       action='https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8'
       method='POST'
     >
+      <input type='hidden' name='oid' value='00D4x000006rShv' />
+      <input type='hidden' name='retURL' value='https://fingerprintjs.com/contact-sales/confirm' />
+      <input type='hidden' id='lead_source' name='lead_source' value={leadSource} />
+
+      {utmInfo.utm_campaign && (
+        <input type='hidden' id='utm_campaign__c' name='utm_campaign__c' value={utmInfo.utm_campaign} />
+      )}
+
+      {utmInfo.utm_content && (
+        <input type='hidden' id='utm_content__c' name='utm_content__c' value={utmInfo.utm_content} />
+      )}
+
+      {utmInfo.utm_medium && <input type='hidden' id='utm_medium__c' name='utm_medium__c' value={utmInfo.utm_medium} />}
+
+      {utmInfo.utm_source && <input type='hidden' id='utm_source__c' name='utm_source__c' value={utmInfo.utm_source} />}
+
+      {utmInfo.utm_term && <input type='hidden' id='utm_term__c' name='utm_term__c' value={utmInfo.utm_term} />}
+
+      {referrer && <input type='hidden' id='referral_url__c' name='referral_url__c' value={referrer} />}
+
       <div className={styles.form}>
-        <input hidden={true} name='oid' value='00D4x000006rShv' />
-        <input hidden={true} name='retURL' value='https://fingerprintjs.com/contact-sales/confirm' />
-        <input hidden={true} id='lead_source' name='lead_source' value={leadSource} />
-
-        {utmInfo.utm_campaign && (
-          <input hidden={true} id='utm_campaign__c' name='utm_campaign__c' value={utmInfo.utm_campaign} />
-        )}
-
-        {utmInfo.utm_content && (
-          <input hidden={true} id='utm_content__c' name='utm_content__c' value={utmInfo.utm_content} />
-        )}
-
-        {utmInfo.utm_medium && (
-          <input hidden={true} id='utm_medium__c' name='utm_medium__c' value={utmInfo.utm_medium} />
-        )}
-
-        {utmInfo.utm_source && (
-          <input hidden={true} id='utm_source__c' name='utm_source__c' value={utmInfo.utm_source} />
-        )}
-
-        {utmInfo.utm_term && <input hidden={true} id='utm_term__c' name='utm_term__c' value={utmInfo.utm_term} />}
-
-        {referrer && <input hidden={true} id='referral_url__c' name='referral_url__c' value={referrer} />}
-
         <label className={styles.label} htmlFor='first_name'>
           Your name
         </label>
@@ -55,7 +51,7 @@ export default function ContactSalesForm() {
           placeholder='John'
           required
         />
-        <input id='last_name' maxLength={80} name='last_name' size={20} type='text' hidden={true} value='Unknown' />
+        <input id='last_name' name='last_name' type='hidden' value='Unknown' />
         <label className={styles.label} htmlFor='email'>
           Work email
         </label>
@@ -69,7 +65,7 @@ export default function ContactSalesForm() {
           placeholder='john@gmail.com'
           required
         />
-        <input id='company' maxLength={40} name='company' size={20} type='text' hidden={true} value={website} />
+        <input id='company' name='company' type='hidden' value={website} />
         <label className={styles.label} htmlFor='url'>
           Company Website
         </label>
