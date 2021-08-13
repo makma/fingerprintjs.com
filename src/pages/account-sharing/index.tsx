@@ -2,6 +2,8 @@ import React from 'react'
 import { LayoutTemplate } from '../../components/Layout'
 import BreadcrumbsSEO from '../../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../../helpers/types'
+import Container from '../../components/common/Container'
+import { PostProps } from '../../components/Post/Post'
 
 import HeroSection from '../../components/accountSharing/HeroSection/HeroSection'
 import HowMuchLosingSection from '../../components/accountSharing/HowMuchLosingSection/HowMuchLosingSection'
@@ -11,9 +13,12 @@ import WhyFingerprintSection from '../../components/accountSharing/WhyFingerprin
 import LearnMoreAboutSection from '../../components/accountSharing/LearnMoreAboutSection/LearnMoreAboutSection'
 import BuiltForEngineersSection from '../../components/accountSharing/BuiltForEngineersSection/BuiltForEngineersSection'
 import ContactSalesSection from '../../components/accountSharing/ContactSalesSection/ContactSalesSection'
+import RelatedArticles from '../../components/RelatedArticles/RelatedArticles'
 
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
+
+import styles from './account-sharing.module.scss'
 
 interface AccountSharingProps {
   pageContext: GeneratedPageContext
@@ -29,6 +34,15 @@ export default function AccountSharingPage({ pageContext }: AccountSharingProps)
       'Accurately identify users sharing their account details with our browser fingerprinting API built for developer teams',
     siteUrl: `${siteMetadata.siteUrl}${pathname}`,
   }
+
+  const content: PostProps = {
+    title: '',
+    description: '',
+    publishDate: '',
+    path: '/',
+    tags: ['account sharing'],
+  }
+
   return (
     <LayoutTemplate siteMetadata={siteMetadata}>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
@@ -40,6 +54,15 @@ export default function AccountSharingPage({ pageContext }: AccountSharingProps)
       <LearnMoreAboutSection />
       <BuiltForEngineersSection />
       <ContactSalesSection />
+      <Container size='large' className={styles.relatedArticles}>
+        <RelatedArticles
+          article={content}
+          count={4}
+          title='Account takeover prevention blogs'
+          titleIsCentered
+          limitPostLines
+        />
+      </Container>
     </LayoutTemplate>
   )
 }
