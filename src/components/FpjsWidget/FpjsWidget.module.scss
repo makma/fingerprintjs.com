@@ -20,8 +20,6 @@
   box-shadow: 0 20px 50px 0 adjust-color(c('brand-water'), $alpha: -0.9);
   max-width: 660px;
   width: 100%;
-  transform: translateY(30px);
-  opacity: 0;
 
   svg {
     opacity: 0;
@@ -31,10 +29,6 @@
   }
 
   &.loaded {
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-    opacity: 1;
-    transform: translateY(0px);
-
     svg {
       opacity: 1;
     }
@@ -458,4 +452,14 @@
   @include media('>phoneLandscape') {
     display: none;
   }
+}
+
+.headerLoading {
+  opacity: 0.3;
+}
+.loadingBrowser {
+  margin-bottom: rem(44px);
+}
+.visitLoading {
+  margin-bottom: rem(6px);
 }

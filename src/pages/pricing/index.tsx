@@ -6,7 +6,7 @@ import classNames from 'classnames'
 import Container from '../../components/common/Container'
 import PricingCard from '../../components/pricing/Card'
 import BannerWithCTA from '../../components/BannerWithCTA/BannerWithCTA'
-import { URL } from '../../constants/content'
+import { DEFAULT_TRIAL_DAYS, URL } from '../../constants/content'
 import { useMainBackgroundImage } from '../../hooks/useBackgroundImage'
 import BreadcrumbsSEO from '../../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../../helpers/types'
@@ -59,7 +59,13 @@ function SectionHeader({ title, subtitle, description, invertOrder = false }: Se
 
 function CalculatorSection({ mainBackground }: { mainBackground: SectionProps['backgroundImageFluid'] }) {
   return (
-    <Section className={styles.calculator} backgroundImageFluid={mainBackground}>
+    <Section
+      className={styles.calculator}
+      backgroundImageFluid={mainBackground}
+      cssBackgroundPosition='center 75%'
+      cssBackgroundRepeat='no-repeat'
+      cssBackgroundSize='1400px auto'
+    >
       <Container>
         <SectionHeader
           title='Calculator'
@@ -74,7 +80,13 @@ function CalculatorSection({ mainBackground }: { mainBackground: SectionProps['b
 
 function PricingModelsSection({ mainBackground }: { mainBackground: SectionProps['backgroundImageFluid'] }) {
   return (
-    <Section className={styles.pricing} backgroundImageFluid={mainBackground}>
+    <Section
+      className={styles.pricing}
+      backgroundImageFluid={mainBackground}
+      cssBackgroundPosition='50%'
+      cssBackgroundRepeat='no-repeat'
+      cssBackgroundSize='1400px auto'
+    >
       <Container>
         <SectionHeader title='Pricing Models' invertOrder />
         <PricingCard
@@ -112,18 +124,12 @@ function PricingModelsSection({ mainBackground }: { mainBackground: SectionProps
             </div>
           </div>
         </PricingCard>
-        <PricingCard
-          title='Annual'
-          description='Our 1 year prepaid plan has several advantages compared to the on-demand model.'
-          sectionClasses={styles.annual}
-        >
-          <ul className={classNames(styles.numberList, styles.horizontal)}>
-            <li>You lock in your price for 1 year and get a 20% discount.</li>
+        <PricingCard title='Annual' sectionClasses={styles.annual}>
+          <ul className={styles.arrowList}>
             <li>Unused API calls are carried over from month to month</li>
           </ul>
           <div className={styles.quote}>
-            An annual plan is recommended when you have a high and/or predictable volume and getting a significant
-            discount for your usage is important.
+            An annual plan is recommended when you have a high and/or predictable volume.
           </div>
         </PricingCard>
       </Container>
@@ -136,7 +142,7 @@ function BannerSection() {
     <Section className={styles.bannerSection}>
       <Container>
         <BannerWithCTA title='New To FingerprintJS Pro?' ctaText='Try For Free' ctaHref={URL.signupUrl}>
-          Start a free trial with unlimited API requests for the first 30 days.
+          Start a free trial with unlimited API requests for the first {DEFAULT_TRIAL_DAYS} days.
         </BannerWithCTA>
       </Container>
     </Section>

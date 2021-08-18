@@ -107,7 +107,8 @@
     .ip,
     .incognito,
     .browser,
-    .location {
+    .location,
+    .loadingSection {
       display: flex;
       align-items: flex-start;
       flex-wrap: wrap;
@@ -188,4 +189,8 @@
       }
     }
   }
+}
+
+.headerLoading {
+  opacity: 0.3;
 }

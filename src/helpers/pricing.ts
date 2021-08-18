@@ -1,5 +1,3 @@
-import { PaymentType } from './../types/PaymentType'
-
 export const minimumIdentifications = 100000
 export const freeApiCalls = 20000
 
@@ -12,14 +10,24 @@ export const pricingTable = [
   { label: '10M+', value: Infinity },
 ]
 
-export function handlePriceChange(currentValue: number, type: PaymentType): string {
+const numberFormatter = (currencyFormatOptions: {
+  maximumSignificantDigits: number
+  style: string
+  currencyDisplay: string
+  currency: string
+  notation: string
+}) => {
+  return Intl.NumberFormat('en-US', currencyFormatOptions)
+}
+
+export function handlePriceChange(currentValue: number): string {
   const value = Number(currentValue)
-  const newPrice = calculatePrice(value, type)
+  const newPrice = calculatePrice(value)
 
   return newPrice
 }
 
-export function calculatePrice(identifications: number, type: PaymentType): string {
+export function calculatePrice(identifications: number): string {
   const currencyFormatOptions = {
     maximumSignificantDigits: 3,
     style: 'currency',
@@ -28,12 +36,5 @@ export function calculatePrice(identifications: number, type: PaymentType): stri
     notation: 'standard',
   }
 
-  if (type === PaymentType.Monthly) {
-    return new Intl.NumberFormat('en-US', currencyFormatOptions).format(identifications / 1000)
-  }
-  if (type === PaymentType.Annually) {
-    return new Intl.NumberFormat('en-US', currencyFormatOptions).format((identifications / 1000) * 0.8)
-  } else {
-    throw new Error('Payment type is required')
-  }
+  return numberFormatter(currencyFormatOptions).format(identifications / 1000)
 }

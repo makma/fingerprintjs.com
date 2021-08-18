@@ -15,11 +15,16 @@ title: "Fingerprinting in the Modern Browser: Are Privacy Updates Making It
   Harder to Prevent Fraud?"
 tags:
   - fingerprinting
+  - account takeover
+  - paywall
+  - payment fraud
 authors:
   - Karl Hughes
+heroImage:
+  image: /img/uploads/modern-browser.png
+  imageAlt: Browser fingerprinting privacy
+  imageTitle: Browser fingerprinting privacy
 ---
-![Browser fingerprinting privacy](/img/uploads/modern-browser.png "Browser fingerprinting privacy")
-
 The trend in web browsers over the past few years has generally been in favor of more privacy for users. Almost all mainstream browsers ([Safari](https://www.infoq.com/news/2020/04/safari-third-party-cookies-block/), [Firefox](https://blog.mozilla.org/blog/2021/02/23/latest-firefox-release-includes-multiple-picture-in-picture-and-total-cookie-protection/), [Brave](https://support.brave.com/hc/en-us/articles/360050634931-How-Do-I-Manage-Cookies-In-Brave-), and [Chrome](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)) now block third-party cookies which enabled tracking across multiple sites, and Chrome uses encrypted traffic (via HTTPS) by default.
 
 Similarly, regulations like GDPR and CCPA are adding legal hurdles for companies that want to gather user data online. Cookie consent boxes are now ubiquitous (despite the fact that [they're rarely implemented correctly](https://www.zdnet.com/article/cookie-consent-most-websites-break-law-by-making-it-hard-to-reject-all-tracking/)), and companies in many jurisdictions are now responsible for allowing users the [right to be forgotten](https://en.wikipedia.org/wiki/Right_to_be_forgotten).
@@ -118,7 +123,7 @@ As in Chrome, Firefox users can change the permissions given to each website the
 
 ![Firefox operating system permissions](https://i.imgur.com/pSUB3Dt.png)
 
-Finally, there are thousands of Firefox extensions that give users more fine-grained [control over their privacy](https://addons.mozilla.org/en-US/firefox/search/?q=privacy). Users can also install the [AmIUnique addon](https://addons.mozilla.org/en-US/firefox/addon/amiunique/) to see how unique their browser is among the millions of fingerprints collected by [AmIUnique](https://amiunique.org/). This knowledge can be used by malicious users to tweak their settings further to obscure their identity.
+Finally, there are thousands of Firefox extensions that give users more fine-grained [control over their privacy](https://addons.mozilla.org/en-US/firefox/search/?q=privacy). Users can also install the [AmIUnique add-on](https://addons.mozilla.org/en-US/firefox/addon/amiunique/) to see how unique their browser is among the millions of fingerprints collected by [AmIUnique](https://amiunique.org/). This knowledge can be used by malicious users to tweak their settings further to obscure their identity.
 
 Even with some pretty strict fingerprinting protections in place, Doug Leith [found shortcomings in Firefox’s privacy configuration](https://arstechnica.com/information-technology/2020/03/study-ranks-edges-default-privacy-settings-the-lowest-of-all-major-browsers/) too. For example, Firefox transmits identifying information during [telemetry data reporting](https://support.mozilla.org/en-US/kb/telemetry-clientid) which is on by default.
 

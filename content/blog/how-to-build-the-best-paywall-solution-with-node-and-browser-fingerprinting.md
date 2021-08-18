@@ -15,11 +15,14 @@ title: How to Build the Best Paywall Solution with Node and Browser Fingerprinti
 tags:
   - fingerprinting
   - js
+  - paywall
 authors:
   - Lukonde Mwila
+heroImage:
+  image: /img/uploads/paywall-banner.png
+  imageAlt: Paywall notification
+  imageTitle: Paywall notification
 ---
-![Paywall notification](/img/uploads/paywall-banner.png "Paywall notification")
-
 As online publications transition from monetization through digital advertising to charging consumers directly for their content, paywalls are becoming commonplace. And right on their heels are myriad innovations in circumventing them. For developers tasked with restricting site access to subscribers, it’s important to not only keep up with current paywall architecture, but also the latest tricks for getting around them. If you’re going to build a paywall that works, you have to know what you’re guarding against.
 
 There are varying levels of restriction when it comes to paywalls. They can be grouped into two categories:
@@ -55,7 +58,7 @@ Prerequisites:
 
 ### Sign Up for FingerprintJS
 
-First, create an account with FingerprintJS. The sign-up process is quick, intuitive, and conventional, and you can try it without usage limits for 30 days.
+First, create an account with FingerprintJS. The sign-up process is quick, intuitive, and conventional, and you can try it without usage limits for 10 days.
 
 Once you’ve signed up, you’ll be presented with a quick start guide for both a CDN and an NPM implementation. The code snippet for each approach will include your generated browser token which you’ll use later in this tutorial, so keep this value close at hand. If need be, you can access the Tokens page from the left-side menu at any point to fetch and generate API and browser tokens.
 

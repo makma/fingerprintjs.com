@@ -16,6 +16,7 @@ title: Why It’s Not Just Netflix Losing Money From Subscription Sharing
 tags:
   - fingerprinting
   - web
+  - account sharing
 authors:
   - Savannah Copland
 ---
@@ -95,7 +96,7 @@ To accurately identify web visitors with today's browser and device security set
 ## How Browser Fingerprinting Works
 
 
-A core technology for visitor identification is browser fingerprinting. It accurately identifies users by collecting signals via the browser and combines them into a unique visitorID. Brower fingerprints are difficult to spoof via VPNs, clearing cookies, or incognito browsing, making them a powerful tool to catch even the sneakiest of visitors.
+A core technology for visitor identification is browser fingerprinting. It accurately identifies users by collecting signals via the browser and combines them into a unique visitorID. Browser fingerprints are difficult to spoof via VPNs, clearing cookies, or incognito browsing, making them a powerful tool to catch even the sneakiest of visitors.
 
 Browser fingerprinting functions the same way a security camera can identify the basic details of a car. Instead of features like make and model, it identifies a user using signals captured by the browser.
 

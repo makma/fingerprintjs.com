@@ -19,7 +19,14 @@ export default function UseCasesSection() {
 
   return (
     <>
-      <Section className={styles.section} backgroundImageFluid={mainBackground}>
+      <Section
+        className={styles.section}
+        backgroundImageFluid={mainBackground}
+        cssBackgroundColor="v('off-white')"
+        cssBackgroundPosition='center center'
+        cssBackgroundRepeat='no-repeat'
+        cssBackgroundSize='1400px auto'
+      >
         <Container>
           <header className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>

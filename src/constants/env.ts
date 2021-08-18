@@ -43,8 +43,13 @@ export const FPJS_MONITORING_TOKEN = process.env.GATSBY_FPJS_MONITORING_TOKEN
 export const GITHUB_API_TOKEN = process.env.GATSBY_GITHUB_API_TOKEN
 export const MAPBOX_ACCESS_TOKEN = process.env.GATSBY_MAPBOX_ACCESS_TOKEN
 export const ROLLBAR_ACCESS_TOKEN = process.env.GATSBY_ROLLBAR_ACCESS_TOKEN
-export const FPJS_LEAD_URL = process.env.GATSBY_FPJS_LEAD_URL ?? ''
 export const BRANCH = process.env.BRANCH
+
+export const HOST =
+  getContextEnv<string>({
+    [NetlifyContext.Production]: 'https://fingerprintjs.com',
+    [NetlifyContext.DeployPreview]: process.env.DEPLOY_PRIME_URL,
+  }) ?? 'https://fingerprintjs.com'
 
 function getNetlifyContext(): NetlifyContext {
   switch (process.env.CONTEXT) {

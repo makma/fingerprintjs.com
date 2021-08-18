@@ -1,7 +1,7 @@
 ---
 templateKey: long-form-content
 metadata:
-  title: How the Web Audio API is used for browser fingerprinting
+  title: How the Web Audio API is used for audio fingerprinting
   url: https://fingerprintjs.com/blog/audio-fingerprinting
   image: /img/uploads/audio-fp-hero.png
   description: Audio Fingerprinting is used to uniquely identify visitors without
@@ -11,22 +11,25 @@ metadata:
   imageTitle: Audio fingerprinting
 featured: true
 publishDate: 2021-03-18T13:12:29.612Z
-title: How the Web Audio API is used for browser fingerprinting
+title: How the Web Audio API is used for audio fingerprinting
 tags:
   - fingerprinting
   - js
   - engineering
+  - web
 authors:
   - Savannah Copland
 ---
 Did you know that you can identify web browsers without using cookies or asking for permissions?\
 \
-This is known as “browser fingerprinting” and it works by reading browser attributes and combining them together into a single identifier. This identifier is stateless and works well in normal and incognito modes.
+This is known as [browser fingerprinting ](https://fingerprintjs.com/blog/browser-fingerprinting-techniques/)and it works by reading browser attributes and combining them together into a single identifier. This identifier is stateless and works well in normal and incognito modes.
 
 ![Graphic of browser fingerprinting](/img/uploads/audio-fp-browser-fingerprinting-image.png "Graphic of browser fingerprinting")
 
-When generating a browser identifier, we can read browser attributes directly or use attribute processing techniques first. One of the creative techniques that we’ll discuss today is audio fingerprinting.\
-\
+When generating a browser identifier, we can read browser attributes directly or use attribute processing techniques first. One of the creative techniques that we’ll discuss today is audio fingerprinting.
+
+# Audio fingerprinting
+
 Audio fingerprinting is a valuable technique because it is relatively unique and stable.
 Its uniqueness comes from the internal complexity and sophistication of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API" target="_blank" rel="noopener"><span>Web Audio API</span></a>.
 The stability is achieved because the audio source that we’ll use is a sequence of numbers, generated mathematically. Those numbers will later be combined into a single audio fingerprint value.\
@@ -225,7 +228,7 @@ Historically, all major browser engines (Blink, WebKit, and Gecko) based their W
 \
 Examples of Google contributions to the Webkit project include:
 <a href="https://github.com/WebKit/WebKit/commit/d187ecab7b152962465c23be04ab7ed3ef70f382" target="_blank" rel="noopener"><span>creation of <tt>OfflineAudioContext</tt></span></a>, 
-<a href="https://github.com/WebKit/WebKit/commit/fad97bfb064446f78c78338104fb3f22be666cbb" target="_blank" rel="noopener"><span>creation of <tt>OscillatorNode</tt></span></a>, <a href="https://github.com/WebKit/WebKit/commit/6f2b47e87bc414001affb258048749130bc91083" target="_blank" rel="noopener"><span>creation of DynamicsCompressorNode</span></a>. \
+<a href="https://github.com/WebKit/WebKit/commit/fad97bfb064446f78c78338104fb3f22be666cbb" target="_blank" rel="noopener"><span>creation of <tt>OscillatorNode</tt></span></a>, <a href="https://github.com/WebKit/WebKit/commit/6f2b47e87bc414001affb258048749130bc91083" target="_blank" rel="noopener"><span>creation of DynamicsCompressorNode</span></a>. \
 \
 Since then browser developers have made a lot of small changes. These changes, compounded by the large number of mathematical operations involved, lead to fingerprinting differences. Audio signal processing uses floating point arithmetic, which also contributes to discrepancies in calculations.\
 \
@@ -363,7 +366,7 @@ Browser fingerprinting is a useful method of visitor identification for a variet
 \
 You can try implementing browser fingerprinting yourself with our <a href="https://github.com/fingerprintjs/fingerprintjs" target="_blank" rel="noopener"><span>open source library</span></a>. FingerprintJS is the most popular browser fingerprinting library available, with over <tt>12K</tt> GitHub stars.\
 \
-For higher identification accuracy, we also developed the <a href="https://fingerprintjs.com/" target="_blank" rel="noopener"><span>FingerprintJS Pro API</span></a>, which uses machine learning to combine browser fingerprinting with additional identification techniques. You can <a href="https://dashboard.fingerprintjs.com/signup">try FingerprintJS Pro</a> with unlimited API requests for the first 30 days.
+For higher identification accuracy, we also developed the <a href="https://fingerprintjs.com/" target="_blank" rel="noopener"><span>FingerprintJS Pro API</span></a>, which uses machine learning to combine browser fingerprinting with additional identification techniques. You can <a href="https://dashboard.fingerprintjs.com/signup">try FingerprintJS Pro</a> with unlimited API requests for the first 10 days.
 
 ### Get in touch
 

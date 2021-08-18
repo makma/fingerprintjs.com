@@ -19,7 +19,14 @@ export default function ProToolsSection() {
   const { mainBackground } = useMainBackgroundImage()
 
   return (
-    <Section className={styles.proTools} backgroundImageFluid={mainBackground}>
+    <Section
+      className={styles.proTools}
+      backgroundImageFluid={mainBackground}
+      cssBackgroundColor="v('off-white')"
+      cssBackgroundPosition='center center'
+      cssBackgroundRepeat='no-repeat'
+      cssBackgroundSize='1400px auto'
+    >
       <Container className={styles.container}>
         <header className={styles.header}>
           <h2 className={styles.sectionTitle}>

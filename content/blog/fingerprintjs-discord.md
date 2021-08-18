@@ -12,7 +12,7 @@ featured: true
 publishDate: 2021-06-15T13:18:21.637Z
 title: FingerprintJS Discord
 tags:
-  - fingerprinting
+  - announcements
 authors:
   - Savannah Copland
 ---

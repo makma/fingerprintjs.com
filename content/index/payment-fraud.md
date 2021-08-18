@@ -8,6 +8,9 @@ metadata:
     More.
   url: https://fingerprintjs.com/payment-fraud
   image: /img/uploads/fpjs_cover3.png
+relatedTitle: Related Articles
+tags:
+  - payment fraud
 invertContent: false
 hero:
   title: Payment Fraud Prevention and Detection
@@ -83,8 +86,8 @@ blocks:
     ctaUrl: https://dashboard.fingerprintjs.com/signup
 inlineCta:
   title: Start your free trial today
-  markdown__Subtitle: 'Install our Javascript snippet on your website and start collecting
-    visitorIDs free for 30 days. '
+  markdown__Subtitle: "Install our Javascript snippet on your website and start
+    collecting visitorIDs free for 10 days. "
   buttonText: Get Started
   buttonHref: https://dashboard.fingerprintjs.com/signup
 ---

@@ -11,6 +11,7 @@ import { ReactComponent as InfoSvg } from '../../img/info.svg'
 import Tippy from '@tippyjs/react'
 import styles from './MobileWidget.module.scss'
 import { MAPBOX_ACCESS_TOKEN } from '../../constants/env'
+import Skeleton from '../Skeleton/Skeleton'
 
 SwiperCore.use([Navigation])
 
@@ -46,13 +47,21 @@ export default function MobileWidget({ className, isLoaded, visits, visitorId }:
               className={classNames('swiper-slide', styles.item, { [styles.incognito]: visit.incognito })}
             >
               <header className={styles.header}>
-                <Button className={classNames('btn-prev', styles.button, styles.mobileOnly)} variant='clear'>
+                <Button
+                  label='Previous'
+                  className={classNames('btn-prev', styles.button, styles.mobileOnly)}
+                  variant='clear'
+                >
                   <ChevronLeftSvg />
                 </Button>
                 <h3 className={styles.title}>
                   {visit.requestId === visits[0].requestId ? 'Current Visit' : getVisitTitle(visit.timestamp)}
                 </h3>
-                <Button className={classNames('btn-next', styles.button, styles.mobileOnly)} variant='clear'>
+                <Button
+                  label='Next'
+                  className={classNames('btn-next', styles.button, styles.mobileOnly)}
+                  variant='clear'
+                >
                   <ChevronRightSvg />
                 </Button>
               </header>
@@ -113,6 +122,54 @@ export default function MobileWidget({ className, isLoaded, visits, visitorId }:
           )
         })}
       <div className='swiper-pagination' />
+    </Swiper>
+  )
+}
+
+export function MobileLoadingState() {
+  const repeatElement = (length, fn) => Array.from({ length }, (_, i) => fn(i))
+
+  return (
+    <Swiper className={classNames(styles.container)} slidesPerView={1.05} spaceBetween={10} centeredSlides={true}>
+      <SwiperSlide className={classNames('swiper-slide', styles.item)}>
+        <header className={styles.header}>
+          <Button label='Previous' className={classNames('btn-prev', styles.button, styles.mobileOnly)} variant='clear'>
+            <ChevronLeftSvg />
+          </Button>
+          <Skeleton width={125} height={22} className={styles.headerLoading} />
+          <Button label='Next' className={classNames('btn-next', styles.button, styles.mobileOnly)} variant='clear'>
+            <ChevronRightSvg />
+          </Button>
+        </header>
+        <div className={styles.visit}>
+          <div className={styles.visitId}>
+            <div className={styles.label}>
+              <Skeleton width={75} height={21} />
+            </div>
+            <div className={styles.value}>
+              <Skeleton width={200} height={24} />
+            </div>
+          </div>
+          {repeatElement(4, (i) => (
+            <div key={i} className={styles.loadingSection}>
+              <div className={styles.label}>
+                <Skeleton width={110} height={21} />
+              </div>
+              <div className={styles.value}>
+                <Skeleton width={110} height={21} />
+              </div>
+            </div>
+          ))}
+          <div className={styles.location}>
+            <div className={styles.label}>
+              <Skeleton width={75} height={21} />
+            </div>
+            <div className={styles.value}>
+              <Skeleton width={250} height={250} />
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
     </Swiper>
   )
 }

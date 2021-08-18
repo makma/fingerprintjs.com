@@ -14,18 +14,22 @@ title: 6 Ways to Permanently Ban Users from Your Website
 tags:
   - web
   - fingerprinting
+  - account sharing
+  - account takeover
 authors:
   - Linda Ikechukwu
+heroImage:
+  image: /img/uploads/ban-from-website.png
+  imageAlt: Permanently ban users from your website with FingerprintJS
+  imageTitle: Permanently ban users from your website with FingerprintJS
 ---
-![Permanently ban users from your website with FingerprintJS](/img/uploads/ban-from-website.png "Permanently ban users from your website with FingerprintJS")
-
 While having user-generated content is a great way to add interactivity and community to your website, it unfortunately leaves you open to abuse from malicious users. Nudity, harassment, spam, advertising, or even malware and viruses are just some of the unwanted content you may have to deal with. Sometimes, measures like content moderation and warnings can help keep your users in line. But in many cases, these offenders are aggressive and cunning with their approach, and you’ll have to take the extreme step of permanently banning them.
 
 In order to permanently ban a user, you’ll need to make sure they have a unique identifier. In this article, we’ll compare six methods through which you can block specific users from accessing your website content via various unique identifiers — including [FingerprintJS](http://fingerprintjs.com/), an easy solution for comprehensive user identification. 
 
 ## 1. IP Address Ban
 
-One way to block users from having the ability to visit your site is to simply ban their IP addresses. Depending on your forum or commenting host, like [WordPress](https://securityboulevard.com/2020/06/how-to-block-ip-addresses-to-protect-your-wordpress-site/) or [Disqus](https://help.disqus.com/en/articles/1717166-using-the-ban-user-and-trust-user-controls), you’ll be able to locate the IP address of a user from the admin dashboard or server logs. For other platforms, simply run a browser search for *how to find IP address on \[your platform]*. 
+One way to block users from having the ability to visit your site is to simply ban their IP addresses. Depending on your forum or commenting host, like [WordPress](https://www.malcare.com/blog/how-to-block-ip-addresses-in-wordpress/) or [Disqus](https://help.disqus.com/en/articles/1717166-using-the-ban-user-and-trust-user-controls), you’ll be able to locate the IP address of a user from the admin dashboard or server logs. For other platforms, simply run a browser search for *how to find IP address on \[your platform]*. 
 
 ![How to locate the IP address of a user in WordPress via the comments, via wpbeginner](/img/uploads/xrzswwb.png)
 
@@ -159,7 +163,7 @@ import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
 The script above should preferably be included in the root folder of all the JS files like `index.js`.
 
-When you add a user’s unique visitor ID to a ban list with FingerprintJS, it’s difficult for them to circumvent it unless they frequently switch devices. [FingerprintJS](https://fingerprintjs.com/) provides an open-source and paid solution for fingerprinting your users. Their service has 99.5% accuracy, and you can try it without usage limits for 30 days. 
+When you add a user’s unique visitor ID to a ban list with FingerprintJS, it’s difficult for them to circumvent it unless they frequently switch devices. [FingerprintJS](https://fingerprintjs.com/) provides an open-source and paid solution for fingerprinting your users. Their service has 99.5% accuracy, and you can try it without usage limits for 10 days. 
 
 ## Conclusion
 

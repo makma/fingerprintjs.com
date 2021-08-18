@@ -11,7 +11,14 @@ export default function GetStartedSection() {
   const { mainBackground } = useMainBackgroundImage()
 
   return (
-    <Section className={styles.root} backgroundImageFluid={mainBackground}>
+    <Section
+      className={styles.root}
+      backgroundImageFluid={mainBackground}
+      cssBackgroundColor="v('off-white')"
+      cssBackgroundPosition='center 65%'
+      cssBackgroundRepeat='no-repeat'
+      cssBackgroundSize='1150px auto'
+    >
       <Container size='large' className={styles.container}>
         <h1 className={styles.title}>Get Started With FingerprintJS</h1>
         <ActionableCards cards={cards} className={styles.cards} />

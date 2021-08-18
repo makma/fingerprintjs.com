@@ -18,9 +18,11 @@ tags:
   - fingerprinting
 authors:
   - Savannah Copland
+heroImage:
+  image: /img/uploads/3.png
+  imageAlt: Fingerprint icon on map background
+  imageTitle: Fingerprint icon on map background
 ---
-![Fingerprint icon on map background](/img/uploads/3.png "Fingerprint icon on map background")
-
 **Fraud looms on the minds of development teams for any website, but fraud prevention doesn’t have to be all-consuming, or even expensive.** With a highly accurate identifier it becomes much easier for developers to triage suspicious traffic and restrict access to users attempting to hack into accounts, make fraudulent purchases or simply spam your website. The key to identifying those most likely to commit fraud is either by past activity, or by associating specific patterns of use with a higher likelihood of fraudulence.
 
 Browser fingerprinting technologies are a cornerstone technology for developer-led fraud prevention that cuts through spoofing attempts to accurately identify users, and it can do this without requiring additional permissions from the user. Our open source [browser fingerprinting library](https://github.com/fingerprintjs/fingerprintjs) has over 12K stars on Github and is used by 8,000+ websites. Fingerprinting techniques on their own have been found to be over [90% accurate](https://arstechnica.com/information-technology/2017/02/now-sites-can-fingerprint-you-online-even-when-you-use-multiple-browsers/) in correctly identifying a unique user in the browser, and when used in conjunction with usage history, fuzzy matching, and probability engines, this accuracy can be further improved.
@@ -133,7 +135,7 @@ We would love to hear your questions and get feedback from the developer communi
 *Here are a few ways you can get involved*
 
 * Star, follow or fork our Github projects: [FingerprintJS](https://github.com/fingerprintjs/fingerprintjs) (browser fingerprinting) and [Fingerprint-Android](https://github.com/fingerprintjs/fingerprint-android)
-* Need more accurate browser fingerprinting for your business? Start a free trial of FingerprintJS Pro for [99.5% fingerprinting accuracy](https://fingerprintjs.com/) with unlimited API requests for the first 30 days.
+* Need more accurate browser fingerprinting for your business? Start a free trial of FingerprintJS Pro for [99.5% fingerprinting accuracy](https://fingerprintjs.com/) with unlimited API requests for the first 10 days.
 * [Email us](mailto:sales@fingerprintjs.com) your questions
 * Sign up for our [newsletter](https://mailchi.mp/708d84efc0c1/updates-signup) for updates
 

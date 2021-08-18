@@ -17,9 +17,11 @@ tags:
   - fingerprinting
 authors:
   - Savannah Copland
+heroImage:
+  image: /img/uploads/4.png
+  imageAlt: Device Fingerprinting For Android
+  imageTitle: Device Fingerprinting For Android
 ---
-![Device Fingerprinting For Android](/img/uploads/4.png "Device Fingerprinting For Android")
-
 **Last week, our team launched Fingerprint Android, an open-source library for accurately identifying Android devices using all available signals.**
 
 In this article, we explain some of the current challenges of Android device identification, and how device fingerprinting can be a stable and reliable alternative to system-generated identifiers like ANDROID_ID that are likely to be discontinued in the future.

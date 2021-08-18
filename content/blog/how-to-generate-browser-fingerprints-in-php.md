@@ -13,11 +13,12 @@ publishDate: 2021-06-25T02:30:08.525Z
 title: How to Generate Browser Fingerprints in PHP
 tags:
   - fingerprinting
+  - web
 authors:
   - Aniket Bhattacharyea
+heroImage:
+  image: /img/uploads/browser-fingerprints-in-php-1-.png
 ---
-![](/img/uploads/browser-fingerprints-in-php-1-.png)
-
 Almost every web developer has to combat fraud at some point. Attacks might include malicious users trying to brute force passwords, place fraudulent orders, initiate bot attacks, or bypass your site’s paywall.
 
 Traditional methods of tracking users in PHP often fall short when trying to prevent fraud. This is where [browser fingerprinting comes in](https://fingerprintjs.com/blog/what-is-browser-fingerprinting/). Fingerprinting is a technique that generates a highly accurate identifier that can uniquely identify someone based on their browser and device settings.
@@ -185,7 +186,7 @@ In the next section, I’ll show you how to prevent re-registration using browse
 
 [FingerprintJS](https://fingerprintjs.com) is a fingerprinting service that uses a combination of fingerprinting, cookies, server-side techniques, and machine learning to generate a browser fingerprint that is up to [99.5% accurate](https://dev.fingerprintjs.com/docs/understanding-our-995-accuracy). 
 
-To get started with FingerprintJS, you will need a [FingerprintJS pro account](https://dashboard.fingerprintjs.com/signup). If you do not have an account, you can start a trial without usage limits for 30 days.
+To get started with FingerprintJS, you will need a [FingerprintJS pro account](https://dashboard.fingerprintjs.com/signup). If you do not have an account, you can start a trial without usage limits for 10 days.
 
 Once you have an account, visit your [dashboard](https://dashboard.fingerprintjs.com/) and select the subscription that you created while registering. Head to the `Tokens` section from the left sidebar and copy the active **browser** token.
 

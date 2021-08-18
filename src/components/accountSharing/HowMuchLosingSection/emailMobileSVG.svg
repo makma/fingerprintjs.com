@@ -1,0 +1,25 @@
+<svg viewBox="0 0 320 358" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="320" height="358" rx="16" fill="#F9F9FB" />
+    <path
+        d="M151.346 34.973c3.852-6.658 13.464-6.657 17.313.002L196.541 83.2c3.855 6.667-.957 15.006-8.658 15.005l-55.775-.006c-7.701 0-12.511-8.341-8.655-15.007l27.893-48.219z"
+        fill="#0D102B" />
+    <path
+        d="M158.36 70.757a1.665 1.665 0 003.328 0l.221-8.785a1.885 1.885 0 10-3.768 0l.219 8.785zm1.663 8.024c1.172 0 2.1-.888 2.1-2.022 0-1.133-.927-2.022-2.099-2.022-1.173 0-2.1.888-2.1 2.022 0 1.133.927 2.022 2.099 2.022z"
+        fill="#fff" />
+    <rect opacity=".1" x="24" y="130.208" width="272" height="20" rx="4" fill="#0D102B" />
+    <rect opacity=".1" x="38" y="158.208" width="244" height="20" rx="4" fill="#0D102B" />
+    <rect x="20" y="210.208" width="280" height="60" rx="8" fill="#F9F9FB" />
+    <rect opacity=".1" x="41" y="230" width="121" height="20" rx="4" fill="#0D102B" />
+    <rect x="20" y="210.208" width="280" height="60" rx="8" stroke="#F04405" stroke-width="2" />
+    <rect opacity=".1" x="41" y="298" width="121" height="20" rx="4" fill="#0D102B" />
+    <rect x="20.5" y="278.708" width="279" height="59" rx="7.5" stroke="#E3E3ED" />
+    <defs>
+        <filter id="filter0_b" x="113.982" y="21.867" width="92.03" height="84.451" filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feGaussianBlur in="BackgroundImage" stdDeviation="4.056" />
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur" />
+            <feBlend in="SourceGraphic" in2="effect1_backgroundBlur" result="shape" />
+        </filter>
+    </defs>
+</svg>

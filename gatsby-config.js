@@ -1,6 +1,6 @@
 const path = require('path')
 
-const baseUrl = 'https://fingerprintjs.com'
+const baseUrl = process.env.CONTEXT === 'deploy-preview' ? process.env.DEPLOY_PRIME_URL : 'https://fingerprintjs.com'
 
 const resolvePath = (directoryName, pathName) => {
   const result = path.join(directoryName, pathName)
@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-env-variables`,
       options: {
-        allowList: ['BRANCH', 'CONTEXT'],
+        allowList: ['BRANCH', 'CONTEXT', 'DEPLOY_PRIME_URL'],
       },
     },
     'gatsby-plugin-sitemap',
@@ -45,7 +45,7 @@ module.exports = {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/static/img`,
+        path: `${__dirname}/static`,
         name: 'uploads',
       },
     },
@@ -133,12 +133,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: 'fingerprintjs',
-      },
-    },
-    {
       resolve: 'gatsby-plugin-netlify', // make sure to keep it last in the array
       options: {
         mergeSecurityHeaders: false,
@@ -148,6 +142,7 @@ module.exports = {
             `X-XSS-Protection: 1; mode=block`,
             `X-Content-Type-Options: nosniff`,
             `Referrer-Policy: no-referrer-when-downgrade`,
+            `Cache-Control: public, max-age=900, s-maxage=900`,
           ],
         },
       },

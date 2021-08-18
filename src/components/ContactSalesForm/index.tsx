@@ -1,114 +1,99 @@
 import React, { useState } from 'react'
-import Button from '../../components/common/Button'
-import { ReactComponent as CheckSvg } from '../../img/check.svg'
-import { ReactComponent as CloseSvg } from '../../img/close.svg'
-import { FormState } from '../../types/FormState'
-import { trackLeadSubmit } from '../../helpers/gtm'
-import classNames from 'classnames'
-import { Forms, useForm } from '../../hooks/useForm'
-import { createNewLead } from '../../helpers/api'
-import styles from './ContactSalesForm.module.scss'
+import Button from '../common/Button'
 import { useUtmParams } from '../../hooks/useUtmParams'
 import { isBrowser } from '../../helpers/detector'
 
-interface ContactSalesFormProps {
-  variant?: 'dark' | 'light'
-  className?: string | string[]
-}
-export default function ContactSalesForm({ variant = 'dark', className }: ContactSalesFormProps) {
-  const [email, setEmail] = useState('')
+import styles from './ContactSalesForm.module.scss'
+
+export default function ContactSalesForm() {
   const [website, setWebsite] = useState('')
-  const { formState, errorMessage, updateFormState, updateErrorMessage } = useForm(Forms.ContactSales)
-
-  const referrer = isBrowser() ? document.referrer : ''
-  const utmInfo = useUtmParams({ referral_url: referrer })
-
-  async function handleSubmit(e) {
-    e.preventDefault()
-
-    updateFormState(FormState.Loading)
-
-    function onError() {
-      updateErrorMessage('An\xa0error\xa0occurred. Contact\xa0us\xa0at: support@fingerprintjs.com')
-      updateFormState(FormState.Failed)
-      setTimeout(() => {
-        updateFormState(FormState.Default)
-      }, 2500)
-      trackLeadSubmit(false)
-    }
-
-    try {
-      const response = await createNewLead(email, website, utmInfo)
-      const status = response.status
-      const data = await response.json()
-
-      if (status !== 200 || data?.errors?.length > 0) {
-        onError()
-      } else {
-        updateFormState(FormState.Success)
-        trackLeadSubmit()
-      }
-    } catch (error) {
-      onError()
-    }
-  }
+  const leadSource = 'Contact Us Form'
+  const utmInfo = useUtmParams()
+  const referrer = isBrowser() ? document.referrer : null
 
   return (
     <form
-      className={classNames(
-        className,
-        styles.contactSalesForm,
-        { [styles.success]: formState === FormState.Success },
-        { [styles.failed]: formState === FormState.Failed },
-        { [styles.loading]: formState === FormState.Loading }
-      )}
-      onSubmit={handleSubmit}
+      className={styles.contactSalesForm}
+      action='https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8'
+      method='POST'
     >
-      {(formState === FormState.Default || formState === FormState.Loading) && (
-        <div className={styles.form}>
-          <input
-            type='email'
-            name='email'
-            required
-            className={styles.input}
-            placeholder='Enter your email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            disabled={formState === FormState.Loading}
-          />
-          <input
-            name='website'
-            required
-            className={styles.input}
-            placeholder='Enter your website'
-            value={website}
-            onChange={(e) => setWebsite(e.target.value)}
-            disabled={formState === FormState.Loading}
-          />
+      <input type='hidden' name='oid' value='00D4x000006rShv' />
+      <input type='hidden' name='retURL' value='https://fingerprintjs.com/contact-sales/confirm' />
+      <input type='hidden' id='lead_source' name='lead_source' value={leadSource} />
 
-          <Button className={styles.button} type='submit' disabled={formState === FormState.Loading}>
-            {formState === FormState.Loading ? 'Submitting' : 'Send'}
-          </Button>
-        </div>
+      {utmInfo.utm_campaign && (
+        <input type='hidden' id='utm_campaign__c' name='utm_campaign__c' value={utmInfo.utm_campaign} />
       )}
 
-      {formState === FormState.Success && (
-        <div className={classNames(styles.state, styles.success)}>
-          <div className={classNames(styles.message, { [styles.messageLight]: variant === 'light' })}>
-            Thanks, we received your request. We&#39;ll get back to you soon.
-          </div>
-          <CheckSvg className={styles.icon} />
-        </div>
+      {utmInfo.utm_content && (
+        <input type='hidden' id='utm_content__c' name='utm_content__c' value={utmInfo.utm_content} />
       )}
 
-      {formState === FormState.Failed && (
-        <div className={classNames(styles.state, styles.failed)}>
-          <div className={classNames(styles.message, { [styles.messageLight]: variant === 'light' })}>
-            {errorMessage}
-          </div>
-          <CloseSvg className={styles.icon} />
-        </div>
-      )}
+      {utmInfo.utm_medium && <input type='hidden' id='utm_medium__c' name='utm_medium__c' value={utmInfo.utm_medium} />}
+
+      {utmInfo.utm_source && <input type='hidden' id='utm_source__c' name='utm_source__c' value={utmInfo.utm_source} />}
+
+      {utmInfo.utm_term && <input type='hidden' id='utm_term__c' name='utm_term__c' value={utmInfo.utm_term} />}
+
+      {referrer && <input type='hidden' id='referral_url__c' name='referral_url__c' value={referrer} />}
+
+      <div className={styles.form}>
+        <label className={styles.label} htmlFor='first_name'>
+          Your name
+        </label>
+        <input
+          className={styles.input}
+          id='first_name'
+          maxLength={40}
+          name='first_name'
+          size={20}
+          type='text'
+          placeholder='John'
+          required
+        />
+        <input id='last_name' name='last_name' type='hidden' value='Unknown' />
+        <label className={styles.label} htmlFor='email'>
+          Work email
+        </label>
+        <input
+          className={styles.input}
+          id='email'
+          maxLength={80}
+          name='email'
+          size={20}
+          type='email'
+          placeholder='john@gmail.com'
+          required
+        />
+        <input id='company' name='company' type='hidden' value={website} />
+        <label className={styles.label} htmlFor='url'>
+          Company Website
+        </label>
+        <input
+          className={styles.input}
+          id='url'
+          maxLength={80}
+          name='url'
+          size={20}
+          type='text'
+          placeholder='google.com'
+          value={website}
+          onInput={(e: React.ChangeEvent<HTMLInputElement>) => setWebsite(e.target.value)}
+          required
+        />
+        <label className={styles.label} htmlFor='description'>
+          Tell us about your project
+        </label>
+        <textarea
+          className={styles.textArea}
+          name='description'
+          rows={3}
+          placeholder='Tell us about your project, needs, or any questions you may have'
+        />
+        <Button className={styles.button} type='submit' size='big'>
+          Submit
+        </Button>
+      </div>
     </form>
   )
 }

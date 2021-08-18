@@ -125,28 +125,6 @@
   }
 }
 
-.numberList {
-  @extend %list;
-
-  counter-reset: number;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(196px, 1fr));
-  @include gap(2rem);
-
-  li {
-    counter-increment: number;
-    display: flex;
-
-    &:before {
-      content: counter(number) '.';
-      font-size: 2rem;
-      font-weight: v('semi');
-      color: v('brand-fire');
-      margin-right: 1rem;
-    }
-  }
-}
-
 .quote {
   font-size: 1.75rem;
   opacity: v('faded');

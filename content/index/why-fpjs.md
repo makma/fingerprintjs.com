@@ -8,6 +8,10 @@ metadata:
     fraudulent actors and build custom authentication workflows.
   url: https://fingerprintjs.com/why-fpjs
   image: /img/uploads/fpjs_cover3.png
+relatedTitle: Related Articles
+tags:
+  - engineering
+  - fingerprinting
 invertContent: false
 hero:
   title: Empowering developers to solve fraud at the source
@@ -90,7 +94,7 @@ blocks:
     ctaUrl: https://dashboard.fingerprintjs.com/signup
 inlineCta:
   title: Get FingerprintJS free and unlimited
-  markdown__Subtitle: Teams can try FingerprintJS free for 30 days. Install our
+  markdown__Subtitle: Teams can try FingerprintJS free for 10 days. Install our
     Javascript snippet on your website and begin collecting unique visitorIDs,
     geolocation data and more. This information can then be fused into your
     authentication workflows easily using our API and webhooks.

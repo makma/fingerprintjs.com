@@ -1,0 +1,33 @@
+.section {
+  padding: 0;
+}
+
+.container {
+  @include media('<=tablet') {
+    padding: 0;
+  }
+}
+.wrapper {
+  padding: 4rem 6rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6rem;
+
+  background-color: c('off-white');
+
+  @include media('<=tabletWide') {
+    display: flex;
+    flex-direction: column-reverse;
+
+    padding: 4rem 3rem;
+  }
+}
+
+.title {
+  font-size: 3.75rem;
+}
+
+.result p {
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+}

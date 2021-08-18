@@ -14,6 +14,7 @@ module.exports = {
         'http://localhost/case-studies/edtech/index.html',
         'http://localhost/ecommerce/index.html',
         'http://localhost/github/index.html',
+        'http://localhost/account-sharing/index.html',
       ],
     },
     upload: {

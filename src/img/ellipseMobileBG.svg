@@ -1,0 +1,20 @@
+<svg width="332" height="800" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <defs>
+        <filter id="b" x="-267.531" y=".469" width="599.062" height="583.062" filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="62.766" result="effect1_foregroundBlur" />
+        </filter>
+    </defs>
+    <g filter="url(#a)">
+        <circle fill="#F2F2F7" r="223.5" cy="433" cx="256" />
+    </g>
+    <defs transform="translate(-19.5 66)">
+        <filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="733.335" width="733.335"
+            y=".333" x="-91.167" id="a">
+            <feGaussianBlur result="effect1_foregroundBlur" stdDeviation="71.584" />
+        </filter>
+    </defs>
+    <g opacity=".8" filter="url(#b)">
+        <ellipse cx="32" cy="292" rx="174" ry="166" fill="#F04405" />
+    </g>
+</svg>

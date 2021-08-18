@@ -6,11 +6,12 @@ import Tippy from '@tippyjs/react'
 import classNames from 'classnames'
 import { VisitorResponse } from './visitorResponse'
 import { CurrentVisitProps } from './currentVisitProps'
-import MobileWidget from './MobileWidget'
+import MobileWidget, { MobileLoadingState } from './MobileWidget'
 import { useVisitorData } from '../../context/FpjsContext'
 import useRollbar from '../../hooks/useRollbar'
 import { FPJS_API_TOKEN, FPJS_ENDPOINT, MAPBOX_ACCESS_TOKEN } from '../../constants/env'
 import styles from './FpjsWidget.module.scss'
+import Skeleton from '../Skeleton/Skeleton'
 
 const apiToken = FPJS_API_TOKEN
 const endpoint = FPJS_ENDPOINT
@@ -59,46 +60,53 @@ export default memo(function FpjsWidget() {
 
   return (
     <div className={styles.container}>
-      {isLoading && <div className={styles.loader} />}
-      <div
-        className={classNames(styles.demo, styles.desktopOnly, {
-          [styles.loaded]: isLoaded,
-          [styles.incognito]: currentVisit?.incognito,
-        })}
-      >
-        <div className={styles.history}>
-          <div className={styles.header}>
-            Visit History
-            <Tippy content='FingerprintJS Pro allows you to get a history of visits with all available information'>
-              <InfoSvg tabIndex={0} />
-            </Tippy>
+      {isLoading ? (
+        <>
+          <LoadingState />
+          <MobileLoadingState />
+        </>
+      ) : (
+        <div
+          className={classNames(styles.demo, styles.desktopOnly, {
+            [styles.loaded]: isLoaded,
+            [styles.incognito]: currentVisit?.incognito,
+          })}
+        >
+          <div className={styles.history}>
+            <div className={styles.header}>
+              Visit History
+              <Tippy content='FingerprintJS Pro allows you to get a history of visits with all available information'>
+                <InfoSvg tabIndex={0} />
+              </Tippy>
+            </div>
+            <div className={styles.content}>
+              <ul className={styles.visits}>
+                {visits &&
+                  visits.map(({ requestId, timestamp, incognito }, i) => {
+                    return (
+                      <li
+                        className={classNames(
+                          styles.visit,
+                          { [styles.selected]: currentVisit?.requestId === requestId },
+                          { [styles.incognito]: incognito },
+                          { [styles.now]: i === 0 }
+                        )}
+                        id={`visit_${requestId}`}
+                        key={requestId}
+                        onClick={() => setCurrentVisit(visits[i])}
+                      >
+                        {i === 0 ? 'Current visit' : getVisitTitle(timestamp)}
+                        {incognito && <IncognitoSvg />}
+                      </li>
+                    )
+                  })}
+              </ul>
+            </div>
           </div>
-          <div className={styles.content}>
-            <ul className={styles.visits}>
-              {visits &&
-                visits.map(({ requestId, timestamp, incognito }, i) => {
-                  return (
-                    <li
-                      className={classNames(
-                        styles.visit,
-                        { [styles.selected]: currentVisit?.requestId === requestId },
-                        { [styles.incognito]: incognito },
-                        { [styles.now]: i === 0 }
-                      )}
-                      id={`visit_${requestId}`}
-                      key={requestId}
-                      onClick={() => setCurrentVisit(visits[i])}
-                    >
-                      {i === 0 ? 'Current visit' : getVisitTitle(timestamp)}
-                      {incognito && <IncognitoSvg />}
-                    </li>
-                  )
-                })}
-            </ul>
-          </div>
+          {visitorId && <CurrentVisit currentVisit={currentVisit} visits={visits} visitorId={visitorId} />}
         </div>
-        {visitorId && <CurrentVisit currentVisit={currentVisit} visits={visits} visitorId={visitorId} />}
-      </div>
+      )}
+
       {!isLoading && visitorId && (
         <MobileWidget isLoaded={isLoaded} visitorId={visitorId} visits={visits} currentVisit={currentVisit} />
       )}
@@ -182,4 +190,57 @@ function CurrentVisit({ currentVisit, visits, visitorId }: CurrentVisitProps) {
 async function loadFpjsHistory(endpoint: string, visitorId: string, apiToken: string) {
   const response = await fetch(`${endpoint}visitors/${visitorId}?token=${apiToken}&limit=20`)
   return await response.json()
+}
+
+function LoadingState() {
+  const repeatElement = (length, fn) => Array.from({ length }, (_, i) => fn(i))
+
+  return (
+    <div className={classNames(styles.demo, styles.desktopOnly)}>
+      <div className={styles.history}>
+        <div className={styles.header}>
+          <Skeleton width={136} height={22} className={styles.headerLoading} />
+        </div>
+        <div className={styles.content}>
+          <ul className={styles.visits}>
+            {repeatElement(8, (i) => (
+              <Skeleton key={i} width={160} height={30} className={styles.visitLoading} />
+            ))}
+          </ul>
+        </div>
+      </div>
+      <CurrentVisitLoading />
+    </div>
+  )
+}
+
+function CurrentVisitLoading() {
+  return (
+    <div className={styles.currentVisit}>
+      <div className={styles.header}>
+        <Skeleton width={156} height={22} className={styles.headerLoading} />
+      </div>
+      <div className={styles.content}>
+        <div className={styles.visitId}>
+          <Skeleton width={396} height={32} />
+        </div>
+        <div className={classNames(styles.info, styles.bot)}>
+          <Skeleton width={160} height={22} />
+        </div>
+        <div className={classNames(styles.info, styles.ip)}>
+          <Skeleton width={160} height={22} />
+        </div>
+        <div className={classNames(styles.info, styles.incognito)}>
+          <Skeleton width={160} height={22} />
+        </div>
+        <div className={classNames(styles.info, styles.browser)}>
+          <Skeleton width={160} height={22} className={styles.loadingBrowser} />
+        </div>
+        <div className={classNames(styles.info, styles.location)}>
+          <Skeleton width={188} height={22} />
+          <Skeleton width={188} height={188} />
+        </div>
+      </div>
+    </div>
+  )
 }

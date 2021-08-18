@@ -63,7 +63,7 @@
     font-size: 2.6rem;
 
     img {
-      border-radius: 8px;
+      border-radius: 16px;
     }
   }
 
@@ -151,5 +151,49 @@
   th {
     font-weight: v(normal);
     background: rgb(250, 250, 250);
+  }
+
+  details > summary {
+    outline: none;
+    cursor: pointer;
+    font-size: rem(20px);
+    font-weight: v('bold');
+    list-style: none;
+  }
+
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::after {
+    margin-left: rem(14px);
+    content: url(/img/uploads/plus-simbol.svg);
+    position: absolute;
+    right: 0;
+  }
+
+  details[open] summary:after {
+    margin-left: rem(14px);
+    content: url(/img/uploads/minus-simbol.svg);
+    position: absolute;
+    right: 0;
+  }
+  summary {
+    position: relative;
+  }
+
+  details {
+    background: #f9f9fb;
+    border-radius: 16px;
+
+    padding: rem(16px);
+    margin-bottom: rem(48px);
+  }
+
+  details[open] {
+    p {
+      margin-top: rem(24px);
+      margin-bottom: 0;
+    }
   }
 }
