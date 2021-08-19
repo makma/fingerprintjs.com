@@ -21,31 +21,38 @@ heroImage:
   imageAlt: State of Identity Podcast - FingerprintJS
   imageTitle: State of Identity Podcast - FingerprintJS
 ---
-We are excited to announce our featured episode on OWI's State of Identity podcast!
+We are excited to announce our featured episode on OWI's State of Identity podcast.
 
-Host Cameron D'Ambrosi interviewed CEO Dan Pinto on the origin story of FingerprintJS, the power of anonymous identification to reduce friction while preventing online fraud, and the future of identity management.
+Host Cameron D'Ambrosi interviewed our CEO Dan Pinto on the origin story of FingerprintJS, the power of anonymous identification to reduce friction while preventing online fraud, and the future of identity management.
 
-Listen to the podcast on Spotify.
+## [Listen to the podcast](https://oneworldidentity.com/podcast/fingerprintjs-fraud-at-the-source/)
 
-Read our full audio transcript below: 
+<br>
+<br>
+<hr>
+<br>
+<br>
+<br>
 
-CAMERON:
+### Audio Transcript
+
+#### CAMERON:
 
 Welcome to State of Identity! I'm your host, Cameron D’Ambrosi. 
 
 Joining me this week is Dan Pinto, CEO at FingerprintJS. Dan, welcome to the podcast. 
 
-DAN:
+#### DAN:
 
 Thanks for having me. 
 
-CAMERON:
+#### CAMERON:
 
 So you are what the kids call these days a serial entrepreneur, with a few different startups under your belt. Obviously, you're building some really cool and interesting stuff at FingerprintJS, which is why you're on the podcast. I’m really excited to dive into that platform and its applicability in the digital identity space. 
 
 But before we do that, I would love to get a bit of an overview of your career journey, how you came to be the CEO at FingerprintJS and what your touchpoints with digital identity might have been prior to joining.
 
-DAN:
+#### DAN:
 
 Yeah, thanks. I have always wanted to be a serial entrepreneur since I was a kid. I learned programming as a hobby growing up, dabbled a little bit in different tech startups, learned a lot, and knew that someday I wanted to do entrepreneurship myself. So I'm happy to be on my second startup now. 
 
@@ -57,11 +64,11 @@ After selling Machinio, Valentin decided that he wanted to try and create a prof
 
 Since then things have gone really smoothly. We've raised two rounds of funding. We're at 23 people at the company right now, mostly engineers, and yeah, things are going well for us right now. We're focused on solving any and all anti-fraud problems that are on the internet. So happy to talk more about that later on the podcast.
 
-CAMERON:
+#### CAMERON:
 
 Let's get right into it. Before we talk about use cases, an overview of the technology itself that underpins FingerprintJS would be super helpful. I understand there's a little bit of a teaser there in the name that it involves fingerprinting. My advanced layman's understanding of your core product offering is essentially the ability to provide a fairly unique device level fingerprint for each session that you see coming across a website or application and then be able to use that to understand who's visiting your platform and and hopefully determine if they're a user that should be trusted or not trusted? Is that a fair assessment?
 
-DAN:
+#### DAN:
 
 Yeah, that's pretty much correct. In terms of what we do, there's some minor nuances to exactly what we can and can't do. So I can definitely go into that. 
 
@@ -73,13 +80,13 @@ So imagine, you have a login page on a banking website. Whenever people log in, 
 
 The one thing that wasn't clear in describing the business is that we're an API driven business. So anyone can come to our website and sign up - it's completely free for the first 30 days with no credit card required. And they can start using it and start solving problems. So every day, I'm actually surprised whenever we see new signups and how they're actually using it, because they teach us how the technology can be used.
 
-CAMERON:
+#### CAMERON:
 
 You're working in a really interesting space, which is this almost choke point, if you will, where someone's legal identity needs to interface with a platform. That choke point is through the browser and to the degree you can uniquely identify that browser really gives you a really good chance of understanding who might be on the other side of that transaction. Obviously, there are certain use cases where that may be more useful than others. But I think you can make a pretty convincing argument that no matter what other information you're requesting, the ability to with a fairly high degree of certainty have assurance around whether you've seen this browser before, and what session it was associated with. It is really, really helpful for wrapping your head around who your customers are, and delighting your good users, while confounding the risky users. 
 
 It seems like from that perspective, the big challenges that are facing many of the platforms that we speak with at OWI are around how to balance the level of friction that you're presenting your customers with that level of assurance you're getting. Is it fair to say that there is essentially a complete transparency to the end user, they essentially have no idea that any sort of data is being used to create this browser fingerprint? It requires no interaction on the user's part, correct?
 
-DAN:
+#### DAN:
 
 Yeah, that's correct. And that's basically one of the key benefits of our technology. So if you wanted to completely lock down your website and make it so that only customers that verify their email address, and their phone number, completed a two factor authentication, username and password is there, you can definitely do that. And that's not really the type of customers that we work with. 
 
@@ -89,11 +96,11 @@ Discovering this balance has actually been a great learning experience in buildi
 
 So on that login page or that credit card checkout process, we're running fingerprinting in the background, very seamlessly without the customer even noticing and providing that intelligence to our customer. That way they can make sure that they can keep their customers happy and also reduce any bad events from happening in the future.
 
-CAMERON:
+#### CAMERON:
 
 It's a really powerful technology. I think the main question I have for you around the technology side before we kind of get into use cases is how has this push around securing what data plugins can extract from browsers. Apple has had a data privacy push, and Google has been tightening up some of the APIs that devs have access to as well. How has that impacted your ability to uniquely identify browsers? And do you expect this to be a major challenge for you moving forward?
 
-DAN:
+#### DAN:
 
 Yeah, so it's definitely been interesting. It's kind of a double edged sword. From a technical perspective, there's also a legal perspective to data collection, but we can talk about that separately. From the technical side, whenever a browser makes a change to something, it does make it more challenging for us to be able to pull information to be able to generate fingerprints. But usually what happens is that they’ve also introduced something else around the same time that we can use. 
 
@@ -103,11 +110,11 @@ But the reason that it's a double edged sword is that it actually benefits us be
 
 In addition, our developers actually love it. Because you don't want to have a very stagnant technological product, they love doing additional research, figuring out ways that browsers work and new features that were just introduced to a browser. We use that research to figure out how can better detect and prevent fraud for our customers.
 
-CAMERON:
+#### CAMERON:
 
 Shifting the lens to the customers, in terms of industry verticals, I would be curious to know  where you think you've seen the greatest uplift from platforms utilizing your technology. Have you seen success in terms of directly integrating with end platforms that are facing consumers directly? Or are you taking more of a channel partnership route, where you're embedded within other identity vendors that are maybe solving some of those, for example, legal identity challenges? Curious to hear how you're tackling those go-to-market questions.
 
-DAN:
+#### DAN:
 
 Yeah, so we're pretty agnostic around who's using us other than some of the legal issues. We only do first party tracking, we don't do any third party tracking. So we don't work with any adtech customers, for example. But beyond that, as long as somebody is trying to do some kind of first party tracking for the purposes of anti-fraud or security, we work with them. 
 
@@ -115,11 +122,11 @@ As far as partners and working directly, again, we don't have any preferences, w
 
 Usually the customers that use us directly are more technically savvy, so tech startups or larger tech businesses. And then there are definitely some platforms using us as well. There's a lot of anti-fraud platforms using our technology, where the value that they provide for their customers is the set of rules and everything on top of our identification technology, while we focus on the identification aspect. So a way to think about that is in the anti-fraud space, the anti-fraud, large providers provide the car, and then we provide the engine for the car. It’'s beneficial for everyone to be working together as the end customer gets a much better car, in this case, better anti-fraud technology, by using the better engine or in our case, the browser frame printing technology. So from our perspective, it's fine for us to work with anyone in the space, as long as they see and understand the value of browser fingerprinting and what we can provide for them.
 
-CAMERON:
+#### CAMERON:
 
 And from a vertical perspective, are there any verticals that you've seen that have become particularly excited about this technology? I mean, from my perspective, it feels fairly applicable to just about every use case, whether it's financial services, online to offline platforms, sharing economy, e-commerce, you name it. We're big believers in that everyone needs digital identity and digital identity kind of underpins every market segment, but have you seen specific use cases that have really popped in terms of where adoption has been highest?
 
-DAN:
+#### DAN:
 
 Yeah. So as far as we've run the business, so far, it's been all inbound leads coming in. So we really only work with customers that are experiencing some kind of problem today that they need to solve. And we've seen that there's two main categories of problems in which there's many different industries within that. 
 
@@ -129,33 +136,33 @@ There’s also high volume platforms where they have so much data coming in that
 
 So for example, we have a lot of customers that sell some kind of online product that they don't want to increase the friction at all for because it's something like let's say, a minecraft server where you're selling small packages, or digital goods of some kind. And in that case, they have a high rate of what's called credit card testing attacks, where malicious actors test credit cards that they stole or bought on the dark web, and they want to see if it works first. Then after they successfully see if it works, they can try it on another platform where they can actually steal something of higher value. So those customers with a high velocity very much will benefit from using our technology, because they don't need to do anything different. They install our fingerprinting solution, and then they can look at the identifiers and detect, okay, wait a second, these 20 different accounts are actually connected by this one fingerprint. And we didn't notice it before, because the VPN allowed them to change their IP address, they cleared their cookies, they did all the typical techniques. But with our identifier, we're able to actually tie those together, and then they can stop those malicious attacks from continuing.
 
-CAMERON:
+#### CAMERON:
 
 That's really interesting. When it comes to how digital identity fits into the stack of companies that we work with, I think folks get pigeonholed a little bit around this notion of kind of legal identity being tied into it or the fact that they may not need to scan a driver's license for my platform, and therefore I don't have a use for digital identity. Digital identity, I think is all encompassing and includes just as many of these questions around, have I seen this device before, and can I trust it just as much as for example, I need Dan Pinto’s legal identity. So I think it's really, really cool that you guys are building this. 
 
 Is it still the case that if I want to implement a freeware version of this plugin that I can do that without engaging you guys on the product side? However if I want the more robust version, with more support from your team on the engineering side and more features, then I can engage you  to purchase the Cadillac version, is that a fair assessment?
 
-DAN:
+#### DAN:
 
 Yeah. Because of the stage of startup that we're at, we're going for maximum adoption, so we have two different free versions of the product that you can use. There's the completely free open source products, where you have to build everything yourself. It's fully available on GitHub, and you can use the code in whatever way you want, but you'll have to build all of the additional pieces that we've built for the professional version. Additionally, because we really want to incentivize developers to come in and use our technology and build cool stuff with it, we also have a free forever tier of our professional version where you can use up to 1000 unique fingerprints per month. This is ideal for any kind of small service, where developers can build something from that, and then use it indefinitely until they reach a much larger scale. And then they can consider whether to use the professional version. 
 
 The professional version is just like the typical SaaS pay-per-fingerprint type product where you can get the full value. But the free developer tier also gets you the full accuracy, just with the limitation for how many unique fingerprints you can use in a month.
 
-CAMERON:
+#### CAMERON:
 
 That's very cool. Now let’s take a slight step back to some more technical minutiae. I want to make sure for my own edification I'm understanding this fully. Would you say it is a one-to-one fingerprinting or a one-to-many in the sense that are you looking to see whether am I the same person who kind of came in previously, or can I identify a browser who came in from that fingerprint, and then you see back in time, okay, I've seen this person 10 times previously, and can tie that back to all their previous sessions?
 
-DAN:
+#### DAN:
 
 Yeah, so typically, our customers aren't necessarily benefiting from the historical data for multiple instances. Like they don't do anything different. If this person came back 10 times or one time, it's more important to just verify whether this browser came back compared to a previous time when they first signed up, or when they completed a previous action. So that's usually what people are doing.
 
 There are situations though, where people do look at the entire history when they're trying to detect more sophisticated types of fraud. So that's usually more common for our payment processing customers where they want to take one fingerprint and look at its history on one account, or across many different accounts to try and detect patterns of bad behavior. So when somebody is trying to test stolen credit cards, they don't test it on one account, they test it across multiple accounts, multiple IP addresses, different browsers, clearing cookies, etc. So using our technology, they're able to create a web, usually in some kind of graph database, to connect all of the different pieces of data that they have. Our identifier is one of the key linchpins for that, where they can tie those interactions together in ways that they couldn't do before. So, in the old days, using IP address alone was enough to be able to detect these things. But now it's so easy to change your IP address that you need a much higher level of accuracy, which you can get from our technology.
 
-CAMERON
+#### CAMERON:
 
 Very cool. So, Dan, in terms of the potential legal or regulatory impact from continued privacy pushes, do you expect this to have an impact on your ability to kind of get the attributes that you need to feed your model and really make these determinations to the same high degree of accuracy that you become used to?
 
-DAN:
+#### DAN:
 
 Yes, that's a great question, we get that question a lot. So the short answer is basically no, because the way that the laws have been written, and the way the privacy changes typically go, they're actually great for consumers, and great for anti fraud use cases, all of the legal frameworks and ways that people are thinking about it do take into consideration anti-fraud use cases. So it hasn't been a problem at all. 
 
@@ -165,11 +172,11 @@ The key thing to understand is that in GDPR and other similar regulations, there
 
 Most of our customers put some kind of wording in their privacy policy saying that they're using fingerprinting, but that it falls under legitimate interest. So it actually is great. And we actually have leaned into it a lot. We put in all of our marketing that we're GDPR and CCPA compliant, and it's a very common question that we get from our customers. And I would think that if it hadn't been for these legislations, it would actually be harder for us to get into these organizations. Now it's much easier because they can ask us, how are you going to handle my customers’ data privacy? And we can say we're fully compliant with all these laws. So it actually makes the entire process much smoother for people to use our technology.
 
-CAMERON:
+#### CAMERON:
 
 Dan, before we go, I want to ask you, I guess what's become my signature podcast question, which is for some crystal ball predictions. As a technologist and someone who has their finger on the pulse of the latest and greatest in the space, I would love to hear directly from you what your thoughts are and what we can expect to see over the next year or two in the digital identity space. I won't tailor it much more down than that - will give you carte blanche to kind of throw some fun and exciting ideas out there. And we don't grade these too harshly - there's no annual review of whose predictions were good and whose were bad. We just like folks to have fun with it. So don't feel too much pressure.
 
-DAN:
+#### DAN:
 
 Yeah, no problem. Yeah, definitely predicting the future is very hard. One of the benefits, though, in our space, and the stage of startup that we're at right now, is that because we are so early in our journey, and we focus on an API driven approach and focus on developers, we're actually at the forefront of these technological changes. So by just looking at who signs up to our website, and how they're using the technology, we can kind of see what our bigger company is going to do in two to three years. And there's been a number of interesting things that we've seen, from how people are using the technology and what problems they're solving, that I think gives us a little bit of insight into that future. 
 
@@ -179,22 +186,22 @@ What we've seen is that our adoption has really gone up because of these changes
 
 So that tip of the iceberg that we're seeing so far, in terms of businesses coming in signing up for services to solve those work-from-home and digital-first problems, is only going to continue. And we're going to see a lot more businesses, especially bigger ones that are moving a little bit more slowly. But we are starting to see larger businesses need to solve these problems, that smaller nimble businesses have already dealt with. Once that happens, they'll come to our technology.
 
-CAMERON:
+#### CAMERON:
 
 I couldn't agree more with you, I think you've really hit the nail on the head when it comes to the evolving needs around digital identity, and specifically, the demand to do so again, without layering on a bunch of incremental friction. When you think about it hard enough, it's possible to get, if not perfect security, close to perfect security. And part of the reason why you'd be able to get that perfect security would be layering so much friction on the users of your platform that you know, only one or two of them show up. And this offers a way forward. That really mitigates a lot of that downside while preserving your upside tremendously. And a consumer-centric focus on how we can engage with good customers in the best possible way without burdening them and enabling growth just as much as we are stopping fraud and mitigating risk. I think this is the narrative that's really top of mind for us as an organization in 2021 and beyond. And so, really excited to watch what you do next. And please don't stay a stranger - we would love to have you back on the podcast and circle back on some of these predictions sometime in the next year. 
 
 But before we wrap up today, for folks who are listening who want to get access to you and your team and implement FingerprintJS, what's the best place for them to go to learn more to get in touch?
 
-DAN:
+#### DAN:
 
 Yeah, sure. So, we're a completely open company in terms of documentation and ability to use our service. So the best thing to do would be to go to [fingerprintjs.com](http://fingerprintjs.com). Start on the homepage, take a look at different use cases on there, read about how our technology can be used, and then read through our documentation. And you'll basically be able to see everything about how our technology works, how to use it, how to implement it. That's basically the approach that we follow.
 
-CAMERON:
+#### CAMERON:
 
 Fantastic, Dan, I will also include a link to your website in the show notes below. Definitely check that out if any of this conversation intrigued you. 
 
 Thank you again for your time. So great to chat with you and hope to talk to you again soon!
 
-DAN:
+#### DAN:
 
 Thank you.
