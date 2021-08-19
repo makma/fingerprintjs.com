@@ -28,28 +28,28 @@ authors:
 
 Ad blockers are an incredibly pervasive and useful piece of technology. Around 26% of Americans use an ad blocker today. If you are reading this article on ad blocker technology, you almost undoubtedly have one installed.
 
-Ad blockers leave a trace that can be harnessed by the websites you visit to identify you. By testing whether certain page elements are blocked, a site can find discrepancies in the filters used by your specific ad blocker(s). These discrepancies provide a source of entropy that when combined with other unique signals, can identify a specific user over multiple visits. This combining of browser signals to create a unique identifier is known as browser fingerprinting. 
+Ad blockers leave a trace that can be harnessed by the websites you visit to identify you. By testing whether certain page elements are blocked, a site can find discrepancies in the filters used by your specific ad blocker(s). These discrepancies provide a source of entropy that when combined with other unique signals, can identify a specific user over multiple visits. This combining of browser signals to create a unique identifier is known as browser fingerprinting. 
 
 While browser fingerprinting is a proven-out method of visitor identification (you can read more about how it works in our [beginner’s guide](https://fingerprintjs.com/blog/what-is-browser-fingerprinting/)), how ad blockers can be used for fingerprinting is rarely discussed. As the developers of the largest open source browser fingerprinting library, we have only started including ad blocker signals as of April 2021, so this work is hot off the press from our team. We hope shining a light on this cutting edge technique will be useful to the open source community at large.
 
 ## What is an ad blocker
 
-An ad blocker is a browser extension that prevents browsers from loading video and displaying advertisements, pop-ups, tracking pixels and other third-party scripts. 
+An ad blocker is a browser extension that prevents browsers from loading video and displaying advertisements, pop-ups, tracking pixels and other third-party scripts. 
 
 ![What is an ad blocker](https://lh4.googleusercontent.com/nOBtmxeQ-nwYhOX1tRe0NF8mGfYdQHRnV-6G_3OXALdvGyq-fUR5DCcl-Pq_XnJsXcuzbbsYC-bmJkFQgk-JZQlp3GU0OwGGHskeDdT6dz-wgs91UCjwn40TDgaXX3msLiifBGAV "What is an ad blocker")
 
-Ad blockers not only improve the online experience by hiding ads, but also protect browsing activity from being tracked by third-party scripts. All major online ad platforms (like Google and Facebook), as well as other marketing and product testing tools (like Crazy Egg and Hotjar) use tracking scripts to monitor and monetize user activity online. Privacy conscious users often turn to ad blockers to stop their browsing history from being shared with these platforms. 
+Ad blockers not only improve the online experience by hiding ads, but also protect browsing activity from being tracked by third-party scripts. All major online ad platforms (like Google and Facebook), as well as other marketing and product testing tools (like Crazy Egg and Hotjar) use tracking scripts to monitor and monetize user activity online. Privacy conscious users often turn to ad blockers to stop their browsing history from being shared with these platforms. 
 
 However, ad blockers have access to the content of all pages that a browser loads. They have a lot more information about browsing activity than trackers, because trackers can’t do reliable cross-site tracking. Therefore, [it is possible for ad blockers to violate user privacy](https://arstechnica.com/information-technology/2020/10/popular-chromium-ad-blockers-caught-stealing-user-data-and-accessing-accounts/).\
 Safari is an exception which we’ll discuss below.
 
 ## How ad blockers work
 
-In this section we’ll go fairly deep into the internals of ad blockers as it will help us build a better understanding of how ad blocking mechanics make it possible to reliably identify visitors. 
+In this section we’ll go fairly deep into the internals of ad blockers as it will help us build a better understanding of how ad blocking mechanics make it possible to reliably identify visitors. 
 
 Ad blockers typically run as extensions built on top of browser APIs:
 
-* [Google Chrome](https://developer.chrome.com/docs/extensions/reference/) and other Chromium-based browsers: Extensions are JavaScript applications that run in a sandboxed environment with additional browser APIs available only to browser extensions.  There are two ways ad blockers can block content. The first one is element hiding and the second one is resource blocking:
+* [Google Chrome](https://developer.chrome.com/docs/extensions/reference/) and other Chromium-based browsers: Extensions are JavaScript applications that run in a sandboxed environment with additional browser APIs available only to browser extensions.  There are two ways ad blockers can block content. The first one is element hiding and the second one is resource blocking:
 * * Element hiding is done either by injecting CSS code, or by using DOM APIs such as [querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll) or [removeChild](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild).
   * Resource blocking employs a different technique. Instead of rendering elements on a page and then hiding them, extensions block the resources on a browser networking level. To plug into browser networking, ad blockers will intercept requests as they happen or use declarative blocking rules defined beforehand. Request interception utilizes [webRequest](https://developer.chrome.com/docs/extensions/reference/webRequest/) API, which is the most privacy violating technique. It works by reading every request that a browser is making and deciding on the fly if it represents an ad and should be blocked. The declarative approach utilizes [declarativeNetRequest](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/) API to preemptively instruct browsers what needs to be blocked. This happens without reading actual requests, thus providing more privacy.
 * [Firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions): This API is almost the same as in Google Chrome. The only notable difference is the lack of [declarativeNetRequest](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/) API.
@@ -65,7 +65,7 @@ Ad blockers prevent ads from being shown by looking for specific elements to blo
 
 Usually these filters are maintained by the open source community. Like any other project, filters are created by different people for different needs. For example, French websites often use local ad systems that are not known worldwide and are not blocked by general ad filters, so developers in France will want to create a filter to block ads on French websites. Some filter maintainers can have privacy concerns and thus create filters that block trackers.
 
-A filter is usually a text file that follows a common standard called "[AdBlock Plus syntax](https://help.eyeo.com/en/adblockplus/how-to-write-filters)". Each line of text contains a blocking rule, which tells an ad blocker which URLs or CSS selectors must be blocked. Each blocking rule can have additional parameters such as the domain name or the resource type. 
+A filter is usually a text file that follows a common standard called "[AdBlock Plus syntax](https://help.eyeo.com/en/adblockplus/how-to-write-filters)". Each line of text contains a blocking rule, which tells an ad blocker which URLs or CSS selectors must be blocked. Each blocking rule can have additional parameters such as the domain name or the resource type. 
 
 A blocking rule example is shown below:
 
@@ -193,7 +193,7 @@ A better way to get identification entropy from ad blockers is detecting which f
 The process consists of the following steps:
 
 1. Identify which selectors are blocked by each filter. This step will be done once as a preparation step.
-2. Get unique selectors by filter. This step will also be done once as a preparation step. 
+2. Get unique selectors by filter. This step will also be done once as a preparation step. 
 3. Check whether each unique selector is blocked. This step will run in the browser every time you need to identify a visitor.
 
 These three steps are explained in more detail below.
@@ -307,8 +307,8 @@ An example of an ad blocker customization:
 
 A good browser fingerprint should stay the same when a user goes from regular to incognito (private) mode of the browser. Thus, ad blockers can provide a useful source of entropy only for browsers and operating systems where ad blockers are enabled by default in incognito mode:
 
-* Safari on MacOS, iOS, iPadOS:  browser extensions are enabled (including ad blockers) in both regular and incognito mode.
-* All Browsers on Android: Ad blockers work on the system level, so they affect all browser modes. 
+* Safari on MacOS, iOS, iPadOS:  browser extensions are enabled (including ad blockers) in both regular and incognito mode.
+* All Browsers on Android: Ad blockers work on the system level, so they affect all browser modes. 
 
 Desktop Chrome and Firefox:\
 Extensions are disabled by default in incognito mode. Users however can manually choose to keep extensions enabled in incognito mode, but few people do so. Since we cannot know if a user has an ad blocker enabled in incognito mode, it makes sense to identify visitors by their ad blockers only in Safari and on Android.
@@ -420,7 +420,7 @@ You can learn more about stability, uniqueness and accuracy in our [beginner’s
 
 ### Try Browser Fingerprinting for Yourself
 
-Browser fingerprinting is a useful method of visitor identification for a variety of anti-fraud applications. It is particularly useful to identify malicious visitors attempting to circumvent tracking by clearing cookies, browsing in incognito mode or using a VPN. 
+Browser fingerprinting is a useful method of visitor identification for a variety of anti-fraud applications. It is particularly useful to identify malicious visitors attempting to circumvent tracking by clearing cookies, browsing in incognito mode or using a VPN. 
 
 You can try implementing browser fingerprinting yourself with our [open source library](https://github.com/fingerprintjs/fingerprintjs). FingerprintJS is the most popular browser fingerprinting library available, with over 14K GitHub stars.
 
