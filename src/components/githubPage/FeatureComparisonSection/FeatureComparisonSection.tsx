@@ -23,14 +23,30 @@ export default function FeatureComparisonSection() {
             </th>
           </tr>
           <FeatureTitle title='Core Features' />
-          <Feature feature='100% Open-source' oss='yes' pro='no*' />
+          <Feature
+            feature='100% Open-source'
+            oss='yes'
+            pro={
+              <span>
+                no<sup>1</sup>
+              </span>
+            }
+          />
           <Feature feature='Standard fingerprint signals' oss='✓' pro='✓' isSymbol>
             screen, os, device name
           </Feature>
           <Feature feature='Advanced fingerprint signals' oss='✓' pro='✓' isSymbol>
             canvas, audio, fonts
           </Feature>
-          <Feature feature='ID type' oss='fingerprint' pro='visitorID**' />
+          <Feature
+            feature='ID type'
+            oss='fingerprint'
+            pro={
+              <span>
+                visitorID<sup>2</sup>
+              </span>
+            }
+          />
           <Feature feature='ID lifetime' oss='several weeks' pro='months/years' />
           <Feature feature='ID origin' oss='client' pro='server' />
           <Feature feature='ID collisions' oss='common' pro='rare' />
@@ -54,7 +70,15 @@ export default function FeatureComparisonSection() {
           <Feature feature='Data security' oss='Your infrastructure' pro='Encrypted at rest' />
           <Feature feature='Storage' oss='Your infrastructure' pro='Unlimited up to 1 yr' />
           <Feature feature='Regions' oss='Your infrastructure' pro='Hosting in US and EU' />
-          <Feature feature='Compliance' oss='Your infrastructure' pro='GDPR, CCPA compliant***' />
+          <Feature
+            feature='Compliance'
+            oss='Your infrastructure'
+            pro={
+              <span>
+                GDPR, CCPA compliant<sup>3</sup>
+              </span>
+            }
+          />
           <Feature feature='SLA' oss='No SLA' pro='99.9% Uptime' />
           <Feature
             feature='Support'
@@ -77,17 +101,17 @@ export default function FeatureComparisonSection() {
         </table>
         <footer className={styles.footer}>
           <p className={styles.note}>
-            *Pro uses the open source fingerprinting library as well as proprietary technology for increased accuracy
-            and stability.
+            1. Pro uses the open source fingerprinting library as well as proprietary technology for increased accuracy
+            and identifier stability.
           </p>
           <p className={styles.note}>
-            ** VisitorIDs, in comparison to fingerprints, include server side techniques, are deduplicated and utilize
+            2. VisitorIDs, in comparison to fingerprints, include server side techniques, are deduplicated and utilize
             fuzzy matching to result in a more accurate and stable identifier. Fingerprint hashes rely on an exact match
-            across all browser attributes, making them unstable across &gt; 2 week time intervals.
+            across all browser attributes, making them less stable across &gt; 4 week time intervals.
           </p>
           <p className={styles.note}>
-            *** FingerprintJS is GDPR and CCPA compliant as the data processor. You still need to be compliant as the
-            data controller and use the identification for fraud under legitimate interest or ask for user consent.
+            3. FingerprintJS Pro is GDPR and CCPA compliant as the data processor. You still need to be compliant as the
+            data controller and use the identification for fraud under legitimate interest or ask for consent.
           </p>
         </footer>
       </Container>
@@ -114,7 +138,7 @@ interface FeatureProps {
   feature: string
   children?: React.ReactNode
   oss: string
-  pro: string
+  pro: React.ReactNode
   isSymbol?: boolean
 }
 function Feature({ feature, children, oss, pro, isSymbol }: FeatureProps) {
