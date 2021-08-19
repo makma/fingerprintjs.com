@@ -23,7 +23,7 @@ heroImage:
 ---
 We are excited to announce our featured episode on OWI's State of Identity podcast.
 
-Host Cameron D'Ambrosi interviewed our CEO Dan Pinto on the origin story of FingerprintJS, the power of anonymous identification to reduce friction while preventing online fraud, and the future of identity management.
+Host Cameron D'Ambrosi interviewed CEO Dan Pinto on the origin story of FingerprintJS, the power of anonymous identification to reduce friction while preventing online fraud, and the future of identity management.
 
 ## [Listen to the podcast](https://oneworldidentity.com/podcast/fingerprintjs-fraud-at-the-source/)
 
