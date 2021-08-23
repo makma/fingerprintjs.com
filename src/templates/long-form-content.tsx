@@ -14,6 +14,7 @@ import RelatedArticles from '../components/RelatedArticles/RelatedArticles'
 import { mapToPost, PostProps } from '../components/Post/Post'
 import PreviewProviders from '../cms/PreviewProviders'
 import AuthorComponent, { Author } from '../components/Author/Author'
+import CustomizableCTA, { CustomizableCTAProps } from '../components/CustomizableCTA/CustomizableCTA'
 import HeroImageComponent, { HeroImageComponentProps } from '../components/HeroImage/HeroImage'
 
 import ActionBar, { ActionBarProps } from '../components/ActionBar/ActionBar'
@@ -44,6 +45,7 @@ export default function LongFormContent({ data, pageContext }: LongFormContentPr
   const body = data.markdownRemark.html
   const publishDate = data.markdownRemark.frontmatter.publishDate
   const actionBar = mapToAction(data.markdownRemark.frontmatter)
+  const customCTA = mapToCustomCta(data.markdownRemark.frontmatter.customCTA)
 
   return (
     <LongFormContentTemplate
@@ -56,6 +58,7 @@ export default function LongFormContent({ data, pageContext }: LongFormContentPr
       authors={authors}
       publishDate={publishDate}
       actionBar={actionBar}
+      customCTA={customCTA}
     />
   )
 }
@@ -105,6 +108,13 @@ export const pageQuery = graphql`
           imageAlt
           imageTitle
         }
+        customCTA {
+          title
+          description
+          ctaText
+          ctaUrl
+          openCtaNewTab
+        }
       }
     }
   }
@@ -120,6 +130,7 @@ export interface TemplateProps {
   authors?: Author[]
   publishDate?: string
   actionBar: ActionBarProps
+  customCTA: CustomizableCTAProps
 }
 export function LongFormContentTemplate({
   metadata,
@@ -130,6 +141,7 @@ export function LongFormContentTemplate({
   breadcrumbs,
   authors = [],
   actionBar,
+  customCTA,
 }: TemplateProps) {
   const ContentComponent = contentComponent ?? Content
 
@@ -145,12 +157,13 @@ export function LongFormContentTemplate({
       )}
 
       <Section className={styles.root}>
-        <Container size='small' className={styles.container}>
-          <h1 className={styles.title}>{post.title}</h1>
-          <div className={styles.actionBar}>
-            <ActionBar {...actionBar} />
-          </div>
-
+        <Container className={styles.container}>
+          <header className={styles.header}>
+            <h1 className={styles.title}>{post.title}</h1>
+            <div className={styles.actionBar}>
+              <ActionBar {...actionBar} />
+            </div>
+          </header>
           {authors && (
             <div className={styles.authors}>
               {authors.map((author) => (
@@ -158,8 +171,15 @@ export function LongFormContentTemplate({
               ))}
             </div>
           )}
-          {heroImage.image && <HeroImageComponent {...heroImage} />}
-          <ContentComponent content={body} className={styles.content} />
+          <article className={styles.body}>
+            {heroImage.image && <HeroImageComponent {...heroImage} />}
+            <ContentComponent content={body} className={styles.content} />
+          </article>
+          {customCTA.subHeader && (
+            <aside className={styles.cta}>
+              <CustomizableCTA className={styles.card} {...customCTA} />
+            </aside>
+          )}
         </Container>
 
         <Container size='large'>
@@ -174,6 +194,7 @@ export function LongFormContentPreview({ entry, widgetFor }: PreviewTemplateComp
   const metadata = entry.getIn(['data', 'metadata'])?.toObject() as QueryMetadata
   const heroImage = entry.getIn(['data', 'heroImage'])?.toJS() as QueryHeroImage
   const actionBar = entry.getIn(['data'])?.toJS() as QueryActionBar
+  const customCTA = entry.getIn(['data', 'customCTA'])?.toJS() as QueryCustomCTA
 
   return (
     <PreviewProviders>
@@ -183,6 +204,7 @@ export function LongFormContentPreview({ entry, widgetFor }: PreviewTemplateComp
         post={mapToPost({ frontmatter: entry.get('data').toObject() })}
         body={widgetFor('body') ?? <></>}
         actionBar={mapToAction(actionBar)}
+        customCTA={mapToCustomCta(customCTA, true)}
       />
     </PreviewProviders>
   )
@@ -232,4 +254,18 @@ function mapToHeroImage(queryHeroImage: QueryHeroImage): HeroImageComponentProps
     imageAlt: queryHeroImage?.imageAlt,
     imageTitle: queryHeroImage?.imageTitle,
   } as HeroImageComponentProps
+}
+
+type QueryCustomCTA = NonNullable<
+  NonNullable<GatsbyTypes.LongFormContentQuery['markdownRemark']>['frontmatter']
+>['customCTA']
+function mapToCustomCta(queryCustomCTA: QueryCustomCTA, preview = false): CustomizableCTAProps {
+  return {
+    subHeader: queryCustomCTA?.title,
+    children: queryCustomCTA?.description,
+    ctaHref: queryCustomCTA?.ctaUrl,
+    ctaText: queryCustomCTA?.ctaText,
+    hideWhenScroll: !preview,
+    openCtaNewTab: queryCustomCTA?.openCtaNewTab,
+  } as CustomizableCTAProps
 }

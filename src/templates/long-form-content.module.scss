@@ -1,12 +1,39 @@
 .root {
-  padding-bottom: rem(64px) - 2rem;
+  padding-bottom: rem(48px);
 }
 
 .container {
-  display: flex;
-  justify-content: flex-start;
-  align-content: center;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr rem(604px) 1fr;
+  grid-template-rows: auto;
+
+  column-gap: rem(24px);
+
+  grid-template-areas:
+    '. header .'
+    'author body cta';
+
+  --contentWidth: 1232px;
+
+  @include media('<=1250px') {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-direction: column;
+
+    --contentWidth: 604px;
+  }
+}
+
+.body {
+  grid-area: body;
+
+  @include media('<=1250px') {
+    position: relative;
+  }
+}
+.header {
+  grid-area: header;
 }
 
 .title {
@@ -25,8 +52,7 @@
 }
 
 .authors {
-  display: flex;
-  flex-wrap: wrap;
+  grid-area: author;
 
   margin-bottom: 5rem;
 
@@ -34,14 +60,9 @@
     margin-bottom: 2rem;
   }
 
-  @include media('>1250px') {
-    position: absolute;
-    flex-direction: column;
-
-    margin-top: 16rem;
-
-    // Container padding to match header
-    left: unquote('max(3rem, 50vw - 1232px / 2)');
+  @include media('<=1250px') {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -52,5 +73,27 @@
   @include media('>1250px') {
     margin-right: 0;
     margin-bottom: 2rem;
+  }
+}
+
+.cta {
+  grid-area: cta;
+
+  display: flex;
+  flex-direction: column;
+
+  @include media('<=1250px') {
+    position: sticky;
+    bottom: rem(24px);
+  }
+
+  .card {
+    @include media('>1250px') {
+      margin-top: auto;
+      position: sticky;
+      bottom: rem(24px);
+
+      width: rem(290px);
+    }
   }
 }
