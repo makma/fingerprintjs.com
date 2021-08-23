@@ -22,15 +22,13 @@
   &:hover {
     svg {
       opacity: 1;
-      transform: scale(1.1);
     }
   }
 
   svg {
     opacity: 0.5;
     @include transition((opacity));
-    @include transition((transform));
-    @include transition-duration(0.2s);
+    @include transition-duration(0.1s);
   }
 }
 
