@@ -20,20 +20,24 @@ heroImage:
   image: /img/uploads/fingerprintjs.png
   imageAlt: State of Identity Podcast - FingerprintJS
   imageTitle: State of Identity Podcast - FingerprintJS
+customCTA:
+  openCtaNewTab: false
+  title: ""
 ---
 We are excited to announce our featured episode on OWI's State of Identity podcast.
 
 Host Cameron D'Ambrosi interviewed CEO Dan Pinto on the origin story of FingerprintJS, the power of anonymous identification to reduce friction while preventing online fraud, and the future of identity management in a post-pandemic world.
 
 ## [Listen to the podcast](https://oneworldidentity.com/podcast/fingerprintjs-fraud-at-the-source/)
+
 <br>
 <br>
 <br>
 <hr>
 <br>
 
-
 ### Audio Transcript
+
 <br>
 
 #### CAMERON:
@@ -66,7 +70,7 @@ Since then things have gone really smoothly. We've raised two rounds of funding.
 
 #### CAMERON:
 
-Let's get right into it. Before we talk about use cases, an overview of the technology itself that underpins FingerprintJS would be super helpful. I understand there's a little bit of a teaser there in the name that it involves fingerprinting. My advanced layman's understanding of your core product offering is essentially the ability to provide a fairly unique device level fingerprint for each session that you see coming across a website or application and then be able to use that to understand who's visiting your platform and and hopefully determine if they're a user that should be trusted or not trusted? Is that a fair assessment?
+Let's get right into it. Before we talk about use cases, an overview of the technology itself that underpins FingerprintJS would be super helpful. I understand there's a little bit of a teaser there in the name that it involves fingerprinting. My advanced layman's understanding of your core product offering is essentially the ability to provide a fairly unique device level fingerprint for each session that you see coming across a website or application and then be able to use that to understand who's visiting your platform and hopefully determine if they're a user that should be trusted or not trusted? Is that a fair assessment?
 
 #### DAN:
 
