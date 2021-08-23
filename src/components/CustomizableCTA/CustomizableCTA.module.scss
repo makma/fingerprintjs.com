@@ -1,0 +1,68 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: rem(16px);
+  box-shadow: 0px 20px 40px rgba(13, 16, 41, 0.1);
+  border-radius: rem(12px);
+  background-color: v('white');
+
+  @include media('<=phoneLandscape') {
+    padding: rem(12px);
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .subHeader {
+      font-family: v(ff-sans);
+      font-size: rem(16px);
+      font-weight: v(semi);
+
+      padding-bottom: rem(8px);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(20px);
+      }
+    }
+  }
+
+  .description {
+    font-family: v(ff-sans);
+    font-size: rem(14px);
+
+    padding-bottom: rem(32px);
+    padding-right: rem(32px);
+
+    @include media('<=phoneLandscape') {
+      padding-right: rem(110px);
+    }
+  }
+
+  .button {
+    @include media('<=phoneLandscape') {
+      font-size: rem(12px);
+
+      height: 32px;
+    }
+  }
+
+  opacity: 0;
+
+  @include transition((opacity));
+  @include transition-duration(0.5s);
+}
+
+.visible {
+  opacity: 1;
+}
+
+.close {
+  cursor: pointer;
+
+  margin-top: rem(3px);
+  height: rem(10px);
+  width: rem(10px);
+}

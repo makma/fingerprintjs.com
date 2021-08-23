@@ -125,8 +125,9 @@
   }
 
   .tagSection {
-    list-style: inside url(/img/uploads/Elipse.svg);
+    list-style: inside url('../../../img/Elipse.svg');
   }
+
   .tag {
     font-family: v(ff-sans);
     font-size: rem(20px);

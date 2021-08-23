@@ -22,6 +22,12 @@ heroImage:
   image: /img/uploads/ban-from-website.png
   imageAlt: Permanently ban users from your website with FingerprintJS
   imageTitle: Permanently ban users from your website with FingerprintJS
+customCTA:
+  title: Ready your ban hammer
+  description: Start a 10-day free trial of FingerprintJS and start protecting your site.
+  ctaText: Start Trial
+  ctaUrl: https://dashboard.fingerprintjs.com/signup
+  openCtaNewTab: false
 ---
 While having user-generated content is a great way to add interactivity and community to your website, it unfortunately leaves you open to abuse from malicious users. Nudity, harassment, spam, advertising, or even malware and viruses are just some of the unwanted content you may have to deal with. Sometimes, measures like content moderation and warnings can help keep your users in line. But in many cases, these offenders are aggressive and cunning with their approach, and you’ll have to take the extreme step of permanently banning them.
 

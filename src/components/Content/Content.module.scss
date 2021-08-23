@@ -167,14 +167,14 @@
 
   summary::after {
     margin-left: rem(14px);
-    content: url(/img/uploads/plus-simbol.svg);
+    content: url('../../img/plus-simbol.svg');
     position: absolute;
     right: 0;
   }
 
   details[open] summary:after {
     margin-left: rem(14px);
-    content: url(/img/uploads/minus-simbol.svg);
+    content: url('../../img/minus-simbol.svg');
     position: absolute;
     right: 0;
   }
