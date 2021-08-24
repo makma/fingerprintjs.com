@@ -35,7 +35,7 @@ export const FPJS_VISITORS_ENDPOINT =
   getContextEnv<string>({
     [NetlifyContext.Production]: process.env.GATSBY_FPJS_VISITORS_ENDPOINT,
     [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_FPJS_VISITORS_ENDPOINT,
-  }) ?? 'https://history.demo.fpaux.net/'
+  }) ?? 'https://history.demo.fpaux.net/pamplemousse/'
 
 export const TLS_ENDPOINT = getContextEnv<string>({
   [NetlifyContext.Production]: process.env.GATSBY_TLS_ENDPOINT,

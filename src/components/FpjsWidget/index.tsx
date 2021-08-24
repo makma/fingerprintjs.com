@@ -188,7 +188,7 @@ function CurrentVisit({ currentVisit, visits, visitorId }: CurrentVisitProps) {
 }
 
 async function loadFpjsHistory(endpoint: string, visitorId: string, apiToken: string) {
-  const response = await fetch(`${endpoint}visitors/${visitorId}?token=${apiToken}&limit=20`)
+  const response = await fetch(`${endpoint}${visitorId}?token=${apiToken}&limit=20`)
   return await response.json()
 }
 
