@@ -21,10 +21,9 @@ import styles from './Header.module.scss'
 
 interface HeaderProps {
   headerBarTitle?: string
-  headerBarLinkText?: string
   headerBarLinkUrl?: string
 }
-export default function Header({ headerBarTitle, headerBarLinkText, headerBarLinkUrl }: HeaderProps) {
+export default function Header({ headerBarTitle, headerBarLinkUrl }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const utmInfo = useUtmParams()
 
@@ -47,11 +46,7 @@ export default function Header({ headerBarTitle, headerBarLinkText, headerBarLin
 
   return (
     <header className={styles.header}>
-      {headerBarTitle && (
-        <HeaderBar linkText={headerBarLinkText} linkUrl={headerBarLinkUrl}>
-          {headerBarTitle}
-        </HeaderBar>
-      )}
+      {headerBarTitle && <HeaderBar linkUrl={headerBarLinkUrl}>{headerBarTitle}</HeaderBar>}
       <Navbar />
       <div className={styles.nav}>
         <Container size='large'>

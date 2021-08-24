@@ -5,17 +5,16 @@ import styles from './HeaderBar.module.scss'
 
 export interface headerBarProps {
   children: string
-  linkText?: string
   linkUrl?: string
 }
 
-export default function HeaderBar({ children, linkText, linkUrl }: headerBarProps) {
+export default function HeaderBar({ children, linkUrl }: headerBarProps) {
   return linkUrl ? (
-    <Container className={styles.container}>
+    <Container className={styles.container} size='large'>
       <div className={styles.headerBar}>
-        <div className={styles.text}>{children}</div>
-        <a className={styles.link} href={linkUrl} target='_blank' rel='noreferrer'>
-          {linkText}
+        <a className={styles.link} href={linkUrl}>
+          <div className={styles.text}>{children}</div>
+          <div className={styles.arrow}>→</div>
         </a>
       </div>
     </Container>
