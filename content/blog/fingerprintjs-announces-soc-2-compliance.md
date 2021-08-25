@@ -48,7 +48,7 @@ SOC 2 outlines five Trust Services Criteria that are used to assess whether a co
 
 ## About The Report
 
-By completing our SOC 2 certification, we can now provide interested parties with our Type 1 report. This report contains details on how we are keeping our customers data safe:
+By becoming SOC 2 compliance, we can now provide interested parties with our Type 1 report. This report contains details on how we are keeping our customers data safe:
 
 * Customer data protection
 * Continuous monitoring
@@ -57,7 +57,7 @@ By completing our SOC 2 certification, we can now provide interested parties wit
 
 ## What’s Next
 
-This certification is only one of many steps we plan to take to ensure best-in-class security for our customers. We are planning to achieve SOC 2 Type 2 compliance in the next year. This next step will require an ongoing audit of the security procedures outlined in our Type 1 report. 
+SOC 2 compliance is only one of many steps we plan to take to ensure best-in-class security for our customers. We are planning to achieve SOC 2 Type 2 compliance in the next year. This next step will require an ongoing audit of the security procedures outlined in our Type 1 report. 
 
 ## Get in touch
 
