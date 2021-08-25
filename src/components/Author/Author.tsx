@@ -24,7 +24,7 @@ export default function AuthorComponent({ author, className }: AuthorComponentPr
         altTag={`${author.name} photo`}
         titleTag={`${author.name} photo`}
         className={styles.photo}
-        imageStyle={{ borderRadius: '6rem' }}
+        imageStyle={{ borderRadius: '50%' }}
       />
 
       <div className={styles.textContainer}>

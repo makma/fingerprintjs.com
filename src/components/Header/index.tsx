@@ -49,7 +49,7 @@ export default function Header({ headerBarTitle, headerBarLinkUrl }: HeaderProps
       {headerBarTitle && <HeaderBar linkUrl={headerBarLinkUrl}>{headerBarTitle}</HeaderBar>}
       <Navbar />
       <div className={styles.nav}>
-        <Container size='large'>
+        <Container size='large' className={styles.root}>
           <nav className={styles.navMain}>
             <div className={styles.navLeft}>
               <Link to='/' className={`${styles.link} ${styles.linkLogo}`} title='Logo'>

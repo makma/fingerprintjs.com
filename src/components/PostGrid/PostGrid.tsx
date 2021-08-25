@@ -28,7 +28,7 @@ export default function PostGrid({
       {tags && (
         <div className={styles.tags}>
           <h2>Tags</h2>
-          <TagList tags={tags} direction='vertical' />
+          <TagList tags={tags} direction='vertical' format='title' />
         </div>
       )}
 
