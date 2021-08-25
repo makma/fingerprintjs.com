@@ -2,7 +2,7 @@ import React from 'react'
 import { ReactComponent as ChevronRightSvg } from '../../img/chevron-right.svg'
 import { ReactComponent as ChevronLeftSvg } from '../../img/chevron-left.svg'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Navigation } from 'swiper'
+import SwiperCore, { Lazy, Navigation } from 'swiper'
 import classNames from 'classnames'
 import Button from '../common/Button'
 import { CurrentVisitProps } from './currentVisitProps'
@@ -13,7 +13,7 @@ import styles from './MobileWidget.module.scss'
 import { MAPBOX_ACCESS_TOKEN } from '../../constants/env'
 import Skeleton from '../Skeleton/Skeleton'
 
-SwiperCore.use([Navigation])
+SwiperCore.use([Navigation, Lazy])
 
 interface MobileWidgetProps extends CurrentVisitProps {
   isLoaded: boolean
@@ -26,6 +26,7 @@ export default function MobileWidget({ className, isLoaded, visits, visitorId }:
       className={classNames(className, styles.container, {
         [styles.loaded]: isLoaded,
       })}
+      lazy={true}
       slidesPerView={1.05}
       spaceBetween={10}
       centeredSlides={true}
@@ -106,14 +107,18 @@ export default function MobileWidget({ className, isLoaded, visits, visitorId }:
                     })}
                   >
                     {visit && (
-                      <img
-                        alt='Location map'
-                        src={`https://api.mapbox.com/styles/v1/mapbox/${
-                          visit.incognito ? 'dark-v10' : 'outdoors-v11'
-                        }/static/${visit.ipLocation?.longitude},${
-                          visit.ipLocation?.latitude
-                        },7.00,0/512x512?access_token=${MAPBOX_ACCESS_TOKEN}`}
-                      />
+                      <>
+                        <Skeleton square className='swiper-lazy-preloader' />
+                        <img
+                          alt='Location map'
+                          data-src={`https://api.mapbox.com/styles/v1/mapbox/${
+                            visit.incognito ? 'dark-v10' : 'outdoors-v11'
+                          }/static/${visit.ipLocation?.longitude},${
+                            visit?.ipLocation?.latitude
+                          },7.00,0/512x512?access_token=${MAPBOX_ACCESS_TOKEN}`}
+                          className='swiper-lazy'
+                        />
+                      </>
                     )}
                   </div>
                 </div>
@@ -165,7 +170,7 @@ export function MobileLoadingState() {
               <Skeleton width={75} height={21} />
             </div>
             <div className={styles.value}>
-              <Skeleton width={250} height={250} />
+              <Skeleton square />
             </div>
           </div>
         </div>

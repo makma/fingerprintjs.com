@@ -238,7 +238,7 @@ function CurrentVisitLoading() {
         </div>
         <div className={classNames(styles.info, styles.location)}>
           <Skeleton width={188} height={22} />
-          <Skeleton width={188} height={188} />
+          <Skeleton square />
         </div>
       </div>
     </div>
