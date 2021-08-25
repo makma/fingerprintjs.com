@@ -62,3 +62,11 @@
   align-self: start;
   margin-top: rem(40px);
 }
+
+.input,
+.textArea,
+select:focus {
+  @include media('<=phoneLandscape') {
+    font-size: 16px;
+  }
+}

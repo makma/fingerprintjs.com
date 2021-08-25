@@ -9,12 +9,12 @@ import { CurrentVisitProps } from './currentVisitProps'
 import MobileWidget, { MobileLoadingState } from './MobileWidget'
 import { useVisitorData } from '../../context/FpjsContext'
 import useRollbar from '../../hooks/useRollbar'
-import { FPJS_API_TOKEN, FPJS_ENDPOINT, MAPBOX_ACCESS_TOKEN } from '../../constants/env'
+import { FPJS_API_TOKEN, FPJS_VISITORS_ENDPOINT, MAPBOX_ACCESS_TOKEN } from '../../constants/env'
 import styles from './FpjsWidget.module.scss'
 import Skeleton from '../Skeleton/Skeleton'
 
 const apiToken = FPJS_API_TOKEN
-const endpoint = FPJS_ENDPOINT
+const endpoint = FPJS_VISITORS_ENDPOINT
 const mapboxToken = MAPBOX_ACCESS_TOKEN
 
 export default memo(function FpjsWidget() {
@@ -188,7 +188,7 @@ function CurrentVisit({ currentVisit, visits, visitorId }: CurrentVisitProps) {
 }
 
 async function loadFpjsHistory(endpoint: string, visitorId: string, apiToken: string) {
-  const response = await fetch(`${endpoint}visitors/${visitorId}?token=${apiToken}&limit=20`)
+  const response = await fetch(`${endpoint}${visitorId}?token=${apiToken}&limit=20`)
   return await response.json()
 }
 
@@ -238,7 +238,7 @@ function CurrentVisitLoading() {
         </div>
         <div className={classNames(styles.info, styles.location)}>
           <Skeleton width={188} height={22} />
-          <Skeleton width={188} height={188} />
+          <Skeleton square />
         </div>
       </div>
     </div>

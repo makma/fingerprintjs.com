@@ -7,14 +7,20 @@
 }
 
 .nav {
-  padding: 3rem 0 1rem;
+  padding: rem(30px) 0 1rem;
 
   @include media('>desktop') {
     background: c('white');
   }
   @include media('<=desktop') {
     margin-top: 0;
-    padding-top: 2rem;
+    padding-top: rem(12px);
+  }
+}
+
+.root {
+  @include media('<=phone') {
+    padding: 0 rem(20px);
   }
 }
 
@@ -60,6 +66,12 @@
 }
 
 .navRight {
+  @include media('>desktop') {
+    a {
+      height: rem(42px);
+    }
+  }
+
   > * + * {
     @include media('>desktop') {
       margin-left: 1.5rem;
@@ -94,7 +106,7 @@
     width: 150px;
   }
   @include media('<=phone') {
-    width: 100px;
+    width: 120px;
   }
 }
 
@@ -105,6 +117,9 @@
 }
 
 .mobileToggler {
+  width: rem(14px);
+  margin-left: rem(16px);
+
   @include media('>desktop') {
     display: none;
   }
@@ -117,10 +132,17 @@
 }
 
 .signupButton {
+  @include media('>desktop') {
+    padding: 0 rem(20px);
+  }
+
   @include media('<=phone') {
-    padding: 0 1rem;
-    font-size: 1.5rem;
-    height: 4rem;
+    padding: 0 rem(12px);
+    border-radius: 4px;
+    height: rem(32px);
+
+    font-size: rem(12px);
+    line-height: 150%;
   }
 }
 
@@ -144,7 +166,9 @@
   }
 }
 
+.signupButton,
 .button {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  @include media('>desktop') {
+    padding: 0 rem(20px);
+  }
 }

@@ -12,6 +12,5 @@ const Template: Story<headerBarProps> = (args) => <HeaderBar {...args} />
 export const Default = Template.bind({})
 Default.args = {
   children: 'Curabitur sit amet vestibulum ex.',
-  linkText: '>>>',
   linkUrl: '/',
 }

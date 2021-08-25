@@ -53,7 +53,7 @@ export default function Post({
           <p className={classNames(styles.description, { [styles.descriptionLimit]: limitTextLines })}>{description}</p>
         </div>
 
-        {tags && <TagList tags={tags} activeTag={activeTag} format='upper' />}
+        {tags && <TagList tags={tags} activeTag={activeTag} format='title' />}
       </div>
     </Link>
   )

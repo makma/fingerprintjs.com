@@ -170,7 +170,13 @@ collections:
               { label: Description, name: description, widget: string, required: false },
               { label: CTA text, name: ctaText, widget: string, required: false },
               { label: CTA url, name: ctaUrl, widget: string, required: false },
-              { label: open CTA link in new tab, name: openCtaNewTab, widget: boolean, default: false },
+              {
+                label: open CTA link in new tab,
+                name: openCtaNewTab,
+                widget: boolean,
+                default: false,
+                required: false,
+              },
             ],
         }
       - { label: Body, name: body, widget: markdown }

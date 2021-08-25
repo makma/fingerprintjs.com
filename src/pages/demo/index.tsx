@@ -23,7 +23,11 @@ export default function DemoPage({ pageContext }: DemoPageProps) {
   }
 
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate
+      siteMetadata={siteMetadata}
+      headerBarTitle='FingerprintJS Announces SOC 2 Compliance'
+      headerBarLinkUrl='https://fingerprintjs.com/blog/soc-2-type-1'
+    >
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
 
       <DemoSection />

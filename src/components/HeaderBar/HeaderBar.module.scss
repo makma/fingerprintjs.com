@@ -1,6 +1,5 @@
 .container {
-  --contentWidth: 610px;
-  background-color: v('brand-water');
+  background-color: adjust-color(c('brand-water'), $saturation: -25%, $lightness: 25%);
   color: v('white');
 
   padding-top: rem(11px);
@@ -9,12 +8,15 @@
   @include media('<=phone') {
     padding: rem(11px) rem(5px) rem(12px);
   }
+
+  @include transition((background-color));
+
+  &:hover {
+    background-color: adjust-color(c('brand-water'), $saturation: -25%, $lightness: 15%);
+  }
 }
 
 .headerBar {
-  display: flex;
-  justify-content: space-between;
-
   @include media('<tablet') {
     display: grid;
     grid-auto-flow: row;
@@ -22,29 +24,30 @@
   }
 }
 
-.text,
 .link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  column-gap: rem(12px);
+}
+
+.text,
+.arrow {
+  text-transform: uppercase;
   font-size: rem(14px);
-  text-align: center;
+  letter-spacing: 0.04em;
+  font-family: v(ff-sans);
+  line-height: 140%;
+  font-weight: 500;
+
+  justify-content: flex-start;
 
   @include media('<tablet') {
     font-size: rem(12px);
   }
 
   @include media('<phone') {
-    font-size: rem(11px);
-  }
-}
-
-.link {
-  @include transition((opacity));
-  @include transition-duration(0.2s);
-
-  &:hover {
-    opacity: v('muted');
-  }
-
-  @include media('<tablet') {
-    padding-top: rem(8px);
+    font-size: rem(10px);
   }
 }
