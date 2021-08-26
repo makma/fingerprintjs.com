@@ -6,7 +6,7 @@ metadata:
     to receive our SOC 2 Type 1 report. The report is available on request to
     current and future customers. "
   url: https://fingerprintjs.com/blog/soc-2-type-1
-  image: /img/uploads/soc2.png
+  image: /img/uploads/soc2_1.png
   imageAlt: SOC 2 Compliance
   imageTitle: SOC 2 Compliance
 featured: true
@@ -48,7 +48,7 @@ SOC 2 outlines five Trust Services Criteria that are used to assess whether a co
 
 ## About The Report
 
-By becoming SOC 2 compliance, we can now provide interested parties with our Type 1 report. This report contains details on how we are keeping our customers data safe:
+By becoming SOC 2 compliant, we can now provide interested parties with our Type 1 report. This report contains details on how we are keeping our customers data safe:
 
 * Customer data protection
 * Continuous monitoring
