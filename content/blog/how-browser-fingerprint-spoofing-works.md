@@ -20,7 +20,7 @@ tags:
   - ecommerce fraud
   - account sharing
 authors:
-  - Savannah Copland
+  - Josh Alletto
 heroImage:
   image: /img/uploads/fingerprint-spoofing.png
   imageAlt: "Browser Fingerprint Spoofing "
