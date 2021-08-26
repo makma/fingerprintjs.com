@@ -1,0 +1,119 @@
+.root {
+  overflow: hidden;
+
+  padding: 0 0 rem(50px) 0;
+
+  @include media('<=phoneLandscape') {
+    padding: 0 0 rem(42px) 0;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+
+  column-gap: rem(60px);
+
+  --contentWidth: 1015px;
+
+  @include media('<=phoneLandscape') {
+    flex-direction: column;
+  }
+}
+
+.descriptionSection {
+  .title {
+    font-size: rem(32px);
+    font-weight: v('bold');
+    line-height: 130%;
+    letter-spacing: -0.01em;
+
+    margin-bottom: rem(16px);
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(27px);
+    }
+  }
+  .description {
+    padding-bottom: rem(24px);
+  }
+
+  .description,
+  .link {
+    font-family: v(ff-sans);
+    font-size: rem(16px);
+    color: adjust-color(c('brand-water'), $alpha: -0.3);
+    line-height: 150%;
+  }
+
+  .link {
+    cursor: pointer;
+    text-decoration: none;
+    color: v('brand-fire');
+    @include transition((color));
+
+    &:hover {
+      color: adjust-color(c('brand-fire'), $lightness: -20%);
+    }
+  }
+}
+.idSection {
+  min-width: rem(520px);
+
+  @include media('<=desktop') {
+    min-width: unset;
+  }
+}
+.card {
+  box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
+  border-radius: rem(16px);
+  padding: rem(24px);
+
+  .label {
+    font-family: v(ff-sans);
+    font-size: rem(14px);
+    color: adjust-color(c('brand-water'), $alpha: -0.5);
+    line-height: 140%;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .id {
+    margin-bottom: rem(32px);
+
+    .idValue {
+      font-family: v(ff-mono);
+      font-size: rem(36px);
+      color: c('brand-fire');
+      line-height: 130%;
+      letter-spacing: -0.01em;
+      font-weight: v('bold');
+
+      padding-top: rem(8px);
+    }
+  }
+
+  .infoList {
+    display: flex;
+    flex-direction: row;
+    column-gap: rem(32px);
+
+    .infoValue {
+      font-family: v(ff-sans);
+      font-weight: v('semi');
+      font-size: rem(20px);
+      line-height: 130%;
+      letter-spacing: 0.01em;
+    }
+  }
+}
+
+.footer {
+  font-family: v(ff-sans);
+  font-size: rem(14px);
+  color: adjust-color(c('brand-water'), $alpha: -0.3);
+  line-height: 150%;
+
+  padding-top: rem(16px);
+}
