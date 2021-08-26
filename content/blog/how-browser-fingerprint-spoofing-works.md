@@ -6,7 +6,7 @@ metadata:
     traffic, but it isn't foolproof. Learn more about the various methods
     visitors can use to prevent browser fingerprints from accurately identifying
     visitors
-  url: https://fingerprintjs.com/blog/browser-fingerprint-spoofing/
+  url: https://fingerprintjs.com/blog/browser-fingerprint-prevention/
   image: /img/uploads/fingerprint-spoofing.png
   imageAlt: Preventing Browser Fingerprinting
   imageTitle: Preventing Browser Fingerprinting
