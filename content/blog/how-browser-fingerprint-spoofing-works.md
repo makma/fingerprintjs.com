@@ -51,9 +51,11 @@ In this article, we’ll look at some of the ways a website visitor can prevent 
 
 ## How to Prevent Accurate Browser Fingerprinting
 
-Blocking browser fingerprinting entirely is difficult for users to do on their own. More often, they will employ a few different tools and techniques such as turning off cookies or browsing in incognito mode. These are not usually that effective. 
+Preventing browser fingerprinting can be difficult for web users to do without having a better understanding of the technology and how it works. Some of the standard techniques the average visitor may use to protect their identity are not effective against fingerprinting, such as clearing cookies or browsing in incognito mode:
 
-At its essence, the nature of fingerprinting is to avoid using cookies. So while turning them off can offer some degree of user privacy, it doesn’t impact fingerprinting capabilities. Incognito mode browsing is equally ineffective for preventing browser fingerprinting, as a myriad of unique data points besides browsing history can be used for identifying visitors.
+* **Cookies:** Browser fingerprinting does not inherently rely on cookies to generate a unique identifier. So while turning them off can offer some degree of user privacy, it doesn’t impact fingerprinting capabilities.
+
+  **Incognito mode:** This method of is equally ineffective for preventing browser fingerprinting, as a myriad of unique data points besides browsing history can be used for identifying visitors.
 
 Some browsers offer browser fingerprinting mitigation strategies as an in-built feature; for example, [Firefox](https://support.mozilla.org/en-US/kb/firefox-protection-against-fingerprinting) gives users the option to block third-party requests to sites known to utilize fingerprinting. This provides added protection, but at the cost of a compromised user experience (e.g., suboptimal page quality, slow loading speeds). Since the only way to block browser fingerprinting is to turn off features/capabilities like HTML canvas or audio content, many sites won’t load correctly in Strict security mode.
 
