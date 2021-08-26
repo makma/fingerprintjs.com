@@ -33,7 +33,7 @@ Here are some data points that browser fingerprinting uses to create unique IDs:
 * Browser type and version
 * Language
 * Time zone
-* Graphics card type (determined by [HTML canvas drawing](https://www.w3schools.com/html/html5_canvas.asp)) 
+* Graphics card type (via [HTML canvas drawing](https://www.w3schools.com/html/html5_canvas.asp)) 
 * Device make and model 
 * Installed plugins
 * Screen dimensions
