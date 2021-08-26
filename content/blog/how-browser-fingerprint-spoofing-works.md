@@ -40,11 +40,11 @@ Here are some data points that browser fingerprinting uses to create unique IDs:
 * Keyboard type (e.g., QWERTY, Dvorak, etc.)
 * Hardware type
 
-Despite its unique capabilities, browser fingerprinting is not without its flaws. For example, browser fingerprint spoofing enables visitors to remain anonymous by disabling websites from creating unique identifiers. This can be accomplished by turning off certain browser features, using incognito mode, or using VPN, just to name a few.
+Despite its unique capabilities, browser fingerprinting is not without its flaws. For example, browser fingerprint spoofing enables visitors to remain anonymous by disabling websites from creating unique identifiers. This can be accomplished by turning off certain browser features, using incognito mode, or connecting over VPN, just to name a few.
 
-Of course, privacy-conscious website visitors wouldn’t necessarily consider the above flaws. Their concerns are certainly valid: companies can use browser fingerprinting data to build unique user profiles without cookies or user sign-ins. This data can be in turn sold, harvested to trigger targeted ads, or  used to fix product prices based on the visitor’s location.
+Privacy-conscious website visitors wouldn’t necessarily consider the above flaws, and their concerns are certainly valid: companies can use browser fingerprinting data to build unique user profiles without cookies or user sign-ins. This data can be in turn sold, harvested to trigger targeted ads, or  used to fix product prices based on the visitor’s location.
 
-Notwithstanding, developers have valid reasons for fingerprinting a visitor’s browser. Anonymous site users can easily become security risks, as they often are precursors to fraudulent payments and botnet attacks—threats that browser fingerprinting helps to mitigate. Fingerprinting also enables developers to understand a visitor’s environment for delivering the most compatible website version.
+Notwithstanding, developers have valid reasons for fingerprinting a visitor’s browser. Anonymous site users can easily become security risks, as they often are precursors to fraudulent payments and bot net attacks—threats that browser fingerprinting helps to mitigate. Fingerprinting also enables developers to understand a visitor’s environment for delivering the most compatible website version.
 
 In this article, we’ll look at some of the ways a website visitor can create a false fingerprint, then analyze FingerprintJS to see how it creates accurate fingerprints for verifying authorized users, even when spoofing is being used.
 
@@ -64,7 +64,7 @@ Another popular way to bolster privacy during internet use is to employ a VPN. V
 
 We’ve seen the different ways a browser can be fingerprinted, as well as the various methods to block fingerprinting. If your site relies on fingerprinting to help prevent fraud or deliver optimized content to users, then it can be difficult to plan for every scenario. 
 
-In these cases, FingerprintJS offers a superior method of fingerprinting that compiles browser signals to create a unique fingerprint for every website visitor. Built by a dedicated browser fingerprinting research team, the library is easy-to-install, [highly accurate](https://dev.fingerprintjs.com/docs/understanding-our-995-accuracy)and effective in stopping fraud and spam.
+In these cases, FingerprintJS offers a superior method of fingerprinting that compiles browser signals to create a unique fingerprint for every website visitor. Built by a dedicated browser fingerprinting research team, the library is easy-to-install, [highly accurate](https://dev.fingerprintjs.com/docs/understanding-our-995-accuracy) and effective in stopping fraud and spam.
 
 The following tutorial uses the CDN option, but the library can  also be installed by running `npm install @fingerprintjs/fingerprintjs-pro` and running `import FingerprintJS from '@fingerprintjs/fingerprintjs-pro'`. 
 
