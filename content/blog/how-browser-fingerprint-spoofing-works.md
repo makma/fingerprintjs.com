@@ -68,7 +68,7 @@ In these cases, FingerprintJS offers a superior method of fingerprinting that co
 
 The following tutorial uses the CDN option, but the library can  also be installed by running `npm install @fingerprintjs/fingerprintjs-pro` and running `import FingerprintJS from '@fingerprintjs/fingerprintjs-pro'`. 
 
-To get started, create an `index.html` file with the following code in the head.
+To get started, create an `index.html` file with the following code between the head tags:
 
 ```
 <script>
@@ -87,15 +87,11 @@ To get started, create an `index.html` file with the following code in the head.
 ></script>
 ```
 
-This code will print the visitor ID to the console, but it won’t work until we give it a proper token. Head over to the [quick start guide](https://dev.fingerprintjs.com) to create a new account. When you sign up you’ll be given a 30-day free trial of the pro version, which is the version used in this example. The pro version offers more detailed data analysis and protection than the open source version. 
-
-Click the **tokens** tab on the left and copy the token marked **browser**. Replace `your-browser-token` in the `index.html` file with the token you copied from FingerprintJS. Now we are ready to test. Start up a server and visit your new site. I’m using [http-server](https://www.npmjs.com/package/http-server) because it is quick to install and easy to use. 
+This will print the visitor ID to the console, but it won’t work until we give it a proper token. Head over to the [quick start guide](https://dev.fingerprintjs.com) to create a new account. When you sign up you’ll be given a 30-day free trial of the pro version, which is the version used in this example. The pro version offers more detailed data analysis and protection than the open source version. 
 
 Click the **tokens** tab on the left and copy the token marked **browser**. Replace `your-browser-token` in the `index.html` file with the token copied from FingerprintJS. Now you are ready to test. Start up a server and visit your new site. This demo uses [http-server](https://www.npmjs.com/package/http-server) because it installs quickly and is easy-to-use. 
 
-First visit the site in a normal Chrome browser instance with cookies enabled. FingerprintJS will attempt to create a cookie, but if the user has cookies turned off, it will use dozens of browser attributes to create a unique `visitorId`. In this case, it will identify your browser using a cookie.
-
-If you open up the Chrome developer console, you should see your unique visitor ID printed out. 
+First visit the site in a normal Chrome browser instance with cookies enabled. FingerprintJS will attempt to create a cookie, but if the user has cookies turned off, it will use dozens of browser attributes to create a unique `visitorId`. In this case, it will identify your browser using a cookie. If you open up the Chrome developer console, you should see your unique visitor ID printed out. 
 
 Back on the FingerprintJS dashboard, you should see a table of unique visitor IDs as well as more information about each user. The account has logged two unique visitors so far because of the previous tests on two different laptops.
 
