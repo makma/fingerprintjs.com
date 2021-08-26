@@ -43,9 +43,9 @@ Here are some data points that browser fingerprinting uses to create unique IDs:
 
 Despite its unique capabilities, browser fingerprinting is not without its workarounds. There are techniques that can prevent browser fingerprint signals from being gathered, making it difficult to gather enough information to uniquely identify a visitor. This can be accomplished by turning off certain browser features, using incognito mode or blocking third-party scripts.
 
-Privacy-conscious website visitors may want certainly have their reasons for wanting to prevent browser fingerprinting. Companies can use browser fingerprinting data to build unique user profiles without cookies or user sign-ins. While this data can be used for legitimate anti-fraud purposes, fingerprints can also be used for advertising and other marketing purposes.
+Privacy-conscious website visitors have their reasons for wanting to prevent browser fingerprinting. Companies can use browser fingerprinting data to build unique user profiles without cookies or user sign-ins, which can be used for advertising and marketing.
 
-Notwithstanding, developers have valid reasons for fingerprinting a visitor’s browser. Anonymous site users can easily become security risks, as they often are precursors to fraudulent payments and botnet attacks—common website threats that browser fingerprinting helps to mitigate. Fingerprinting also enables developers to understand a visitor’s environment for delivering the most compatible website version.
+On the other hand, developers have valid reasons for fingerprinting a visitor’s browser. Anonymous site users can easily become security risks, as they often are precursors to fraudulent payments and botnet attacks—common website threats that browser fingerprinting helps to mitigate. Fingerprinting also enables developers to understand a visitor’s environment for delivering the most compatible website version.
 
 In this article, we’ll look at some of the ways a website visitor can create a false fingerprint, then analyze FingerprintJS to see how it creates accurate fingerprints for verifying authorized users, even when methods to prevent fingerprinting are being used.
 
