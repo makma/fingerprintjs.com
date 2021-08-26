@@ -44,7 +44,7 @@ Despite its unique capabilities, browser fingerprinting is not without its flaws
 
 Privacy-conscious website visitors wouldn’t necessarily consider the above flaws, and their concerns are certainly valid: companies can use browser fingerprinting data to build unique user profiles without cookies or user sign-ins. This data can be in turn sold, harvested to trigger targeted ads, or  used to fix product prices based on the visitor’s location.
 
-Notwithstanding, developers have valid reasons for fingerprinting a visitor’s browser. Anonymous site users can easily become security risks, as they often are precursors to fraudulent payments and bot net attacks—threats that browser fingerprinting helps to mitigate. Fingerprinting also enables developers to understand a visitor’s environment for delivering the most compatible website version.
+Notwithstanding, developers have valid reasons for fingerprinting a visitor’s browser. Anonymous site users can easily become security risks, as they often are precursors to fraudulent payments and botnet attacks—common website threats that browser fingerprinting helps to mitigate. Fingerprinting also enables developers to understand a visitor’s environment for delivering the most compatible website version.
 
 In this article, we’ll look at some of the ways a website visitor can create a false fingerprint, then analyze FingerprintJS to see how it creates accurate fingerprints for verifying authorized users, even when spoofing is being used.
 
@@ -87,7 +87,7 @@ To get started, create an `index.html` file with the following code between the 
 ></script>
 ```
 
-This will print the visitor ID to the console, but it won’t work until we give it a proper token. Head over to the [quick start guide](https://dev.fingerprintjs.com) to create a new account. When you sign up you’ll be given a 30-day free trial of the pro version, which is the version used in this example. The pro version offers more detailed data analysis and protection than the open source version. 
+This will print the visitor ID to the console, but it won’t work until we give it a proper token. Head over to the [quick start guide](https://dev.fingerprintjs.com) to create a new account. When you [sign up](https://dashboard.fingerprintjs.com/signup) you’ll be given a 30-day free trial of the Pro version, which is the one used in this example. The Pro version offers more detailed data analysis and protection than the open source version. 
 
 Click the **tokens** tab on the left and copy the token marked **browser**. Replace `your-browser-token` in the `index.html` file with the token copied from FingerprintJS. Now you are ready to test. Start up a server and visit your new site. This demo uses [http-server](https://www.npmjs.com/package/http-server) because it installs quickly and is easy-to-use. 
 
@@ -99,9 +99,9 @@ Back on the FingerprintJS dashboard, you should see a table of unique visitor ID
 
 Try visiting the locally-hosted site again in incognito mode, keeping in mind that incognito windows in Chrome do not have access to cookies. Open the console and check for the printed visitor ID. You should see that FingerprintJS has detected that this is still the same user and has logged the same visitor ID in the console.
 
-Repeating this process with Firefox will yield different results. Because it is a different browser, FingerprintJS created a different visitor ID than the one it created in the original Chrome browser instance—though it did recognize the Firefox browser instance again with privacy and strict security mode enabled.
+Repeating this process with Firefox will yield different results. Because a different browser type was used, FingerprintJS created a different visitor ID than the one it created in the original Chrome browser instance, though it did recognize the Firefox browser instance again with privacy and strict security mode enabled.
 
-You can also verify that FingerprintJS works over a VPN connection. Using a cloud platform that provides app infrastructure for developers such as [Heroku](https://www.heroku.com/) (or any hosting provider), deploy the local test app and visit the site over a VPN connection. Be sure to test both Firefox and Chrome in regular and incognito modes. You should observe that the visitor ID is the same as when  tested locally without VPN.
+You can also verify that FingerprintJS works over a VPN connection. Using a cloud platform that provides app infrastructure for developers such as [Heroku](https://www.heroku.com/) (or any hosting provider), deploy the local test app and visit the site over a VPN connection. Be sure to test both Firefox and Chrome in regular and incognito modes. You should observe that the visitor ID is the same as when tested locally without VPN.
 
 A few considerations and caveats are worth keeping in mind. Because FingerprintJS visitor IDs are derived from a myriad of browser attributes—some universal, others vendor-specific—a website visitor using both Chrome and Firefox will most likely be assigned a separate, unique visitor IDs for each browser type. Results may also vary with other browsers; for example, the security-focused Brave browser seems to completely block the API calls necessary for creating a unique identifier.
 
