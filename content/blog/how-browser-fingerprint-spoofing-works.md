@@ -14,11 +14,8 @@ publishDate: 2021-08-26T08:04:00.000Z
 title: How Browser Fingerprint Spoofing Works
 tags:
   - fingerprinting
-  - account takeover
-  - bot attacks
   - payment fraud
-  - ecommerce fraud
-  - account sharing
+  - bot attacks
 authors:
   - Josh Alletto
 heroImage:
