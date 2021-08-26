@@ -1,7 +1,7 @@
 ---
 templateKey: long-form-content
 metadata:
-  title: How To Prevent Browser Fingerprinting Scripts From Accurate Identification
+  title: Can you Prevent Browser Fingerprinting?
   description: Browser fingerprinting is effective for identifying anonymous
     traffic, but it isn't foolproof. Learn more about the various methods
     visitors can use to prevent browser fingerprints from accurately identifying
@@ -12,7 +12,7 @@ metadata:
   imageTitle: Preventing Browser Fingerprinting
 featured: true
 publishDate: 2021-08-26T08:04:00.000Z
-title: How To Prevent Browser Fingerprinting Scripts From Accurate Identification
+title: Can you Prevent Browser Fingerprinting?
 tags:
   - fingerprinting
   - payment fraud
