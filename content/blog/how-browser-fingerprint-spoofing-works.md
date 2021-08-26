@@ -102,7 +102,7 @@ If you open up the Chrome developer console, you should see your unique visitor 
 
 Back on the FingerprintJS dashboard, you should see a table of unique visitor IDs as well as more information about each user. The account has logged two unique visitors so far because of the previous tests on two different laptops.
 
-![](/img/uploads/screenshot_fpjs_usage.png)
+![FingerprintJS Dashboard showing 2 unique visitors](/img/uploads/screenshot_fpjs_usage.png)
 
 Try visiting the locally-hosted site again in incognito mode, keeping in mind that incognito windows in Chrome do not have access to cookies. Open the console and check for the printed visitor ID. You should see that FingerprintJS has detected that this is still the same user and has logged the same visitor ID in the console.
 
