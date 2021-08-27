@@ -26,11 +26,10 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 ---
-Browser fingerprinting is a method of identifying and tracking website visitors that doesn’t rely on cookies or login sessions. Instead, visitors are identified by a myriad of browser parameters, from IP address and browser version to screen dimensions and installed fonts. Each parameter is of limited utility on its own, but when combined with others can be used to create a unique identifier for each website visitor.
+Browser fingerprinting is a method of identifying and tracking website visitors that doesn’t rely on cookies or login sessions. Instead, visitors are identified by a myriad of browser parameters, from browser version to screen dimensions and installed fonts. Each parameter is of limited utility on its own, but when combined with others can be used to create a unique identifier for each website visitor.
 
 Here are some data points that browser fingerprinting uses to create unique IDs: 
 
-* IP address
 * Browser type and version
 * Language
 * Time zone
