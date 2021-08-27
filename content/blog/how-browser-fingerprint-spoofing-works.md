@@ -65,7 +65,7 @@ There are a few ways to mitigate browser fingerprinting techniques, but even the
 
 Another possible way to reduce the signals available is to turn off functionality/capabilities altogether like HTML canvas or audio content that are commonly used for browser fingerprinting. However, many sites won’t load correctly without these technologies, and the online experience can suffer.
 
-Finally, some browsers like [Brave](https://brave.com/) use 'farbling', or randomness to signal outputs so a visitor's fingerprint is generated using constantly changing inputs. Even this research-backed method has drawbacks for particularly sophisticated fingerprinting methods, as the [farbling can be reverted](https://fingerprintjs.com/blog/audio-fingerprinting/) and using fuzzy matching, fingerprints can be correctly associated despite small differences.
+Finally, some browsers like [Brave](https://brave.com/) use a method of spoofing called 'farbling'. Farbling introduces randomness to signal outputs so a visitor's fingerprint is generated using constantly changing inputs. Even this research-backed method has drawbacks for particularly sophisticated fingerprinting methods, as the [farbling can be reverted](https://fingerprintjs.com/blog/audio-fingerprinting/) and using fuzzy matching, fingerprints can be correctly associated despite small differences.
 
 ## Creating a Fingerprint
 
