@@ -92,7 +92,7 @@ This will print the visitorID to the console, but it won’t work until we give 
 
 Click the **tokens** tab on the left and copy the token marked **browser**. Replace `your-browser-token` in the `index.html` file with the token copied from FingerprintJS. Now you are ready to test. Start up a server and visit your new site. This demo uses [http-server](https://www.npmjs.com/package/http-server) because it installs quickly and is easy-to-use. 
 
-First visit the site in a normal Chrome browser instance with cookies enabled. FingerprintJS will attempt to create a cookie, but if the user has cookies turned off, it will use dozens of browser attributes to create a unique `visitorId`. In this case, it will identify your browser using a cookie. If you open up the Chrome developer console, you should see your unique visitorID printed out. 
+First visit the site in a normal Chrome browser instance with cookies enabled. FingerprintJS will attempt to create a cookie, but if the user has cookies turned off, it will use dozens of browser attributes to create a unique `visitorId`. If you open up the Chrome developer console, you should see your unique visitorID printed out. 
 
 Back on the FingerprintJS dashboard, you should see a table of unique visitorIDs as well as more information about each user. The account has logged two unique visitors so far because of the previous tests on two different laptops.
 
