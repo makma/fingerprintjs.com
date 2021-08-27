@@ -10,7 +10,7 @@ metadata:
   image: /img/uploads/fingerprint-spoofing.png
   imageAlt: Preventing Browser Fingerprinting
   imageTitle: Preventing Browser Fingerprinting
-featured: true
+featured: false
 publishDate: 2021-08-26T08:04:00.000Z
 title: Can you Prevent Browser Fingerprinting?
 tags:
