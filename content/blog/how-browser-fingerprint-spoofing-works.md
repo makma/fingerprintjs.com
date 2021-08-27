@@ -40,8 +40,6 @@ Here are some data points that browser fingerprinting uses to create unique IDs:
 * Keyboard type (e.g., QWERTY, Dvorak, etc.)
 * Hardware type
 
-Despite its unique capabilities, browser fingerprinting is not without its workarounds. There are techniques that can prevent browser fingerprint signals from being collected, making it difficult to gather enough information to uniquely identify a visitor. This can be accomplished by turning off certain browser features, using incognito mode or blocking third-party scripts.
-
 Privacy-conscious website visitors have their reasons for wanting to prevent browser fingerprinting. Companies can use browser fingerprinting data to build unique user profiles without cookies or user sign-ins, which can be used for advertising and marketing.
 
 On the other hand, developers have valid reasons for fingerprinting a visitor’s browser. Fingerprinting and other anonymous user identification methods are useful for identifying patterns of fraudulent activity, as the lion's share of fraud is committed by a small number of returning visitors. Fingerprinting also makes it possible to save browsing preferences and deliver better recommendations with requiring a returning visitor to log in.
@@ -55,8 +53,6 @@ Preventing browser fingerprinting can be difficult for web users to do without h
 * **Cookies:** Browser fingerprinting does not inherently rely on cookies to generate a unique identifier. So while turning them off can offer some degree of user privacy, it doesn’t impact fingerprinting capabilities.
 * **Incognito mode:** This method of is equally ineffective for preventing browser fingerprinting, as a myriad of unique data points besides browsing history can be used for identifying visitors.
 * **VPN**: VPNs are effective for hiding a visitor’s browsing history from the ISP, or hiding a visitor's real IP address and geolocation from a site. It is not very effective for preventing fingerprinting however, as many browser fingerprinting scripts (FingerprintJS included) don't use IP address as a core signal as it is too unstable. If IP address is included, the fingerprinter can use fuzzy matching so that a change in IP address while all other signals remains constant would not result in a new fingerprint. 
-
-  For this reason, users determined to hide their fingerprint will often try several of the above techniques. 
 
 ## What Works (Sometimes) to Prevent Browser Fingerprinting
 
