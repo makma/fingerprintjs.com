@@ -2,6 +2,8 @@ import React from 'react'
 import Section from '../../../common/Section'
 import Container from '../../../common/Container'
 import Skeleton from '../../../Skeleton/Skeleton'
+import classNames from 'classnames'
+
 import { DOC_URL } from '../../../../constants/content'
 
 import { CurrentVisitProps } from '../../../../types/currentVisitProps'
@@ -36,7 +38,7 @@ export default function VisitorSection({ currentVisit, visitorId }: CurrentVisit
     </>
   )
 
-  return <Content card={loadedCard} />
+  return <Content card={loadedCard} incognito={currentVisit?.incognito} />
 }
 
 export function VisitorSectionLoading() {
@@ -44,7 +46,7 @@ export function VisitorSectionLoading() {
     <>
       <div className={styles.id}>
         <label className={styles.label}>your ID</label>
-        <Skeleton width={475} height={54} />
+        <Skeleton className={styles.idSkeleton} />
       </div>
       <div className={styles.info}>
         <ul className={styles.infoList}>
@@ -70,8 +72,9 @@ export function VisitorSectionLoading() {
 
 interface ContentProps {
   card: React.ReactNode
+  incognito?: boolean
 }
-function Content({ card }: ContentProps) {
+function Content({ card, incognito }: ContentProps) {
   return (
     <Section className={styles.root}>
       <Container className={styles.container}>
@@ -86,9 +89,11 @@ function Content({ card }: ContentProps) {
           </a>
         </section>
         <section className={styles.idSection}>
-          <div className={styles.card}>{card}</div>
+          <div className={classNames(styles.card, { [styles.incognito]: incognito })}>{card}</div>
           <footer className={styles.footer}>
-            Try revisiting on VPN or incognito mode. Your visitorID will remain the same
+            {incognito
+              ? 'You are in private browsing. Your visitorID remain the same'
+              : 'Try revisiting on VPN or incognito mode. Your visitorID will remain the same'}
           </footer>
         </section>
       </Container>
