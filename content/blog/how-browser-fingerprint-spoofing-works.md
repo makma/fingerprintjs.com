@@ -49,25 +49,29 @@ On the other hand, developers have valid reasons for fingerprinting a visitor’
 
 In this article, we’ll look at some of the ways a website visitor can prevent fingerprinting scripts from accurately identifying their browser, then we will analyze FingerprintJS to see how it creates accurate fingerprints for verifying authorized users, even when methods to prevent fingerprinting are being used.
 
-## How to Prevent Accurate Browser Fingerprinting
+## What Doesn't Work to Prevent Browser Fingerprinting
 
-Preventing browser fingerprinting can be difficult for web users to do without having a better understanding of the technology and how it works. Some of the standard techniques the average visitor may use to protect their identity are not effective against fingerprinting, such as clearing cookies or browsing in incognito mode:
+Preventing browser fingerprinting can be difficult for web users to do without having a better understanding of the technology and how it works. Some of the standard techniques the average visitor may use to protect their identity are not effective against fingerprinting, such as clearing cookies, browsing in incognito mode or using a VPN: 
 
 * **Cookies:** Browser fingerprinting does not inherently rely on cookies to generate a unique identifier. So while turning them off can offer some degree of user privacy, it doesn’t impact fingerprinting capabilities.
+* **Incognito mode:** This method of is equally ineffective for preventing browser fingerprinting, as a myriad of unique data points besides browsing history can be used for identifying visitors.
+* **VPN**: VPNs are effective for hiding a visitor’s browsing history from the ISP, or hiding a visitor's real IP address and geolocation from a site. It is not very effective for preventing fingerprinting however, as many browser fingerprinting scripts (FingerprintJS included) don't use IP address as a core signal as it is too unstable. If IP address is included, the fingerprinter can use fuzzy matching so that a change in IP address while all other signals remains constant would not result in a new fingerprint. 
 
-  **Incognito mode:** This method of is equally ineffective for preventing browser fingerprinting, as a myriad of unique data points besides browsing history can be used for identifying visitors.
+  For this reason, users determined to hide their fingerprint will often try several of the above techniques. 
 
-Some browsers offer browser fingerprinting mitigation strategies as an in-built feature; for example, [Firefox](https://support.mozilla.org/en-US/kb/firefox-protection-against-fingerprinting) gives users the option to block third-party requests to sites known to utilize fingerprinting. This provides added protection, but at the cost of a compromised user experience (e.g., suboptimal page quality, slow loading speeds). Since the only way to block browser fingerprinting is to turn off features/capabilities like HTML canvas or audio content, many sites won’t load correctly in Strict security mode.
+## What Works (Sometimes) to Prevent Browser Fingerprinting
 
-Similarly, up-and-coming browsers like [Brave](https://brave.com/) are built from the ground up with privacy in mind. Brave can be effective against fingerprinting, but again—at the price of a less-than-ideal user experience. Additionally, the browser is relatively new, so not many users are aware of it.
+There are a few ways to mitigate browser fingerprinting techniques, but even these are not foolproof. Some browsers offer browser fingerprinting mitigation strategies as an in-built feature; for example, [Firefox](https://support.mozilla.org/en-US/kb/firefox-protection-against-fingerprinting) gives users the option to block third-party requests to sites known to utilize fingerprinting. This provides added protection, but would not be able to catch first-party scripts.
 
-Another popular way to bolster privacy during internet use is to employ a VPN. VPNs are effective for hiding a visitor’s browsing history from the ISP, or hiding an IP address from a site, but again—browser fingerprinting uses so many data points that eliminating one or two is often ineffective for disabling it. For this reason, users determined to hide their fingerprint will often try several of the above techniques. 
+Another possible way to reduce the signals available is to turn off functionality/capabilities altogether like HTML canvas or audio content that are commonly used for browser fingerprinting. However, many sites won’t load correctly without these technologies, and the online experience can suffer.
+
+Finally, some browsers like [Brave](https://brave.com/) use 'farbling', or randomness to signal outputs so a visitor's fingerprint is generated using constantly changing inputs. Even this research-backed method has drawbacks for particularly sophisticated fingerprinting methods, as the [farbling can be reverted](https://fingerprintjs.com/blog/audio-fingerprinting/) and using fuzzy matching, fingerprints can be correctly associated despite small differences.
 
 ## Creating a Fingerprint
 
-We’ve seen the different ways a browser can be fingerprinted, as well as the various methods to block fingerprinting. If your site relies on fingerprinting to help prevent fraud or deliver optimized content to users, then it can be difficult to plan for every scenario. 
+We’ve seen the different ways a browser can be fingerprinted, as well as the various methods to prevent accurate fingerprinting. If your site relies on fingerprinting to help prevent fraud or deliver optimized content to users, then it can be difficult to plan for every scenario. 
 
-In these cases, FingerprintJS offers a superior method of fingerprinting that compiles browser signals to create a unique fingerprint for every website visitor. Built by a dedicated browser fingerprinting research team, the library is easy-to-install, [highly accurate](https://dev.fingerprintjs.com/docs/understanding-our-995-accuracy) and effective in stopping fraud and spam.
+In these cases, FingerprintJS Pro offers a superior method of anonymous user identification that analyzes browser fingerprinting signals, cookies, visit history, and geolocation data and uses machine learning to create a unique visitorID for every website visitor. Built by a dedicated browser fingerprinting research team, the library is easy-to-install, [highly accurate](https://dev.fingerprintjs.com/docs/understanding-our-995-accuracy) and effective in stopping fraud and spam.
 
 The following tutorial uses the CDN option, but the library can  also be installed by running `npm install @fingerprintjs/fingerprintjs-pro` and running `import FingerprintJS from '@fingerprintjs/fingerprintjs-pro'`. 
 
