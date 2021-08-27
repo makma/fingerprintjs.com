@@ -1,7 +1,7 @@
 ---
 templateKey: long-form-content
 metadata:
-  title: Can you Prevent Browser Fingerprinting?
+  title: Can You Prevent Browser Fingerprinting?
   description: Browser fingerprinting is effective for identifying anonymous
     traffic, but it isn't foolproof. Learn more about the various methods
     visitors can use to prevent browser fingerprints from accurately identifying
@@ -37,7 +37,6 @@ Here are some data points that browser fingerprinting uses to create unique IDs:
 * Device make and model 
 * Installed plugins
 * Screen dimensions
-* Keyboard type (e.g., QWERTY, Dvorak, etc.)
 * Hardware type
 
 Privacy-conscious website visitors have their reasons for wanting to prevent browser fingerprinting. Companies can use browser fingerprinting data to build unique user profiles without cookies or user sign-ins, which can be used for advertising and marketing.
@@ -89,7 +88,7 @@ To get started, create an `index.html` file with the following code between the 
 ></script>
 ```
 
-This will print the visitorID to the console, but it won’t work until we give it a proper token. Head over to the [quick start guide](https://dev.fingerprintjs.com) to create a new account. When you [sign up](https://dashboard.fingerprintjs.com/signup) you’ll be given a 30-day free trial of the Pro version, which is the one used in this example. The Pro version offers more detailed data analysis and protection than the open source version. 
+This will print the visitorID to the console, but it won’t work until we give it a proper token. You can [sign up](https://dashboard.fingerprintjs.com/signup) for a 10-day free trial of the Pro version, which is the one used in this example. The Pro version offers more detailed data analysis and protection than the open source version. 
 
 Click the **tokens** tab on the left and copy the token marked **browser**. Replace `your-browser-token` in the `index.html` file with the token copied from FingerprintJS. Now you are ready to test. Start up a server and visit your new site. This demo uses [http-server](https://www.npmjs.com/package/http-server) because it installs quickly and is easy-to-use. 
 
