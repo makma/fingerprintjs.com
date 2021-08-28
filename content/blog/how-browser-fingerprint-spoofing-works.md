@@ -41,7 +41,7 @@ Here are some data points that browser fingerprinting uses to create unique IDs:
 
 Privacy-conscious website visitors have their reasons for wanting to prevent browser fingerprinting. Companies can use browser fingerprinting data to build unique user profiles without cookies or user sign-ins, which can be used for advertising and marketing.
 
-On the other hand, developers have valid reasons for fingerprinting a visitor’s browser. Fingerprinting and other anonymous user identification methods are useful for identifying patterns of fraudulent activity, as the lion's share of fraud is committed by a small number of returning visitors. Fingerprinting also makes it possible to save browsing preferences and deliver better recommendations with requiring a returning visitor to log in.
+On the other hand, developers have valid reasons for fingerprinting a visitor’s browser. Fingerprinting and other anonymous user identification methods are useful for identifying patterns of fraudulent activity, as the lion's share of fraud is committed by a small number of returning visitors. Fingerprinting also makes it possible to save browsing preferences and deliver better recommendations without requiring a returning visitor to log in.
 
 In this article, we’ll look at some of the ways a website visitor can prevent fingerprinting scripts from accurately identifying their browser. Next, we will analyze FingerprintJS Pro to see how it creates accurate visitorIDs for each browser instance that visits a page, even when methods to prevent fingerprinting are being used.
 
