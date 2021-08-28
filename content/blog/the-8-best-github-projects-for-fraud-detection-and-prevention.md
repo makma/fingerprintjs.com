@@ -116,7 +116,7 @@ The purpose of MISP is simple: to create a safe environment where professionals 
 
 ### 6. [reCAPTCHA PHP client library(]https://github.com/google/recaptcha)
 
-You should always be looking for new ways to evolve your website’s security systems and prevent new types of attacks. This is what Google has been doing in the last years, creating reCAPTCHA, a free CAPTCHA service that protects websites from spam and abuse.
+You should always be looking for new ways to evolve your website’s security systems and prevent new types of attacks. This is what Google has been doing in the last years with reCAPTCHA, a free CAPTCHA service that protects websites from spam and abuse.
 
 In particular, with reCAPTCHA PHP, you have at your full disposal a PHP library wrapping up the server-side verification step required to process the answer from reCAPTCHA.
  
