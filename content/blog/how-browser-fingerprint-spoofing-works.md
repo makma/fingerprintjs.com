@@ -65,7 +65,7 @@ Finally, some browsers like [Brave](https://brave.com/) use a method of spoofing
 
 We’ve seen the different ways a browser can be fingerprinted, as well as the various methods to prevent accurate fingerprinting. If your site relies on fingerprinting to help prevent fraud or deliver optimized content to users, then it can be difficult to plan for every scenario. 
 
-In these cases, FingerprintJS Pro offers a superior method of anonymous user identification that analyzes browser fingerprinting signals, cookies, visit history, and geolocation data and uses machine learning to create a unique visitorID for every website visitor. Built by a dedicated browser fingerprinting research team, the library is easy-to-install, [highly accurate](https://dev.fingerprintjs.com/docs/understanding-our-995-accuracy) and effective in stopping fraud and spam.
+In these cases, FingerprintJS Pro offers a superior method of anonymous visitor identification that analyzes browser fingerprinting signals, cookies, visit history, and geolocation data and uses machine learning to create a unique visitorID for every website visitor. Built by a dedicated browser fingerprinting research team, the library is easy-to-install, [highly accurate](https://dev.fingerprintjs.com/docs/understanding-our-995-accuracy) and effective in stopping fraud and spam.
 
 The following tutorial uses the CDN option, but the library can  also be installed by running `npm install @fingerprintjs/fingerprintjs-pro` and running `import FingerprintJS from '@fingerprintjs/fingerprintjs-pro'`. 
 
@@ -94,16 +94,16 @@ Click the **tokens** tab on the left and copy the token marked **browser**. Repl
 
 First visit the site in a normal Chrome browser instance with cookies enabled. FingerprintJS will attempt to create a cookie, but if the user has cookies turned off, it will use dozens of browser attributes to create a unique `visitorId`. If you open up the Chrome developer console, you should see your unique visitorID printed out. 
 
-Back on the FingerprintJS dashboard, you should see a table of unique visitorIDs as well as more information about each user. The account has logged two unique visitors so far because of the previous tests on two different laptops.
+Back on the FingerprintJS dashboard, you should see a count of unique visitorIDs over the current billing period. The account has logged two unique visitors so far because of the previous tests on two different laptops.
 
 ![FingerprintJS Dashboard showing 2 unique visitors](/img/uploads/screenshot_fpjs_usage.png)
 
-Try visiting the locally-hosted site again in incognito mode, keeping in mind that incognito windows in Chrome do not have access to cookies. Open the console and check for the printed visitorID. You should see that FingerprintJS has detected that this is still the same user and has logged the same visitorID in the console.
+Try visiting the locally-hosted site again in incognito mode. Open the console and check for the printed visitorID. You should see that FingerprintJS has detected that this is still the same browser instance and has logged the same visitorID in the console.
 
 Repeating this process with Firefox will yield different results. Because a different browser type was used, FingerprintJS created a different visitorID than the one it created in the original Chrome browser instance, though it did recognize the Firefox browser instance again with privacy and strict security mode enabled.
 
 You can also verify that FingerprintJS works over a VPN connection. Using a cloud platform that provides app infrastructure for developers such as [Heroku](https://www.heroku.com/) (or any hosting provider), deploy the local test app and visit the site over a VPN connection. Be sure to test both Firefox and Chrome in regular and incognito modes. You should observe that the visitorID is the same as when tested locally without VPN.
 
-A few considerations and caveats are worth keeping in mind. Because FingerprintJS visitorIDs are derived from many browser attributes—some universal, others vendor-specific—a website visitor using both Chrome and Firefox will most likely be assigned a separate, unique visitorIDs for each browser type. Results may also vary with other browsers; for example, the security-focused Brave browser seems to completely block the API calls necessary for creating a unique identifier.
+A few considerations and caveats are worth keeping in mind. Because FingerprintJS visitorIDs are derived from many browser attributes—some universal, others vendor-specific—a website visitor using both Chrome and Firefox will most likely be assigned a separate, unique visitorIDs for each browser type. 
 
-Despite eliciting mixed opinions from website users, browser fingerprinting can be an invaluable resource for developers looking to mitigate fraud, spam, and account takeovers. As demonstrated in the previous example, [FingerprintJS](https://fingerprintjs.com) provides this capability with maximum accuracy and minimal fuss. Website operators looking to protect their paywalls, cryptocurrency trading activities, e-commerce transactions, and more can test drive browser fingerprinting immediately with a [free trial](https://dashboard.fingerprintjs.com/signup).
+Browser fingerprinting can be an invaluable resource for developers looking to mitigate fraud, spam, and account takeovers. As demonstrated in the previous example, [FingerprintJS](https://fingerprintjs.com) provides this capability with maximum accuracy and minimal fuss. Website operators looking to reduce fraud can test drive browser fingerprinting immediately with a [free trial](https://dashboard.fingerprintjs.com/signup).
