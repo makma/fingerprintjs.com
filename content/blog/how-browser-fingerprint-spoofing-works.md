@@ -100,7 +100,7 @@ Back on the FingerprintJS dashboard, you should see a count of unique visitorIDs
 
 Try visiting the locally-hosted site again in incognito mode. Open the console and check for the printed visitorID. You should see that FingerprintJS has detected that this is still the same browser instance and has logged the same visitorID in the console.
 
-Repeating this process with Firefox will yield different results. Because a different browser was used, FingerprintJS will generate a different visitorID than the one it created in the original Chrome browser instance. However, the Firefox visitorID should remain the same when if you revisit the page with privacy and strict security mode enabled.
+Repeating this process with Firefox will yield different results. Because a different browser was used, FingerprintJS will generate a different visitorID than the one it created in the original Chrome browser instance. However, the Firefox visitorID should remain the same when you revisit the page with privacy and strict security mode enabled.
 
 You can also verify that FingerprintJS works over a VPN connection. Using a cloud platform that provides app infrastructure for developers such as [Heroku](https://www.heroku.com/) (or any hosting provider), deploy the local test app and visit the site over a VPN connection. Be sure to test both Firefox and Chrome in regular and incognito modes. You should observe that the visitorID is the same as when tested locally without VPN.
 
