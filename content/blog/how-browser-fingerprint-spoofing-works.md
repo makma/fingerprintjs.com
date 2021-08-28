@@ -43,14 +43,14 @@ Privacy-conscious website visitors have their reasons for wanting to prevent bro
 
 On the other hand, developers have valid reasons for fingerprinting a visitor’s browser. Fingerprinting and other anonymous user identification methods are useful for identifying patterns of fraudulent activity, as the lion's share of fraud is committed by a small number of returning visitors. Fingerprinting also makes it possible to save browsing preferences and deliver better recommendations with requiring a returning visitor to log in.
 
-In this article, we’ll look at some of the ways a website visitor can prevent fingerprinting scripts from accurately identifying their browser, then we will analyze FingerprintJS to see how it creates accurate fingerprints for verifying authorized users, even when methods to prevent fingerprinting are being used.
+In this article, we’ll look at some of the ways a website visitor can prevent fingerprinting scripts from accurately identifying their browser. Next, we will analyze FingerprintJS Pro to see how it creates accurate visitorIDs for each browser instance that visits a page, even when methods to prevent fingerprinting are being used.
 
 ## What Doesn't Work to Prevent Browser Fingerprinting
 
 Preventing browser fingerprinting can be difficult for web users to do without having a better understanding of the technology and how it works. Some of the standard techniques the average visitor may use to protect their identity are not effective against fingerprinting, such as clearing cookies, browsing in incognito mode or using a VPN: 
 
 * **Cookies:** Browser fingerprinting does not inherently rely on cookies to generate a unique identifier. So while turning them off can offer some degree of user privacy, it doesn’t impact fingerprinting capabilities.
-* **Incognito mode:** This method of is equally ineffective for preventing browser fingerprinting, as a myriad of unique data points besides browsing history can be used for identifying visitors.
+* **Incognito mode:** This method of is equally ineffective for preventing browser fingerprinting, as browser fingerprinting does not rely on cookies to work. Additionally, browser fingerprinting functions collect many browser signals besides browsing history can be used for identifying visitors.
 * **VPN**: VPNs are effective for hiding a visitor’s browsing history from the ISP, or hiding a visitor's real IP address and geolocation from a site. It is not very effective for preventing fingerprinting however, as many browser fingerprinting scripts (FingerprintJS included) don't use IP address as a core signal as it is too unstable. If IP address is included, the fingerprinter can use fuzzy matching so that a change in IP address while all other signals remains constant would not result in a new fingerprint. 
 
 ## What Works (Sometimes) to Prevent Browser Fingerprinting
