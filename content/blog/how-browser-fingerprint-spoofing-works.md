@@ -88,7 +88,7 @@ To get started, create an `index.html` file with the following code between the 
 ></script>
 ```
 
-This will print the visitorID to the console, but it won’t work until we give it a proper token. You can [sign up](https://dashboard.fingerprintjs.com/signup) for a 10-day free trial of FingerprintJS Pro to get a unique token for your website.
+This will print the visitorID to the console, but it won’t work until we give it a proper token. You can [sign up](https://dashboard.fingerprintjs.com/signup) for a  free trial of FingerprintJS Pro to get a unique token for your website.
 
 Click the **tokens** tab on the left and copy the token marked **browser**. Replace `your-browser-token` in the `index.html` file with the token copied from FingerprintJS. Now you are ready to test. Start up a server and visit your new site. This demo uses [http-server](https://www.npmjs.com/package/http-server) because it installs quickly and is easy-to-use. 
 
