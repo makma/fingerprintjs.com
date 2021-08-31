@@ -4,7 +4,7 @@ import Footer from '../Footer'
 import Header from '../Header'
 
 import useSiteMetadata from '../../hooks/useSiteMetadata'
-import { FPJS_ENDPOINT, GTM_TOKEN } from '../../constants/env'
+import { FPJS_ENDPOINT, FPJS_VISITORS_ENDPOINT, GTM_TOKEN, TLS_ENDPOINT } from '../../constants/env'
 import { withTrailingSlash } from '../../helpers/url'
 import { BASE_URL } from '../../constants/content'
 import { defaultDataLayer } from '../../constants/content'
@@ -37,7 +37,6 @@ interface LayoutTemplateProps extends LayoutProps {
 // We need this to not use static GraphQL queries in order use it in CMS preview (it runs it in browser directly)
 export function LayoutTemplate({ children, siteMetadata, headerBarTitle, headerBarLinkUrl }: LayoutTemplateProps) {
   const { title, description, siteUrl, image } = siteMetadata
-  const fpjsEndpoint = FPJS_ENDPOINT
   const gtmToken = GTM_TOKEN
   const { visitorData } = useVisitorData()
   const shouldEnableAnalytics = visitorData && visitorData.ipLocation.continent?.code?.toUpperCase() !== 'EU'
@@ -81,7 +80,9 @@ export function LayoutTemplate({ children, siteMetadata, headerBarTitle, headerB
           href='https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'
           rel='stylesheet'
         />
-        <link rel='preconnect' href={fpjsEndpoint} />
+        <link rel='preconnect' href={FPJS_ENDPOINT} />
+        <link rel='preconnect' href={TLS_ENDPOINT} />
+        <link rel='preconnect' href={FPJS_VISITORS_ENDPOINT} />
       </Helmet>
       <Header headerBarTitle={headerBarTitle} headerBarLinkUrl={headerBarLinkUrl} />
       {children}
