@@ -7,7 +7,7 @@
     padding: rem(50px) 0 rem(54px) 0;
   }
 
-  .container {
+  .headerContainer {
     text-align: center;
 
     @include media('<=phoneLandscape') {
@@ -41,5 +41,83 @@
         margin: 0 rem(20px) rem(40px) 0;
       }
     }
+  }
+
+  .algorithmContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 290px 1fr) 290px;
+    grid-template-rows: 20px 64px 64px 64px 64px 64px 64px 64px;
+    gap: 16px 0px;
+    grid-template-areas:
+      'browser-signals-title . visit-history-title . .'
+      'browser-signals . visit-history . .'
+      'browser-signals . visit-history . .'
+      'browser-signals . . . visitor-id-title'
+      'browser-signals . server . visitor-id'
+      'other-signals-title . . . .'
+      'other-signals . . . .'
+      'other-signals . . . .';
+  }
+  .browserSignalsTitle {
+    grid-area: browser-signals-title;
+  }
+  .browserSignals {
+    grid-area: browser-signals;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(16px);
+  }
+  .otherSignalsTitle {
+    grid-area: other-signals-title;
+  }
+  .otherSignals {
+    grid-area: other-signals;
+  }
+  .visitHistoryTitle {
+    grid-area: visit-history-title;
+  }
+  .visitHistory {
+    grid-area: visit-history;
+  }
+  .server {
+    grid-area: server;
+  }
+  .visitorId {
+    grid-area: visitor-id;
+  }
+  .visitorIdTitle {
+    grid-area: visitor-id-title;
+  }
+
+  .browserSignalsTitle,
+  .otherSignalsTitle,
+  .visitHistoryTitle,
+  .visitorIdTitle {
+    text-transform: uppercase;
+    @include sans($size: 14px, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+  }
+}
+
+.card {
+  display: grid;
+  grid-template-columns: rem(44px) 1fr;
+  column-gap: rem(12px);
+  padding: rem(10px);
+
+  border-radius: 16px;
+  background: #EDEDF3;
+
+  .icon {
+    width: rem(44px);
+    height: rem(44px);
+  }
+
+  .cardTitle {
+    display: flex;
+    align-items: center;
+
+    @include sans($size: 14px, $weight: 500, $lh: 140%);
+    text-transform: uppercase;
   }
 }
