@@ -1,0 +1,11 @@
+<svg width="72" height="72" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <path stroke-linejoin="bevel" stroke="#0D102B" fill="#0D102B"
+        d="M52.452 52.453L34.876 40.33a3.922 3.922 0 115.455-5.455l12.121 17.576z" />
+    <circle fill="#E3E3ED" r="2" cy="2" cx="36" />
+    <circle fill="#E3E3ED" transform="rotate(90 70 36)" r="2" cy="36" cx="70" />
+    <circle fill="#E3E3ED" transform="rotate(90 2 36)" r="2" cy="36" cx="2" />
+    <circle fill="#E3E3ED" transform="rotate(135 60.043 60.042)" r="2" cy="60.042" cx="60.043" />
+    <circle fill="#E3E3ED" transform="rotate(135 11.957 11.958)" r="2" cy="11.958" cx="11.957" />
+    <circle fill="#E3E3ED" transform="scale(1 -1) rotate(-45 -66.498 -44.455)" r="2" />
+    <circle fill="#E3E3ED" transform="scale(1 -1) rotate(-45 15.587 -78.458)" r="2" />
+</svg>
