@@ -17,7 +17,7 @@ tags:
 authors:
   - Savannah Copland
 heroImage:
-  image: /img/uploads/soc2.png
+  image: /img/uploads/soc2_1.png
   imageAlt: SOC 2 Compliance
   imageTitle: SOC 2 Compliance
 customCTA:
