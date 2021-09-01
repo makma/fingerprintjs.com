@@ -5,7 +5,7 @@ metadata:
   image: /img/uploads/psd.png
   description: Learn how to adhere to Europe's new standards for secure online
     payments without adding friction to the checkout process.
-  url: https://fingerprintjs.com/blog/reducing-cart-abandonment-psd2-compliance/
+  url: https://fingerprintjs.com/blog/reducing-cart-abandonment-rates-psd2/
   imageAlt: PSD2 Compliance
   imageTitle: PSD2 Compliance
 featured: true
