@@ -2,10 +2,11 @@ import React from 'react'
 import { LayoutTemplate } from '../../components/Layout'
 import BreadcrumbsSEO from '../../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../../helpers/types'
+import { URL } from '../../constants/content'
 
-import DemoSection from '../../components/demo/DemoSection'
-import InfoSection from '../../components/demo/InfoSection'
-import SignupSection from '../../components/demo/SignupSection'
+import HeroSection from '../../components/HeroWithCTA/HeroWithCTA'
+import DemoSection from '../../components/demo/DemoSection/DemoSection'
+
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
 
@@ -23,16 +24,12 @@ export default function DemoPage({ pageContext }: DemoPageProps) {
   }
 
   return (
-    <LayoutTemplate
-      siteMetadata={siteMetadata}
-      headerBarTitle='FingerprintJS Announces SOC 2 Compliance'
-      headerBarLinkUrl='https://fingerprintjs.com/blog/soc-2-type-1'
-    >
+    <LayoutTemplate siteMetadata={siteMetadata}>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
-
+      <HeroSection title='FingerprintJS Pro' ctaText='Start Free Trial' ctaHref={URL.dashboardLoginUrl}>
+        Identify anonymous site visitors with 99.5% accuracy to prevent online fraud
+      </HeroSection>
       <DemoSection />
-      <InfoSection />
-      <SignupSection />
     </LayoutTemplate>
   )
 }
