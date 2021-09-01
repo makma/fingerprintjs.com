@@ -45,9 +45,13 @@ export default function DemoSection() {
     }
   }, [visitorId, rollbar])
 
-  return isLoading ? (
-    <VisitorSectionLoading />
-  ) : (
-    visitorId && <VisitorSection visitorId={visitorId} visits={visits} currentVisit={currentVisit} />
+  return (
+    <>
+      {isLoading ? (
+        <VisitorSectionLoading />
+      ) : (
+        visitorId && <VisitorSection visitorId={visitorId} visits={visits} currentVisit={currentVisit} />
+      )}
+    </>
   )
 }

@@ -90,11 +90,6 @@ function Content({ card, incognito }: ContentProps) {
         </section>
         <section className={styles.idSection}>
           <div className={classNames(styles.card, { [styles.incognito]: incognito })}>{card}</div>
-          <footer className={styles.footer}>
-            {incognito
-              ? 'You are in private browsing. Your visitorID remain the same'
-              : 'Try revisiting on VPN or incognito mode. Your visitorID will remain the same'}
-          </footer>
         </section>
       </Container>
     </Section>

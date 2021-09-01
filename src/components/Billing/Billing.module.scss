@@ -1,7 +1,7 @@
 .section {
   background-image: url('../../img/billing-background.svg');
   background-repeat: no-repeat;
-  background-position: 110% 200%;
+  background-position: 110% 100%;
 
   @include media('<=desktop') {
     background-position: 120% 80%;

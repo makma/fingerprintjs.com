@@ -141,15 +141,6 @@
   }
 }
 
-.footer {
-  font-family: v(ff-sans);
-  font-size: rem(14px);
-  color: adjust-color(c('brand-water'), $alpha: -0.3);
-  line-height: 150%;
-
-  padding-top: rem(16px);
-}
-
 .idSkeleton {
   width: rem(424px);
   height: rem(54px);
