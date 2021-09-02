@@ -50,10 +50,10 @@
     gap: 16px 0px;
     grid-template-areas:
       'browser-signals-title . visit-history-title . .'
-      'browser-signals . visit-history . .'
-      'browser-signals . visit-history . .'
-      'browser-signals . . . visitor-id-title'
-      'browser-signals . server . visitor-id'
+      'browser-signals browser-rows visit-history . .'
+      'browser-signals browser-rows visit-history . .'
+      'browser-signals browser-rows . . visitor-id-title'
+      'browser-signals browser-rows server . visitor-id'
       'other-signals-title . . . .'
       'other-signals . . . .'
       'other-signals . . . .';
@@ -84,6 +84,14 @@
   }
   .visitorIdTitle {
     grid-area: visitor-id-title;
+  }
+
+  .browserRows {
+    grid-area: browser-rows;
+
+    .browserRowsSVG {
+      margin: rem(32px) rem(7px) 0 rem(7px);
+    }
   }
 
   .browserSignalsTitle,
@@ -130,6 +138,10 @@
   &.outline {
     background: none;
     border: 1px solid #c3c3d7;
+  }
+
+  &.visitCard {
+    background: #fde4db;
   }
 }
 

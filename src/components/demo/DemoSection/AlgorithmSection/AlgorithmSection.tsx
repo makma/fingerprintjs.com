@@ -11,6 +11,8 @@ import { ReactComponent as TLSSVG } from './TLSSVG.svg'
 import { ReactComponent as PointerSVG } from './PointerSVG.svg'
 import { ReactComponent as IncognitoSVG } from './IncognitoSVG.svg'
 import { ReactComponent as PointSVG } from './PointSVG.svg'
+import { ReactComponent as VisitorSVG } from './VisitorSVG.svg'
+import { ReactComponent as RowsBrowserSVG } from './RowsBrowserSVG.svg'
 
 import styles from './AlgorithmSection.module.scss'
 
@@ -34,6 +36,9 @@ export default function AlgorithmSection() {
           <Card icon={<WindowSVG />} title='resolution 1440×900' />
           <Card icon={<MobileSVG />} title='mac OS' />
         </section>
+        <section className={styles.browserRows}>
+          <RowsBrowserSVG className={styles.browserRowsSVG} />
+        </section>
         <section className={styles.otherSignalsTitle}>Other identifiers</section>
         <section className={styles.otherSignals}>
           <Card variant='outline' icon={<TLSSVG />} title='TLS' />
@@ -52,7 +57,9 @@ export default function AlgorithmSection() {
             <p className={styles.serverTitle}>Server</p>
           </div>
         </section>
-        <section className={styles.visitorId}></section>
+        <section className={styles.visitorId}>
+          <Card variant='visitor' icon={<VisitorSVG />} title='QyDG8Zmc3tIKmfzHg00e' />
+        </section>
         <section className={styles.visitorIdTitle}>Your visitor Id</section>
       </Container>
     </Section>
@@ -66,7 +73,13 @@ interface CardProps {
 }
 function Card({ icon, title, variant }: CardProps) {
   return (
-    <div className={classNames(styles.card, { [styles.outline]: variant === 'outline' })}>
+    <div
+      className={classNames(
+        styles.card,
+        { [styles.outline]: variant === 'outline' },
+        { [styles.visitCard]: variant === 'visitor' }
+      )}
+    >
       <span className={styles.icon}>{icon}</span>
       <h3 className={styles.cardTitle}>{title}</h3>
     </div>
