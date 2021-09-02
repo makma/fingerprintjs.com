@@ -30,7 +30,7 @@ customCTA:
 ---
 FingerprintJS is committed to keeping our customer and company data safe to the highest possible standards.
 
-That’s why today we are excited to share that we received our SOC 2 Type 1 report, which validates our commitment to best-in-class data security and privacy.
+That’s why today we are excited to share that we received our SOC 2 Type 1 report for our company and our Pro offering, which validates our commitment to best-in-class data security and privacy.
 
 For companies that require SOC 2 compliance or simply value the added assurance from their technology partners, there has never been a better time to start working with us.
 
