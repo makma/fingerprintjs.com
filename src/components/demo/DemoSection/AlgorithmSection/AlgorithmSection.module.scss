@@ -46,17 +46,16 @@
   .algorithmContainer {
     display: grid;
     grid-template-columns: repeat(2, 290px 1fr) 290px;
-    grid-template-rows: 20px 64px 64px 64px 64px 64px 64px 64px;
-    gap: 16px 0px;
+    grid-template-rows: 20px 80px 80px 80px 80px 58px 80px 80px;
     grid-template-areas:
       'browser-signals-title . visit-history-title . .'
       'browser-signals browser-rows visit-history . .'
       'browser-signals browser-rows visit-history . .'
-      'browser-signals browser-rows . . visitor-id-title'
-      'browser-signals browser-rows server . visitor-id'
-      'other-signals-title . . . .'
-      'other-signals . . . .'
-      'other-signals . . . .';
+      'browser-signals browser-rows visit-history . visitor-id-title'
+      'browser-signals browser-rows server visitor-rows visitor-id'
+      'other-signals-title other-rows other-rows . .'
+      'other-signals other-rows other-rows . .'
+      'other-signals other-rows other-rows . .';
   }
   .browserSignalsTitle {
     grid-area: browser-signals-title;
@@ -75,6 +74,11 @@
   }
   .visitHistory {
     grid-area: visit-history;
+
+    background-image: url('./RowServerSVG.svg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: auto 112px;
   }
   .server {
     grid-area: server;
@@ -88,9 +92,46 @@
 
   .browserRows {
     grid-area: browser-rows;
+    width: 188px;
 
     .browserRowsSVG {
-      margin: rem(32px) rem(7px) 0 rem(7px);
+      width: 100%;
+      height: 100%;
+      background-image: url('./RowsBrowserSVG.svg');
+      background-repeat: no-repeat;
+      background-size: 176px;
+
+      margin: rem(40px) rem(7px) 0 rem(7px);
+    }
+  }
+
+  .otherRows {
+    grid-area: other-rows;
+    width: 338px;
+
+    .otherRowsSVG {
+      width: 100%;
+      height: 100%;
+
+      background-image: url('./RowsOtherSVG.svg');
+      background-repeat: no-repeat;
+      background-size: 331px;
+      background-position: right top;
+    }
+  }
+
+  .visitorRow {
+    grid-area: visitor-rows;
+    width: 172px;
+
+    .visitorRowSVG {
+      width: 100%;
+      height: 100%;
+      background-image: url('./RowVisitorSVG.svg');
+      background-repeat: no-repeat;
+
+      background-size: 162px;
+      background-position: center center;
     }
   }
 
@@ -100,6 +141,7 @@
   .visitorIdTitle {
     display: flex;
     align-items: flex-end;
+    margin-bottom: rem(16px);
 
     text-transform: uppercase;
     @include sans($size: 14px, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
@@ -107,9 +149,11 @@
 }
 
 .browserSignals,
-.otherSignals {
+.otherSignals,
+.visitorId {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   row-gap: rem(16px);
 }
 
@@ -181,11 +225,12 @@
 }
 
 .serverSection {
+  margin-top: rem(8px);
   background: #0d102b;
   border-radius: rem(16px);
 
   width: 100%;
-  height: 100%;
+  height: rem(64px);
 
   .serverTitle {
     display: flex;

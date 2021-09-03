@@ -12,7 +12,6 @@ import { ReactComponent as PointerSVG } from './PointerSVG.svg'
 import { ReactComponent as IncognitoSVG } from './IncognitoSVG.svg'
 import { ReactComponent as PointSVG } from './PointSVG.svg'
 import { ReactComponent as VisitorSVG } from './VisitorSVG.svg'
-import { ReactComponent as RowsBrowserSVG } from './RowsBrowserSVG.svg'
 
 import styles from './AlgorithmSection.module.scss'
 
@@ -37,12 +36,15 @@ export default function AlgorithmSection() {
           <Card icon={<MobileSVG />} title='mac OS' />
         </section>
         <section className={styles.browserRows}>
-          <RowsBrowserSVG className={styles.browserRowsSVG} />
+          <div className={styles.browserRowsSVG} />
         </section>
         <section className={styles.otherSignalsTitle}>Other identifiers</section>
         <section className={styles.otherSignals}>
           <Card variant='outline' icon={<TLSSVG />} title='TLS' />
           <Card variant='outline' icon={<PointerSVG />} title='Cookies' />
+        </section>
+        <section className={styles.otherRows}>
+          <div className={styles.otherRowsSVG} />
         </section>
         <section className={styles.visitHistoryTitle}>visit History</section>
         <section className={styles.visitHistory}>
@@ -56,6 +58,9 @@ export default function AlgorithmSection() {
           <div className={styles.serverSection}>
             <p className={styles.serverTitle}>Server</p>
           </div>
+        </section>
+        <section className={styles.visitorRow}>
+          <div className={styles.visitorRowSVG} />
         </section>
         <section className={styles.visitorId}>
           <Card variant='visitor' icon={<VisitorSVG />} title='QyDG8Zmc3tIKmfzHg00e' />
