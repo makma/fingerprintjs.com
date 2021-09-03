@@ -14,8 +14,10 @@ import { ReactComponent as PointSVG } from './PointSVG.svg'
 import { ReactComponent as VisitorSVG } from './VisitorSVG.svg'
 
 import styles from './AlgorithmSection.module.scss'
+import { CurrentVisitProps } from '../../../../types/currentVisitProps'
 
-export default function AlgorithmSection() {
+export default function AlgorithmSection({ currentVisit, visitorId }: CurrentVisitProps) {
+  console.log(currentVisit)
   return (
     <Section className={styles.root}>
       <Container size='small' className={styles.headerContainer}>
@@ -33,7 +35,7 @@ export default function AlgorithmSection() {
           <Card icon={<AdBlockSVG />} title='ad block on' />
           <Card icon={<PlanetSVG />} title='USA, New York GMT 04:00' />
           <Card icon={<WindowSVG />} title='resolution 1440×900' />
-          <Card icon={<MobileSVG />} title='mac OS' />
+          <Card icon={<MobileSVG />} title={currentVisit?.browserDetails?.os} />
         </section>
         <section className={styles.browserRows}>
           <div className={styles.browserRowsSVG} />
@@ -62,10 +64,10 @@ export default function AlgorithmSection() {
         <section className={styles.visitorRow}>
           <div className={styles.visitorRowSVG} />
         </section>
-        <section className={styles.visitorId}>
-          <Card variant='visitor' icon={<VisitorSVG />} title='QyDG8Zmc3tIKmfzHg00e' />
-        </section>
         <section className={styles.visitorIdTitle}>Your visitor Id</section>
+        <section className={styles.visitorId}>
+          <Card variant='visitor' icon={<VisitorSVG />} title={visitorId} />
+        </section>
       </Container>
     </Section>
   )
@@ -73,7 +75,7 @@ export default function AlgorithmSection() {
 
 interface CardProps {
   icon: React.ReactNode
-  title: string
+  title?: string
   variant?: 'outline' | 'visitor'
 }
 function Card({ icon, title, variant }: CardProps) {

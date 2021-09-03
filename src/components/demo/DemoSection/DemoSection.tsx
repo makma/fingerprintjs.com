@@ -54,7 +54,7 @@ export default function DemoSection() {
         visitorId && (
           <>
             <VisitorSection visitorId={visitorId} visits={visits} currentVisit={currentVisit} />
-            <AlgorithmSection />
+            <AlgorithmSection visitorId={visitorId} visits={visits} currentVisit={currentVisit} />
           </>
         )
       )}
