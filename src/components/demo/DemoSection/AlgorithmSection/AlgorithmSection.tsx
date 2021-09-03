@@ -2,6 +2,7 @@ import React from 'react'
 import Section from '../../../common/Section'
 import Container from '../../../common/Container'
 import classNames from 'classnames'
+import { getTimezoneOffset } from '../../../../helpers/date'
 
 import { ReactComponent as AdBlockSVG } from './AdBlockSVG.svg'
 import { ReactComponent as WindowSVG } from './WindowSVG.svg'
@@ -17,7 +18,10 @@ import styles from './AlgorithmSection.module.scss'
 import { CurrentVisitProps } from '../../../../types/currentVisitProps'
 
 export default function AlgorithmSection({ currentVisit, visitorId }: CurrentVisitProps) {
-  console.log(currentVisit)
+  const offset = getTimezoneOffset()
+  const documentHeight = document.documentElement.scrollHeight
+  const documentWidth = document.documentElement.scrollWidth
+
   return (
     <Section className={styles.root}>
       <Container size='small' className={styles.headerContainer}>
@@ -33,8 +37,11 @@ export default function AlgorithmSection({ currentVisit, visitorId }: CurrentVis
         <section className={styles.browserSignalsTitle}>Browser fingerprinting details</section>
         <section className={styles.browserSignals}>
           <Card icon={<AdBlockSVG />} title='ad block on' />
-          <Card icon={<PlanetSVG />} title='USA, New York GMT 04:00' />
-          <Card icon={<WindowSVG />} title='resolution 1440×900' />
+          <Card
+            icon={<PlanetSVG />}
+            title={`${currentVisit?.ipLocation?.country?.code}, ${currentVisit?.ipLocation?.city?.name} GTM ${offset}`}
+          />
+          <Card icon={<WindowSVG />} title={`resolution ${documentWidth}x${documentHeight}`} />
           <Card icon={<MobileSVG />} title={currentVisit?.browserDetails?.os} />
         </section>
         <section className={styles.browserRows}>
