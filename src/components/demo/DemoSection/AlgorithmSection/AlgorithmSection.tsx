@@ -19,8 +19,8 @@ import { CurrentVisitProps } from '../../../../types/currentVisitProps'
 
 export default function AlgorithmSection({ currentVisit, visitorId }: CurrentVisitProps) {
   const offset = getTimezoneOffset()
-  const documentHeight = document.documentElement.scrollHeight
-  const documentWidth = document.documentElement.scrollWidth
+  const documentHeight = document.documentElement.clientHeight
+  const documentWidth = document.documentElement.clientWidth
 
   return (
     <Section className={styles.root}>
