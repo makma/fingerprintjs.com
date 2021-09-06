@@ -173,6 +173,22 @@
           }
         }
       }
+      .soc2Logo {
+        padding-top: rem(64px);
+
+        svg {
+          width: rem(102px);
+          height: rem(102px);
+        }
+        @include media('<=phoneLandscape') {
+          padding-top: rem(32px);
+
+          svg {
+            width: rem(80px);
+            height: rem(80px);
+          }
+        }
+      }
     }
   }
 }

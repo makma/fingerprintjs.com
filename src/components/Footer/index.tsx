@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import GithubButton from '../GithubButton'
 import { ReactComponent as LinkedInSvg } from '../../img/linkedin.svg'
 import { ReactComponent as TwitterSvg } from '../../img/twitter.svg'
+import { ReactComponent as SOC2SVG } from '../../img/soc2.svg'
 import Container from '../common/Container'
 import styles from './Footer.module.scss'
 import { useCaseLinks } from '../../constants/content'
@@ -153,6 +154,9 @@ export default function Footer() {
                   </li>
                 </ul>
               </div>
+            </div>
+            <div className={styles.soc2Logo}>
+              <SOC2SVG />
             </div>
           </div>
         </nav>
