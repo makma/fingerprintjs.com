@@ -1,9 +1,11 @@
+$breakpoint: 1218px;
+
 .root {
   background-color: var(--off-white);
 
   padding: rem(64px) 0 rem(80px) 0;
 
-  @include media('<=phoneLandscape') {
+  @media screen and (max-width: $breakpoint) {
     padding: rem(50px) 0 rem(54px) 0;
   }
 
@@ -22,7 +24,7 @@
 
       margin-bottom: rem(16px);
 
-      @include media('<=phoneLandscape') {
+      @media screen and (max-width: $breakpoint) {
         font-size: rem(28px);
       }
     }
@@ -34,7 +36,7 @@
       margin: 0 rem(40px) rem(40px) rem(40px);
       line-height: 150%;
 
-      @include media('<=phoneLandscape') {
+      @media screen and (max-width: $breakpoint) {
         font-size: rem(16px);
         letter-spacing: normal;
 
@@ -56,6 +58,44 @@
       'other-signals-title other-rows other-rows . .'
       'other-signals other-rows other-rows . .'
       'other-signals other-rows other-rows . .';
+
+    .mobileRows {
+      display: none;
+    }
+
+    @media screen and (max-width: $breakpoint) {
+      padding: 0 rem(20px);
+
+      grid-template-columns: 290px 30px;
+      grid-template-rows: 20px 60px 60px 60px 60px 50px 60px 60px 50px 70px 60px 60px 60px 20px 60px;
+      grid-template-areas:
+        'browser-signals-title .'
+        'browser-signals mobile-rows'
+        'browser-signals mobile-rows'
+        'browser-signals mobile-rows'
+        'browser-signals mobile-rows'
+        'other-signals-title mobile-rows'
+        'other-signals mobile-rows'
+        'other-signals mobile-rows'
+        'visit-history-title mobile-rows'
+        'visit-history mobile-rows'
+        'visit-history mobile-rows'
+        'server mobile-rows'
+        'visitor-mobile-row visitor-mobile-row'
+        'visitor-id-title .'
+        'visitor-id .';
+
+      justify-content: center;
+
+      .browserRows,
+      .otherRows,
+      .visitorRow {
+        display: none;
+      }
+      .mobileRows {
+        display: block;
+      }
+    }
   }
   .browserSignalsTitle {
     grid-area: browser-signals-title;
@@ -75,10 +115,14 @@
   .visitHistory {
     grid-area: visit-history;
 
-    background-image: url('./RowServerSVG.svg');
+    background-image: url('./img/RowServerSVG.svg');
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: auto 112px;
+
+    @media screen and (max-width: $breakpoint) {
+      background-image: none;
+    }
   }
   .server {
     grid-area: server;
@@ -90,15 +134,23 @@
     grid-area: visitor-id-title;
   }
 
+  .visitorMobileRow {
+    grid-area: visitor-mobile-row;
+    width: 292px;
+
+    .visitorMobileRowSVG {
+      background-image: url('./img/VisitorRowMobile.svg');
+      background-size: auto 48px;
+      background-position: center;
+    }
+  }
+
   .browserRows {
     grid-area: browser-rows;
     width: 188px;
 
     .browserRowsSVG {
-      width: 100%;
-      height: 100%;
-      background-image: url('./RowsBrowserSVG.svg');
-      background-repeat: no-repeat;
+      background-image: url('./img/RowsBrowserSVG.svg');
       background-size: 176px;
 
       margin: rem(40px) rem(7px) 0 rem(7px);
@@ -110,11 +162,7 @@
     width: 338px;
 
     .otherRowsSVG {
-      width: 100%;
-      height: 100%;
-
-      background-image: url('./RowsOtherSVG.svg');
-      background-repeat: no-repeat;
+      background-image: url('./img/RowsOtherSVG.svg');
       background-size: 331px;
       background-position: right top;
     }
@@ -125,14 +173,20 @@
     width: 172px;
 
     .visitorRowSVG {
-      width: 100%;
-      height: 100%;
-      background-image: url('./RowVisitorSVG.svg');
-      background-repeat: no-repeat;
-
+      background-image: url('./img/RowVisitorSVG.svg');
       background-size: 162px;
       background-position: center center;
     }
+  }
+  .visitorRowSVG,
+  .otherRowsSVG,
+  .browserRowsSVG,
+  .mobileRowsSVG,
+  .visitorMobileRowSVG {
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
   }
 
   .browserSignalsTitle,
@@ -145,6 +199,11 @@
 
     text-transform: uppercase;
     @include sans($size: 14px, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+    @media screen and (max-width: $breakpoint) {
+      font-size: rem(10px);
+      line-height: 140%;
+      margin-bottom: rem(8px);
+    }
   }
 }
 
@@ -155,8 +214,22 @@
   flex-direction: column;
   justify-content: center;
   row-gap: rem(16px);
+
+  @media screen and (max-width: $breakpoint) {
+    row-gap: rem(8px);
+  }
 }
 
+.mobileRows {
+  grid-area: mobile-rows;
+
+  .mobileRowsSVG {
+    background-image: url('./img/MobileRowsSVG.svg');
+
+    background-size: auto 595px;
+    background-position: right 0 bottom 24px;
+  }
+}
 .card {
   display: grid;
   grid-template-columns: rem(44px) 1fr;
@@ -166,9 +239,18 @@
   border-radius: 16px;
   background: #ededf3;
 
+  @media screen and (max-width: $breakpoint) {
+    padding: rem(8px);
+  }
+
   .icon {
     width: rem(44px);
     height: rem(44px);
+
+    @media screen and (max-width: $breakpoint) {
+      width: rem(36px);
+      height: rem(36px);
+    }
   }
 
   .cardTitle {
@@ -177,6 +259,10 @@
 
     @include sans($size: 14px, $weight: 500, $lh: 140%);
     text-transform: uppercase;
+
+    @media screen and (max-width: $breakpoint) {
+      font-size: rem(10px);
+    }
   }
 
   &.outline {
@@ -220,6 +306,10 @@
 
       @include sans($size: 14px, $weight: 500, $lh: 140%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
       text-transform: uppercase;
+
+      @media screen and (max-width: $breakpoint) {
+        font-size: rem(10px);
+      }
     }
   }
 }
@@ -240,5 +330,13 @@
 
     @include sans($size: 14px, $weight: 500, $lh: 140%, $color: v('white'));
     text-transform: uppercase;
+  }
+
+  @media screen and (max-width: $breakpoint) {
+    height: rem(52px);
+
+    .serverTitle {
+      font-size: rem(10px);
+    }
   }
 }

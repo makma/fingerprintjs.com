@@ -3,24 +3,25 @@ import Section from '../../../common/Section'
 import Container from '../../../common/Container'
 import classNames from 'classnames'
 import { getTimezoneOffset } from '../../../../helpers/date'
+import { getVisitTitle } from '../../../../helpers/fpjs-widget'
 
-import { ReactComponent as AdBlockSVG } from './AdBlockSVG.svg'
-import { ReactComponent as WindowSVG } from './WindowSVG.svg'
-import { ReactComponent as PlanetSVG } from './PlanetSVG.svg'
-import { ReactComponent as MobileSVG } from './MobileSVG.svg'
-import { ReactComponent as TLSSVG } from './TLSSVG.svg'
-import { ReactComponent as PointerSVG } from './PointerSVG.svg'
-import { ReactComponent as IncognitoSVG } from './IncognitoSVG.svg'
-import { ReactComponent as PointSVG } from './PointSVG.svg'
-import { ReactComponent as VisitorSVG } from './VisitorSVG.svg'
+import { ReactComponent as AdBlockSVG } from './img/AdBlockSVG.svg'
+import { ReactComponent as WindowSVG } from './img/WindowSVG.svg'
+import { ReactComponent as PlanetSVG } from './img/PlanetSVG.svg'
+import { ReactComponent as MobileSVG } from './img/MobileSVG.svg'
+import { ReactComponent as TLSSVG } from './img/TLSSVG.svg'
+import { ReactComponent as PointerSVG } from './img/PointerSVG.svg'
+import { ReactComponent as IncognitoSVG } from './img/IncognitoSVG.svg'
+import { ReactComponent as PointSVG } from './img/PointSVG.svg'
+import { ReactComponent as VisitorSVG } from './img/VisitorSVG.svg'
 
 import styles from './AlgorithmSection.module.scss'
 import { CurrentVisitProps } from '../../../../types/currentVisitProps'
 
-export default function AlgorithmSection({ currentVisit, visitorId }: CurrentVisitProps) {
+export default function AlgorithmSection({ visits, currentVisit, visitorId }: CurrentVisitProps) {
   const offset = getTimezoneOffset()
-  const documentHeight = document.documentElement.clientHeight
-  const documentWidth = document.documentElement.clientWidth
+  const width = window.screen.width
+  const height = window.screen.height
 
   return (
     <Section className={styles.root}>
@@ -36,12 +37,12 @@ export default function AlgorithmSection({ currentVisit, visitorId }: CurrentVis
       <Container size='large' className={styles.algorithmContainer}>
         <section className={styles.browserSignalsTitle}>Browser fingerprinting details</section>
         <section className={styles.browserSignals}>
-          <Card icon={<AdBlockSVG />} title='ad block on' />
+          <Card icon={<AdBlockSVG />} title={`Incognito mode ${currentVisit?.incognito ? 'Yes' : 'No'}`} />
           <Card
             icon={<PlanetSVG />}
             title={`${currentVisit?.ipLocation?.country?.code}, ${currentVisit?.ipLocation?.city?.name} GTM ${offset}`}
           />
-          <Card icon={<WindowSVG />} title={`resolution ${documentWidth}x${documentHeight}`} />
+          <Card icon={<WindowSVG />} title={`resolution ${width}x${height}`} />
           <Card icon={<MobileSVG />} title={currentVisit?.browserDetails?.os} />
         </section>
         <section className={styles.browserRows}>
@@ -58,9 +59,9 @@ export default function AlgorithmSection({ currentVisit, visitorId }: CurrentVis
         <section className={styles.visitHistoryTitle}>visit History</section>
         <section className={styles.visitHistory}>
           <div className={styles.visitSection}>
-            <Visit icon={<PointSVG />} title='Current visit' />
-            <Visit title='8 hours ago' />
-            <Visit icon={<IncognitoSVG />} title='5 hours ago' />
+            <Visit current title='Current visit' />
+            <Visit incognito={visits[1].incognito} title={getVisitTitle(visits[1].timestamp)} />
+            <Visit incognito={visits[2].incognito} title={getVisitTitle(visits[2].timestamp)} />
           </div>
         </section>
         <section className={styles.server}>
@@ -74,6 +75,12 @@ export default function AlgorithmSection({ currentVisit, visitorId }: CurrentVis
         <section className={styles.visitorIdTitle}>Your visitor Id</section>
         <section className={styles.visitorId}>
           <Card variant='visitor' icon={<VisitorSVG />} title={visitorId} />
+        </section>
+        <section className={styles.mobileRows}>
+          <div className={styles.mobileRowsSVG} />
+        </section>
+        <section className={styles.visitorMobileRow}>
+          <div className={styles.visitorMobileRowSVG} />
         </section>
       </Container>
     </Section>
@@ -101,13 +108,26 @@ function Card({ icon, title, variant }: CardProps) {
 }
 
 interface visitProps {
-  icon?: React.ReactNode
+  current?: boolean
+  incognito?: boolean
   title: string
 }
-function Visit({ icon, title }: visitProps) {
+function Visit({ current, incognito, title }: visitProps) {
   return (
     <div className={classNames(styles.visit)}>
-      <span className={styles.visitIcon}>{icon}</span>
+      {!current ? (
+        incognito ? (
+          <span className={styles.visitIcon}>
+            <IncognitoSVG />
+          </span>
+        ) : (
+          <span />
+        )
+      ) : (
+        <span className={styles.visitIcon}>
+          <PointSVG />
+        </span>
+      )}
       <h3 className={styles.visitTitle}>{title}</h3>
     </div>
   )
