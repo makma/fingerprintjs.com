@@ -178,6 +178,7 @@ const usage: Feature[] = [
 const usageFreeTier: Feature[] = [
   {
     description: 'Unlimited subscriptions',
+    disabled: true,
   },
 ]
 
