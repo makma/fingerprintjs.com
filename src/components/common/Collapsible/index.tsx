@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
 import { ReactComponent as ExpandMoreSvg } from '../../../img/expand-more.svg'
+import { ReactComponent as PlusSvg } from '../../../img/plus-icon.svg'
+import { ReactComponent as MinusSvg } from '../../../img/minus-icon.svg'
 import styles from './Collapsible.module.scss'
 
 interface AccordionProps {
   sections: { title: string; content: React.ReactNode }[]
+  plusIcon?: boolean
 }
-export default function Accordion({ sections }: AccordionProps) {
+export default function Accordion({ sections, plusIcon }: AccordionProps) {
   const [openSection, setOpenSection] = useState<string | undefined>(undefined)
 
   return (
@@ -17,6 +20,7 @@ export default function Accordion({ sections }: AccordionProps) {
           title={section.title}
           open={openSection === section.title}
           onToggle={(title) => setOpenSection(openSection === title ? undefined : title)}
+          plusIcon={plusIcon}
         >
           {section.content}
         </Collapsible>
@@ -30,16 +34,29 @@ interface CollapsibleProps {
   children: React.ReactNode
   open: boolean
   onToggle: (title: string) => void
+  plusIcon?: boolean
 }
 
-function Collapsible({ title, children, open, onToggle }: CollapsibleProps) {
+function Collapsible({ title, children, open, onToggle, plusIcon }: CollapsibleProps) {
   return (
-    <div className={styles.item}>
-      <header className={styles.header} onClick={() => onToggle(title)}>
+    <div className={classNames(styles.item, { [styles.itemPlus]: plusIcon })}>
+      <header
+        className={classNames(styles.header, { [styles.headerPlus]: plusIcon }, { [styles.headerOpen]: open })}
+        onClick={() => onToggle(title)}
+      >
         {title}
-        <ExpandMoreSvg className={classNames(styles.icon, { [styles.rotated]: open })} />
+        {plusIcon ? (
+          <>
+            <PlusSvg className={classNames(styles.icon, { [styles.hide]: open }, { [styles.iconPlus]: plusIcon })} />
+            <MinusSvg className={classNames(styles.icon, { [styles.hide]: !open }, { [styles.iconPlus]: plusIcon })} />
+          </>
+        ) : (
+          <ExpandMoreSvg className={classNames(styles.icon, { [styles.rotated]: open })} />
+        )}
       </header>
-      <div className={classNames(styles.content, { [styles.open]: open })}>{children}</div>
+      <div className={classNames(styles.content, { [styles.open]: open }, { [styles.contentPlus]: plusIcon })}>
+        {children}
+      </div>
     </div>
   )
 }

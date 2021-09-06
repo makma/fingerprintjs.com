@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { handlePriceChange, pricingTable } from '../../helpers/pricing'
+import { handlePriceChange, pricingTable, freeApiCalls } from '../../helpers/pricing'
 import Container from '../common/Container'
 import Section from '../common/Section'
 import RangeSlider, { SliderValue } from '../common/RangeSlider'
@@ -12,7 +12,7 @@ import { buildQueryString } from '../../helpers/common'
 
 const sliderConfig = {
   min: 0,
-  max: 5,
+  max: 4,
   def: 0,
 }
 
@@ -33,13 +33,19 @@ export default function Billing() {
   }
 
   const recalculatePricing = (value: number) => {
-    if (value === Infinity) {
-      setMonthlyPaymentLabel('Custom pricing')
-      return
+    switch (value) {
+      case Infinity:
+        setMonthlyPaymentLabel('Custom pricing')
+        break
+      case freeApiCalls:
+        setMonthlyPaymentLabel('$0')
+        break
+      default: {
+        const newPrice = handlePriceChange(value)
+        setMonthlyPaymentLabel(newPrice)
+        break
+      }
     }
-
-    const newPrice = handlePriceChange(value)
-    setMonthlyPaymentLabel(newPrice)
   }
 
   useEffect(() => {

@@ -26,7 +26,8 @@
     }
   }
 
-  .label {
+  .label,
+  .onlyCurrentLabel {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -35,18 +36,15 @@
     margin-bottom: 1rem;
     font-size: 1.75rem;
 
-    @include media('<=phoneLandscape') {
-      display: none;
-    }
-
-    .text {
+    .text,
+    .onlyCurrentText {
       flex: 1;
       text-align: center;
       font-weight: v(semi);
 
-      @for $i from 2 to 6 {
+      @for $i from 2 to 5 {
         &:nth-child(#{$i}) {
-          transform: translateX(calc((100% / 6) * (#{$i - 1}) - 40%));
+          transform: translateX(calc((100% / 5) * (#{$i - 1}) - 40%));
         }
       }
 
@@ -58,6 +56,25 @@
         text-align: right;
       }
     }
+
+    .onlyCurrentText {
+      @include sans($size: 16px, $weight: v(semi), $lh: 130%);
+
+      margin-top: rem(28px);
+
+      &:nth-child(2) {
+        transform: translateX(-15%);
+      }
+      &:nth-child(4) {
+        transform: translateX(15%);
+      }
+    }
+  }
+
+  .label {
+    @include media('<=phoneLandscape') {
+      display: none;
+    }
   }
 
   .inputContainer {
@@ -67,6 +84,10 @@
     padding: 0.25rem 0.75rem;
     display: flex;
     align-items: center;
+  }
+
+  .containerOnlyCurrent {
+    height: rem(30px);
   }
 
   .input {
@@ -130,5 +151,35 @@
       margin-top: -4px;
       box-shadow: 0 5px 14px 0 adjust-color(c('brand-water'), $alpha: -0.9);
     }
+  }
+  .inputOnlyCurrent {
+    // Adding padding to increase the clickable space
+    padding: rem(30px) 0;
+
+    &::-webkit-slider-runnable-track {
+      height: 100%;
+      border-radius: var(--thumb-size);
+    }
+    &::-webkit-slider-thumb {
+      margin-top: 0;
+      transform: translateX(-1px);
+      box-shadow: 0px 2px 4px rgba(13, 16, 43, 0.2);
+    }
+
+    &::-moz-range-track {
+      height: 100%;
+      border-radius: var(--thumb-size);
+    }
+    &::-moz-range-thumb {
+      margin-top: 0;
+      transform: translateX(-1px);
+      box-shadow: 0px 2px 4px rgba(13, 16, 43, 0.2);
+    }
+  }
+}
+
+.sliderOnlyCurrent {
+  @include media('<=phoneLandscape') {
+    padding-top: 0;
   }
 }

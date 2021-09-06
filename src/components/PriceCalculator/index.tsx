@@ -1,140 +1,268 @@
-import React, { useState } from 'react'
-import Select from '../common/Select'
+import React, { useState, useEffect } from 'react'
+import { handlePriceChange, pricingTable, freeApiCalls } from '../../helpers/pricing'
+import RangeSlider, { SliderValue } from '../common/RangeSlider'
 import classNames from 'classnames'
-import { minimumIdentifications, freeApiCalls, pricingTable, calculatePrice } from '../../helpers/pricing'
-import Button from '../../components/common/Button'
-import { numberFormatter } from '../../helpers/format'
+import Button from '../common/Button'
 import styles from './PriceCalculator.module.scss'
-import { PATH } from '../../constants/content'
+import { PATH, URL } from '../../constants/content'
+import { useUtmParams } from '../../hooks/useUtmParams'
+import { buildQueryString } from '../../helpers/common'
+import { ReactComponent as CheckSVG } from '../../img/CheckSVG.svg'
+import { ReactComponent as CloseSvg } from '../../img/close.svg'
+
+const sliderConfig = {
+  min: 0,
+  max: 4,
+  def: 0,
+}
 
 export default function PriceCalculator() {
-  const selectOptions = pricingTable.map((entry) => ({
-    label: entry.value === Infinity ? `${numberFormatter.format(10000000)}+` : numberFormatter.format(entry.value),
-    value: entry.value,
-  }))
+  const sliderTable = pricingTable.map(({ label, value }) => {
+    return { label, value } as SliderValue
+  })
 
-  const [selectedPreset, setSelectedPreset] = useState(selectOptions[0])
-  const [customCount, setCustomCount] = useState<number | undefined>(undefined)
+  const defaultValue = 0
+  const [sliderValue, setSliderValue] = useState(defaultValue)
+  const [monthlyPaymentLabel, setMonthlyPaymentLabel] = useState(pricingTable[defaultValue].label)
 
-  const isCustomPricing =
-    (!customCount && selectedPreset.value === Infinity) || (customCount && customCount >= 10000000)
-  const isFree = (!customCount && selectedPreset.value === freeApiCalls) || (customCount && customCount <= freeApiCalls)
+  const utmInfo = useUtmParams()
 
-  function onPresetSelected(newPreset: ValuePreset): void {
-    setSelectedPreset(newPreset)
-
-    // A preset was selected, clear the custom count.
-    setCustomCount(undefined)
+  const handleSliderChange = (newValue: number) => {
+    setSliderValue(newValue)
+    recalculatePricing(sliderTable[newValue].value)
   }
 
-  function onCustomCountChanged(newCustomCount: string): void {
-    if (newCustomCount !== '') {
-      const strippedValue = newCustomCount.replace(/\.|,/, '')
-
-      setCustomCount(parseInt(strippedValue, 10))
-    } else {
-      setCustomCount(undefined)
+  const recalculatePricing = (value: number) => {
+    switch (value) {
+      case Infinity:
+        setMonthlyPaymentLabel('Contact Us')
+        break
+      case freeApiCalls:
+        setMonthlyPaymentLabel('$0')
+        break
+      default: {
+        const newPrice = handlePriceChange(value)
+        setMonthlyPaymentLabel(newPrice)
+        break
+      }
     }
   }
 
-  function getPrice() {
-    return customCount === undefined
-      ? calculatePrice(selectedPreset.value)
-      : calculatePrice(customCount >= minimumIdentifications ? customCount : minimumIdentifications)
-  }
-
-  function getPriceValue() {
-    if (isFree) {
-      return '$0'
-    } else if (isCustomPricing) {
-      return 'Custom'
-    } else {
-      return getPrice()
-    }
-  }
+  useEffect(() => {
+    recalculatePricing(sliderTable[sliderValue].value)
+  }, [sliderTable, sliderValue])
 
   return (
-    <div className={styles.wrapper}>
-      <Column title='How many identifications per month do you need?'>
-        <div className={styles.presetSelector}>
-          <div className={styles.description}>
-            <strong>Select from preset</strong>
-          </div>
-          <Select<ValuePreset>
-            value={customCount === undefined ? selectedPreset : null}
-            options={selectOptions}
-            onChange={onPresetSelected}
-          />
-        </div>
-        <div className={styles.customInput}>
-          <div className={styles.description}>Or type a specific number</div>
-          <input
-            value={customCount ?? ''}
-            onChange={(e) => onCustomCountChanged(e.target.value)}
-            type='number'
-            name='identification-user-input'
-            placeholder='ex. 630,000'
-          />
-        </div>
-      </Column>
-      <Column title={'On-Demand'}>
-        <Price
-          value={getPriceValue()}
-          description={isFree ? 'Free up to 20,000 monthly API calls' : 'Pay as you go, cancel any time'}
+    <div className={styles.content}>
+      <article className={styles.idsPerMonth}>
+        <h3 className={styles.title}>Monthly identifications:</h3>
+        <RangeSlider
+          values={sliderTable}
+          currentValue={sliderValue}
+          config={sliderConfig}
+          handleValueChange={handleSliderChange}
+          onlyCurrentValue
         />
-      </Column>
-      <Column title='Annual'>
-        <div className={styles.description}>Requires a 12 month prepay</div>
-        <Button variant='outline' size='small' href={PATH.contactSales}>
-          Contact Sales
-        </Button>
-      </Column>
-      <Column title='Enterprise License'>
-        {isCustomPricing ? (
-          <div className={styles.description}>Custom pricing for high traffic websites</div>
-        ) : (
-          <div className={styles.description}>Enterprise support license with SLA</div>
-        )}
-        <Button variant='outline' size='small' href={PATH.contactSales}>
-          Contact Sales
-        </Button>
-      </Column>
+      </article>
+      <article className={styles.cards}>
+        <PricingCard
+          label='FingerprintJS Pro'
+          price={monthlyPaymentLabel}
+          billingDescription={
+            sliderValue === sliderConfig.min
+              ? 'Free forever for developers and small sites up to 20K identifications per month.'
+              : 'On-demand pricing based on monthly usage.'
+          }
+          ctaText={sliderValue === sliderConfig.min ? 'Create Free Account' : 'Start Free Trial'}
+          ctaHref={`${URL.signupUrl}${buildQueryString(utmInfo)}`}
+          featureList={sliderValue === sliderConfig.min ? freeTier : onDemand}
+          footNote='* FingerprintJS is compliant as the data processor. You need to be compliant as the data controller and use identification for fraud under legitimate interest or ask for user consent.'
+          disabled={sliderValue === sliderConfig.max}
+        />
+        <PricingCard
+          enterprise
+          label='Enterprise'
+          price='Contact Us'
+          billingDescription='Get hands-on support and a custom contract for your large scale organization.'
+          ctaText='Contact Us'
+          ctaHref={`${PATH.contactSales}${buildQueryString(utmInfo)}`}
+          featureList={enterprise}
+        />
+      </article>
     </div>
   )
 }
 
-interface ColumnProps {
-  title: string
-  children: React.ReactNode
-}
-
-function Column({ title, children }: ColumnProps) {
-  return (
-    <div className={styles.column}>
-      <div className={classNames(styles.row, styles.header)}>{title}</div>
-      <div className={styles.row}>{children}</div>
-    </div>
-  )
-}
-
-interface PriceProps {
-  value: string
-  description: string
-}
-
-function Price({ value, description }: PriceProps) {
-  return (
-    <>
-      <div className={styles.price}>
-        <div className={styles.value}>{value}</div>
-        <div className={styles.subtitle}>per month</div>
-      </div>
-      <div className={styles.description}>{description}</div>
-    </>
-  )
-}
-
-interface ValuePreset {
+interface PricingCardProps {
   label: string
-  value: number
+  price: string
+  billingDescription: string
+  ctaText: string
+  ctaHref: string
+  featureList: FeatureListProps[]
+  footNote?: string
+  enterprise?: boolean
+  disabled?: boolean
 }
+function PricingCard({
+  label,
+  price,
+  ctaText,
+  ctaHref,
+  billingDescription,
+  featureList,
+  footNote,
+  enterprise,
+  disabled,
+}: PricingCardProps) {
+  return (
+    <section
+      className={classNames(styles.pricingCard, {
+        [styles.enterpriseCard]: enterprise,
+        [styles.disabled]: disabled,
+      })}
+    >
+      <div className={styles.priceSection}>
+        <h3 className={styles.cardLabel}>{label}</h3>
+        <span className={styles.price}>{price} </span>
+        <span className={styles.period}>per month</span>
+      </div>
+      <div className={styles.billed}>{billingDescription}</div>
+      <Button variant={enterprise ? 'primary' : 'outline'} href={ctaHref} size='big' className={styles.ctaButton}>
+        {ctaText}
+      </Button>
+      <div className={styles.benefitsSection}>
+        {featureList.map((feature) => (
+          <FeatureList key={feature.title} title={feature.title} features={feature.features} />
+        ))}
+      </div>
+      {footNote && <div className={styles.footNote}>{footNote}</div>}
+    </section>
+  )
+}
+
+interface Feature {
+  description: string
+  disabled?: boolean
+}
+interface FeatureListProps {
+  title: string
+  features: Feature[]
+}
+function FeatureList({ title, features }: FeatureListProps) {
+  return (
+    <div className={styles.root}>
+      <h3 className={styles.header}>{title}</h3>
+      <ul>
+        {features.map((feature) => (
+          <li
+            key={feature.description}
+            className={classNames(styles.feature, {
+              [styles.featureDisabled]: feature.disabled,
+            })}
+          >
+            {feature.disabled ? <CloseSvg className={styles.icon} /> : <CheckSVG className={styles.icon} />}
+            {feature.description}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+const usage: Feature[] = [
+  {
+    description: 'Unlimited subscriptions',
+  },
+]
+const usageFreeTier: Feature[] = [
+  {
+    description: 'Unlimited subscriptions',
+  },
+]
+
+const features: Feature[] = [
+  {
+    description: '99.5% accurate identification',
+  },
+  {
+    description: 'Incognito mode detection',
+  },
+  {
+    description: 'Geolocation',
+  },
+  {
+    description: 'Query API & real-time webhooks',
+  },
+]
+
+const operationsFreeTier: Feature[] = [
+  {
+    description: 'GDPR, CCPA compliant*',
+  },
+  {
+    description: '99.9% availability',
+  },
+  {
+    description: 'Documentation',
+  },
+  {
+    description: 'Technical support',
+    disabled: true,
+  },
+]
+const operations: Feature[] = [
+  {
+    description: 'GDPR, CCPA compliant*',
+  },
+  {
+    description: '99.9% availability',
+  },
+  {
+    description: 'Documentation',
+  },
+  {
+    description: 'Technical support',
+  },
+]
+
+const enterpriseFeatures: Feature[] = [
+  {
+    description: '99.9% SLA standard',
+  },
+  {
+    description: 'Additional SLA options available',
+  },
+  {
+    description: 'Premium support',
+  },
+  {
+    description: 'Customer success',
+  },
+  {
+    description: 'Tailored onboarding',
+  },
+  {
+    description: 'Invoice billing',
+  },
+  {
+    description: 'Custom contract with data governance',
+  },
+  {
+    description: 'Additional deployment options',
+  },
+]
+
+const freeTier: FeatureListProps[] = [
+  { title: 'Usage', features: usageFreeTier },
+  { title: 'Features', features: features },
+  { title: 'Operations', features: operationsFreeTier },
+]
+
+const onDemand: FeatureListProps[] = [
+  { title: 'Usage', features: usage },
+  { title: 'Features', features: features },
+  { title: 'Operations', features: operations },
+]
+
+const enterprise: FeatureListProps[] = [{ title: 'Includes all pro features, plus:', features: enterpriseFeatures }]

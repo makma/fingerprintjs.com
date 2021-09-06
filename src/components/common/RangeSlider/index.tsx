@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import classNames from 'classnames'
 import styles from './RangeSlider.module.scss'
 
 export interface SliderValue {
@@ -14,6 +15,7 @@ interface RangeSliderProps {
     max: number
   }
   handleValueChange: (arg0: number) => void
+  onlyCurrentValue?: boolean
 }
 
 export default function RangeSlider({
@@ -21,8 +23,9 @@ export default function RangeSlider({
   values,
   config: { min, max },
   handleValueChange,
+  onlyCurrentValue,
 }: RangeSliderProps) {
-  const thumbSize = 18
+  const thumbSize = onlyCurrentValue ? 22 : 18
 
   const handleSliderValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = Number(e.target.value)
@@ -42,22 +45,24 @@ export default function RangeSlider({
 
   return (
     <div
-      className={styles.slider}
+      className={classNames(styles.slider, { [styles.sliderOnlyCurrent]: onlyCurrentValue })}
       style={{ '--left': sliderOffsetCss, '--thumb-size': `${thumbSize}px` } as React.CSSProperties}
     >
-      <span className={styles.output}>{values[currentValue].label}</span>
-      <label htmlFor='billingSlider' className={styles.label}>
-        {values.map(({ label }) => {
-          return (
-            <span key={`slider_label_${label}`} className={styles.text}>
-              {label}
-            </span>
-          )
-        })}
-      </label>
-      <div className={styles.inputContainer}>
+      {!onlyCurrentValue && (
+        <>
+          <span className={styles.output}>{values[currentValue].label}</span>
+          <label htmlFor='billingSlider' className={styles.label}>
+            {values.map(({ label }) => (
+              <span key={`slider_label_${label}`} className={styles.text}>
+                {label}
+              </span>
+            ))}
+          </label>
+        </>
+      )}
+      <div className={classNames(styles.inputContainer, { [styles.containerOnlyCurrent]: onlyCurrentValue })}>
         <input
-          className={styles.input}
+          className={classNames(styles.input, { [styles.inputOnlyCurrent]: onlyCurrentValue })}
           type='range'
           min={min}
           max={max}
@@ -67,6 +72,15 @@ export default function RangeSlider({
           onChange={handleSliderValueChange}
         />
       </div>
+      {onlyCurrentValue && (
+        <label htmlFor='billingSlider' className={styles.onlyCurrentLabel}>
+          {values.map(({ label }) => (
+            <span key={`slider_label_${label}`} className={styles.onlyCurrentText}>
+              {label}
+            </span>
+          ))}
+        </label>
+      )}
     </div>
   )
 }

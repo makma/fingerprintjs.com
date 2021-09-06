@@ -1,184 +1,80 @@
-// We use mixin and not @extend with placeholder % because gatsby background image plugin doesn't work with multiple classes
-@mixin bgMainimage {
-  background-repeat: no-repeat;
-  background-size: 1400px auto;
+.headerSection {
+  padding: rem(40px) 0 rem(56px) 0;
 
-  @include media('<=desktop') {
-    background-position: center 120%;
-  }
+  .headerContainer {
+    text-align: center;
 
-  @include media('<=tabletWide') {
-    background-image: url('../../img/hero-768+.png');
-    background-position: center 55%;
-    background-size: 100vw auto;
+    --contentWidth: 700px;
+
+    @include media('<=phoneLandscape') {
+      text-align: left;
+    }
+
+    .headerDescription {
+      font-family: v(ff-mono);
+      font-size: rem(32px);
+      line-height: 130%;
+      font-weight: v('bold');
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(24px);
+      }
+    }
   }
 }
+.faqSection {
+  overflow: hidden;
 
-.pricing {
-  @include bgMainimage;
-  background-position: 50%;
+  padding: 0 0 rem(145px) 0;
+
+  @include media('<=phoneLandscape') {
+    padding: 0 0 rem(126px) 0;
+  }
+  .faqContainer {
+    .faqHeader {
+      margin-bottom: rem(40px);
+
+      .faqTitle {
+        font-size: rem(32px);
+        line-height: 130%;
+      }
+    }
+  }
+  .link {
+    border-bottom: 1px solid v('brand-fire');
+    color: v('brand-fire');
+  }
+}
+.contactSection {
+  padding: 0 0 rem(99px) 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  @include media('<=phoneLandscape') {
+    padding: 0 0 rem(64px) 0;
+  }
+  .contactContainer {
+    --contentWidth: 505px;
+
+    .contactTitle {
+      font-size: rem(32px);
+      line-height: 130%;
+
+      margin-bottom: rem(32px);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(26px);
+        line-height: 120%;
+        letter-spacing: -0.01em;
+      }
+    }
+  }
 }
 
 .calculator {
-  @include bgMainimage;
-  padding: 6rem 0;
-  background-position: center 75%;
-}
-
-.header {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-areas: 'sub sub' 'title description';
-  margin-bottom: 4rem;
-
-  &.inverted {
-    grid-template-areas: 'title description' 'sub sub';
-  }
-
-  @include media('<=phoneLandscape') {
-    grid-template-columns: 1fr;
-    grid-template-areas: 'sub' 'title' 'description';
-  }
-
-  .title {
-    font-size: 4rem;
-    grid-area: title;
-  }
-
-  .subtitle,
-  .description {
-    font-size: 2.25rem;
-    opacity: v('faded');
-  }
-
-  .subtitle {
-    grid-area: sub;
-
-    line-height: 1.5;
-    font-family: var(--ff-sans);
-    font-weight: var(--normal);
-  }
-
-  .description {
-    font-size: 1.75rem;
-    text-align: right;
-    grid-area: description;
-    max-width: 35ch;
-    justify-self: flex-end;
-
-    @include media('<=phoneLandscape') {
-      justify-self: unset;
-      text-align: left;
-      margin-top: 2rem;
-    }
-  }
-}
-
-.onDemand {
-  aside {
-    background-color: adjust-color(c('brand-water'), $saturation: -32%, $lightness: +24%);
-    background-image: url('../../img/on-demand.png');
-  }
-}
-
-.annual {
-  aside {
-    background-color: v('brand-water');
-    background-image: url('../../img/reserved.png');
-  }
-}
-
-%list {
-  margin: 0;
-  padding: 0;
-
-  font-size: 1.75rem;
-  color: mix(c('brand-water'), #fff, 70%);
-
-  &.horizontal {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    @include media('<=phoneLandscape') {
-      flex-direction: column;
-    }
-  }
-}
-
-.arrowList {
-  @extend %list;
-
-  list-style: '>  ' outside none;
-  padding-left: 4rem;
-
-  li {
-    &::marker {
-      font-size: 2rem;
-      font-weight: v('bold');
-      color: v('brand-fire');
-    }
-
-    + li {
-      margin-top: 2rem;
-    }
-  }
-}
-
-.quote {
-  font-size: 1.75rem;
-  opacity: v('faded');
-  padding: 3rem;
-  border-radius: 1rem;
-  background-color: v(off-white);
-  margin-top: 4rem;
-}
-
-.priceTable {
-  $borders: 1px solid #{adjust-color(c('off-white'), $lightness: -5%)};
-
-  margin-top: 4rem;
-  width: 100%;
-  max-width: 400px;
-
-  background-color: var(--off-white);
-  border-radius: 1rem;
-  overflow: hidden;
-
-  .column,
-  .row {
-    &.header {
-      font-family: var(--ff-mono);
-      font-weight: v('bold');
-      font-size: 1.75rem;
-      margin-bottom: 0;
-    }
-  }
-
-  .column {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
-    flex: 1;
-
-    padding: 1.5rem 2rem;
-
-    + .column {
-      border-left: $borders;
-    }
-  }
-
-  .row {
-    display: flex;
-    flex-direction: row;
-
-    + .row {
-      border-top: $borders;
-    }
-  }
-}
-
-.bannerSection {
-  padding: rem(30px) 0;
+  padding: 0 0 rem(80px) 0;
 }
