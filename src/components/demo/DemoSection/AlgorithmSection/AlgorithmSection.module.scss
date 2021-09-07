@@ -3,10 +3,10 @@ $breakpoint: 1218px;
 .root {
   background-color: var(--off-white);
 
-  padding: rem(64px) 0 rem(80px) 0;
+  padding: rem(64px) 0 rem(50px) 0;
 
   @media screen and (max-width: $breakpoint) {
-    padding: rem(50px) 0 rem(54px) 0;
+    padding: rem(50px) 0 rem(45px) 0;
   }
 
   .headerContainer {
