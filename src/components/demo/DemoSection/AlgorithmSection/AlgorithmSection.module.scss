@@ -48,7 +48,7 @@ $breakpoint: 1218px;
   .algorithmContainer {
     display: grid;
     grid-template-columns: repeat(2, 290px 1fr) 290px;
-    grid-template-rows: 20px 80px 80px 80px 80px 58px 80px 80px;
+    grid-template-rows: 20px repeat(4, 80px) 58px repeat(2, 80px);
     grid-template-areas:
       'browser-signals-title . visit-history-title . .'
       'browser-signals browser-rows visit-history . .'
@@ -67,7 +67,7 @@ $breakpoint: 1218px;
       padding: 0 rem(20px);
 
       grid-template-columns: 290px 30px;
-      grid-template-rows: 20px 60px 60px 60px 60px 50px 60px 60px 50px 70px 60px 60px 60px 20px 60px;
+      grid-template-rows: 20px repeat(4, 60px) 50px repeat(2, 60px) 50px 70px repeat(3, 60px) 20px 60px;
       grid-template-areas:
         'browser-signals-title .'
         'browser-signals mobile-rows'
@@ -341,6 +341,12 @@ $breakpoint: 1218px;
   }
 }
 
-.skeleton {
+.cardSkeleton {
   align-self: center;
+
+  background-color: #dcdce3;
+}
+
+.visitSkeleton {
+  background-color: adjust-color(c('brand-fire'), $lightness: 20%);
 }

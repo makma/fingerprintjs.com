@@ -96,7 +96,15 @@ function Card({ icon, title, variant, isLoading }: CardProps) {
       )}
     >
       <span className={styles.icon}>{icon}</span>
-      {isLoading ? <Skeleton className={styles.skeleton} width={150} height={20} /> : <h3 className={styles.cardTitle}>{title}</h3>}
+      {isLoading ? (
+        <Skeleton
+          className={classNames(styles.cardSkeleton, { [styles.visitSkeleton]: variant === 'visitor' })}
+          width={150}
+          height={20}
+        />
+      ) : (
+        <h3 className={styles.cardTitle}>{title}</h3>
+      )}
     </div>
   )
 }
