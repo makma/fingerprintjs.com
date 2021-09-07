@@ -146,10 +146,10 @@ const faq = [
     question: 'How many identifications do I need?',
     answer: (
       <>
-        FingerprintJS Pro works best if the user agent is installed and runs an identification for every visitor on
-        every page of your website. To estimate the number of identifications this installation would use, you can look
-        at your website’s total number of monthly pageviews using a client- or server-side website analytics service
-        (e.g. Google Analytics, Segment, Netlify Analytics).
+        FingerprintJS Pro works best if the JavaScript agent is installed and runs an identification for every visitor
+        on every page of your website. To estimate the number of identifications this installation would use, you can
+        look at your website’s total number of monthly pageviews using a client- or server-side website analytics
+        service (e.g. Google Analytics, Segment, Netlify Analytics).
         <br />
         <br />
         If you decide to install FingerprintJS Pro only on several key pages (e.g. signup, login, or prepayment), then
