@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import useSiteMetadata from '../../../hooks/useSiteMetadata'
 import useLocalStorage from '../../../hooks/useLocalStorage'
 import { LayoutTemplate } from '../../../components/Layout'
+import { useVisitorData } from '../../../context/FpjsContext'
 
 import { useLocation } from '@reach/router'
 import { GeneratedPageContext } from '../../../helpers/types'
@@ -25,16 +26,17 @@ export default function ConfirmPage({ pageContext }: ContactSalesPageProps) {
   }
 
   const [isLeadSubmitEnabled, setLeadSubmitEnabled] = useLocalStorage('track_lead_submit_enabled', true)
+  const { visitorData } = useVisitorData()
 
   useEffect(() => {
-    if (isLeadSubmitEnabled) {
+    if (isLeadSubmitEnabled && visitorData) {
       setLeadSubmitEnabled(false)
       trackLeadSubmit()
     }
-    // ESLint rule "react-hooks/exhaustive-deps" fail on empty dependency but
-    // we need to pass an empty array as a second argument so the function will run after the first render
+    // ESLint rule "react-hooks/exhaustive-deps" fail on missing dependencies isLeadSubmitEnabled
+    // but we only want to run the function after visitorData is populated (so we know analytics is enabled)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [visitorData])
 
   return (
     <LayoutTemplate siteMetadata={siteMetadata}>
