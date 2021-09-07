@@ -5,7 +5,7 @@ import { useVisitorData } from '../../../context/FpjsContext'
 import { loadFpjsHistory } from '../../../helpers/api'
 
 import VisitorSection, { VisitorSectionLoading } from './VisitorSection/VisitorSection'
-import AlgorithmSection from './AlgorithmSection/AlgorithmSection'
+import AlgorithmSection, { AlgorithmSectionLoading } from './AlgorithmSection/AlgorithmSection'
 
 export default function DemoSection() {
   const [currentVisit, setCurrentVisit] = useState<VisitorResponse>()
@@ -49,7 +49,10 @@ export default function DemoSection() {
   return (
     <>
       {isLoading ? (
-        <VisitorSectionLoading />
+        <>
+          <VisitorSectionLoading />
+          <AlgorithmSectionLoading />
+        </>
       ) : (
         visitorId && (
           <>

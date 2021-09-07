@@ -4,6 +4,7 @@ import Container from '../../../common/Container'
 import classNames from 'classnames'
 import { getTimezoneOffset } from '../../../../helpers/date'
 import { getVisitTitle } from '../../../../helpers/fpjs-widget'
+import Skeleton from '../../../Skeleton/Skeleton'
 
 import { ReactComponent as AdBlockSVG } from './img/AdBlockSVG.svg'
 import { ReactComponent as WindowSVG } from './img/WindowSVG.svg'
@@ -25,15 +26,7 @@ export default function AlgorithmSection({ visits, currentVisit, visitorId }: Cu
 
   return (
     <Section className={styles.root}>
-      <Container size='small' className={styles.headerContainer}>
-        <header>
-          <h1 className={styles.title}>Advanced identification algorithm</h1>
-          <p className={styles.description}>
-            Your visitorID is generated using multiple identification techniques, machine learning and probability
-            algorithms.
-          </p>
-        </header>
-      </Container>
+      <Header />
       <Container size='large' className={styles.algorithmContainer}>
         <section className={styles.browserSignalsTitle}>Browser fingerprinting details</section>
         <section className={styles.browserSignals}>
@@ -91,8 +84,9 @@ interface CardProps {
   icon: React.ReactNode
   title?: string
   variant?: 'outline' | 'visitor'
+  isLoading?: boolean
 }
-function Card({ icon, title, variant }: CardProps) {
+function Card({ icon, title, variant, isLoading }: CardProps) {
   return (
     <div
       className={classNames(
@@ -102,7 +96,7 @@ function Card({ icon, title, variant }: CardProps) {
       )}
     >
       <span className={styles.icon}>{icon}</span>
-      <h3 className={styles.cardTitle}>{title}</h3>
+      {isLoading ? <Skeleton className={styles.skeleton} width={150} height={20} /> : <h3 className={styles.cardTitle}>{title}</h3>}
     </div>
   )
 }
@@ -110,9 +104,10 @@ function Card({ icon, title, variant }: CardProps) {
 interface visitProps {
   current?: boolean
   incognito?: boolean
-  title: string
+  title?: string
+  isLoading?: boolean
 }
-function Visit({ current, incognito, title }: visitProps) {
+function Visit({ current, incognito, title, isLoading }: visitProps) {
   return (
     <div className={classNames(styles.visit)}>
       {!current ? (
@@ -128,7 +123,75 @@ function Visit({ current, incognito, title }: visitProps) {
           <PointSVG />
         </span>
       )}
-      <h3 className={styles.visitTitle}>{title}</h3>
+      {isLoading ? <Skeleton width={100} height={14} /> : <h3 className={styles.visitTitle}>{title}</h3>}
     </div>
+  )
+}
+
+function Header() {
+  return (
+    <Container size='small' className={styles.headerContainer}>
+      <header>
+        <h1 className={styles.title}>Advanced identification algorithm</h1>
+        <p className={styles.description}>
+          Your visitorID is generated using multiple identification techniques, machine learning and probability
+          algorithms.
+        </p>
+      </header>
+    </Container>
+  )
+}
+
+export function AlgorithmSectionLoading() {
+  return (
+    <Section className={styles.root}>
+      <Header />
+      <Container size='large' className={styles.algorithmContainer}>
+        <section className={styles.browserSignalsTitle}>Browser fingerprinting details</section>
+        <section className={styles.browserSignals}>
+          <Card icon={<AdBlockSVG />} isLoading />
+          <Card icon={<PlanetSVG />} isLoading />
+          <Card icon={<WindowSVG />} isLoading />
+          <Card icon={<MobileSVG />} isLoading />
+        </section>
+        <section className={styles.browserRows}>
+          <div className={styles.browserRowsSVG} />
+        </section>
+        <section className={styles.otherSignalsTitle}>Other identifiers</section>
+        <section className={styles.otherSignals}>
+          <Card variant='outline' icon={<TLSSVG />} title='TLS' />
+          <Card variant='outline' icon={<PointerSVG />} title='Cookies' />
+        </section>
+        <section className={styles.otherRows}>
+          <div className={styles.otherRowsSVG} />
+        </section>
+        <section className={styles.visitHistoryTitle}>visit History</section>
+        <section className={styles.visitHistory}>
+          <div className={styles.visitSection}>
+            <Visit current title='Current visit' />
+            <Visit isLoading />
+            <Visit isLoading />
+          </div>
+        </section>
+        <section className={styles.server}>
+          <div className={styles.serverSection}>
+            <p className={styles.serverTitle}>Server</p>
+          </div>
+        </section>
+        <section className={styles.visitorRow}>
+          <div className={styles.visitorRowSVG} />
+        </section>
+        <section className={styles.visitorIdTitle}>Your visitor Id</section>
+        <section className={styles.visitorId}>
+          <Card variant='visitor' icon={<VisitorSVG />} isLoading />
+        </section>
+        <section className={styles.mobileRows}>
+          <div className={styles.mobileRowsSVG} />
+        </section>
+        <section className={styles.visitorMobileRow}>
+          <div className={styles.visitorMobileRowSVG} />
+        </section>
+      </Container>
+    </Section>
   )
 }
