@@ -53,8 +53,8 @@ export default function AlgorithmSection({ visits, currentVisit, visitorId }: Cu
         <section className={styles.visitHistory}>
           <div className={styles.visitSection}>
             <Visit current title='Current visit' />
-            <Visit incognito={visits[1].incognito} title={getVisitTitle(visits[1].timestamp)} />
-            <Visit incognito={visits[2].incognito} title={getVisitTitle(visits[2].timestamp)} />
+            {visits[1] && <Visit incognito={visits[1].incognito} title={getVisitTitle(visits[1].timestamp)} />}
+            {visits[2] && <Visit incognito={visits[2].incognito} title={getVisitTitle(visits[2].timestamp)} />}
           </div>
         </section>
         <section className={styles.server}>
