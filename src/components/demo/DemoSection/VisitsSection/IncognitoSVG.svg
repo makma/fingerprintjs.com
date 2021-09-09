@@ -1,36 +1,5 @@
-<svg viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0)">
-        <rect width="104" height="104" rx="16" fill="#202659" />
-        <path
-            d="M0-25a4 4 0 014-4h93a4 4 0 014 4v73.367a3.999 3.999 0 01-1.415 3.052l-46.5 39.39a4 4 0 01-5.17 0l-46.5-39.39A4 4 0 010 48.367V-25z"
-            fill="#fff" fill-opacity=".5" />
-        <path
-            d="M.5-25A3.5 3.5 0 014-28.5h93a3.5 3.5 0 013.5 3.5v73.367a3.501 3.501 0 01-1.238 2.67l-46.5 39.391a3.5 3.5 0 01-4.524 0l-46.5-39.39A3.5 3.5 0 01.5 48.367V-25z"
-            stroke="#fff" stroke-opacity=".1" />
-        <path
-            d="M20-26a4 4 0 014-4h93a4 4 0 014 4v73.367a3.998 3.998 0 01-1.415 3.052l-46.5 39.39a4 4 0 01-5.17 0l-46.5-39.39A4 4 0 0120 47.367V-26z"
-            fill="#fff" fill-opacity=".5" />
-        <path
-            d="M20.5-26a3.5 3.5 0 013.5-3.5h93a3.5 3.5 0 013.5 3.5v73.367a3.5 3.5 0 01-1.238 2.67l-46.5 39.391a3.5 3.5 0 01-4.524 0l-46.5-39.39a3.5 3.5 0 01-1.238-2.671V-26z"
-            stroke="#fff" stroke-opacity=".1" />
-    </g>
-    <defs>
-        <filter id="filter0_b" x="-14" y="-43" width="129" height="148.758" filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-            <feGaussianBlur in="BackgroundImage" stdDeviation="7" />
-            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur" />
-            <feBlend in="SourceGraphic" in2="effect1_backgroundBlur" result="shape" />
-        </filter>
-        <filter id="filter1_b" x="6" y="-44" width="129" height="148.758" filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-            <feGaussianBlur in="BackgroundImage" stdDeviation="7" />
-            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur" />
-            <feBlend in="SourceGraphic" in2="effect1_backgroundBlur" result="shape" />
-        </filter>
-        <clipPath id="clip0">
-            <rect width="104" height="104" rx="16" fill="#fff" />
-        </clipPath>
-    </defs>
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M41 8a3 3 0 012.995 2.824L44 11v6a1 1 0 01-1 1H6v19a1 1 0 00.883.993L7 38h34a1 1 0 00.993-.883L42 37V21a1 1 0 112 0v16a3 3 0 01-2.824 2.995L41 40H7a3 3 0 01-2.995-2.824L4 37V11a3 3 0 012.824-2.995L7 8h34zm-9.5 15a5.5 5.5 0 014.9 3H38a1 1 0 110 2h-1.022a5.5 5.5 0 11-10.955 0H26l-.06-.072-.103-.112-.154-.143a2.685 2.685 0 00-.202-.158c-.45-.317-1.005-.514-1.49-.515-.48-.001-1.03.193-1.477.51a2.694 2.694 0 00-.282.23l-.128.128-.104.118h-.024A5.5 5.5 0 1111.022 28H10a1 1 0 110-2h1.6a5.5 5.5 0 019.743-.11c.753-.538 1.728-.892 2.653-.89.928.002 1.904.357 2.66.896A5.493 5.493 0 0131.5 23zm-15 2a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm15 0a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM41 10H7a1 1 0 00-.993.883L6 11v5h36v-5a1 1 0 00-.883-.993L41 10zm-26 2a1 1 0 110 2H9a1 1 0 110-2h6z"
+        fill="#0D102B" />
 </svg>

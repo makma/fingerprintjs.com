@@ -5,8 +5,9 @@ import classNames from 'classnames'
 import { CurrentVisitProps } from '../../../../types/currentVisitProps'
 import { getVisitTitle } from '../../../../helpers/fpjs-widget'
 
+import { ReactComponent as IncognitoCardSVG } from './IncognitoCardSVG.svg'
+import { ReactComponent as CatchCardSVG } from './CatchCardSVG.svg'
 import { ReactComponent as IncognitoSVG } from './IncognitoSVG.svg'
-import { ReactComponent as CatchSVG } from './CatchSVG.svg'
 
 import styles from './VisitsSection.module.scss'
 
@@ -15,12 +16,11 @@ export default function VisitsSection({ visits, currentVisit }: CurrentVisitProp
     <Section className={styles.root}>
       <Container className={styles.containerVisits} size='large'>
         <section className={styles.visitsSection}>
-          <div className={styles.visitsCard}>
+          <div className={classNames(styles.visitsCard, { [styles.incognitoCard]: currentVisit?.incognito })}>
             <table className={styles.visitsTable}>
               <tr className={styles.tableHeader}>
                 <th>Time of visit</th>
                 <th>incognito mode</th>
-                <th></th>
               </tr>
               {visits &&
                 visits.slice(0, 6).map(({ requestId, timestamp, incognito }, i) => {
@@ -32,16 +32,28 @@ export default function VisitsSection({ visits, currentVisit }: CurrentVisitProp
                     >
                       <td>{i === 0 ? 'Current visit' : getVisitTitle(timestamp)}</td>
                       <td className={classNames({ [styles.incognito]: incognito })}>{incognito ? 'Yes' : 'No'}</td>
-                      <td></td>
                     </tr>
                   )
                 })}
             </table>
           </div>
+          <div className={styles.incognito}>
+            <IncognitoSVG className={styles.icon} />
+            <div className={styles.rows}>
+              {currentVisit?.incognito ? (
+                <h3 className={styles.title}>you are in private browsing</h3>
+              ) : (
+                <>
+                  <h3 className={styles.title}>Not in private browsing</h3>
+                  <p className={styles.description}>Try revisiting in incognito mode</p>
+                </>
+              )}
+            </div>
+          </div>
         </section>
         <section className={styles.cardSection}>
           <Card
-            icon={<IncognitoSVG />}
+            icon={<IncognitoCardSVG />}
             title='Incognito Mode Detection'
             description='Your VisitorID remains constant even if you revisit the page in incognito mode or turn on a VPN. '
           />
@@ -50,7 +62,7 @@ export default function VisitsSection({ visits, currentVisit }: CurrentVisitProp
       <Container className={styles.containerFraudsters} size='large'>
         <section className={styles.cardSection}>
           <Card
-            icon={<CatchSVG />}
+            icon={<CatchCardSVG />}
             title='Catch fraudsters concealing their identity'
             description='VisitorIDs can be used to associate patterns of fraud across multiple visits.'
           />
