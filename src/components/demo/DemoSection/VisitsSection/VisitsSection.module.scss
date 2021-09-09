@@ -3,7 +3,7 @@
 
   padding: rem(50px) 0 rem(60px) 0;
 
-  @include media('<=phoneLandscape') {
+  @include media('<=tablet') {
     padding: rem(80px) 0 rem(70px) 0;
   }
 }
@@ -12,9 +12,10 @@
 .containerFraudsters {
   display: grid;
 
-  @include media('<=phoneLandscape') {
+  @include media('<=tablet') {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     padding: 0 rem(20px);
   }
@@ -22,7 +23,11 @@
 .containerVisits {
   grid-template-columns: rem(640px) 1fr;
 
-  @include media('<=phoneLandscape') {
+  @include media('<=desktop') {
+    grid-template-columns: rem(550px) 1fr;
+  }
+
+  @include media('<=tablet') {
     flex-direction: column-reverse;
     row-gap: rem(48px);
   }
@@ -30,6 +35,10 @@
 
 .containerFraudsters {
   grid-template-columns: rem(517px) 1fr;
+
+  @include media('<=tablet') {
+    row-gap: rem(126px);
+  }
 }
 
 .cardSection {
@@ -174,10 +183,20 @@
 }
 .chartSection {
   position: relative;
+
   .dotsImage {
     margin-left: rem(184px);
     width: rem(400px);
     height: rem(400px);
+
+    @include media('<=desktop') {
+      margin-left: 0;
+    }
+
+    @include media('<=tablet') {
+      width: 100%;
+      aspect-ratio: 1/1;
+    }
   }
   .card {
     position: absolute;
@@ -215,16 +234,44 @@
   .card:nth-of-type(1) {
     top: -10%;
     right: 3%;
+
+    @include media('<=tablet') {
+      top: -5%;
+      right: 0%;
+    }
   }
   .card:nth-of-type(2) {
     top: 10%;
     left: 3%;
+
+    @include media('<=desktop') {
+      top: 20%;
+    }
+
+    @include media('<=tablet') {
+      top: 35%;
+      left: 0%;
+    }
   }
   .card:nth-of-type(3) {
-    bottom: -1%;
+    bottom: -4%;
     right: -2%;
+
+    @include media('<=tablet') {
+      bottom: 0%;
+      right: 10%;
+    }
   }
   .isIncognito {
     @include sans($size: 14px, $weight: 400, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+  }
+}
+
+.visitSkeleton {
+  background-color: #dcdce3;
+  height: rem(24px);
+
+  @include media('<=phoneLandscape') {
+    height: rem(21px);
   }
 }
