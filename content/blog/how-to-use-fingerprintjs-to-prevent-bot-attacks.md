@@ -20,7 +20,7 @@ tags:
 authors:
   - Allan MacGregor
 heroImage:
-  image: /img/uploads/prevent-bot-attacks-3-.png
+  image: /img/uploads/prevent-bot-attacks-4-.png
 customCTA:
   openCtaNewTab: false
 ---
