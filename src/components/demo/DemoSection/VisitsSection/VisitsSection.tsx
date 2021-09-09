@@ -8,6 +8,8 @@ import { getVisitTitle } from '../../../../helpers/fpjs-widget'
 import { ReactComponent as IncognitoCardSVG } from './IncognitoCardSVG.svg'
 import { ReactComponent as CatchCardSVG } from './CatchCardSVG.svg'
 import { ReactComponent as IncognitoSVG } from './IncognitoSVG.svg'
+import { ReactComponent as DotsSVG } from './DotsSVG.svg'
+import { ReactComponent as IncognitoIconSVG } from './IncognitoIconSVG.svg'
 
 import styles from './VisitsSection.module.scss'
 
@@ -67,7 +69,12 @@ export default function VisitsSection({ visits, currentVisit }: CurrentVisitProp
             description='VisitorIDs can be used to associate patterns of fraud across multiple visits.'
           />
         </section>
-        <section className={styles.descriptionSection}></section>
+        <section className={styles.chartSection}>
+          <DotsSVG className={styles.dotsImage} />
+          <VisitCard incognito mail='fraud@yourmail.com' />
+          <VisitCard incognito mail='8fraud@yourmail.com' />
+          <VisitCard mail='fraud123@yourmail.com' />
+        </section>
       </Container>
     </Section>
   )
@@ -84,6 +91,28 @@ function Card({ icon, title, description }: CardProps) {
       <span className={styles.icon}>{icon}</span>
       <h1 className={styles.cardTitle}>{title}</h1>
       <p className={styles.cardDescription}>{description}</p>
+    </div>
+  )
+}
+
+interface VisitCardProps {
+  incognito?: boolean
+  mail: string
+}
+function VisitCard({ incognito, mail }: VisitCardProps) {
+  return (
+    <div className={styles.card}>
+      <p className={styles.visitorId}>QyDG8Zmc3tIKmfzHg00e</p>
+
+      {incognito ? (
+        <div className={styles.incognitoSection}>
+          <IncognitoIconSVG className={styles.icon} />
+          <span className={styles.isIncognito}>Incognito mode</span>
+        </div>
+      ) : (
+        <span className={styles.isIncognito}>Normal mode</span>
+      )}
+      <p className={styles.isIncognito}>{mail}</p>
     </div>
   )
 }

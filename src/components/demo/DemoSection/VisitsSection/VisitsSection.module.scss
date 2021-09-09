@@ -172,3 +172,59 @@
     padding-bottom: rem(120px);
   }
 }
+.chartSection {
+  position: relative;
+  .dotsImage {
+    margin-left: rem(184px);
+    width: rem(400px);
+    height: rem(400px);
+  }
+  .card {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    max-width: rem(200px);
+
+    box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
+    border-radius: 16px;
+    background: v('white');
+
+    .visitorId {
+      @include sans($size: 12px, $weight: 500, $lh: 140%);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding-bottom: rem(12px);
+      margin-bottom: rem(12px);
+
+      border-bottom: 1px solid rgba(13, 16, 43, 0.48);
+    }
+    .incognitoSection {
+      display: grid;
+      grid-template-columns: min(25px) 1fr;
+      align-items: center;
+
+      .icon {
+        width: rem(17px);
+        height: rem(11px);
+      }
+    }
+  }
+  .card:nth-of-type(1) {
+    top: -10%;
+    right: 3%;
+  }
+  .card:nth-of-type(2) {
+    top: 10%;
+    left: 3%;
+  }
+  .card:nth-of-type(3) {
+    bottom: -1%;
+    right: -2%;
+  }
+  .isIncognito {
+    @include sans($size: 14px, $weight: 400, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+  }
+}
