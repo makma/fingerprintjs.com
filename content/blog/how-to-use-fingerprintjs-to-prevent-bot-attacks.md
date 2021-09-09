@@ -221,7 +221,7 @@ python main.py
 
 The following message should log out into the terminal: `[SUCCESS] Registration Successful! :)`
 
-## Modern Security Measures (And How To Defeat Them)
+### Modern Security Measures (And How To Defeat Them)
 
 At this point, the registration process involving the signup form submission has been successfully automated, as our demo signup form does not require any additional authentication steps. However, since live signup processes will have additional steps to discourage bot activity, the next section will include an optional demonstration on how to circumvent one of the most common security measures with automation. If you’d like, you can skip this section.
 
