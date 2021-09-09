@@ -3,8 +3,8 @@ templateKey: long-form-content
 metadata:
   title: How to Use FingerprintJS To Prevent Bot Attacks
   description: Bad bots are smart enough these days to evade the security controls
-    used for protecting signup forms. Learn how FingerprintJS can help prevent
-    bot attacks when other measures fail.
+    of most signup forms. Learn how FingerprintJS can help prevent bot attacks
+    when other measures fail.
   url: https://fingerprintjs.com/blog/fingerprintjs-prevent-bot-attacks
   image: /img/uploads/prevent-bot-attacks-3-.png
 featured: true
@@ -18,7 +18,7 @@ tags:
   - ecommerce fraud
   - payment fraud
 authors:
-  - Savannah Copland
+  - Allan MacGregor
 heroImage:
   image: /img/uploads/prevent-bot-attacks-3-.png
 customCTA:
@@ -221,7 +221,7 @@ python main.py
 
 The following message should log out into the terminal: `[SUCCESS] Registration Successful! :)`
 
-## Modern Security Measures (and how to get around them)
+## Modern Security Measures (And How To Defeat Them)
 
 At this point, the registration process involving the signup form submission has been successfully automated, as our demo signup form does not require any additional authentication steps. However, since live signup processes will have additional steps to discourage bot activity, the next section will include an optional demonstration on how to circumvent one of the most common security measures with automation. If you’d like, you can skip this section.
 
