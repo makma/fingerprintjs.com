@@ -118,7 +118,9 @@
       padding: rem(16px);
     }
     .selected {
-      background-color: var(--off-white);
+      td {
+        background-color: var(--off-white);
+      }
 
       td:first-child {
         border-top-left-radius: rem(6px);
@@ -138,7 +140,9 @@
     background-color: v('brand-water');
 
     .selected {
-      background-color: adjust-color(c('brand-water'), $saturation: -5%, $lightness: 13%);
+      td {
+        background-color: adjust-color(c('brand-water'), $saturation: -5%, $lightness: 13%);
+      }
     }
 
     td,
