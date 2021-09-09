@@ -1,5 +1,9 @@
 .root {
   padding-bottom: rem(48px);
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(40px);
+  }
 }
 
 .container {
@@ -23,6 +27,10 @@
 
     --contentWidth: 604px;
   }
+
+  @include media('<=phoneLandscape') {
+    padding: 0 rem(20px);
+  }
 }
 
 .body {
@@ -45,10 +53,18 @@
   @include media('>1250px') {
     margin-bottom: rem(16px);
   }
+
+  @include media('<=phoneLandscape') {
+    font-size: rem(27px);
+  }
 }
 
 .actionBar {
-  margin-bottom: rem(50px);
+  margin-bottom: rem(48px);
+
+  @include media('<=phoneLandscape') {
+    margin-bottom: rem(40px);
+  }
 }
 
 .authors {

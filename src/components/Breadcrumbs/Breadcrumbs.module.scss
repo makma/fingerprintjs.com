@@ -20,3 +20,11 @@
 .separator {
   margin: 0 0.5rem;
 }
+
+.link,
+.separator,
+.current {
+  @include media('<=phoneLandscape') {
+    font-size: rem(14px);
+  }
+}

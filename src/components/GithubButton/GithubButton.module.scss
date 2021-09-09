@@ -3,7 +3,7 @@
   height: 100%;
   background-color: v('white');
   color: adjust-color(c('brand-water'), $alpha: -0.4%);
-  padding: 0 0.5rem;
+  padding: 0 rem(10px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,11 +12,11 @@
 
 .button {
   --height: 40px;
-  --radius: 1rem;
+  --radius: 6px;
   --padding: 0;
   --bgColor: var(--off-white);
   --color: #{adjust-color(c('brand-water'), $alpha: -0.5%)};
-  width: 132px;
+  width: 148px;
   display: flex;
   align-items: stretch;
   justify-content: space-between;
@@ -43,7 +43,7 @@
 
   .label {
     flex: 3;
-    padding: 0 1rem;
+    padding: 0 rem(10px);
     display: flex;
     align-items: center;
     font-weight: v('bold');
