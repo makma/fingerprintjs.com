@@ -6,7 +6,7 @@ metadata:
     of most signup forms. Learn how FingerprintJS can help prevent bot attacks
     when other measures fail.
   url: https://fingerprintjs.com/blog/fingerprintjs-prevent-bot-attacks
-  image: /img/uploads/prevent-bot-attacks-4-.png
+  image: /img/uploads/prevent-bot-attacks-5-.png
 featured: true
 publishDate: 2021-09-09T20:44:44.264Z
 title: How to Use FingerprintJS to Prevent Bot Attacks
@@ -20,7 +20,7 @@ tags:
 authors:
   - Allan MacGregor
 heroImage:
-  image: /img/uploads/prevent-bot-attacks-4-.png
+  image: /img/uploads/prevent-bot-attacks-5-.png
 customCTA:
   openCtaNewTab: false
 ---
