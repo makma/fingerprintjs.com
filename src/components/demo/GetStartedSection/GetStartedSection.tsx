@@ -21,7 +21,14 @@ export default function GetStartedSection() {
       <Container size='large' className={styles.clientsContainer}>
         <div className={styles.content}>
           {clients.map((client) => {
-            return <img alt={`${client} logo`} className={styles.logo} src={`/img/company-logos/${client}.svg`} />
+            return (
+              <img
+                key={`image_${client}`}
+                alt={`${client} logo`}
+                className={styles.logo}
+                src={`/img/company-logos/${client}.svg`}
+              />
+            )
           })}
         </div>
       </Container>
