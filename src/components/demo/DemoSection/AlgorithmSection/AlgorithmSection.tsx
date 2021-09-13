@@ -28,7 +28,7 @@ export default function AlgorithmSection({ visits, currentVisit, visitorId }: Cu
     <Section className={styles.root}>
       <Header />
       <Container size='large' className={styles.algorithmContainer}>
-        <section className={styles.browserSignalsTitle}>Browser fingerprinting details</section>
+        <h2 className={styles.browserSignalsTitle}>Browser fingerprinting details</h2>
         <section className={styles.browserSignals}>
           <Card icon={<AdBlockSVG />} title={`Incognito mode ${currentVisit?.incognito ? 'Yes' : 'No'}`} />
           <Card
@@ -38,18 +38,18 @@ export default function AlgorithmSection({ visits, currentVisit, visitorId }: Cu
           <Card icon={<WindowSVG />} title={`resolution ${width}x${height}`} />
           <Card icon={<MobileSVG />} title={currentVisit?.browserDetails?.os} />
         </section>
-        <section className={styles.browserRows}>
+        <div className={styles.browserRows}>
           <div className={styles.browserRowsSVG} />
-        </section>
-        <section className={styles.otherSignalsTitle}>Other identifiers</section>
+        </div>
+        <h2 className={styles.otherSignalsTitle}>Other identifiers</h2>
         <section className={styles.otherSignals}>
           <Card variant='outline' icon={<TLSSVG />} title='TLS' />
           <Card variant='outline' icon={<PointerSVG />} title='Cookies' />
         </section>
-        <section className={styles.otherRows}>
+        <div className={styles.otherRows}>
           <div className={styles.otherRowsSVG} />
-        </section>
-        <section className={styles.visitHistoryTitle}>visit History</section>
+        </div>
+        <h2 className={styles.visitHistoryTitle}>visit History</h2>
         <section className={styles.visitHistory}>
           <div className={styles.visitSection}>
             <Visit current title='Current visit' />
@@ -59,22 +59,22 @@ export default function AlgorithmSection({ visits, currentVisit, visitorId }: Cu
         </section>
         <section className={styles.server}>
           <div className={styles.serverSection}>
-            <p className={styles.serverTitle}>Server</p>
+            <h2 className={styles.serverTitle}>Server</h2>
           </div>
         </section>
-        <section className={styles.visitorRow}>
+        <div className={styles.visitorRow}>
           <div className={styles.visitorRowSVG} />
-        </section>
-        <section className={styles.visitorIdTitle}>Your visitor Id</section>
+        </div>
+        <h2 className={styles.visitorIdTitle}>Your visitor Id</h2>
         <section className={styles.visitorId}>
           <Card variant='visitor' icon={<VisitorSVG />} title={visitorId} />
         </section>
-        <section className={styles.mobileRows}>
+        <aside className={styles.mobileRows}>
           <div className={styles.mobileRowsSVG} />
-        </section>
-        <section className={styles.visitorMobileRow}>
+        </aside>
+        <div className={styles.visitorMobileRow}>
           <div className={styles.visitorMobileRowSVG} />
-        </section>
+        </div>
       </Container>
     </Section>
   )
