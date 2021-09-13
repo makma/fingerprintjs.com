@@ -6,6 +6,7 @@ import { loadFpjsHistory } from '../../../helpers/api'
 
 import VisitorSection, { VisitorSectionLoading } from './VisitorSection/VisitorSection'
 import AlgorithmSection, { AlgorithmSectionLoading } from './AlgorithmSection/AlgorithmSection'
+import VisitsSection, { VisitsSectionLoading } from './VisitsSection/VisitsSection'
 
 export default function DemoSection() {
   const [currentVisit, setCurrentVisit] = useState<VisitorResponse>()
@@ -52,12 +53,14 @@ export default function DemoSection() {
         <>
           <VisitorSectionLoading />
           <AlgorithmSectionLoading />
+          <VisitsSectionLoading />
         </>
       ) : (
         visitorId && (
           <>
             <VisitorSection visitorId={visitorId} visits={visits} currentVisit={currentVisit} />
             <AlgorithmSection visitorId={visitorId} visits={visits} currentVisit={currentVisit} />
+            <VisitsSection visitorId={visitorId} visits={visits} currentVisit={currentVisit} />
           </>
         )
       )}

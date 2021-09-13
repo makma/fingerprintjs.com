@@ -1,0 +1,281 @@
+.root {
+  overflow: hidden;
+
+  padding: rem(50px) 0 rem(60px) 0;
+
+  @include media('<=tablet') {
+    padding: rem(80px) 0 rem(70px) 0;
+  }
+}
+
+.containerVisits,
+.containerFraudsters {
+  display: grid;
+
+  @include media('<=tablet') {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0 rem(20px);
+  }
+}
+.containerVisits {
+  grid-template-columns: rem(640px) 1fr;
+
+  @include media('<=desktop') {
+    grid-template-columns: rem(550px) 1fr;
+  }
+
+  @include media('<=tablet') {
+    flex-direction: column-reverse;
+    row-gap: rem(48px);
+  }
+}
+
+.containerFraudsters {
+  grid-template-columns: rem(517px) 1fr;
+
+  @include media('<=tablet') {
+    row-gap: rem(126px);
+  }
+}
+
+.cardSection {
+  .card {
+    display: flex;
+    flex-direction: column;
+
+    .icon {
+      width: rem(104px);
+      height: rem(104px);
+    }
+
+    .cardTitle {
+      font-size: rem(32px);
+      font-weight: v('bold');
+      line-height: 130%;
+      margin-top: rem(40px);
+      margin-bottom: rem(8px);
+
+      max-width: rem(320px);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(27px);
+        line-height: 120%;
+      }
+    }
+
+    .cardDescription {
+      @include sans($size: 24px, $color: adjust-color(c('brand-water'), $alpha: -0.3), $lh: 150%);
+      letter-spacing: -0.1px;
+
+      max-width: rem(450px);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(16px);
+      }
+    }
+  }
+}
+
+.visitsCard {
+  max-width: rem(507px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: rem(16px);
+  box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
+  border-radius: rem(16px);
+
+  margin-bottom: rem(32px);
+
+  @include media('<=phoneLandscape') {
+    padding: rem(8px);
+  }
+
+  .visitsTable {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+      @include sans($size: 14px, $weight: 500, $lh: 140%);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-align: left;
+    }
+    td {
+      @include sans($size: 16px, $weight: 400, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(14px);
+      }
+    }
+
+    td,
+    th {
+      padding: rem(16px);
+    }
+    .selected {
+      td {
+        background-color: var(--off-white);
+      }
+
+      td:first-child {
+        border-top-left-radius: rem(6px);
+        border-bottom-left-radius: rem(6px);
+      }
+      td:last-child {
+        border-top-right-radius: rem(6px);
+        border-bottom-right-radius: rem(6px);
+      }
+    }
+    .incognito {
+      color: #63cb7b;
+    }
+  }
+
+  &.incognitoCard {
+    background-color: v('brand-water');
+
+    .selected {
+      td {
+        background-color: adjust-color(c('brand-water'), $saturation: -5%, $lightness: 13%);
+      }
+    }
+
+    td,
+    th {
+      color: v('white');
+
+      .incognito {
+        color: #63cb7b;
+      }
+    }
+  }
+}
+
+.incognito {
+  display: flex;
+  flex-direction: row;
+  column-gap: rem(24px);
+  padding-bottom: rem(192px);
+
+  .icon {
+    width: rem(48px);
+    height: rem(48px);
+  }
+
+  .rows {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    .title {
+      @include sans($size: 14px, $weight: 500, $lh: 140%);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .description {
+      @include sans($size: 16px, $weight: 400, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+    }
+  }
+  @include media('<=phoneLandscape') {
+    padding-bottom: rem(120px);
+  }
+}
+.chartSection {
+  position: relative;
+
+  .dotsImage {
+    margin-left: rem(184px);
+    width: rem(400px);
+    height: rem(400px);
+
+    @include media('<=desktop') {
+      margin-left: 0;
+    }
+
+    @include media('<=tablet') {
+      width: 100%;
+      aspect-ratio: 1/1;
+    }
+  }
+  .card {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    max-width: rem(200px);
+
+    box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
+    border-radius: 16px;
+    background: v('white');
+
+    .visitorId {
+      @include sans($size: 12px, $weight: 500, $lh: 140%);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding-bottom: rem(12px);
+      margin-bottom: rem(12px);
+
+      border-bottom: 1px solid rgba(13, 16, 43, 0.48);
+    }
+    .incognitoSection {
+      display: grid;
+      grid-template-columns: min(25px) 1fr;
+      align-items: center;
+
+      .icon {
+        width: rem(17px);
+        height: rem(11px);
+      }
+    }
+  }
+  .card:nth-of-type(1) {
+    top: -10%;
+    right: 3%;
+
+    @include media('<=tablet') {
+      top: -5%;
+      right: 0%;
+    }
+  }
+  .card:nth-of-type(2) {
+    top: 10%;
+    left: 3%;
+
+    @include media('<=desktop') {
+      top: 20%;
+    }
+
+    @include media('<=tablet') {
+      top: 35%;
+      left: 0%;
+    }
+  }
+  .card:nth-of-type(3) {
+    bottom: -4%;
+    right: -2%;
+
+    @include media('<=tablet') {
+      bottom: 0%;
+      right: 10%;
+    }
+  }
+  .isIncognito {
+    @include sans($size: 14px, $weight: 400, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+  }
+}
+
+.visitSkeleton {
+  background-color: #dcdce3;
+  height: rem(24px);
+
+  @include media('<=phoneLandscape') {
+    height: rem(21px);
+  }
+}
