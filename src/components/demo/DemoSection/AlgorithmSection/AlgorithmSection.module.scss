@@ -37,7 +37,6 @@ $breakpoint: 1218px;
       line-height: 150%;
 
       @media screen and (max-width: $breakpoint) {
-        font-size: rem(16px);
         letter-spacing: normal;
 
         margin: 0 rem(20px) rem(40px) 0;
@@ -198,11 +197,15 @@ $breakpoint: 1218px;
     margin-bottom: rem(8px);
 
     text-transform: uppercase;
-    @include sans($size: 14px, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+    @include sans($size: 14px, $lh: 150%, $weight: 400, $color: adjust-color(c('brand-water'), $alpha: -0.3));
     @media screen and (max-width: $breakpoint) {
-      font-size: rem(10px);
+      font-size: rem(12px);
       line-height: 140%;
       margin-bottom: rem(8px);
+    }
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(10px);
     }
   }
 }
@@ -261,6 +264,10 @@ $breakpoint: 1218px;
     text-transform: uppercase;
 
     @media screen and (max-width: $breakpoint) {
+      font-size: rem(12px);
+    }
+
+    @include media('<=phoneLandscape') {
       font-size: rem(10px);
     }
   }
@@ -315,6 +322,10 @@ $breakpoint: 1218px;
       text-transform: uppercase;
 
       @media screen and (max-width: $breakpoint) {
+        font-size: rem(12px);
+      }
+
+      @include media('<=phoneLandscape') {
         font-size: rem(10px);
       }
     }
@@ -343,8 +354,12 @@ $breakpoint: 1218px;
     height: rem(52px);
 
     .serverTitle {
-      font-size: rem(10px);
+      font-size: rem(12px);
     }
+  }
+
+  @include media('<=phoneLandscape') {
+    font-size: rem(10px);
   }
 }
 
