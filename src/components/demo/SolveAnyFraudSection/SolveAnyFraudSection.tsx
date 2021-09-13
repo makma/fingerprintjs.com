@@ -1,7 +1,7 @@
 import React from 'react'
-import Container from '../../../common/Container'
-import Section from '../../../common/Section'
-import CodeWindow from '../../../common/CodeWindow'
+import Container from '../../common/Container'
+import Section from '../../common/Section'
+import CodeWindow from '../../common/CodeWindow'
 import styles from './SolveAnyFraudSection.module.scss'
 import { Link } from 'gatsby'
 
