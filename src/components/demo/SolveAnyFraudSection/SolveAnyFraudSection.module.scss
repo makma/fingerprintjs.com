@@ -1,0 +1,115 @@
+.codeApi {
+  background-color: v('brand-water');
+  color: v('white');
+  overflow-x: hidden;
+  padding-top: rem(118px);
+
+  @include media('<=desktop') {
+    padding-top: rem(80px);
+    padding-bottom: rem(92px);
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include media('<=desktop') {
+    flex-direction: column;
+  }
+  @include media('<=phoneLandscape') {
+    padding: 0 rem(20px);
+  }
+}
+.content {
+  @include media('>desktop') {
+    max-width: rem(588px);
+  }
+
+  @include media('<=desktop') {
+    margin-bottom: rem(64px);
+    width: 100%;
+  }
+
+  > * + * {
+    margin-top: rem(16px);
+  }
+}
+
+.solveAnyFraud,
+.content {
+  flex: 1;
+}
+
+.solveAnyFraud {
+  max-width: rem(576px);
+
+  @include media('<=desktop') {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: rem(32px);
+    font-weight: v(bold);
+    margin-bottom: rem(16px);
+    line-height: 130%;
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(27px);
+    }
+  }
+  .description {
+    @include sans($size: 24px, $lh: 150%);
+    letter-spacing: -0.1px;
+    margin-right: rem(50px);
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(20px);
+      letter-spacing: normal;
+      margin-right: 0;
+    }
+  }
+
+  .caseStudies {
+    padding-top: rem(64px);
+
+    @include media('<=phoneLandscape') {
+      padding-top: rem(48px);
+    }
+
+    .label {
+      @include sans($size: 14px, $lh: 140%, $weight: 500);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+
+      margin-bottom: rem(24px);
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: rem(16px);
+      row-gap: rem(16px);
+
+      @include media('<=phoneLandscape') {
+        grid-template-columns: 1fr;
+      }
+
+      .link {
+        @include sans($size: 20px, $lh: 130%, $weight: 600);
+        letter-spacing: 0.01em;
+
+        background: adjust-color(c('brand-water'), $saturation: -5%, $lightness: 13%);
+        border-radius: 16px;
+        padding: rem(24px);
+        min-width: rem(280px);
+
+        @include transition((opacity));
+
+        &:hover {
+          opacity: v('extra-faded');
+        }
+      }
+    }
+  }
+}
