@@ -197,7 +197,9 @@ $breakpoint: 1218px;
     margin-bottom: rem(8px);
 
     text-transform: uppercase;
-    @include sans($size: 14px, $lh: 150%, $weight: 400, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+    @include sans($size: 14px, $lh: 140%, $weight: 500, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+    letter-spacing: 0.04em;
+
     @media screen and (max-width: $breakpoint) {
       font-size: rem(12px);
       line-height: 140%;
