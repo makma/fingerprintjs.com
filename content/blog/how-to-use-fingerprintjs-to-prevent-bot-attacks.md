@@ -527,5 +527,5 @@ While it’s not possible to completely prevent bot attacks given their current 
 
 The full code for the examples used in this article can be found here:
 
-* [multiple_registration_form](https://github.com/fingerprintjs/multiple-signup-demo)
-* [fingerprintjs_registration_bot](https://github.com/amacgregor/fingerprintjs_registration_bot)
+* [multiple\_registration\_form](https://github.com/fingerprintjs/multiple-signup-demo)
+* [fingerprintjs\_registration\_bot](https://github.com/amacgregor/fingerprintjs_registration_bot)
