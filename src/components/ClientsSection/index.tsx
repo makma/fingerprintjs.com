@@ -2,25 +2,22 @@ import React from 'react'
 import Section from '../common/Section'
 import Container from '../common/Container'
 import styles from './ClientsSection.module.scss'
+import { ReactComponent as EbaySVG } from '../../../static/img/company-logos/ebay.svg'
+import { ReactComponent as TargetSVG } from '../../../static/img/company-logos/target.svg'
+import { ReactComponent as UsBankSVG } from '../../../static/img/company-logos/us-bank.svg'
+import { ReactComponent as BookingSVG } from '../../../static/img/company-logos/booking.svg'
+import { ReactComponent as AmeritradeSVG } from '../../../static/img/company-logos/ameritrade.svg'
+import { ReactComponent as HsnSVG } from '../../../static/img/company-logos/hsn.svg'
+import { ReactComponent as AgodaSVG } from '../../../static/img/company-logos/agoda.svg'
+import { ReactComponent as BAndHSVG } from '../../../static/img/company-logos/b_and_h.svg'
+import { ReactComponent as CoinBaseSVG } from '../../../static/img/company-logos/coinbase.svg'
+import { ReactComponent as NeimanMarcusSVG } from '../../../static/img/company-logos/neiman-marcus.svg'
+import { ReactComponent as RockstarSVG } from '../../../static/img/company-logos/rockstar.svg'
+import { ReactComponent as CheckoutSVG } from '../../../static/img/company-logos/checkout.svg'
+import { ReactComponent as WesterUnionSVG } from '../../../static/img/company-logos/western-union.svg'
+import { ReactComponent as YahooSVG } from '../../../static/img/company-logos/yahoo.svg'
 
 export default function ClientsSection() {
-  const clients = [
-    'ebay',
-    'target',
-    'us-bank',
-    'booking',
-    'ameritrade',
-    'hsn',
-    'agoda',
-    'b_and_h',
-    'coinbase',
-    'neiman-marcus',
-    'rockstar',
-    'checkout',
-    'western-union',
-    'yahoo',
-  ]
-
   return (
     <Section className={styles.clients}>
       <Container size='large'>
@@ -30,15 +27,33 @@ export default function ClientsSection() {
           </h2>
         </header>
         <div className={styles.content}>
-          {clients.map((client) => {
-            return (
-              <span key={`slide_${client}`} className={styles.slide}>
-                <img alt={`${client} logo`} className={styles.logo} src={`/img/company-logos/${client}.svg`} />
-              </span>
-            )
-          })}
+          <CompanyLogo icon={EbaySVG} />
+          <CompanyLogo icon={TargetSVG} />
+          <CompanyLogo icon={UsBankSVG} />
+          <CompanyLogo icon={BookingSVG} />
+          <CompanyLogo icon={AmeritradeSVG} />
+          <CompanyLogo icon={HsnSVG} />
+          <CompanyLogo icon={AgodaSVG} />
+          <CompanyLogo icon={BAndHSVG} />
+          <CompanyLogo icon={CoinBaseSVG} />
+          <CompanyLogo icon={NeimanMarcusSVG} />
+          <CompanyLogo icon={RockstarSVG} />
+          <CompanyLogo icon={CheckoutSVG} />
+          <CompanyLogo icon={WesterUnionSVG} />
+          <CompanyLogo icon={YahooSVG} />
         </div>
       </Container>
     </Section>
+  )
+}
+
+interface CompanyLogoProps {
+  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
+}
+function CompanyLogo({ icon: Icon }: CompanyLogoProps) {
+  return (
+    <span className={styles.slide}>
+      <Icon className={styles.logo} />
+    </span>
   )
 }
