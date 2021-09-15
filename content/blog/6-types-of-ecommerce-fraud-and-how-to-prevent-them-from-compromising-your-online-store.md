@@ -1,8 +1,8 @@
 ---
 templateKey: long-form-content
 metadata:
-  title: 6 Types of Ecommerce Fraud and How To Prevent Them From Compromising Your
-    Online Store
+  title: 6 Types of Ecommerce Fraud and How To Prevent Them From Harming Your
+    Customers
   url: https://fingerprintjs.com/blog/ecommerce-fraud-types
   image: /img/uploads/6-types-of-ecommerce-fraud_-learn-how-to-tackle-them-and-secure-your-ecommerce-store.png
   description: Today's ecommerce fraud is sophisticated, automated, and hard to
@@ -12,8 +12,7 @@ metadata:
   imageTitle: Ecommerce Fraud
 featured: true
 publishDate: 2021-09-15T19:02:17.906Z
-title: 6 Types of Ecommerce Fraud and How To Prevent Them From Compromising Your
-  Online Store
+title: 6 Types of Ecommerce Fraud and How To Prevent Them From Harming Your Customers
 tags:
   - fingerprinting
   - bot attacks
@@ -30,7 +29,7 @@ customCTA:
 ---
 [Ecommerce fraud](https://fingerprintjs.com/ecommerce/) isn’t just some low-level scammer using a stolen credit card anymore. With online sales on the rise, cyber criminals are incentivized to develop increasingly novel ways to steal from consumers and businesses alike.
 
-The [Mercator Advisory Group](https://www.paymentsjournal.com/wp-content/uploads/2020/02/Mercator-White-Paper-for-BHMI-Chargebacks-and-Disputes-Feb24-2020-Final.pdf) estimates that by 2022, 66 million online transactions will produce “33 million disputes from fraud, authorization failures, processing errors, and consumer disputes”. This represents an enormous potential for stolen data, lost revenue, and brand damage.
+The [Mercator Advisory Group](https://www.paymentsjournal.com/wp-content/uploads/2020/02/Mercator-White-Paper-for-BHMI-Chargebacks-and-Disputes-Feb24-2020-Final.pdf) estimates that by 2022, 66 million online transactions will produce “33 million disputes from fraud, authorization failures, processing errors, and consumer disputes.” This represents an enormous potential for stolen data, lost revenue, and brand damage.
 
 This article will explore rising trends in ecommerce fraud and outline 6 types that businesses need to be aware of, as well as what can be done to avoid being compromised.
 
