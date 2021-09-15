@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { handlePriceChange, pricingTable, freeApiCalls } from '../../helpers/pricing'
 import RangeSlider, { SliderValue } from '../common/RangeSlider'
 import classNames from 'classnames'
@@ -23,7 +23,7 @@ export default function PriceCalculator() {
 
   const defaultValue = 0
   const [sliderValue, setSliderValue] = useState(defaultValue)
-  const [monthlyPaymentLabel, setMonthlyPaymentLabel] = useState(pricingTable[defaultValue].label)
+  const [monthlyPaymentLabel, setMonthlyPaymentLabel] = useState('$0')
 
   const utmInfo = useUtmParams()
 
@@ -47,10 +47,6 @@ export default function PriceCalculator() {
       }
     }
   }
-
-  useEffect(() => {
-    recalculatePricing(sliderTable[sliderValue].value)
-  }, [sliderTable, sliderValue])
 
   return (
     <div className={styles.content}>
