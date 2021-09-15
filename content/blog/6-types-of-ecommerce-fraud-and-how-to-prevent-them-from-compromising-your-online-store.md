@@ -80,6 +80,8 @@ Triangulation fraud happens when an innocent customer makes a legitimate purchas
 This  fraud type is a complicated and increasingly common issue that's unique to online retailers, especially those with business models that involve selling on behalf of wholesalers and don’t require direct customer-supplier interactions. 
 
 The following is an example of a typical triangulation fraud incident. The incident includes three distinct parties (not including the credit card owner): the fraudster, a customer attempting to make a purchase, and the merchant:
+
+
 ![](https://lh4.googleusercontent.com/_S_HInRVzAe2_1fsZL_AdiWXlfYhiTgwr0fs4m4CWVX0i1sc_IEQljNnMiMi0O-uUv_H1kRKOTfT_KDFdaPFPNV_IuQqy4bjS_eQBkv99XvTqqEkr3S4wRLY30EKQNLYGisAomNq=s0)
 
 Source: chargebacks911.com
