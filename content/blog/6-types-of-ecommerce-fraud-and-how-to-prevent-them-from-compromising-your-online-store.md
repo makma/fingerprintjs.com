@@ -61,9 +61,9 @@ Since stolen credit cards are often quickly cancelled and reported, criminals ma
 
 Chargeback fraud occurs when a customer makes a legitimate purchase, then reports the transaction as fraudulent to receive a refund directly from the credit card company.
 
-Chargeback fraud can often be considered friendly fraud, where the card owner is complicit or somehow benefits from the purchase. The card owner may want a refund because they regret their initial purchase, do not remember making the purchase itself, or possibly had their card used by a friend or family member.
+In some cases, chargeback fraud can also be classified as friendly fraud, where the card owner is complicit or somehow benefits from the purchase. The card owner may want a refund because they regret their initial purchase, do not remember making the purchase itself, or possibly had their card used by a friend or family member. Other cases involve a malicious actor with no relation to the card owner.
 
-In other cases, the fraud is carried out by a fraudster with no relation to the card owner for monetary gain. Either way, chargeback fraud is the most common  and expensive type of fraud for businesses, resulting in excess bank fees, lost inventory, bank card black listing, lost revenue, and lost time trying to resolve the issue.
+Either way, chargeback fraud is the most common  and expensive type of fraud for businesses, resulting in excess bank fees, lost inventory, bank card black listing, lost revenue, and lost time trying to resolve the issue.
 
 Some basic ways to avoid chargeback fraud include: 
 
@@ -71,7 +71,7 @@ Some basic ways to avoid chargeback fraud include: 
 * Checking orders - some examples of fraud indications include things like many small purchases in a short amount of time or completely different billing and shipping addresses
 * Automatically sending email confirmation that an order has been made. This makes it harder for customers to claim that they never made a purchase and keeps a paper trail 
 * Making sure transaction details clearly state your business name and inform customers how it will show up on their account 
-* Securing website payments against fraudulent activity and transactions before they actually happen with [ecommerce fraud prevention software](https://fingerprintjs.com/ecommerce/).
+* Securing website payments against fraudulent activity/transactions before they actually happen with [ecommerce fraud prevention software](https://fingerprintjs.com/ecommerce/).
 
 ### 3. Triangulation Fraud
 
@@ -79,22 +79,19 @@ Triangulation fraud happens when an innocent customer makes a legitimate purchas
 
 This  fraud type is a complicated and increasingly common issue that's unique to online retailers, especially those with business models that involve selling on behalf of wholesalers and don’t require direct customer-supplier interactions. 
 
-The following is an example of a typical triangulation fraud incident. The incident includes three distinct parties (not including the credit card owner): the fraudster, a customer attempting to make a purchase, and the merchant:
-
+The following is an example of a typical triangulation fraud incident. Three distinct parties are involved (not including the credit card owner): the fraudster, a customer attempting to make a purchase, and the merchant:
 
 ![](https://lh4.googleusercontent.com/_S_HInRVzAe2_1fsZL_AdiWXlfYhiTgwr0fs4m4CWVX0i1sc_IEQljNnMiMi0O-uUv_H1kRKOTfT_KDFdaPFPNV_IuQqy4bjS_eQBkv99XvTqqEkr3S4wRLY30EKQNLYGisAomNq=s0)
 
 Source: chargebacks911.com
 
-
-
 1. A customer makes a purchase on a third-party marketplace (e.g. Facebook marketplace, Amazon)
-2. Posing as the third-party marketplace seller, the fraudster purchases the product from the retailer using stolen credit card details
-3. The product is sent to the customer, as the scammer has their legitimate details in the purchase order 
+2. The fraudster, posing as the customer, purchases the product from the retailer using stolen credit card details
+3. The product is sent to the customer, as the fraudster has inserted their legitimate details in the purchase order 
 4. The owner of the stolen card notices the fraudulent activity and requests a chargeback from their bank 
-5. The supplier loses the money from the purchase, the fraudster pockets the customer’s money as a middle man, and the legitimate customer is none the wiser
+5. The retailer loses the money from the purchase, the fraudster pockets the customer’s money as a middle man, and the legitimate customer is none the wiser
 
-Triangulation fraud can be difficult to identify, so it’s crucial to have systems in place that automatically detect suspicious activity. This includes using technology that tracks visitor behavior and bolstering payment systems to reduce the number of fraudulent transactions and chargebacks. 
+Triangulation fraud can be difficult to identify, so it’s crucial to have systems in place that automatically detect suspicious activity. This includes implementing technology that tracks visitor behavior and bolstering payment systems to reduce the number of fraudulent transactions and chargebacks. 
 
 ### 4. Account Takeover Fraud
 
@@ -103,7 +100,7 @@ As its name implies, account takeover fraud occurs when a scammer takes over a l
 Online merchants can implement these [account takeover prevention](https://fingerprintjs.com/account-takeover/) methods to protect their customers’ accounts: 
 
 * Associate multiple login attempts from bot networks and block additional attempts from visitors deemed suspicious
-* Use accurate visitor identification and require additional authentication from new/untrusted visitors before granting access
+* Use accurate visitor identification methods and require additional authentication from new/untrusted visitors before granting access
 
 By protecting users against account takeover fraud, you can ensure that customers have an  optimal experience as well as prevent chargebacks and penalties/fines from impacting your bottom line. 
 
@@ -114,19 +111,19 @@ Interception fraud is a type of criminal activity where criminals obtain sensiti
 Interception fraud may involve: 
 
 * Intercepting important emails (e.g., invoices, requests for information) before they get to the intended recipient, then posing as the sender to elicit sensitive details from the customer. Fraudsters will sometimes even set up filters so the original intended recipients never see the emails
-* Posing as the login page of a legitimate website to trick customers into submitting their email/password. Criminals can then use these credentials to  log in to the real website and carry out fraudulent transactions 
-* Planting malware into websites or devices for stealing sensitive information like email or account logins
-* Gaining access to customer details in order to  modify order details (e.g., changing the shipping address prior to the order being sent out)
+* Posing as the login page of a legitimate website to trick customers into submitting their email/passwords. Criminals can then use the harvested credentials to log in to the real website and carry out fraudulent transactions 
+* Planting malware into websites or devices to steal sensitive information like email or account logins
+* Gaining access to customer details to modify orders in progress (e.g., changing the shipping address)
 
 Businesses can reduce the risk of interception fraud by using data encryption at all times—specifically, by  enabling HTTPS on all websites and applications. 
 
-Other ways to prevent interception fraud include using a third party service rather than internal email for invoicing, requiring employees to change their passwords regularly, scanning corporate devices for malware (especially those with access to corporate email), and checking email filters for suspicious forwarding addresses. 
+Other ways to prevent interception fraud include using a third party service rather than internal email for invoicing, requiring employees to change their passwords regularly, scanning corporate devices for malware (especially those configured for corporate email), and checking email filters for suspicious forwarding addresses. 
 
 ### 6. Identity Theft
 
 Identity theft occurs when a scammer uses the victim’s personal details to steal even more personal data, drain financial accounts, or commit a crime under the stolen persona. This type of fraud [affects millions of people every year](https://www.idology.com/blog/infographic-protecting-your-customers-from-identity-theft/) and leads to lost revenue, wasted time, and compromised trust for both consumers and businesses alike. 
 
-Merchants transacting online should treat identity theft prevention as an integral part of their operations, starting with stronger security measures like site-wide encryption to protect customer data/privacy. Additionally, they should use comprehensive verification to ensure that customers are who they say they are—this could include the use of  browser fingerprinting for detecting unique visitors, even when browsing in private. Lastly, employees access to critical systems [should be restricted](https://www.businessnewsdaily.com/5531-identity-theft-prevention.html) based on their specific job duties and requirements.
+Merchants transacting online should treat identity theft prevention as an integral part of their operations, starting with stronger security measures like site-wide encryption to protect customer data/privacy. Additionally, they should use multi-faceted verification methods; this could include browser fingerprinting for detecting unique visitors, even when browsing in private. Lastly, employee access to critical systems [should be restricted](https://www.businessnewsdaily.com/5531-identity-theft-prevention.html) depending on specific job duties and requirements.
 
 ## Conclusion
 
