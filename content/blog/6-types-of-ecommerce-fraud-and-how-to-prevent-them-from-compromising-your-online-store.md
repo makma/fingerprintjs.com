@@ -1,7 +1,7 @@
 ---
 templateKey: long-form-content
 metadata:
-  title: 6 Types of Ecommerce Fraud and How To Prevent Them From Harming Your
+  title: 6 Types of Ecommerce Fraud and How to Prevent Them From Harming Your
     Customers
   url: https://fingerprintjs.com/blog/ecommerce-fraud-types
   image: /img/uploads/6-types-of-ecommerce-fraud_-learn-how-to-tackle-them-and-secure-your-ecommerce-store.png
