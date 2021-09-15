@@ -93,7 +93,7 @@ Source: chargebacks911.com
 4. The owner of the stolen card notices the fraudulent activity and requests a chargeback from their bank 
 5. The supplier loses the money from the purchase, the fraudster pockets the customer’s money as a middle man, and the legitimate customer is none the wiser
 
-Triangulation fraud can be difficult to identify, so it’s crucial to have systems in place that automatically detect suspicious activity. This includes using technology that tracks visitor behavior and bolsters payment systems to reduce the number of fraudulent transactions and chargebacks. 
+Triangulation fraud can be difficult to identify, so it’s crucial to have systems in place that automatically detect suspicious activity. This includes using technology that tracks visitor behavior and bolstering payment systems to reduce the number of fraudulent transactions and chargebacks. 
 
 ### 4. Account Takeover Fraud
 
