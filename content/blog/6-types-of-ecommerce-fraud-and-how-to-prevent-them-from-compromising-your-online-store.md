@@ -20,7 +20,7 @@ tags:
   - payment fraud
   - ecommerce fraud
 authors:
-  - Savannah Copland
+  - Leon Yen
 heroImage:
   image: /img/uploads/6-types-of-ecommerce-fraud_-learn-how-to-tackle-them-and-secure-your-ecommerce-store.png
   imageAlt: 6 Types of Ecommerce Fraud
