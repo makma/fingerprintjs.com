@@ -1,9 +1,6 @@
 .root {
   padding-bottom: rem(48px);
-
-  @include media('<=phoneLandscape') {
-    padding-top: rem(40px);
-  }
+  padding-top: rem(24px);
 }
 
 .container {
@@ -49,6 +46,7 @@
   font-family: v('ff-mono');
 
   margin-bottom: 2rem;
+  padding-top: rem(32px);
 
   @include media('>1250px') {
     margin-bottom: rem(16px);

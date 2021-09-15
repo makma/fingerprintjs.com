@@ -16,6 +16,7 @@ import PreviewProviders from '../cms/PreviewProviders'
 import AuthorComponent, { Author } from '../components/Author/Author'
 import CustomizableCTA, { CustomizableCTAProps } from '../components/CustomizableCTA/CustomizableCTA'
 import HeroImageComponent, { HeroImageComponentProps } from '../components/HeroImage/HeroImage'
+import TagList from '../components/TagList/TagList'
 
 import ActionBar, { ActionBarProps } from '../components/ActionBar/ActionBar'
 import { ImageInfo } from '../components/common/PreviewCompatibleImage/PreviewCompatibleImage'
@@ -46,6 +47,7 @@ export default function LongFormContent({ data, pageContext }: LongFormContentPr
   const publishDate = data.markdownRemark.frontmatter.publishDate
   const actionBar = mapToAction(data.markdownRemark.frontmatter)
   const customCTA = mapToCustomCta(data.markdownRemark.frontmatter.customCTA)
+  const tags = data.markdownRemark.frontmatter.tags as string[]
 
   return (
     <LongFormContentTemplate
@@ -59,6 +61,7 @@ export default function LongFormContent({ data, pageContext }: LongFormContentPr
       publishDate={publishDate}
       actionBar={actionBar}
       customCTA={customCTA}
+      tags={tags}
     />
   )
 }
@@ -131,6 +134,7 @@ export interface TemplateProps {
   publishDate?: string
   actionBar: ActionBarProps
   customCTA: CustomizableCTAProps
+  tags: string[]
 }
 export function LongFormContentTemplate({
   metadata,
@@ -142,6 +146,7 @@ export function LongFormContentTemplate({
   authors = [],
   actionBar,
   customCTA,
+  tags,
 }: TemplateProps) {
   const ContentComponent = contentComponent ?? Content
 
@@ -159,6 +164,7 @@ export function LongFormContentTemplate({
       <Section className={styles.root}>
         <Container className={styles.container}>
           <header className={styles.header}>
+            {tags && <TagList tags={tags} format='title' />}
             <h1 className={styles.title}>{post.title}</h1>
             <div className={styles.actionBar}>
               <ActionBar {...actionBar} />
@@ -195,6 +201,7 @@ export function LongFormContentPreview({ entry, widgetFor }: PreviewTemplateComp
   const heroImage = entry.getIn(['data', 'heroImage'])?.toJS() as QueryHeroImage
   const actionBar = entry.getIn(['data'])?.toJS() as QueryActionBar
   const customCTA = entry.getIn(['data', 'customCTA'])?.toJS() as QueryCustomCTA
+  const tags = entry.getIn(['data', 'tags'])
 
   return (
     <PreviewProviders>
@@ -205,6 +212,7 @@ export function LongFormContentPreview({ entry, widgetFor }: PreviewTemplateComp
         body={widgetFor('body') ?? <></>}
         actionBar={mapToAction(actionBar)}
         customCTA={mapToCustomCta(customCTA, true)}
+        tags={tags}
       />
     </PreviewProviders>
   )
