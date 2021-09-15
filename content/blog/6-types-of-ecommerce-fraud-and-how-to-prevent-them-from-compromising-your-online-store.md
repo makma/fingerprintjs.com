@@ -37,7 +37,7 @@ This article will explore rising trends in ecommerce fraud and outline 6 types t
 
 Simply put, because the economic incentives are too irresistible for cyber criminals.
 
-Online shopping has been experiencing [209% growth](https://www.businesswire.com/news/home/20200511005666/en/Global-eCommerce-Retail-Sales-Up-209-Percent-in-April-ACI-Worldwide-Research-Reveals) year-on-year, but security and fraud detection solutions haven’t been innovating fast enough to thwart malicious actors. These failures end up costing businesses around [7.5% of their annual revenue.](https://www.javelinstrategy.com/coverage-area/financial-impact-fraud)
+Online shopping has been experiencing [209% growth](https://www.businesswire.com/news/home/20200511005666/en/Global-eCommerce-Retail-Sales-Up-209-Percent-in-April-ACI-Worldwide-Research-Reveals) year-on-year, but security and fraud detection solutions haven’t been innovating fast enough to thwart malicious actors. These failures end up [costing businesses](https://www.javelinstrategy.com/coverage-area/financial-impact-fraud) around 7.5% of their annual revenue.
 
 ## 6 Types of Ecommerce Fraud You Should Be Prepared To Tackle
 
@@ -47,7 +47,7 @@ Below are 6 types of ecommerce fraud that online businesses should be aware of t
 
 ### **1. Card Testing Fraud**
 
-[Card testing attacks](https://www.finextra.com/blogposting/19705/card-testing-attacks-in-2020-how-to-identify-and-prevent-it) involve cyber criminals  making small charges to test whether the credit card will work for larger transactions. Also known as card cracking scams, these threats often target smaller businesses, companies that accept micro-transactions with lower authentication requirements, as well as  organizations that take donations that do not have the resources to detect this kind of fraud.
+[Card testing attacks](https://www.finextra.com/blogposting/19705/card-testing-attacks-in-2020-how-to-identify-and-prevent-it) involve cyber criminals making small charges to test whether the credit card will work for larger transactions. Also known as card cracking scams, these threats often target smaller businesses, companies that accept micro-transactions with lower authentication requirements, as well as  organizations that take donations that do not have the resources to detect this kind of fraud.
 
 These attacks can result in:
 
