@@ -47,7 +47,7 @@ Below are 6 types of ecommerce fraud that online businesses should be aware of t
 
 ### **1. Card Testing Fraud**
 
-[Card testing attacks](https://www.finextra.com/blogposting/19705/card-testing-attacks-in-2020-how-to-identify-and-prevent-it) involve cyber criminals making small charges to test whether the credit card will work for larger transactions. Also known as card cracking scams, these threats often target smaller businesses, companies that accept micro-transactions with lower authentication requirements, as well as  organizations that take donations that do not have the resources to detect this kind of fraud.
+[Card testing attacks](https://www.finextra.com/blogposting/19705/card-testing-attacks-in-2020-how-to-identify-and-prevent-it) involve cyber criminals making small charges to test whether the credit card will work for larger transactions. Also known as card cracking scams, these threats often target smaller businesses, companies that accept micro-transactions with lower authentication requirements, as well as donation-dependent organizations that lack the resources to detect this type of fraud.
 
 These attacks can result in:
 
