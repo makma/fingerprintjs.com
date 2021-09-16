@@ -27,7 +27,7 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 ---
-Account takeover fraud occurs when malicious actors steal login credentials to access customer accounts. Organizations that store user login information should  be especially wary of these threats, both to protect themselves and their customers.
+Account takeover fraud occurs when malicious actors steal login credentials to access customer accounts. Organizations that store user login information should be especially wary of these threats, both to protect themselves and their customers.
 
 In 2018, [account takeover](https://www.javelinstrategy.com/coverage-area/2018-identity-fraud-fraud-enters-new-era-complexity) fraud cost businesses in the United States $5.1 billion— three times the amount from the previous year. To make matters worse, the losses suffered may not be [covered by insurance](https://colony.bank/corporate-account-takeover#:~:text=Corporate%20Account%20Takeover%20is%20a,accounts%20controlled%20by%20the%20thieves.). A common form of this is [corporate account takeover](https://fingerprintjs.com/account-takeover/), when hackers steal login credentials to access your business’ bank accounts, and often drain your balance. 
 
@@ -43,7 +43,7 @@ It’s important to proactively monitor for any issues involving customer accoun
 
 When malicious actors are trying to gain access to accounts, they often leave a digital pattern of activity. Knowing what to look for and careful monitoring for these signs can help identify account takeover fraud in real time. 
 
-This is especially the case when cyber attackers steal volumes of customer login information from a single business—an occurrence not too uncommon these days.. It’s important to be aware of the relevant signs so immediate action can be taken if customer accounts have indeed been compromised.
+This is especially the case when cyber attackers steal volumes of customer login information from a single business—an occurrence not too uncommon these days. It’s important to be aware of the relevant signs so immediate action can be taken if customer accounts have indeed been compromised.
 
 ### Multiple accounts suddenly share similar details
 
