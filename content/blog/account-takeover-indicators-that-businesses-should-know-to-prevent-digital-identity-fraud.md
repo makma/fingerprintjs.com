@@ -4,7 +4,7 @@ metadata:
   title: Account Takeover Indicators That Businesses Should Know to Prevent
     Digital Identity Fraud
   image: /img/uploads/account-takeover-indicators.png
-  description: Learn how to spot these tell-tale signs that your customer accounts
+  description: Learn more about these tell-tale signs that your customer accounts
     may have been hijacked by cyber criminals.
   url: https://fingerprintjs.com/blog/account-takeover-indicators
   imageAlt: Account Takeover Fraud
