@@ -4,9 +4,10 @@ import Footer from '../Footer'
 import Header from '../Header'
 
 import useSiteMetadata from '../../hooks/useSiteMetadata'
+import { useConsolePromotionMessage } from '../../hooks/useConsolePromotionMessage'
 import { FPJS_ENDPOINT, FPJS_VISITORS_ENDPOINT, GTM_TOKEN, TLS_ENDPOINT } from '../../constants/env'
 import { withTrailingSlash } from '../../helpers/url'
-import { BASE_URL } from '../../constants/content'
+import { BASE_URL, URL } from '../../constants/content'
 import { defaultDataLayer } from '../../constants/content'
 import { useVisitorData } from '../../context/FpjsContext'
 import { enableAnalytics } from '../../helpers/gtm'
@@ -46,6 +47,8 @@ export function LayoutTemplate({ children, siteMetadata, headerBarTitle, headerB
       enableAnalytics()
     }
   }, [shouldEnableAnalytics])
+
+  useConsolePromotionMessage(`Like breaking things to see how they work? Join us: ${URL.careersUrl}`)
 
   return (
     <>
