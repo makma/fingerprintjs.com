@@ -1,3 +1,3 @@
 ---
-name: vulnerability
+name: leak
 ---
