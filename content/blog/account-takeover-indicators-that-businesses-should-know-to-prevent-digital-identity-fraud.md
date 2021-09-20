@@ -49,7 +49,7 @@ This is especially the case when cyber attackers steal volumes of customer login
 
 When cyber attackers successfully log in to accounts, they often change some of the account owner’s details. It’s not uncommon for criminals to target multiple customer accounts at one business in a short time span; when this happens, many customers may suddenly share the same details in their account profiles.For example, if 25 customers all change their shipping address to the same address on the same day, it’s highly likely that their accounts have been taken over. 
 
-Account takeover protection methods can include enforcing a stand-down period between account detail changes and and purchases or requiring address verification to ensure legitimacy
+Account takeover protection methods can include enforcing a stand-down period between account detail changes and purchases or requiring address verification to ensure legitimacy
 
 ### Accounts accessed from IP addresses in different countries
 
