@@ -1,0 +1,143 @@
+.root {
+  padding: rem(120px) 0;
+
+  @include media('<=phoneLandscape') {
+    padding: rem(80px) 0;
+  }
+
+  .heroContainer {
+    text-align: center;
+
+    .title {
+      font-size: rem(48px);
+      font-weight: v('bold');
+      line-height: 120%;
+
+      margin: 0 rem(20px) rem(16px) rem(20px);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(28px);
+      }
+    }
+
+    .subTitle {
+      @include sans($size: 24px, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.5), $weight: 500);
+      letter-spacing: -0.1px;
+      margin-bottom: rem(40px);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(16px);
+        letter-spacing: normal;
+
+        margin: 0 rem(20px) rem(40px) 0;
+      }
+    }
+  }
+}
+
+.clientsContainer {
+  padding-top: rem(128px);
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(87px);
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media('<=desktop') {
+      display: grid;
+      justify-items: center;
+      gap: rem(60px);
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include media('<=phoneLandscape') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media('<=phone') {
+      column-gap: rem(10px);
+    }
+  }
+
+  .checkout {
+    width: 147.99px;
+    height: 19.61px;
+
+    @include media('<=phoneLandscape') {
+      width: 122px;
+      height: 16px;
+    }
+  }
+  .yahoo {
+    width: 98.07px;
+    height: 27.2px;
+
+    @include media('<=phoneLandscape') {
+      width: 84px;
+      height: 23px;
+    }
+  }
+  .ebay {
+    width: 98.2px;
+    height: 37.47px;
+
+    @include media('<=phoneLandscape') {
+      width: 77px;
+      height: 30px;
+    }
+  }
+
+  .coinbase {
+    width: 98.07px;
+    height: 22.47px;
+
+    @include media('<=phoneLandscape') {
+      width: 84px;
+      height: 19px;
+    }
+  }
+
+  .agoda {
+    width: 83.8px;
+    height: 46.69px;
+
+    @include media('<=phoneLandscape') {
+      width: 75px;
+      height: 35px;
+    }
+  }
+
+  .usBank {
+    width: 98.07px;
+    height: 25.68px;
+
+    @include media('<=phoneLandscape') {
+      width: 84px;
+      height: 22px;
+    }
+  }
+
+  .booking {
+    width: 98.07px;
+    height: 25.68px;
+
+    @include media('<=phoneLandscape') {
+      width: 95px;
+      height: 16px;
+    }
+  }
+
+  .target {
+    width: 33.19px;
+    height: 42.27px;
+
+    @include media('<=phoneLandscape') {
+      width: 33.29px;
+      height: 42.4px;
+    }
+  }
+}
