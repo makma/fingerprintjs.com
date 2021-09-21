@@ -92,8 +92,8 @@ function Content({ card, incognito }: ContentProps) {
           <div className={classNames(styles.card, { [styles.incognito]: incognito })}>{card}</div>
           <footer className={styles.footer}>
             {incognito
-              ? 'You are in private browsing. Your visitorID is the same'
-              : 'Try revisiting on VPN or incognito mode. Your visitorID will be the same'}
+              ? 'You are in private browsing. Your visitorID is the same.'
+              : 'Try revisiting on VPN or incognito mode. Your visitorID will be the same.'}
           </footer>
         </section>
       </Container>

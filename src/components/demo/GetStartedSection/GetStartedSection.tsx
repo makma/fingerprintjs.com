@@ -19,9 +19,9 @@ export default function GetStartedSection() {
   return (
     <Section className={styles.root}>
       <Container className={styles.heroContainer}>
-        <h1 className={styles.title}>12% of the largest 500 websites use FingerprintJS </h1>
+        <h1 className={styles.title}>12% of the largest 500 websites use FingerprintJS</h1>
         <h2 className={styles.subTitle}>Get Started For Free Today</h2>
-        <Button size='big' href={URL.dashboardLoginUrl} className={styles.button}>
+        <Button size='big' href={URL.signupUrl} className={styles.button}>
           Start {DEFAULT_TRIAL_DAYS} Day Free Trial
         </Button>
       </Container>
