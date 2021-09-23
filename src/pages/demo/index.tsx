@@ -29,7 +29,7 @@ export default function DemoPage({ pageContext }: DemoPageProps) {
   return (
     <LayoutTemplate siteMetadata={siteMetadata}>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
-      <HeroSection title='FingerprintJS Pro Demo' ctaText='Start Free Trial' ctaHref={URL.dashboardLoginUrl}>
+      <HeroSection title='FingerprintJS Pro Demo' ctaText='Start Free Trial' ctaHref={URL.signupUrl}>
         Identify anonymous site visitors with 99.5% accuracy to prevent online fraud
       </HeroSection>
       <DemoSection />
