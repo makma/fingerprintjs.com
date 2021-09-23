@@ -1,4 +1,4 @@
-<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg id="startButton" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="24" cy="24" r="8" fill="#F2F2F7" />
     <circle cx="56" cy="24" r="8" fill="#F2F2F7" />
     <circle cx="88" cy="24" r="8" fill="#F2F2F7" />
@@ -143,8 +143,21 @@
     <circle cx="312" cy="376" r="8" fill="#F2F2F7" />
     <circle cx="344" cy="376" r="8" fill="#F2F2F7" />
     <circle cx="376" cy="376" r="8" fill="#F2F2F7" />
-    <path d="m56.333 56.667 226 32.5 62 191-288-223.5z" stroke="#F04405" stroke-linejoin="bevel" />
-    <circle opacity=".1" cx="343.75" cy="279.917" r="14" fill="#F04405" />
-    <circle opacity=".1" cx="279.917" cy="88.25" r="14" fill="#F04405" />
-    <circle fill="#F04405" r="14" cy="55.998" cx="55.998" opacity=".1" />
+    <path id="path" d="m56.333 56.667 226 32.5 62 191-288-223.5z" stroke="#F04405" stroke-linejoin="bevel"
+        stroke-dasharray="1000" stroke-dashoffset="1000">>
+        <animate attributeType="xml" attributeName="stroke-dashoffset" from="1000" to="0" dur="2.5s" begin="indefinite"
+            repeatCount="1" fill="freeze" restart="never" />
+    </path>
+    <circle cx="343.75" cy="279.917" r="14" fill="#F04405">
+        <animate attributeType="CSS" attributeName="opacity" from="0" to="0.5" dur="4s" repeatCount="indefinite"
+            values="0; 0.25; 0.5; 0" keyTimes="0; 0.4; 0.7; 1" />
+    </circle>
+    <circle opacity=".1" cx="279.917" cy="88.25" r="14" fill="#F04405">
+        <animate attributeType="CSS" attributeName="opacity" from="0" to="0.5" dur="2s" repeatCount="indefinite"
+            values="0; 0.5; 0.25; 0" keyTimes="0; 0.5; 0.8; 1" />
+    </circle>
+    <circle fill="#F04405" r="14" cy="55.998" cx="55.998" opacity=".1">
+        <animate attributeType="CSS" attributeName="opacity" from="0" to="0.5" dur="3s" repeatCount="indefinite"
+            values="0; 0.25; 0.5; 0" keyTimes="0; 0.2; 0.6; 1" />
+    </circle>
 </svg>

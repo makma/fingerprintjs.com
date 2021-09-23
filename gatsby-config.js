@@ -105,6 +105,9 @@ module.exports = {
       resolve: 'gatsby-plugin-svgr',
       options: {
         ref: true,
+        svgoConfig: {
+          plugins: [{ cleanupIDs: false }],
+        },
       },
     },
     {

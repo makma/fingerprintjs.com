@@ -8,6 +8,7 @@ import HeroSection from '../../components/HeroWithCTA/HeroWithCTA'
 import DemoSection from '../../components/demo/DemoSection/DemoSection'
 import SolveAnyFraudSection from '../../components/demo/SolveAnyFraudSection/SolveAnyFraudSection'
 import GetStartedSection from '../../components/demo/GetStartedSection/GetStartedSection'
+import CatchFraudstersSection from '../../components/demo/DemoSection/VisitsSection/catchFraudstersSection'
 
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
@@ -32,6 +33,7 @@ export default function DemoPage({ pageContext }: DemoPageProps) {
         Identify anonymous site visitors with 99.5% accuracy to prevent online fraud
       </HeroSection>
       <DemoSection />
+      <CatchFraudstersSection />
       <SolveAnyFraudSection />
       <GetStartedSection />
     </LayoutTemplate>

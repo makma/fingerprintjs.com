@@ -1,10 +1,16 @@
-.root {
-  overflow: hidden;
-
-  padding: rem(80px) 0 rem(96px) 0;
+.visitSection {
+  padding: rem(80px) 0 0 0;
 
   @include media('<=tablet') {
-    padding: rem(80px) 0 rem(70px) 0;
+    padding: rem(80px) 0 0 0;
+  }
+}
+
+.catchFraudstersSection {
+  padding: 0 0 rem(96px) 0;
+
+  @include media('<=tablet') {
+    padding: 0 0 rem(70px) 0;
   }
 }
 
@@ -225,6 +231,12 @@
     border-radius: 16px;
     background: v('white');
 
+    @include transition((opacity, transform));
+    @include transition-duration(1s);
+    opacity: 0;
+    transform: translateY(15px);
+    transition-delay: 2s;
+
     .visitorId {
       @include sans($size: 12px, $weight: 500, $lh: 140%);
       letter-spacing: 0.04em;
@@ -245,8 +257,14 @@
       }
     }
   }
+
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .card:nth-of-type(1) {
-    top: -10%;
+    top: -12%;
     right: 3%;
 
     @include media('<=tablet') {

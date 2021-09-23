@@ -9,8 +9,6 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 import { ReactComponent as IncognitoSVG } from './IncognitoSVG.svg'
-import { ReactComponent as DotsSVG } from './DotsSVG.svg'
-import { ReactComponent as IncognitoIconSVG } from './IncognitoIconSVG.svg'
 
 import styles from './VisitsSection.module.scss'
 
@@ -112,43 +110,13 @@ function Card({ icon, title, description }: CardProps) {
     </div>
   )
 }
-
-interface VisitCardProps {
-  incognito?: boolean
-  mail: string
-}
-function VisitCard({ incognito, mail }: VisitCardProps) {
-  return (
-    <div className={styles.card}>
-      <p className={styles.visitorId}>QyDG8Zmc3tIKmfzHg00e</p>
-
-      {incognito ? (
-        <div className={styles.incognitoSection}>
-          <IncognitoIconSVG className={styles.icon} />
-          <span className={styles.isIncognito}>Incognito mode</span>
-        </div>
-      ) : (
-        <span className={styles.isIncognito}>Normal mode</span>
-      )}
-      <p className={styles.isIncognito}>{mail}</p>
-    </div>
-  )
-}
-
 interface ContentProps {
   visitsSection: React.ReactNode
 }
 function Content({ visitsSection }: ContentProps) {
   const data = useStaticQuery(graphql`
     query {
-      incognito: file(relativePath: { eq: "IncognitoLayers.png" }) {
-        childImageSharp {
-          fixed(width: 104, height: 104, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp
-          }
-        }
-      }
-      catchFraudsters: file(relativePath: { eq: "CatchLayers.png" }) {
+      file(relativePath: { eq: "IncognitoLayers.png" }) {
         childImageSharp {
           fixed(width: 104, height: 104, quality: 100) {
             ...GatsbyImageSharpFixed_withWebp
@@ -157,32 +125,16 @@ function Content({ visitsSection }: ContentProps) {
       }
     }
   `)
-
   return (
-    <Section className={styles.root}>
+    <Section className={styles.visitSection}>
       <Container className={styles.containerVisits} size='large'>
         {visitsSection}
         <section className={styles.cardSection}>
           <Card
-            icon={<Img alt='Incognito Card' fixed={data.incognito.childImageSharp.fixed} />}
+            icon={<Img alt='Incognito Card' fixed={data.file.childImageSharp.fixed} />}
             title='Incognito Mode Detection'
             description='Your VisitorID remains constant even if you revisit the page in incognito mode or turn on a VPN. '
           />
-        </section>
-      </Container>
-      <Container className={styles.containerFraudsters} size='large'>
-        <section className={styles.cardSection}>
-          <Card
-            icon={<Img alt='Catch Fraudsters Card' fixed={data.catchFraudsters.childImageSharp.fixed} />}
-            title='Catch fraudsters concealing their identity'
-            description='VisitorIDs can be used to connect fraud vents across multiple visits.'
-          />
-        </section>
-        <section className={styles.chartSection}>
-          <DotsSVG className={styles.dotsImage} />
-          <VisitCard incognito mail='fraud@yourmail.com' />
-          <VisitCard incognito mail='8fraud@yourmail.com' />
-          <VisitCard mail='fraud123@yourmail.com' />
         </section>
       </Container>
     </Section>
