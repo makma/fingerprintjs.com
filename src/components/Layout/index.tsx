@@ -48,7 +48,7 @@ export function LayoutTemplate({ children, siteMetadata, headerBarTitle, headerB
     }
   }, [shouldEnableAnalytics])
 
-  useConsolePromotionMessage(`Like breaking things to see how they work? Join us: ${URL.careersUrl}`)
+  useConsolePromotionMessage(`Like breaking things to see how they work? Join us: ${URL.careersConsoleLogUrl}`)
 
   return (
     <>
