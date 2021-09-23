@@ -79,7 +79,9 @@ Start with the existing sample registration form provided by FingerprintJS calle
 Run `git checkout` against the `initial-project-setup` branch: 
 
 ```bash
-git clone -b initial-project-setup git@github.com:fingerprintjs/multiple-signup-demo.git signup_form
+git clone -b initial-project-setup \
+     https://github.com/fingerprintjs/fingerprintjs-multiple-signups-example.git \
+     signup_form
 cd signup_form
 ```
 
