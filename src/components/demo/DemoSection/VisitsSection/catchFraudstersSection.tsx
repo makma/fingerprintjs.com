@@ -55,7 +55,7 @@ export default function CatchFraudstersSection() {
             </span>
             <h1 className={styles.cardTitle}>Catch fraudsters concealing their identity</h1>
             <p className={styles.cardDescription}>
-              VisitorIDs can be used to connect fraud vents across multiple visits.
+              VisitorIDs can be used to connect fraud events across multiple visits.
             </p>
           </div>
         </section>

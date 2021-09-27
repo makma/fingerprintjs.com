@@ -240,7 +240,6 @@
     .visitorId {
       @include sans($size: 12px, $weight: 500, $lh: 140%);
       letter-spacing: 0.04em;
-      text-transform: uppercase;
       padding-bottom: rem(12px);
       margin-bottom: rem(12px);
 
