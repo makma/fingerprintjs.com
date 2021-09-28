@@ -1,6 +1,6 @@
 import React from 'react'
-import Img from 'gatsby-image'
-import { graphql, useStaticQuery } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
+
 import Section from '../../common/Section'
 import Container from '../../common/Container'
 import classNames from 'classnames'
@@ -8,18 +8,6 @@ import classNames from 'classnames'
 import styles from './ProLayersSection.module.scss'
 
 export default function ProLayersSection() {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "proLayers.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <Section className={styles.root}>
       <Container className={styles.container}>
@@ -37,7 +25,7 @@ export default function ProLayersSection() {
               <div className={styles.server}>Runs on server</div>
               <div className={styles.browser}>Runs in browser</div>
             </aside>
-            <Img alt='FingerprintJS Pro layers' fluid={data.file.childImageSharp.fluid} />
+            <StaticImage placeholder='blurred' src='../../../img/proLayers.png' alt='FingerprintJS Pro layers' />
           </section>
           <section className={styles.textWrapper}>
             <Layer title='Server-side analysis and machine learning'>

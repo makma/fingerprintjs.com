@@ -29,7 +29,7 @@ export default function Header({ headerBarTitle, headerBarLinkUrl }: HeaderProps
 
   useEffect(() => {
     const mobileBodyClass = 'isMobileMenuOpen'
-    if (isBrowser && isMobileMenuOpen) {
+    if (isBrowser() && isMobileMenuOpen) {
       document.body.classList.add(mobileBodyClass)
     } else {
       document.body.classList.remove(mobileBodyClass)

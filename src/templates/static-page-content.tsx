@@ -96,9 +96,7 @@ export const pageQuery = graphql`
           cards {
             icon {
               childImageSharp {
-                fixed(width: 28, quality: 100) {
-                  ...GatsbyImageSharpFixed_withWebp
-                }
+                gatsbyImageData(placeholder: BLURRED, width: 28, quality: 100, layout: FIXED)
               }
               extension
               publicURL
@@ -114,9 +112,7 @@ export const pageQuery = graphql`
           subheader
           image {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+              gatsbyImageData(placeholder: BLURRED, quality: 100, layout: FULL_WIDTH)
             }
           }
           imageAlt

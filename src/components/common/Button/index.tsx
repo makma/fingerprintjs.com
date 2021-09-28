@@ -36,17 +36,10 @@ export default function Button({
     { [styles.big]: size === 'big' },
     className
   )
+  const newTabProps = openNewTab && { target: '_blank', rel: 'noreferrer' }
 
   return href ? (
-    <a
-      href={href}
-      className={classes}
-      onClick={onClick}
-      aria-label={label}
-      download={download}
-      target={openNewTab ? '_blank' : undefined}
-      rel={openNewTab ? 'noreferrer' : undefined}
-    >
+    <a href={href} className={classes} onClick={onClick} aria-label={label} download={download} {...newTabProps}>
       {mobileIcon && <span className={styles.mobileOnly}>{mobileIcon}</span>}
       <span className={classNames({ [styles.desktopOnly]: mobileIcon })}>{children}</span>
     </a>

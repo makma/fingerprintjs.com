@@ -77,9 +77,7 @@ export const pageQuery = graphql`
           results {
             icon {
               childImageSharp {
-                fixed(width: 28, quality: 100) {
-                  ...GatsbyImageSharpFixed_withWebp
-                }
+                gatsbyImageData(placeholder: BLURRED, width: 28, quality: 100, layout: FIXED)
               }
               extension
               publicURL

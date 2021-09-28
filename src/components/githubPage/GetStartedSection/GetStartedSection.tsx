@@ -13,7 +13,7 @@ export default function GetStartedSection() {
   return (
     <Section
       className={styles.root}
-      backgroundImageFluid={mainBackground}
+      backgroundImage={mainBackground}
       cssBackgroundColor="v('off-white')"
       cssBackgroundPosition='center 65%'
       cssBackgroundRepeat='no-repeat'

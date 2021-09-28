@@ -130,10 +130,7 @@ export default function Footer() {
               1440 W. Taylor St #735, Chicago, IL 60607, USA
               <br />
               <br />
-              <a
-                className={styles.link}
-                href='&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#102;&#105;&#110;&#103;&#101;&#114;&#112;&#114;&#105;&#110;&#116;&#106;&#115;&#046;&#099;&#111;&#109;'
-              >
+              <a className={styles.link} href={MAILTO.mailToUrl}>
                 support@fingerprintjs.com
               </a>
             </address>

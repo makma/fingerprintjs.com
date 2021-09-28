@@ -21,7 +21,7 @@ export default function UseCasesSection() {
     <>
       <Section
         className={styles.section}
-        backgroundImageFluid={mainBackground}
+        backgroundImage={mainBackground}
         cssBackgroundColor="v('off-white')"
         cssBackgroundPosition='center center'
         cssBackgroundRepeat='no-repeat'

@@ -38,7 +38,13 @@ module.exports = {
       resolve: 'gatsby-plugin-sass',
       options: {
         implementation: require('sass'),
-        data: `@import "${resolvePath(__dirname, '/src/styles/common')}";`,
+        additionalData: `@import "${resolvePath(__dirname, '/src/styles/common')}";`,
+        cssLoaderOptions: {
+          esModule: false,
+          modules: {
+            namedExport: false,
+          },
+        },
       },
     },
     {
@@ -63,6 +69,7 @@ module.exports = {
         name: 'images',
       },
     },
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {

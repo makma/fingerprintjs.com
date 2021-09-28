@@ -13,7 +13,7 @@ export default function LiveDemoSection() {
   return (
     <Section
       className={styles.liveDemo}
-      backgroundImageFluid={mainBackground}
+      backgroundImage={mainBackground}
       cssBackgroundPosition='35vw 40%'
       cssBackgroundRepeat='no-repeat'
       cssBackgroundSize='1400px auto'

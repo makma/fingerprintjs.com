@@ -8,7 +8,7 @@ import HeroSection from '../../components/HeroWithCTA/HeroWithCTA'
 import DemoSection from '../../components/demo/DemoSection/DemoSection'
 import SolveAnyFraudSection from '../../components/demo/SolveAnyFraudSection/SolveAnyFraudSection'
 import GetStartedSection from '../../components/demo/GetStartedSection/GetStartedSection'
-import CatchFraudstersSection from '../../components/demo/DemoSection/VisitsSection/catchFraudstersSection'
+import CatchFraudstersSection from '../../components/demo/DemoSection/VisitsSection/CatchFraudstersSection'
 
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'

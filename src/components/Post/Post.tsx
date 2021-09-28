@@ -1,5 +1,5 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import classNames from 'classnames'
 import { getRelativeUrl } from '../../helpers/url'
 import TagList from '../TagList/TagList'
@@ -37,12 +37,17 @@ export default function Post({
   perRow,
   limitTextLines,
 }: PostProps) {
-  const imageFluid = image?.childImageSharp?.fluid
+  const imageFluid = image?.childImageSharp?.gatsbyImageData
   return (
     <Link to={getRelativeUrl(path)} className={classNames(styles.post, { [styles.wide]: variant === 'wide' })}>
       {imageFluid && (
         <div className={classNames(styles.wrapper, { [styles.threePerRow]: perRow === 'three' })}>
-          <Img fluid={imageFluid} className={styles.image} alt={imageAlt} title={imageTitle} />
+          <GatsbyImage
+            image={imageFluid}
+            className={styles.image}
+            alt={imageAlt ? imageAlt : title}
+            title={imageTitle}
+          />
         </div>
       )}
 
@@ -125,9 +130,7 @@ export const query = graphql`
             description
             image {
               childImageSharp {
-                fluid(maxWidth: 512, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(width: 512, quality: 100, layout: CONSTRAINED)
               }
             }
             imageAlt

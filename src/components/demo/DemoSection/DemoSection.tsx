@@ -3,6 +3,7 @@ import useRollbar from '../../../hooks/useRollbar'
 import { VisitorResponse } from '../../../types/visitorResponse'
 import { useVisitorData } from '../../../context/FpjsContext'
 import { loadFpjsHistory } from '../../../helpers/api'
+import { getErrorMessage } from '../../../helpers/error'
 
 import VisitorSection, { VisitorSectionLoading } from './VisitorSection/VisitorSection'
 import AlgorithmSection, { AlgorithmSectionLoading } from './AlgorithmSection/AlgorithmSection'
@@ -33,7 +34,7 @@ export default function DemoSection() {
           setCurrentVisit(visits[0])
         }
       } catch (e) {
-        rollbar.error('Unable to load visits', e)
+        rollbar.error('Unable to load visits', getErrorMessage(e))
       } finally {
         if (!isCancelled) {
           setIsLoading(false)

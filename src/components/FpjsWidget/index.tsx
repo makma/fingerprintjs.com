@@ -9,6 +9,7 @@ import { CurrentVisitProps } from '../../types/currentVisitProps'
 import MobileWidget, { MobileLoadingState } from './MobileWidget'
 import { useVisitorData } from '../../context/FpjsContext'
 import useRollbar from '../../hooks/useRollbar'
+import { getErrorMessage } from '../../helpers/error'
 import { FPJS_API_TOKEN, FPJS_VISITORS_ENDPOINT, MAPBOX_ACCESS_TOKEN } from '../../constants/env'
 import styles from './FpjsWidget.module.scss'
 import Skeleton from '../Skeleton/Skeleton'
@@ -44,7 +45,9 @@ export default memo(function FpjsWidget() {
           setCurrentVisit(visits[0])
         }
       } catch (e) {
-        rollbar.error('Unable to load visits', e)
+        if (e) {
+          rollbar.error('Unable to load visits', getErrorMessage(e))
+        }
       } finally {
         if (!isCancelled) {
           setIsLoading(false)

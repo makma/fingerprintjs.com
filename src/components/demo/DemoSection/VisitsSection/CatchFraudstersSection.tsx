@@ -3,8 +3,7 @@ import Section from '../../../common/Section'
 import Container from '../../../common/Container'
 import classNames from 'classnames'
 
-import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import useIntersectionObserver from '../../../../hooks/useIntersectionObserver'
 
 import { ReactComponent as DotsSVG } from './DotsSVG.svg'
@@ -12,26 +11,12 @@ import { ReactComponent as IncognitoIconSVG } from './IncognitoIconSVG.svg'
 
 import styles from './VisitsSection.module.scss'
 
-// The file name should be CatchFraudstersSection but due to a bug in gatsby
-// the static query fails if it has the first capital letter.
-// TODO: After updating to gatsby 3 we have to test if it is fixed
 export default function CatchFraudstersSection() {
   interface SVGElement extends Element {
     beginElement(): SVGElement
   }
 
   const [hover, setHover] = useState(false)
-  const imageData = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "CatchLayers.png" }) {
-        childImageSharp {
-          fixed(width: 104, height: 104, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp
-          }
-        }
-      }
-    }
-  `)
 
   const ref = useRef<SVGSVGElement | null>(null)
   const entry = useIntersectionObserver(ref, { freezeOnceVisible: true })
@@ -51,7 +36,7 @@ export default function CatchFraudstersSection() {
         <section className={styles.cardSection}>
           <div className={styles.card}>
             <span className={styles.icon}>
-              <Img alt='Catch Fraudsters Card' fixed={imageData.file.childImageSharp.fixed} />
+              <StaticImage src='../../../../img/CatchLayers.png' alt='Catch Fraudsters Card' />
             </span>
             <h1 className={styles.cardTitle}>Catch fraudsters concealing their identity</h1>
             <p className={styles.cardDescription}>

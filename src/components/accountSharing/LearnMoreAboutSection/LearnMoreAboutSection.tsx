@@ -1,8 +1,7 @@
 import React from 'react'
 import Section from '../../common/Section'
 import Container from '../../common/Container'
-import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import { ReactComponent as WindowSVG } from './WindowSVG.svg'
 import { ReactComponent as LocationSVG } from './LocationSVG.svg'
@@ -10,34 +9,15 @@ import { ReactComponent as LocationSVG } from './LocationSVG.svg'
 import styles from './LearnMoreAboutSection.module.scss'
 
 export default function LearnMoreAboutSection() {
-  const data = useStaticQuery(graphql`
-    query {
-      customer: file(relativePath: { eq: "Customer.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      customerMobile: file(relativePath: { eq: "CustomerMobile.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <Section className={styles.root}>
       <Container className={styles.container} size='large'>
         <section className={styles.imageSection}>
-          <Img alt='Customer' fluid={data.customer.childImageSharp.fluid} className={styles.image} />
+          <StaticImage layout='fullWidth' src='../../../img/Customer.png' alt='Customer' className={styles.image} />
           <InfoImage />
         </section>
         <section className={styles.imageSectionMobile}>
-          <Img alt='Customer' fluid={data.customerMobile.childImageSharp.fluid} />
+          <StaticImage layout='fullWidth' src='../../../img/CustomerMobile.png' alt='Customer' />
           <InfoImage />
         </section>
         <section className={styles.descriptionSection}>

@@ -27,64 +27,23 @@ module.exports = {
       },
     },
   ],
+  core: {
+    builder: 'webpack5',
+  },
+  typescript: {
+    check: false,
+    checkOptions: {},
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+    },
+  },
   webpackFinal: async (config) => {
-    const [babelLoaderRule, ...rules] = config.module.rules
-    const [babelLoaderUse, ...use] = babelLoaderRule.use
-
-    const assetRule = config.module.rules.find(({ test }) => test.test('.svg'))
-    const assetLoader = {
-      loader: assetRule.loader,
-      options: assetRule.options || assetRule.query,
-    }
-
-    return {
-      ...config,
-      resolve: {
-        extensions: [...config.resolve.extensions, '.ts', '.tsx'],
-        // Prefer Gatsby ES6 entrypoint (module) over commonjs (main) entrypoint
-        mainFields: ['browser', 'module', 'main'],
-      },
-      module: {
-        rules: [
-          { test: /\.svg$/, use: ['@svgr/webpack', assetLoader] },
-          {
-            ...babelLoaderRule,
-            // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
-            exclude: [/node_modules\/(?!(gatsby)\/)/],
-            use: [
-              {
-                ...babelLoaderUse,
-                // use installed babel-loader
-                loader: require.resolve('babel-loader'),
-                options: {
-                  // use @babel/preset-react for JSX and env (instead of staged presets)
-                  presets: [require.resolve('@babel/preset-react'), require.resolve('@babel/preset-env')],
-                  plugins: [
-                    // use @babel/plugin-proposal-class-properties for class arrow functions
-                    require.resolve('@babel/plugin-proposal-class-properties'),
-                    // use babel-plugin-remove-graphql-queries to remove static queries from components when rendering in storybook
-                    require.resolve('babel-plugin-remove-graphql-queries'),
-                  ],
-                },
-              },
-              ...use,
-            ],
-          },
-          ...rules,
-          {
-            test: /\.(ts|tsx)$/,
-            loader: require.resolve('babel-loader'),
-            options: {
-              presets: [['react-app', { flow: false, typescript: true }]],
-              plugins: [
-                require.resolve('@babel/plugin-proposal-class-properties'),
-                // use babel-plugin-remove-graphql-queries to remove static queries from components when rendering in storybook
-                require.resolve('babel-plugin-remove-graphql-queries'),
-              ],
-            },
-          },
-        ],
-      },
-    }
+    // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
+    config.module.rules[0].exclude = [/node_modules\/(?!(gatsby)\/)/]
+    // Use babel-plugin-remove-graphql-queries to remove static queries from components when rendering in storybook
+    config.module.rules[0].use[0].options.plugins.push(require.resolve('babel-plugin-remove-graphql-queries'))
+    return config
   },
 }

@@ -205,7 +205,8 @@ function configureMiniCssExtractPlugin(config) {
 }
 
 exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
-  if (stage === 'build-javascript') {
+  //To ignore the css order warnings in gatsby v3 in develop it is necessary to add stage === 'develop'
+  if (stage === 'develop' || stage === 'build-javascript') {
     const config = getConfig()
 
     configureMiniCssExtractPlugin(config)

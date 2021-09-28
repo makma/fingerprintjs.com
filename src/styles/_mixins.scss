@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @import '~include-media/dist/_include-media';
 
 // Grid multiplier
@@ -94,7 +96,7 @@
 ========================================*/
 
 @function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+  @return math.div($value, $value * 0 + 1);
 }
 
 @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
@@ -146,7 +148,7 @@
     display: block;
     content: '';
     width: 100%;
-    padding-top: ($h / $w) * 100%;
+    padding-top: math.div($h, $w) * 100%;
   }
 
   @if ($hasChild) {

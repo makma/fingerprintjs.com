@@ -1,14 +1,16 @@
 import React from 'react'
 import classNames from 'classnames'
-import BackgroundImage, { IBackgroundImageProps } from 'gatsby-background-image'
+import BackgroundImage from 'gatsby-background-image'
+import { getImage, IGatsbyImageData } from 'gatsby-plugin-image'
+
+import { convertToBgImage } from 'gbimage-bridge'
 
 import styles from './Section.module.scss'
 
 export interface SectionProps {
   children: React.ReactNode
   className?: string | string[]
-  backgroundImageFluid?: IBackgroundImageProps['fluid']
-  backgroundImageFixed?: IBackgroundImageProps['fixed']
+  backgroundImage?: IGatsbyImageData
   cssBackgroundSize?: string
   cssBackgroundPosition?: string
   cssBackgroundRepeat?: string
@@ -17,8 +19,7 @@ export interface SectionProps {
 export default function Section({
   children,
   className,
-  backgroundImageFluid,
-  backgroundImageFixed,
+  backgroundImage,
   cssBackgroundSize,
   cssBackgroundPosition,
   cssBackgroundRepeat,
@@ -29,12 +30,15 @@ export default function Section({
     ...(cssBackgroundPosition && { backgroundPosition: cssBackgroundPosition }),
     ...(cssBackgroundRepeat && { backgroundRepeat: cssBackgroundRepeat }),
   }
-  return backgroundImageFluid || backgroundImageFixed ? (
+
+  const bgImage = backgroundImage && convertToBgImage(getImage(backgroundImage))
+
+  return backgroundImage ? (
     <BackgroundImage
       className={classNames(styles.section, className)}
       Tag='section'
-      fluid={backgroundImageFluid}
-      fixed={backgroundImageFixed}
+      {...bgImage}
+      preserveStackingContext
       backgroundColor={cssBackgroundColor}
       // Safari Technology Preview doesn't take the styles from scss
       // for some reason not determined yet ,so as a temporary fix we pass the styles as property

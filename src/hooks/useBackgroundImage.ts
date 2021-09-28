@@ -3,19 +3,17 @@ import { graphql, useStaticQuery } from 'gatsby'
 export function useMainBackgroundImage() {
   const data = useStaticQuery(
     graphql`
-      query {
+      {
         mainBackground: file(relativePath: { eq: "bg-full.png" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF], quality: 90, layout: FULL_WIDTH)
           }
         }
       }
     `
   )
 
-  const mainBackground = data.mainBackground.childImageSharp.fluid
+  const mainBackground = data.mainBackground.childImageSharp.gatsbyImageData
 
   return { mainBackground }
 }

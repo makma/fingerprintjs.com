@@ -1,9 +1,8 @@
 import React from 'react'
-import Img, { GatsbyImageFluidProps, GatsbyImageFixedProps, GatsbyImageProps } from 'gatsby-image'
-
+import { getImage, GatsbyImage, GatsbyImageProps, IGatsbyImageData } from 'gatsby-plugin-image'
 export type ImageInfo = GatsbyImageProps & {
-  childImageSharp?: GatsbyImageProps
-  image?: string | { childImageSharp: GatsbyImageProps }
+  childImageSharp?: IGatsbyImageData
+  image?: string | { childImageSharp: IGatsbyImageData }
   extension?: string
   publicURL?: string
 }
@@ -29,27 +28,24 @@ const PreviewCompatibleImage = ({ className, imageStyle, imageInfo, titleTag, al
 
   const { alt = altTag ?? '', title = titleTag, childImageSharp, image, extension, publicURL } = imageInfo
 
-  if (!!image && typeof image != 'string' && isFluid(image.childImageSharp)) {
-    return <Img className={className} style={style} fluid={image.childImageSharp.fluid} alt={alt} />
+  if (!!image && typeof image != 'string') {
+    return <GatsbyImage image={image} className={className} style={style} alt={alt} />
   }
 
-  if (childImageSharp && isFluid(childImageSharp)) {
-    return (
-      <Img
+  if (childImageSharp) {
+    const image = getImage(childImageSharp)
+    return image ? (
+      <GatsbyImage
+        image={image}
         className={className}
         style={style}
-        fluid={childImageSharp.fluid}
         alt={alt}
         title={title}
         imgStyle={{
           objectFit: 'contain',
         }}
       />
-    )
-  }
-
-  if (childImageSharp && isFixed(childImageSharp)) {
-    return <Img className={className} style={style} fixed={childImageSharp.fixed} alt={alt} title={title} />
+    ) : null
   }
 
   if (!!image && typeof image === 'string') {
@@ -61,14 +57,6 @@ const PreviewCompatibleImage = ({ className, imageStyle, imageInfo, titleTag, al
   }
 
   return null
-}
-
-function isFluid(imageInfo: ImageInfo): imageInfo is GatsbyImageFluidProps {
-  return (imageInfo as GatsbyImageFluidProps).fluid !== undefined
-}
-
-function isFixed(imageInfo: ImageInfo): imageInfo is GatsbyImageFixedProps {
-  return (imageInfo as GatsbyImageFixedProps).fixed !== undefined
 }
 
 export default PreviewCompatibleImage

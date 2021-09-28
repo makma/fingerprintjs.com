@@ -5,8 +5,7 @@ import classNames from 'classnames'
 import { CurrentVisitProps } from '../../../../types/currentVisitProps'
 import Skeleton from '../../../Skeleton/Skeleton'
 import { getVisitTitle } from '../../../../helpers/fpjs-widget'
-import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import { ReactComponent as IncognitoSVG } from './IncognitoSVG.svg'
 
@@ -114,24 +113,13 @@ interface ContentProps {
   visitsSection: React.ReactNode
 }
 function Content({ visitsSection }: ContentProps) {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "IncognitoLayers.png" }) {
-        childImageSharp {
-          fixed(width: 104, height: 104, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp
-          }
-        }
-      }
-    }
-  `)
   return (
     <Section className={styles.visitSection}>
       <Container className={styles.containerVisits} size='large'>
         {visitsSection}
         <section className={styles.cardSection}>
           <Card
-            icon={<Img alt='Incognito Card' fixed={data.file.childImageSharp.fixed} />}
+            icon={<StaticImage src='../../../../img/IncognitoLayers.png' alt='Incognito Card' />}
             title='Incognito Mode Detection'
             description='Your VisitorID remains constant even if you revisit the page in incognito mode or turn on a VPN. '
           />

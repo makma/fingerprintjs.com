@@ -21,7 +21,7 @@ export default function ProToolsSection() {
   return (
     <Section
       className={styles.proTools}
-      backgroundImageFluid={mainBackground}
+      backgroundImage={mainBackground}
       cssBackgroundColor="v('off-white')"
       cssBackgroundPosition='center center'
       cssBackgroundRepeat='no-repeat'

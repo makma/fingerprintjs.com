@@ -1,5 +1,6 @@
 // source: https://usehooks-typescript.com/use-fetch/
 import { useEffect, useReducer, useRef } from 'react'
+import { getErrorMessage } from '../helpers/error'
 
 interface State<T> {
   status: 'init' | 'fetching' | 'error' | 'fetched'
@@ -55,8 +56,7 @@ export function useFetch<T = unknown>(url?: string, options?: Record<string, unk
           dispatch({ type: 'success', payload: data })
         } catch (error) {
           if (cancelRequest) return
-
-          dispatch({ type: 'failure', payload: error.message })
+          dispatch({ type: 'failure', payload: getErrorMessage(error) })
         }
       }
     }

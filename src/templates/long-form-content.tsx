@@ -79,9 +79,7 @@ export const pageQuery = graphql`
             role
             photo {
               childImageSharp {
-                fixed(width: 48, height: 48, quality: 100) {
-                  ...GatsbyImageSharpFixed_withWebp
-                }
+                gatsbyImageData(placeholder: BLURRED, width: 48, height: 48, quality: 100, layout: FIXED)
               }
             }
           }
@@ -103,9 +101,7 @@ export const pageQuery = graphql`
         heroImage {
           image {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+              gatsbyImageData(placeholder: BLURRED, quality: 100, layout: FULL_WIDTH)
             }
           }
           imageAlt

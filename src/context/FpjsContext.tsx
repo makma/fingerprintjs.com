@@ -47,9 +47,11 @@ export function FpjsProvider({ children }: { children: React.ReactNode }) {
         setVisitorData(result)
       } catch (error) {
         // Adds a special name to JS agent errors so that they can be found in Rollbar easily.
-        error.message = `${error.name}: ${error.message}`
-        error.name = 'FPJSAgentError'
-        throw error
+        if (error instanceof Error) {
+          error.message = `${error.name}: ${error.message}`
+          error.name = 'FPJSAgentError'
+          throw error
+        }
       }
     }
 
