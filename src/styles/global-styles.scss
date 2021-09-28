@@ -16,7 +16,6 @@
 html {
   font-size: 8px;
   height: 100%;
-  scroll-behavior: smooth;
 }
 /* Avoid Chrome to see Safari hack */
 @supports (-webkit-touch-callout: none) {
@@ -30,7 +29,6 @@ body {
   font: 400 2rem/1.5 var(--ff-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
   color: v('brand-water');
   min-height: 100vh;
 
