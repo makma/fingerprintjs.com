@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Section from '../../../common/Section'
 import Container from '../../../common/Container'
 import classNames from 'classnames'
@@ -16,19 +16,16 @@ export default function CatchFraudstersSection() {
     beginElement(): SVGElement
   }
 
-  const [hover, setHover] = useState(false)
-
   const ref = useRef<SVGSVGElement | null>(null)
   const entry = useIntersectionObserver(ref, { freezeOnceVisible: true })
   const isVisible = !!entry?.isIntersecting
-  const beginAnimation = hover || (isVisible && window.screen.width < 640)
 
   useEffect(() => {
-    if (beginAnimation) {
+    if (isVisible) {
       const beginElement = document.querySelector<SVGElement>(`:scope [begin="indefinite"]`)
       beginElement?.beginElement()
     }
-  }, [beginAnimation])
+  }, [isVisible])
 
   return (
     <Section className={styles.catchFraudstersSection}>
@@ -45,10 +42,10 @@ export default function CatchFraudstersSection() {
           </div>
         </section>
         <section className={styles.chartSection}>
-          <DotsSVG ref={ref} className={styles.dotsImage} onMouseOver={() => setHover(true)} />
-          <VisitCard isVisible={beginAnimation} incognito mail='fraud@yourmail.com' />
-          <VisitCard isVisible={beginAnimation} incognito mail='8fraud@yourmail.com' />
-          <VisitCard isVisible={beginAnimation} mail='fraud123@yourmail.com' />
+          <DotsSVG ref={ref} className={styles.dotsImage} />
+          <VisitCard isVisible={isVisible} incognito mail='fraud@yourmail.com' />
+          <VisitCard isVisible={isVisible} incognito mail='8fraud@yourmail.com' />
+          <VisitCard isVisible={isVisible} mail='fraud123@yourmail.com' />
         </section>
       </Container>
     </Section>
