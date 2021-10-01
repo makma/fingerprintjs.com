@@ -26,21 +26,21 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 ---
-Phishing emails have become increasingly common and difficult to detect in recent years; in fact, they were the [most common online fraud type](https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf) in 2020, with nearly a quarter of a million phishing emails sent out to unwitting victims.\
-\
-By masquerading as a known authority figure, service provider, or other valid email source (e.g., the victim’s bank or employer), fraudsters can manipulate users to do their bidding: reveal username/passwords, share credit card information, or disclose other pieces of critical data to exploit. Some are easier to recognize than others, but in general phishing emails are continuing to evolve in sophistication as average internet users become savvier to common online threats.
+Phishing emails have become increasingly common and difficult to detect in recent years; in fact, they were the [most common online fraud type](https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf) in 2020, with nearly a quarter of a million phishing emails sent out to unwitting victims.
 
-For this reason, implementing effective [account takeover prevention measures](https://fingerprintjs.com/account-takeover/) is crucial for mitigating the risk of phishing and improving overall awareness around how to spot phishing attempts.
+By masquerading as a known authority figure, service provider, or other valid email source (e.g., the victim’s bank or employer), fraudsters can manipulate users to do their bidding: reveal username/passwords, share credit card information, or disclose other pieces of critical data. Some are easier to recognize than others, but in general phishing emails are continuing to evolve in sophistication as average internet users become savvier to common online threats.
+
+For this reason, implementing effective [account takeover prevention measures](https://fingerprintjs.com/account-takeover/) is crucial for mitigating the risk of phishing attacks and improving overall awareness around how to spot them.
 
 ## What is the goal of phishing attacks against businesses?
 
-Being that the end game is profit, malicious actors typically use stolen data to resell on the black market (e.g., the dark web) or launch more attacks. Cyber criminals are especially keen to direct phishing email campaigns against commercial firms, since these types of attacks against businesses will yield higher value victims (e.g., the CEO of a firm, a web store owner). In 2020, 75 percent of businesses globally suffered from phishing attacks; in the U.S., [74 percent](https://expertinsights.com/insights/50-phishing-stats-you-should-know) of these were successful. And unlike consumers, businesses that fall victim to phishing email attacks are subject to various post-incident reporting requirements such as notifying customers and/or registering data breach incidents publicly. This can result in negative media coverage, significant brand damage, and other business disruptions, not to mention a decrease in shareholder value if the company is publicly traded.
+Since the end game is profit, malicious actors typically steal data to resell on the black market (i.e., the dark web) or launch more attacks. Cyber criminals are especially keen to direct phishing email campaigns against commercial firms, since these types of attacks against businesses will yield higher value victims (e.g., the CEO of a firm, a web store owner). In 2020, 75 percent of businesses globally suffered from phishing attacks; in the U.S., [74 percent](https://expertinsights.com/insights/50-phishing-stats-you-should-know) of these were successful. And unlike consumers, businesses that fall victim to phishing email attacks are subject to various post-incident reporting requirements such as notifying customers and/or registering data breach incidents publicly. This can result in negative media coverage, significant brand damage, and other business disruptions, not to mention a decrease in shareholder value if the company is publicly traded.
 
 ## How to identify phishing emails?
 
-The phishing email content will vary depending who the malicious actor is masquerading as. For example, cyber criminals may pose as the businesses’ bank to manipulate employees or users into revealing their account login details. They may impersonate an internet service provider requesting access to the users’ desktop, a trusted colleague asking for a monetary favor, or even a known company executive requesting the expediting of a (non-existent) invoice.
+The contents of a phishing email will vary depending who the malicious actor is masquerading as. For example, cyber criminals may pose as the business’ bank to manipulate employees or users into revealing their account login details. They may impersonate an internet service provider requesting access to the users’ desktop, a trusted colleague asking for a monetary favor, or even a known company executive requesting the expediting of a (non-existent) invoice.
 
-Because email addresses are generally meant to be publicly accessible, phishing emails will invariably find their way into users’ accounts. Fortunately, today’s anti-phishing, email security, and account takeover prevention solutions are highly effective in mitigating the risk of phishing emails. That said, businesses should train their employees on how to monitor for these threats — specifically, to looki out for the following red flags of a phishing email attack.
+Because email addresses are generally meant to be publicly accessible, phishing emails will invariably find their way into users’ accounts. Fortunately, today’s anti-phishing, email security, and account takeover prevention solutions are highly effective in mitigating the risk of phishing emails. That said, businesses should train their employees on how to monitor for these threats — specifically, to look out for the following red flags of a phishing email attack.
 
 ### Atypical Salutations
 
@@ -48,13 +48,13 @@ Phishing emails often start with a greeting that you wouldn’t ordinarily expec
 
 ### Abundance of typos
 
-Bad grammar is an obvious sign of a phishing email. Legitimate firms drafting formal emails will likely correct any obvious errors and typos prior to sending, while cyber attackers will inadvertently include spelling, syntax or grammatical errorsThe email copy may also use improper English or sentences that  are nonsensical. These mistakes may be hard to notice at first glance, but can more easily be spotted during a slower, second take.
+Bad grammar is an obvious sign of a phishing email. Legitimate firms drafting formal emails will likely correct any obvious errors and typos prior to sending, while cyber attackers will inadvertently include spelling, syntax or grammatical errors. The email copy may also use improper English or sentences that  are nonsensical. These mistakes may be hard to notice at first glance, but can more easily be spotted during a slower, second take.
 
 ### Discrepancies in links and domains
 
 Cyber criminals will often employ phishing emails to trick readers into clicking on malicious links. This could have disastrous results, as the action may open up a destination web page/resource containing malware or malicious scripts for harvesting user details.
 
-Several key visual clues may allude to a potential phishing email attack in the works. The links may be buttons or graphics directly copied and pasted into the email body, in which case they may look off-center, oddly-shaped or malformed. For text links, users should be wary of  hyperlinks with hidden or obfuscated URLS., as cyber criminals will use methods to cloak the malicious destination domain, so as not to tip off the user.
+Several key visual clues may allude to a potential phishing email attack in the works. The links may be buttons or graphics directly copied and pasted into the email body, in which case they may look off-center, oddly-shaped or malformed. For text links, users should be wary of hyperlinks with hidden or obfuscated URLS., as cyber criminals will use methods to cloak the malicious destination domain, so as not to tip off the user.
 
 ![Bank Phishing Email](https://lh3.googleusercontent.com/eiUfsvLKZ8EGPLyZ2lJz-1o9aUzey8Tzc5dOOONEsgchZUhtXGUqpiOjIDINcU-DnM0XH3VTleuFFNMxa3AzTOENBcq4CS7BqRutpVXT34gl05HjZ1CMV8YKHKzUEVwA4err1lRu=s0 "Bank Phishing Email")
 
@@ -72,7 +72,7 @@ These urgent requests carry extra weight if the email purports to be from an emp
 
 ### Suspicious email attachments
 
-Phishing emails often direct users to [open attachments](https://it.stonybrook.edu/help/kb/handling-unexpected-or-suspicious-email-attachments) that resemble innocuous files (e.g., documents/PDFs, spreadsheets, or high-resolution images). . However, these attachments often contain malware and other malicious files used for gaining backdoor access to the user’s computer.
+Phishing emails often direct users to [open attachments](https://it.stonybrook.edu/help/kb/handling-unexpected-or-suspicious-email-attachments) that resemble innocuous files (e.g., documents/PDFs, spreadsheets, or high-resolution images). However, these attachments often contain malware and other malicious files used for gaining backdoor access to the user’s computer.
 
 ![Phishing Malware Attachment](https://lh4.googleusercontent.com/FEzZhzZXdVrE4lWsc5CkZTQ7_mtv1G8k7-dAQ1Xh4UIL7wdAIXB1Zr5WuYm2UTqCxDIgZo4JJg1GmtUXhaBU3S4cWofzyo7U03E_x2d0PcsUq_0G6m9GgglvhEEkQY2tq3tA_ppi=s0 "Phishing Malware Attachment")
 
@@ -82,7 +82,7 @@ In some cases, an .exe file may come as an attachment — if the email and file 
 
 ### Requests for payment information or banking details
 
-It’s important to keep in mind that most organizations these days, be it a government authority, service provider, bank, or other business,  do not request private information via email, expressly because of security and privacy reasons. Any requests for  credit card information, bank details, or account access should therefore be scrutinized thoroughly.
+It’s important to keep in mind that most organizations these days, be it a government authority, service provider, bank, or other business, do not request private information via email, expressly because of security and privacy reasons. Any requests for  credit card information, bank details, or account access should therefore be scrutinized thoroughly.
 
 ![Bank Phishing Email](https://lh4.googleusercontent.com/nzLIRJTf3iLQsw-LAebE_1VdenPMCkAQb9R8gVmo3L7lVF12g2GyH5Kx9cW9YGMQdhsFMpz8vOeMAtI_MD9MopelZkKW4mrO8Uo9LgQQljALHn-wYle3x3gEuW5U39VEbTOkjIxJ=s0 "Bank Phishing Email")
 
