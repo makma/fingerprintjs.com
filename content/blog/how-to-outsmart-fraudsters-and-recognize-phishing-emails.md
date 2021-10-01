@@ -26,7 +26,7 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 ---
-Phishing emails have become both increasingly common and difficult to detect in recent years. In fact, they were the [most common online fraud type](https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf) in 2020, with nearly a quarter of a million phishing emails sent out to unwitting victims.\
+Phishing emails have become increasingly common and difficult to detect in recent years; in fact, they were the [most common online fraud type](https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf) in 2020, with nearly a quarter of a million phishing emails sent out to unwitting victims.\
 \
 By masquerading as a known authority figure, service provider, or other valid email source (e.g., the victim’s bank or employer), fraudsters can manipulate users to do their bidding: reveal username/passwords, share credit card information, or disclose other pieces of critical data to exploit. Some are easier to recognize than others, but in general phishing emails are continuing to evolve in sophistication as average internet users become savvier to common online threats.
 
@@ -34,19 +34,17 @@ For this reason, implementing effective [account takeover prevention measures](h
 
 ## What is the goal of phishing attacks against businesses?
 
-Successful phishing attacks can be both costly and distressing for consumers and businesses alike, as the ramifications can involve more than just fraudulent credit card transactions. Since the end game is profit, malicious actors typically use stolen data for their own specific purposes, resell it on the black market (e.g., the dark web), or both. However, cyber criminals are especially keen to launch phishing email campaigns against businesses, as these types of attacks yield higher value targets (e.g., the CEO of a firm, a web store owner). 
-
-In 2020, 75 percent of businesses globally suffered from phishing attacks; in the U.S., [74 percent](https://expertinsights.com/insights/50-phishing-stats-you-should-know) of these were successful. And unlike consumers, businesses that fall victim to phishing email attacks are subject to various post-incident reporting requirements such as notifying customers and/or registering data breach incidents publicly. This can result in negative media coverage, significant brand damage, and other business disruptions, not to mention a decrease in shareholder value if the company is publicly traded.
+Being that the end game is profit, malicious actors typically use stolen data to resell on the black market (e.g., the dark web) or launch more attacks. Cyber criminals are especially keen to direct phishing email campaigns against commercial firms, since these types of attacks against businesses will yield higher value victims (e.g., the CEO of a firm, a web store owner). In 2020, 75 percent of businesses globally suffered from phishing attacks; in the U.S., [74 percent](https://expertinsights.com/insights/50-phishing-stats-you-should-know) of these were successful. And unlike consumers, businesses that fall victim to phishing email attacks are subject to various post-incident reporting requirements such as notifying customers and/or registering data breach incidents publicly. This can result in negative media coverage, significant brand damage, and other business disruptions, not to mention a decrease in shareholder value if the company is publicly traded.
 
 ## How to identify phishing emails?
 
-As far as the contents of the phishing email content is concerned, it will of course vary depending who the malicious actors are masquerading as. For example, scammers may pose as the businesses’ bank to manipulate employees or users into revealing their account login details. They may also impersonate an internet service provider requesting access to the users’ desktop, a trusted colleague asking for a monetary favor, or even a known company executive requesting the expediting of a (non-existent) invoice.
+The phishing email content will vary depending who the malicious actor is masquerading as. For example, cyber criminals may pose as the businesses’ bank to manipulate employees or users into revealing their account login details. They may impersonate an internet service provider requesting access to the users’ desktop, a trusted colleague asking for a monetary favor, or even a known company executive requesting the expediting of a (non-existent) invoice.
 
-Because email addresses are generally meant to be publicly accessible, phishing emails will invariably find their way into users’ accounts.Fortunately, , today’s anti-phishing ,email security, and account takeover prevention solutions are highly effective in mitigating the risk of phishing emails. That said, businesses should nonetheless train their employees on how to monitor  for phishing emails — specifically, in looking out for the following red flags of a phishing email attack.
+Because email addresses are generally meant to be publicly accessible, phishing emails will invariably find their way into users’ accounts. Fortunately, today’s anti-phishing, email security, and account takeover prevention solutions are highly effective in mitigating the risk of phishing emails. That said, businesses should train their employees on how to monitor for these threats — specifically, to looki out for the following red flags of a phishing email attack.
 
 ### Atypical Salutations
 
-Phishing emails often start with a greeting that you wouldn’t ordinarily expect like “Dear account holder”, “Dear Sir or Madam”, or “Dear valued customer”. Though attackers  may remove the greeting altogether and launch straight into the body of the email, more often they will begin with an unusually generic greeting without any personalized information like a name.l . Because  phishing emails are typically automated, attackers usually send hundreds or thousands of emails in hopes of netting a few unwary victims, and often do not have the necessary details to personalize the message for each recipient.
+Phishing emails often start with a greeting that you wouldn’t ordinarily expect like "Dear account holder," "Dear Sir or Madam," or "Dear valued customer." Though attackers  may remove the greeting altogether and launch straight into the body of the email, more often they will begin with an unusually generic greeting that lacks any personalization (e.g., the recipient's first/last name). Because  phishing emails are typically automated, attackers may send thousands of emails at once in hopes of netting a few unwary victims; subsequently, they often do not have the necessary details to personalize the message for each recipient.
 
 ### Abundance of typos
 
@@ -80,7 +78,7 @@ Phishing emails often direct users to [open attachments](https://it.stonybrook.e
 
 Source: [microsoft.com.](https://www.microsoft.com/security/blog/2017/01/26/phishers-unleash-simple-but-effective-social-engineering-techniques-using-pdf-attachments/)
 
-In some cases, an .exe file may come as an attachment — if the email and file are unexpected, it’s safer to leave it alone and discard the email.. Zipped email attachments can also be dangerous, as malicious files are often hidden layers deep within compressed folders.
+In some cases, an .exe file may come as an attachment — if the email and file are unexpected, it’s safer to leave it alone and discard the email. Zipped email attachments can also be dangerous, as malicious files are often hidden layers deep within compressed folders.
 
 ### Requests for payment information or banking details
 
@@ -94,7 +92,7 @@ Additionally, employees and staff should be trained to never provide payment inf
 
 ### Unsolicited conversations or messages
 
-Because phishing emails usually involve unsolicited attempts to correspond with the receiver, users should ask themselves how the sender got their email address in the first place. If it’s determined that no mailing list signup, opting-in, or initial conversation occurred, then a phishing email attack is likely underway. Anti-phishing tools can help to automatically detect and disarm these types of phishing emails.
+Because phishing emails usually involve unsolicited attempts to correspond with the receiver, users should ask themselves how the sender got their email address in the first place. If it's determined that no mailing list signup, opt-in, or initial conversation occurred, then a phishing email attack is likely underway. Fortunately, several anti-phishing tools can help to automatically detect and disarm these types of phishing emails.
 
 ## What are some typical phishing email examples?
 
