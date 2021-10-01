@@ -26,7 +26,7 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 ---
-Phishing emails have become both increasingly common and difficult to detect in recent years;  in fact, phishing attacks were the [most frequent online fraud type](https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf) in 2020, with nearly a quarter of a million phishing emails sent out to unwitting victims.\
+Phishing emails have become both increasingly common and difficult to detect in recent years. In fact, they were the [most common online fraud type](https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf) in 2020, with nearly a quarter of a million phishing emails sent out to unwitting victims.\
 \
 By masquerading as a known authority figure, service provider, or other valid email source (e.g., the victim’s bank or employer), fraudsters can manipulate users to do their bidding: reveal username/passwords, share credit card information, or disclose other pieces of critical data to exploit. Some are easier to recognize than others, but in general phishing emails are continuing to evolve in sophistication as average internet users become savvier to common online threats.
 
