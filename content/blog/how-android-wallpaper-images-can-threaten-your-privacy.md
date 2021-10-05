@@ -85,13 +85,13 @@ The methods may return null in some scenarios (e.g., when custom launchers redef
 
 ### The science of color extraction
 
-Since Android is open source, we can readily determine how the method actually works. According to the [code](https://cs.android.com/android/platform/superproject/+/master:frameworks/base/core/java/com/android/internal/graphics/palette/VariationalKMeansQuantizer.java;l=31?q=KMeansQua&sq=&ss=android%2Fplatform%2Fsuperproject), colors are the result of work of Variational [K-means](https://en.wikipedia.org/wiki/K-means_clustering) quantizer. Every image pixel is represented by a color and every color is a [3-dimensional](https://en.wikipedia.org/wiki/Three-dimensional_space) point in space (e.g., RGB color space). All pixels form a set in space, and the algorithm performs clustering of the set on K parts with finding K points, which are equidistant from others in the set.
+Since Android is open source, we can readily determine how the method actually works. According to the [code](https://cs.android.com/android/platform/superproject/+/master:frameworks/base/core/java/com/android/internal/graphics/palette/VariationalKMeansQuantizer.java;l=31?q=KMeansQua&sq=&ss=android%2Fplatform%2Fsuperproject), colors are the result of variational [K-means](https://en.wikipedia.org/wiki/K-means_clustering) quantization. Every image pixel is represented by a color and every color is a [3-dimensional](https://en.wikipedia.org/wiki/Three-dimensional_space) point in space (e.g., RGB color space). All pixels form a set in space, and the algorithm performs clustering of the set on K parts with finding K points, which are equidistant from others in the set.
 
 ![](https://lh4.googleusercontent.com/wZzelSbxnRMYVCB2uZ9LApfDN3KPKyYZ-DToP-adwRSzcQv_1nVisyhz-PdkyspqgQWjbmaN_HHQU9IXMeyd9-MaEHFW3tG3QKJdJsKiOmMw4DheEsUdcetMmtlXA6iU7Ibi10Pk=s0)
 
-Above is a visualization of how the K-means method works, courtesy of [vas3k](https://vas3k.com/blog/machine_learning/). This particular case is 3-means in a 2-dimensional space.
+A visualization of how the K-means method works, courtesy of [vas3k](https://vas3k.com/blog/machine_learning/). This particular case is 3-means in a 2-dimensional space.
 
-In the case of Android, colors are represented in the [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) color space and distance is calculated using classical measures of [euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance). The results are three shades of an image  that are  equidistant (in the color space) from every pixel of the image. 
+In the case of Android, colors are represented in the [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) color space and distance is calculated using classical measures of [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance). The results are three shades of an image  that are  equidistant (in the color space) from every pixel of the image. 
 
 ### A universe of combinations
 
@@ -114,11 +114,11 @@ We have an ID that contains 256 bits, is unique across all applications, and onl
 ```
 val id = hasher.hash(
 
-   if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O_MR1) {
+if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O_MR1) {
 
-       extractWallpaperBytes()
+extractWallpaperBytes()
 
-   } else extractColorsBytes())
+} else extractColorsBytes())
 ```
 
 The ID remains the same even after reinstalling the application and only changes when the wallpaper changes.
