@@ -15,7 +15,7 @@ export default function Navbar() {
           <Link className={nav.link} to={PATH.caseStudies}>
             Case Studies
           </Link>
-          <a className={nav.link} href={DOC_URL.documentationUrl}>
+          <a className={nav.link} href={DOC_URL.documentationUrl} target='_blank' rel='noreferrer'>
             Docs
           </a>
           <a className={nav.link} href={MAILTO.mailToUrl}>

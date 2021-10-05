@@ -46,16 +46,16 @@ export default function MobileNavbar() {
             <Link to={PATH.pricingUrl} className={styles.link}>
               Pricing
             </Link>
-            <a href={DOC_URL.documentationUrl} className={styles.link}>
+            <a href={DOC_URL.documentationUrl} target='_blank' rel='noreferrer' className={styles.link}>
               Docs
             </a>
             <a href={MAILTO.mailToUrl} className={styles.link}>
               Support
             </a>
-            <a href={URL.dashboardLoginUrl} className={styles.link}>
+            <a href={URL.dashboardLoginUrl} className={styles.link} target='_blank' rel='noreferrer'>
               Login
             </a>
-            <a href={URL.signupUrl} className={styles.link}>
+            <a href={URL.signupUrl} className={styles.link} target='_blank' rel='noreferrer'>
               Sign Up
             </a>
           </Container>

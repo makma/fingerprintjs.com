@@ -69,7 +69,7 @@ function Card({ icon, title, description, linkText, linkHref }: CardProps) {
       </div>
       <h1 className={styles.cardTitle}>{title}</h1>
       <p className={styles.cardDescription}>{description}</p>
-      <a href={linkHref} className={styles.cardLink}>
+      <a href={linkHref} className={styles.cardLink} target='_blank' rel='noreferrer'>
         {linkText}
       </a>
     </div>

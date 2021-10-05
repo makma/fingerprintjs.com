@@ -84,7 +84,7 @@ function Content({ card, incognito }: ContentProps) {
             A unique identifier associated with your specific browser and device. Websites can start collecting
             visitorIDs by installing our JavaScript agent.
           </p>
-          <a href={DOC_URL.documentationUrl} className={styles.link}>
+          <a href={DOC_URL.documentationUrl} className={styles.link} target='_blank' rel='noreferrer'>
             See documentation →
           </a>
         </section>
