@@ -2,5 +2,11 @@
   from = "http://www.fingerprintjs.com"
   to = "https://fingerprintjs.com/"
 
+[[redirects]]
+  from = "/blog/wallpaper-id/"
+  to = "/blog/how-android-wallpaper-images-threaten-privacy/"
+  status = 301
+  force = true
+
 [context.branch-deploy]
   command = "yarn noIndexBuild"
