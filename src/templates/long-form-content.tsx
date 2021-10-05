@@ -184,7 +184,7 @@ export function LongFormContentTemplate({
           )}
         </Container>
 
-        <Container size='large'>
+        <Container size='large' className={styles.relatedArticles}>
           <RelatedArticles article={post} count={4} limitPostLines={true} />
         </Container>
       </Section>

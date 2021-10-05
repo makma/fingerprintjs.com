@@ -111,3 +111,12 @@
     }
   }
 }
+
+.relatedArticles {
+  padding-top: rem(80px);
+  padding-bottom: rem(16px);
+
+  @include media('<=desktop') {
+    padding: rem(52px) 0 rem(16px) 0;
+  }
+}

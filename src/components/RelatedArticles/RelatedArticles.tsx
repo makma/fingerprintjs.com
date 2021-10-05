@@ -31,6 +31,7 @@ export default function RelatedArticles({
             perRow='four'
             nameIsCentered={titleIsCentered}
             limitPostLines={limitPostLines}
+            useSwiper
           />
         ) : null
       }}

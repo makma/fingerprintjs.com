@@ -91,6 +91,11 @@
 .wrapper {
   display: flex;
   flex: 0 0 auto;
+  aspect-ratio: 1.7;
+}
+
+.wideWrapper {
+  aspect-ratio: unset;
   height: 170px;
 
   @include media('>phoneLandscape', '<=desktop') {

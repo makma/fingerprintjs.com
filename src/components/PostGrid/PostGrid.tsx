@@ -2,6 +2,10 @@ import React from 'react'
 import Post, { PostProps } from '../Post/Post'
 import classNames from 'classnames'
 import TagList from '../TagList/TagList'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import SwiperCore, { Pagination } from 'swiper'
+
+SwiperCore.use([Pagination])
 
 import styles from './PostGrid.module.scss'
 
@@ -13,6 +17,7 @@ export interface PostGridProps {
   perRow?: 'four' | 'three'
   nameIsCentered?: boolean
   limitPostLines?: boolean
+  useSwiper?: boolean
 }
 export default function PostGrid({
   posts,
@@ -22,8 +27,62 @@ export default function PostGrid({
   tags,
   perRow = 'four',
   limitPostLines,
+  useSwiper = false,
 }: PostGridProps) {
-  return (
+  return useSwiper ? (
+    <>
+      <div className={classNames(styles.row, { [styles.alignNameCenter]: nameIsCentered })}>
+        <h2 className={styles.name}>{name}</h2>
+      </div>
+      <div className={classNames(styles.swiperSection, styles.mobileOnly)}>
+        <Swiper
+          breakpoints={{
+            320: {
+              slidesPerView: 1.3,
+              slidesPerColumn: 1,
+              spaceBetween: 16,
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },
+            },
+            768: {
+              slidesPerView: 3.5,
+              slidesPerColumn: 1,
+              slidesPerColumnFill: 'row',
+              spaceBetween: 28,
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },
+            },
+            1025: {
+              slidesPerView: 4,
+              slidesPerColumn: 1,
+              spaceBetween: 32,
+              slidesPerColumnFill: 'row',
+            },
+          }}
+        >
+          <div className='swiper-wrapper'>
+            {posts.map((post, index) => {
+              return (
+                <SwiperSlide key={post.path} className={`swiper-slide ${index === 0 ? styles.firstItem : ''}`}>
+                  <Post className={styles.post} perRow={perRow} limitTextLines={limitPostLines} {...post} />
+                </SwiperSlide>
+              )
+            })}
+          </div>
+          <div className={classNames('swiper-pagination', styles.bullets)} />
+        </Swiper>
+      </div>
+      <div className={classNames(styles.grid, styles.desktopOnly)}>
+        {posts.map((post) => {
+          return <Post perRow={perRow} key={post.path} limitTextLines={limitPostLines} {...post} />
+        })}
+      </div>
+    </>
+  ) : (
     <div className={styles.root}>
       {tags && (
         <div className={styles.tags}>

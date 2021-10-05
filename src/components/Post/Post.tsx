@@ -22,6 +22,7 @@ export interface PostProps {
   variant?: 'card' | 'wide'
   perRow?: 'four' | 'three'
   limitTextLines?: boolean
+  className?: string
 }
 export default function Post({
   title,
@@ -36,12 +37,21 @@ export default function Post({
   variant = 'card',
   perRow,
   limitTextLines,
+  className,
 }: PostProps) {
   const imageFluid = image?.childImageSharp?.gatsbyImageData
   return (
-    <Link to={getRelativeUrl(path)} className={classNames(styles.post, { [styles.wide]: variant === 'wide' })}>
+    <Link
+      to={getRelativeUrl(path)}
+      className={classNames(className, styles.post, { [styles.wide]: variant === 'wide' })}
+    >
       {imageFluid && (
-        <div className={classNames(styles.wrapper, { [styles.threePerRow]: perRow === 'three' })}>
+        <div
+          className={classNames(styles.wrapper, {
+            [styles.threePerRow]: perRow === 'three',
+            [styles.wideWrapper]: variant === 'wide',
+          })}
+        >
           <GatsbyImage
             image={imageFluid}
             className={styles.image}
@@ -130,7 +140,7 @@ export const query = graphql`
             description
             image {
               childImageSharp {
-                gatsbyImageData(width: 512, quality: 100, layout: CONSTRAINED)
+                gatsbyImageData(width: 512, quality: 100, layout: CONSTRAINED, aspectRatio: 1.7)
               }
             }
             imageAlt

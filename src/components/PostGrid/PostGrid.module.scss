@@ -20,11 +20,16 @@
 
 .name {
   font-size: rem(32px);
+  line-height: 130%;
+  letter-spacing: -0.01em;
+
+  @include media('<=phoneLandscape') {
+    @include sans($size: 20px, $lh: 130%, $weight: 600);
+    letter-spacing: 0.01em;
+  }
 }
 
 .grid {
-  margin-top: rem(64px);
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
@@ -60,5 +65,48 @@
   h2 {
     margin-bottom: rem(64px + 5px);
     font-size: rem(32px);
+  }
+}
+
+.swiperSection,
+.grid {
+  margin-top: rem(52px);
+
+  @include media('<=tabletWide') {
+    margin-top: rem(28px);
+  }
+}
+
+.bullets {
+  width: auto !important;
+}
+
+@include media('<=desktop') {
+  .firstItem,
+  .bullets,
+  .name {
+    margin-left: rem(20px);
+  }
+}
+
+.post {
+  @include media('<=desktop') {
+    width: 23vw;
+  }
+
+  @include media('<tablet') {
+    width: 65vw;
+  }
+}
+
+.desktopOnly {
+  @include media('<=desktop') {
+    display: none;
+  }
+}
+
+.mobileOnly {
+  @include media('>desktop') {
+    display: none;
   }
 }
