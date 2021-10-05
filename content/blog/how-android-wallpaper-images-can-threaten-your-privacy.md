@@ -53,7 +53,7 @@ As it stands, a large percentage of devices are running Android 8.1 or earlier (
 
 Starting with Android 8.1, the [getDrawable()](https://developer.android.com/reference/android/app/WallpaperManager#getDrawable()) method requires the use of [READ_EXTERNAL_STORAGE](https://developer.android.com/reference/android/Manifest.permission#READ_EXTERNAL_STORAGE), a less insecure but nonetheless risky permission as it enables access to all media on a device (and more privileged data). To compensate for the limited functionality, an easier way to extract colors was also introduced in Android 8.1: [getWallpaperColors(int which)](https://developer.android.com/reference/android/app/WallpaperManager#getWallpaperColors(int)),  which returns 3 main colors from a wallpaper image.
 
-Like iOS, Android allows users to assign wallpaper images to specific screens, and the integer argument “which” sets the exact wallpaper image to use for color extraction. There are two options: the constant values `WallpaperManager.FLAG_SYSTEM` or `WallpaperManager.FLAG_LOCK`.
+Like iOS, Android allows users to determine which specific screens to use wallpaper images, and the integer argument “which” sets which exact wallpaper image to use for color extraction. There are two options: the constant values `WallpaperManager.FLAG_SYSTEM` or `WallpaperManager.FLAG_LOCK`.
 
 ![](https://lh4.googleusercontent.com/i01jTGYTFjPOjMlw-8E9Gt7T_tP32Ouv6oHeJ4fM7aMpZQwaFUwGrykPNBYLSNoyDK5jBjaCc3Pj2QP-f5282k-OeEJVIbnVn3JkmxAq3izNgjJ0wez_G2PV0YWJaPa7J6LE7BDE=s0)
 
@@ -127,9 +127,9 @@ The ID remains the same even after reinstalling the application and only changes
 
 For demonstration purposes, we’ve created an open source application that calculates the ID and checks its uniqueness. You can download the app on [Google Play](https://play.google.com/store/apps/details?id=com.fingerprintjs.android.wallpaperid&hl=en_US&gl=US) (for Android 5.0 and above, no permissions are required); the source code is [available on GitHub](https://github.com/fingerprintjs/android-wallpaper-id). 
 
-**\*Note:** the method does not work on custom launchers that redefine logic of wallpaper management without using `WallpaperManager` class.* 
+**Note:** the method does not work on custom launchers that redefine logic of wallpaper management without using `WallpaperManager` class. 
 
-![](https://lh4.googleusercontent.com/vRIiLGEGEHq_DOaWAyRQnEtJx1f7tsUdJUXwwT0Uf80_Lt1REBbaVZ1uyUny5yEV7kxOq3KL2NYLwguOkm_8ACpkV5EGW9s128M7l8N2GvfVmdaWDG5yD7nMpgQELjfWeagTuDCi=s0)![](https://lh5.googleusercontent.com/SuAxqz-Zk_mD20O42X45WKULyorZcdzCf2X5aqMchlNHZ6Rq8z1RTEjAW4-o7PxmSJ1GR77KoSzcbCdDlrY0BcyzOFXUeu1br1ZnqmlZuJhe7fP_nSMEsWynDhDtQ4slgoz9kgXo=s0)
+![](https://lh4.googleusercontent.com/vRIiLGEGEHq_DOaWAyRQnEtJx1f7tsUdJUXwwT0Uf80_Lt1REBbaVZ1uyUny5yEV7kxOq3KL2NYLwguOkm_8ACpkV5EGW9s128M7l8N2GvfVmdaWDG5yD7nMpgQELjfWeagTuDCi=s0)![](/img/uploads/screenshot_20211006-000944_2.png)
 
 ## How to prevent wallpaper tracking on your Android device
 
