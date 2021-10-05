@@ -44,6 +44,7 @@ private fun calculateWallpaperBytes(): ByteArray {
    return stream.toByteArray()
 }
 ```
+
 Byte arrays can be used to restore original images from Android wallpapers, which are highly likely to contain personal information or details uniquely important to the user. Every app on your device can view and download photos of your family, pets, favorite bands or movies, and anything else you may have set as a wallpaper. Moreover, you couldn’t prevent them from doing so before Android 8.1.
 
 As it stands, a large percentage of devices are running Android 8.1 or earlier (almost 44.6% at the time of this writing, per Google Analytics) and still vulnerable to this exploit.
@@ -80,7 +81,7 @@ The following is an example of color extraction using the new method with a real
 
 Real example of Android color extraction 
 
-The methods may return null in some scenarios (e.g., when custom launchers redefine wallpaper management logic without using the WallpaperManager class). However, if a wallpaper was set once by WallpaperManager, the method will return a not-null value.
+The methods may return null in some scenarios (e.g., when custom launchers redefine wallpaper management logic without using the `WallpaperManager` class). However, if a wallpaper was set once by `WallpaperManager`, the method will return a not-null value.
 
 ### The science of color extraction
 
@@ -126,7 +127,7 @@ The ID remains the same even after reinstalling the application and only changes
 
 For demonstration purposes, we’ve created an open source application that calculates the ID and checks its uniqueness. You can download the app on [Google Play](https://play.google.com/store/apps/details?id=com.fingerprintjs.android.wallpaperid&hl=en_US&gl=US) (for Android 5.0 and above, no permissions are required); the source code is [available on GitHub](https://github.com/fingerprintjs/android-wallpaper-id). 
 
-**\*Please note:** the method does not work on custom launchers that redefine logic of wallpaper management without using WallpaperManager class.* 
+***Note:** the method does not work on custom launchers that redefine logic of wallpaper management without using `WallpaperManager` class.* 
 
 ![](https://lh4.googleusercontent.com/vRIiLGEGEHq_DOaWAyRQnEtJx1f7tsUdJUXwwT0Uf80_Lt1REBbaVZ1uyUny5yEV7kxOq3KL2NYLwguOkm_8ACpkV5EGW9s128M7l8N2GvfVmdaWDG5yD7nMpgQELjfWeagTuDCi=s0)![](https://lh5.googleusercontent.com/SuAxqz-Zk_mD20O42X45WKULyorZcdzCf2X5aqMchlNHZ6Rq8z1RTEjAW4-o7PxmSJ1GR77KoSzcbCdDlrY0BcyzOFXUeu1br1ZnqmlZuJhe7fP_nSMEsWynDhDtQ4slgoz9kgXo=s0)
 
