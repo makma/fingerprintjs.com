@@ -55,9 +55,7 @@ Starting with Android 8.1, the [getDrawable()](https://developer.android.com/ref
 
 Like iOS, Android allows users to determine which specific screens to use wallpaper images, and the integer argument “which” sets which exact wallpaper image to use for color extraction. There are two options: the constant values `WallpaperManager.FLAG_SYSTEM` or `WallpaperManager.FLAG_LOCK`.
 
-![](https://lh4.googleusercontent.com/i01jTGYTFjPOjMlw-8E9Gt7T_tP32Ouv6oHeJ4fM7aMpZQwaFUwGrykPNBYLSNoyDK5jBjaCc3Pj2QP-f5282k-OeEJVIbnVn3JkmxAq3izNgjJ0wez_G2PV0YWJaPa7J6LE7BDE=s0)
-
-The example of a dialog with an option to set the wallpaper's location
+![Wallpaper setting in Android](https://lh4.googleusercontent.com/i01jTGYTFjPOjMlw-8E9Gt7T_tP32Ouv6oHeJ4fM7aMpZQwaFUwGrykPNBYLSNoyDK5jBjaCc3Pj2QP-f5282k-OeEJVIbnVn3JkmxAq3izNgjJ0wez_G2PV0YWJaPa7J6LE7BDE=s0 "Wallpaper setting in Android")
 
 ```
 // WallpaperManager.FLAG_LOCK for the the lock screen
@@ -77,21 +75,19 @@ The above code illustrates how to extract colors using a [context](https://devel
 
 The following is an example of color extraction using the new method with a real picture:
 
-![](https://lh6.googleusercontent.com/ZZjI-a9Zl2_-h5yhQiPMUNIV_ZR7l7kjEQTVa2P165qHHLbHLWNqVsDpX_iF-Nxo-D7lVMBC--eXSIXq5lPEYLagME4yUqLW2oTvQQi76qZ2nr-izcnVNB6zWardUvcr-vRZzfWe=s0)
-
-Real example of Android color extraction 
+![Color extraction example](https://lh6.googleusercontent.com/ZZjI-a9Zl2_-h5yhQiPMUNIV_ZR7l7kjEQTVa2P165qHHLbHLWNqVsDpX_iF-Nxo-D7lVMBC--eXSIXq5lPEYLagME4yUqLW2oTvQQi76qZ2nr-izcnVNB6zWardUvcr-vRZzfWe=s0 "Color extraction example")
 
 The methods may return null in some scenarios (e.g., when custom launchers redefine wallpaper management logic without using the `WallpaperManager` class). However, if a wallpaper was set once by `WallpaperManager`, the method will return a not-null value.
 
 ### The science of color extraction
 
-Since Android is open source, we can readily determine how the method actually works. According to the [code](https://cs.android.com/android/platform/superproject/+/master:frameworks/base/core/java/com/android/internal/graphics/palette/VariationalKMeansQuantizer.java;l=31?q=KMeansQua&sq=&ss=android%2Fplatform%2Fsuperproject), colors are the result of variational [K-means](https://en.wikipedia.org/wiki/K-means_clustering) quantization. Every image pixel is represented by a color and every color is a [3-dimensional](https://en.wikipedia.org/wiki/Three-dimensional_space) point in space (e.g., RGB color space). All pixels form a set in space, and the algorithm performs clustering of the set on K parts with finding K points, which are equidistant from others in the set.
+Since Android is open source, we can readily determine how the method actually works. According to the [code](https://cs.android.com/android/platform/superproject/+/master:frameworks/base/core/java/com/android/internal/graphics/palette/VariationalKMeansQuantizer.java;l=31?q=KMeansQua&sq=&ss=android%2Fplatform%2Fsuperproject), colors are the result of work of Variational [K-means](https://en.wikipedia.org/wiki/K-means_clustering) quantizer. Every image pixel is represented by a color and every color is a [3-dimensional](https://en.wikipedia.org/wiki/Three-dimensional_space) point in space (e.g., RGB color space). All pixels form a set in space, and the algorithm performs clustering of the set on K parts with finding K points, which are equidistant from others in the set.
 
 ![](https://lh4.googleusercontent.com/wZzelSbxnRMYVCB2uZ9LApfDN3KPKyYZ-DToP-adwRSzcQv_1nVisyhz-PdkyspqgQWjbmaN_HHQU9IXMeyd9-MaEHFW3tG3QKJdJsKiOmMw4DheEsUdcetMmtlXA6iU7Ibi10Pk=s0)
 
-A visualization of how the K-means method works, courtesy of [vas3k](https://vas3k.com/blog/machine_learning/). This particular case is 3-means in a 2-dimensional space.
+Above is a visualization of how the K-means method works, courtesy of [vas3k](https://vas3k.com/blog/machine_learning/). This particular case is 3-means in a 2-dimensional space.
 
-In the case of Android, colors are represented in the [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) color space and distance is calculated using classical measures of [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance). The results are three shades of an image  that are  equidistant (in the color space) from every pixel of the image. 
+In the case of Android, colors are represented in the [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) color space and distance is calculated using classical measures of [euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance). The results are three shades of an image  that are  equidistant (in the color space) from every pixel of the image. 
 
 ### A universe of combinations
 
@@ -114,11 +110,11 @@ We have an ID that contains 256 bits, is unique across all applications, and onl
 ```
 val id = hasher.hash(
 
-if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O_MR1) {
+   if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O_MR1) {
 
-extractWallpaperBytes()
+       extractWallpaperBytes()
 
-} else extractColorsBytes())
+   } else extractColorsBytes())
 ```
 
 The ID remains the same even after reinstalling the application and only changes when the wallpaper changes.
@@ -129,7 +125,7 @@ For demonstration purposes, we’ve created an open source application that calc
 
 **Note:** the method does not work on custom launchers that redefine logic of wallpaper management without using `WallpaperManager` class. 
 
-![](https://lh4.googleusercontent.com/vRIiLGEGEHq_DOaWAyRQnEtJx1f7tsUdJUXwwT0Uf80_Lt1REBbaVZ1uyUny5yEV7kxOq3KL2NYLwguOkm_8ACpkV5EGW9s128M7l8N2GvfVmdaWDG5yD7nMpgQELjfWeagTuDCi=s0)![](/img/uploads/screenshot_20211006-000944_2.png)
+![Android wallpaper demo](/img/uploads/screenshot_20211006-000944_2.png "Android wallpaper demo")
 
 ## How to prevent wallpaper tracking on your Android device
 
