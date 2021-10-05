@@ -45,52 +45,54 @@ export default function Header({ headerBarTitle, headerBarLinkUrl }: HeaderProps
   }
 
   return (
-    <header className={styles.header}>
+    <>
       {headerBarTitle && <HeaderBar linkUrl={headerBarLinkUrl}>{headerBarTitle}</HeaderBar>}
-      <Navbar />
-      <div className={styles.nav}>
-        <Container size='large' className={styles.root}>
-          <nav className={styles.navMain}>
-            <div className={styles.navLeft}>
-              <Link to='/' className={`${styles.link} ${styles.linkLogo}`} title='Logo'>
-                <LogoSvg className={styles.logo} />
-              </Link>
-              <Link className={classNames(styles.link, styles.desktopOnly)} to='/why-fpjs/'>
-                Why Us
-              </Link>
-              <DropdownList name='Use Cases' list={useCaseLinks} />
-              <Link className={classNames(styles.link, styles.desktopOnly)} to='/demo/'>
-                Demo
-              </Link>
-              <Link className={classNames(styles.link, styles.desktopOnly)} to='/pricing/'>
-                Pricing
-              </Link>
-            </div>
-            <div className={styles.navRight}>
-              <GithubButton className={styles.desktopOnly} />
-              <Button
-                href={`${PATH.contactSales}${buildQueryString(utmInfo)}`}
-                variant='outline'
-                className={classNames(styles.desktopOnly, styles.button)}
-              >
-                Contact Sales
-              </Button>
-              <Button className={styles.signupButton} href={`${URL.signupUrl}${buildQueryString(utmInfo)}`}>
-                Free Trial
-              </Button>
-              <Button
-                label='Mobile Menu'
-                className={styles.mobileToggler}
-                variant='clear'
-                onClick={handleToggleMobileMenu}
-              >
-                <BurgerSvg className={styles.buttonIcon} />
-              </Button>
-            </div>
-          </nav>
-        </Container>
-      </div>
-      {isMobileMenuOpen && <MobileNavbar />}
-    </header>
+      <header className={styles.header}>
+        <Navbar />
+        <div className={styles.nav}>
+          <Container size='large' className={styles.root}>
+            <nav className={styles.navMain}>
+              <div className={styles.navLeft}>
+                <Link to='/' className={`${styles.link} ${styles.linkLogo}`} title='Logo'>
+                  <LogoSvg className={styles.logo} />
+                </Link>
+                <Link className={classNames(styles.link, styles.desktopOnly)} to='/why-fpjs/'>
+                  Why Us
+                </Link>
+                <DropdownList name='Use Cases' list={useCaseLinks} />
+                <Link className={classNames(styles.link, styles.desktopOnly)} to='/demo/'>
+                  Demo
+                </Link>
+                <Link className={classNames(styles.link, styles.desktopOnly)} to='/pricing/'>
+                  Pricing
+                </Link>
+              </div>
+              <div className={styles.navRight}>
+                <GithubButton className={styles.desktopOnly} />
+                <Button
+                  href={`${PATH.contactSales}${buildQueryString(utmInfo)}`}
+                  variant='outline'
+                  className={classNames(styles.desktopOnly, styles.button)}
+                >
+                  Contact Sales
+                </Button>
+                <Button className={styles.signupButton} href={`${URL.signupUrl}${buildQueryString(utmInfo)}`}>
+                  Free Trial
+                </Button>
+                <Button
+                  label='Mobile Menu'
+                  className={styles.mobileToggler}
+                  variant='clear'
+                  onClick={handleToggleMobileMenu}
+                >
+                  <BurgerSvg className={styles.buttonIcon} />
+                </Button>
+              </div>
+            </nav>
+          </Container>
+        </div>
+        {isMobileMenuOpen && <MobileNavbar />}
+      </header>
+    </>
   )
 }
