@@ -53,7 +53,7 @@ As it stands, a large percentage of devices are running Android 8.1 or earlier (
 
 Starting with Android 8.1, the [getDrawable()](https://developer.android.com/reference/android/app/WallpaperManager#getDrawable()) method requires the use of [READ_EXTERNAL_STORAGE](https://developer.android.com/reference/android/Manifest.permission#READ_EXTERNAL_STORAGE), a less insecure but nonetheless risky permission as it enables access to all media on a device (and more privileged data). To compensate for the limited functionality, an easier way to extract colors was also introduced in Android 8.1: [getWallpaperColors(int which)](https://developer.android.com/reference/android/app/WallpaperManager#getWallpaperColors(int)),  which returns 3 main colors from a wallpaper image.
 
-Like iOS, Android allows users to determine which specific screens to use wallpaper images, and the integer argument “which” sets which exact wallpaper image to use for color extraction. There are two options: the constant values `WallpaperManager.FLAG_SYSTEM` or `WallpaperManager.FLAG_LOCK`.
+Like iOS, Android allows users to assign wallpaper images to specific screens, and the integer argument “which” sets the exact wallpaper image to use for color extraction. There are two options: the constant values `WallpaperManager.FLAG_SYSTEM` or `WallpaperManager.FLAG_LOCK`.
 
 ![](https://lh4.googleusercontent.com/i01jTGYTFjPOjMlw-8E9Gt7T_tP32Ouv6oHeJ4fM7aMpZQwaFUwGrykPNBYLSNoyDK5jBjaCc3Pj2QP-f5282k-OeEJVIbnVn3JkmxAq3izNgjJ0wez_G2PV0YWJaPa7J6LE7BDE=s0)
 
