@@ -5,7 +5,7 @@ metadata:
   description: "Android 12 features Material You, a new UI theming system based on
     color extraction. Find out how this feature jeopardizes user privacy and
     what you can do to protect yourself. "
-  url: https://fingerprintjs.com/blog/wallpaper-id/
+  url: https://fingerprintjs.com/blog/how-android-wallpaper-images-threaten-privacy/
   image: /img/uploads/wallpaper-id.png
   imageAlt: Android Wallpaper Identifcation
   imageTitle: Android Wallpaper Identifcation
