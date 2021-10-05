@@ -16,6 +16,7 @@ tags:
   - fingerprinting
   - vulnerability
   - privacy
+  - Android
 authors:
   - Alexey Verkhovsky
 heroImage:
