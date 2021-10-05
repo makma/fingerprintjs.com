@@ -101,7 +101,7 @@ Since each component is independent, we can directly multiply the number of comb
 
 The same logic applies to the second wallpaper image, and they can be set up independently of each other. From one wallpaper image we have 72 bits and 144 bits using system wallpaper and lock screen wallpaper — 144 bits and 2¹⁴⁴ combinations. The more combinations possible, the higher probability of generating a unique value suitable for use as an ID. And hence, it’s likely you can easily be tracked. 
 
-2144 = 22 300 745 198 530 623 141 535 718 272 648 361 505 980 416
+2¹⁴⁴ = 22,300,745,198,530,623,141,535,718,272,648,361,505,980,416
 
 How large is this number, exactly? For context, the universe is made up of around 10⁸⁰ atoms. And 2¹⁴⁴ is approximately equal to 10⁴³. So the squared value of combinations is larger than the number of atoms in the universe! It’s safe to say that this outnumbers all devices on the Earth, for the foreseeable future. 
 
@@ -127,7 +127,7 @@ The ID remains the same even after reinstalling the application and only changes
 
 For demonstration purposes, we’ve created an open source application that calculates the ID and checks its uniqueness. You can download the app on [Google Play](https://play.google.com/store/apps/details?id=com.fingerprintjs.android.wallpaperid&hl=en_US&gl=US) (for Android 5.0 and above, no permissions are required); the source code is [available on GitHub](https://github.com/fingerprintjs/android-wallpaper-id). 
 
-***Note:** the method does not work on custom launchers that redefine logic of wallpaper management without using `WallpaperManager` class.* 
+**\*Note:** the method does not work on custom launchers that redefine logic of wallpaper management without using `WallpaperManager` class.* 
 
 ![](https://lh4.googleusercontent.com/vRIiLGEGEHq_DOaWAyRQnEtJx1f7tsUdJUXwwT0Uf80_Lt1REBbaVZ1uyUny5yEV7kxOq3KL2NYLwguOkm_8ACpkV5EGW9s128M7l8N2GvfVmdaWDG5yD7nMpgQELjfWeagTuDCi=s0)![](https://lh5.googleusercontent.com/SuAxqz-Zk_mD20O42X45WKULyorZcdzCf2X5aqMchlNHZ6Rq8z1RTEjAW4-o7PxmSJ1GR77KoSzcbCdDlrY0BcyzOFXUeu1br1ZnqmlZuJhe7fP_nSMEsWynDhDtQ4slgoz9kgXo=s0)
 
