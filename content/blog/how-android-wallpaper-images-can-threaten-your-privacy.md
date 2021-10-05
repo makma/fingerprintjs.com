@@ -30,8 +30,6 @@ Android 12’s highly anticipated Material You design system features wallpaper-
 
 Unfortunately, such personalization can carry a high price in compromised privacy. In this article, we’ll demonstrate how Android wallpapers can be used to track users and explore ways to prevent your device from being exploited.
 
-
-
 ## Android wallpaper images vs. user privacy
 
 The WallpaperManager class was introduced in 2009 as part of the release of Android 2, API version 5. The class provides methods for interacting with wallpapers, including [getDrawable()](https://developer.android.com/reference/android/app/WallpaperManager#getDrawable()) for retrieving the current system wallpaper as a drawable resource.
@@ -46,18 +44,15 @@ private fun calculateWallpaperBytes(): ByteArray {
    return stream.toByteArray()
 }
 ```
-
 Byte arrays can be used to restore original images from Android wallpapers, which are highly likely to contain personal information or details uniquely important to the user. Every app on your device can view and download photos of your family, pets, favorite bands or movies, and anything else you may have set as a wallpaper. Moreover, you couldn’t prevent them from doing so before Android 8.1.
 
 As it stands, a large percentage of devices are running Android 8.1 or earlier (almost 44.6% at the time of this writing, per Google Analytics) and still vulnerable to this exploit.
-
-
 
 ### A new color extraction method
 
 Starting with Android 8.1, the [getDrawable()](https://developer.android.com/reference/android/app/WallpaperManager#getDrawable()) method requires the use of [READ_EXTERNAL_STORAGE](https://developer.android.com/reference/android/Manifest.permission#READ_EXTERNAL_STORAGE), a less insecure but nonetheless risky permission as it enables access to all media on a device (and more privileged data). To compensate for the limited functionality, an easier way to extract colors was also introduced in Android 8.1: [getWallpaperColors(int which)](https://developer.android.com/reference/android/app/WallpaperManager#getWallpaperColors(int)),  which returns 3 main colors from a wallpaper image.
 
-Like iOS, Android allows users to determine which specific screens to use wallpaper images, and the integer argument “which” sets which exact wallpaper image to use for color extraction. There are two options: constant values WallpaperManager.FLAG_SYSTEM or WallpaperManager.FLAG_LOCK.
+Like iOS, Android allows users to determine which specific screens to use wallpaper images, and the integer argument “which” sets which exact wallpaper image to use for color extraction. There are two options: the constant values `WallpaperManager.FLAG_SYSTEM` or `WallpaperManager.FLAG_LOCK`.
 
 ![](https://lh4.googleusercontent.com/i01jTGYTFjPOjMlw-8E9Gt7T_tP32Ouv6oHeJ4fM7aMpZQwaFUwGrykPNBYLSNoyDK5jBjaCc3Pj2QP-f5282k-OeEJVIbnVn3JkmxAq3izNgjJ0wez_G2PV0YWJaPa7J6LE7BDE=s0)
 
@@ -87,8 +82,6 @@ Real example of Android color extraction 
 
 The methods may return null in some scenarios (e.g., when custom launchers redefine wallpaper management logic without using the WallpaperManager class). However, if a wallpaper was set once by WallpaperManager, the method will return a not-null value.
 
-
-
 ### The science of color extraction
 
 Since Android is open source, we can readily determine how the method actually works. According to the [code](https://cs.android.com/android/platform/superproject/+/master:frameworks/base/core/java/com/android/internal/graphics/palette/VariationalKMeansQuantizer.java;l=31?q=KMeansQua&sq=&ss=android%2Fplatform%2Fsuperproject), colors are the result of work of Variational [K-means](https://en.wikipedia.org/wiki/K-means_clustering) quantizer. Every image pixel is represented by a color and every color is a [3-dimensional](https://en.wikipedia.org/wiki/Three-dimensional_space) point in space (e.g., RGB color space). All pixels form a set in space, and the algorithm performs clustering of the set on K parts with finding K points, which are equidistant from others in the set.
@@ -98,8 +91,6 @@ Since Android is open source, we can readily determine how the method actually w
 A visualization of how the K-means method works, courtesy of [vas3k](https://vas3k.com/blog/machine_learning/). This particular case is 3-means in a 2-dimensional space.
 
 In the case of Android, colors are represented in the [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) color space and distance is calculated using classical measures of [euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance). The results are three shades of an image  that are  equidistant (in the color space) from every pixel of the image. 
-
-
 
 ### A universe of combinations
 
@@ -112,8 +103,6 @@ The same logic applies to the second wallpaper image, and they can be set up ind
 2144 = 22 300 745 198 530 623 141 535 718 272 648 361 505 980 416
 
 How large is this number, exactly? For context, the universe is made up of around 10⁸⁰ atoms. And 2¹⁴⁴ is approximately equal to 10⁴³. So the squared value of combinations is larger than the number of atoms in the universe! It’s safe to say that this outnumbers all devices on the Earth, for the foreseeable future. 
-
-
 
 ### The identification algorithm
 
@@ -137,7 +126,7 @@ The ID remains the same even after reinstalling the application and only changes
 
 For demonstration purposes, we’ve created an open source application that calculates the ID and checks its uniqueness. You can download the app on [Google Play](https://play.google.com/store/apps/details?id=com.fingerprintjs.android.wallpaperid&hl=en_US&gl=US) (for Android 5.0 and above, no permissions are required); the source code is [available on GitHub](https://github.com/fingerprintjs/android-wallpaper-id). 
 
-***Please note:** the method does not work on custom launchers that redefine logic of wallpaper management without using WallpaperManager class.* 
+**\*Please note:** the method does not work on custom launchers that redefine logic of wallpaper management without using WallpaperManager class.* 
 
 ![](https://lh4.googleusercontent.com/vRIiLGEGEHq_DOaWAyRQnEtJx1f7tsUdJUXwwT0Uf80_Lt1REBbaVZ1uyUny5yEV7kxOq3KL2NYLwguOkm_8ACpkV5EGW9s128M7l8N2GvfVmdaWDG5yD7nMpgQELjfWeagTuDCi=s0)![](https://lh5.googleusercontent.com/SuAxqz-Zk_mD20O42X45WKULyorZcdzCf2X5aqMchlNHZ6Rq8z1RTEjAW4-o7PxmSJ1GR77KoSzcbCdDlrY0BcyzOFXUeu1br1ZnqmlZuJhe7fP_nSMEsWynDhDtQ4slgoz9kgXo=s0)
 
@@ -152,8 +141,6 @@ The following measures can help prevent wallpaper tracking on your Android devic
 5. Be sure to keep your device operating system continuously updated.
 6. Use anti-malware software to ensure your installed applications are behaving as expected.
 
-
-
 ## Conclusion
 
 As you can see, signals generated from wallpaper color extraction can be used to create a single identifier available to all applications, no additional permissions required. That said, extracting colors from device wallpapers is just one way mobile developers can uniquely profile Android devices, and it’s not the most dependable at that.
@@ -163,5 +150,5 @@ For some examples of more stable and reliable methods, please view our  [finger
 ## Get in touch
 
 * Star, follow, or fork our [production-grade library](https://github.com/fingerprintjs/fingerprint-android) for Android device fingerprinting
-* Email any questions you have to [oss@fingerprintJS.com](oss@fingerprintJS.com)
-* Join our team and work on exciting research in device security: [work@fingerprintjs.com](work@fingerprintjs.com)
+* Email any questions you have to [oss@fingerprintJS.com](mailto:oss@fingerprintJS.com)
+* Join our team and work on exciting research in device security: [work@fingerprintjs.com](mailto:work@fingerprintjs.com)
