@@ -114,11 +114,11 @@ We have an ID that contains 256 bits, is unique across all applications, and onl
 ```
 val id = hasher.hash(
 
-   if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O_MR1) {
+if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O_MR1) {
 
-       extractWallpaperBytes()
+extractWallpaperBytes()
 
-   } else extractColorsBytes())
+} else extractColorsBytes())
 ```
 
 The ID remains the same even after reinstalling the application and only changes when the wallpaper changes.
