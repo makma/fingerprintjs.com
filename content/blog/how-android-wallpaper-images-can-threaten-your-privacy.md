@@ -97,7 +97,7 @@ In the case of Android, colors are represented in the [HSL](https://en.wikipedia
 
 This color extraction algorithm is basically a map from the set of all possible images to the RGB color space. The set is infinite and the RGB color space is limited by 2²⁴ combinations. Theoretically, this means every RGB combination is possible. Every color is represented by 32 bits, but only 24 matter. Alpha channels will always be equal to 1 (according to sources), while every component of the colors R, G and B have 256 possible combinations, or 2⁸. 
 
-Since each component is independent, we can directly multiply the number of combinations together. This comes out to: 2⁸ \* 2⁸ \* 2⁸ = 2²⁴ combinations for every color. We have 3 colors for a image, and 2²⁴ \* 2²⁴ \* 2²⁴ = 2⁷² combinations for image.
+Since each component is independent, we can directly multiply the number of combinations together. This comes out to: 2⁸ \* 2⁸ \* 2⁸ = 2²⁴ combinations for every color. We have 3 colors for a image, and 2²⁴ \* 2²⁴ \* 2²⁴ = 2⁷² combinations per image.
 
 The same logic applies to the second wallpaper image, and they can be set up independently of each other. From one wallpaper image we have 72 bits and 144 bits using system wallpaper and lock screen wallpaper — 144 bits and 2¹⁴⁴ combinations. The more combinations possible, the higher probability of generating a unique value suitable for use as an ID. And hence, it’s likely you can easily be tracked. 
 
