@@ -30,6 +30,10 @@ Android 12’s highly anticipated Material You design system features wallpaper-
 
 Unfortunately, such personalization can carry a high price in compromised privacy. In this article, we’ll demonstrate how Android wallpapers can be used to track users and explore ways to prevent your device from being exploited.
 
+### Skip to the good stuff - try it yourself
+
+You can download the demo app that generates a unique ID per user on [Google Play](https://play.google.com/store/apps/details?id=com.fingerprintjs.android.wallpaperid&hl=en_US&gl=US) (for Android 5.0 and above, no permissions are required); the source code is [available on GitHub](https://github.com/fingerprintjs/android-wallpaper-id). 
+
 ## Android wallpaper images vs. user privacy
 
 The WallpaperManager class was introduced in 2009 as part of the release of Android 2, API version 5. The class provides methods for interacting with wallpapers, including [getDrawable()](https://developer.android.com/reference/android/app/WallpaperManager#getDrawable()) for retrieving the current system wallpaper as a drawable resource.
