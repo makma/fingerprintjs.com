@@ -93,6 +93,9 @@ export const pageQuery = graphql`
           image {
             publicURL
           }
+          socialImage {
+            publicURL
+          }
         }
         title
         tags
@@ -218,11 +221,13 @@ type QueryMetadata = NonNullable<
   NonNullable<GatsbyTypes.LongFormContentQuery['markdownRemark']>['frontmatter']
 >['metadata']
 function mapToMetadata(queryMetadata: QueryMetadata): GatsbyTypes.SiteSiteMetadata {
+  const imageUrl = queryMetadata?.socialImage?.publicURL ?? queryMetadata?.image?.publicURL
+
   return {
     title: queryMetadata?.title ?? '',
     description: queryMetadata?.description ?? '',
     siteUrl: withTrailingSlash(queryMetadata?.url ?? ''),
-    image: `${BASE_URL}${queryMetadata?.image?.publicURL}` ?? '',
+    image: `${BASE_URL}${imageUrl}` ?? '',
   } as GatsbyTypes.SiteSiteMetadata
 }
 
