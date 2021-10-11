@@ -9,7 +9,7 @@ import { GeneratedPageContext } from '../../../helpers/types'
 import BreadcrumbsSEO from '../../../components/Breadcrumbs/BreadcrumbsSEO'
 import { trackLeadSubmit } from '../../../helpers/gtm'
 
-import { PageContent } from '../index'
+import PageContent from '../PageContent'
 
 interface ContactSalesPageProps {
   pageContext: GeneratedPageContext

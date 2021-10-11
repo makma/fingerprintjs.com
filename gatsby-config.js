@@ -11,6 +11,8 @@ const resolvePath = (directoryName, pathName) => {
   return result
 }
 
+const gatsbyRequiredRules = path.join(process.cwd(), 'node_modules', 'gatsby', 'dist', 'utils', 'eslint-rules')
+
 module.exports = {
   siteMetadata: {
     title: 'FingerprintJS Pro - Browser fingerprinting and fraud detection API',
@@ -120,13 +122,10 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
-        test: /\.js$|\.ts$|\.tsx$/,
-        exclude: /(node_modules|.cache|public)/,
+        rulePaths: [gatsbyRequiredRules],
         stages: ['develop'],
-        options: {
-          emitWarning: true,
-          failOnError: false,
-        },
+        extensions: ['js', 'jsx', 'ts', 'tsx'],
+        exclude: ['node_modules', 'bower_components', '.cache', 'public'],
       },
     },
     {

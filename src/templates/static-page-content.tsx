@@ -2,24 +2,17 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import { DangerouslyRenderHtmlContent, MarkdownContent } from '../components/Content/Content'
 import { PreviewTemplateComponentProps } from 'netlify-cms-core'
-import InlineCta, { InlineCtaProps } from '../components/widgets/InlineCta'
-import Hero, { HeroProps } from '../components/widgets/Hero'
-import { LayoutTemplate } from '../components/Layout'
+import { InlineCtaProps } from '../components/widgets/InlineCta'
+import { HeroProps } from '../components/widgets/Hero'
 import { ArrayElement, GeneratedPageContext } from '../helpers/types'
-import AlternatingImagesText, { BlockWithImage } from '../components/widgets/AlternatingImagesText'
-import CardSection, { CardSectionProps } from '../components/widgets/CardSection'
+import { BlockWithImage } from '../components/widgets/AlternatingImagesText'
+import { CardSectionProps } from '../components/widgets/CardSection'
 import { Card } from '../components/widgets/CardGrid'
 import { BASE_URL } from '../constants/content'
-import Container from '../components/common/Container'
-import Section from '../components/common/Section'
-import BreadcrumbsSEO from '../components/Breadcrumbs/BreadcrumbsSEO'
 import { withTrailingSlash } from '../helpers/url'
-import { Breadcrumb } from '../components/Breadcrumbs/Breadcrumbs'
-import RelatedArticles from '../components/RelatedArticles/RelatedArticles'
-import { mapToPost, PostProps } from '../components/Post/Post'
+import { mapToPost } from '../components/Post/Post'
 import PreviewProviders from '../cms/PreviewProviders'
-
-import styles from './static-page-content.module.scss'
+import StaticPageContentTemplate from './static-page-content-template'
 
 // Each widget has different styles and the MarkdownContent component is not aware of that, so we need to pass a widget class to MarkdownContent.
 // TODO [VL] When we have consistent typography, we can create variants for the markdown component instead of overriding styles for each widget.
@@ -135,59 +128,8 @@ export const pageQuery = graphql`
   }
 `
 
-export interface StaticPageContentTemplateProps {
-  metadata: GatsbyTypes.SiteSiteMetadata
-  invertContent: boolean
-  inlineCta: InlineCtaProps
-  cardSection: CardSectionProps
-  blocks: BlockWithImage[]
-  hero: HeroProps
-  content: PostProps
-  relatedArticlesTitle: string
-  breadcrumbs?: Array<Breadcrumb>
-}
-export function StaticPageContentTemplate({
-  metadata,
-  invertContent = false,
-  inlineCta,
-  cardSection,
-  blocks,
-  hero,
-  content,
-  relatedArticlesTitle,
-  breadcrumbs,
-}: StaticPageContentTemplateProps) {
-  return (
-    <LayoutTemplate siteMetadata={metadata}>
-      {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
-      <Section className={styles.section}>
-        <Hero {...hero} className={styles.widget} />
-        {invertContent ? (
-          <>
-            {blocks.length > 0 && <AlternatingImagesText title={''} blocks={blocks} className={styles.widget} />}
-            <CardSection {...cardSection} className={styles.widget} />
-          </>
-        ) : (
-          <>
-            <CardSection {...cardSection} className={styles.widget} />
-            {blocks.length > 0 && <AlternatingImagesText title={''} blocks={blocks} className={styles.widget} />}
-          </>
-        )}
-        <InlineCta {...inlineCta} />
-        <Container size='large'>
-          <RelatedArticles
-            article={content}
-            count={4}
-            title={relatedArticlesTitle}
-            titleIsCentered={true}
-            limitPostLines={true}
-          />
-        </Container>
-      </Section>
-    </LayoutTemplate>
-  )
-}
-
+// The following function is necessary to export it to use it in the CMS, added lint disable to avoid limited exports page warning
+// eslint-disable-next-line
 export function StaticPageContentPreview({ entry }: PreviewTemplateComponentProps) {
   const metadata = entry.getIn(['data', 'metadata'])?.toObject() as QueryMetadata
   const invertContent = entry.getIn(['data', 'invertContent'])

@@ -73,7 +73,7 @@ interface FAQBlockProps {
   faq: { question: string; answer: React.ReactNode }[]
 }
 
-export function FAQBlock({ faq }: FAQBlockProps) {
+function FAQBlock({ faq }: FAQBlockProps) {
   return (
     <div>
       <header className={styles.faqHeader}>

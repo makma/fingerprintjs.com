@@ -1,27 +1,19 @@
 import { graphql } from 'gatsby'
 import React from 'react'
-import { LayoutTemplate } from '../components/Layout'
 import { PreviewTemplateComponentProps } from 'netlify-cms-core'
-import Section from '../components/common/Section'
-import Container from '../components/common/Container'
 import { BASE_URL } from '../constants/content'
-import Breadcrumbs, { Breadcrumb } from '../components/Breadcrumbs/Breadcrumbs'
-import BreadcrumbsSEO from '../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../helpers/types'
 import { withTrailingSlash } from '../helpers/url'
-import { Content, DangerouslyRenderHtmlContent } from '../components/Content/Content'
-import RelatedArticles from '../components/RelatedArticles/RelatedArticles'
-import { mapToPost, PostProps } from '../components/Post/Post'
+import { DangerouslyRenderHtmlContent } from '../components/Content/Content'
+import { mapToPost } from '../components/Post/Post'
 import PreviewProviders from '../cms/PreviewProviders'
-import AuthorComponent, { Author } from '../components/Author/Author'
-import CustomizableCTA, { CustomizableCTAProps } from '../components/CustomizableCTA/CustomizableCTA'
-import HeroImageComponent, { HeroImageComponentProps } from '../components/HeroImage/HeroImage'
-import TagList from '../components/TagList/TagList'
+import { Author } from '../components/Author/Author'
+import { CustomizableCTAProps } from '../components/CustomizableCTA/CustomizableCTA'
+import { HeroImageComponentProps } from '../components/HeroImage/HeroImage'
 
-import ActionBar, { ActionBarProps } from '../components/ActionBar/ActionBar'
+import { ActionBarProps } from '../components/ActionBar/ActionBar'
 import { ImageInfo } from '../components/common/PreviewCompatibleImage/PreviewCompatibleImage'
-
-import styles from './long-form-content.module.scss'
+import LongFormContentTemplate from './long-form-content-template'
 
 interface LongFormContentProps {
   data: GatsbyTypes.LongFormContentQuery
@@ -122,79 +114,8 @@ export const pageQuery = graphql`
   }
 `
 
-export interface TemplateProps {
-  metadata: GatsbyTypes.SiteSiteMetadata
-  heroImage: HeroImageComponentProps
-  post: PostProps
-  body: string | React.ReactNode
-  contentComponent?: React.FunctionComponent<{ content: string | React.ReactNode; className?: string }>
-  breadcrumbs?: Array<Breadcrumb>
-  authors?: Author[]
-  publishDate?: string
-  actionBar: ActionBarProps
-  customCTA: CustomizableCTAProps
-  tags: string[]
-}
-export function LongFormContentTemplate({
-  metadata,
-  heroImage,
-  post,
-  body,
-  contentComponent,
-  breadcrumbs,
-  authors = [],
-  actionBar,
-  customCTA,
-  tags,
-}: TemplateProps) {
-  const ContentComponent = contentComponent ?? Content
-
-  return (
-    <LayoutTemplate siteMetadata={metadata}>
-      {breadcrumbs && (
-        <>
-          <BreadcrumbsSEO breadcrumbs={breadcrumbs} />
-          <Container size='large'>
-            <Breadcrumbs breadcrumbs={breadcrumbs.slice(1)} />
-          </Container>
-        </>
-      )}
-
-      <Section className={styles.root}>
-        <Container className={styles.container}>
-          <header className={styles.header}>
-            {tags && <TagList tags={tags} format='title' />}
-            <h1 className={styles.title}>{post.title}</h1>
-            <div className={styles.actionBar}>
-              <ActionBar {...actionBar} />
-            </div>
-          </header>
-          {authors && (
-            <div className={styles.authors}>
-              {authors.map((author) => (
-                <AuthorComponent key={author.name} author={author} className={styles.author} />
-              ))}
-            </div>
-          )}
-          <article className={styles.body}>
-            {heroImage.image && <HeroImageComponent {...heroImage} />}
-            <ContentComponent content={body} className={styles.content} />
-          </article>
-          {customCTA.subHeader && (
-            <aside className={styles.cta}>
-              <CustomizableCTA className={styles.card} {...customCTA} />
-            </aside>
-          )}
-        </Container>
-
-        <Container size='large' className={styles.relatedArticles}>
-          <RelatedArticles article={post} count={4} limitPostLines={true} />
-        </Container>
-      </Section>
-    </LayoutTemplate>
-  )
-}
-
+// The following function is necessary to export it to use it in the CMS, added lint disable to avoid limited exports page warning
+// eslint-disable-next-line
 export function LongFormContentPreview({ entry, widgetFor }: PreviewTemplateComponentProps) {
   const metadata = entry.getIn(['data', 'metadata'])?.toObject() as QueryMetadata
   const heroImage = entry.getIn(['data', 'heroImage'])?.toJS() as QueryHeroImage

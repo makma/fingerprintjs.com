@@ -3,9 +3,7 @@ import Post, { PostProps } from '../Post/Post'
 import classNames from 'classnames'
 import TagList from '../TagList/TagList'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Pagination } from 'swiper'
-
-SwiperCore.use([Pagination])
+import { Pagination } from 'swiper'
 
 import styles from './PostGrid.module.scss'
 
@@ -36,10 +34,10 @@ export default function PostGrid({
       </div>
       <div className={classNames(styles.swiperSection, styles.mobileOnly)}>
         <Swiper
+          modules={[Pagination]}
           breakpoints={{
             320: {
               slidesPerView: 1.3,
-              slidesPerColumn: 1,
               spaceBetween: 16,
               pagination: {
                 el: '.swiper-pagination',
@@ -48,19 +46,11 @@ export default function PostGrid({
             },
             768: {
               slidesPerView: 3.5,
-              slidesPerColumn: 1,
-              slidesPerColumnFill: 'row',
               spaceBetween: 28,
               pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
               },
-            },
-            1025: {
-              slidesPerView: 4,
-              slidesPerColumn: 1,
-              spaceBetween: 32,
-              slidesPerColumnFill: 'row',
             },
           }}
         >

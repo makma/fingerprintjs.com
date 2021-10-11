@@ -10,8 +10,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
-    'prettier/react',
   ],
   parser: '@typescript-eslint/parser',
   ignorePatterns: ['public/*', '.cache/*'],
@@ -22,7 +20,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'eslint-plugin-import'],
   settings: {
     react: {
       version: 'detect',
@@ -33,12 +31,19 @@ module.exports = {
     'react/self-closing-comp': 'warn',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/naming-convention': ['error', { selector: 'enumMember', format: ['PascalCase'] }],
+    'import/no-anonymous-default-export': 'warn', // required to use Fast Refresh https://www.gatsbyjs.com/docs/how-to/custom-configuration/eslint/
   },
   overrides: [
     {
       files: ['*.js', '*.jsx'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
+      },
+    },
+    {
+      files: ['*.stories.tsx'],
+      rules: {
+        'import/no-anonymous-default-export': 'off',
       },
     },
     {

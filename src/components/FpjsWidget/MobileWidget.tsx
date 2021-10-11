@@ -2,7 +2,8 @@ import React from 'react'
 import { ReactComponent as ChevronRightSvg } from '../../img/chevron-right.svg'
 import { ReactComponent as ChevronLeftSvg } from '../../img/chevron-left.svg'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Lazy, Navigation } from 'swiper'
+import { Lazy, Navigation, Pagination } from 'swiper'
+
 import classNames from 'classnames'
 import Button from '../common/Button'
 import { CurrentVisitProps } from '../../types/currentVisitProps'
@@ -13,8 +14,6 @@ import styles from './MobileWidget.module.scss'
 import { MAPBOX_ACCESS_TOKEN } from '../../constants/env'
 import Skeleton from '../Skeleton/Skeleton'
 
-SwiperCore.use([Navigation, Lazy])
-
 interface MobileWidgetProps extends CurrentVisitProps {
   isLoaded: boolean
   className?: string | string[]
@@ -23,6 +22,7 @@ interface MobileWidgetProps extends CurrentVisitProps {
 export default function MobileWidget({ className, isLoaded, visits, visitorId }: MobileWidgetProps) {
   return (
     <Swiper
+      modules={[Lazy, Navigation, Pagination]}
       className={classNames(className, styles.container, {
         [styles.loaded]: isLoaded,
       })}
@@ -135,7 +135,13 @@ export function MobileLoadingState() {
   const repeatElement = (length, fn) => Array.from({ length }, (_, i) => fn(i))
 
   return (
-    <Swiper className={classNames(styles.container)} slidesPerView={1.05} spaceBetween={10} centeredSlides={true}>
+    <Swiper
+      modules={[Lazy, Navigation]}
+      className={classNames(styles.container)}
+      slidesPerView={1.05}
+      spaceBetween={10}
+      centeredSlides={true}
+    >
       <SwiperSlide className={classNames('swiper-slide', styles.item)}>
         <header className={styles.header}>
           <Button label='Previous' className={classNames('btn-prev', styles.button, styles.mobileOnly)} variant='clear'>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story } from '@storybook/react'
-import { StaticPageContentTemplate, StaticPageContentTemplateProps } from './static-page-content'
+import StaticPageContentTemplate, { StaticPageContentTemplateProps } from './static-page-content-template'
 import { Default as ctaDefault } from '../components/widgets/InlineCta/InlineCta.stories'
 import { Default as cardSectionDefault } from '../components/widgets/CardSection/CardSection.stories'
 import { Default as blocksDefault } from '../components/widgets/AlternatingImagesText/AlternatingImagesText.stories'

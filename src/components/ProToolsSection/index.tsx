@@ -1,6 +1,6 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Pagination } from 'swiper'
+import { Pagination, Grid } from 'swiper'
 
 import { ReactComponent as BrowserFingerprintingSvg } from '../../img/browser_fingerprinting.svg'
 import { ReactComponent as GeolocationSvg } from '../../img/geolocation.svg'
@@ -12,8 +12,6 @@ import { useMainBackgroundImage } from '../../hooks/useBackgroundImage'
 import Container from '../common/Container'
 import Section from '../common/Section'
 import styles from './ProTools.module.scss'
-
-SwiperCore.use([Pagination])
 
 export default function ProToolsSection() {
   const { mainBackground } = useMainBackgroundImage()
@@ -38,10 +36,13 @@ export default function ProToolsSection() {
 
         <div className={styles.content} id='swiper--pro-tools'>
           <Swiper
+            modules={[Pagination, Grid]}
             breakpoints={{
               320: {
                 slidesPerView: 1,
-                slidesPerColumn: 1,
+                grid: {
+                  rows: 1,
+                },
                 spaceBetween: 0,
                 pagination: {
                   el: '.swiper-pagination',
@@ -50,15 +51,19 @@ export default function ProToolsSection() {
               },
               768: {
                 slidesPerView: 2,
-                slidesPerColumn: 3,
-                slidesPerColumnFill: 'row',
+                grid: {
+                  rows: 3,
+                  fill: 'row',
+                },
                 spaceBetween: 28,
               },
               1024: {
                 slidesPerView: 3,
-                slidesPerColumn: 2,
+                grid: {
+                  rows: 2,
+                  fill: 'row',
+                },
                 spaceBetween: 28,
-                slidesPerColumnFill: 'row',
               },
             }}
           >

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story } from '@storybook/react'
-import { LongFormContentTemplate, TemplateProps } from './long-form-content'
+import LongFormContentTemplate, { TemplateProps } from './long-form-content-template'
 import { DangerouslyRenderHtmlContent } from '../components/Content/Content'
 import PreviewProviders from '../cms/PreviewProviders'
 

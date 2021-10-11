@@ -11,24 +11,20 @@ import SOCSection from '../components/SOCSection/SOCSection'
 import ProToolsSection from '../components/ProToolsSection'
 import StayProtectedSection from '../components/StayProtectedSection'
 
-export const IndexPageTemplate = () => (
-  <div>
-    <LiveDemoSection />
-    <ClientsSection />
-    <MadeForDevelopersSection />
-    <ServerApiSection />
-    <UseCasesSection />
-    <Billing />
-    <SOCSection />
-    <ProToolsSection />
-    <StayProtectedSection />
-  </div>
-)
-
 export default function IndexPage() {
   return (
     <Layout>
-      <IndexPageTemplate />
+      <div>
+        <LiveDemoSection />
+        <ClientsSection />
+        <MadeForDevelopersSection />
+        <ServerApiSection />
+        <UseCasesSection />
+        <Billing />
+        <SOCSection />
+        <ProToolsSection />
+        <StayProtectedSection />
+      </div>
     </Layout>
   )
 }

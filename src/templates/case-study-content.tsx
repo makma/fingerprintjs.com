@@ -104,7 +104,7 @@ export const pageQuery = graphql`
   }
 `
 
-export interface CaseStudyTemplateProps {
+interface CaseStudyTemplateProps {
   metadata: GatsbyTypes.SiteSiteMetadata
   header: HeaderProps
   summary: SummaryProps
@@ -113,7 +113,7 @@ export interface CaseStudyTemplateProps {
   footer: FooterProps
   breadcrumbs?: Array<Breadcrumb>
 }
-export function CaseStudyContentTemplate({
+function CaseStudyContentTemplate({
   metadata,
   header,
   summary,
@@ -141,6 +141,8 @@ export function CaseStudyContentTemplate({
   )
 }
 
+// The following function is necessary to export it to use it in the CMS, added lint disable to avoid limited exports page warning
+// eslint-disable-next-line
 export function CaseStudyContentPreview({ entry, widgetFor }: PreviewTemplateComponentProps) {
   const metadata = entry.getIn(['data', 'metadata'])?.toObject() as QueryMetadata
   const header = entry.getIn(['data', 'header'])?.toObject() as QueryHeader
