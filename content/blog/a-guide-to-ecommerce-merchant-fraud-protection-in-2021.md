@@ -2,7 +2,7 @@
 templateKey: long-form-content
 metadata:
   title: A Guide to Ecommerce Merchant Fraud Protection in 2021
-  url: https://fingerprintjs.com/blog/guide-for-online-merchant-fraud-protection/
+  url: https://fingerprintjs.com/blog/guide-to-ecommerce-merchant-fraud-protection/
   image: /img/uploads/a-guide-to-ecommerce-merchant-fraud-protection-in-2024-1-.png
   description: Business is booming for online merchants and cyber criminals alike.
     Learn about the common signs of online fraud and how to protect your web
