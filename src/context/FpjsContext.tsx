@@ -19,6 +19,16 @@ const config: GetOptions<true, 'full'> = {
 export const useVisitorData = () => useContext(FpjsContext)
 
 export function FpjsProvider({ children }: { children: React.ReactNode }) {
+  const isBot = navigator.userAgent.indexOf('Chrome-Lighthouse') > -1 || navigator.userAgent.indexOf('PageSpeed') > -1
+
+  if (!isBot) {
+    return FpjsAppProvider({ children })
+  } else {
+    return <>{children}</>
+  }
+}
+
+function FpjsAppProvider({ children }: { children: React.ReactNode }) {
   const clientToken = FPJS_TOKEN
   const endpoint = FPJS_ENDPOINT
   const region = FPJS_REGION as Region
