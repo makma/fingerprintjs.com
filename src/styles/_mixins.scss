@@ -254,3 +254,49 @@
     line-height: $lh;
   }
 }
+
+@mixin fade-in($waitTime, $translate: false) {
+  animation: wait #{$waitTime}, fade-in 1s #{$waitTime};
+
+  @keyframes wait {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      @if $translate {
+        transform: translateY($translate);
+      }
+    }
+    100% {
+      opacity: 1;
+      @if $translate {
+        transform: translateY(0px);
+      }
+    }
+  }
+}
+
+@mixin aura($name, $duration, $scaleY, $scaleX, $opacity, $waitTime) {
+  animation: #{$name} #{$duration} ease-out #{$waitTime} 1;
+
+  @keyframes #{$name} {
+    0% {
+      transform: scale($scaleX, $scaleY);
+      opacity: 0;
+    }
+    50% {
+      opacity: $opacity;
+    }
+    to {
+      transform: scale($scaleX, $scaleY);
+      opacity: 0;
+    }
+  }
+}

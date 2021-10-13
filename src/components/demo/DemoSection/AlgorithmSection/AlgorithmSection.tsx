@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Section from '../../../common/Section'
 import Container from '../../../common/Container'
 import classNames from 'classnames'
 import { getTimezoneOffset } from '../../../../helpers/date'
 import { getVisitTitle } from '../../../../helpers/fpjs-widget'
 import Skeleton from '../../../Skeleton/Skeleton'
+import { VisitorResponse } from '../../../../types/visitorResponse'
+import { isBrowser } from '../../../../helpers/detector'
 
 import { ReactComponent as IncognitoCardSVG } from './img/IncognitoCardSVG.svg'
 import { ReactComponent as WindowSVG } from './img/WindowSVG.svg'
@@ -17,62 +19,104 @@ import { ReactComponent as PointSVG } from './img/PointSVG.svg'
 import { ReactComponent as VisitorSVG } from './img/VisitorSVG.svg'
 
 import styles from './AlgorithmSection.module.scss'
-import { CurrentVisitProps } from '../../../../types/currentVisitProps'
+import useIntersectionObserver from '../../../../hooks/useIntersectionObserver'
 
-export default function AlgorithmSection({ visits, currentVisit, visitorId }: CurrentVisitProps) {
+interface AlgorithmSectionProps {
+  isLoading?: boolean
+  currentVisit?: VisitorResponse
+  visits?: VisitorResponse[]
+  visitorId?: string
+}
+
+export default function AlgorithmSection({ isLoading, visits, currentVisit, visitorId }: AlgorithmSectionProps) {
   const offset = getTimezoneOffset()
-  const width = window.screen.width
-  const height = window.screen.height
+  const width = isBrowser() ? window.screen.width : ''
+  const height = isBrowser() ? window.screen.height : ''
+
+  const ref = useRef<HTMLHeadingElement | null>(null)
+  const entry = useIntersectionObserver(ref, { freezeOnceVisible: true })
+  const isVisible = !!entry?.isIntersecting
 
   return (
     <Section className={styles.root}>
       <Header />
       <Container size='large' className={styles.algorithmContainer}>
-        <h2 className={styles.browserSignalsTitle}>Browser fingerprinting details</h2>
-        <section className={styles.browserSignals}>
-          <Card icon={<IncognitoCardSVG />} title={`Incognito: ${currentVisit?.incognito ? 'Yes' : 'No'}`} />
-          <Card
-            icon={<PlanetSVG />}
-            title={`${currentVisit?.ipLocation?.country?.code}, ${currentVisit?.ipLocation?.city?.name} GTM ${offset}`}
-          />
-          <Card icon={<WindowSVG />} title={`resolution ${width}x${height}`} />
-          <Card icon={<MobileSVG />} title={currentVisit?.browserDetails?.os} />
+        <h2 className={classNames(styles.browserSignalsTitle, { [styles.visible]: isVisible })}>
+          Browser fingerprinting details
+        </h2>
+        <section className={classNames(styles.browserSignals, { [styles.visible]: isVisible })}>
+          {isLoading ? (
+            <>
+              <Card icon={<IncognitoCardSVG />} isLoading />
+              <Card icon={<PlanetSVG />} isLoading />
+              <Card icon={<WindowSVG />} isLoading />
+              <Card icon={<MobileSVG />} isLoading />
+            </>
+          ) : (
+            <>
+              <Card icon={<IncognitoCardSVG />} title={`Incognito: ${currentVisit?.incognito ? 'Yes' : 'No'}`} />
+              <Card
+                icon={<PlanetSVG />}
+                title={`${currentVisit?.ipLocation?.country?.code}, ${currentVisit?.ipLocation?.city?.name} GTM ${offset}`}
+              />
+              <Card icon={<WindowSVG />} title={`resolution ${width}x${height}`} />
+              <Card icon={<MobileSVG />} title={currentVisit?.browserDetails?.os} />
+            </>
+          )}
         </section>
-        <div className={styles.browserRows}>
+        <div className={classNames(styles.browserRows, { [styles.visible]: isVisible })}>
           <div className={styles.browserRowsSVG} />
         </div>
-        <h2 className={styles.otherSignalsTitle}>Other identifiers</h2>
-        <section className={styles.otherSignals}>
+        <h2 ref={ref} className={classNames(styles.otherSignalsTitle, { [styles.visible]: isVisible })}>
+          Other identifiers
+        </h2>
+        <section className={classNames(styles.otherSignals, { [styles.visible]: isVisible })}>
           <Card variant='outline' icon={<TLSSVG />} title='TLS' />
           <Card variant='outline' icon={<PointerSVG />} title='Cookies' />
         </section>
-        <div className={styles.otherRows}>
+        <div className={classNames(styles.otherRows, { [styles.visible]: isVisible })}>
           <div className={styles.otherRowsSVG} />
         </div>
-        <h2 className={styles.visitHistoryTitle}>visit History</h2>
-        <section className={styles.visitHistory}>
+        <h2 className={classNames(styles.visitHistoryTitle, { [styles.visible]: isVisible })}>visit History</h2>
+        <section className={classNames(styles.visitHistory, { [styles.visible]: isVisible })}>
           <div className={styles.visitSection}>
             <Visit current title='Current visit' />
-            {visits[1] && <Visit incognito={visits[1].incognito} title={getVisitTitle(visits[1].timestamp)} />}
-            {visits[2] && <Visit incognito={visits[2].incognito} title={getVisitTitle(visits[2].timestamp)} />}
+            {isLoading ? (
+              <>
+                <Visit isLoading />
+                <Visit isLoading />
+              </>
+            ) : (
+              visits &&
+              visits.slice(0, 2).map((visit, index) => {
+                return <Visit key={index} incognito={visit.incognito} title={getVisitTitle(visit.timestamp)} />
+              })
+            )}
           </div>
         </section>
-        <section className={styles.server}>
-          <div className={styles.serverSection}>
+        <div className={classNames(styles.historyRows, { [styles.visible]: isVisible })}>
+          <div className={styles.historyRowsSVG} />
+        </div>
+        <section className={classNames(styles.server, { [styles.visible]: isVisible })}>
+          <div className={classNames(styles.serverSection, { [styles.visible]: isVisible })}>
             <h2 className={styles.serverTitle}>Server</h2>
           </div>
         </section>
-        <div className={styles.visitorRow}>
+        <div className={classNames(styles.visitorRow, { [styles.visible]: isVisible })}>
           <div className={styles.visitorRowSVG} />
         </div>
-        <h2 className={styles.visitorIdTitle}>Your visitor Id</h2>
-        <section className={styles.visitorId}>
-          <Card variant='visitor' icon={<VisitorSVG />} title={visitorId} />
+        <h2 className={classNames(styles.visitorIdTitle, { [styles.visible]: isVisible })}>Your visitor Id</h2>
+        <section className={classNames(styles.visitorId, { [styles.visible]: isVisible })}>
+          {isLoading ? (
+            <Card variant='visitor' icon={<VisitorSVG />} isLoading isVisible={isVisible} />
+          ) : (
+            <Card variant='visitor' icon={<VisitorSVG />} title={visitorId} isVisible={isVisible} />
+          )}
         </section>
-        <aside className={styles.mobileRows}>
+        <aside className={classNames(styles.mobileRows, { [styles.visible]: isVisible })}>
           <div className={styles.mobileRowsSVG} />
         </aside>
-        <div className={styles.visitorMobileRow}>
+        <div className={classNames(styles.visitorMobileRow, { [styles.visible]: isVisible })}>
           <div className={styles.visitorMobileRowSVG} />
         </div>
       </Container>
@@ -85,14 +129,16 @@ interface CardProps {
   title?: string
   variant?: 'outline' | 'visitor'
   isLoading?: boolean
+  isVisible?: boolean
 }
-function Card({ icon, title, variant, isLoading }: CardProps) {
+function Card({ icon, title, variant, isLoading, isVisible }: CardProps) {
   return (
     <div
       className={classNames(
         styles.card,
         { [styles.outline]: variant === 'outline' },
-        { [styles.visitCard]: variant === 'visitor' }
+        { [styles.visitCard]: variant === 'visitor' },
+        { [styles.isVisible]: isVisible }
       )}
     >
       <span className={styles.icon}>{icon}</span>
@@ -147,59 +193,5 @@ function Header() {
         </p>
       </header>
     </Container>
-  )
-}
-
-export function AlgorithmSectionLoading() {
-  return (
-    <Section className={styles.root}>
-      <Header />
-      <Container size='large' className={styles.algorithmContainer}>
-        <section className={styles.browserSignalsTitle}>Browser fingerprinting details</section>
-        <section className={styles.browserSignals}>
-          <Card icon={<IncognitoCardSVG />} isLoading />
-          <Card icon={<PlanetSVG />} isLoading />
-          <Card icon={<WindowSVG />} isLoading />
-          <Card icon={<MobileSVG />} isLoading />
-        </section>
-        <section className={styles.browserRows}>
-          <div className={styles.browserRowsSVG} />
-        </section>
-        <section className={styles.otherSignalsTitle}>Other identifiers</section>
-        <section className={styles.otherSignals}>
-          <Card variant='outline' icon={<TLSSVG />} title='TLS' />
-          <Card variant='outline' icon={<PointerSVG />} title='Cookies' />
-        </section>
-        <section className={styles.otherRows}>
-          <div className={styles.otherRowsSVG} />
-        </section>
-        <section className={styles.visitHistoryTitle}>visit History</section>
-        <section className={styles.visitHistory}>
-          <div className={styles.visitSection}>
-            <Visit current title='Current visit' />
-            <Visit isLoading />
-            <Visit isLoading />
-          </div>
-        </section>
-        <section className={styles.server}>
-          <div className={styles.serverSection}>
-            <p className={styles.serverTitle}>Server</p>
-          </div>
-        </section>
-        <section className={styles.visitorRow}>
-          <div className={styles.visitorRowSVG} />
-        </section>
-        <section className={styles.visitorIdTitle}>Your visitor Id</section>
-        <section className={styles.visitorId}>
-          <Card variant='visitor' icon={<VisitorSVG />} isLoading />
-        </section>
-        <section className={styles.mobileRows}>
-          <div className={styles.mobileRowsSVG} />
-        </section>
-        <section className={styles.visitorMobileRow}>
-          <div className={styles.visitorMobileRowSVG} />
-        </section>
-      </Container>
-    </Section>
   )
 }

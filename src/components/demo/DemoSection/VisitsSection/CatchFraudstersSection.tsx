@@ -30,7 +30,7 @@ export default function CatchFraudstersSection() {
   return (
     <Section className={styles.catchFraudstersSection}>
       <Container className={styles.containerFraudsters} size='large'>
-        <section className={styles.cardSection}>
+        <section className={classNames(styles.cardSection, { [styles.visible]: isVisible })}>
           <div className={styles.card}>
             <span className={styles.icon}>
               <StaticImage src='../../../../img/CatchLayers.png' alt='Catch Fraudsters Card' />

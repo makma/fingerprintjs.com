@@ -22,6 +22,8 @@
 }
 
 .descriptionSection {
+  @include fade-in($waitTime: 0s, $translate: 15px);
+
   .title {
     font-size: rem(32px);
     font-weight: v('bold');
@@ -58,6 +60,8 @@
   }
 }
 .idSection {
+  @include fade-in($waitTime: 1.2s, $translate: 15px);
+
   min-width: rem(520px);
 
   @include media('<=desktop') {
@@ -142,6 +146,8 @@
 }
 
 .footer {
+  @include fade-in($waitTime: 2s, $translate: 15px);
+
   @include sans($size: 14px, $color: adjust-color(c('brand-water'), $alpha: -0.3), $lh: 150%);
 
   padding-top: rem(16px);

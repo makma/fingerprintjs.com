@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Section from '../../../common/Section'
 import Container from '../../../common/Container'
 import classNames from 'classnames'
-import { CurrentVisitProps } from '../../../../types/currentVisitProps'
+import { VisitorResponse } from '../../../../types/visitorResponse'
+
 import Skeleton from '../../../Skeleton/Skeleton'
 import { getVisitTitle } from '../../../../helpers/fpjs-widget'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -10,10 +11,22 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { ReactComponent as IncognitoSVG } from './IncognitoSVG.svg'
 
 import styles from './VisitsSection.module.scss'
+import useIntersectionObserver from '../../../../hooks/useIntersectionObserver'
 
-export default function VisitsSection({ visits, currentVisit }: CurrentVisitProps) {
+interface VisitsSectionProps {
+  isLoading?: boolean
+  currentVisit?: VisitorResponse
+  visits?: VisitorResponse[]
+}
+export default function VisitsSection({ isLoading, currentVisit, visits }: VisitsSectionProps) {
+  const repeatElement = (length, fn) => Array.from({ length }, (_, i) => fn(i))
+
+  const ref = useRef<HTMLElement | null>(null)
+  const entry = useIntersectionObserver(ref, { freezeOnceVisible: true })
+  const isVisible = !!entry?.isIntersecting
+
   const loadedCard = (
-    <section className={styles.visitsSection}>
+    <>
       <div className={classNames(styles.visitsCard, { [styles.incognitoCard]: currentVisit?.incognito })}>
         <table className={styles.visitsTable}>
           <tr className={styles.tableHeader}>
@@ -48,16 +61,11 @@ export default function VisitsSection({ visits, currentVisit }: CurrentVisitProp
           )}
         </div>
       </div>
-    </section>
+    </>
   )
 
-  return <Content visitsSection={loadedCard} />
-}
-export function VisitsSectionLoading() {
-  const repeatElement = (length, fn) => Array.from({ length }, (_, i) => fn(i))
-
   const loadingCard = (
-    <section className={styles.visitsSection}>
+    <>
       <div className={styles.visitsCard}>
         <table className={styles.visitsTable}>
           <tr className={styles.tableHeader}>
@@ -89,10 +97,24 @@ export function VisitsSectionLoading() {
           <Skeleton width={245} height={24} />
         </div>
       </div>
-    </section>
+    </>
   )
-
-  return <Content visitsSection={loadingCard} />
+  return (
+    <Section className={styles.visitSection}>
+      <Container className={styles.containerVisits} size='large'>
+        <section className={classNames(styles.visitsSection, { [styles.visible]: isVisible })}>
+          {isLoading ? loadingCard : loadedCard}
+        </section>
+        <section ref={ref} className={classNames(styles.cardSection, { [styles.visible]: isVisible })}>
+          <Card
+            icon={<StaticImage src='../../../../img/IncognitoLayers.png' alt='Incognito Card' />}
+            title='Incognito Mode Detection'
+            description='Your VisitorID remains constant even if you revisit the page in incognito mode or turn on a VPN. '
+          />
+        </section>
+      </Container>
+    </Section>
+  )
 }
 
 interface CardProps {
@@ -107,24 +129,5 @@ function Card({ icon, title, description }: CardProps) {
       <h1 className={styles.cardTitle}>{title}</h1>
       <p className={styles.cardDescription}>{description}</p>
     </div>
-  )
-}
-interface ContentProps {
-  visitsSection: React.ReactNode
-}
-function Content({ visitsSection }: ContentProps) {
-  return (
-    <Section className={styles.visitSection}>
-      <Container className={styles.containerVisits} size='large'>
-        {visitsSection}
-        <section className={styles.cardSection}>
-          <Card
-            icon={<StaticImage src='../../../../img/IncognitoLayers.png' alt='Incognito Card' />}
-            title='Incognito Mode Detection'
-            description='Your VisitorID remains constant even if you revisit the page in incognito mode or turn on a VPN. '
-          />
-        </section>
-      </Container>
-    </Section>
   )
 }
