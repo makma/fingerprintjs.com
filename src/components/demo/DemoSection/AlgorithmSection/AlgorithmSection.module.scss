@@ -292,7 +292,7 @@ $breakpoint: 1218px;
         border: 1px solid #fde4db;
         transform: translate3d(0, 0, 0);
         opacity: 0;
-        @include aura($name: 'auraVisit', $duration: 1.75s, $scaleX: 1.05, $scaleY: 1.01, $opacity: 0.8, $waitTime: 5s);
+        @include aura($name: 'auraVisit', $duration: 1.75s, $scaleX: 1.05, $scaleY: 1.01, $opacity: 0.8, $waitTime: 4s);
 
         @media screen and (max-width: $breakpoint) {
           @include aura(
@@ -301,7 +301,7 @@ $breakpoint: 1218px;
             $scaleX: 1.05,
             $scaleY: 1.06,
             $opacity: 0.8,
-            $waitTime: 5s
+            $waitTime: 4s
           );
         }
       }
@@ -430,36 +430,36 @@ $breakpoint: 1218px;
 
 .otherSignalsTitle,
 .otherSignals {
-  transition-delay: 0.5s;
+  transition-delay: 0.25s;
 }
 
 .visitHistoryTitle,
 .visitHistory {
-  transition-delay: 1s;
+  transition-delay: 0.75s;
 }
 
 .historyRows,
 .browserRows,
 .otherRows {
-  transition-delay: 1.5s;
+  transition-delay: 1.25s;
 }
 
 .server {
-  transition-delay: 2s;
+  transition-delay: 1.75s;
 }
 
 .visitorIdTitle,
 .visitorId {
-  transition-delay: 4.2s;
+  transition-delay: 3.25s;
 }
 
 .visitorRow,
 .visitorMobileRow {
-  transition-delay: 3.2s;
+  transition-delay: 3s;
 }
 
 .mobileRows {
-  transition-delay: 2s;
+  transition-delay: 1.75s;
 }
 
 .serverSection {
@@ -477,7 +477,7 @@ $breakpoint: 1218px;
       border: 1px solid #0d102b;
       transform: translate3d(0, 0, 0);
       opacity: 0;
-      @include aura($name: 'aura', $duration: 1.5s, $scaleX: 1.05, $scaleY: 1.01, $opacity: 0.3, $waitTime: 2.75s);
+      @include aura($name: 'aura', $duration: 1.5s, $scaleX: 1.05, $scaleY: 1.01, $opacity: 0.3, $waitTime: 2.5s);
 
       @media screen and (max-width: $breakpoint) {
         top: 4px;
@@ -487,7 +487,7 @@ $breakpoint: 1218px;
           $scaleX: 1.05,
           $scaleY: 1.06,
           $opacity: 0.3,
-          $waitTime: 2.75s
+          $waitTime: 2.5s
         );
       }
     }
