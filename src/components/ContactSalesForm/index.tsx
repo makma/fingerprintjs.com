@@ -7,7 +7,8 @@ import styles from './ContactSalesForm.module.scss'
 
 export default function ContactSalesForm() {
   const [website, setWebsite] = useState('')
-  const leadSource = 'Contact Us Form'
+  const leadSource = 'Inbound'
+  const sourceDetails = 'Contact Us Form'
   const utmInfo = useUtmParams()
   const referrer = isBrowser() ? document.referrer : null
 
@@ -20,6 +21,7 @@ export default function ContactSalesForm() {
       <input type='hidden' name='oid' value='00D4x000006rShv' />
       <input type='hidden' name='retURL' value='https://fingerprintjs.com/contact-sales/confirm' />
       <input type='hidden' id='lead_source' name='lead_source' value={leadSource} />
+      <input type='hidden' id='00N4x00000QeCW7' name='00N4x00000QeCW7' value={sourceDetails} />
 
       {utmInfo.utm_campaign && (
         <input type='hidden' id='utm_campaign__c' name='utm_campaign__c' value={utmInfo.utm_campaign} />
