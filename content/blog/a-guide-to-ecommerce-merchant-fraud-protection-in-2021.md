@@ -36,7 +36,7 @@ Though spotting online fraud has become increasingly difficult, several tell-tal
 
 #### **Inconsistencies in customer/order information** 
 
-If several pieces of key information provided by the customer don't match (e.g., the zip code entered doesnt correlate to the area they say they're in), online fraud could be in the works. Upon spotting these discrepancies during a customer's checkout process, online merchants should take further steps to validate the customer's identity by performing additional verification. After all, the mistake might just be a typo. Or, it may be fraud.
+If several pieces of key information provided by the customer don't match (e.g., the zip code entered doesn't correlate to the area they say they're in), online fraud could be in the works. Upon spotting these discrepancies during a customer's checkout process, online merchants should take further steps to validate the customer's identity by performing additional verification. After all, the mistake might just be a typo. Or, it may be fraud.
 
 #### **Excessively large orders**
 
@@ -44,7 +44,7 @@ When cyber criminals intend on cashing in on their efforts, they often make siza
 
 #### **Orders made from unusual locations**
 
-The majority of ecommerce stores are not run by multinational corporations with locations across the globe. And on the other end of the order, most customers generally come from familiar markets and locations. Online merchants should therefore be wary of orders originating from unexpected countries — this could be deemed suspicious due to language differences, exorbitant shipping costs, or a general lack of perceived interest from that location. Additionally, if a customer who usually gets an order shipped to a certain address suddently makes a purchase from another country, the transaction in question should be investigated.
+The majority of ecommerce stores are not run by multinational corporations with locations across the globe. And on the other end of the order, most customers generally come from familiar markets and locations. Online merchants should therefore be wary of orders originating from unexpected countries — this could be deemed suspicious due to language differences, exorbitant shipping costs, or a general lack of perceived interest from that location. Additionally, if a customer who usually gets an order shipped to a certain address suddenly makes a purchase from another country, the transaction in question should be investigated.
 
 #### **Multiple product delivery locations**
 
