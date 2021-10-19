@@ -292,7 +292,14 @@ $breakpoint: 1218px;
         border: 1px solid #fde4db;
         transform: translate3d(0, 0, 0);
         opacity: 0;
-        @include aura($name: 'auraVisit', $duration: 1.75s, $scaleX: 1.05, $scaleY: 1.01, $opacity: 0.8, $waitTime: 4s);
+        @include aura(
+          $name: 'auraVisit',
+          $duration: 1.75s,
+          $scaleX: 1.05,
+          $scaleY: 1.01,
+          $opacity: 0.8,
+          $waitTime: 3.8s
+        );
 
         @media screen and (max-width: $breakpoint) {
           @include aura(
@@ -301,7 +308,7 @@ $breakpoint: 1218px;
             $scaleX: 1.05,
             $scaleY: 1.06,
             $opacity: 0.8,
-            $waitTime: 4s
+            $waitTime: 3.8s
           );
         }
       }
@@ -402,7 +409,7 @@ $breakpoint: 1218px;
 .visitorIdTitle,
 .visitorId {
   @include transition((opacity, transform));
-  @include transition-duration(1s);
+  @include transition-duration(0.7s);
 
   opacity: 0;
   transform: translateY(15px);
@@ -420,7 +427,7 @@ $breakpoint: 1218px;
 .visitorMobileRow,
 .mobileRows {
   @include transition((opacity));
-  @include transition-duration(1s);
+  @include transition-duration(0.7s);
   opacity: 0;
 
   &.visible {
@@ -428,38 +435,43 @@ $breakpoint: 1218px;
   }
 }
 
+.browserSignalsTitle,
+.browserSignals {
+  transition-delay: 0.25s;
+}
+
 .otherSignalsTitle,
 .otherSignals {
-  transition-delay: 0.25s;
+  transition-delay: 0.35s;
 }
 
 .visitHistoryTitle,
 .visitHistory {
-  transition-delay: 0.75s;
+  transition-delay: 0.5s;
 }
 
 .historyRows,
 .browserRows,
 .otherRows {
-  transition-delay: 1.25s;
+  transition-delay: 1.05s;
 }
 
 .server {
-  transition-delay: 1.75s;
+  transition-delay: 1.55s;
 }
 
 .visitorIdTitle,
 .visitorId {
-  transition-delay: 3.25s;
+  transition-delay: 3.05s;
 }
 
 .visitorRow,
 .visitorMobileRow {
-  transition-delay: 3s;
+  transition-delay: 2.8s;
 }
 
 .mobileRows {
-  transition-delay: 1.75s;
+  transition-delay: 1.55s;
 }
 
 .serverSection {
@@ -477,7 +489,7 @@ $breakpoint: 1218px;
       border: 1px solid #0d102b;
       transform: translate3d(0, 0, 0);
       opacity: 0;
-      @include aura($name: 'aura', $duration: 1.5s, $scaleX: 1.05, $scaleY: 1.01, $opacity: 0.3, $waitTime: 2.5s);
+      @include aura($name: 'aura', $duration: 1.5s, $scaleX: 1.05, $scaleY: 1.01, $opacity: 0.3, $waitTime: 2.3s);
 
       @media screen and (max-width: $breakpoint) {
         top: 4px;
@@ -487,7 +499,7 @@ $breakpoint: 1218px;
           $scaleX: 1.05,
           $scaleY: 1.06,
           $opacity: 0.3,
-          $waitTime: 2.5s
+          $waitTime: 2.3s
         );
       }
     }

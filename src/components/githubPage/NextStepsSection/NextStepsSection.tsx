@@ -22,8 +22,8 @@ export default function NextStepsSection() {
           <Step step='Reach out with questions' url={MAILTO.mailToUrl} linkText='Contact support >'>
             We would love to help out! Reach out to support via email or chat anytime.
           </Step>
-          <Step step='Subscribe to our newsletter' url={URL.newsletterUrl} linkText='Sign up for updates >'>
-            Stay up to date with the latest in browser fingerprinting and user identification news.
+          <Step step='Join our Discord' url={URL.discordServerURL} linkText='Join for updates >'>
+            Connect with other FingerprintJS users, get notifications and updates, and send us your feedback.
           </Step>
         </div>
       </Container>

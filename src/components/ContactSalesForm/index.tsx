@@ -21,7 +21,7 @@ export default function ContactSalesForm() {
       <input type='hidden' name='oid' value='00D4x000006rShv' />
       <input type='hidden' name='retURL' value='https://fingerprintjs.com/contact-sales/confirm' />
       <input type='hidden' id='lead_source' name='lead_source' value={leadSource} />
-      <input type='hidden' id='00N4x00000QeCW7' name='00N4x00000QeCW7' value={sourceDetails} />
+      <input type='hidden' id='Source_Details__c' name='Source_Details__c' value={sourceDetails} />
 
       {utmInfo.utm_campaign && (
         <input type='hidden' id='utm_campaign__c' name='utm_campaign__c' value={utmInfo.utm_campaign} />

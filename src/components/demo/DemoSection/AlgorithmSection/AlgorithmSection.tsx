@@ -44,7 +44,7 @@ export default function AlgorithmSection({ isLoading, visits, currentVisit, visi
         <h2 className={classNames(styles.browserSignalsTitle, { [styles.visible]: isVisible })}>
           Browser fingerprinting details
         </h2>
-        <section className={classNames(styles.browserSignals, { [styles.visible]: isVisible })}>
+        <section ref={ref} className={classNames(styles.browserSignals, { [styles.visible]: isVisible })}>
           {isLoading ? (
             <>
               <Card icon={<IncognitoCardSVG />} isLoading />
@@ -67,9 +67,7 @@ export default function AlgorithmSection({ isLoading, visits, currentVisit, visi
         <div className={classNames(styles.browserRows, { [styles.visible]: isVisible })}>
           <div className={styles.browserRowsSVG} />
         </div>
-        <h2 ref={ref} className={classNames(styles.otherSignalsTitle, { [styles.visible]: isVisible })}>
-          Other identifiers
-        </h2>
+        <h2 className={classNames(styles.otherSignalsTitle, { [styles.visible]: isVisible })}>Other identifiers</h2>
         <section className={classNames(styles.otherSignals, { [styles.visible]: isVisible })}>
           <Card variant='outline' icon={<TLSSVG />} title='TLS' />
           <Card variant='outline' icon={<PointerSVG />} title='Cookies' />

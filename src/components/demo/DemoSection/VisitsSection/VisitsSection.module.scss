@@ -310,7 +310,7 @@
 .cardSection,
 .visitsSection {
   @include transition((opacity, transform));
-  @include transition-duration(1s);
+  @include transition-duration(0.7s);
 
   opacity: 0;
   transform: translateY(15px);
@@ -319,8 +319,4 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.visitsSection {
-  transition-delay: 0.5s;
 }
