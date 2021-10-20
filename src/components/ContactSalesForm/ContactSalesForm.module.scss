@@ -61,6 +61,11 @@
 .button {
   align-self: start;
   margin-top: rem(40px);
+
+  &.loadingButton {
+    background-color: adjust-color(c('brand-fire'), $lightness: -20%);
+    cursor: wait;
+  }
 }
 
 .input,
@@ -68,5 +73,63 @@
 select:focus {
   @include media('<=phoneLandscape') {
     font-size: 16px;
+  }
+}
+
+.formSection {
+  padding: rem(32px);
+  max-width: rem(560px);
+  background-color: v('white');
+  box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
+  border-radius: 16px;
+
+  .header {
+    font-size: rem(32px);
+  }
+  .subHeader {
+    padding-top: rem(16px);
+    padding-bottom: rem(8px);
+
+    font-family: v(ff-sans);
+    font-size: rem(16px);
+    font-weight: v('normal');
+    line-height: 150%;
+    color: adjust-color(c('brand-water'), $alpha: -0.3);
+  }
+}
+.stateSection {
+  padding: rem(40px);
+  max-width: rem(560px);
+  background-color: v('white');
+  box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: rem(24px);
+
+  @include media('<=tablet') {
+    width: 100%;
+    padding: rem(250px) rem(10px);
+  }
+
+  .message {
+    font-family: v(ff-sans);
+    font-size: rem(20px);
+    font-weight: v('semi');
+    line-height: 130%;
+    text-align: center;
+  }
+
+  .link {
+    cursor: pointer;
+    text-decoration: none;
+    color: v('brand-fire');
+
+    &:hover {
+      color: adjust-color(c('brand-fire'), $lightness: -20%);
+    }
   }
 }

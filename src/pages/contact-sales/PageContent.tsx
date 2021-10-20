@@ -3,19 +3,14 @@ import React from 'react'
 import Container from '../../components/common/Container'
 import Section from '../../components/common/Section'
 import ContactSalesForm from '../../components/ContactSalesForm'
-import { ReactComponent as ConfirmSVG } from './confirmSVG.svg'
 
 import styles from './contact-sales.module.scss'
 
-interface PageContentProps {
-  confirmPage?: boolean
-}
-
-export default function PageContent({ confirmPage }: PageContentProps) {
+export default function PageContent() {
   return (
     <Section className={styles.root}>
       <Container size='large' className={styles.container}>
-        {confirmPage ? <ConfirmDataSent /> : <TalkToSalesSection />}
+        <ContactSalesForm />
         <ClientsSection />
       </Container>
     </Section>
@@ -39,25 +34,6 @@ function ClientsSection() {
           )
         })}
       </div>
-    </Section>
-  )
-}
-
-function TalkToSalesSection() {
-  return (
-    <Section className={styles.form}>
-      <h1 className={styles.header}>Talk to an Expert</h1>
-      <h2 className={styles.subHeader}>Fill out the form below and we will reach out shortly.</h2>
-      <ContactSalesForm />
-    </Section>
-  )
-}
-
-function ConfirmDataSent() {
-  return (
-    <Section className={styles.dataSent}>
-      <ConfirmSVG className={styles.confirmLogo} />
-      <h2 className={styles.message}>We’ll reach out to you shortly</h2>
     </Section>
   )
 }
