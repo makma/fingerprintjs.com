@@ -9,7 +9,7 @@ metadata:
     how this is possible with no-JavaScript fingerprinting.
 featured: true
 publishDate: 2021-10-21T15:29:38.611Z
-title: Disabling Javascript Won’t Save You from Fingerprinting [Demo]
+title: Disabling JavaScript Won’t Save You from Fingerprinting [Demo]
 tags:
   - fingerprinting
   - js
@@ -65,7 +65,7 @@ In our demo, the page is placed inside an iframe to make the fingerprint viewabl
 
 ## No-JavaScript signal sources
 
-The following is a list of signal sources that don’t require Javascript; however, not all signals listed are included in the demo, largely due to their low contribution to accuracy or inherent instability.
+The following is a list of signal sources that don’t require JavaScript; however, not all signals listed are included in the demo, largely due to their low contribution to accuracy or inherent instability.
 
 ### IP address (not included in demo)
 
