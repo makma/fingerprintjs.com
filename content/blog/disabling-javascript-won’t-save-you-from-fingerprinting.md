@@ -113,7 +113,7 @@ No separate request for the web page header is needed because browsers send the 
 
 The demo doesn’t use `<audio>` and `<video>` tags,  since media requests aren’t made when the page is invisible; if these tags were used, the page would produce a different fingerprint when visible. Also, the Accept header value for audio/video requests never changes in a single browser engine.
 
-## Accept-Language
+### Accept-Language
 
 This HTTP header value tells the server what languages the client prefers. For example:
 
@@ -123,14 +123,15 @@ Accept-Language: en-GB,en-US;q=0.9,en;q=0.8,ru;q=0.7
 
 Google Chrome only sends one language in incognito mode, so the demo uses the first language as a signal.
 
-\##Accept-Encoding
+### Accept-Encoding
+
 This HTTP header value advertises which content encoding (e.g.,compression algorithm) the browser is able to understand and varies with browser engine/version. For example:
 
 ```
 Accept-Encoding: gzip, deflate, br
 ```
 
-## Client Hints (not included in demo)
+### Client Hints (not included in demo)
 
 Client Hints are special HTTP headers. Browsers don’t send these by default — if the server responds with an `Accept-CH` header, the browser will add the Client Hints to future requests to this website. For example, this response header makes browsers send a `Device-Memory` and a `Sec-CH-UA-Full-Version` header:
 
@@ -140,7 +141,7 @@ Accept-CH: Device-Memory, Sec-CH-UA-Full-Version
 
 Currently, only Google Chrome and other Chromium-based browsers support this header. Chromium browsers don’t send Client Hints when JavaScript is disabled, thus Client Hints aren’t used in the demo.
 
-## CSS
+### CSS
 
 The demo collects several signals using the browser’s CSS engine. All the CSS signals work the same way: the page’s CSS code determines whether or not to send an HTTP request based on the browser, OS, device, and other parameters. In general, the CSS code for a signal looks like this:
 
@@ -157,7 +158,7 @@ If your browser matches the `magic-query` CSS selector, it will apply the `backg
 
 The magic selectors used in the demo are described in the following section.
 
-## Feature queries
+### Feature queries
 
 A special CSS rule called `@supports` applies CSS styles only if the browser supports the given feature. Different browsers vary in terms of their features, so these can be used to tell browser engines apart.
 This is CSS code that will only trigger an HTML request in Chromium-based browsers:
@@ -178,7 +179,7 @@ Other features (in place of `-webkit-app-region`) used in the demo include:
 * `-moz-osx-font-smoothing` detects macOS Firefox
 * `accent-color` detects modern Chromium (version 93+) and Gecko (version 92+) browsers. Since Tor uses an outdated version of Gecko, the absence of this feature indicates that the browser is most likely Tor.
 
-## Media queries
+### Media queries
 
 `@media` is a CSS keyword that enables the application of CSS styles based on various conditions outside the page. In general, CSS code with a media query looks like this:
 
