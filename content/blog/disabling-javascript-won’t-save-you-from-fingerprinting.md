@@ -1,7 +1,7 @@
 ---
 templateKey: long-form-content
 metadata:
-  title: Disabling Javascript Won’t Save You from Fingerprinting
+  title: Disabling JavaScript Won’t Save You from Fingerprinting
   image: /img/uploads/no-javascript-fingerprinting.png
   url: https://fingerprintjs.com/blog/disabling-javascript-wont-stop-fingerprinting/
   description: Turning off JavaScript may block advertisers from showing you ads,
@@ -63,7 +63,7 @@ Your fingerprint is shown on a separate page. The URL contains the token as well
 
 In our demo, the page is placed inside an iframe to make the fingerprint viewable on the main page, but keep in mind that the server can access the fingerprint behind the scenes, at any moment.
 
-## Signal sources used in the demo
+## No-JavaScript signal sources
 
 The following is a list of signal sources that don’t require Javascript; however, not all signals listed are included in the demo, largely due to their low contribution to accuracy or inherent instability.
 
@@ -125,7 +125,7 @@ Google Chrome only sends one language in incognito mode, so the demo uses the fi
 
 ### Accept-Encoding
 
-This HTTP header value advertises which content encoding (e.g.,compression algorithm) the browser is able to understand and varies with browser engine/version. For example:
+This HTTP header value advertises which content encoding (e.g., compression algorithm) the browser is able to understand and varies with browser engine/version. For example:
 
 ```
 Accept-Encoding: gzip, deflate, br
