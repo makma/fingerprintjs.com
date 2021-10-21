@@ -27,9 +27,9 @@ A common misconception is that disabling JavaScript can prevent fingerprinting. 
 
 Check out the demo to see it in action:
 
-* <https://noscriptfingerprint.com/>
+* <a href="https://noscriptfingerprint.com/" target="_blank">https://noscriptfingerprint.com/</a>
 
-[](https://noscriptfingerprint.com/)The demo should show the same fingerprint, even if visitors attempt to conceal their identities using the following methods (among others):
+The demo should show the same fingerprint, even if visitors attempt to conceal their identities using the following methods (among others):
 
 * Requesting desktop mode in mobile browsers
 * Spoofing the user agent
