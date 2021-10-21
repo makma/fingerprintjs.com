@@ -9,7 +9,7 @@ metadata:
     how this is possible with no-JavaScript fingerprinting.
 featured: true
 publishDate: 2021-10-21T15:29:38.611Z
-title: Disabling Javascript Won’t Save You from Fingerprinting
+title: Disabling Javascript Won’t Save You from Fingerprinting [Demo]
 tags:
   - fingerprinting
   - js
@@ -29,18 +29,18 @@ Check out the demo to see it in action:
 
 * <https://noscriptfingerprint.com/>
 
-[](https://noscriptfingerprint.com/)The demo should show the same fingerprint even if a visitor attempts to conceal their identity, including but not limited to:
+[](https://noscriptfingerprint.com/)The demo should show the same fingerprint, even if visitors attempt to conceal their identities using the following methods (among others):
 
 * Requesting desktop mode in mobile browsers
 * Spoofing the user agent
 * Using incognito mode
 * Changing the internet connection
 
-These are just a handful out of the many use cases where fingerprinting can uniquely identify devices, even as other methods fail.
+These are just a handful of the many use cases where fingerprinting can uniquely identify devices, even as other methods fail.
 
 ## How the demo works
 
-When you open the main page of the demo, your browser sends several HTTP requests to the demo’s server automatically. The list of requests and the request contents depends on your specific device and browser (more on this later). The server extracts meaningful pieces of data — or signals — from the HTTP requests and stores them in a database. Your device signals stay the same as you visit different websites and subsequently can be used to reliably identify and track you over time.
+When you open the main page of the demo, your browser sends several HTTP requests to the demo’s server automatically. The list of requests and the request contents depend on your specific device and browser (more on this later). The server extracts meaningful pieces of data — or signals — from the HTTP requests and stores them in a database. Your device signals stay the same as you visit different websites and subsequently can be used to reliably identify and track you over time.
 
 The server links the requests of a single visitor together using a unique random token by inserting this token into the main page’s HTML code. As a result, all HTTP requests from the main page contain the token, and different visitors requesting the main page receive unique pieces of HTML code.
 
