@@ -27,7 +27,7 @@ A common misconception is that disabling JavaScript can prevent fingerprinting. 
 
 Check out the demo to see it in action:
 
-* <a href="https://noscriptfingerprint.com/" target="_blank">https://noscriptfingerprint.com/</a>
+* <a href="https://noscriptfingerprint.com/" target="_blank" rel="noopener">https://noscriptfingerprint.com/</a>
 
 The demo should show the same fingerprint, even if visitors attempt to conceal their identities using the following methods (among others):
 
@@ -280,7 +280,7 @@ Disabling JavaScript doesn’t prevent your device from being fingerprinted, as 
 
 Special browsers like Tor guarantee anonymity and the exact same fingerprint across all users; for those that take privacy to the extremes, this may be the only option.
 
-* Star, follow, or fork our <a href="https://github.com/fingerprintjs/blog-nojs-fingerprint-demo" target="_blank">no JavaScript fingerprinting demo</a>
+* Star, follow, or fork our <a href="https://github.com/fingerprintjs/blog-nojs-fingerprint-demo" target="_blank" rel="noopener">no JavaScript fingerprinting demo</a>
 * Email any questions you have to <a href="mailto:oss@fingerprintJS.com">oss@fingerprintJS.com</a>
-* Join our <a href="https://discord.gg/ad6R2ttHVX" target="_blank">Discord channel</a> to discuss all things FingerprintJS, cybersecurity, and privacy
+* Join our <a href="https://discord.gg/ad6R2ttHVX" target="_blank" rel="noopener">Discord channel</a> to discuss all things FingerprintJS, cybersecurity, and privacy
 * Join our team and work on exciting research in device security: <a href="mailto:work@fingerprintjs.com">work@fingerprintjs.com</a>
