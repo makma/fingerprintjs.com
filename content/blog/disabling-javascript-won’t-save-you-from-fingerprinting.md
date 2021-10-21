@@ -65,7 +65,7 @@ In our demo, the page is placed inside an iframe to make the fingerprint viewabl
 
 ## Signal sources used in the demo
 
-The following is a list of signal sources that don’t require Javascript that can be used for fingerprinting. However, not all signals listed are included in the demo, largely due to their low contribution to accuracy or inherent instability.
+The following is a list of signal sources that don’t require Javascript; however, not all signals listed are included in the demo, largely due to their low contribution to accuracy or inherent instability.
 
 ### IP address (not included in demo)
 
