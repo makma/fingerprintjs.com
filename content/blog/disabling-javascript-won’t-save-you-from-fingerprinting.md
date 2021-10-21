@@ -1,7 +1,7 @@
 ---
 templateKey: long-form-content
 metadata:
-  title: Disabling JavaScript Won’t Save You from Fingerprinting
+  title: "Demo: Disabling JavaScript Won’t Save You from Fingerprinting"
   image: /img/uploads/no-javascript-fingerprinting.png
   url: https://fingerprintjs.com/blog/disabling-javascript-wont-stop-fingerprinting/
   description: Turning off JavaScript may block advertisers from showing you ads,
@@ -9,7 +9,7 @@ metadata:
     how this is possible with no-JavaScript fingerprinting.
 featured: true
 publishDate: 2021-10-21T15:29:38.611Z
-title: Disabling JavaScript Won’t Save You from Fingerprinting [Demo]
+title: "Demo: Disabling JavaScript Won’t Save You from Fingerprinting"
 tags:
   - fingerprinting
   - js
