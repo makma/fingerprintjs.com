@@ -73,6 +73,7 @@
 
   p {
     font-size: 2.6rem;
+    overflow-wrap: break-word;
 
     @include media('<=phoneLandscape') {
       font-size: rem(18px);

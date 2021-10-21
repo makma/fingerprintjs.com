@@ -16,7 +16,7 @@ import { URL, MAILTO } from '../../constants/content'
 import styles from './ContactSalesForm.module.scss'
 
 export default function ContactSalesForm() {
-  const [leadName, setLeadName] = useState('')
+  const [formName, setFormName] = useState('')
   const [email, setEmail] = useState('')
   const [url, setUrl] = useState('')
   const [description, setDescription] = useState('')
@@ -39,7 +39,7 @@ export default function ContactSalesForm() {
     }
 
     try {
-      const response = await createNewLead(leadName, email, url, description, utmInfo)
+      const response = await createNewLead(formName, email, url, description, utmInfo)
       const status = response.status
 
       if (status !== 200) {
@@ -66,18 +66,18 @@ export default function ContactSalesForm() {
           <h2 className={styles.subHeader}>Fill out the form below and we will reach out shortly.</h2>
           <form className={styles.contactSalesForm} onSubmit={handleSubmit}>
             <div className={styles.form}>
-              <label className={styles.label} htmlFor='leadName'>
+              <label className={styles.label} htmlFor='formName'>
                 Your name
               </label>
               <input
                 className={styles.input}
-                id='leadName'
+                id='formName'
                 maxLength={40}
-                name='leadName'
+                name='formName'
                 size={20}
                 type='text'
                 placeholder='John'
-                onChange={(e) => setLeadName(e.target.value)}
+                onChange={(e) => setFormName(e.target.value)}
                 disabled={formState === FormState.Loading}
                 required
               />

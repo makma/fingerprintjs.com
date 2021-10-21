@@ -9,7 +9,7 @@ export async function loadFpjsHistory(visitorId: string) {
 }
 
 export async function createNewLead(
-  leadName: string,
+  formName: string,
   email: string,
   url: string,
   description: string,
@@ -19,7 +19,7 @@ export async function createNewLead(
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      name: leadName,
+      name: formName,
       email,
       url,
       description,

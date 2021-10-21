@@ -181,7 +181,7 @@ pip install splinter
 
 Verify that Splinter is working by copying the following code and saving it as `main.py`:
 
-```Python
+```python
 from splinter import Browser
 import random
 import string
@@ -254,7 +254,7 @@ Previously, the script was auto-generating email addresses randomly without actu
 
 Update the signup bot script to use 1secMAIL:
 
-```Python
+```python
 from splinter import Browser
 from onesecmail import OneSecMail
 
