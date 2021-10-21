@@ -226,7 +226,7 @@ The demo uses the following media features:
 
 The next set of features are a bit trickier: `device-width`, `device-height` and `-webkit-device-pixel-ratio` reflect the resolution of the whole screen and its pixel density. The values of these features are arbitrary — you can write CSS code that has a `@media` rule for all the thousands of possible values, but it will only add unnecessary bloat to your code base. Instead, the demo checks ranges of values using the `min` and `max` rules. 
 
-This is an example of detecting screen width:
+Below is an example of how to detect screen width:
 
 ```css
 @media (max-width: 349.99px) {
@@ -279,3 +279,8 @@ As you can see, installed fonts are an effective way to tell operating systems a
 Disabling JavaScript doesn’t prevent your device from being fingerprinted, as most browsers will still leak an abundance of data such as IP addresses, behavior patterns, and more. And since most websites require JavaScript to function properly, using this method to preserve your online privacy will invariably lead to a suboptimal web experience. 
 
 Special browsers like Tor guarantee anonymity and the exact same fingerprint across all users; for those that take privacy to the extremes, this may be the only option.
+
+* Star, follow, or fork our [no JavaScript fingerprinting demo](https://github.com/fingerprintjs/blog-nojs-fingerprint-demo)
+* Email any questions you have to [oss@fingerprintJS.com](mailto:oss@fingerprintJS.com)
+* Join our [Discord channel](https://discord.gg/ad6R2ttHVX) to discuss all things FingerprintJS, cybersecurity, and privacy
+* Join our team and work on exciting research in device security: [work@fingerprintjs.com](mailto:work@fingerprintjs.com)
