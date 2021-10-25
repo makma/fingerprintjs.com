@@ -74,8 +74,8 @@
     "swiper": "^7.0.6"
   },
   "devDependencies": {
-    "@babel/core": "7.15.5",
-    "@babel/preset-env": "7.15.6",
+    "@babel/core": "7.15.8",
+    "@babel/preset-env": "7.15.8",
     "@storybook/addon-actions": "6.3.8",
     "@storybook/addon-essentials": "6.3.8",
     "@storybook/addon-links": "6.3.8",
@@ -91,7 +91,7 @@
     "@types/react-dom": "17.0.9",
     "@typescript-eslint/eslint-plugin": "4.32.0",
     "@typescript-eslint/parser": "4.32.0",
-    "babel-loader": "8.2.2",
+    "babel-loader": "8.2.3",
     "babel-plugin-prismjs": "2.1.0",
     "babel-preset-gatsby": "1.14.0",
     "babel-preset-react-app": "10.0.0",
