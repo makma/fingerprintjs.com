@@ -22,7 +22,7 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 ---
-Microsoft’s cloud services see over [300 million fraudulent sign-in](https://www.zdnet.com/article/microsoft-using-multi-factor-authentication-blocks-99-9-of-account-hacks/) attempts every day, so when it recommends two-factor authentication (2FA) to [prevent account takeovers,](https://fingerprintjs.com/account-takeover/) internet users are well advised to take heed. But don’t just take its word for it — Google claims that [100% of automated bots](https://security.googleblog.com/2019/05/new-research-how-effective-is-basic.html) can be blocked with 2FA, not to mention 99% of bulk phishing attacks and 66% of targeted attacks.
+Microsoft’s cloud services see over 300 million fraudulent sign-in attempts every day, so when it recommends two-factor authentication (2FA) to [prevent account takeovers,](https://fingerprintjs.com/account-takeover/) internet users are well advised to take heed. But don’t just take its word for it — Google claims that <a href="https://security.googleblog.com/2019/05/new-research-how-effective-is-basic.html" target="_blank" rel="noopener">100% of automated bots</a> can be blocked with 2FA, not to mention 99% of bulk phishing attacks and 66% of targeted attacks.
 
 In this article, we’ll find out why the world’s largest software company and the internet's leading search engine both claim that 2FA is the best defense against account takeovers.
 
