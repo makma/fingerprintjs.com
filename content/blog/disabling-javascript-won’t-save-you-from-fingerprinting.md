@@ -26,9 +26,7 @@ Fingerprinting is a way to identify website users without using cookies or data 
 A common misconception is that disabling JavaScript can prevent fingerprinting. Since advertisers and bad actors use it for ad targeting and tracking your online activity, it’s a natural (albeit incorrect) assumption that disabling JavaScript will protect you against fingerprinting. In this article, we will demonstrate that fingerprinting can occur even in the absence of JavaScript.
 
 Check out the demo to see it in action:
-<ul>
-<li><a href="https://noscriptfingerprint.com/" target="_blank" rel="noopener">https://noscriptfingerprint.com/</a></li>
-</ul>
+* <a href="https://noscriptfingerprint.com/" target="_blank" rel="noopener">No-JS Fingerprinting Demo</a>
 
 The demo should show the same fingerprint, even if visitors attempt to conceal their identities using the following methods (among others):
 
@@ -282,7 +280,7 @@ Disabling JavaScript doesn’t prevent your device from being fingerprinted, as 
 
 Special browsers like Tor guarantee anonymity and the exact same fingerprint across all users; for those that take privacy to the extremes, this may be the only option.
 
-* Star, follow, or fork our <a href="https://github.com/fingerprintjs/blog-nojs-fingerprint-demo" targe="_blank">no JavaScript fingerprinting demo</a>
+* Star, follow, or fork our <a href="https://github.com/fingerprintjs/blog-nojs-fingerprint-demo" target="_blank" rel="noopener">no JavaScript fingerprinting demo</a>
 * Email any questions you have to <a href="mailto:oss@fingerprintJS.com">oss@fingerprintJS.com</a>
-* Join our <a href="https://discord.gg/ad6R2ttHVX" target="_blank">Discord channel</a> to discuss all things FingerprintJS, cybersecurity, and privacy
+* Join our <a href="https://discord.gg/ad6R2ttHVX" target="_blank" rel="noopener">Discord channel</a> to discuss all things FingerprintJS, cybersecurity, and privacy related
 * Join our team and work on exciting research in device security: <a href="mailto:work@fingerprintjs.com">work@fingerprintjs.com</a>
