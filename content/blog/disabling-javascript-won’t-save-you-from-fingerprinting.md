@@ -26,8 +26,9 @@ Fingerprinting is a way to identify website users without using cookies or data 
 A common misconception is that disabling JavaScript can prevent fingerprinting. Since advertisers and bad actors use it for ad targeting and tracking your online activity, it’s a natural (albeit incorrect) assumption that disabling JavaScript will protect you against fingerprinting. In this article, we will demonstrate that fingerprinting can occur even in the absence of JavaScript.
 
 Check out the demo to see it in action:
-
-- <a href="https://noscriptfingerprint.com/" target="_blank" rel="noopener">https://noscriptfingerprint.com/</a>
+<ul>
+<li><a href="https://noscriptfingerprint.com/" target="_blank" rel="noopener">https://noscriptfingerprint.com/</a></li>
+</ul>
 
 The demo should show the same fingerprint, even if visitors attempt to conceal their identities using the following methods (among others):
 
