@@ -11,6 +11,10 @@ publishDate: 2021-10-26T20:49:50.805Z
 title: Prevent 100% of Account Takeover Attacks from Bots with 2FA
 tags:
   - fingerprinting
+  - account takeover
+  - bot attacks
+  - privacy
+  - ecommerce fraud
 authors:
   - Leon Yen
 heroImage:
