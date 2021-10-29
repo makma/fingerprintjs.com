@@ -13,6 +13,40 @@ const resolvePath = (directoryName, pathName) => {
 
 const gatsbyRequiredRules = path.join(process.cwd(), 'node_modules', 'gatsby', 'dist', 'utils', 'eslint-rules')
 
+const rssPostQuery = `
+{
+  allMarkdownRemark(
+    filter: {fields: {slug: {regex: "/blog/"}}}
+    sort: {order: DESC, fields: frontmatter___publishDate}
+    limit: 15
+  ) {
+    edges {
+      node {
+        html
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          publishDate
+          tags
+          metadata {
+            url
+            description
+            image {
+              publicURL
+            }
+            socialImage {
+              publicURL
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`
+
 module.exports = {
   siteMetadata: {
     title: 'FingerprintJS Pro - Browser fingerprinting and fraud detection API',
@@ -154,6 +188,51 @@ module.exports = {
             `Cache-Control: public, max-age=900, s-maxage=900`,
           ],
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map((edge) => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.frontmatter.metadata.description,
+                  date: edge.node.frontmatter.publishDate,
+                  url: edge.node.frontmatter.metadata.url,
+                  guid: edge.node.frontmatter.metadata.url,
+                  enclosure: edge.node.frontmatter.metadata.socialImage
+                    ? {
+                        url: site.siteMetadata.siteUrl + edge.node.frontmatter.metadata.socialImage.publicURL,
+                      }
+                    : {
+                        url: site.siteMetadata.siteUrl + edge.node.frontmatter.metadata.image.publicURL,
+                      },
+                  custom_elements: [
+                    { 'content:encoded': edge.node.html },
+                    { tags: edge.node.frontmatter.tags.join(', ') },
+                  ],
+                })
+              })
+            },
+            query: rssPostQuery,
+            output: '/rss.xml',
+            title: 'FingerprintJS Blog RSS Feed',
+          },
+        ],
       },
     },
   ],
