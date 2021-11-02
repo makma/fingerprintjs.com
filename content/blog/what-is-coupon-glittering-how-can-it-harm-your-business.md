@@ -56,11 +56,9 @@ Coupon glittering is more commonly used for making purchases at brick-and-mortar
 
 Customers attempt to make copies of coupons from time to time to cash in on a particularly great deal. However, it becomes a much bigger problem when they make copies of coupons that they know have glitches in them.
 
-For example, a customer may be alerted to the fact that a coupon your business has issued is able to be used on other products. Instead of just using one coupon in a glittering fraud, they make multiple copies of the original coupon and attempt to use them all for a variety of products.
+For example, a customer may be alerted to the fact that a coupon your business has issued is able to be used on other products. Instead of just using the coupon once for a purchase, they make multiple copies of the original coupon and attempt to use them all for a variety of products.
 
 Most brick-and-mortar retailers don’t accept copies of coupons, but some do. It’s really important to make sure you’re only honouring the original version.
-
-For online businesses, there are many websites that compile promo codes by website that visitors can freely use for their purchases, even if they weren’t part of the initial intended audience.
 
 ### 2. Trading, buying, or selling coupons
 
@@ -110,7 +108,7 @@ However, you can reduce mistakes by making it standard operating procedure for s
 
 ### 3. Set up prevention protocols
 
-There are a range of one-off protocols you can introduce to prevent your customers from using fraudulent coupons.
+There are a range of protocols you can introduce to prevent your customers from using fraudulent coupons.
 
 * Monitor social media and glitching groups to see when your coupons are being defrauded
 * Only issue coupons for one specific product or range during any time period, so staff know they cannot be used for anything else
