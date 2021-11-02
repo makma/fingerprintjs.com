@@ -23,9 +23,8 @@ heroImage:
   imageTitle: What is coupon glittering?
 customCTA:
   openCtaNewTab: false
-  title: Need to protect your e-commerce site?
-  description: Learn how FingerprintJS protects online businesses against coupon
-    and promo fraud, chargebacks and more.
+  title: Protect your e-commerce site
+  description: Learn how FingerprintJS protects sites against coupon and promo fraud.
   ctaText: Learn more
   ctaUrl: https://fingerprintjs.com/ecommerce/
 ---
