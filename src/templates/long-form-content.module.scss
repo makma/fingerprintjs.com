@@ -63,6 +63,17 @@
   @include media('<=phoneLandscape') {
     margin-bottom: rem(40px);
   }
+
+  &.desktopOnly {
+    @include media('<=phoneLandscape') {
+      display: none;
+    }
+  }
+  &.mobileOnly {
+    @include media('>phoneLandscape') {
+      display: none;
+    }
+  }
 }
 
 .authors {

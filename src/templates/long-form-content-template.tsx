@@ -11,6 +11,7 @@ import AuthorComponent, { Author } from '../components/Author/Author'
 import CustomizableCTA, { CustomizableCTAProps } from '../components/CustomizableCTA/CustomizableCTA'
 import HeroImageComponent, { HeroImageComponentProps } from '../components/HeroImage/HeroImage'
 import TagList from '../components/TagList/TagList'
+import classNames from 'classnames'
 
 import ActionBar, { ActionBarProps } from '../components/ActionBar/ActionBar'
 
@@ -60,7 +61,7 @@ export default function LongFormContentTemplate({
           <header className={styles.header}>
             {tags && <TagList tags={tags} format='title' />}
             <h1 className={styles.title}>{post.title}</h1>
-            <div className={styles.actionBar}>
+            <div className={classNames(styles.actionBar, styles.desktopOnly)}>
               <ActionBar {...actionBar} />
             </div>
           </header>
@@ -72,6 +73,9 @@ export default function LongFormContentTemplate({
             </div>
           )}
           <article className={styles.body}>
+            <div className={classNames(styles.actionBar, styles.mobileOnly)}>
+              <ActionBar {...actionBar} />
+            </div>
             {heroImage.image && <HeroImageComponent {...heroImage} />}
             <ContentComponent content={body} className={styles.content} />
           </article>
