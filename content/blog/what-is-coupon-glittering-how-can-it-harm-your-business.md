@@ -2,7 +2,7 @@
 templateKey: long-form-content
 metadata:
   title: What is coupon glittering & how can it harm your business?
-  url: https://fingerprintjs.com/blog/what-is-coupon-glittering-and-how-can-it-harm-businesses
+  url: https://fingerprintjs.com/blog/what-is-coupon-glittering-and-how-can-it-harm-businesses/
   description: Coupon glittering is a form of payment fraud that exploits glitches
     in coupon codes. Learn how this scam works, and how to prevent it from
     damaging your retail store or online business.
