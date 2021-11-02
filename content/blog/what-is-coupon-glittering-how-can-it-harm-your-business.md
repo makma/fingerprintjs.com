@@ -33,6 +33,8 @@ customCTA:
 
 FingerprintJS helps e-commerce sites prevent promo and coupon fraud by uniquely identifying each visitor to your website, making it easy to catch suspicious user behavior. [Learn more about how we protect e-commerce sites.](https://fingerprintjs.com/ecommerce/)</i>
 
+## Introduction
+
 Coupons are a really effective revenue tool for retailers all over the world. By discounting products through coupons, you’re able to encourage customer loyalty and provide a positive customer experience that saves people money. 
 
 However, there is an uglier side to coupons, as they can be exploited. As customers have grown more savvy in the way they use coupons, they have started to uncover illegitimate means of saving, or even making money from them.
