@@ -43,8 +43,9 @@ cardSection:
       iconTitle: Payment processing fraud
     - title: Prevent gift card & coupon abuse
       markdown__Content: Detect visitors using stolen or fake identities to ensure
-        that your coupons and promotions are used legitimately by real
-        customers.
+        that your
+        [coupons](https://fingerprintjs.com/blog/what-is-coupon-glittering-and-how-can-it-harm-businesses/)
+        and promotions are used legitimately by real customers.
       icon: /img/uploads/anonymous_user_identification.png
       iconAlt: Gift card abuse
       iconTitle: Gift card abuse
