@@ -38,7 +38,7 @@ Coupons are an effective revenue tool for retailers all over the world. By disco
 
 However, there is an uglier side to coupons, as they can be exploited. As customers have grown more savvy in the way they use coupons, they have started to uncover illegitimate means of saving, or even making money from them.
 
-Research has shown <a href="https://progressivegrocer.com/feds-uncover-31m-coupon-fraud-scheme" target="_blank" rel="noopener">coupon fraud costs retailers more than $100 million each year</a>. It’s a type of [payment fraud](https://fingerprintjs.com/payment-fraud/) that some business owners may not know much about and can take many different forms depending on if you are a brick-and-mortar company or an online business. Coupon glittering is just one of many methods fraudsters can employ to exploit coupons offered by a business.
+Research has shown <a href="https://progressivegrocer.com/feds-uncover-31m-coupon-fraud-scheme" target="_blank" rel="noopener">coupon fraud costs retailers more than $100 million each year</a>. It’s a type of [payment fraud](https://fingerprintjs.com/payment-fraud/) that some business owners may not know much about, as it can be hard to catch. Coupon glittering is just one of many methods fraudsters can employ to exploit coupons offered by a business.
 
 ## What is coupon glittering?
 
