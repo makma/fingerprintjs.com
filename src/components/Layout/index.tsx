@@ -21,8 +21,8 @@ export function Layout({ children }: LayoutProps) {
   return (
     <LayoutTemplate
       siteMetadata={siteMetadata}
-      headerBarTitle='FingerprintJS Announces SOC 2 Compliance'
-      headerBarLinkUrl='https://fingerprintjs.com/blog/soc-2-type-1'
+      headerBarTitle='FingerprintJS raises $32M series B from Craft Ventures'
+      headerBarLinkUrl='https://venturebeat.com/2021/11/03/fraud-prevention-platform-fingerprintjs-lands-32m-to-launch-premium-services/'
     >
       {children}
     </LayoutTemplate>

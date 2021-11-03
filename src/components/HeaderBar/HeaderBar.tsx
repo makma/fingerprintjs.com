@@ -12,7 +12,7 @@ export default function HeaderBar({ children, linkUrl }: headerBarProps) {
   return linkUrl ? (
     <Container className={styles.container} size='large'>
       <div className={styles.headerBar}>
-        <a className={styles.link} href={linkUrl}>
+        <a className={styles.link} href={linkUrl} target='_blank' rel='noreferrer'>
           <div className={styles.text}>{children}</div>
           <div className={styles.arrow}>→</div>
         </a>
