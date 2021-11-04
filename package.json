@@ -129,6 +129,6 @@
     "prettier:fix": "prettier --write --loglevel=error ."
   },
   "resolutions": {
-    "gatsby/**/svgo": "2.4.0"
+    "gatsby/**/svgo": "2.8.0"
   }
 }
