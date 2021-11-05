@@ -25,16 +25,17 @@ heroImage:
   imageTitle: Preventing Browser Fingerprinting
 customCTA:
   openCtaNewTab: false
+isPublished: true
 ---
 Browser fingerprinting is a method of identifying and tracking website visitors that doesn’t rely on cookies or login sessions. Instead, visitors are identified by collecting a series of browser parameters, from browser version to screen dimensions and installed fonts. Each parameter is of limited utility on its own, but when combined with others can be used to create a unique identifier for each website visitor.
 
-Here are some data points that browser fingerprinting uses to create unique IDs: 
+Here are some data points that browser fingerprinting uses to create unique IDs: 
 
 * Browser type and version
 * Language
 * Time zone
-* Graphics card type (via [HTML canvas drawing](https://www.w3schools.com/html/html5_canvas.asp)) 
-* Device make and model 
+* Graphics card type (via [HTML canvas drawing](https://www.w3schools.com/html/html5_canvas.asp)) 
+* Device make and model 
 * Installed plugins
 * Screen dimensions
 * Hardware type
@@ -63,11 +64,11 @@ Finally, some browsers like [Brave](https://brave.com/) use a method of spoofing
 
 ## Creating a Fingerprint
 
-We’ve seen the different ways a browser can be fingerprinted, as well as the various methods to prevent accurate fingerprinting. If your site relies on fingerprinting to help prevent fraud or deliver optimized content to users, it can be difficult to plan for every scenario. 
+We’ve seen the different ways a browser can be fingerprinted, as well as the various methods to prevent accurate fingerprinting. If your site relies on fingerprinting to help prevent fraud or deliver optimized content to users, it can be difficult to plan for every scenario. 
 
 FingerprintJS Pro offers a superior method of anonymous visitor identification that uses browser fingerprinting in conjunction with cookies, visit history, and geolocation data to create a unique and highly stable visitorID. Built by a dedicated browser fingerprinting research team, the library is easy-to-install, [highly accurate](https://dev.fingerprintjs.com/docs/understanding-our-995-accuracy) and effective in stopping fraud and spam.
 
-The following tutorial uses the CDN option for installation, but the library can also be installed by running `npm install @fingerprintjs/fingerprintjs-pro` and running `import FingerprintJS from '@fingerprintjs/fingerprintjs-pro'`. 
+The following tutorial uses the CDN option for installation, but the library can also be installed by running `npm install @fingerprintjs/fingerprintjs-pro` and running `import FingerprintJS from '@fingerprintjs/fingerprintjs-pro'`. 
 
 To get started, create an `index.html` file with the following code between the head tags:
 
@@ -90,7 +91,7 @@ To get started, create an `index.html` file with the following code between the 
 
 This will print the visitorID to the console, but it won’t work until we give it a proper token. You can [sign up](https://dashboard.fingerprintjs.com/signup) for a  free trial of FingerprintJS Pro to get a unique token for your website.
 
-Click the **tokens** tab on the left and copy the token marked **browser**. Replace `your-browser-token` in the `index.html` file with the token copied from FingerprintJS. Now you are ready to test. Start up a server and visit your new site. This demo uses [http-server](https://www.npmjs.com/package/http-server) because it installs quickly and is easy-to-use. 
+Click the **tokens** tab on the left and copy the token marked **browser**. Replace `your-browser-token` in the `index.html` file with the token copied from FingerprintJS. Now you are ready to test. Start up a server and visit your new site. This demo uses [http-server](https://www.npmjs.com/package/http-server) because it installs quickly and is easy-to-use. 
 
 First visit the site in a normal Chrome browser instance with cookies enabled. If you open up the Chrome developer console, you should see your unique visitorID printed out.
 

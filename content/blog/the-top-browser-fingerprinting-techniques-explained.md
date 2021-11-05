@@ -23,6 +23,7 @@ heroImage:
   image: /img/uploads/tw-ad-2-hd.png
   imageAlt: Screenshot of FingerprintJS visitorID data
   imageTitle: Screenshot of FingerprintJS visitorID data
+isPublished: true
 ---
 <b>To generate a highly accurate browser fingerprint, many techniques are used to gather information about the user that can differentiate them from millions of others online. In this article, we review some of the most common methods used in a browser fingerprinting script.</b>
 

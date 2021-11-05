@@ -25,6 +25,7 @@ heroImage:
   image: /img/uploads/how-to-outsmart-fraudsters-recognise-phishing-emails-1-.png
 customCTA:
   openCtaNewTab: false
+isPublished: true
 ---
 Phishing emails have become increasingly common and difficult to detect in recent years; in fact, they were the [most common online fraud type](https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf) in 2020, with nearly a quarter of a million phishing emails sent out to unwitting victims.
 
@@ -40,21 +41,21 @@ Since the end game is profit, malicious actors typically steal data to resell on
 
 The contents of a phishing email will vary depending who the malicious actor is masquerading as. For example, cyber criminals may pose as the business’ bank to manipulate employees or users into revealing their account login details. They may impersonate an internet service provider requesting access to the users’ desktop, a trusted colleague asking for a monetary favor, or even a known company executive requesting the expediting of a (non-existent) invoice.
 
-Because email addresses are generally meant to be publicly accessible, phishing emails will invariably find their way into users’ accounts. Fortunately, today’s anti-phishing, email security, and account takeover prevention solutions are highly effective in mitigating the risk of phishing emails. That said, businesses should train their employees on how to monitor for these threats — specifically, to look out for the following red flags of a phishing email attack.
+Because email addresses are generally meant to be publicly accessible, phishing emails will invariably find their way into users’ accounts. Fortunately, today’s anti-phishing, email security, and account takeover prevention solutions are highly effective in mitigating the risk of phishing emails. That said, businesses should train their employees on how to monitor for these threats — specifically, to look out for the following red flags of a phishing email attack.
 
 ### Atypical Salutations
 
-Phishing emails often start with a greeting that you wouldn’t ordinarily expect like "Dear account holder," "Dear Sir or Madam," or "Dear valued customer." Though attackers  may remove the greeting altogether and launch straight into the body of the email, more often they will begin with an unusually generic greeting that lacks any personalization (e.g., the recipient's first/last name). Because  phishing emails are typically automated, attackers may send thousands of emails at once in hopes of netting a few unwary victims; subsequently, they often do not have the necessary details to personalize the message for each recipient.
+Phishing emails often start with a greeting that you wouldn’t ordinarily expect like "Dear account holder," "Dear Sir or Madam," or "Dear valued customer." Though attackers  may remove the greeting altogether and launch straight into the body of the email, more often they will begin with an unusually generic greeting that lacks any personalization (e.g., the recipient's first/last name). Because  phishing emails are typically automated, attackers may send thousands of emails at once in hopes of netting a few unwary victims; subsequently, they often do not have the necessary details to personalize the message for each recipient.
 
 ### Abundance of typos
 
-Bad grammar is an obvious sign of a phishing email. Legitimate firms drafting formal emails will likely correct any obvious errors and typos prior to sending, while cyber attackers will inadvertently include spelling, syntax or grammatical errors. The email copy may also use improper English or sentences that  are nonsensical. These mistakes may be hard to notice at first glance, but can more easily be spotted during a slower, second take.
+Bad grammar is an obvious sign of a phishing email. Legitimate firms drafting formal emails will likely correct any obvious errors and typos prior to sending, while cyber attackers will inadvertently include spelling, syntax or grammatical errors. The email copy may also use improper English or sentences that  are nonsensical. These mistakes may be hard to notice at first glance, but can more easily be spotted during a slower, second take.
 
 ### Discrepancies in links and domains
 
 Cyber criminals will often employ phishing emails to trick readers into clicking on malicious links. This could have disastrous results, as the action may open up a destination web page/resource containing malware or malicious scripts for harvesting user details.
 
-Several key visual clues may allude to a potential phishing email attack in the works. The links may be buttons or graphics directly copied and pasted into the email body, in which case they may look off-center, oddly-shaped or malformed. For text links, users should be wary of hyperlinks with hidden or obfuscated URLS., as cyber criminals will use methods to cloak the malicious destination domain, so as not to tip off the user.
+Several key visual clues may allude to a potential phishing email attack in the works. The links may be buttons or graphics directly copied and pasted into the email body, in which case they may look off-center, oddly-shaped or malformed. For text links, users should be wary of hyperlinks with hidden or obfuscated URLS., as cyber criminals will use methods to cloak the malicious destination domain, so as not to tip off the user.
 
 ![Bank Phishing Email](https://lh3.googleusercontent.com/eiUfsvLKZ8EGPLyZ2lJz-1o9aUzey8Tzc5dOOONEsgchZUhtXGUqpiOjIDINcU-DnM0XH3VTleuFFNMxa3AzTOENBcq4CS7BqRutpVXT34gl05HjZ1CMV8YKHKzUEVwA4err1lRu=s0 "Bank Phishing Email")
 
@@ -62,13 +63,13 @@ Source: [bleepingcomputer.com](https://www.bleepingcomputer.com/news/security/mi
 
 ### Abnormal sense of urgency
 
-Cyber criminals use urgency as a way for disarming users and provoking them into taking action quickly.    This could take the form of an email marked as urgent, a request for an immediate response, and/or a threat of further action (e.g., legal proceedings, collections, reporting to law enforcement).
+Cyber criminals use urgency as a way for disarming users and provoking them into taking action quickly.    This could take the form of an email marked as urgent, a request for an immediate response, and/or a threat of further action (e.g., legal proceedings, collections, reporting to law enforcement).
 
 ![Bank Phishing Email](https://lh3.googleusercontent.com/ERKtkgM4X1d9MIPwNDQpqTqp2e_nEnWQZseiRdfcHSZttnDheSfzOE7ousWEs9-aIqcoE8w0vIMaSNsEKrmolmz6NkNhjtUqUEMoPzYVrQ77mNQtGczFWaQWD1B5BG-rTb961KOO=s0 "Bank Phishing Email")
 
 Source: [consumeraffairs.com](https://www.consumeraffairs.com/news/bank-of-america-email-scam-still-going-strong-032017.html)
 
-These urgent requests carry extra weight if the email purports to be from an employee or user’s manager  at work. In this case, the cyber criminal  is banking on the users’ reluctance to question authority regarding any unusual aspects of the email.
+These urgent requests carry extra weight if the email purports to be from an employee or user’s manager  at work. In this case, the cyber criminal  is banking on the users’ reluctance to question authority regarding any unusual aspects of the email.
 
 ### Suspicious email attachments
 
@@ -82,13 +83,13 @@ In some cases, an .exe file may come as an attachment — if the email and file 
 
 ### Requests for payment information or banking details
 
-It’s important to keep in mind that most organizations these days, be it a government authority, service provider, bank, or other business, do not request private information via email, expressly because of security and privacy reasons. Any requests for  credit card information, bank details, or account access should therefore be scrutinized thoroughly.
+It’s important to keep in mind that most organizations these days, be it a government authority, service provider, bank, or other business, do not request private information via email, expressly because of security and privacy reasons. Any requests for  credit card information, bank details, or account access should therefore be scrutinized thoroughly.
 
 ![Bank Phishing Email](https://lh4.googleusercontent.com/nzLIRJTf3iLQsw-LAebE_1VdenPMCkAQb9R8gVmo3L7lVF12g2GyH5Kx9cW9YGMQdhsFMpz8vOeMAtI_MD9MopelZkKW4mrO8Uo9LgQQljALHn-wYle3x3gEuW5U39VEbTOkjIxJ=s0 "Bank Phishing Email")
 
 Source: [mailguard.com.](https://www.mailguard.com.au/blog/commbank-brandjacked-phishing-email-scam)
 
-Additionally, employees and staff should be trained to never provide payment information over email. Requests for payment information or banking details are more obvious signs of a phishing attempt; subsequently, most anti-phishing email tools will  alert users when these types of emails appear.
+Additionally, employees and staff should be trained to never provide payment information over email. Requests for payment information or banking details are more obvious signs of a phishing attempt; subsequently, most anti-phishing email tools will  alert users when these types of emails appear.
 
 ### Unsolicited conversations or messages
 
@@ -96,7 +97,7 @@ Because phishing emails usually involve unsolicited attempts to correspond with 
 
 ## What are some typical phishing email examples?
 
-Though phishing emails take many  forms, they all tend to have a few things in common. Generally speaking, emails from unrecognized senders always warrant special handling and scrutiny; in these cases, users should, by default, assume a defensive posture.
+Though phishing emails take many  forms, they all tend to have a few things in common. Generally speaking, emails from unrecognized senders always warrant special handling and scrutiny; in these cases, users should, by default, assume a defensive posture.
 
 A phishing email could look like this:
 
@@ -108,21 +109,21 @@ Or this:
 
 > You have an unclaimed credit amounting to $461.35. To claim this credit before it expires in 2 days, click the button below.
 
-In both cases, the sender has created an air of urgency for manipulating the receiver into acting quickly without taking the proper considerations. 
+In both cases, the sender has created an air of urgency for manipulating the receiver into acting quickly without taking the proper considerations. 
 
-## How to properly handle  phishing emails
+## How to properly handle  phishing emails
 
-Of course, recipients of suspected phishing emails  should never do what the sender requests. This  includes: 
+Of course, recipients of suspected phishing emails  should never do what the sender requests. This  includes: 
 
 * Clicking on any links
-* Providing personal or business  information Replying to the email
+* Providing personal or business  information Replying to the email
 
 The following actions can be taken to mitigate the potential threat:
 
-* Inform a  manager, supervisor, or someone in authority about the email
-* Carefully  analyze the email (visually) for further signs of a phishing attempt
+* Inform a  manager, supervisor, or someone in authority about the email
+* Carefully  analyze the email (visually) for further signs of a phishing attempt
 
-Contact the  organization that owns the domain in the sender’s email address (but do not reply to the email)— this can be determined  by simply searching for its contact details online. 
+Contact the  organization that owns the domain in the sender’s email address (but do not reply to the email)— this can be determined  by simply searching for its contact details online. 
 
 ## Conclusion
 

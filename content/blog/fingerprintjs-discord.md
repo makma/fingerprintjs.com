@@ -15,6 +15,7 @@ tags:
   - announcements
 authors:
   - Savannah Copland
+isPublished: true
 ---
 *Join our Discord to discuss our Javascript browser fingerprinting library, FingerprintJS Pro and all things anti-fraud.*
 

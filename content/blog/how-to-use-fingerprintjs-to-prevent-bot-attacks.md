@@ -23,6 +23,7 @@ heroImage:
   image: /img/uploads/prevent-bot-attacks-5-.png
 customCTA:
   openCtaNewTab: false
+isPublished: true
 ---
 The purpose of this tutorial is to demonstrate how easy it is to detect and mitigate bad bot account signups with FingerprintJS Pro. Users will first create a sample registration website with basic security controls to prevent multiple signups, then simulate a bot attack to defeat those controls using open source tools. Lastly, they will integrate FingerprintJS Pro into the website’s security workflow to detect/stop advanced bots, even when other security methods have failed.
 

@@ -19,6 +19,7 @@ tags:
   - account sharing
 authors:
   - Savannah Copland
+isPublished: true
 ---
 
 
@@ -32,9 +33,9 @@ But it's not just music or movie subscription businesses hurting from credential
 
 
 
-Of the 200 million-plus paid subscribers of Netflix, roughly 46-percent have shared their passwords at least once, [**a study by Magid found**](https://www.wired.com/story/netflix-password-sharing-crackdown/). The popular streaming service also has an estimated 24 million long-term "pirates" who use shared accounts for up to 26 months on average.
+Of the 200 million-plus paid subscribers of Netflix, roughly 46-percent have shared their passwords at least once, [**a study by Magid found**](https://www.wired.com/story/netflix-password-sharing-crackdown/). The popular streaming service also has an estimated 24 million long-term "pirates" who use shared accounts for up to 26 months on average.
 
-According to a [**survey by Cordcutting.com**](https://cordcutting.com/research/subscription-mooching/), Netflix loses an estimated $2.3 billion on shared passwords each year because of these unregulated activities. It's no wonder that Netflix has begun to test blocking users suspected of subscription sharing. [**Netflix recently tested out a new feature**](https://edition.cnn.com/2021/03/11/media/netflix-password-sharing-prevention/index.html) where users need to verify that they are authorized to use the account via a text or email notification for them to continue watching. 
+According to a [**survey by Cordcutting.com**](https://cordcutting.com/research/subscription-mooching/), Netflix loses an estimated $2.3 billion on shared passwords each year because of these unregulated activities. It's no wonder that Netflix has begun to test blocking users suspected of subscription sharing. [**Netflix recently tested out a new feature**](https://edition.cnn.com/2021/03/11/media/netflix-password-sharing-prevention/index.html) where users need to verify that they are authorized to use the account via a text or email notification for them to continue watching. 
 
 ## What Exactly Is Subscription Sharing?
 
@@ -42,7 +43,7 @@ According to a [**survey by Cordcutting.com**](https://cordcutting.com/research
 
 Subscription sharing is when a paying customer shares their login credentials to another person so the latter can also benefit from the service without having to purchase a license. Most digital subscriptions boil down to just a username (email) and a password, making it very easy for users to share their accounts.
 
-Based on a [**Parks Associate report**](https://www.parksassociates.com/blog/article/pr-01152020), there are two main types of credential sharing:
+Based on a [**Parks Associate report**](https://www.parksassociates.com/blog/article/pr-01152020), there are two main types of credential sharing:
 
 ### 1. Casual Sharing
 
@@ -50,7 +51,7 @@ This arrangement happens when there is no intent to profit from the practice. Fo
 
 ### 2. Pirating
 
-Pirating occurs when a malicious actor shares access to a compromised paying account for a fee without the customer's knowledge. While casual sharing is in a bit of a gray area legally, pirating passwords is illegal based on the U.S. [**Computer Fraud and Abuse Act (CFAA)**](https://www.nacdl.org/Landing/ComputerFraudandAbuseAct). 
+Pirating occurs when a malicious actor shares access to a compromised paying account for a fee without the customer's knowledge. While casual sharing is in a bit of a gray area legally, pirating passwords is illegal based on the U.S. [**Computer Fraud and Abuse Act (CFAA)**](https://www.nacdl.org/Landing/ComputerFraudandAbuseAct). 
 
 ## Subscription Sharing Affects Many Industries
 
@@ -62,7 +63,7 @@ It's not just Netflix and other Video on Demand (VOD) companies losing money bec
 -   B2C: gated content and communities (online newspapers, eLearning platforms)
 -   B2B: tools with per-user subscription models (marketing, sales, design, productivity, team management)
 
-These businesses often don't know the extent of their password sharing problem as it is notoriously hard to measure. While most keep a close eye on the number of registered accounts, they don't know exactly how many individual users are using one login. 
+These businesses often don't know the extent of their password sharing problem as it is notoriously hard to measure. While most keep a close eye on the number of registered accounts, they don't know exactly how many individual users are using one login. 
 
 ## Security Risks of Subscription Sharing
 
@@ -70,7 +71,7 @@ These businesses often don't know the extent of their password sharing problem a
 
 While affected companies may lose potential revenue to account sharing, others feel the brunt of the problem more dramatically. One of the main risks of sharing passwords is that it can compromise account security. The user's private information is at a much higher risk of falling into the wrong hands the more a login is shared.
 
--   The account becomes more vulnerable to phishing and other forms of information sniffing. 
+-   The account becomes more vulnerable to phishing and other forms of information sniffing. 
 -   Once hacked, the malicious actor can assume the original user's identity. They may post inappropriate content, leading to account suspension or getting banned on the platform.
 -   The original owner may lose ownership of the account entirely, especially if the malicious actor chooses to change their password. Even worse, if they use the same password on online marketplaces like Amazon, they may make purchases using their credit card information.
 -   People who have access to a shared subscription might sell the login information. Hackers can sell logins to users who want the same service at a fraction of a cost or use the logins to take over more valuable accounts.
@@ -105,7 +106,7 @@ Every time we use a browser, be it on our desktop or mobile device, websites hav
 -   Browser used and the settings of its OS
 -   WebGL parameters
 -   Hardware details such as device memory and screen resolution
--   Browser plugins 
+-   Browser plugins 
 -   User-agent details
 -   IP address and location
 
@@ -132,7 +133,7 @@ Below are some additional identification techniques that can be used to uniquely
 
 Cookies store a unique identifier hash within the browser every time a user first lands on your website. The next time the same user visits the website, it can check the records in your database to ensure the two visitors are not the same.
 
-The problem with relying solely on cookies is that they can be cleared in browser settings. Ad Blockers can also disable them by default, and even the user can refuse to be cookies as part of the CCPA and [**General Data Protection Regulation (GDPR)**](https://gdpr-info.eu/). 
+The problem with relying solely on cookies is that they can be cleared in browser settings. Ad Blockers can also disable them by default, and even the user can refuse to be cookies as part of the CCPA and [**General Data Protection Regulation (GDPR)**](https://gdpr-info.eu/). 
 
 2.  **Device Identification**
 

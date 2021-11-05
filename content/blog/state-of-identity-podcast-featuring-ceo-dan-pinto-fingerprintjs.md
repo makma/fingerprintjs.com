@@ -20,6 +20,7 @@ heroImage:
   image: /img/uploads/fingerprintjs.png
   imageAlt: State of Identity Podcast - FingerprintJS
   imageTitle: State of Identity Podcast - FingerprintJS
+isPublished: true
 ---
 We are excited to announce our featured episode on OWI's State of Identity podcast.
 

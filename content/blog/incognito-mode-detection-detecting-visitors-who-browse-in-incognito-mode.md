@@ -21,6 +21,7 @@ heroImage:
   image: /img/uploads/incognito-mode.png
   imageAlt: Incognito mode detection
   imageTitle: Incognito mode detection
+isPublished: true
 ---
 Browsers attempt to ensure a user’s privacy by offering Incognito mode, which allows the user to surf the internet without worrying about their history, cookies, or the information they enter being saved permanently. However, in a lot of business use cases, this can end up being harmful. Visitors may use Incognito mode to gain unlimited access to content, bypassing paywalls undetected. 
 

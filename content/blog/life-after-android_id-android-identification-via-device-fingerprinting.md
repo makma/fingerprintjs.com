@@ -21,6 +21,7 @@ heroImage:
   image: /img/uploads/4.png
   imageAlt: Device Fingerprinting For Android
   imageTitle: Device Fingerprinting For Android
+isPublished: true
 ---
 **Last week, our team launched Fingerprint Android, an open-source library for accurately identifying Android devices using all available signals.**
 

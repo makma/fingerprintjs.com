@@ -47,7 +47,9 @@ async function getFolderEdges(folder, graphql, filter = '') {
 async function getTags(graphql) {
   const { data, errors } = await graphql(`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(
+        filter: { frontmatter: { isPublished: { ne: false }, templateKey: { eq: "long-form-content" } } }
+      ) {
         group(field: frontmatter___tags) {
           tag: fieldValue
           totalCount
@@ -113,7 +115,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const pages = await getFolderEdges('index', graphql)
   pages.forEach((edge) => createPageFromEdge(edge, createPage))
 
-  const blogPosts = await getFolderEdges('blog', graphql)
+  const blogPosts = await getFolderEdges('blog', graphql, 'frontmatter: { isPublished: { ne: false } }')
   blogPosts.forEach((edge) => createPageFromEdge(edge, createPage))
 
   const caseStudies = await getFolderEdges('case-study', graphql)

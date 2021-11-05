@@ -21,6 +21,7 @@ heroImage:
   image: /img/uploads/crosswalks.png
   imageAlt: Captcha with crosswalks
   imageTitle: Captcha with crosswalks
+isPublished: true
 ---
 CAPTCHAs make it more difficult for bots to submit fraudulent information via online forms, but they can also get in the way of humans interacting with your website.
 

@@ -28,6 +28,7 @@ customCTA:
   ctaText: Start Trial
   ctaUrl: https://dashboard.fingerprintjs.com/signup
   openCtaNewTab: false
+  isPublished: true
 ---
 While having user-generated content is a great way to add interactivity and community to your website, it unfortunately leaves you open to abuse from malicious users. Nudity, harassment, spam, advertising, or even malware and viruses are just some of the unwanted content you may have to deal with. Sometimes, measures like content moderation and warnings can help keep your users in line. But in many cases, these offenders are aggressive and cunning with their approach, and you’ll have to take the extreme step of permanently banning them.
 

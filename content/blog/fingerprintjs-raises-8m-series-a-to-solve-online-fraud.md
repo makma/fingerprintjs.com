@@ -20,6 +20,7 @@ heroImage:
   image: /img/uploads/fpjs_cover2.png
   imageAlt: FingerprintJS cover
   imageTitle: FingerprintJS cover
+isPublished: true
 ---
 Only 4 months ago we announced our $4M seed raise. Since then we have been busy investing in our [open source](https://github.com/fingerprintjs/fingerprintjs) community (with 10M+ downloads and 12.7K Github stars) as well as continuing development of FingerprintJS Pro, our 99.5% accurate user identification API.
 

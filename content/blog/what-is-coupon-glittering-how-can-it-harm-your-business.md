@@ -27,6 +27,7 @@ customCTA:
   description: Learn how FingerprintJS protects sites against coupon and promo fraud.
   ctaText: Learn more
   ctaUrl: https://fingerprintjs.com/ecommerce/
+isPublished: true
 ---
 <i>Author’s Note: While coupon glittering typically refers to the exploitation of glitches associated with coupons used at brick-and-mortar stores, online retailers should take note of the techniques used by online glittering communities. Online fraudsters can similarly take advantage of loopholes in discount and promo codes offered, and share exploits within these online forums.
 
@@ -34,7 +35,7 @@ FingerprintJS helps e-commerce sites prevent promo and coupon fraud by uniquely 
 
 ## Introduction
 
-Coupons are an effective revenue tool for retailers all over the world. By discounting products through coupons, businesses can encourage customer loyalty and provide a positive customer experience that saves people money. 
+Coupons are an effective revenue tool for retailers all over the world. By discounting products through coupons, businesses can encourage customer loyalty and provide a positive customer experience that saves people money. 
 
 However, there is an uglier side to coupons, as they can be exploited. As customers have grown savvier in the way they use coupons, they have started to uncover illegitimate means of making money from them.
 
@@ -42,7 +43,7 @@ Research has shown <a href="https://progressivegrocer.com/feds-uncover-31m-coupo
 
 ## What is coupon glittering?
 
-Coupon glittering is when users exploit an error in the way the coupon has been made to use it on products that it wasn’t intended for. Glittering is another word for glitching, and it’s made possible when coupons aren’t coded properly. 
+Coupon glittering is when users exploit an error in the way the coupon has been made to use it on products that it wasn’t intended for. Glittering is another word for glitching, and it’s made possible when coupons aren’t coded properly. 
 
 For example, say a retailer issues a coupon for $100 off a set of outdoor furniture. However, an error in the way the coupon was made failed to prevent it from being used on other items. Coupon glittering occurs when a customer uses the coupon to purchase a $100 deck chair and pay nothing for it.
 
@@ -72,7 +73,7 @@ As a retailer, it can be hard to know if a customer has  purchased or obtained a
 
 Decoding coupons refers to the barcode number associated with a specific paper or printable coupon. The barcode is set specifically to signify the amount of the discount it contains and the products it can be used for.
 
-Some people with a genuine interest in coupons can decode coupons to learn what they’re for, but more commonly this technique is used to identify ones that can be exploited. The average customer wouldn’t know the difference between a coupon that can be used in a glittering scam and one that can’t. A fraudster can decode coupons in advance to identify which ones have glitches. 
+Some people with a genuine interest in coupons can decode coupons to learn what they’re for, but more commonly this technique is used to identify ones that can be exploited. The average customer wouldn’t know the difference between a coupon that can be used in a glittering scam and one that can’t. A fraudster can decode coupons in advance to identify which ones have glitches. 
 
 ### 4. Coupon modification
 
@@ -86,9 +87,9 @@ For example, there is a specific section of the coupon barcode that represents t
 
 Glitter couponing essentially allows fraudsters to steal from an unsuspecting business.
 
-Taking the outdoor furniture example from before, a retailer can afford to offer $100 off that set of outdoor furniture, because it’s only a fraction of the furniture’s price. Let’s say it’s worth $1,000, which would mean the coupon represents a 10% discount. However, if someone in a coupon glittering scam uses that coupon on the $100 deck chair, that’s 100% of the price of that item. They would get that deck chair for free.
+Taking the outdoor furniture example from before, a retailer can afford to offer $100 off that set of outdoor furniture, because it’s only a fraction of the furniture’s price. Let’s say it’s worth $1,000, which would mean the coupon represents a 10% discount. However, if someone in a coupon glittering scam uses that coupon on the $100 deck chair, that’s 100% of the price of that item. They would get that deck chair for free.
 
-You would never issue a voucher that allows a customer to get anything for free. Unfortunately, that is what can happen if a fraudster manages to "glitter" your coupons. 
+You would never issue a voucher that allows a customer to get anything for free. Unfortunately, that is what can happen if a fraudster manages to "glitter" your coupons. 
 
 ## How can businesses protect themselves from coupon glittering?
 
@@ -100,11 +101,11 @@ Remember, your business is the only legitimate source of your coupons. That mean
 
 ### 2. Always check the expiration date of coupons
 
-If a customer presents a coupon that’s out of date, there’s every chance it’s an accident. Sometimes expiry dates aren’t clear, or they may not have even realized your coupon has expired. 
+If a customer presents a coupon that’s out of date, there’s every chance it’s an accident. Sometimes expiry dates aren’t clear, or they may not have even realized your coupon has expired. 
 
 However, they may be trying their luck because they’re aware the coupon has a glitch in it. It’s very easy to hide a scam behind a claim of not knowing, and it’s hard to prove if you think it may have been deliberate.
 
-However, you can reduce mistakes by making it standard operating procedure for staff to check the expiration date of all coupons they accept. Expiry dates are a normal part of coupon use, and you should only accept coupons over the period in which they’re valid. 
+However, you can reduce mistakes by making it standard operating procedure for staff to check the expiration date of all coupons they accept. Expiry dates are a normal part of coupon use, and you should only accept coupons over the period in which they’re valid. 
 
 ### 3. Set up prevention protocols
 
@@ -118,7 +119,7 @@ There is a range of protocols you can introduce to prevent your customers from u
 
 ### 4. Switch to digital coupons
 
-Digital coupons are harder to replicate and modify, which can go a long way to preventing coupon glittering. 
+Digital coupons are harder to replicate and modify, which can go a long way to preventing coupon glittering. 
 
 You can also personalize your coupons if you’re sending them out digitally to your mailing list. This allows you to verify a customer’s ID when they present coupons. Even if that customer spots a glitch in your coupon, they’re less likely to try and defraud you if you know who they are.
 
@@ -128,7 +129,7 @@ Digital coupons are also easy to void when the period of your sale ends. Because
 
 Your employees are the ones on the front lines of your defense against coupon misuse, so it’s important to take the time to train them to detect it.
 
-They should know what coupons are in the market at any time, so they don’t accept expired coupons. 
+They should know what coupons are in the market at any time, so they don’t accept expired coupons. 
 
 You can also teach them the importance of checking coupons that customers present to them to make sure they’re not being exploited. It can be easy for a cashier to go into auto-pilot and not realize that they’re processing a glittering scam. You can encourage vigilance and alertness, and help them to understand how damaging glittering can be to your business.
 

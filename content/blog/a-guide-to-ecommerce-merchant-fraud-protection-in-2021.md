@@ -21,20 +21,21 @@ heroImage:
   image: /img/uploads/a-guide-to-ecommerce-merchant-fraud-protection-in-2024-1-.png
 customCTA:
   openCtaNewTab: false
+isPublished: true
 ---
 The risk of fraud for online businesses is higher than it’s ever been in history. [Ecommerce fraud](https://www.chargebackgurus.com/blog/the-5-types-of-e-commerce-fraud) topped $12 million in 2020, with [89% of businesses](https://offers.worldpayglobal.com/global-payment-risk.html) losing money to payment fraud that year. And with cyber criminals using increasingly sophisticated and effective methods, website operators must maintain a vigilant stance in order to protect themselves and their customers.
 
-Given the soaring number of cases, [merchant fraud protection](https://fingerprintjs.com/ecommerce/) measures have become a standard part of doing business online. This includes the implementation of effective measures for ecommerce fraud detection and protection. 
+Given the soaring number of cases, [merchant fraud protection](https://fingerprintjs.com/ecommerce/) measures have become a standard part of doing business online. This includes the implementation of effective measures for ecommerce fraud detection and protection. 
 
-## Why should online merchants  implement ecommerce fraud protection measures?
+## Why should online merchants  implement ecommerce fraud protection measures?
 
-The continuing [ecommerce boom](https://www.forbes.com/sites/louiscolumbus/2020/05/18/how-e-commerces-explosive-growth-is-attracting-fraud/?sh=43917df26c4b) has also created a wealth of opportunity for fraudsters. Businesses looking to start or expand their online operations need to have the proper fraud risk mitigation measures in place; lack of these fundamental controls will invariably lead to a security compromise. Cyber criminals are continuously evolving their tools and tactics and have so far been keeping [one step ahead](https://www.cioinsight.com/security/why-cyber-criminals-are-always-one-step-ahead/) of the cybersecurity industry.
+The continuing [ecommerce boom](https://www.forbes.com/sites/louiscolumbus/2020/05/18/how-e-commerces-explosive-growth-is-attracting-fraud/?sh=43917df26c4b) has also created a wealth of opportunity for fraudsters. Businesses looking to start or expand their online operations need to have the proper fraud risk mitigation measures in place; lack of these fundamental controls will invariably lead to a security compromise. Cyber criminals are continuously evolving their tools and tactics and have so far been keeping [one step ahead](https://www.cioinsight.com/security/why-cyber-criminals-are-always-one-step-ahead/) of the cybersecurity industry.
 
 ## How can online merchants detect online fraud?
 
-Though spotting online fraud has become increasingly difficult, several tell-tale indicators continue to serve as red flags for malicious activity. Any signs of the following warrant further investigation.  
+Though spotting online fraud has become increasingly difficult, several tell-tale indicators continue to serve as red flags for malicious activity. Any signs of the following warrant further investigation.  
 
-#### **Inconsistencies in customer/order information** 
+#### **Inconsistencies in customer/order information** 
 
 If several pieces of key information provided by the customer don't match (e.g., the zip code entered doesn't correlate to the area they say they're in), online fraud could be in the works. Upon spotting these discrepancies during a customer's checkout process, online merchants should take further steps to validate the customer's identity by performing additional verification. After all, the mistake might just be a typo. Or, it may be fraud.
 
@@ -50,7 +51,7 @@ The majority of ecommerce stores are not run by multinational corporations with 
 
 Splitting the billing and delivery addresses can be a sign of online fraud in the works, especially if the user does it multiple times in quick succession. For example, if a customer has a Texas, USA billing address but purchases four items to be shipped to four different countries, the transaction should be flagged as highly irregular and potentially fraudulent.
 
-This is often the case when fraudsters hack into customer accounts and are wary of tipping off authorities when changing billing addresses; instead, they may use different delivery addresses to receive the items within their network. For this reason, many online merchants request additional email verification from account owners to validate some purchases. 
+This is often the case when fraudsters hack into customer accounts and are wary of tipping off authorities when changing billing addresses; instead, they may use different delivery addresses to receive the items within their network. For this reason, many online merchants request additional email verification from account owners to validate some purchases. 
 
 #### **Multiple smaller orders from the same account in a short span of time**
 
@@ -72,7 +73,7 @@ The following measures can help online businesses bolster the security of legiti
 
 #### Set up recurring website security audits
 
-Regular audits of existing website security controls are crucial for verifying whether or not systems are protected against the latest threats. These activities evaluate the effectiveness of the security measures in place and surface new exposures that could be exploited.
+Regular audits of existing website security controls are crucial for verifying whether or not systems are protected against the latest threats. These activities evaluate the effectiveness of the security measures in place and surface new exposures that could be exploited.
 
 The following are crucial areas to focus on when performing website security audits:
 
@@ -84,7 +85,7 @@ The following are crucial areas to focus on when performing website security aud
 
 #### Ensure that your online store is PCI compliant
 
-As its name implies, the Payment Card Industry (PCI) Security Standards Council is the primary oversight body responsible for credit card security and online payment standards. Its PCI Data Security Standards (DSS) serves as the de facto framework for ecommerce security; online retailers are required to adhere to the requirements or risk being fined and/or penalized for non-compliance 
+As its name implies, the Payment Card Industry (PCI) Security Standards Council is the primary oversight body responsible for credit card security and online payment standards. Its PCI Data Security Standards (DSS) serves as the de facto framework for ecommerce security; online retailers are required to adhere to the requirements or risk being fined and/or penalized for non-compliance 
 
 PCI DSS consists of a set of security standards for bolstering online security and protecting customer/payment information. Since these requirements are continuously evolving, online merchants should actively monitor their web stores for compliance on an ongoing basis.
 
@@ -94,7 +95,7 @@ Online merchants (and companies at-large) often make the mistake of taking a rea
 
 #### Implement address verification service
 
-[Address verification services](https://www.investopedia.com/terms/a/address-verification-system.asp) (AVS) enable online retailers to check the credit card holder’s address on record with the address provided during the ordering process, in real-time. Orders with mismatched details can then be declined or flagged for further analysis, saving online merchants the trouble and expense of issuing chargebacks. 
+[Address verification services](https://www.investopedia.com/terms/a/address-verification-system.asp) (AVS) enable online retailers to check the credit card holder’s address on record with the address provided during the ordering process, in real-time. Orders with mismatched details can then be declined or flagged for further analysis, saving online merchants the trouble and expense of issuing chargebacks. 
 
 #### Enforce CVV checks for all transactions
 

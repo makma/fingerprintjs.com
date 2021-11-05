@@ -22,6 +22,7 @@ heroImage:
   image: /img/uploads/credential-stuffing-prevention-v1.png
   imageAlt: Credential stuffing prevention
   imageTitle: Credential stuffing prevention
+isPublished: true
 ---
 Credential stuffing prevention is one of the most significant cybersecurity defences a website or organization can implement today. By securing and protecting your users’ data with [account takeover prevention methods](https://fingerprintjs.com/account-takeover/), you can go a long way towards stopping costly and embarrassing breaches.
 

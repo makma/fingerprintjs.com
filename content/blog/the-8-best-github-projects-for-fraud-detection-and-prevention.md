@@ -20,6 +20,7 @@ heroImage:
   image: /img/uploads/8-best-github-projects.png
   imageAlt: Best Github Projects For Fraud Detection
   imageTitle: Best Github Projects For Fraud Detection
+isPublished: true
 ---
 No matter what field you’re working in as a developer, protecting your application from malicious users is a critical part of your job. The frequency of fraud is increasing across all industries and locations around the world.
 

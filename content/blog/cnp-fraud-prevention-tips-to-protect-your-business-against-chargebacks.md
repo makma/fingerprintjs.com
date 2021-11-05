@@ -21,6 +21,7 @@ heroImage:
   image: /img/uploads/cnp-fraud-prevention_.png
   imageAlt: CNP fraud prevention
   imageTitle: CNP fraud prevention
+isPublished: true
 ---
 The continuing rise of online shopping brings a whole new level of convenience to people’s lives, but it has a down side. Credit card fraud is a multi-billion dollar problem, and can be incredibly hard for online businesses to detect in real time.
 

@@ -22,6 +22,7 @@ heroImage:
   image: /img/uploads/3.png
   imageAlt: Fingerprint icon on map background
   imageTitle: Fingerprint icon on map background
+isPublished: true
 ---
 **Fraud looms on the minds of development teams for any website, but fraud prevention doesn’t have to be all-consuming, or even expensive.** With a highly accurate identifier it becomes much easier for developers to triage suspicious traffic and restrict access to users attempting to hack into accounts, make fraudulent purchases or simply spam your website. The key to identifying those most likely to commit fraud is either by past activity, or by associating specific patterns of use with a higher likelihood of fraudulence.
 

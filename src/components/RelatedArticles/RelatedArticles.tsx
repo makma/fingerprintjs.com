@@ -44,6 +44,7 @@ const relatedArticlesQuery = graphql`
     allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/(blog)/.*\\.md$/" }
+        frontmatter: { isPublished: {ne: false} }
       }
       sort: { order: DESC, fields: frontmatter___publishDate }
       limit: 1000

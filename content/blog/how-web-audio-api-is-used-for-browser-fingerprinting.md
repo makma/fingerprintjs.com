@@ -19,6 +19,7 @@ tags:
   - web
 authors:
   - Savannah Copland
+isPublished: true
 ---
 Did you know that you can identify web browsers without using cookies or asking for permissions?\
 \

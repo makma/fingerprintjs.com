@@ -19,6 +19,7 @@ tags:
   - engineering
 authors:
   - Savannah Copland
+isPublished: true
 ---
 <i>This article is a tutorial where we will build a workflow that prevents signup abuse on a free trial form using the FingerprintJS Pro API. 
 

@@ -27,6 +27,7 @@ customCTA:
     seeing our SOC 2 report.
   ctaText: Contact Sales
   ctaUrl: https://fingerprintjs.com/contact-sales/
+isPublished: true
 ---
 FingerprintJS is committed to keeping our customer and company data safe to the highest possible standards.
 
@@ -36,13 +37,13 @@ For companies that require SOC 2 compliance or simply value the added assurance 
 
 ## What is SOC 2 Compliance?
 
-SOC (Systems and Operational Controls) 2 is a set of standards that companies can adopt to ensure customer and company data is safeguarded. 
+SOC (Systems and Operational Controls) 2 is a set of standards that companies can adopt to ensure customer and company data is safeguarded. 
 
 SOC 2 outlines five Trust Services Criteria that are used to assess whether a company’s processes, controls and tools appropriately address their data security and privacy needs:
 
 * **Security**: the protection of data and systems from unauthorized users.
 * **Availability**: the maintenance, monitoring, and performance of infrastructure and network.
-* **Processing integrity**: the ability of systems to perform as intended without error, delay, omission, or manipulation. 
+* **Processing integrity**: the ability of systems to perform as intended without error, delay, omission, or manipulation. 
 * **Confidentiality**: the protection of data that should be restricted to specific people or companies.
 * **Privacy**: the safeguarding of personally identifiable information from unauthorized users.
 
@@ -57,11 +58,11 @@ By becoming SOC 2 compliant, we can now provide interested parties with our Type
 
 ## What’s Next
 
-SOC 2 compliance is only one of many steps we plan to take to ensure best-in-class security for our customers. We are planning to achieve SOC 2 Type 2 compliance in the next year. This next step will require an ongoing audit of the security procedures outlined in our Type 1 report. 
+SOC 2 compliance is only one of many steps we plan to take to ensure best-in-class security for our customers. We are planning to achieve SOC 2 Type 2 compliance in the next year. This next step will require an ongoing audit of the security procedures outlined in our Type 1 report. 
 
 ## Get in touch
 
-* Current customer with questions? Reach out to our [support team.](mailto:support@fingerprintjs.com) 
+* Current customer with questions? Reach out to our [support team.](mailto:support@fingerprintjs.com) 
 * Thinking about working with us? [Contact sales](https://fingerprintjs.com/contact-sales/) and let us know you’re interested in seeing our SOC 2 report.
 * Want to read more about our privacy and security policies? See our full privacy policy in our documentation.
 

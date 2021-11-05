@@ -21,6 +21,7 @@ heroImage:
   image: /img/uploads/gift-card-fraud-prevention_.png
   imageAlt: Gift card fraud prevention
   imageTitle: Gift card fraud prevention
+isPublished: true
 ---
 Gift cards are an easy, flexible option for gift-givers all over the world, but what makes them so useful also makes them easily exploited by scammers. 
 

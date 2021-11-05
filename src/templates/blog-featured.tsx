@@ -60,7 +60,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/(blog)/.*\\.md$/" }
-        frontmatter: { featured: { eq: true } }
+        frontmatter: { featured: { eq: true }, isPublished: {ne: false} }
       }
       sort: { order: DESC, fields: frontmatter___publishDate }
       limit: $limit
