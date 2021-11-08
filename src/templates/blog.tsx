@@ -58,7 +58,8 @@ export const pageQuery = graphql`
   query Blog($skip: Int!, $limit: Int!) {
     posts: allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/(blog)/.*\\.md$/" } 
+        fileAbsolutePath: { regex: "/(blog)/.*\\.md$/" }
+        frontmatter: { isPublished: {ne: false} } 
       }        
       sort: { order: DESC, fields: frontmatter___publishDate }
       limit: $limit
