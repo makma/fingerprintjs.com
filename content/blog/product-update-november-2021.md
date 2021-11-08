@@ -61,7 +61,7 @@ We pride ourselves on the ease of integration with FingerprintJS, but it can be 
 
 The Health Status page is a new dedicated page in the customer dashboard which also has a widget that can be seen on the overview page. The Health Status page lets you know if you are using the most current JS Agent version, as well as if any of your requests are being throttled. 
 
-![Health Status](https://lh4.googleusercontent.com/BGFFNwWdjvpunHC7tQcXcQJzxwWRPSLjrOKgJE0fHGnaYBe6sVsVOoSOQqyOB3vB2t808AlE1zM1T-SmCAFt1pp4wP6iSWN91R8S5MktKW25IaSoPQmbkzNSdcWm3QcG3DuD95Yd)![](https://lh4.googleusercontent.com/c6_vaXh-AfMw5GY3dZVFWg2N_eejGFBQBVArN8wTqT7N_IudNzvXtKDt6dj4aPZhVmUleHpddd5cMPU8SxFWxkEhfbhEsWuzUCfwxbkJIdc6365yeysVMqiadRjkkuYNptpD01vd)
+![Health Status](https://lh4.googleusercontent.com/BGFFNwWdjvpunHC7tQcXcQJzxwWRPSLjrOKgJE0fHGnaYBe6sVsVOoSOQqyOB3vB2t808AlE1zM1T-SmCAFt1pp4wP6iSWN91R8S5MktKW25IaSoPQmbkzNSdcWm3QcG3DuD95Yd)
 
 If you are on an older version, we will highlight this - showing you your current version as well as what the most recent version is.
 
