@@ -29,7 +29,7 @@ customCTA:
   ctaText: Contact support
   ctaUrl: mailto:support@fingerprintjs.com
 ---
-Hi - this is Ravi, the head of customer success here at FingerprintJS. First and foremost, I’d like to share some amazing news: FingerprintJS has raised [$32M Series B from Craft Ventures!](https://venturebeat.com/2021/11/03/fraud-prevention-platform-fingerprintjs-lands-32m-to-launch-premium-services/)
+First and foremost, I’d like to share some amazing news: FingerprintJS has raised [$32M Series B from Craft Ventures!](https://venturebeat.com/2021/11/03/fraud-prevention-platform-fingerprintjs-lands-32m-to-launch-premium-services/)
 
 From a product perspective, the past few months have been very busy and we have some exciting updates for you. You can find our general documentation [here](https://dev.fingerprintjs.com/docs) and if you have any questions, please feel free to reach out to [support@fingerprintjs.com](mailto:support@fingerprintjs.com).
 
