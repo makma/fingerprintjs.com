@@ -17,7 +17,7 @@ tags:
   - engineering
   - announcements
 authors:
-  - Savannah Copland
+  - Ravi Bhanot
 heroImage:
   image: /img/uploads/product-update.png
   imageAlt: November 2021 product update
