@@ -29,11 +29,12 @@ customCTA:
   ctaText: Contact support
   ctaUrl: mailto:support@fingerprintjs.com
 ---
-Hi - this is Ravi, the head of customer success here at FingerprintJS. First and foremost, I’d like to share some amazing news: FingerprintJS has raised $32M Series B from Craft Ventures!
+Hi - this is Ravi, the head of customer success here at FingerprintJS. First and foremost, I’d like to share some amazing news: FingerprintJS has raised [$32M Series B from Craft Ventures!](https://venturebeat.com/2021/11/03/fraud-prevention-platform-fingerprintjs-lands-32m-to-launch-premium-services/)
 
 From a product perspective, the past few months have been very busy and we have some exciting updates for you. You can find our general documentation [here](https://dev.fingerprintjs.com/docs) and if you have any questions, please feel free to reach out to [support@fingerprintjs.com](mailto:support@fingerprintjs.com).
 
 - - -
+
 <br>
 
 # Confidence Score for Identifications
@@ -51,6 +52,7 @@ A common use case of the confidence score is for setting thresholds - for exampl
 ![Confidence Score](https://lh6.googleusercontent.com/3zO_EWtitI_ztq4I7Q9s0svljvR5vuGpzjSDCrzTP9qSiGff1a5KRjkF1xB4_afHiQy2t3d9W7Lkhpum_3sUD92b0bJ_mZQ05VzPf64Sil6A5CSSAUbNkI7LuDCwj1N74MNpbavT)
 
 - - -
+
 <br>
 
 ### Health and Integration Status
@@ -86,9 +88,8 @@ We have added an Integration Status check-list that highlights the key steps to 
 
 ![Integration Status](https://lh5.googleusercontent.com/XrzMI1uUj7LYRGDS9zcVoyJ6lS9GGrTz14BOy7Y7ut1oShuqVycYE-t_EzP24PP1H_91WWeq2ap1DPByAmSLzjSxYtPkWwM-QyoE8132ZgSRPpqGGaX03CIl947-fqN1zygraL8Y)
 
-
-
 - - -
+
 <br>
 
 ## User Management
@@ -97,8 +98,8 @@ You now have the ability to invite users to your FingerprintJS subscription dire
 
 ![User management](https://lh4.googleusercontent.com/YPdalOz7QEEUp6jdTUMk7e1KQAxW9IVdMTfSsx8r6TvcORKkGVAZrUdpHIh6K0sIqVVxNNdYTzbRNtRxX-n3v-Mh34sbn-hmiNQo0_OG375VvlC0PCsUGVI30mss_kKAeobZ4uR3)
 
-
 - - -
+
 <br>
 
 ## Wildcard Support for Request Filtering
@@ -108,6 +109,7 @@ The request filtering section of the customer dashboard now allows you to use a 
 ![Request filtering](https://lh4.googleusercontent.com/A56r7Y_JRltbo3zNwd8lgpzaX-z4SfN23whDXRpgBy3I1EBEFbhqbruwYG9rSxcDN8LcC3ePxU2J6oFxOQ8hIjfvcZPgb3OmVfji0plkiUiftSuZbwZ8JqXat7ldLPo-WQIBApiz)
 
 - - -
+
 <br>
 
 ## Additional Updates
