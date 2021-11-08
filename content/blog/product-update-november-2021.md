@@ -84,7 +84,7 @@ We have added an Integration Status check-list that highlights the key steps to 
 3. [Request Filtering](https://dev.fingerprintjs.com/docs/request-filtering): You can filter out unwanted visitor identifications using the request filtering rules by either whitelisting or blacklisting websites that use your application token.
 4. [Webhooks](https://dev.fingerprintjs.com/docs/webhooks): Utilize server-to-server network communication to request your application’s API when an event occurs. This allows you to be notified immediately when an event occurs on your application.
 
-![Integration Status](https://lh5.googleusercontent.com/XrzMI1uUj7LYRGDS9zcVoyJ6lS9GGrTz14BOy7Y7ut1oShuqVycYE-t_EzP24PP1H_91WWeq2ap1DPByAmSLzjSxYtPkWwM-QyoE8132ZgSRPpqGGaX03CIl947-fqN1zygraL8Y)![](https://lh3.googleusercontent.com/JH7cny39CWgSPToKWY2T_iPzHio1yosNRTuFTpNqNuepnD_xcmylLSrWoYwCFjtlizYdPmgGUhnVGc8jCPQ0ZJTen6ocxkN726DGsITqEn0xVcA4heahOiaqdORdE4cjYqX1tru_)
+![Integration Status](https://lh5.googleusercontent.com/XrzMI1uUj7LYRGDS9zcVoyJ6lS9GGrTz14BOy7Y7ut1oShuqVycYE-t_EzP24PP1H_91WWeq2ap1DPByAmSLzjSxYtPkWwM-QyoE8132ZgSRPpqGGaX03CIl947-fqN1zygraL8Y)
 
 
 
