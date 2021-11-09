@@ -19,7 +19,7 @@ tags:
 authors:
   - Dan Pinto
 heroImage:
-  image: /img/uploads/funding-annoucement.png
+  image: ""
   imageAlt: FingerprintJS Series B
   imageTitle: FingerprintJS Series B
 customCTA:
