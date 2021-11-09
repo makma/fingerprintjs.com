@@ -1,11 +1,14 @@
+import { BASE_URL } from '../constants/content'
+
 export function setCookie(name: string, value: string, days: number) {
+  const domain = BASE_URL.replace(/^http(s?):\/\//i, '')
   let expires = ''
   if (days) {
     const date = new Date()
     date.setDate(date.getDate() + days)
     expires = '; expires=' + date.toUTCString()
   }
-  document.cookie = name + '=' + (value || '') + expires + '; path=/'
+  document.cookie = name + '=' + (value ?? '') + expires + '; domain=' + domain + ' ; path=/'
 }
 
 export function getCookie(name: string) {
