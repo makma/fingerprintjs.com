@@ -10,7 +10,7 @@ metadata:
   imageAlt: FingerprintJS Series B
   imageTitle: FingerprintJS Series B
   socialImage: /img/uploads/funding-annoucement.png
-featured: false
+featured: true
 publishDate: 2021-11-09T21:19:13.020Z
 title: $32M series B funding
 isPublished: true
