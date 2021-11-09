@@ -17,7 +17,7 @@ isPublished: true
 tags:
   - announcements
 authors:
-  - Savannah Copland
+  - Dan Pinto
 heroImage:
   image: /img/uploads/funding-annoucement.png
   imageAlt: FingerprintJS Series B
