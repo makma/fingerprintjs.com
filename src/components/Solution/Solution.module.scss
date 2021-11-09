@@ -1,0 +1,161 @@
+.solution {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1 0 auto;
+  padding: rem(4px);
+
+  overflow: hidden;
+
+  border-radius: rem(15px);
+  background-color: v('white');
+
+  transition-duration: 0.25s;
+
+  &:hover {
+    box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
+
+    position: relative;
+    transform: translateY(-0.4px);
+  }
+}
+
+.wide {
+  margin-top: 2rem;
+
+  .content {
+    &:before {
+      content: 'FEATURED ARTICLE';
+      position: relative;
+      display: block;
+      margin-bottom: 3rem;
+
+      font-family: v('ff-mono');
+      font-weight: v('bold');
+
+      color: c('brand-fire');
+    }
+  }
+
+  .publishDate {
+    display: none;
+  }
+
+  @include media('>tabletWide') {
+    display: grid;
+    gap: 3rem;
+
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 'content image';
+
+    justify-content: space-around;
+
+    min-height: 35rem;
+
+    @include media('<=desktop') {
+      grid-template-columns: 2fr 2fr;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      grid-area: content;
+
+      padding: 4rem;
+    }
+
+    .title {
+      font-size: 3rem;
+    }
+
+    .description {
+      font-size: 2rem;
+    }
+
+    .wrapper {
+      height: 100%;
+      padding: 0;
+    }
+
+    .image {
+      grid-area: image;
+      width: rem(540px);
+
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex: 0 0 auto;
+  aspect-ratio: 1.7;
+}
+
+.wideWrapper {
+  aspect-ratio: unset;
+  height: 170px;
+
+  @include media('>phoneLandscape', '<=desktop') {
+    height: 360px;
+  }
+}
+
+.threePerRow {
+  height: 200px;
+}
+
+.image {
+  width: 100%;
+
+  border-radius: rem(15px);
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: rem(16px);
+}
+
+.publishDate {
+  font-family: v('ff-sans');
+  font-size: rem(14px);
+}
+
+.title {
+  padding-top: rem(16px);
+
+  font-family: v('ff-sans');
+  font-weight: v('semi');
+  font-size: rem(20px);
+
+  transition-duration: 0.5s;
+}
+
+.titleLimit {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.description {
+  padding-top: rem(8px);
+
+  font-family: v('ff-sans');
+  font-size: rem(14px);
+}
+
+.descriptionLimit {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
