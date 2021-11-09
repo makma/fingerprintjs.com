@@ -35,7 +35,7 @@ cardSection:
         attacks and logins compromised through phishing or fake sites.
 
 
-        [Learn more about ATO >](https://fingerprintjs.com/account-takeover/)
+        [Learn more about ATO >](/account-takeover/)
       iconAlt: Account takeover fraud
       iconTitle: Account takeover fraud
     - icon: /img/uploads/gaming.png
@@ -43,11 +43,11 @@ cardSection:
       markdown__Content: >-
         Catch accounts created via proxies and VPNs, arbitrage attempts, player
         collusion,
-        [](https://fingerprintjs.com/blog/stop-multi-accounting-gaming/)multi-accounting,
+        [](/blog/stop-multi-accounting-gaming/)multi-accounting,
         in-app purchase brokers, and more. 
 
 
-        [Multi-accounting prevention >](https://fingerprintjs.com/blog/stop-multi-accounting-gaming/)
+        [Multi-accounting prevention >](/blog/stop-multi-accounting-gaming/)
       iconAlt: Gaming fraud prevention
       iconTitle: Gaming fraud prevention
     - title: Prevent gaming payment fraud
@@ -57,7 +57,7 @@ cardSection:
         micro-transactions flowing while reducing payment fraud.
 
 
-        [Read about how to stop card testing >](https://fingerprintjs.com/blog/stop-card-testing/)
+        [Read about how to stop card testing >](/blog/stop-card-testing/)
       icon: /img/uploads/commerce.png
       iconAlt: gaming payment fraud
       iconTitle: gaming payment fraud

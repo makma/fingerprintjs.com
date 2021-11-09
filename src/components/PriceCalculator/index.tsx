@@ -5,8 +5,6 @@ import classNames from 'classnames'
 import Button from '../common/Button'
 import styles from './PriceCalculator.module.scss'
 import { PATH, URL } from '../../constants/content'
-import { useUtmParams } from '../../hooks/useUtmParams'
-import { buildQueryString } from '../../helpers/common'
 import { ReactComponent as CheckSVG } from '../../img/CheckSVG.svg'
 import { ReactComponent as CloseSvg } from '../../img/close.svg'
 
@@ -24,8 +22,6 @@ export default function PriceCalculator() {
   const defaultValue = 0
   const [sliderValue, setSliderValue] = useState(defaultValue)
   const [monthlyPaymentLabel, setMonthlyPaymentLabel] = useState('$0')
-
-  const utmInfo = useUtmParams()
 
   const handleSliderChange = (newValue: number) => {
     setSliderValue(newValue)
@@ -70,7 +66,7 @@ export default function PriceCalculator() {
               : 'On-demand pricing based on monthly usage.'
           }
           ctaText={sliderValue === sliderConfig.min ? 'Create Free Account' : 'Start Free Trial'}
-          ctaHref={`${URL.signupUrl}${buildQueryString(utmInfo)}`}
+          ctaHref={URL.signupUrl}
           featureList={sliderValue === sliderConfig.min ? freeTier : onDemand}
           footNote='* FingerprintJS is compliant as the data processor. You need to be compliant as the data controller and use identification for fraud under legitimate interest or ask for user consent.'
           disabled={sliderValue === sliderConfig.max}
@@ -81,7 +77,7 @@ export default function PriceCalculator() {
           price='Contact Us'
           billingDescription='Get hands-on support and a custom contract for your large scale organization.'
           ctaText='Contact Us'
-          ctaHref={`${PATH.contactSales}${buildQueryString(utmInfo)}`}
+          ctaHref={PATH.contactSales}
           featureList={enterprise}
         />
       </article>

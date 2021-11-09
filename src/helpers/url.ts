@@ -6,3 +6,5 @@ export function getRelativeUrl(url: string) {
   const relativeUrl = url.match(/fingerprintjs.com(\/.*)$/)
   return relativeUrl ? withTrailingSlash(relativeUrl[1]) : '/'
 }
+
+export const isLocalLink = (link: string) => /^\/(?!\/)/.test(link)

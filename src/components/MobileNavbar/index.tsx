@@ -10,12 +10,8 @@ import styles from './MobileNavbar.module.scss'
 import { useCaseLinks } from '../../constants/content'
 import { URL, DOC_URL, PATH, MAILTO } from '../../constants/content'
 import DropdownMenu from './DropdownMenu'
-import { useUtmParams } from '../../hooks/useUtmParams'
-import { buildQueryString } from '../../helpers/common'
 
 export default function MobileNavbar() {
-  const utmInfo = useUtmParams()
-
   return (
     <div className={styles.nav}>
       <Container size='large' className={styles.container}>
@@ -23,7 +19,7 @@ export default function MobileNavbar() {
           <Button href={PATH.contactSales} variant='outline'>
             Contact Sales
           </Button>
-          <Button href={`${URL.signupUrl}${buildQueryString(utmInfo)}`}>Get Started</Button>
+          <Button href={URL.signupUrl}>Get Started</Button>
         </div>
         <div className={classNames(styles.links, styles.main)}>
           <Container size='large' className={styles.container}>

@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { memo } from 'react'
 import styles from './Button.module.scss'
 import classNames from 'classnames'
+import { Link } from 'gatsby'
+import { isLocalLink } from '../../../helpers/url'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'outline' | 'clear' | 'faded'
@@ -14,7 +16,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   openNewTab?: boolean
 }
 
-export default function Button({
+export default memo(function Button({
   variant = 'primary',
   size,
   href,
@@ -39,14 +41,21 @@ export default function Button({
   const newTabProps = openNewTab && { target: '_blank', rel: 'noreferrer' }
 
   return href ? (
-    <a href={href} className={classes} onClick={onClick} aria-label={label} download={download} {...newTabProps}>
-      {mobileIcon && <span className={styles.mobileOnly}>{mobileIcon}</span>}
-      <span className={classNames({ [styles.desktopOnly]: mobileIcon })}>{children}</span>
-    </a>
+    isLocalLink(href) ? (
+      <Link to={href} className={classes} onClick={onClick} aria-label={label} download={download} {...newTabProps}>
+        {mobileIcon && <span className={styles.mobileOnly}>{mobileIcon}</span>}
+        <span className={classNames({ [styles.desktopOnly]: mobileIcon })}>{children}</span>
+      </Link>
+    ) : (
+      <a href={href} className={classes} onClick={onClick} aria-label={label} download={download} {...newTabProps}>
+        {mobileIcon && <span className={styles.mobileOnly}>{mobileIcon}</span>}
+        <span className={classNames({ [styles.desktopOnly]: mobileIcon })}>{children}</span>
+      </a>
+    )
   ) : (
     <button type={type} className={classes} onClick={onClick} aria-label={label}>
       {mobileIcon && <span className={classNames(styles.icon, styles.mobileOnly)}>{mobileIcon}</span>}
       <span className={classNames({ [styles.desktopOnly]: mobileIcon })}>{children}</span>
     </button>
   )
-}
+})

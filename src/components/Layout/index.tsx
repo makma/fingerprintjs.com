@@ -9,8 +9,8 @@ import { FPJS_ENDPOINT, FPJS_VISITORS_ENDPOINT, GTM_TOKEN, TLS_ENDPOINT } from '
 import { withTrailingSlash } from '../../helpers/url'
 import { BASE_URL, URL } from '../../constants/content'
 import { defaultDataLayer } from '../../constants/content'
-import { useVisitorData } from '../../context/FpjsContext'
 import { enableAnalytics } from '../../helpers/gtm'
+import { useUserLocation } from '../../hooks/useUserLocation'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -39,14 +39,13 @@ interface LayoutTemplateProps extends LayoutProps {
 export function LayoutTemplate({ children, siteMetadata, headerBarTitle, headerBarLinkUrl }: LayoutTemplateProps) {
   const { title, description, siteUrl, image } = siteMetadata
   const gtmToken = GTM_TOKEN
-  const { visitorData } = useVisitorData()
-  const shouldEnableAnalytics = visitorData && visitorData.ipLocation.continent?.code?.toUpperCase() !== 'EU'
+  const { isEuUser } = useUserLocation()
 
   useEffect(() => {
-    if (shouldEnableAnalytics) {
+    if (isEuUser === false) {
       enableAnalytics()
     }
-  }, [shouldEnableAnalytics])
+  }, [isEuUser])
 
   useConsolePromotionMessage(`Like breaking things to see how they work? Join us: ${URL.careersConsoleLogUrl}`)
 

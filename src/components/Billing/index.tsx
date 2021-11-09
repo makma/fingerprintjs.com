@@ -7,8 +7,6 @@ import Button from '../common/Button'
 import styles from './Billing.module.scss'
 import { PATH } from '../../constants/content'
 import { Link } from 'gatsby'
-import { useUtmParams } from '../../hooks/useUtmParams'
-import { buildQueryString } from '../../helpers/common'
 
 const sliderConfig = {
   min: 0,
@@ -24,8 +22,6 @@ export default function Billing() {
   const defaultValue = 0
   const [sliderValue, setSliderValue] = useState(defaultValue)
   const [monthlyPaymentLabel, setMonthlyPaymentLabel] = useState(pricingTable[defaultValue].label)
-
-  const utmInfo = useUtmParams()
 
   const handleSliderChange = (newValue: number) => {
     setSliderValue(newValue)
@@ -71,10 +67,7 @@ export default function Billing() {
               Our paid plans come with 90 day visit history and email support.
               <br />
               <br />
-              <Link
-                to={`${PATH.contactSales}${buildQueryString(utmInfo)}`}
-                style={{ cursor: 'pointer', textDecoration: 'underline' }}
-              >
+              <Link to={PATH.contactSales} style={{ cursor: 'pointer', textDecoration: 'underline' }}>
                 Contact sales
               </Link>{' '}
               for an enterprise license, 99.9% uptime SLA and 24/7 dedicated support.
@@ -95,10 +88,7 @@ export default function Billing() {
                 </div>
                 <p className={styles.description}>
                   For annual pricing plans,{' '}
-                  <Link
-                    to={`${PATH.contactSales}${buildQueryString(utmInfo)}`}
-                    style={{ cursor: 'pointer', textDecoration: 'underline' }}
-                  >
+                  <Link to={PATH.contactSales} style={{ cursor: 'pointer', textDecoration: 'underline' }}>
                     contact sales
                   </Link>
                 </p>
@@ -107,11 +97,7 @@ export default function Billing() {
               <>
                 <div className={styles.billed}>talk to our sales team</div>
                 <div className={styles.switcher}>
-                  <Button
-                    href={`${PATH.contactSales}${buildQueryString(utmInfo)}`}
-                    variant='outline'
-                    className={styles.contactSales}
-                  >
+                  <Button href={PATH.contactSales} variant='outline' className={styles.contactSales}>
                     Contact Sales
                   </Button>
                 </div>

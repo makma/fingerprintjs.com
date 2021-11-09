@@ -78,7 +78,7 @@ blocks:
     image: /img/uploads/fpjs-diagram-2.png
     imageTitle: How FingerprintJS Pro works
     ctaText: Read Our Beginner's Guide to Fingerprinting
-    ctaUrl: https://fingerprintjs.com/blog/what-is-browser-fingerprinting/
+    ctaUrl: /blog/what-is-browser-fingerprinting/
   - markdown__Content: As spoofing and cloaking technologies improve, so too must
       your solution to identify malicious uses before they can damage your
       business. Our service provides access to sophisticated identification

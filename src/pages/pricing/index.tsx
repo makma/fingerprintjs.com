@@ -7,6 +7,7 @@ import Collapsible from '../../components/common/Collapsible'
 import Button from '../../components/common/Button'
 import { PATH, URL } from '../../constants/content'
 import PriceCalculator from '../../components/PriceCalculator'
+import { Link } from 'gatsby'
 
 import BreadcrumbsSEO from '../../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../../helpers/types'
@@ -85,7 +86,7 @@ function FAQBlock({ faq }: FAQBlockProps) {
     </div>
   )
 }
-//TODO: The list of questions and answers is still in development
+
 const faq = [
   {
     question: 'How does billing for FingerprintJS Pro work?',
@@ -106,9 +107,9 @@ const faq = [
     answer: (
       <>
         Yes we do offer annual billing and discounts. Please{' '}
-        <a href={PATH.contactSales} className={styles.link}>
+        <Link to={PATH.contactSales} className={styles.link}>
           contact sales{' '}
-        </a>
+        </Link>
         for details on annual pricing.
       </>
     ),
@@ -161,9 +162,9 @@ const faq = [
         <br />
         <br />
         For assistance in estimating the number of identifications needed for your use-case, please{' '}
-        <a href={PATH.contactSales} className={styles.link}>
+        <Link to={PATH.contactSales} className={styles.link}>
           contact sales.
-        </a>
+        </Link>
       </>
     ),
   },
@@ -204,9 +205,9 @@ const faq = [
         <br />
         <br />
         We can set up servers in additional locations for enterprise customers. To learn more, please{' '}
-        <a href={PATH.contactSales} className={styles.link}>
+        <Link to={PATH.contactSales} className={styles.link}>
           contact sales.
-        </a>
+        </Link>
       </>
     ),
   },
@@ -215,15 +216,15 @@ const faq = [
     answer: (
       <>
         Yes - FingerprintJS is{' '}
-        <a href='https://fingerprintjs.com/blog/soc-2-type-1/' className={styles.link}>
+        <Link to='/blog/soc-2-type-1/' className={styles.link}>
           SOC 2 compliant.
-        </a>
+        </Link>
         <br />
         <br />
         If you would like to see our SOC 2 Type 1 report, please{' '}
-        <a href={PATH.contactSales} className={styles.link}>
+        <Link to={PATH.contactSales} className={styles.link}>
           contact sales.
-        </a>
+        </Link>
       </>
     ),
   },

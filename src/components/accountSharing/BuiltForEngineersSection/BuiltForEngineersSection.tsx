@@ -26,7 +26,7 @@ export default function BuiltForEngineersSection() {
           title='Start For Free'
           description='Our lightweight Javascript agent can be installed in minutes. Create an account for free with no credit card.'
           linkText='Start Free Trial →'
-          linkHref={URL.dashboardLoginUrl}
+          linkHref={URL.signupUrl}
         />
         <Card
           icon={<ApiWebhooksSVG />}

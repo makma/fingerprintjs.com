@@ -11,8 +11,7 @@ import { trackEmbeddedFormSubmit } from '../../helpers/gtm'
 import { Forms, useForm } from '../../hooks/useForm'
 import Tippy from '@tippyjs/react'
 import { ReactComponent as InfoSvg } from '../../img/info.svg'
-import { useUtmParams } from '../../hooks/useUtmParams'
-import { isBrowser } from '../../helpers/detector'
+import { useViewTracking } from '../../context/HistoryListener'
 
 import styles from './GetStartedForm.module.scss'
 import { DEFAULT_TRIAL_DAYS } from '../../constants/content'
@@ -28,8 +27,7 @@ export default function GetStartedForm({ className }: GetStartedFormProps) {
   const [email, setEmail] = useState('')
   const { formState, errorMessage, updateFormState, updateErrorMessage } = useForm(Forms.Signup)
 
-  const referrer = isBrowser() ? document.referrer : ''
-  const utmInfo = useUtmParams({ referral_url: referrer })
+  const { landingPage, visitedPages, utmParams } = useViewTracking()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -38,7 +36,13 @@ export default function GetStartedForm({ className }: GetStartedFormProps) {
     const { ok, error } = await fetch(`${dashboardEndpoint}/signup`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, fpjsVisitorId: visitorId, utmInfo }),
+      body: JSON.stringify({
+        email,
+        fpjsVisitorId: visitorId,
+        utmInfo: utmParams,
+        landingPage: landingPage,
+        visitedPages: visitedPages,
+      }),
     }).then((response) => response.json())
 
     if (!ok) {

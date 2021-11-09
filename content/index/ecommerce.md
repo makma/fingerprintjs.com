@@ -36,7 +36,7 @@ cardSection:
     - icon: /img/uploads/payment_processing.png
       title: Reduce chargebacks linked to CNP fraud
       markdown__Content: Reduce your chargeback rates from [CNP
-        fraud](https://fingerprintjs.com/blog/cnp-fraud-prevention-to-protect-chargebacks/)
+        fraud](/blog/cnp-fraud-prevention-to-protect-chargebacks/)
         by detecting and preventing purchases from stolen cards before they hurt
         your bottom line.
       iconAlt: Payment processing fraud
@@ -82,7 +82,7 @@ blocks:
     image: /img/uploads/fpjs-flowchart-smaller.png
     imageTitle: How FingerprintJS Pro reduces account takeover
     ctaText: See our technical demo
-    ctaUrl: https://fingerprintjs.com/demo/
+    ctaUrl: /demo/
 inlineCta:
   title: Reduce chargebacks one month after integrating FingerprintJS on your website.
   markdown__Subtitle: Every dollar of ecommerce fraud can cost retailers between 3

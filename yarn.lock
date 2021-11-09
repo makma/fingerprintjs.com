@@ -10284,6 +10284,14 @@ gatsby-plugin-breadcrumb@^12.1.1:
     prop-types "^15.7.2"
     wildcard-match "^5.1.0"
 
+gatsby-plugin-catch-links@^3.14.0:
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-3.14.0.tgz#c2d99bc1cf06dc91c116f8bb366013fb4ac08f7c"
+  integrity sha512-F1cydnQWrD6ObDJdBqyPmobEpS3rWYvD9rjLszIkCCcO/9orqOgpffbVJf0xdMnzStxqeyUPGze06Ld8YCtFIw==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    escape-string-regexp "^1.0.5"
+
 gatsby-plugin-env-variables@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-env-variables/-/gatsby-plugin-env-variables-2.1.0.tgz#6204113d214e8854cbc9f6e90c6650c7035e277c"

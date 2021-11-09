@@ -13,8 +13,6 @@ import { useCaseLinks } from '../../constants/content'
 import classNames from 'classnames'
 import { URL, PATH } from '../../constants/content'
 import DropdownList from './DropdownList'
-import { useUtmParams } from '../../hooks/useUtmParams'
-import { buildQueryString } from '../../helpers/common'
 import { ReactComponent as LogoSvg } from './fpjs.svg'
 
 import styles from './Header.module.scss'
@@ -25,7 +23,6 @@ interface HeaderProps {
 }
 export default function Header({ headerBarTitle, headerBarLinkUrl }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const utmInfo = useUtmParams()
 
   useEffect(() => {
     const mobileBodyClass = 'isMobileMenuOpen'
@@ -70,13 +67,13 @@ export default function Header({ headerBarTitle, headerBarLinkUrl }: HeaderProps
               <div className={styles.navRight}>
                 <GithubButton className={styles.desktopOnly} />
                 <Button
-                  href={`${PATH.contactSales}${buildQueryString(utmInfo)}`}
+                  href={PATH.contactSales}
                   variant='outline'
                   className={classNames(styles.desktopOnly, styles.button)}
                 >
                   Contact Sales
                 </Button>
-                <Button className={styles.signupButton} href={`${URL.signupUrl}${buildQueryString(utmInfo)}`}>
+                <Button className={styles.signupButton} href={URL.signupUrl}>
                   Free Trial
                 </Button>
                 <Button

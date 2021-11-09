@@ -13,7 +13,9 @@ export async function createNewLead(
   email: string,
   url: string,
   description: string,
-  utmInfo: Record<string, string>
+  landingPage: string,
+  previousPage: string,
+  utmParams: Record<string, string>
 ) {
   return fetch(FPJS_LEAD_URL, {
     method: 'POST',
@@ -23,7 +25,9 @@ export async function createNewLead(
       email,
       url,
       description,
-      utm_info: utmInfo,
+      utm_info: utmParams,
+      landingPage,
+      previousPage,
     }),
   })
 }

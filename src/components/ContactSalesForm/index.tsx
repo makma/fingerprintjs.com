@@ -5,13 +5,12 @@ import classNames from 'classnames'
 
 import { FormState } from '../../types/FormState'
 import { trackLeadSubmit } from '../../helpers/gtm'
-import { useUtmParams } from '../../hooks/useUtmParams'
-import { isBrowser } from '../../helpers/detector'
 import { Forms, useForm } from '../../hooks/useForm'
 import { createNewLead } from '../../helpers/api'
 import { ReactComponent as ConfirmSVG } from './confirmSVG.svg'
 import { ReactComponent as ErrorSVG } from './errorSVG.svg'
 import { URL, MAILTO } from '../../constants/content'
+import { useViewTracking } from '../../context/HistoryListener'
 
 import styles from './ContactSalesForm.module.scss'
 
@@ -20,10 +19,9 @@ export default function ContactSalesForm() {
   const [email, setEmail] = useState('')
   const [url, setUrl] = useState('')
   const [description, setDescription] = useState('')
-  const referrer = isBrowser() ? document.referrer : ''
-  const utmInfo = useUtmParams({ referral_url: referrer })
 
   const { formState, updateFormState } = useForm(Forms.ContactSales)
+  const { landingPage, previousPage, utmParams } = useViewTracking()
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -39,7 +37,7 @@ export default function ContactSalesForm() {
     }
 
     try {
-      const response = await createNewLead(formName, email, url, description, utmInfo)
+      const response = await createNewLead(formName, email, url, description, landingPage, previousPage, utmParams)
       const status = response.status
 
       if (status !== 200) {
