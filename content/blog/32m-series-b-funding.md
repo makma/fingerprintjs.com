@@ -5,7 +5,7 @@ metadata:
   description: Our team is excited to announce that we have raised a $32M series B
     from Craft Ventures, with participation from Nexus Venture Partners and
     Uncorrelated Ventures.
-  url: series-b
+  url: https://fingerprintjs.com/blog/series-b
   image: /img/uploads/funding-annoucement.png
   imageAlt: FingerprintJS Series B
   imageTitle: FingerprintJS Series B
