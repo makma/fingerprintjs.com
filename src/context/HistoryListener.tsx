@@ -36,8 +36,16 @@ export function HistoryListener({ children }: { children: React.ReactNode }) {
 
     return globalHistory.listen(({ action }) => {
       if (action === 'PUSH') {
-        historyData.previousPage = historyData.visitedPages[historyData.visitedPages.length - 1]
-        historyData.visitedPages.push(globalHistory.location.pathname)
+        const currentPage = globalHistory.location.pathname
+        const previousPage = historyData.visitedPages[historyData.visitedPages.length - 1]
+
+        //We don't want to add the current page if it is the same as the previous page to avoid duplicates
+        if (previousPage === currentPage) {
+          return
+        }
+
+        historyData.previousPage = previousPage
+        historyData.visitedPages.push(currentPage)
 
         if (historyData.visitedPages.length >= visitedPagesLimit + 1) {
           historyData.visitedPages.splice(0, 1)
@@ -56,11 +64,19 @@ export function HistoryListener({ children }: { children: React.ReactNode }) {
     const cookieHistory: HistoryProps = historyDataCookies && JSON.parse(historyDataCookies).historyData
 
     if (cookieHistory) {
-      if (cookieHistory.visitedPages.length === visitedPagesLimit) {
-        cookieHistory.visitedPages.splice(0, 1)
+      const currentPage = globalHistory.location.pathname
+      const lastCookiePage = cookieHistory.visitedPages[cookieHistory.visitedPages.length - 1]
+
+      //We don't want to add the current page if it is the same as the last page from cookies
+      if (currentPage === lastCookiePage) {
+        historyData.visitedPages = cookieHistory.visitedPages
+      } else {
+        if (cookieHistory.visitedPages.length === visitedPagesLimit) {
+          cookieHistory.visitedPages.splice(0, 1)
+        }
+        historyData.visitedPages = cookieHistory.visitedPages.concat(historyData.visitedPages)
       }
 
-      historyData.visitedPages = cookieHistory.visitedPages.concat(historyData.visitedPages)
       historyData.landingPage = cookieHistory.landingPage
     }
     setCookie(trackingDataCookieName, JSON.stringify({ historyData }), 30)
