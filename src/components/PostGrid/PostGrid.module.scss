@@ -141,9 +141,9 @@
     }
   }
 
-  .highlight {
-    border: 1px solid c('brand-fire');
-    color: c('brand-fire');
+  .selectedTag {
+    background-color: c('brand-fire');
+    color: v('white');
   }
 }
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Post, { PostProps } from '../Post/Post'
 import classNames from 'classnames'
 import TagList from '../TagList/TagList'
@@ -30,6 +30,23 @@ export default function PostGrid({
   limitPostLines,
   useSwiper = false,
 }: PostGridProps) {
+  const [selectedTags, setSelectedTags] = useState(new Set())
+  const [selectedSolutions, setSelectedSolutions] = useState(posts)
+
+  const handleSelectedTags = (tag: string) => {
+    const selected = new Set(selectedTags)
+
+    if (selectedTags.has(tag)) {
+      selected.delete(tag)
+    } else {
+      selected.add(tag)
+    }
+
+    const filteredSolutions = posts.filter((solution) => solution.tags?.some((tag) => selected.has(tag)))
+    setSelectedSolutions(filteredSolutions)
+    setSelectedTags(selected)
+  }
+
   switch (variant) {
     case 'posts':
       return useSwiper ? (
@@ -106,8 +123,8 @@ export default function PostGrid({
         <div className={styles.solutionsRoot}>
           <div className={styles.posts}>
             <div className={classNames(styles.solutionsGrid)}>
-              {posts.map((post) => {
-                return <Post key={post.path} limitTextLines={limitPostLines} {...post} type='solution' />
+              {selectedSolutions.map((solution) => {
+                return <Post key={solution.path} limitTextLines={limitPostLines} {...solution} type='solution' />
               })}
             </div>
           </div>
@@ -115,8 +132,10 @@ export default function PostGrid({
             <div className={styles.tags}>
               <ul className={styles.tagSection}>
                 {tags?.map((tag) => (
-                  <li key={tag} className={styles.item}>
-                    <span className={styles.tag}>{kebabToTitle(tag)}</span>
+                  <li key={tag} className={styles.item} onClick={() => handleSelectedTags(tag)}>
+                    <span className={classNames(styles.tag, { [styles.selectedTag]: selectedTags.has(tag) })}>
+                      {kebabToTitle(tag)}
+                    </span>
                   </li>
                 ))}
               </ul>
