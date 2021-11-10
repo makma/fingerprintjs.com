@@ -1,0 +1,65 @@
+.root {
+  padding: rem(80px) 0 rem(64px) 0;
+
+  @include media('<=phoneLandscape') {
+    padding: rem(58px) 0 rem(68px) 0;
+  }
+
+  .heroContainer {
+    @include media('<=phoneLandscape') {
+      padding: 0 rem(20px);
+    }
+
+    @include media('>phoneLandscape') {
+      display: flex;
+      column-gap: rem(32px);
+    }
+
+    .contentSection {
+      .caption {
+        @include sans($size: 14px, $weight: 600, $lh: 140%, $color: rgba(13, 16, 43, 0.48));
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+
+        margin-bottom: rem(16px);
+
+        @include media('<=phoneLandscape') {
+          display: none;
+        }
+      }
+
+      .title {
+        font-size: rem(48px);
+        font-weight: v('bold');
+        line-height: 120%;
+
+        margin-bottom: rem(16px);
+        margin-right: rem(32px);
+
+        @include media('<=phoneLandscape') {
+          font-size: rem(26px);
+          margin-right: 0;
+        }
+      }
+
+      .description {
+        @include sans($size: 20px, $weight: 400, $lh: 150%);
+
+        @include media('<=phoneLandscape') {
+          font-size: rem(16px);
+        }
+      }
+    }
+
+    .contentSection,
+    .imageSection {
+      flex: 1;
+    }
+
+    .image {
+      @include media('<=phoneLandscape') {
+        display: none;
+      }
+    }
+  }
+}

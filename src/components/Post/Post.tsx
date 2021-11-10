@@ -12,6 +12,7 @@ export interface PostProps {
   title: string
   description: string
   publishDate: string
+  type?: 'post' | 'solution'
   image?: GatsbyTypes.File
   imageAlt?: string
   imageTitle?: string
@@ -31,6 +32,7 @@ export default function Post({
   imageAlt,
   imageTitle,
   publishDate,
+  type = 'post',
   path,
   tags,
   activeTag,
@@ -50,6 +52,7 @@ export default function Post({
           className={classNames(styles.wrapper, {
             [styles.threePerRow]: perRow === 'three',
             [styles.wideWrapper]: variant === 'wide',
+            [styles.solutionWrapper]: type === 'solution',
           })}
         >
           <GatsbyImage
@@ -63,7 +66,7 @@ export default function Post({
 
       <div className={styles.content}>
         <div>
-          <span className={styles.publishDate}>{publishDate}</span>
+          {type === 'post' && <span className={styles.publishDate}>{publishDate}</span>}
           <h1 className={classNames(styles.title, { [styles.titleLimit]: limitTextLines })}>{title}</h1>
           <p className={classNames(styles.description, { [styles.descriptionLimit]: limitTextLines })}>{description}</p>
         </div>
