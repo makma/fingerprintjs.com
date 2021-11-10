@@ -22,7 +22,7 @@ export function Layout({ children }: LayoutProps) {
     <LayoutTemplate
       siteMetadata={siteMetadata}
       headerBarTitle='FingerprintJS raises $32M series B from Craft Ventures'
-      headerBarLinkUrl='https://venturebeat.com/2021/11/03/fraud-prevention-platform-fingerprintjs-lands-32m-to-launch-premium-services/'
+      headerBarLinkUrl='/blog/series-b/'
     >
       {children}
     </LayoutTemplate>

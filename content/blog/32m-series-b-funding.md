@@ -19,7 +19,7 @@ tags:
 authors:
   - Dan Pinto
 heroImage:
-  image: ""
+  image:
   imageAlt: FingerprintJS Series B
   imageTitle: FingerprintJS Series B
 customCTA:
@@ -54,7 +54,7 @@ We wanted to make it as easy as possible for those who are curious about Fingerp
 
 Our new trial process makes it especially easy for our open source users to try Pro, as well as catering to individual developers and small sites that can use the product for free forever.
 
-### SOC2 Compliance 
+### SOC2 Compliance 
 
 We achieved [SOC2 compliance](https://fingerprintjs.com/blog/soc-2-type-1/) this August, making it possible for us to provide enterprise customers with our Type 1 report. Even if your company does not require SOC2 from technology vendors, the report provides assurance of our commitment to best-in-class data security and privacy.
 
