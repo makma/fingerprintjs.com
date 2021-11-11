@@ -12,7 +12,7 @@ export interface PostProps {
   title: string
   description: string
   publishDate: string
-  type?: 'post' | 'solution'
+  showPublishDate?: boolean
   image?: GatsbyTypes.File
   imageAlt?: string
   imageTitle?: string
@@ -32,7 +32,7 @@ export default function Post({
   imageAlt,
   imageTitle,
   publishDate,
-  type = 'post',
+  showPublishDate = true,
   path,
   tags,
   activeTag,
@@ -65,7 +65,7 @@ export default function Post({
 
       <div className={styles.content}>
         <div>
-          {type === 'post' && <span className={styles.publishDate}>{publishDate}</span>}
+          {showPublishDate && <span className={styles.publishDate}>{publishDate}</span>}
           <h1 className={classNames(styles.title, { [styles.titleLimit]: limitTextLines })}>{title}</h1>
           <p className={classNames(styles.description, { [styles.descriptionLimit]: limitTextLines })}>{description}</p>
         </div>

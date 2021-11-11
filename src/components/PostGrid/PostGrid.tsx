@@ -58,7 +58,7 @@ export default function PostGrid({
 
     setSelectedTags(newSelectedTags)
     const filteredSolutions = posts.filter((solution) => solution.tags?.some((tag) => newSelectedTags.has(tag)))
-    setNumberOfSolutions(filteredSolutions.length)
+    newSelectedTags.size === 0 ? setNumberOfSolutions(posts.length) : setNumberOfSolutions(filteredSolutions.length)
 
     setTimeout(() => {
       newSelectedTags.size === 0 ? setSelectedSolutions(posts) : setSelectedSolutions(filteredSolutions)
@@ -157,7 +157,9 @@ export default function PostGrid({
               onTransitionEnd={() => setFade(true)}
             >
               {selectedSolutions.map((solution) => {
-                return <Post key={solution.path} limitTextLines={limitPostLines} {...solution} type='solution' />
+                return (
+                  <Post key={solution.path} limitTextLines={limitPostLines} {...solution} showPublishDate={false} />
+                )
               })}
             </div>
           </section>
