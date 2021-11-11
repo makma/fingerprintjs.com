@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Post, { PostProps } from '../Post/Post'
 import classNames from 'classnames'
 import TagList from '../TagList/TagList'
@@ -32,19 +32,35 @@ export default function PostGrid({
 }: PostGridProps) {
   const [selectedTags, setSelectedTags] = useState(new Set())
   const [selectedSolutions, setSelectedSolutions] = useState(posts)
+  const [fade, setFade] = useState(true)
 
-  const handleSelectedTags = (tag: string) => {
-    const selected = new Set(selectedTags)
+  const handleSelectedTags = (tag?: string) => {
+    setFade(false)
 
-    if (selectedTags.has(tag)) {
-      selected.delete(tag)
-    } else {
-      selected.add(tag)
-    }
+    setTimeout(() => {
+      if (!tag) {
+        setSelectedTags(new Set())
+        setSelectedSolutions(posts)
+        setTimeout(() => {
+          setFade(true)
+        }, 500)
+        return
+      }
 
-    const filteredSolutions = posts.filter((solution) => solution.tags?.some((tag) => selected.has(tag)))
-    setSelectedSolutions(filteredSolutions)
-    setSelectedTags(selected)
+      const newSelectedTags = new Set(selectedTags)
+
+      if (selectedTags.has(tag)) {
+        newSelectedTags.delete(tag)
+      } else {
+        newSelectedTags.add(tag)
+      }
+
+      setSelectedTags(newSelectedTags)
+
+      const filteredSolutions = posts.filter((solution) => solution.tags?.some((tag) => newSelectedTags.has(tag)))
+      newSelectedTags.size === 0 ? setSelectedSolutions(posts) : setSelectedSolutions(filteredSolutions)
+      setFade(true)
+    }, 500)
   }
 
   switch (variant) {
@@ -121,15 +137,27 @@ export default function PostGrid({
     case 'solutions': {
       return (
         <div className={styles.solutionsRoot}>
-          <div className={styles.posts}>
-            <div className={classNames(styles.solutionsGrid)}>
+          <section className={styles.posts}>
+            <div className={styles.filterSection}>
+              <span className={styles.showingSolutions}>
+                Showing {selectedSolutions.length} solutions
+                {selectedTags.size > 0 && ` matching ${selectedTags.size} filter`}
+              </span>
+              <span
+                className={classNames(styles.filter, { [styles.hideFilter]: selectedTags.size === 0 })}
+                onClick={() => handleSelectedTags()}
+              >
+                Clear all filters
+              </span>
+            </div>
+            <div className={classNames(styles.solutionsGrid, { [styles.fadeOut]: !fade }, { [styles.fadeIn]: fade })}>
               {selectedSolutions.map((solution) => {
                 return <Post key={solution.path} limitTextLines={limitPostLines} {...solution} type='solution' />
               })}
             </div>
-          </div>
+          </section>
           {tags && (
-            <div className={styles.tags}>
+            <section className={styles.tags}>
               <ul className={styles.tagSection}>
                 {tags?.map((tag) => (
                   <li key={tag} className={styles.item} onClick={() => handleSelectedTags(tag)}>
@@ -139,7 +167,7 @@ export default function PostGrid({
                   </li>
                 ))}
               </ul>
-            </div>
+            </section>
           )}
         </div>
       )

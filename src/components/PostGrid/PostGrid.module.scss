@@ -127,6 +127,7 @@
     border-radius: rem(19px);
     background-color: c('off-white');
     border: 1px solid c('off-white');
+    cursor: pointer;
 
     white-space: nowrap;
     overflow: hidden;
@@ -144,6 +145,10 @@
   .selectedTag {
     background-color: c('brand-fire');
     color: v('white');
+
+    &:hover {
+      background-color: adjust-color(c('brand-fire'), $lightness: -20%);
+    }
   }
 }
 
@@ -153,12 +158,38 @@
 
   margin-top: rem(64px);
 }
+.filterSection {
+  display: flex;
+  margin-bottom: rem(28px);
+
+  .showingSolutions,
+  .filter {
+    @include sans($size: 16px, $weight: v('semi'), $lh: 130%);
+  }
+
+  .filter {
+    color: c('brand-fire');
+    cursor: pointer;
+    margin-left: rem(24px);
+
+    &:hover {
+      color: adjust-color(c('brand-fire'), $lightness: -20%);
+    }
+  }
+
+  .hideFilter {
+    display: none;
+  }
+}
 
 .solutionsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: rem(32px);
   row-gap: rem(78px);
+
+  @include transition((opacity));
+  @include transition-duration(0.7s);
 
   @include media('<=desktop') {
     grid-template-columns: repeat(2, 1fr);
@@ -167,4 +198,12 @@
   @include media('<=tabletWide') {
     grid-template-columns: 1fr;
   }
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+.fadeIn {
+  opacity: 1;
 }
