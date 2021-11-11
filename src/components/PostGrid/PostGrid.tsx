@@ -41,9 +41,7 @@ export default function PostGrid({
       if (!tag) {
         setSelectedTags(new Set())
         setSelectedSolutions(posts)
-        setTimeout(() => {
-          setFade(true)
-        }, 500)
+        setFade(true)
         return
       }
 
