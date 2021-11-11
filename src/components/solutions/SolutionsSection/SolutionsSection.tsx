@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Post, { PostProps } from '../../Post/Post'
+import Solution, { SolutionProps } from '../Solution/Solution'
 import Grid from '../../Grid/Grid'
 import Container from '../../common/Container'
 import classNames from 'classnames'
@@ -8,14 +8,14 @@ import { kebabToTitle } from '../../../helpers/case'
 import styles from './SolutionsSection.module.scss'
 
 export interface SolutionsSectionProps {
-  posts: Array<PostProps>
+  solutions: Array<SolutionProps>
   tags?: string[]
 }
-export default function SolutionsSection({ posts, tags }: SolutionsSectionProps) {
+export default function SolutionsSection({ solutions, tags }: SolutionsSectionProps) {
   const [selectedTags, setSelectedTags] = useState(new Set())
-  const [filteredSolutions, setFilteredSolutions] = useState(posts)
+  const [filteredSolutions, setFilteredSolutions] = useState(solutions)
   const [fade, setFade] = useState(true)
-  const [numberOfSolutions, setNumberOfSolutions] = useState(posts.length)
+  const [numberOfSolutions, setNumberOfSolutions] = useState(solutions.length)
 
   const handleSelectedTags = (tag?: string) => {
     const timeout = 400
@@ -23,9 +23,9 @@ export default function SolutionsSection({ posts, tags }: SolutionsSectionProps)
 
     if (!tag) {
       setSelectedTags(new Set())
-      setNumberOfSolutions(posts.length)
+      setNumberOfSolutions(solutions.length)
       setTimeout(() => {
-        setFilteredSolutions(posts)
+        setFilteredSolutions(solutions)
       }, timeout)
       return
     }
@@ -41,8 +41,8 @@ export default function SolutionsSection({ posts, tags }: SolutionsSectionProps)
     setSelectedTags(newSelectedTags)
     const filteredSolutions =
       newSelectedTags.size === 0
-        ? posts
-        : posts.filter((solution) => solution.tags?.some((tag) => newSelectedTags.has(tag)))
+        ? solutions
+        : solutions.filter((solution) => solution.tags?.some((tag) => newSelectedTags.has(tag)))
 
     setNumberOfSolutions(filteredSolutions.length)
     setTimeout(() => {
@@ -69,7 +69,7 @@ export default function SolutionsSection({ posts, tags }: SolutionsSectionProps)
           <div onTransitionEnd={() => setFade(true)}>
             <Grid
               items={filteredSolutions.map((solution) => {
-                return <Post key={solution.path} {...solution} showPublishDate={false} />
+                return <Solution key={solution.path} {...solution} />
               })}
               perRow='three'
               className={classNames(styles.solutionsGrid, { [styles.fadeOut]: !fade }, { [styles.fadeIn]: fade })}
