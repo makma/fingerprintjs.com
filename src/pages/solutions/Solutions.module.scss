@@ -1,0 +1,5 @@
+.gridContainer {
+  @include media('<=phoneLandscape') {
+    padding: 0 rem(16px);
+  }
+}

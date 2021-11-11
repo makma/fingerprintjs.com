@@ -52,7 +52,6 @@ export default function Post({
           className={classNames(styles.wrapper, {
             [styles.threePerRow]: perRow === 'three',
             [styles.wideWrapper]: variant === 'wide',
-            [styles.solutionWrapper]: type === 'solution',
           })}
         >
           <GatsbyImage

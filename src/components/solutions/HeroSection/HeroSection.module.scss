@@ -6,11 +6,11 @@
   }
 
   .heroContainer {
-    @include media('<=phoneLandscape') {
+    @include media('<=desktop') {
       padding: 0 rem(20px);
     }
 
-    @include media('>phoneLandscape') {
+    @include media('>desktop') {
       display: flex;
       column-gap: rem(32px);
     }
@@ -23,6 +23,9 @@
 
         margin-bottom: rem(16px);
 
+        @include media('<=desktop') {
+          font-size: rem(12px);
+        }
         @include media('<=phoneLandscape') {
           display: none;
         }
@@ -36,7 +39,7 @@
         margin-bottom: rem(16px);
         margin-right: rem(32px);
 
-        @include media('<=phoneLandscape') {
+        @include media('<=desktop') {
           font-size: rem(26px);
           margin-right: 0;
         }
@@ -45,7 +48,7 @@
       .description {
         @include sans($size: 20px, $weight: 400, $lh: 150%);
 
-        @include media('<=phoneLandscape') {
+        @include media('<=desktop') {
           font-size: rem(16px);
         }
       }
@@ -57,7 +60,7 @@
     }
 
     .image {
-      @include media('<=phoneLandscape') {
+      @include media('<=desktop') {
         display: none;
       }
     }
