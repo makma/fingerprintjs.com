@@ -4,11 +4,8 @@ import { LayoutTemplate } from '../../components/Layout'
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
 import HeroSection from '../../components/solutions/HeroSection/HeroSection'
-import PostGrid from '../../components/PostGrid/PostGrid'
 import { mapToPost } from '../../components/Post/Post'
-import Container from '../../components/common/Container'
-
-import styles from './Solutions.module.scss'
+import SolutionsSection from '../../components/solutions/SolutionsSection/SolutionsSection'
 
 interface SolutionsProps {
   data: GatsbyTypes.SolutionQuery
@@ -28,14 +25,7 @@ export default function Solutions({ data }: SolutionsProps) {
   return (
     <LayoutTemplate siteMetadata={siteMetadata}>
       <HeroSection />
-      <Container size={'large'} className={styles.gridContainer}>
-        <PostGrid
-          posts={posts.map(({ node }) => node).map((node) => mapToPost(node))}
-          tags={tags}
-          perRow='three'
-          variant='solutions'
-        />
-      </Container>
+      <SolutionsSection posts={posts.map(({ node }) => node).map((node) => mapToPost(node))} tags={tags} />
     </LayoutTemplate>
   )
 }

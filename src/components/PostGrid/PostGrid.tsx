@@ -31,7 +31,7 @@ export default function PostGrid({
   useSwiper = false,
 }: PostGridProps) {
   const [selectedTags, setSelectedTags] = useState(new Set())
-  const [selectedSolutions, setSelectedSolutions] = useState(posts)
+  const [filteredSolutions, setFilteredSolutions] = useState(posts)
   const [fade, setFade] = useState(true)
   const [numberOfSolutions, setNumberOfSolutions] = useState(posts.length)
 
@@ -43,7 +43,7 @@ export default function PostGrid({
       setSelectedTags(new Set())
       setNumberOfSolutions(posts.length)
       setTimeout(() => {
-        setSelectedSolutions(posts)
+        setFilteredSolutions(posts)
       }, timeout)
       return
     }
@@ -57,11 +57,14 @@ export default function PostGrid({
     }
 
     setSelectedTags(newSelectedTags)
-    const filteredSolutions = posts.filter((solution) => solution.tags?.some((tag) => newSelectedTags.has(tag)))
-    newSelectedTags.size === 0 ? setNumberOfSolutions(posts.length) : setNumberOfSolutions(filteredSolutions.length)
+    const filteredSolutions =
+      newSelectedTags.size === 0
+        ? posts
+        : posts.filter((solution) => solution.tags?.some((tag) => newSelectedTags.has(tag)))
 
+    setNumberOfSolutions(filteredSolutions.length)
     setTimeout(() => {
-      newSelectedTags.size === 0 ? setSelectedSolutions(posts) : setSelectedSolutions(filteredSolutions)
+      setFilteredSolutions(filteredSolutions)
     }, timeout)
   }
 
@@ -156,7 +159,7 @@ export default function PostGrid({
               className={classNames(styles.solutionsGrid, { [styles.fadeOut]: !fade }, { [styles.fadeIn]: fade })}
               onTransitionEnd={() => setFade(true)}
             >
-              {selectedSolutions.map((solution) => {
+              {filteredSolutions.map((solution) => {
                 return (
                   <Post key={solution.path} limitTextLines={limitPostLines} {...solution} showPublishDate={false} />
                 )
