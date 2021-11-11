@@ -8,7 +8,7 @@ export interface GridProps {
   perRow?: 'four' | 'three'
   className?: string
 }
-export default function Grid({ items, perRow = 'four', className }: GridProps) {
+export default function Grid({ items, perRow, className }: GridProps) {
   return (
     <div className={classNames(styles.grid, className, { [styles.threePerRow]: perRow === 'three' })}>
       {items.map((item) => {
