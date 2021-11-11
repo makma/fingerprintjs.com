@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Post, { PostProps } from '../../Post/Post'
+import Grid from '../../Grid/Grid'
 import Container from '../../common/Container'
 import classNames from 'classnames'
 import { kebabToTitle } from '../../../helpers/case'
@@ -65,13 +66,14 @@ export default function SolutionsSection({ posts, tags }: SolutionsSectionProps)
               Clear all filters
             </span>
           </div>
-          <div
-            className={classNames(styles.solutionsGrid, { [styles.fadeOut]: !fade }, { [styles.fadeIn]: fade })}
-            onTransitionEnd={() => setFade(true)}
-          >
-            {filteredSolutions.map((solution) => {
-              return <Post key={solution.path} {...solution} showPublishDate={false} />
-            })}
+          <div onTransitionEnd={() => setFade(true)}>
+            <Grid
+              items={filteredSolutions.map((solution) => {
+                return <Post key={solution.path} {...solution} showPublishDate={false} />
+              })}
+              perRow='three'
+              className={classNames(styles.solutionsGrid, { [styles.fadeOut]: !fade }, { [styles.fadeIn]: fade })}
+            />
           </div>
         </section>
         {tags && (
