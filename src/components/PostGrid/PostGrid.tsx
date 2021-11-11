@@ -37,28 +37,30 @@ export default function PostGrid({
   const handleSelectedTags = (tag?: string) => {
     setFade(false)
 
-    setTimeout(() => {
-      if (!tag) {
-        setSelectedTags(new Set())
-        setSelectedSolutions(posts)
+    if (!tag) {
+      setSelectedTags(new Set())
+      setSelectedSolutions(posts)
+      setTimeout(() => {
         setFade(true)
-        return
-      }
+      }, 200)
+      return
+    }
 
-      const newSelectedTags = new Set(selectedTags)
+    const newSelectedTags = new Set(selectedTags)
 
-      if (selectedTags.has(tag)) {
-        newSelectedTags.delete(tag)
-      } else {
-        newSelectedTags.add(tag)
-      }
+    if (selectedTags.has(tag)) {
+      newSelectedTags.delete(tag)
+    } else {
+      newSelectedTags.add(tag)
+    }
 
-      setSelectedTags(newSelectedTags)
+    setSelectedTags(newSelectedTags)
 
+    setTimeout(() => {
       const filteredSolutions = posts.filter((solution) => solution.tags?.some((tag) => newSelectedTags.has(tag)))
       newSelectedTags.size === 0 ? setSelectedSolutions(posts) : setSelectedSolutions(filteredSolutions)
       setFade(true)
-    }, 500)
+    }, 200)
   }
 
   switch (variant) {
