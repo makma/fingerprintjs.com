@@ -33,16 +33,18 @@ export default function PostGrid({
   const [selectedTags, setSelectedTags] = useState(new Set())
   const [selectedSolutions, setSelectedSolutions] = useState(posts)
   const [fade, setFade] = useState(true)
+  const [numberOfSolutions, setNumberOfSolutions] = useState(posts.length)
 
   const handleSelectedTags = (tag?: string) => {
+    const timeout = 400
     setFade(false)
 
     if (!tag) {
       setSelectedTags(new Set())
-      setSelectedSolutions(posts)
+      setNumberOfSolutions(posts.length)
       setTimeout(() => {
-        setFade(true)
-      }, 200)
+        setSelectedSolutions(posts)
+      }, timeout)
       return
     }
 
@@ -55,12 +57,12 @@ export default function PostGrid({
     }
 
     setSelectedTags(newSelectedTags)
+    const filteredSolutions = posts.filter((solution) => solution.tags?.some((tag) => newSelectedTags.has(tag)))
+    setNumberOfSolutions(filteredSolutions.length)
 
     setTimeout(() => {
-      const filteredSolutions = posts.filter((solution) => solution.tags?.some((tag) => newSelectedTags.has(tag)))
       newSelectedTags.size === 0 ? setSelectedSolutions(posts) : setSelectedSolutions(filteredSolutions)
-      setFade(true)
-    }, 200)
+    }, timeout)
   }
 
   switch (variant) {
@@ -140,7 +142,7 @@ export default function PostGrid({
           <section className={styles.posts}>
             <div className={styles.filterSection}>
               <span className={styles.showingSolutions}>
-                Showing {selectedSolutions.length} solutions
+                Showing {numberOfSolutions} solutions
                 {selectedTags.size > 0 && ` matching ${selectedTags.size} filter`}
               </span>
               <span
@@ -150,7 +152,10 @@ export default function PostGrid({
                 Clear all filters
               </span>
             </div>
-            <div className={classNames(styles.solutionsGrid, { [styles.fadeOut]: !fade }, { [styles.fadeIn]: fade })}>
+            <div
+              className={classNames(styles.solutionsGrid, { [styles.fadeOut]: !fade }, { [styles.fadeIn]: fade })}
+              onTransitionEnd={() => setFade(true)}
+            >
               {selectedSolutions.map((solution) => {
                 return <Post key={solution.path} limitTextLines={limitPostLines} {...solution} type='solution' />
               })}

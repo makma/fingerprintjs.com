@@ -189,7 +189,7 @@
   row-gap: rem(78px);
 
   @include transition((opacity));
-  @include transition-duration(0.7s);
+  @include transition-duration(0.4s);
 
   @include media('<=desktop') {
     grid-template-columns: repeat(2, 1fr);
