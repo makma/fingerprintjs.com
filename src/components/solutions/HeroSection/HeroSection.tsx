@@ -8,17 +8,17 @@ export default function HeroSection() {
   return (
     <Section className={styles.root}>
       <Container size='large' className={styles.heroContainer}>
-        <section className={styles.contentSection}>
+        <div className={styles.contentSection}>
           <p className={styles.caption}>Solutions</p>
           <h1 className={styles.title}>Build your own anti-fraud stack</h1>
           <p className={styles.description}>
             Virtually all online fraud can be prevented with accurate visitor identification. FingerprintJS makes
             designing effective anti-fraud workflows easy for any developer team.
           </p>
-        </section>
-        <section className={styles.imageSection}>
+        </div>
+        <div className={styles.imageSection}>
           <HeroSvg className={styles.image} />
-        </section>
+        </div>
       </Container>
     </Section>
   )

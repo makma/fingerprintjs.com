@@ -28,6 +28,35 @@ export default function PostGrid({
   useSwiper = false,
 }: PostGridProps) {
   return useSwiper ? (
+    <SwiperPosts
+      posts={posts}
+      name={name}
+      nameIsCentered={nameIsCentered}
+      perRow={perRow}
+      limitPostLines={limitPostLines}
+    />
+  ) : (
+    <Posts
+      posts={posts}
+      name={name}
+      nameIsCentered={nameIsCentered}
+      link={link}
+      perRow={perRow}
+      tags={tags}
+      limitPostLines={limitPostLines}
+    />
+  )
+}
+
+interface SwiperPostsProps {
+  posts: Array<PostProps>
+  name?: string
+  perRow?: 'four' | 'three'
+  nameIsCentered?: boolean
+  limitPostLines?: boolean
+}
+function SwiperPosts({ name, nameIsCentered, perRow, limitPostLines, posts }: SwiperPostsProps) {
+  return (
     <>
       <div className={classNames(styles.row, { [styles.alignNameCenter]: nameIsCentered })}>
         <h2 className={styles.name}>{name}</h2>
@@ -72,7 +101,20 @@ export default function PostGrid({
         })}
       </div>
     </>
-  ) : (
+  )
+}
+
+interface PostsProps {
+  posts: Array<PostProps>
+  name?: string
+  link?: React.ReactNode
+  tags?: string[]
+  perRow?: 'four' | 'three'
+  nameIsCentered?: boolean
+  limitPostLines?: boolean
+}
+function Posts({ posts, name, link, tags, perRow, nameIsCentered, limitPostLines }: PostsProps) {
+  return (
     <div className={styles.root}>
       {tags && (
         <div className={styles.tags}>

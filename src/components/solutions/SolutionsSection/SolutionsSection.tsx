@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Post, { PostProps } from '../../Post/Post'
 import Container from '../../common/Container'
 import classNames from 'classnames'
-import { graphql } from 'gatsby'
 import { kebabToTitle } from '../../../helpers/case'
 
 import styles from './SolutionsSection.module.scss'
@@ -80,9 +79,9 @@ export default function SolutionsSection({ posts, tags }: SolutionsSectionProps)
             <ul className={styles.tagSection}>
               {tags?.map((tag) => (
                 <li key={tag} className={styles.item} onClick={() => handleSelectedTags(tag)}>
-                  <span className={classNames(styles.tag, { [styles.selectedTag]: selectedTags.has(tag) })}>
+                  <button className={classNames(styles.tag, { [styles.selectedTag]: selectedTags.has(tag) })}>
                     {kebabToTitle(tag)}
-                  </span>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -92,22 +91,3 @@ export default function SolutionsSection({ posts, tags }: SolutionsSectionProps)
     </Container>
   )
 }
-export const pageQuery = graphql`
-  query Solution {
-    posts: allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/(blog)/.*\\.md$/" }
-        frontmatter: { isPublished: {ne: false} } 
-      }        
-      sort: { order: DESC, fields: frontmatter___publishDate }
-    ) {
-      ...PostData
-    }
-
-    tags: allMarkdownRemark {
-        group(field: frontmatter___tags) {
-          tag: fieldValue
-        }
-      }
-  }
-`
