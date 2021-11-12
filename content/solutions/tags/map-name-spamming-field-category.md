@@ -1,0 +1,4 @@
+---
+name: Spamming
+field: category
+---
