@@ -1,0 +1,4 @@
+---
+name: Cryptocurrency
+field: industry
+---
