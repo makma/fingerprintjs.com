@@ -8,7 +8,7 @@ metadata:
   description: Test Description 3
   url: https://fingerprintjs.com/solutions/test3
 publishDate: 2021-11-12T15:50:12.132Z
-title: Default Title
+title: Test Solution 3
 isPublished: true
 funnel:
   - Payment
