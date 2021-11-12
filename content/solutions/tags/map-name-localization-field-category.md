@@ -1,0 +1,4 @@
+---
+name: Localization
+field: category
+---
