@@ -8,7 +8,7 @@ metadata:
   description: Test Description 2
   url: https://fingerprintjs.com/solutions/test2
 publishDate: 2021-11-12T15:49:25.800Z
-title: Default Title
+title: Test Solution 2
 isPublished: true
 funnel:
   - Login
