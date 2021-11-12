@@ -80,8 +80,11 @@ export default function SolutionsSection({ solutions, tags }: SolutionsSectionPr
           <section className={styles.tags}>
             <ul className={styles.tagSection}>
               {tags?.map((tag) => (
-                <li key={tag} className={styles.item} onClick={() => handleSelectedTags(tag)}>
-                  <button className={classNames(styles.tag, { [styles.selectedTag]: selectedTags.has(tag) })}>
+                <li key={tag} className={styles.item}>
+                  <button
+                    className={classNames(styles.tag, { [styles.selectedTag]: selectedTags.has(tag) })}
+                    onClick={() => handleSelectedTags(tag)}
+                  >
                     {kebabToTitle(tag)}
                   </button>
                 </li>
