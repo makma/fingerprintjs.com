@@ -56,8 +56,9 @@ export default function SolutionsSection({ solutions, tags }: SolutionsSectionPr
         <section>
           <div className={styles.filterSection}>
             <span className={styles.showingSolutions}>
-              Showing {numberOfSolutions} solutions
-              {selectedTags.size > 0 && ` matching ${selectedTags.size} filter`}
+              Showing {numberOfSolutions} {numberOfSolutions === 1 ? 'solution' : 'solutions'}
+              {selectedTags.size > 0 &&
+                ` matching ${selectedTags.size} ${selectedTags.size === 1 ? 'filter' : 'filters'}`}
             </span>
             <span
               className={classNames(styles.filter, { [styles.hideFilter]: selectedTags.size === 0 })}
