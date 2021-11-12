@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: solutions-page/cms-integration
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
@@ -303,3 +303,72 @@ collections:
               },
             ],
         }
+  - name: 'Solutions'
+    label: 'Solutions'
+    folder: content/solutions
+    create: true
+    delete: true
+    fields:
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'solution-content' }
+      - {
+          label: Metadata,
+          name: metadata,
+          widget: object,
+          fields:
+            [
+              { label: Title, name: title, widget: string, default: 'Default Title' },
+              { label: Description, name: description, widget: string },
+              { label: URL, name: url, widget: string },
+              { label: Cover Image, name: image, widget: image },
+              { label: Image Alt, name: imageAlt, widget: string, required: false },
+              { label: Image Title, name: imageTitle, widget: string, required: false },
+              { label: Social Share Image (2:1 ratio), name: socialImage, widget: image, required: false },
+            ],
+        }
+      - { label: Publish date, name: publishDate, widget: datetime }
+      - { label: Title, name: title, widget: string, default: 'Default Title' }
+      - { label: Publish solution, name: isPublished, widget: boolean, default: true }
+      - name: funnel
+        label: Funnel
+        widget: relation
+        collection: 'solutionTags'
+        searchFields: ['name']
+        valueField: 'name'
+        displayFields: ['name']
+        multiple: true
+        default: ['fingerprinting']
+      - name: category
+        label: Category
+        widget: relation
+        collection: 'solutionTags'
+        searchFields: ['name']
+        valueField: 'name'
+        displayFields: ['name']
+        multiple: true
+        default: ['fingerprinting']
+      - name: industry
+        label: Industry
+        widget: relation
+        collection: 'solutionTags'
+        searchFields: ['name']
+        valueField: 'name'
+        displayFields: ['name']
+        multiple: true
+        default: ['fingerprinting']
+  - name: 'solutionTags'
+    label: 'Solution Tags'
+    folder: content/solutions/tags
+    create: true
+    fields:
+      - {
+          label: 'Name',
+          name: 'name',
+          widget: string,
+          pattern: ['[a-z]+[a-z\-]*', 'Must be all lowercase words, optionally separated by a "-".'],
+        },
+        {
+          label: 'Field',
+          name: 'field',
+          widget: select,
+          options: ["funnel", "category", "industry"],
+        },
