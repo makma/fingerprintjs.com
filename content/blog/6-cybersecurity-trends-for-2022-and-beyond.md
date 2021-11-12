@@ -1,7 +1,7 @@
 ---
 templateKey: long-form-content
 metadata:
-  title: 6 Cybersecurity Trends for 2022 and Beyond
+  title: 6 cybersecurity trends for 2022 and beyond
   imageAlt: Cybersecurity Trends 2022
   imageTitle: Cybersecurity Trends 2022
   image: /img/uploads/image2.png
