@@ -5,12 +5,20 @@
 }
 
 .tags {
+  margin-left: rem(36px);
+
   @include media('<=phoneLandscape') {
     display: none;
   }
 
+  .tagCategory {
+    @include sans($size: 14px, $weight: 600, $lh: 140%, $color: rgba(13, 16, 43, 0.48));
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
   .tagSection {
-    margin-left: rem(36px);
+    padding: rem(24px) 0 rem(40px) 0;
 
     .item {
       display: flex;

@@ -9,9 +9,11 @@ import styles from './SolutionsSection.module.scss'
 
 export interface SolutionsSectionProps {
   solutions: Array<SolutionProps>
-  tags?: string[]
+  funnel: string[]
+  category: string[]
+  industry: string[]
 }
-export default function SolutionsSection({ solutions, tags }: SolutionsSectionProps) {
+export default function SolutionsSection({ solutions, funnel, category, industry }: SolutionsSectionProps) {
   const [selectedTags, setSelectedTags] = useState(new Set())
   const [filteredSolutions, setFilteredSolutions] = useState(solutions)
   const [fade, setFade] = useState(true)
@@ -77,22 +79,48 @@ export default function SolutionsSection({ solutions, tags }: SolutionsSectionPr
             />
           </div>
         </section>
-        {tags && (
-          <section className={styles.tags}>
-            <ul className={styles.tagSection}>
-              {tags?.map((tag) => (
-                <li key={tag} className={styles.item}>
-                  <button
-                    className={classNames(styles.tag, { [styles.selectedTag]: selectedTags.has(tag) })}
-                    onClick={() => handleSelectedTags(tag)}
-                  >
-                    {kebabToTitle(tag)}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
+
+        <section className={styles.tags}>
+          <span className={styles.tagCategory}>Funnel</span>
+          <ul className={styles.tagSection}>
+            {funnel.map((tag) => (
+              <li key={tag} className={styles.item}>
+                <button
+                  className={classNames(styles.tag, { [styles.selectedTag]: selectedTags.has(tag) })}
+                  onClick={() => handleSelectedTags(tag)}
+                >
+                  {kebabToTitle(tag)}
+                </button>
+              </li>
+            ))}
+          </ul>
+          <span className={styles.tagCategory}>Category</span>
+          <ul className={styles.tagSection}>
+            {category.map((tag) => (
+              <li key={tag} className={styles.item}>
+                <button
+                  className={classNames(styles.tag, { [styles.selectedTag]: selectedTags.has(tag) })}
+                  onClick={() => handleSelectedTags(tag)}
+                >
+                  {kebabToTitle(tag)}
+                </button>
+              </li>
+            ))}
+          </ul>
+          <span className={styles.tagCategory}>Industry</span>
+          <ul className={styles.tagSection}>
+            {industry.map((tag) => (
+              <li key={tag} className={styles.item}>
+                <button
+                  className={classNames(styles.tag, { [styles.selectedTag]: selectedTags.has(tag) })}
+                  onClick={() => handleSelectedTags(tag)}
+                >
+                  {kebabToTitle(tag)}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
       </div>
     </Container>
   )
