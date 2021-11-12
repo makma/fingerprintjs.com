@@ -305,7 +305,7 @@ collections:
         }
   - name: 'Solutions'
     label: 'Solutions'
-    folder: content/solutions
+    folder: content/solutions/solutions
     create: true
     delete: true
     fields:
