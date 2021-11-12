@@ -331,12 +331,12 @@ collections:
       - name: funnel
         label: Funnel
         widget: relation
-        collection: 'solutionTags'
+        collection: 'funnel'
         searchFields: ['name']
         valueField: 'name'
         displayFields: ['name']
         multiple: true
-        default: ['fingerprinting']
+        default: ['Other']
       - name: category
         label: Category
         widget: relation
@@ -345,7 +345,7 @@ collections:
         valueField: 'name'
         displayFields: ['name']
         multiple: true
-        default: ['fingerprinting']
+        default: ['Authentication']
       - name: industry
         label: Industry
         widget: relation
@@ -354,10 +354,10 @@ collections:
         valueField: 'name'
         displayFields: ['name']
         multiple: true
-        default: ['fingerprinting']
-  - name: 'solutionTags'
-    label: 'Solution Tags'
-    folder: content/solutions/tags
+        default: ['Payment Processing']
+  - name: 'funnel'
+    label: 'Funnel Tags'
+    folder: content/solutions/tags/funnel
     create: true
     fields:
       - {
@@ -365,10 +365,26 @@ collections:
           name: 'name',
           widget: string,
           pattern: ['[a-z]+[a-z\-]*', 'Must be all lowercase words, optionally separated by a "-".'],
-        },
-        {
-          label: 'Field',
-          name: 'field',
-          widget: select,
-          options: ["funnel", "category", "industry"],
-        },
+        }
+  - name: 'category'
+    label: 'Category Tags'
+    folder: content/solutions/tags/category
+    create: true
+    fields:
+      - {
+          label: 'Name',
+          name: 'name',
+          widget: string,
+          pattern: ['[a-z]+[a-z\-]*', 'Must be all lowercase words, optionally separated by a "-".'],
+        }
+  - name: 'industry'
+    label: 'Industry Tags'
+    folder: content/solutions/tags/industry
+    create: true
+    fields:
+      - {
+          label: 'Name',
+          name: 'name',
+          widget: string,
+          pattern: ['[a-z]+[a-z\-]*', 'Must be all lowercase words, optionally separated by a "-".'],
+        }

@@ -1,4 +1,0 @@
----
-name: Financial
-field: industry
----

@@ -1,4 +1,0 @@
----
-name: Incognito
-field: category
----

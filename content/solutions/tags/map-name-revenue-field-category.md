@@ -1,4 +1,0 @@
----
-name: Revenue
-field: category
----

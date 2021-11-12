@@ -1,4 +1,0 @@
----
-name: Trolling
-field: category
----

@@ -1,4 +1,0 @@
----
-name: Gambling
-field: industry
----
