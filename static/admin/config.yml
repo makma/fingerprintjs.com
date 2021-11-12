@@ -340,7 +340,7 @@ collections:
       - name: category
         label: Category
         widget: relation
-        collection: 'solutionTags'
+        collection: 'category'
         searchFields: ['name']
         valueField: 'name'
         displayFields: ['name']
@@ -349,7 +349,7 @@ collections:
       - name: industry
         label: Industry
         widget: relation
-        collection: 'solutionTags'
+        collection: 'industry'
         searchFields: ['name']
         valueField: 'name'
         displayFields: ['name']
