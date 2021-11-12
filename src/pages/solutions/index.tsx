@@ -30,9 +30,9 @@ export default function Solutions({ data }: SolutionsProps) {
       <HeroSection />
       <SolutionsSection
         solutions={solutions.map(({ node }) => node).map((node) => mapToSolution(node))}
-        funnel={funnelTags}
-        category={categoryTags}
-        industry={industryTags}
+        funnelTags={funnelTags}
+        categoryTags={categoryTags}
+        industryTags={industryTags}
       />
     </LayoutTemplate>
   )
