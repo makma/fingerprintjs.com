@@ -10,8 +10,9 @@ export interface TagListProps {
   activeTag?: string
   format?: 'upper' | 'title'
   direction?: 'horizontal' | 'vertical'
+  link?: string
 }
-export default function TagList({ tags, activeTag, format = 'upper', direction = 'horizontal' }: TagListProps) {
+export default function TagList({ tags, activeTag, format = 'upper', direction = 'horizontal', link }: TagListProps) {
   function formatTag(tag: string) {
     switch (format) {
       case 'upper':
@@ -32,12 +33,16 @@ export default function TagList({ tags, activeTag, format = 'upper', direction =
             { [styles.vertical]: direction === 'vertical' }
           )}
         >
-          {tag === activeTag ? (
-            <span className={classNames(styles.tag, styles.highlight)}>{formatTag(tag)}</span>
+          {link ? (
+            tag === activeTag ? (
+              <span className={classNames(styles.tag, styles.highlight)}>{formatTag(tag)}</span>
+            ) : (
+              <Link to={`${link}${tag}/`} className={styles.tag}>
+                {formatTag(tag)}
+              </Link>
+            )
           ) : (
-            <Link to={`/blog/tag/${tag}/`} className={styles.tag}>
-              {formatTag(tag)}
-            </Link>
+            <span className={styles.tagNoLink}>{formatTag(tag)}</span>
           )}
         </li>
       ))}

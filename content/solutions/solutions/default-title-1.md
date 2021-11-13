@@ -12,6 +12,7 @@ title: Test Solution 2
 isPublished: true
 funnel:
   - Login
+  - Signup
 category:
   - Authentication
   - Identity Fraud

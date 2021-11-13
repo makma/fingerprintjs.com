@@ -22,6 +22,7 @@
   padding-bottom: rem(8px);
 }
 
+.tagNoLink,
 .tag {
   padding: rem(5px) rem(10px);
   border-radius: rem(19px);
@@ -29,7 +30,8 @@
   border: 1px solid c('off-white');
 
   font-size: 1.75rem;
-
+}
+.tag {
   @include transition((background-color));
 
   &:hover {
