@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: solutions-page/cms-integration
+  branch: feat/new-solutions-page
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
