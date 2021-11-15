@@ -183,7 +183,7 @@ collections:
         }
       - { label: Body, name: body, widget: markdown }
   - name: 'tag'
-    label: 'Tag'
+    label: 'Blog Tags'
     folder: content/tag
     create: true
     fields:
