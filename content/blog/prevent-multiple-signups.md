@@ -12,6 +12,7 @@ metadata:
 featured: false
 publishDate: 2021-03-16T18:09:51.690Z
 title: "How to Prevent Multiple Signups With FingerprintJS Pro "
+isPublished: true
 tags:
   - fingerprinting
   - account sharing
@@ -19,7 +20,6 @@ tags:
   - engineering
 authors:
   - Savannah Copland
-isPublished: true
 ---
 <i>This article is a tutorial where we will build a workflow that prevents signup abuse on a free trial form using the FingerprintJS Pro API. 
 
@@ -81,7 +81,7 @@ function initFingerprintJS() {
 
 Save the page after you’ve installed the snippet, then open your browser’s developer console and load the site. You should see an alphanumeric hash in the console.
 
-![How to find your visitorID in the browser console - part 1](/img/uploads/image2.png "How to find your visitorID in the browser console - part 1")
+![How to find your visitorID in the browser console - part 1](/img/uploads/image2-for-multiple-signups.png "How to find your visitorID in the browser console - part 1")
 
 ![How to find your visitorID in the browser console - part 2](/img/uploads/image5.png "How to find your visitorID in the browser console - part 2")
 
