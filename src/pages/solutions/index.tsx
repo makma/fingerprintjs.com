@@ -12,7 +12,10 @@ interface SolutionsProps {
 }
 export default function Solutions({ data }: SolutionsProps) {
   const { edges: solutions } = data.solutions
-  const tags = data.tags.group.map(({ tag }) => tag) as string[]
+  const funnelTags = data.funnel.group.map(({ tag }) => tag) as string[]
+  const categoryTags = data.category.group.map(({ tag }) => tag) as string[]
+  const industryTags = data.industry.group.map(({ tag }) => tag) as string[]
+
   const { pathname } = useLocation()
   let siteMetadata = useSiteMetadata()
   siteMetadata = {
@@ -25,7 +28,12 @@ export default function Solutions({ data }: SolutionsProps) {
   return (
     <LayoutTemplate siteMetadata={siteMetadata}>
       <HeroSection />
-      <SolutionsSection solutions={solutions.map(({ node }) => node).map((node) => mapToSolution(node))} tags={tags} />
+      <SolutionsSection
+        solutions={solutions.map(({ node }) => node).map((node) => mapToSolution(node))}
+        funnelTags={funnelTags}
+        categoryTags={categoryTags}
+        industryTags={industryTags}
+      />
     </LayoutTemplate>
   )
 }
@@ -34,18 +42,27 @@ export const pageQuery = graphql`
   query Solution {
     solutions: allMarkdownRemark(
       filter: {
-        fileAbsolutePath: { regex: "/(blog)/.*\\.md$/" }
+        fileAbsolutePath: {regex: "/(solutions)/(solutions).*\\.md$/"}
         frontmatter: { isPublished: {ne: false} } 
       }        
       sort: { order: DESC, fields: frontmatter___publishDate }
     ) {
       ...SolutionData
     }
-
-    tags: allMarkdownRemark {
-        group(field: frontmatter___tags) {
+    funnel: allMarkdownRemark {
+        group(field: frontmatter___funnel) {
           tag: fieldValue
         }
+      }   
+    category: allMarkdownRemark {
+      group(field: frontmatter___category) {
+        tag: fieldValue
       }
+    }  
+    industry: allMarkdownRemark {
+      group(field: frontmatter___industry) {
+        tag: fieldValue
+      }
+    }   
   }
 `

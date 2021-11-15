@@ -122,7 +122,7 @@ function PostGrid({ posts, name, link, tags, perRow, nameIsCentered, limitPostLi
       {tags && (
         <div className={styles.tags}>
           <h2>Tags</h2>
-          <TagList tags={tags} direction='vertical' format='title' />
+          <TagList link='/blog/tag/' tags={tags} direction='vertical' format='title' />
         </div>
       )}
       <div className={styles.posts}>

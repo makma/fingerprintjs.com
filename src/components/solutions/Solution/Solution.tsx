@@ -13,7 +13,10 @@ export interface SolutionProps {
   description: string
   publishDate: string
   path: string
-  tags: string[]
+  funnel: string[]
+  category: string[]
+  industry: string[]
+  tags?: string[]
   image?: GatsbyTypes.File
   imageAlt?: string
   imageTitle?: string
@@ -26,10 +29,13 @@ export default function Solution({
   imageAlt,
   imageTitle,
   path,
-  tags,
+  funnel,
+  category,
+  industry,
   className,
 }: SolutionProps) {
   const imageFluid = image?.childImageSharp?.gatsbyImageData
+  const tags = [...funnel, ...category, ...industry]
   return (
     <Link to={getRelativeUrl(path)} className={classNames(className, styles.solution)}>
       {imageFluid && (
@@ -66,14 +72,27 @@ export function mapToSolution(data: any, editing?: boolean): SolutionProps {
       description: '',
       publishDate: dateFormatter.format(Date.now()),
       path: '/',
+      funnel: [],
+      category: [],
+      industry: [],
       tags: [],
     }
 
     if (data.frontmatter) {
-      const { publishDate = dateFormatter.format(Date.now()), title = '', metadata, tags } = data.frontmatter
+      const {
+        publishDate = dateFormatter.format(Date.now()),
+        title = '',
+        metadata,
+        funnel,
+        category,
+        industry,
+      } = data.frontmatter
       solution.publishDate = publishDate
       solution.title = title
-      solution.tags = tags
+      solution.funnel = funnel
+      solution.category = category
+      solution.industry = industry
+      solution.tags = [...funnel, ...category, ...industry]
 
       if (metadata) {
         const { description = '', image, url } = metadata
@@ -86,7 +105,7 @@ export function mapToSolution(data: any, editing?: boolean): SolutionProps {
     return solution
   }
 
-  const { publishDate = Date.now(), title = '', metadata, tags } = data.frontmatter
+  const { publishDate = Date.now(), title = '', metadata, funnel, category, industry } = data.frontmatter
   const { description = '', image, imageAlt, imageTitle, url } = metadata
 
   return {
@@ -97,7 +116,10 @@ export function mapToSolution(data: any, editing?: boolean): SolutionProps {
     imageAlt,
     imageTitle,
     path: url,
-    tags,
+    funnel,
+    category,
+    industry,
+    tags: [...funnel, ...category, ...industry],
   } as SolutionProps
 }
 
@@ -124,7 +146,9 @@ export const query = graphql`
           }
           title
           publishDate
-          tags
+          funnel
+          category
+          industry
         }
       }
     }
