@@ -4,7 +4,7 @@ import Section from '../components/common/Section'
 import { LayoutTemplate } from '../components/Layout'
 import Container from '../components/common/Container'
 import { mapToPost } from '../components/Post/Post'
-import PostGrid from '../components/PostGrid/PostGrid'
+import Posts from '../components/Posts/Posts'
 import { GeneratedPageContext } from '../helpers/types'
 import PaginationNav from '../components/PaginationNav/PaginationNav'
 import BreadcrumbsSEO from '../components/Breadcrumbs/BreadcrumbsSEO'
@@ -46,7 +46,7 @@ export default function BlogFeatured({ data, pageContext }: BlogFeaturedProps) {
         <Container size='large'>
           <h1>Featured Articles</h1>
 
-          <PostGrid posts={posts.map(({ node }) => node).map((node) => mapToPost(node))} />
+          <Posts posts={posts.map(({ node }) => node).map((node) => mapToPost(node))} />
 
           <PaginationNav currentPage={currentPage} numPages={numPages} basePath='/blog/featured/' />
         </Container>

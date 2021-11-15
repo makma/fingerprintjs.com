@@ -4,7 +4,7 @@ import Section from '../components/common/Section'
 import { LayoutTemplate } from '../components/Layout'
 import Container from '../components/common/Container'
 import Post, { mapToPost, PostProps } from '../components/Post/Post'
-import PostGrid from '../components/PostGrid/PostGrid'
+import Posts from '../components/Posts/Posts'
 import PaginationNav from '../components/PaginationNav/PaginationNav'
 import useSiteMetadata from '../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
@@ -40,11 +40,11 @@ export default function Blog({ data, pageContext }: BlogProps) {
           <h1>Blog Articles</h1>
 
           {isFirst && <Featured featuredPosts={featuredPosts.map(({ node }) => node).map((node) => mapToPost(node))} />}
-          <PostGrid
+          <Posts
             name='All Articles'
             posts={posts.map(({ node }) => node).map((node) => mapToPost(node))}
             tags={tags}
-            perRow='three'
+            perRow={3}
           />
 
           <PaginationNav currentPage={currentPage} numPages={numPages} basePath='/blog/' />
@@ -100,7 +100,7 @@ function Featured({ featuredPosts }: { featuredPosts: Array<PostProps> }) {
     <div>
       {hasMainFeaturedPost && <Post {...featuredPosts[0]} variant='wide' />}
       {hasFeaturedPosts && (
-        <PostGrid
+        <Posts
           name='Featured'
           posts={featuredPosts.slice(1)}
           link={

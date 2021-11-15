@@ -1,0 +1,131 @@
+.gridContainer {
+  padding-bottom: rem(100px);
+
+  @include media('<=phoneLandscape') {
+    padding: 0 rem(16px) rem(50px) rem(16px);
+  }
+}
+
+.tags {
+  margin-left: rem(36px);
+
+  @include media('<=phoneLandscape') {
+    display: none;
+  }
+
+  .tagCategory {
+    @include sans($size: 14px, $weight: 600, $lh: 140%, $color: rgba(13, 16, 43, 0.48));
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .tagSection {
+    padding: rem(24px) 0 rem(40px) 0;
+
+    .item {
+      display: flex;
+      margin: 0 !important;
+
+      margin: rem(8px) rem(8px) 0 0;
+      padding-bottom: rem(8px);
+    }
+
+    .tag {
+      padding: rem(5px) rem(10px);
+      border-radius: rem(19px);
+      background-color: c('off-white');
+      border: 1px solid c('off-white');
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      font-size: 1.75rem;
+      cursor: pointer;
+
+      @include transition((background-color));
+
+      &:hover {
+        background-color: adjust-color(c('off-white'), $lightness: -5%, $saturation: 2%);
+      }
+    }
+
+    .selectedTag {
+      background-color: c('brand-fire');
+      color: v('white');
+
+      &:hover {
+        background-color: adjust-color(c('brand-fire'), $lightness: -20%);
+      }
+    }
+  }
+}
+
+.solutionsRoot {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+
+  margin-top: rem(64px);
+
+  @include media('<=desktop') {
+    margin-top: 0;
+  }
+
+  @include media('<=phoneLandscape') {
+    display: flex;
+  }
+}
+.filterSection {
+  display: flex;
+  margin-bottom: rem(28px);
+
+  @include media('<=phoneLandscape') {
+    display: none;
+  }
+
+  .showingSolutions,
+  .filter {
+    @include sans($size: 16px, $weight: v('semi'), $lh: 130%);
+  }
+
+  .filter {
+    color: c('brand-fire');
+    cursor: pointer;
+    margin-left: rem(24px);
+
+    &:hover {
+      color: adjust-color(c('brand-fire'), $lightness: -20%);
+    }
+  }
+
+  .hideFilter {
+    display: none;
+  }
+}
+
+.solutionsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: rem(32px);
+  row-gap: rem(78px);
+
+  @include transition((opacity));
+  @include transition-duration(0.4s);
+
+  @include media('<=desktop') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media('<tablet') {
+    grid-template-columns: 1fr;
+    row-gap: rem(36px);
+  }
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+.fadeIn {
+  opacity: 1;
+}

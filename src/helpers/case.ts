@@ -19,3 +19,7 @@ export function camelize(text: string) {
     return index === 0 ? match.toLowerCase() : match.toUpperCase()
   })
 }
+
+export function pluralize(count: number, noun: string, suffix = 's') {
+  return `${count} ${noun}${count !== 1 ? suffix : ''}`
+}

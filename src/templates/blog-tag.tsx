@@ -4,7 +4,7 @@ import Section from '../components/common/Section'
 import { LayoutTemplate } from '../components/Layout'
 import Container from '../components/common/Container'
 import { mapToPost } from '../components/Post/Post'
-import PostGrid from '../components/PostGrid/PostGrid'
+import Posts from '../components/Posts/Posts'
 import { GeneratedPageContext } from '../helpers/types'
 import PaginationNav from '../components/PaginationNav/PaginationNav'
 import { kebabToTitle } from '../helpers/case'
@@ -47,7 +47,7 @@ export default function BlogTag({ data, pageContext }: BlogTagProps) {
         <Container size='large'>
           <h1>{`${kebabToTitle(tag)}`} Articles</h1>
 
-          <PostGrid
+          <Posts
             posts={posts
               .map(({ node }) => node)
               .map((node) => mapToPost(node))

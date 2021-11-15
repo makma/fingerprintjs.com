@@ -8,7 +8,7 @@ import { useLocation } from '@reach/router'
 import useSiteMetadata from '../hooks/useSiteMetadata'
 import PaginationNav from '../components/PaginationNav/PaginationNav'
 import { mapToPost } from '../components/Post/Post'
-import PostGrid from '../components/PostGrid/PostGrid'
+import Posts from '../components/Posts/Posts'
 import BreadcrumbsSEO from '../components/Breadcrumbs/BreadcrumbsSEO'
 
 interface CaseStudyProps {
@@ -38,7 +38,7 @@ export default function CaseStudies({ data, pageContext }: CaseStudyProps) {
         <Container size='large'>
           <h1>Case Studies</h1>
 
-          <PostGrid posts={posts.map(({ node }) => node).map((node) => mapToPost(node))} perRow='four' />
+          <Posts posts={posts.map(({ node }) => node).map((node) => mapToPost(node))} perRow={4} />
 
           <PaginationNav currentPage={currentPage} numPages={numPages} basePath='/case-studies/' />
         </Container>

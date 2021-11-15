@@ -2,7 +2,7 @@ import { graphql, StaticQuery } from 'gatsby'
 import React from 'react'
 import { ArrayElement } from '../../helpers/types'
 import { mapToPost, PostProps } from '../Post/Post'
-import PostGrid from '../PostGrid/PostGrid'
+import Posts from '../Posts/Posts'
 
 export interface RelatedArticlesProps {
   article: PostProps
@@ -25,10 +25,10 @@ export default function RelatedArticles({
         const allArticles = data.allMarkdownRemark.edges.map(({ node }) => node)
         const relatedArticles = getRelatedArticles(article, allArticles, count)
         return relatedArticles.length > 0 ? (
-          <PostGrid
+          <Posts
             posts={relatedArticles}
             name={title ? title : 'Related Articles'}
-            perRow='four'
+            perRow={4}
             nameIsCentered={titleIsCentered}
             limitPostLines={limitPostLines}
             useSwiper
