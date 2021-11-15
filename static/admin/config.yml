@@ -134,7 +134,7 @@ collections:
       - { label: Title, name: title, widget: string, default: 'Default Title' }
       - { label: Publish article, name: isPublished, widget: boolean, default: true }
       - name: tags
-        label: Tags
+        label: Blog Tags
         widget: relation
         collection: 'tag'
         searchFields: ['name']
