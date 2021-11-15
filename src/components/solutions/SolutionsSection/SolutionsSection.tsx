@@ -3,7 +3,7 @@ import Solution, { SolutionProps } from '../Solution/Solution'
 import Grid from '../../Grid/Grid'
 import Container from '../../common/Container'
 import classNames from 'classnames'
-import { kebabToTitle } from '../../../helpers/case'
+import { kebabToTitle, pluralize } from '../../../helpers/case'
 
 import styles from './SolutionsSection.module.scss'
 
@@ -65,9 +65,8 @@ export default function SolutionsSection({ solutions, funnelTags, categoryTags, 
         <section>
           <div className={styles.filterSection}>
             <span className={styles.showingSolutions}>
-              Showing {numberOfSolutions} {numberOfSolutions === 1 ? 'solution' : 'solutions'}
-              {selectedTags.size > 0 &&
-                ` matching ${selectedTags.size} ${selectedTags.size === 1 ? 'filter' : 'filters'}`}
+              Showing {pluralize(numberOfSolutions, 'solution')}
+              {selectedTags.size > 0 && ` matching ${pluralize(selectedTags.size, 'filter')}`}
             </span>
             <span
               className={classNames(styles.filter, { [styles.hideFilter]: selectedTags.size === 0 })}
@@ -81,7 +80,7 @@ export default function SolutionsSection({ solutions, funnelTags, categoryTags, 
               items={filteredSolutions.map((solution) => {
                 return <Solution key={solution.path} {...solution} />
               })}
-              perRow='three'
+              perRow={3}
               className={classNames(styles.solutionsGrid, { [styles.fadeOut]: !fade }, { [styles.fadeIn]: fade })}
             />
           </div>

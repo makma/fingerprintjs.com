@@ -28,7 +28,7 @@ export default function RelatedArticles({
           <Posts
             posts={relatedArticles}
             name={title ? title : 'Related Articles'}
-            perRow='four'
+            perRow={4}
             nameIsCentered={titleIsCentered}
             limitPostLines={limitPostLines}
             useSwiper

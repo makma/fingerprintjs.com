@@ -13,7 +13,7 @@ export interface PostsProps {
   name?: string
   link?: React.ReactNode
   tags?: string[]
-  perRow?: 'four' | 'three'
+  perRow?: 3 | 4
   nameIsCentered?: boolean
   limitPostLines?: boolean
   useSwiper?: boolean
@@ -24,7 +24,7 @@ export default function Posts({
   nameIsCentered,
   link,
   tags,
-  perRow = 'four',
+  perRow = 4,
   limitPostLines,
   useSwiper = false,
 }: PostsProps) {
@@ -52,7 +52,7 @@ export default function Posts({
 interface SwiperPostsProps {
   posts: Array<PostProps>
   name?: string
-  perRow?: 'four' | 'three'
+  perRow?: 3 | 4
   nameIsCentered?: boolean
   limitPostLines?: boolean
 }
@@ -107,14 +107,10 @@ function SwiperPosts({ name, nameIsCentered, perRow, limitPostLines, posts }: Sw
   )
 }
 
-interface PostGridProps {
-  posts: Array<PostProps>
-  name?: string
+interface PostGridProps extends SwiperPostsProps {
   link?: React.ReactNode
   tags?: string[]
-  perRow?: 'four' | 'three'
-  nameIsCentered?: boolean
-  limitPostLines?: boolean
+  className?: string | string[]
 }
 function PostGrid({ posts, name, link, tags, perRow, nameIsCentered, limitPostLines }: PostGridProps) {
   return (

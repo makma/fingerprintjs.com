@@ -44,7 +44,7 @@ export default function Blog({ data, pageContext }: BlogProps) {
             name='All Articles'
             posts={posts.map(({ node }) => node).map((node) => mapToPost(node))}
             tags={tags}
-            perRow='three'
+            perRow={3}
           />
 
           <PaginationNav currentPage={currentPage} numPages={numPages} basePath='/blog/' />

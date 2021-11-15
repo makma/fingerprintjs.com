@@ -38,7 +38,7 @@ export default function CaseStudies({ data, pageContext }: CaseStudyProps) {
         <Container size='large'>
           <h1>Case Studies</h1>
 
-          <Posts posts={posts.map(({ node }) => node).map((node) => mapToPost(node))} perRow='four' />
+          <Posts posts={posts.map(({ node }) => node).map((node) => mapToPost(node))} perRow={4} />
 
           <PaginationNav currentPage={currentPage} numPages={numPages} basePath='/case-studies/' />
         </Container>
