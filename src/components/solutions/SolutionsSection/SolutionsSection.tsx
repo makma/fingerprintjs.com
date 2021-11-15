@@ -81,7 +81,7 @@ export default function SolutionsSection({ solutions, funnelTags, categoryTags, 
                 return <Solution key={solution.path} {...solution} />
               })}
               perRow={3}
-              className={classNames(styles.solutionsGrid, { [styles.fadeOut]: !fade }, { [styles.fadeIn]: fade })}
+              className={classNames(styles.solutionsGrid, { [styles.fadeOut]: !fade, [styles.fadeIn]: fade })}
             />
           </div>
         </section>
