@@ -11,6 +11,7 @@ metadata:
 featured: true
 publishDate: 2021-05-17T20:01:48.851Z
 title: 6 Ways to Permanently Ban Users from Your Website
+isPublished: true
 tags:
   - web
   - fingerprinting
