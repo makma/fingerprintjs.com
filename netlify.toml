@@ -10,3 +10,6 @@
 
 [context.branch-deploy]
   command = "yarn noIndexBuild"
+
+[[plugins]]
+  package = "@netlify/plugin-gatsby"
