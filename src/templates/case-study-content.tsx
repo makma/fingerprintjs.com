@@ -153,8 +153,8 @@ export function CaseStudyContentPreview({ entry, widgetFor }: PreviewTemplateCom
     <PreviewProviders>
       <CaseStudyContentTemplate
         metadata={mapToMetadata(metadata)}
-        header={mapToHeader(header, true)}
-        summary={mapToSummary(summary, true)}
+        header={mapToHeader(header)}
+        summary={mapToSummary(summary)}
         body={widgetFor('body') ?? <></>}
         footer={mapToFooter(footer)}
       />
@@ -176,13 +176,13 @@ function mapToMetadata(queryMetadata: QueryMetadata): GatsbyTypes.SiteSiteMetada
 type QueryHeader = NonNullable<
   NonNullable<GatsbyTypes.CaseStudyContentQuery['markdownRemark']>['frontmatter']
 >['header']
-function mapToHeader(queryHeader: QueryHeader, preview = false): HeaderProps {
+function mapToHeader(queryHeader: QueryHeader): HeaderProps {
   return {
     subLabel: queryHeader?.subLabel ?? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     subTitle:
       queryHeader?.subTitle ??
       'Vestibulum ut mi eleifend, auctor ligula ut, feugiat nunc. Donec molestie ipsum at sagittis elementum.',
-    description: preview ? (
+    description: (
       <MarkdownContent
         markdown={
           queryHeader?.markdown__Content ??
@@ -190,8 +190,6 @@ function mapToHeader(queryHeader: QueryHeader, preview = false): HeaderProps {
         }
         className={headerStyles.content}
       />
-    ) : (
-      <DangerouslyRenderHtmlContent content={queryHeader?.markdown__Content ?? ''} className={headerStyles.content} />
     ),
     pdfLink: queryHeader?.pdf?.publicURL ?? '/',
   } as HeaderProps
@@ -200,7 +198,7 @@ function mapToHeader(queryHeader: QueryHeader, preview = false): HeaderProps {
 type QuerySummary = NonNullable<
   NonNullable<GatsbyTypes.CaseStudyContentQuery['markdownRemark']>['frontmatter']
 >['summary']
-function mapToSummary(querySummary: QuerySummary, preview = false): SummaryProps {
+function mapToSummary(querySummary: QuerySummary): SummaryProps {
   return {
     results:
       querySummary?.results?.map(
@@ -210,16 +208,7 @@ function mapToSummary(querySummary: QuerySummary, preview = false): SummaryProps
             iconAlt: result?.iconAlt,
             iconTitle: result?.iconTitle,
             title: result?.title ?? `Nunc rhoncus et eros non lobortis.`,
-            children: preview ? (
-              <MarkdownContent
-                markdown={
-                  result?.markdown__Content ??
-                  'Sed ut fermentum dolor. Vivamus pulvinar nisi leo, in accumsan diam pretium id. Vestibulum aliquam posuere enim, sed finibus sapien fringilla pharetra. Ut sollicitudin nunc non dui placerat facilisis. Duis neque turpis, dictum sit amet sagittis ut, finibus ac eros. Cras pulvinar laoreet diam vel lacinia.'
-                }
-              />
-            ) : (
-              <DangerouslyRenderHtmlContent content={result?.markdown__Content ?? ''} />
-            ),
+            children: <DangerouslyRenderHtmlContent content={result?.markdown__Content ?? ''} />,
           } as Result)
       ) ?? [],
     description:

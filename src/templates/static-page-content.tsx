@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby'
 import React from 'react'
-import { DangerouslyRenderHtmlContent, MarkdownContent } from '../components/Content/Content'
+import { MarkdownContent } from '../components/Content/Content'
 import { PreviewTemplateComponentProps } from 'netlify-cms-core'
 import { InlineCtaProps } from '../components/widgets/InlineCta'
 import { HeroProps } from '../components/widgets/Hero'
@@ -153,9 +153,9 @@ export function StaticPageContentPreview({ entry }: PreviewTemplateComponentProp
       <StaticPageContentTemplate
         metadata={mapToMetadata(metadata)}
         invertContent={invertContent}
-        inlineCta={mapToInlineCta(inlineCta, true)}
-        cardSection={mapToCardSection(cardSection, true)}
-        blocks={mapToBlocks(blocks, true)}
+        inlineCta={mapToInlineCta(inlineCta)}
+        cardSection={mapToCardSection(cardSection)}
+        blocks={mapToBlocks(blocks)}
         hero={mapToHero(hero)}
         content={mapToPost({ frontmatter: entry.get('data').toObject() })}
         relatedArticlesTitle={relatedArticlesTitle}
@@ -192,7 +192,7 @@ function mapToHero(queryHero: QueryHero): HeroProps {
 type QueryCardSection = NonNullable<
   NonNullable<GatsbyTypes.StaticPageContentQuery['markdownRemark']>['frontmatter']
 >['cardSection']
-function mapToCardSection(queryCardSection: QueryCardSection, preview = false): CardSectionProps {
+function mapToCardSection(queryCardSection: QueryCardSection): CardSectionProps {
   return {
     title: queryCardSection?.title ?? 'Vivamus at ex a mi bibendum sollicitudin sit amet laoreet mi.',
     subtitle: queryCardSection?.subtitle ?? '',
@@ -204,7 +204,7 @@ function mapToCardSection(queryCardSection: QueryCardSection, preview = false): 
             iconAlt: card?.iconAlt,
             iconTitle: card?.iconTitle,
             title: card?.title ?? `Nunc rhoncus et eros non lobortis. #${index}`,
-            content: preview ? (
+            content: (
               <MarkdownContent
                 markdown={
                   card?.markdown__Content ??
@@ -212,8 +212,6 @@ function mapToCardSection(queryCardSection: QueryCardSection, preview = false): 
                 }
                 className={cardStyles.content}
               />
-            ) : (
-              <DangerouslyRenderHtmlContent content={card?.markdown__Content ?? ''} className={cardStyles.content} />
             ),
           } as Card)
       ) ?? [],
@@ -223,12 +221,12 @@ function mapToCardSection(queryCardSection: QueryCardSection, preview = false): 
 type QueryBlock = ArrayElement<
   NonNullable<NonNullable<GatsbyTypes.StaticPageContentQuery['markdownRemark']>['frontmatter']>['blocks']
 >
-function mapToBlocks(queryBlocks: QueryBlock[], preview = false): BlockWithImage[] {
+function mapToBlocks(queryBlocks: QueryBlock[]): BlockWithImage[] {
   return (
     queryBlocks?.map(
       (block, index) =>
         ({
-          content: preview ? (
+          content: (
             <MarkdownContent
               markdown={
                 block?.markdown__Content ??
@@ -236,8 +234,6 @@ function mapToBlocks(queryBlocks: QueryBlock[], preview = false): BlockWithImage
               }
               className={blockStyles.content}
             />
-          ) : (
-            <DangerouslyRenderHtmlContent content={block?.markdown__Content ?? ''} className={blockStyles.content} />
           ),
           image: block?.image,
           imageAlt: block?.imageAlt,
@@ -256,10 +252,10 @@ function mapToBlocks(queryBlocks: QueryBlock[], preview = false): BlockWithImage
 type QueryInlineCta = NonNullable<
   NonNullable<GatsbyTypes.StaticPageContentQuery['markdownRemark']>['frontmatter']
 >['inlineCta']
-function mapToInlineCta(queryInlineCta: QueryInlineCta, preview = false): InlineCtaProps {
+function mapToInlineCta(queryInlineCta: QueryInlineCta): InlineCtaProps {
   return {
     title: queryInlineCta?.title ?? 'Quisque arcu urna, tempor aliquet mi eget.',
-    subtitle: preview ? (
+    subtitle: (
       <MarkdownContent
         markdown={
           queryInlineCta?.markdown__Subtitle ??
@@ -267,8 +263,6 @@ function mapToInlineCta(queryInlineCta: QueryInlineCta, preview = false): Inline
         }
         className={ctaStyles.content}
       />
-    ) : (
-      <DangerouslyRenderHtmlContent content={queryInlineCta?.markdown__Subtitle ?? ''} className={ctaStyles.content} />
     ),
     primaryAction: { name: queryInlineCta?.buttonText ?? 'Lorem ipsum', action: queryInlineCta?.buttonHref ?? '/' },
   } as InlineCtaProps
