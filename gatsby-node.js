@@ -3,6 +3,7 @@
 
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
+const webpack = require(`webpack`)
 
 async function getFolderEdges(folder, graphql, filter = '') {
   const { data, errors } = await graphql(`
@@ -196,6 +197,14 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
 
     actions.replaceWebpackConfig(config)
   }
+
+  actions.setWebpackConfig({
+    plugins: [
+      new webpack.IgnorePlugin({
+        resourceRegExp: /^netlify-identity-widget$/,
+      }),
+    ],
+  })
 }
 
 exports.sourceNodes = async ({ actions, getNodes }) => {
