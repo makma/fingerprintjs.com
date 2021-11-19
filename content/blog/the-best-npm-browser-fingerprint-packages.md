@@ -25,7 +25,7 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 ---
-Just like human fingerprints, browser fingerprints are used to identify people (or at least their browser). They use information gathered from a website visitor’s hardware and software to form a unique identifier for that browser and device. With browser fingerprints, you can provide your website’s users a more targeted experience while also keeping your business protected from fraud.
+Browser fingerprints are generated using information gathered from a website visitor’s hardware and software to form a unique identifier for that browser and device. With browser fingerprints, you can provide your website’s users with a more targeted experience while also keeping your business protected from fraud.
 
 This article will demonstrate why browser fingerprinting is important and provide a comparison of some of the top fingerprinting NPM packages, so you can choose the one that’s best for your business. 
 
