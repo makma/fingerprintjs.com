@@ -44,6 +44,7 @@ function Block({ block }: { block: BlockWithImage }) {
         imageInfo={block.image}
         altTag={block.imageAlt}
         titleTag={block.imageTitle}
+        imageStyle={{ borderRadius: '16px' }}
       />
 
       <div className={classNames(styles.text, { [styles.left]: block.isImageAfterText })}>

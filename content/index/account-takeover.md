@@ -71,7 +71,7 @@ blocks:
     imageAlt: FingerprintJS dashboard
     isImageAfterText: false
     isCtaButton: false
-    image: /img/uploads/dashboard-tight.png
+    image: /img/uploads/dash-usage-chart.png
     imageTitle: FingerprintJS dashboard
     ctaText: Start Free Trial
     ctaUrl: https://dashboard.fingerprintjs.com/signup

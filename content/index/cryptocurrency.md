@@ -49,7 +49,7 @@ blocks:
     imageAlt: FingerprintJS Pro dashboard
     isImageAfterText: true
     isCtaButton: false
-    image: /img/uploads/dashboard-tight.png
+    image: /img/uploads/dash-usage-chart.png
     imageTitle: FingerprintJS Pro dashboard
     ctaText: Read our documentation
     ctaUrl: https://dev.fingerprintjs.com/docs/introduction
@@ -61,7 +61,7 @@ blocks:
     imageAlt: FingerprintJS Pro subscription screen
     isImageAfterText: false
     isCtaButton: false
-    image: /img/uploads/fpjs-subscriptions.png
+    image: /img/uploads/dash-subscriptions.png
     imageTitle: FingerprintJS Pro subscription screen
     ctaText: Start your free trial
     ctaUrl: https://dashboard.fingerprintjs.com/signup

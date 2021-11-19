@@ -65,7 +65,7 @@ blocks:
     imageAlt: FingerprintJS Pro dashboard
     isImageAfterText: true
     isCtaButton: false
-    image: /img/uploads/dashboard-tight.png
+    image: /img/uploads/dash-usage-chart.png
     imageTitle: FingerprintJS Pro dashboard
     ctaText: Read our documentation
     ctaUrl: https://dev.fingerprintjs.com/docs/introduction
