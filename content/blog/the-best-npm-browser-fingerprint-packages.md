@@ -97,7 +97,7 @@ FingerprintJS has the highest number of downloads among packages on this list, w
 
 #### Pro version
 
-12,407
+FingerprintJS Pro had 12,407 weekly downloads at the time of writing.
 
 ### Size
 
