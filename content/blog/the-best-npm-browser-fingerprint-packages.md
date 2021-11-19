@@ -37,11 +37,11 @@ Browser fingerprints help you prevent these issues by relying on device and soft
 
 If you want to learn more about browser fingerprinting and how it works, here are some helpful links to previous articles we have written on the subject:
 
-* The beginners guide to browser fingerprinting - a simple overview of how fingerprinting works
-* Browser fingerprinting techniques - a browser fingerprint is made up of many hardware and software signals. Learn about these different types and how they are accessed via the browser.
-* How to prevent multiple signups with browser fingerprinting - fingerprinting can be used in a multitude of ways. Here is one simple example of browser fingerprinting in action.
+* [The beginners guide to browser fingerprinting](https://fingerprintjs.com/blog/what-is-browser-fingerprinting/) - a simple overview of how fingerprinting works
+* [Browser fingerprinting techniques](https://fingerprintjs.com/blog/browser-fingerprinting-techniques/) - a browser fingerprint is made up of many hardware and software signals. Learn about these different types and how they are accessed via the browser.
+* [How to prevent multiple signups with browser fingerprinting](https://fingerprintjs.com/blog/prevent-multiple-signups-tutorial/) - fingerprinting can be used in a multitude of ways. Here is one simple example of browser fingerprinting in action.
 
-# Best fingerprinting packages
+# Top NPM fingerprinting packages
 
 When it comes to browser fingerprinting, there are many NPM fingerprinting packages to choose from. Here is a comparison of some of the best-known packages and what they offer. 
 
