@@ -68,7 +68,7 @@ export const pageQuery = graphql`
         header {
           subLabel
           subTitle
-          markdown__Content
+          content
           pdf {
             publicURL
           }
@@ -85,7 +85,7 @@ export const pageQuery = graphql`
             iconAlt
             iconTitle
             title
-            markdown__Content
+            content
           }
           overviewSection {
             description
@@ -153,8 +153,8 @@ export function CaseStudyContentPreview({ entry, widgetFor }: PreviewTemplateCom
     <PreviewProviders>
       <CaseStudyContentTemplate
         metadata={mapToMetadata(metadata)}
-        header={mapToHeader(header)}
-        summary={mapToSummary(summary)}
+        header={mapToHeader(header, true)}
+        summary={mapToSummary(summary, true)}
         body={widgetFor('body') ?? <></>}
         footer={mapToFooter(footer)}
       />
@@ -176,20 +176,22 @@ function mapToMetadata(queryMetadata: QueryMetadata): GatsbyTypes.SiteSiteMetada
 type QueryHeader = NonNullable<
   NonNullable<GatsbyTypes.CaseStudyContentQuery['markdownRemark']>['frontmatter']
 >['header']
-function mapToHeader(queryHeader: QueryHeader): HeaderProps {
+function mapToHeader(queryHeader: QueryHeader, preview = false): HeaderProps {
   return {
     subLabel: queryHeader?.subLabel ?? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     subTitle:
       queryHeader?.subTitle ??
       'Vestibulum ut mi eleifend, auctor ligula ut, feugiat nunc. Donec molestie ipsum at sagittis elementum.',
-    description: (
+    description: preview ? (
       <MarkdownContent
         markdown={
-          queryHeader?.markdown__Content ??
+          queryHeader?.content ??
           'Curabitur sollicitudin id mi ac ultrices. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas in ex turpis.'
         }
         className={headerStyles.content}
       />
+    ) : (
+      <DangerouslyRenderHtmlContent content={queryHeader?.content ?? ''} className={headerStyles.content} />
     ),
     pdfLink: queryHeader?.pdf?.publicURL ?? '/',
   } as HeaderProps
@@ -198,7 +200,7 @@ function mapToHeader(queryHeader: QueryHeader): HeaderProps {
 type QuerySummary = NonNullable<
   NonNullable<GatsbyTypes.CaseStudyContentQuery['markdownRemark']>['frontmatter']
 >['summary']
-function mapToSummary(querySummary: QuerySummary): SummaryProps {
+function mapToSummary(querySummary: QuerySummary, preview = false): SummaryProps {
   return {
     results:
       querySummary?.results?.map(
@@ -208,7 +210,16 @@ function mapToSummary(querySummary: QuerySummary): SummaryProps {
             iconAlt: result?.iconAlt,
             iconTitle: result?.iconTitle,
             title: result?.title ?? `Nunc rhoncus et eros non lobortis.`,
-            children: <DangerouslyRenderHtmlContent content={result?.markdown__Content ?? ''} />,
+            children: preview ? (
+              <MarkdownContent
+                markdown={
+                  result?.content ??
+                  'Sed ut fermentum dolor. Vivamus pulvinar nisi leo, in accumsan diam pretium id. Vestibulum aliquam posuere enim, sed finibus sapien fringilla pharetra. Ut sollicitudin nunc non dui placerat facilisis. Duis neque turpis, dictum sit amet sagittis ut, finibus ac eros. Cras pulvinar laoreet diam vel lacinia.'
+                }
+              />
+            ) : (
+              <DangerouslyRenderHtmlContent content={result?.content ?? ''} />
+            ),
           } as Result)
       ) ?? [],
     description:

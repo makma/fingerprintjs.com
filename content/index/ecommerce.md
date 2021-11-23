@@ -29,20 +29,20 @@ cardSection:
   cards:
     - icon: /img/uploads/account_fraud.png
       title: "Identify malicious users out to steal PII "
-      markdown__Content: "End account takeovers by attaching a unique identity to your
+      content: "End account takeovers by attaching a unique identity to your
         website's visitors, even if they are browsing in incognito mode. "
       iconAlt: Account takeover alert
       iconTitle: Account takeover alert
     - icon: /img/uploads/payment_processing.png
       title: Reduce chargebacks linked to CNP fraud
-      markdown__Content: Reduce your chargeback rates from [CNP
+      content: Reduce your chargeback rates from [CNP
         fraud](/blog/cnp-fraud-prevention-to-protect-chargebacks/)
         by detecting and preventing purchases from stolen cards before they hurt
         your bottom line.
       iconAlt: Payment processing fraud
       iconTitle: Payment processing fraud
     - title: Prevent gift card & coupon abuse
-      markdown__Content: Detect visitors using stolen or fake identities to ensure
+      content: Detect visitors using stolen or fake identities to ensure
         that your
         [coupons](https://fingerprintjs.com/blog/what-is-coupon-glittering-and-how-can-it-harm-businesses/)
         and promotions are used legitimately by real customers.
@@ -50,13 +50,13 @@ cardSection:
       iconAlt: Gift card abuse
       iconTitle: Gift card abuse
     - title: Avoid merchant penalties
-      markdown__Content: Stay within chargeback limits and avoid merchant penalties
+      content: Stay within chargeback limits and avoid merchant penalties
         imposed by payment service providers.
       icon: /img/uploads/commerce.png
       iconAlt: Ecommerce fraud
       iconTitle: Ecommerce fraud
 blocks:
-  - markdown__Content: Incorporate browser fingerprinting and bot detection into
+  - content: Incorporate browser fingerprinting and bot detection into
       your ecommerce website's existing workflows, and access suspicious visitor
       activity and geolocation at lightspeed from our API.  Every business is
       different - minimize disruption to your customers by building an
@@ -69,7 +69,7 @@ blocks:
     imageTitle: FingerprintJS Pro dashboard
     ctaText: Read our documentation
     ctaUrl: https://dev.fingerprintjs.com/docs/introduction
-  - markdown__Content: FingerprintJS helps developer teams identify their ecommerce
+  - content: FingerprintJS helps developer teams identify their ecommerce
       site's most vulnerable interactions and build authentication flows that
       won't overburden visitors. Uniquely identifying users at the login stage
       will reduce account takeovers that can result in fraudulent purchases and
@@ -85,7 +85,7 @@ blocks:
     ctaUrl: /demo/
 inlineCta:
   title: Reduce chargebacks one month after integrating FingerprintJS on your website.
-  markdown__Subtitle: Every dollar of ecommerce fraud can cost retailers between 3
+  subtitle: Every dollar of ecommerce fraud can cost retailers between 3
     to 4 times as much - a loss mitigated with our 99.5% accurate browser
     fingerprinting and ecommerce fraud detection solution. With FingerprintJS,
     you can protect your income against fraudulent orders that waste resources

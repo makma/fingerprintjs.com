@@ -12,7 +12,7 @@ metadata:
 header:
   subLabel: Case Study
   subTitle: How One Company Solved Account Sharing with FingerprintJS Pro
-  markdown__Content: Using **FingerprintJS browser fingerprinting**, a SaaS
+  content: Using **FingerprintJS browser fingerprinting**, a SaaS
     educational technology company **significantly reduced unauthorized account
     sharing**, increasing their annual recurring revenue by **$10M+ ARR** while
     keeping legitimate users happy.
@@ -21,14 +21,14 @@ summary:
   results:
     - title: New revenue from sign-ups
       icon: /img/uploads/business-and-finance.svg
-      markdown__Content: The SaaS company was able to grow annual recurring revenue by
+      content: The SaaS company was able to grow annual recurring revenue by
         more than ten million USD from spun off accounts within several months
         of implementing FingerprintJS Pro.
       iconAlt: Revenue
       iconTitle: Revenue
     - title: Customers stay satisfied
       icon: /img/uploads/like.svg
-      markdown__Content: >-
+      content: >-
         The company maintained the same level of cancellations and customer
         support calls after implementation, clearly showing that there were no
         significant drawbacks for legitimate customers or the business.
@@ -39,7 +39,7 @@ summary:
       iconTitle: Satisfaction
     - icon: /img/uploads/loop.svg
       title: Feedback loop with FingerprintJS
-      markdown__Content: The company continues to work closely with the FingerprintJS
+      content: The company continues to work closely with the FingerprintJS
         technical team to adjust algorithms as user behavior changes over time,
         maintaining high accuracy and a positive student experience.
       iconAlt: Feedback

@@ -27,19 +27,19 @@ cardSection:
   cards:
     - icon: /img/uploads/account_fraud.png
       title: Secure your customers' wallets
-      markdown__Content: Require additional authentication for suspicious visitors
+      content: Require additional authentication for suspicious visitors
         during login while keeping your trusted cryptocurrency users unhindered
         and safe.
       iconAlt: Cryptocurrency fraud protection
       iconTitle: Cryptocurrency fraud protection
     - icon: /img/uploads/payment_processing.png
       title: Stop fraudulent purchases
-      markdown__Content: Blacklist users that are card testing, card cracking, or have
+      content: Blacklist users that are card testing, card cracking, or have
         a history of fraudulent activity on your services.
       iconAlt: Fraudulent purchase protection
       iconTitle: Fraudulent purchase protection
 blocks:
-  - markdown__Content: Crypto customers value their privacy and will abandon your
+  - content: Crypto customers value their privacy and will abandon your
       exchange if you introduce too much friction in the pursuit of security.
       FingerprintJS' highly accurate VisitorID allows developer teams to
       implement additional authentication for only the most suspicious logins,
@@ -53,7 +53,7 @@ blocks:
     imageTitle: FingerprintJS Pro dashboard
     ctaText: Read our documentation
     ctaUrl: https://dev.fingerprintjs.com/docs/introduction
-  - markdown__Content: "The best way to protect your merchant reputation is to
+  - content: "The best way to protect your merchant reputation is to
       identify purchases with a high likelihood of fraud before they can be
       processed. Build additional checks and balances into your payment flows
       with our easy to use API. "
@@ -67,7 +67,7 @@ blocks:
     ctaUrl: https://dashboard.fingerprintjs.com/signup
 inlineCta:
   title: Try FingerprintJS Free
-  markdown__Subtitle: Installation of FingerprintJS' Javascript agent is easy.
+  subtitle: Installation of FingerprintJS' Javascript agent is easy.
     Start collecting unique VisitorIDs in minutes with our 30-day free trial.
   buttonText: Get Started
   buttonHref: https://dashboard.fingerprintjs.com/signup

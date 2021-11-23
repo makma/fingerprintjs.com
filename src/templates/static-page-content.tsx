@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby'
 import React from 'react'
-import { MarkdownContent } from '../components/Content/Content'
+import { DangerouslyRenderHtmlContent, MarkdownContent } from '../components/Content/Content'
 import { PreviewTemplateComponentProps } from 'netlify-cms-core'
 import { InlineCtaProps } from '../components/widgets/InlineCta'
 import { HeroProps } from '../components/widgets/Hero'
@@ -97,11 +97,11 @@ export const pageQuery = graphql`
             iconAlt
             iconTitle
             title
-            markdown__Content
+            content
           }
         }
         blocks {
-          markdown__Content
+          content
           subheader
           image {
             childImageSharp {
@@ -117,7 +117,7 @@ export const pageQuery = graphql`
         }
         inlineCta {
           title
-          markdown__Subtitle
+          subtitle
           buttonText
           buttonHref
         }
@@ -153,9 +153,9 @@ export function StaticPageContentPreview({ entry }: PreviewTemplateComponentProp
       <StaticPageContentTemplate
         metadata={mapToMetadata(metadata)}
         invertContent={invertContent}
-        inlineCta={mapToInlineCta(inlineCta)}
-        cardSection={mapToCardSection(cardSection)}
-        blocks={mapToBlocks(blocks)}
+        inlineCta={mapToInlineCta(inlineCta, true)}
+        cardSection={mapToCardSection(cardSection, true)}
+        blocks={mapToBlocks(blocks, true)}
         hero={mapToHero(hero)}
         content={mapToPost({ frontmatter: entry.get('data').toObject() })}
         relatedArticlesTitle={relatedArticlesTitle}
@@ -192,7 +192,7 @@ function mapToHero(queryHero: QueryHero): HeroProps {
 type QueryCardSection = NonNullable<
   NonNullable<GatsbyTypes.StaticPageContentQuery['markdownRemark']>['frontmatter']
 >['cardSection']
-function mapToCardSection(queryCardSection: QueryCardSection): CardSectionProps {
+function mapToCardSection(queryCardSection: QueryCardSection, preview = false): CardSectionProps {
   return {
     title: queryCardSection?.title ?? 'Vivamus at ex a mi bibendum sollicitudin sit amet laoreet mi.',
     subtitle: queryCardSection?.subtitle ?? '',
@@ -204,14 +204,16 @@ function mapToCardSection(queryCardSection: QueryCardSection): CardSectionProps 
             iconAlt: card?.iconAlt,
             iconTitle: card?.iconTitle,
             title: card?.title ?? `Nunc rhoncus et eros non lobortis. #${index}`,
-            content: (
+            content: preview ? (
               <MarkdownContent
                 markdown={
-                  card?.markdown__Content ??
+                  card?.content ??
                   'Sed ut fermentum dolor. Vivamus pulvinar nisi leo, in accumsan diam pretium id. Vestibulum aliquam posuere enim, sed finibus sapien fringilla pharetra. Ut sollicitudin nunc non dui placerat facilisis. Duis neque turpis, dictum sit amet sagittis ut, finibus ac eros. Cras pulvinar laoreet diam vel lacinia.'
                 }
                 className={cardStyles.content}
               />
+            ) : (
+              <DangerouslyRenderHtmlContent content={card?.content ?? ''} className={cardStyles.content} />
             ),
           } as Card)
       ) ?? [],
@@ -221,19 +223,21 @@ function mapToCardSection(queryCardSection: QueryCardSection): CardSectionProps 
 type QueryBlock = ArrayElement<
   NonNullable<NonNullable<GatsbyTypes.StaticPageContentQuery['markdownRemark']>['frontmatter']>['blocks']
 >
-function mapToBlocks(queryBlocks: QueryBlock[]): BlockWithImage[] {
+function mapToBlocks(queryBlocks: QueryBlock[], preview = false): BlockWithImage[] {
   return (
     queryBlocks?.map(
       (block, index) =>
         ({
-          content: (
+          content: preview ? (
             <MarkdownContent
               markdown={
-                block?.markdown__Content ??
+                block?.content ??
                 'Sed ut fermentum dolor. Vivamus pulvinar nisi leo, in accumsan diam pretium id. Vestibulum aliquam posuere enim, sed finibus sapien fringilla pharetra. Ut sollicitudin nunc non dui placerat facilisis. Duis neque turpis, dictum sit amet sagittis ut, finibus ac eros. Cras pulvinar laoreet diam vel lacinia.'
               }
               className={blockStyles.content}
             />
+          ) : (
+            <DangerouslyRenderHtmlContent content={block?.content ?? ''} className={blockStyles.content} />
           ),
           image: block?.image,
           imageAlt: block?.imageAlt,
@@ -252,17 +256,19 @@ function mapToBlocks(queryBlocks: QueryBlock[]): BlockWithImage[] {
 type QueryInlineCta = NonNullable<
   NonNullable<GatsbyTypes.StaticPageContentQuery['markdownRemark']>['frontmatter']
 >['inlineCta']
-function mapToInlineCta(queryInlineCta: QueryInlineCta): InlineCtaProps {
+function mapToInlineCta(queryInlineCta: QueryInlineCta, preview = false): InlineCtaProps {
   return {
     title: queryInlineCta?.title ?? 'Quisque arcu urna, tempor aliquet mi eget.',
-    subtitle: (
+    subtitle: preview ? (
       <MarkdownContent
         markdown={
-          queryInlineCta?.markdown__Subtitle ??
+          queryInlineCta?.subtitle ??
           'Curabitur sollicitudin id mi ac ultrices. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas in ex turpis.'
         }
         className={ctaStyles.content}
       />
+    ) : (
+      <DangerouslyRenderHtmlContent content={queryInlineCta?.subtitle ?? ''} className={ctaStyles.content} />
     ),
     primaryAction: { name: queryInlineCta?.buttonText ?? 'Lorem ipsum', action: queryInlineCta?.buttonHref ?? '/' },
   } as InlineCtaProps

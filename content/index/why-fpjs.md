@@ -28,7 +28,7 @@ cardSection:
   cards:
     - icon: /img/uploads/accuracy.svg
       title: Unparalleled accuracy
-      markdown__Content: >-
+      content: >-
         FingerprintJS uses an innovative combination of  browser fingerprinting,
         IP/URL analysis, device analysis, and machine learning to accurately
         identify up to 99.5% of unique visitors.
@@ -38,7 +38,7 @@ cardSection:
       iconAlt: 99.5% fingerprint accuracy
       iconTitle: 99.5% fingerprint accuracy
     - title: Committed to open source
-      markdown__Content: >-
+      content: >-
         Our team is committed to democratizing fraud prevention by keeping our
         core fingerprinting libraries open-source and free. 
 
@@ -49,14 +49,14 @@ cardSection:
       iconTitle: Fingerprint
     - icon: /img/uploads/apiwebhooks.png
       title: Targeted authentication
-      markdown__Content: Introducing unnecessary hurdles to account login and payment
+      content: Introducing unnecessary hurdles to account login and payment
         can be detrimental to user experience. Using our API, you can isolate
         malicious actors across browsing sessions, keeping your trusted
         customers' experience streamlined.
       iconAlt: API and webhooks
       iconTitle: API and webhooks
     - title: GDPR and CCPA compliant
-      markdown__Content: We take online privacy seriously. FingerprintJS is intended
+      content: We take online privacy seriously. FingerprintJS is intended
         for fraud detection only - for this use case, no visitor consent is
         required for compliancy with GDPR and CCPA. We never automatically track
         traffic, and never do cross-domain tracking.
@@ -64,7 +64,7 @@ cardSection:
       iconAlt: GDPR shield
       iconTitle: GDPR shield
 blocks:
-  - markdown__Content: "Fingerprinting technology is the backbone of most major
+  - content: "Fingerprinting technology is the backbone of most major
       fraud detection solutions. Fingerprinting identifies unique visitors and
       associated sessions, undeterred by incognito browsing, VPNs, cookie
       blockers, and other technologies used to anonymize fraudulent actors
@@ -79,7 +79,7 @@ blocks:
     imageTitle: How FingerprintJS Pro works
     ctaText: Read Our Beginner's Guide to Fingerprinting
     ctaUrl: /blog/what-is-browser-fingerprinting/
-  - markdown__Content: As spoofing and cloaking technologies improve, so too must
+  - content: As spoofing and cloaking technologies improve, so too must
       your solution to identify malicious uses before they can damage your
       business. Our service provides access to sophisticated identification
       techniques that work reliably even as browsers change their privacy
@@ -94,7 +94,7 @@ blocks:
     ctaUrl: https://dashboard.fingerprintjs.com/signup
 inlineCta:
   title: Get FingerprintJS free and unlimited
-  markdown__Subtitle: Teams can try FingerprintJS free for 10 days. Install our
+  subtitle: Teams can try FingerprintJS free for 10 days. Install our
     Javascript snippet on your website and begin collecting unique visitorIDs,
     geolocation data and more. This information can then be fused into your
     authentication workflows easily using our API and webhooks.

@@ -11,7 +11,7 @@ header:
   subLabel: Case Study
   subTitle: How an online grocery delivery service prevented credit card fraud
     with FingerprintJS Pro
-  markdown__Content: A grocery delivery service needed to prevent stolen credit
+  content: A grocery delivery service needed to prevent stolen credit
     cards from being used by new accounts without impacting legitimate users.
     FingerprintJS Pro’s accurate browser identifier increased fraud
     identification accuracy compared to their existing anti-fraud technology,
@@ -23,11 +23,11 @@ summary:
       iconAlt: Credit Card
       iconTitle: Credit Card
       title: Prevented stolen credit card purchases from fraudsters
-      markdown__Content: The company was able to identify suspicious purchases before
+      content: The company was able to identify suspicious purchases before
         they happened by flagging visitors with multiple accounts or a history
         of fraudulent transactions.
     - title: Saved fraud analyst time spent on manual payment review
-      markdown__Content: FingerprintJS Pro reduced false positives that would
+      content: FingerprintJS Pro reduced false positives that would
         otherwise have to be reviewed by the company’s internal fraud team
       icon: /img/uploads/anonymous_user_identification.png
       iconAlt: Anonymous Identification
@@ -36,7 +36,7 @@ summary:
       iconAlt: Gears
       iconTitle: Gears
       title: Simplified rule management from previous solutions
-      markdown__Content: FingerprintJS Pro’s API and webhooks integrated easily into
+      content: FingerprintJS Pro’s API and webhooks integrated easily into
         the company’s existing anti-fraud system, with the increased accuracy
         allowing them to simplify previously complicated rulesets for flagging
         suspicious transactions.

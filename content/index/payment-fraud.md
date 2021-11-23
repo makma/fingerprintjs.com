@@ -26,39 +26,39 @@ cardSection:
   cards:
     - icon: /img/uploads/anonymous_user_identification.png
       title: Coupon and Promo Abuse
-      markdown__Content: Ensure your promotions are used fairly and not repeated or
+      content: Ensure your promotions are used fairly and not repeated or
         stacked to remove all profit from your sales.
       iconAlt: identification card
       iconTitle: identification card
     - icon: /img/uploads/payment_processing.png
       title: Credit Card Fraud Detection
-      markdown__Content: Prevent fraudsters from using your site to test stolen credit
+      content: Prevent fraudsters from using your site to test stolen credit
         cards through multiple small purchases.
       iconAlt: Credit card fraud detection
       iconTitle: Credit card fraud detection
     - title: Card Cracking
-      markdown__Content: Stop malicious actors from testing combinations of expiry
+      content: Stop malicious actors from testing combinations of expiry
         dates, postal codes, and CVVs with lists of purchased PANs. Make credit
         card payment fraud a problem of the past.
       icon: /img/uploads/bot_detection.png
       iconAlt: Bot detection for card cracking prevention
       iconTitle: Bot detection for card cracking prevention
     - title: Friendly Fraud
-      markdown__Content: Sometimes a real user will dispute payments even though they
+      content: Sometimes a real user will dispute payments even though they
         received a product or service. Flag these users easily to prevent future
         chargebacks.
       icon: /img/uploads/account_fraud.png
       iconAlt: Friendly fraud prevention
       iconTitle: Friendly fraud prevention
     - title: Mobile Payment Fraud
-      markdown__Content: FingerprintJS Pro works for all web applications including
+      content: FingerprintJS Pro works for all web applications including
         hybrid mobile apps. Flag suspicious customers making mobile purchases
         and prevent more chargebacks.
       icon: /img/uploads/smartphone-1-.svg
       iconAlt: Mobile payment fraud
       iconTitle: Mobile payment fraud
 blocks:
-  - markdown__Content: Any form of payment fraud can result in a chargeback for your
+  - content: Any form of payment fraud can result in a chargeback for your
       website, which may result in lost revenue, stolen goods or services, and
       damage to your merchant reputation. No matter the cause, accurate user
       identification helps reduce this incredibly important indicator of
@@ -72,7 +72,7 @@ blocks:
     imageTitle: FingerprintJS Pro dashboard
     ctaText: Read our documentation
     ctaUrl: https://dev.fingerprintjs.com/docs/introduction
-  - markdown__Content: "FingerprintJS' API and webhooks are designed to easily
+  - content: "FingerprintJS' API and webhooks are designed to easily
       integrate with your existing website architecture and payment processing
       platform. Whether you have a Shopify store or a custom build, incorporate
       our highly accurate fingerprinting service wherever it is needed.   "
@@ -86,7 +86,7 @@ blocks:
     ctaUrl: https://dashboard.fingerprintjs.com/signup
 inlineCta:
   title: Start your free trial today
-  markdown__Subtitle: "Install our Javascript snippet on your website and start
+  subtitle: "Install our Javascript snippet on your website and start
     collecting visitorIDs free for 10 days. "
   buttonText: Get Started
   buttonHref: https://dashboard.fingerprintjs.com/signup

@@ -29,7 +29,7 @@ cardSection:
   cards:
     - icon: /img/uploads/account_fraud.png
       title: Credential Stuffing Prevention
-      markdown__Content: Users that re-use passwords across multiple services are at
+      content: Users that re-use passwords across multiple services are at
         risk of having their accounts accessed by fraudsters who purchased or
         hacked their account information from elsewhere. These fraudsters may
         then test thousands of login credentials on your site to gain access.
@@ -40,7 +40,7 @@ cardSection:
       iconTitle: Prevent account takeover
     - icon: /img/uploads/incognito.svg
       title: Phishing Attack Prevention
-      markdown__Content: Social engineering is among the most reliable methods for
+      content: Social engineering is among the most reliable methods for
         fraudsters to access accounts of your trusted customers. Phishing
         techniques can also be notoriously difficult to prevent. Websites can
         stop phishing fraud with FingerprintJS Pro's accurate visitor
@@ -49,7 +49,7 @@ cardSection:
       iconAlt: Social engineering
       iconTitle: Social engineering
 blocks:
-  - markdown__Content: Account fraud can take many forms. Whether by brute force or
+  - content: Account fraud can take many forms. Whether by brute force or
       individual actors testing purchased credentials, uniquely identifying your
       website visitors will provide the best defense against account
       takeovers.  FingerprintJS seamlessly meshes into your tech stack to run in
@@ -63,7 +63,7 @@ blocks:
     imageTitle: Sources of account takeover
     ctaText: Read our documentation
     ctaUrl: https://dev.fingerprintjs.com/docs/introduction
-  - markdown__Content: Protecting your users' logins is the best way to mitigate
+  - content: Protecting your users' logins is the best way to mitigate
       chargebacks from fraudulent purchases without compromising on experience.
       Try FingerprintJS and see the difference that accurate user detection can
       make for your user's account security, merchant reputation, and more.
@@ -77,7 +77,7 @@ blocks:
     ctaUrl: https://dashboard.fingerprintjs.com/signup
 inlineCta:
   title: FingerprintJS for account takeover protection
-  markdown__Subtitle: Start your free 30-day trial and get 100% of features with no usage limits.
+  subtitle: Start your free 30-day trial and get 100% of features with no usage limits.
   buttonText: Get Started
   buttonHref: https://dashboard.fingerprintjs.com/signup
 ---

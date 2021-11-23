@@ -4,6 +4,8 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const webpack = require(`webpack`)
+const remark = require(`remark`)
+const remarkHTML = require(`remark-html`)
 
 async function getFolderEdges(folder, graphql, filter = '') {
   const { data, errors } = await graphql(`
@@ -230,4 +232,48 @@ exports.sourceNodes = async ({ actions, getNodes }) => {
       }
     }
   })
+}
+exports.createSchemaCustomization = ({ actions }) => {
+  // Define the @md tag to mark a field which should be interpreted as markdown and converted to HTML
+  actions.createFieldExtension({
+    name: 'md',
+    extend() {
+      return {
+        resolve(source, args, context, info) {
+          const fieldValue = context.defaultFieldResolver(source, args, context, info)
+          return remark().use(remarkHTML).processSync(fieldValue).toString()
+        },
+      }
+    },
+  })
+  actions.createTypes(`
+    type MarkdownRemarkFrontmatter {
+      header: Header
+      summary: Summary
+      cardSection: CardSection
+      inlineCta: InlineCta
+    }
+    type Header{
+      content: String @md
+    }
+    type Summary{
+      results: [Results]
+    }
+    type Results implements Node{
+      content: String @md
+    }
+    type CardSection{
+      cards: [Cards]
+      blocks: [Blocks]
+    }
+    type Cards implements Node{
+      content: String @md
+    }
+    type Blocks implements Node{
+      content: String @md
+    }
+    type InlineCta{
+      subtitle: String @md
+    }
+`)
 }
