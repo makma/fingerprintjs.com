@@ -40,6 +40,8 @@ We also have achieved some incredible milestones over the last year that have he
 We crawled the Alexa top websites by traffic to see how many of them had our browser fingerprinting code installed:
 
 ![FingerprintJS Usage Across Alexa Top Sites](https://lh5.googleusercontent.com/VYwacGhlzJt811sbtIjryKRfdmQVHhudaIyTNtDgqhDeTame26RcUV2B0cjrWpwZLRnikc6noxsvJYmtv2crsh7yUJMscRe1szkmqXuLoVpriHMnqIFERLpCohKknTbmDF02GOut)
+<br>
+
 Among these websites are some of the most recognizable names in banking, e-commerce, cryptocurrency, and media. We see FingerprintJS code on login pages, payment forms, registration pages, lead forms, and in some cases running on every page. 
 
 ### 750% increase in trial signups over the last year since the launch of our ‘free forever’ plan
