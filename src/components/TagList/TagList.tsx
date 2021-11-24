@@ -10,8 +10,15 @@ export interface TagListProps {
   activeTag?: string
   format?: 'upper' | 'title'
   direction?: 'horizontal' | 'vertical'
+  tagsLimit?: number
 }
-export default function TagList({ tags, activeTag, format = 'upper', direction = 'horizontal' }: TagListProps) {
+export default function TagList({
+  tags,
+  activeTag,
+  format = 'upper',
+  direction = 'horizontal',
+  tagsLimit,
+}: TagListProps) {
   function formatTag(tag: string) {
     switch (format) {
       case 'upper':
@@ -21,9 +28,11 @@ export default function TagList({ tags, activeTag, format = 'upper', direction =
     }
   }
 
+  const limit = tagsLimit ? tagsLimit : tags.length
+
   return (
     <ul className={styles.root}>
-      {tags?.map((tag) => (
+      {tags?.slice(-limit).map((tag) => (
         <li
           key={tag}
           className={classNames(
