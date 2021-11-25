@@ -13,6 +13,7 @@ featured: false
 publishDate: 2021-05-25T20:09:52.736Z
 title: "Fingerprinting in the Modern Browser: Are Privacy Updates Making It
   Harder to Prevent Fraud?"
+isPublished: true
 tags:
   - fingerprinting
   - account takeover
@@ -24,7 +25,6 @@ heroImage:
   image: /img/uploads/modern-browser.png
   imageAlt: Browser fingerprinting privacy
   imageTitle: Browser fingerprinting privacy
-isPublished: true
 ---
 The trend in web browsers over the past few years has generally been in favor of more privacy for users. Almost all mainstream browsers ([Safari](https://www.infoq.com/news/2020/04/safari-third-party-cookies-block/), [Firefox](https://blog.mozilla.org/blog/2021/02/23/latest-firefox-release-includes-multiple-picture-in-picture-and-total-cookie-protection/), [Brave](https://support.brave.com/hc/en-us/articles/360050634931-How-Do-I-Manage-Cookies-In-Brave-), and [Chrome](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)) now block third-party cookies which enabled tracking across multiple sites, and Chrome uses encrypted traffic (via HTTPS) by default.
 
@@ -78,15 +78,15 @@ Chrome is currently the most popular browser, with a [64.19% market share](https
 
 Despite Google’s [spotty record of offering privacy to users](https://www.cnet.com/how-to/google-collects-a-frightening-amount-of-data-about-you-you-can-find-and-delete-it-now/), the Chrome browser does provide options that make tracking harder. First, users can block third-party cookies or all cookies or manually clear their cookies each time they close their browser.
 
-![Google Chrome cookie settings](https://i.imgur.com/lWAYNdD.png)
+![Google Chrome cookie settings](/img/uploads/lwayndd-1-.png "Google Chrome cookie settings")
 
 While cookies may not be critical in most fingerprinting algorithms, Chrome is also currently running a trial of Google’s [Privacy Sandbox](https://www.privacysandbox.com/). This feature attempts to prevent fingerprinting by hiding your hardware and software information from websites. It’s not clear when these features will be on for all Chrome users, but that seems to be the direction Google is heading.
 
-![Chrome Privacy sandbox](https://i.imgur.com/Yonufo3.png)
+![Chrome Privacy sandbox](/img/uploads/yonufo3-1-.png "Chrome Privacy sandbox")
 
 Chrome also offers users the option to block access to operating system services or make websites ask before accessing them. Many of these services can be used to help fingerprint users if they’re enabled. Users can also turn off JavaScript completely, but this likely isn’t practical for real users as [most websites rely on JavaScript to function](https://w3techs.com/technologies/details/cp-javascript).
 
-![Chrome permissions and content](https://i.imgur.com/xuEMRuA.png)
+![Chrome permissions and content](/img/uploads/xuemrua-1-.png "Chrome permissions and content")
 
 Chrome users can also use extensions to [block fingerprints](https://chrome.google.com/webstore/search/fingerprint), [obscure their IP addresses](https://chrome.google.com/webstore/search/vpn), and more. Each of these extensions limits tracking in its own way (for example, the [Canvas Fingerprint Detector](https://chrome.google.com/webstore/detail/canvas-fingerprint-defend/lanfdkkpgfjfdikkncbnojekcppdebfp) blocks the HTML Canvas fingerprint method described above).
 
@@ -122,7 +122,7 @@ This layer of fingerprinting protection built directly into the browser prevents
 
 As in Chrome, Firefox users can change the permissions given to each website they visit, or they can block system resource requests entirely from the *Permissions* menu.
 
-![Firefox operating system permissions](https://i.imgur.com/pSUB3Dt.png)
+![Firefox operating system permissions](/img/uploads/psub3dt-1-.png "Firefox operating system permissions")
 
 Finally, there are thousands of Firefox extensions that give users more fine-grained [control over their privacy](https://addons.mozilla.org/en-US/firefox/search/?q=privacy). Users can also install the [AmIUnique add-on](https://addons.mozilla.org/en-US/firefox/addon/amiunique/) to see how unique their browser is among the millions of fingerprints collected by [AmIUnique](https://amiunique.org/). This knowledge can be used by malicious users to tweak their settings further to obscure their identity.
 
