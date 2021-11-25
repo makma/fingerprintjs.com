@@ -74,7 +74,7 @@ This continued arms race between companies that rely on tracking to prevent frau
 
 Chrome is currently the most popular browser, with a [64.19% market share](https://gs.statcounter.com/browser-market-share#monthly-202103-202103-bar).
 
-![Current market share of modern browsers](https://imgur.com/ryh0z2q.png)
+![Current market share of modern browsers](/img/uploads/ryh0z2q.png "Current market share of modern browsers")
 
 Despite Google’s [spotty record of offering privacy to users](https://www.cnet.com/how-to/google-collects-a-frightening-amount-of-data-about-you-you-can-find-and-delete-it-now/), the Chrome browser does provide options that make tracking harder. First, users can block third-party cookies or all cookies or manually clear their cookies each time they close their browser.
 
@@ -98,7 +98,7 @@ As the second most popular web browser, Safari is slightly more private by defau
 
 Like Chrome, Safari lets users disable JavaScript and block cookies. It also shows a privacy report right on the welcome page. Users can disable location services and autofill to prevent those features from being used in fingerprinting.
 
-![Safari privacy options](https://i.imgur.com/Zq2AQ7d.png)
+![Safari privacy options](/img/uploads/zq2aq7d-1-.png)
 
 Finally, Safari users can make fingerprinting even harder with extensions like [Better](https://better.fyi/) or a [VPN](https://www.comparitech.com/blog/vpn-privacy/best-vpn-safari/) to obscure their IP address, location, and other device-specific data.
 
@@ -108,7 +108,7 @@ Still, there are some weak spots in Safari’s pro-privacy measures. [Researcher
 
 Firefox has been outspoken about user privacy in recent years. Users are presented with the company’s privacy statement upon opening the browser for the first time, and fingerprint controls are turned on by default.
 
-![Firefox standard tracking protection](https://i.imgur.com/NAATIFi.png)
+![Firefox standard tracking protection](/img/uploads/naatifi-1-.png "Firefox standard tracking protection")
 
 This layer of fingerprinting protection built directly into the browser prevents sites from reading:
 
