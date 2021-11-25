@@ -26,7 +26,7 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 ---
-xfgooBusinesses and individuals face a new challenge — the rising urgency of cybersecurity as reports of cyberattacks continue to increase and target those who are vulnerable.  
+Businesses and individuals face a new challenge — the rising urgency of cybersecurity as reports of cyberattacks continue to increase and target those who are vulnerable.  
 
 Cybercrime <a href="https://purplesec.us/resources/cyber-security-statistics/" target="_blank" rel="noopener">shot up by 600%</a> during the COVID-19 pandemic. Responding to cyber threats isn’t easy, but it’s indispensable. Companies can experience cyberattacks at any time, which can cost them significant damages. From an individual’s perspective, it only takes one attack to have a person’s identity stolen, data hacked, or finances drained to cyber threats. Companies can similarly suffer irreparable damage to their reputation from a major security breach.
 
