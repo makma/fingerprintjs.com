@@ -26,7 +26,7 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 ---
-Businesses and individuals face a new challenge — the rising urgency of cybersecurity as reports of cyberattacks continue to increase and target those who are vulnerable.  
+xfgooBusinesses and individuals face a new challenge — the rising urgency of cybersecurity as reports of cyberattacks continue to increase and target those who are vulnerable.  
 
 Cybercrime <a href="https://purplesec.us/resources/cyber-security-statistics/" target="_blank" rel="noopener">shot up by 600%</a> during the COVID-19 pandemic. Responding to cyber threats isn’t easy, but it’s indispensable. Companies can experience cyberattacks at any time, which can cost them significant damages. From an individual’s perspective, it only takes one attack to have a person’s identity stolen, data hacked, or finances drained to cyber threats. Companies can similarly suffer irreparable damage to their reputation from a major security breach.
 
@@ -70,7 +70,7 @@ Multi-factor authentication (MFA for short) involves using additional authorizat
 
 Key principle: There’s never such a thing as too much security when it comes to protecting one’s login information.
 
-![Phone locked for security](https://lh4.googleusercontent.com/nnkgBW12FZoWZXS2gDQyIO76vxSVY0SIbv96_cO1RDBgq2MrAdH-ka3kgijfR217m-XJQN5Q69OiNTeyN-2yNJA0noVQ2b84Bv_HvPlicSKtKziQXqF9I54ltJc_u87FeJGda0I2)
+![Phone locked for security](/img/uploads/6-cybersecurity-1.png)
 
 ### Threats from the inside
 
