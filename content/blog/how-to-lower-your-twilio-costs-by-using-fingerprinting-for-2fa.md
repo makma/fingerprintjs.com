@@ -12,6 +12,7 @@ metadata:
 featured: false
 publishDate: 2021-07-05T16:52:52.426Z
 title: How to Lower Your Twilio Costs by Using Fingerprinting for 2FA
+isPublished: true
 tags:
   - account takeover
   - bot attacks
@@ -22,7 +23,6 @@ heroImage:
   image: /img/uploads/how-to-cut-your-twilio-sms-cost-1-.png
   imageAlt: Twilio 2FA
   imageTitle: Twilio 2FA
-isPublished: true
 ---
 Single-factor authentication—typically, username and password—is the most common way to authenticate users online. But, the proliferation of data breaches has led many more companies to rethink this standard. Without a second form of authentication, anyone with your username and password can access your account, leaving you vulnerable to brute force attacks and data leaks.
 
@@ -69,7 +69,7 @@ npm start
 
 The simple login application will now be running at `localhost:3000`.
 
-![Login screen](https://i.imgur.com/visbl7S.png)
+![Login screen](/img/uploads/twilio-login.png "Login screen")
 
 In the real world, you would retrieve users from a database, but as this is just a demonstration application, I’ve created an array of users in the `routes/auth.js` file:
 
@@ -91,11 +91,11 @@ You can test the login application by using the default username and password sh
 
 First, [sign up for a Twilio account](https://www.twilio.com/try-twilio). You need to verify your phone number, and then you’ll get to the [Twilio Console](https://www.twilio.com/console). This page includes your account information and the secrets you’ll need, like your Account SID and authentication token.
 
-![Twilio dashboard](https://i.imgur.com/kFfdcjc.png)
+![Twilio dashboard](/img/uploads/twilio-dashboard.png "Twilio dashboard")
 
 From the Console, create a *Verify* service. Once created, a **Verification SID** is generated. This SID is required when using the Verify SDK.
 
-![Twilio Verify General Settings](https://i.imgur.com/671tbsH.png)
+![Twilio Verify General Settings](/img/uploads/twilio-verify.png "Twilio Verify General Settings")
 
 With Twilio configured, head back to your terminal. Install the [Twilio NPM package](https://www.npmjs.com/package/twilio) and [dotenv](https://www.npmjs.com/package/dotenv) to manage your secrets:
 
@@ -215,7 +215,7 @@ Finally, you need to add one new view file for the `/verify` endpoint. Create a 
 
 Start your Node server with `npm start` and go back to `localhost:3000`. This time after you log in, you’ll see a new input field to enter your two-factor authentication code.
 
-![Enter your 2FA code](https://i.imgur.com/Jb7LnXN.png)
+![Enter your 2FA code](/img/uploads/twilio-2fa.png "Enter your 2FA code")
 
 Your application is now more secure, but this setup requires users to verify their account *every time* they log in. With thousands of users logging in multiple times per day, you can see how expensive this could get and how annoying this will be for your most frequent users.
 
@@ -227,7 +227,7 @@ While a browser fingerprint **alone** is not strong enough to act as a second fo
 
 Let’s look at how you can use [FingerprintJS](https://fingerprintjs.com/) to generate a browser fingerprint that’s 99.5% accurate and will allow you to bypass 2FA in some situations. To start, you need to sign up and get a security token that you will use for identification:
 
-![Fingerprint JS subscription dashboard](https://i.imgur.com/yKxQkTV.png)
+![Fingerprint JS subscription dashboard](/img/uploads/twilio-sub-dah.png "Fingerprint JS subscription dashboard")
 
 Next, add the FingerprintJS script to your `views/layout.hbs` file just above the line that adds your Express application’s custom JavaScript:
 
@@ -306,13 +306,13 @@ router.post('/login', (req, res) => {
 
 Start your Node server again with `npm start`. The first time you load the page, open the console and retrieve your visitor ID.
 
-![Get your visitor ID from the console](https://i.imgur.com/vnm52wA.png)
+![Get your visitor ID from the console](/img/uploads/twilio-visitor-id.png "Get your visitor ID from the console")
 
 Add this ID to your user’s `lastKnownVisitorId` field in the `routes/auth.js` file and restart the Node server.
 
 Now, when you log in, you’ll be able to bypass the Twilio Verification so long as your browser fingerprint matches the one you added to your user object.
 
-![Logged in using the browser fingerprint for verification](https://i.imgur.com/VM0U9yt.png)
+![Logged in using the browser fingerprint for verification](/img/uploads/twilio-logged-in.png "Logged in using the browser fingerprint for verification")
 
 ## Conclusion
 
