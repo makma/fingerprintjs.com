@@ -12,6 +12,7 @@ metadata:
 featured: false
 publishDate: 2021-08-16T16:57:09.641Z
 title: The 8 Best GitHub Projects for Fraud Detection and Prevention
+isPublished: true
 tags:
   - engineering
 authors:
@@ -20,7 +21,6 @@ heroImage:
   image: /img/uploads/8-best-github-projects.png
   imageAlt: Best Github Projects For Fraud Detection
   imageTitle: Best Github Projects For Fraud Detection
-isPublished: true
 ---
 No matter what field you’re working in as a developer, protecting your application from malicious users is a critical part of your job. The frequency of fraud is increasing across all industries and locations around the world.
 
@@ -115,7 +115,7 @@ The purpose of MISP is simple: to create a safe environment where professionals 
 
 ![Sample usage of MISP](https://i.imgur.com/q527sZk.png)
 
-### 6. [reCAPTCHA PHP client library(]https://github.com/google/recaptcha)
+### 6. [reCAPTCHA PHP client library](https://github.com/google/recaptcha)
 
 You should always be looking for new ways to evolve your website’s security systems and prevent new types of attacks. This is what Google has been doing in the last years with reCAPTCHA, a free CAPTCHA service that protects websites from spam and abuse.
 
