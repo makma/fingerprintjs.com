@@ -27,7 +27,11 @@ heroImage:
   imageTitle: Chargeback prevention
 customCTA:
   openCtaNewTab: false
-  title: ""
+  title: FingerprintJS for E-commerce
+  description: Learn how browser fingerprinting can reduce chargebacks by
+    detecting fraud patterns.
+  ctaText: Contact Sales
+  ctaUrl: https://fingerprintjs.com/contact-sales/
 ---
 The chargeback process was designed as a consumer protection mechanism to shield vulnerable customers from the impact of fraud and credit card theft. Unfortunately, chargebacks end up penalizing retailers severely, as they almost never see the product or service returned — on top of losing the original transaction amount. And with <a href="https://www.versapay.com/blog/chargebacks-are-up-25-percent-how-to-protect-your-business-from-fraud" target="_blank" rel="noopener">chargeback incidents on the rise</a>, online retailers are well-advised to proactively implement chargeback prevention measures as part of a broader [payment fraud protection](https://fingerprintjs.com/payment-fraud/) strategy. The following tactics and best practices can help e-commerce store owners mitigate the risk of chargebacks as well as protect customers against online fraud.
 
