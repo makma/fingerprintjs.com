@@ -13,15 +13,15 @@ metadata:
 featured: true
 publishDate: 2021-07-01T13:48:02.818Z
 title: How ad blockers can be used for browser fingerprinting
+isPublished: true
 tags:
   - fingerprinting
   - engineering
   - js
 authors:
   - Sergey Mostsevenko
-isPublished: true
 ---
-![Ad blocker fingerprinting](https://lh6.googleusercontent.com/FwfigX3pRuM1tkC_T1Emaj30G1bVAIQguQy9jzgTmQHV4cKqAXl3tLVJpfpAgbJxHFn31fBZH5reu8Ull8TGYq9QalIKwkbm6XDSgmzsEaoiM7glRplHdQSaZMesWtcWOKRZn5qr "Ad blocker fingerprinting")
+![Ad blocker fingerprinting](/img/uploads/ad-blocker-fingerprinting.png "Ad blocker fingerprinting")
 
 <i>Editor's note: we have made some changes to the article introduction for tone and clarity.</i>
 
@@ -37,7 +37,7 @@ While browser fingerprinting is a proven-out method of visitor identification (y
 
 An ad blocker is a browser extension that prevents browsers from loading video and displaying advertisements, pop-ups, tracking pixels and other third-party scripts. 
 
-![What is an ad blocker](https://lh4.googleusercontent.com/nOBtmxeQ-nwYhOX1tRe0NF8mGfYdQHRnV-6G_3OXALdvGyq-fUR5DCcl-Pq_XnJsXcuzbbsYC-bmJkFQgk-JZQlp3GU0OwGGHskeDdT6dz-wgs91UCjwn40TDgaXX3msLiifBGAV "What is an ad blocker")
+![What is an ad blocker](/img/uploads/whatisanadblocker.png "What is an ad blocker")
 
 Ad blockers not only improve the online experience by hiding ads, but also protect browsing activity from being tracked by third-party scripts. All major online ad platforms (like Google and Facebook), as well as other marketing and product testing tools (like Crazy Egg and Hotjar) use tracking scripts to monitor and monetize user activity online. Privacy conscious users often turn to ad blockers to stop their browsing history from being shared with these platforms. 
 
@@ -62,7 +62,7 @@ Android browsers are a special case, in that they generally lack extension APIs.
 
 Ad blockers prevent ads from being shown by looking for specific elements to block within the site’s contents. To identify these advertising elements, ad blockers use collections of rules called "filters" to decide what to block.
 
-![How ad blocker filters work](https://lh5.googleusercontent.com/w4qO5U7HQl2sBCMJE6gnuhCQLbOE0UW8I0a_cRKekJ2AK-A-YjA_csDCPFtWMb0KRILbmoHEUO2XEHcs0go6v6fgfVHUzcBMds7MFScZfot1e6B4ccaykOjf2vC4lTlZG9N6Dpzc "How ad blocker filters work")
+![How ad blocker filters work](/img/uploads/filters-ad-blocker.png "How ad blocker filters work")
 
 Usually these filters are maintained by the open source community. Like any other project, filters are created by different people for different needs. For example, French websites often use local ad systems that are not known worldwide and are not blocked by general ad filters, so developers in France will want to create a filter to block ads on French websites. Some filter maintainers can have privacy concerns and thus create filters that block trackers.
 
@@ -70,7 +70,7 @@ A filter is usually a text file that follows a common standard called "[AdBlock 
 
 A blocking rule example is shown below:
 
-![Ad blocker blocking rule](https://lh5.googleusercontent.com/54P_Mlf61BTLLYMCsYn3Sd35mrIXHTymQrXvnS09ZKA0r-CahOU2n2dwqMhVau1gkqPByS2PpGRQmylrgBe16pV6i1KRjts_fII7_OB5_UUiDq4G-DivaKdiB3Biw3vCINPWwOK9 "Ad blocker blocking rule")
+![Ad blocker blocking rule](/img/uploads/ad-blocker-selector.png "Ad blocker blocking rule")
 
 The most common sets of filters used by AdBlock, AdGuard and other ad blockers include:
 
