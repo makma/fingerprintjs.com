@@ -63,7 +63,7 @@ Following the correct payment protocols will allow e-commerce merchants to spot 
 
 Merchant error and friendly fraud chargebacks often start with a customer complaint. An outstanding customer experience during checkout and with any support issues can help prevent chargebacks Since chargebacks occur when 
 
-the customer bypasses the retailer and goes straight to their credit card issuer, merchants should always be proactive in resolving matters quickly and amicably..
+the customer bypasses the retailer and goes straight to their credit card issuer, merchants should always be proactive in resolving matters quickly and amicably.
 
 For example, chargebacks often occur when customers forget to cancel subscriptions and/or goods are shipped without their knowledge. Merchants can make it easier for customers to cancel subscriptions, or be forthcoming and reasonable with their refund policy to reduce chargebacks. In the case of a refund, merchants can at least potentially recover their inventory.
 
