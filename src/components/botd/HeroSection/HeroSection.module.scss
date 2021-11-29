@@ -1,9 +1,3 @@
-.root {
-  overflow: hidden;
-
-  padding: 0 0 rem(94px) 0;
-}
-
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -14,13 +8,13 @@
   }
 }
 
+.descriptionSection,
+.botDSection {
+  padding-top: rem(72.5px);
+  padding-bottom: rem(145px);
+}
+
 .descriptionSection {
-  padding-top: rem(115px);
-
-  @include media('<=desktop') {
-    padding-top: rem(48px);
-  }
-
   .title {
     @include sans($size: 14px, $weight: 600, $lh: 140%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
     letter-spacing: 0.04em;
@@ -35,6 +29,10 @@
     @include media('<=phoneLandscape') {
       font-size: rem(11px);
     }
+  }
+  @include media('<=phoneLandscape') {
+    padding-top: rem(48px);
+    padding-bottom: rem(60px);
   }
 }
 .subtitle {
@@ -101,8 +99,6 @@
   }
 }
 .botDSection {
-  padding-top: rem(90px);
-
   .title {
     @include sans($size: 14px, $weight: 600, $lh: 140%, $color: adjust-color(c('brand-water'), $alpha: -0.5));
     letter-spacing: 0.04em;
@@ -119,5 +115,9 @@
       @include sans($size: 24px, $weight: 600, $lh: 100%);
       letter-spacing: 0.01em;
     }
+  }
+  @include media('<=phoneLandscape') {
+    padding-top: 0;
+    padding-bottom: rem(128px);
   }
 }
