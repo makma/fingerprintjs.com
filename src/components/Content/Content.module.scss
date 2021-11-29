@@ -1,4 +1,5 @@
 @import '../BlockQuote/BlockQuote.scss';
+$marginBottom: 6rem;
 
 .root {
   p,
@@ -8,7 +9,12 @@
   table,
   iframe,
   deckgo-highlight-code {
-    margin-bottom: 6rem;
+    margin-bottom: $marginBottom;
+  }
+  div[class*='WidgetPreviewContainer'] {
+    img {
+      margin-bottom: $marginBottom;
+    }
   }
 
   deckgo-highlight-code {
@@ -80,7 +86,8 @@
     }
 
     img {
-      border-radius: 16px;
+      border-radius: rem(16px);
+      object-fit: contain;
     }
   }
 

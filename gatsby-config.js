@@ -126,6 +126,8 @@ module.exports = {
               // base for generating different widths of each image.
               maxWidth: 2048,
               linkImagesToOriginal: false,
+              wrapperStyle: `max-height: 650px;`,
+              disableBgImage: true,
             },
           },
           {
