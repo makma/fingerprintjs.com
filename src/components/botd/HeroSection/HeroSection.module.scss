@@ -1,0 +1,123 @@
+.root {
+  overflow: hidden;
+
+  padding: 0 0 rem(94px) 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include media('<=phoneLandscape') {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.descriptionSection {
+  padding-top: rem(115px);
+
+  @include media('<=desktop') {
+    padding-top: rem(48px);
+  }
+
+  .title {
+    @include sans($size: 14px, $weight: 600, $lh: 140%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    display: inline-block;
+    background: #f2f2f7;
+    border-radius: 4px;
+    padding: rem(4px) rem(10px) rem(5px) rem(10px);
+    margin-bottom: rem(16px);
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(11px);
+    }
+  }
+}
+.subtitle {
+  font-size: rem(48px);
+  font-weight: v('bold');
+
+  margin-bottom: rem(16px);
+  padding-right: rem(100px);
+
+  @include media('<=phoneLandscape') {
+    font-size: rem(26px);
+    padding-right: 0;
+  }
+}
+
+.description {
+  @include sans($size: 16px, $weight: 400, $lh: 150%);
+
+  margin-bottom: rem(48px);
+  padding-right: rem(160px);
+
+  @include media('<=phoneLandscape') {
+    font-size: rem(16px);
+    padding-right: 0;
+  }
+}
+
+.buttons {
+  .buttonOutlined {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 2px v('brand-fire');
+    @include transition((box-shadow, color));
+
+    height: 58px;
+    padding: 0 rem(24px);
+    font-weight: 500;
+    font-size: rem(16px);
+    color: c('brand-fire');
+    border-radius: rem(6px);
+    margin-left: rem(16px);
+    fill: c('brand-fire');
+
+    @include transition((box-shadow, color, fill));
+
+    &:focus,
+    &:hover {
+      color: adjust-color(c('brand-fire'), $lightness: -20%);
+      box-shadow: inset 0 0 0 2px adjust-color(c('brand-fire'), $lightness: -20%);
+      fill: adjust-color(c('brand-fire'), $lightness: -20%);
+    }
+
+    .icon {
+      margin-right: rem(10px);
+
+      @include media('<=phoneLandscape') {
+        display: none;
+      }
+    }
+  }
+}
+.botDSection {
+  padding-top: rem(90px);
+
+  .title {
+    @include sans($size: 14px, $weight: 600, $lh: 140%, $color: adjust-color(c('brand-water'), $alpha: -0.5));
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    margin-bottom: rem(4px);
+  }
+  .botD {
+    box-shadow: 0px 20px 40px rgba(13, 16, 41, 0.1);
+    border-radius: rem(16px);
+    padding: rem(32px);
+
+    .subtitle {
+      @include sans($size: 24px, $weight: 600, $lh: 100%);
+      letter-spacing: 0.01em;
+    }
+  }
+}
