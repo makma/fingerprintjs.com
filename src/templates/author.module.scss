@@ -1,0 +1,40 @@
+.authorSection {
+  padding-top: rem(58px);
+  padding-bottom: rem(112px);
+}
+
+.aboutAuthor {
+  padding-bottom: rem(52px);
+}
+
+.authorSummary {
+  padding-bottom: rem(48px);
+
+  display: grid;
+  grid-template-columns: min(30vw, 400px) 1fr;
+  column-gap: rem(24px);
+
+  @include media('<=desktop') {
+    grid-template-columns: 350px 1fr;
+  }
+
+  @include media('<=phoneLandscape') {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .photo {
+    height: rem(350px);
+    border-radius: rem(16px);
+  }
+
+  .authorInfo {
+    .bioTitle {
+      margin-top: rem(16px);
+    }
+  }
+}
+
+.authorArticles {
+  font-size: rem(32px);
+}
