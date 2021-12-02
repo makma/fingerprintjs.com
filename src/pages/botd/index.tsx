@@ -4,6 +4,7 @@ import BreadcrumbsSEO from '../../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../../helpers/types'
 
 import HeroSection from '../../components/botd/HeroSection/HeroSection'
+import GenerateKeySection from '../../components/botd/GenerateKeySection/GenerateKeySection'
 
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
@@ -26,6 +27,7 @@ export default function Botd({ pageContext }: AccountSharingProps) {
     <LayoutTemplate siteMetadata={siteMetadata}>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
       <HeroSection />
+      <GenerateKeySection />
     </LayoutTemplate>
   )
 }
