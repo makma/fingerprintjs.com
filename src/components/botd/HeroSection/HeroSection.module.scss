@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  @include media('<=phoneLandscape') {
+  @include media('<=desktop') {
     display: flex;
     flex-direction: column;
   }
@@ -12,6 +12,11 @@
 .botDSection {
   padding-top: rem(72.5px);
   padding-bottom: rem(145px);
+
+  @include media('<=desktop') {
+    padding-top: rem(48px);
+    padding-bottom: rem(60px);
+  }
 }
 
 .descriptionSection {
@@ -36,7 +41,7 @@
   }
 }
 .subtitle {
-  font-size: rem(48px);
+  font-size: rem(44px);
   font-weight: v('bold');
 
   margin-bottom: rem(16px);
@@ -108,16 +113,82 @@
   }
   .botD {
     box-shadow: 0px 20px 40px rgba(13, 16, 41, 0.1);
+    letter-spacing: 0.01em;
+
     border-radius: rem(16px);
-    padding: rem(32px);
+    padding: rem(24px);
 
     .subtitle {
       @include sans($size: 24px, $weight: 600, $lh: 100%);
       letter-spacing: 0.01em;
     }
+
+    .seeDetails {
+      @include sans($size: 16px, $weight: 500, $lh: 150%, $color: c('brand-fire'));
+      cursor: pointer;
+
+      margin-top: rem(16px);
+      margin-bottom: rem(40px);
+      @include transition(color);
+
+      &:hover {
+        color: adjust-color(c('brand-fire'), $lightness: -20%);
+      }
+    }
+
+    @include media('<=phoneLandscape') {
+      padding: rem(16px);
+    }
   }
   @include media('<=phoneLandscape') {
     padding-top: 0;
     padding-bottom: rem(128px);
+  }
+}
+
+.cards {
+  display: grid;
+  column-gap: rem(24px);
+  row-gap: rem(22px);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+
+  @include media('<=phoneLandscape') {
+    grid-template-columns: 1fr;
+    row-gap: rem(8px);
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+
+    padding: rem(24px) rem(16px) rem(24px) rem(20px);
+    border: 1.6px solid rgba(227, 227, 237, 0.5);
+    border-radius: 8px;
+  }
+
+  .botType {
+    display: flex;
+    margin-bottom: rem(4px);
+
+    .cardTitle {
+      @include sans($size: 14px, $weight: 500, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+      margin-right: rem(8px);
+    }
+    .infoIcon {
+      width: rem(14px);
+    }
+  }
+
+  .detected {
+    @include sans($size: 20px, $weight: 600, $lh: 120%);
+  }
+  .iconContainer {
+    padding-right: rem(16px);
+
+    .botIcon {
+      width: rem(64px);
+      height: rem(64px);
+    }
   }
 }
