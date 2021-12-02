@@ -1,0 +1,146 @@
+.window {
+  border-radius: rem(16px);
+  background-color: hsl(234, 54%, 11%);
+  overflow: hidden;
+  box-shadow: 0 0 20px adjust-color(c('black'), $alpha: -0.8);
+  width: 100%;
+
+  .header {
+    height: rem(34px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: hsl(234, 47%, 24%);
+    padding: 0 rem(16px);
+    // @include gap(0.675rem);
+
+    > * + * {
+      margin-left: rem(7px);
+    }
+
+    .button {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+
+      &.close {
+        background-color: v('error');
+      }
+
+      &.minimize {
+        background-color: v('warning');
+      }
+
+      &.expand {
+        background-color: v('success');
+      }
+    }
+  }
+
+  .content {
+    position: relative;
+
+    overflow-y: auto;
+    height: rem(334px);
+
+    &::-webkit-scrollbar {
+      width: rem(4px);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #434875;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 3rem 2rem 3rem;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  padding: rem(24px) 0;
+
+  .tabs {
+    display: flex;
+
+    .tab {
+      @include sans($size: 14px, $weight: 600, $lh: 140%, $color: v('white'));
+      letter-spacing: 0.04em;
+      text-align: center;
+
+      cursor: pointer;
+      width: rem(70px);
+      padding-bottom: rem(8px);
+
+      &.active {
+        border-bottom: 2px solid #f04405;
+      }
+    }
+  }
+  .copy {
+    @include sans($size: 14px, $weight: 600, $lh: 150%, $color: v('white'));
+    cursor: pointer;
+
+    .icon {
+      width: rem(22px);
+      margin-right: rem(8px);
+    }
+
+    @include transition(opacity);
+    @include transition-duration(0.1s);
+    @include transition-timing-function(ease-out);
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}
+
+.content,
+.nav {
+  margin: 0 rem(24px);
+}
+
+.content {
+  code[class*='language-'],
+  pre[class*='language-'] {
+    font-size: rem(14px);
+    color: #ffffff;
+    line-height: 150%;
+  }
+  span[class='token comment'],
+  span[class='token punctuation'] {
+    color: #ffffff;
+  }
+
+  span[class='token selector'],
+  span[class='token tag'] {
+    color: #98c379;
+  }
+  span[class='token attr-name'],
+  span[class='token string'] {
+    color: #89bffa;
+  }
+
+  span[class='token atrule'] {
+    color: #c678dd;
+  }
+  span[class='token keyword'] {
+    color: #ef8277;
+  }
+  span[class='token function'] {
+    color: #cbabf9;
+  }
+  span[class='token attr-value'] {
+    color: #afd5fb;
+  }
+}
