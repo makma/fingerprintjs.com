@@ -1,8 +1,8 @@
 .root {
-  padding-bottom: rem(128px);
+  padding-bottom: rem(144px);
 
   @include media('<=phoneLandscape') {
-    padding-bottom: rem(42px);
+    padding-bottom: rem(128px);
   }
 
   display: grid;
