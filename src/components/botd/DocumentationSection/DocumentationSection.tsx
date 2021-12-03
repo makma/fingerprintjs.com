@@ -1,22 +1,32 @@
 import React from 'react'
 import Container from '../../common/Container'
 import Button from '../../common/Button'
-import { URL } from '../../../constants/content'
+import { DOC_URL } from '../../../constants/content'
+import { ReactComponent as DocSvg } from './DocSVG.svg'
+import { ReactComponent as LightweightSvg } from './LightweightSVG.svg'
+import { ReactComponent as OpensourceSvg } from './OpensourceSVG.svg'
 
 import styles from './DocumentationSection.module.scss'
 
-export default function HeroSection() {
+export default function DocumentationSection() {
+  // TODO change button link to botd doc page
   return (
     <Container className={styles.container}>
-      <div className={styles.descriptionSection}>
+      <div className={styles.buttonSection}>
         <h1 className={styles.title}>Developer-friendly bot detection</h1>
-        <Button href={URL.signupUrl} variant='primary' size='big' className={styles.button}>
+        <Button href={DOC_URL.documentationUrl} variant='primary' size='big'>
           Read documentation
         </Button>
       </div>
-      <div className={styles.botDSection}>
-        <Card icon={futureProofedSvg} title='Future-proofed'>
-          Hosted and maintained by our team - ensure identification accuracy without in-house expertise.
+      <div className={styles.cardsSection}>
+        <Card icon={DocSvg} title='Extensive documentation'>
+          Our docs are written for developers - easy to read, easier to implement.
+        </Card>
+        <Card icon={LightweightSvg} title='Lightweight agent'>
+          Minimal page speed impact, keeping your website fast.
+        </Card>
+        <Card icon={OpensourceSvg} title='Open Source Powered'>
+          Open source JavaScript agent and Cloud Integrations that are actively supported.
         </Card>
       </div>
     </Container>
@@ -31,13 +41,13 @@ interface CardProps {
 
 function Card({ title, children, icon: Icon }: CardProps) {
   return (
-    <div className={styles.benefit}>
+    <div className={styles.card}>
       <div className={styles.iconContainer}>
         <Icon className={styles.icon} />
       </div>
       <div className={styles.info}>
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.description}>{children}</p>
+        <h3 className={styles.cardTitle}>{title}</h3>
+        <p className={styles.cardDescription}>{children}</p>
       </div>
     </div>
   )
