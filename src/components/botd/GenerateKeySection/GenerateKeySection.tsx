@@ -9,7 +9,7 @@ import styles from './GenerateKeySection.module.scss'
 
 export default function GenerateKeySection() {
   return (
-    <Container className={styles.container} size='large'>
+    <Container className={styles.container}>
       <section className={styles.keyGenSection}>
         <DevSVG className={styles.icon} />
         <h1 className={styles.title}>Generate my API keys</h1>

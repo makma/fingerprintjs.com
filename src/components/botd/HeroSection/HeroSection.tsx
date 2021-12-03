@@ -79,7 +79,7 @@ export default function HeroSection() {
   }
 
   return (
-    <Container className={styles.container} size='large'>
+    <Container className={styles.container}>
       <Section className={styles.descriptionSection}>
         <h1 className={styles.title}>free open beta</h1>
         <h2 className={styles.subtitle}>Open source JavaScript bot detection library</h2>
