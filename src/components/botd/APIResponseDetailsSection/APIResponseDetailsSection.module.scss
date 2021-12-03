@@ -1,0 +1,51 @@
+.root {
+  padding-bottom: rem(128px);
+
+  @include media('<=phoneLandscape') {
+    padding-bottom: rem(42px);
+  }
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: rem(32px);
+
+  @include media('<=desktop') {
+    display: flex;
+    flex-direction: column;
+
+    row-gap: rem(40px);
+  }
+}
+
+.title {
+  font-size: rem(32px);
+  font-weight: v('bold');
+  letter-spacing: -0.01em;
+  line-height: 130%;
+
+  margin-bottom: rem(32px);
+
+  @include media('<=tablet') {
+    font-size: rem(28px);
+  }
+}
+
+.details {
+  .detailsTitle {
+    @include sans($size: 24px, $weight: 600, $lh: 150%);
+    letter-spacing: 0.01em;
+  }
+
+  .description {
+    @include sans($size: 16px, $lh: 150%);
+
+    margin-bottom: rem(8px);
+  }
+}
+
+.infoIcon {
+  position: relative;
+  bottom: 119px;
+  left: 342px;
+  cursor: pointer;
+}
