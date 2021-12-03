@@ -141,7 +141,7 @@ That means they learn about types of covid fraud as they evolve, updating the pr
 
 Machine learning is automated, which means it can observe payments in real-time. It can also assess payment factors against set criteria, raising red flags if there’s anything suspicious and reducing the risk of human error.
 
-5. Make sure your fraud software is as accurate as it can be
+### 5. Make sure your fraud software is as accurate as it can be
 
 There are many fraud prevention software choices on the market, depending on your industry and budget. Companies like SEON, Kount, and Signifyd are popular names in fraud prevention, and many companies layer several solutions along with internally built tools to catch fraudsters in action. These software solutions can help to identify patterns of fraud on your web apps and assign fraud risk scores to individual visitors, allowing you to set risk thresholds and take action as needed.
 
@@ -149,7 +149,7 @@ However, your fraud prevention software needs to be accurate, otherwise a lot of
 
 Introducing highly accurate identifiers can also help to improve fraud system performance. FingerprintJS Pro (that’s us) is a browser fingerprinting API that provides a <a href="https://fingerprintjs.com/demo/">99.5% accurate visitor identifier</a> that can be used as a powerful signal for anti-fraud. 
 
-Conclusion
+## Conclusion
 
 Increasing instances of pandemic fraud have been spurred by changing behaviors online. Because businesses and consumers are increasingly online, there are more opportunities for online fraudsters. 
 
