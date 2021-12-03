@@ -74,7 +74,7 @@ The <a href="https://www.techrepublic.com/article/business-email-compromise-scam
 
 Having clear expectations for remote employees not only helps them to stay productive, but it’s also a form of pandemic fraud prevention. Working remotely comes with a degree of trust, and perhaps even leniency, but staff should know that if they’re being paid, they should be working. 
 
-### 2. What internal and external risks are applicable for your business? 
+### 2. What internal and external risks are applicable for your business?
 
 One way to reduce fraud in business is to manage the risks of the post-pandemic world. Identifying what the risks are, and coming up with ways to minimize those risks is a good place to start.
 
@@ -97,7 +97,7 @@ One way to reduce fraud in business is to manage the risks of the post-pandemic 
 
 Once you have a list of possible risks, you can identify which of them currently costs your business the most, as well as those that have a chance of becoming an existential threat in the future. 
 
-For example, e-commerce businesses often lose revenue from payment fraud. It’s <a href="https://www.concur.com/en-us/resource-center/infographics/post-pandemic-landscape-fraud-financial-services"reported</a> that since early 2020, credit card fraud in the US is worth $11 billion. Globally, payment card fraud has also netted $28.65 billion.
+For example, e-commerce businesses often lose revenue from payment fraud. It’s <a href="https://www.concur.com/en-us/resource-center/infographics/post-pandemic-landscape-fraud-financial-services">reported</a> that since early 2020, credit card fraud in the US is worth $11 billion. Globally, payment card fraud has also netted $28.65 billion.
 
 For remote-first companies, occupational fraud or major data breaches may be your top priority. Occupational fraud has cost companies $3.6 billion in 2020. Data privacy, ransomware and phishing attacks, tech support, and the fact that employees submit home-based expenses are all new or different financial risks with a remote workforce. 
 
