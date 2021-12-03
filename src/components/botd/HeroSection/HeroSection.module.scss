@@ -172,6 +172,7 @@
   .botType {
     display: flex;
     margin-bottom: rem(4px);
+    align-items: center;
 
     .cardTitle {
       @include sans($size: 14px, $weight: 500, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
@@ -179,6 +180,7 @@
     }
     .infoIcon {
       width: rem(14px);
+      height: rem(14px);
     }
   }
 
