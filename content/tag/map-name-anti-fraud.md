@@ -1,3 +1,3 @@
 ---
-name: fraud detection
+name: anti-fraud technology
 ---
