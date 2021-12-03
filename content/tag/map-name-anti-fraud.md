@@ -1,3 +1,3 @@
 ---
-name: anti-fraud
+name: fraud detection
 ---
