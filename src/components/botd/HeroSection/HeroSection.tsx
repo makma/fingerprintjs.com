@@ -73,6 +73,11 @@ export default function HeroSection() {
     }
   }, [visitorData])
 
+  const scrollToElementById = (id: string) => {
+    const section = document.querySelector(`#${id}`)
+    section && section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <Container className={styles.container} size='large'>
       <Section className={styles.descriptionSection}>
@@ -83,7 +88,12 @@ export default function HeroSection() {
           is collected. Add to your website with a few lines of JavaScript, no complicated integrations required.
         </p>
         <div className={styles.buttons}>
-          <Button href={URL.signupUrl} variant='primary' size='big' className={styles.button}>
+          <Button
+            onClick={() => scrollToElementById('generateKeySection')}
+            variant='primary'
+            size='big'
+            className={styles.button}
+          >
             Get started for free
           </Button>
           <a className={styles.buttonOutlined} href={URL.githubRepoUrl}>
