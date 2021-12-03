@@ -1,7 +1,7 @@
 ---
 templateKey: long-form-content
 metadata:
-  title: A Look at the anti-fraud technology landscape post-pandemic
+  title: A look at the anti-fraud technology landscape post-pandemic
   url: https://fingerprintjs.com/anti-fraud-technology-post-pandemic
   image: /img/uploads/a-look-at-anti-fraud-technology-post-pandemic.png
   socialImage: /img/uploads/a-look-at-anti-fraud-technology-post-pandemic.png
@@ -12,7 +12,7 @@ metadata:
     to rising threats using technology.
 featured: false
 publishDate: 2021-12-03T05:18:30.225Z
-title: A Look at the anti-fraud technology landscape post-pandemic
+title: A look at the anti-fraud technology landscape post-pandemic
 isPublished: true
 tags:
   - payment fraud
@@ -28,21 +28,21 @@ customCTA:
 ---
 The Covid-19 pandemic has changed the world forever. The way people think and behave is different in many ways, not just relating to their health. 
 
-Lockdowns have seen a [dramatic rise in online shopping](https://unctad.org/news/covid-19-has-changed-online-shopping-forever-survey-shows), [workplaces are increasingly looking at flexible work arrangements](https://www.mckinsey.com/featured-insights/future-of-work/the-future-of-work-after-covid-19), and online fraud is increasing too. 
+Lockdowns have seen a <a href="https://www.mckinsey.com/featured-insights/future-of-work/the-future-of-work-after-covid-19">dramatic rise in online shopping</a>, workplaces are increasingly looking at flexible work arrangements, and online fraud is increasing too. 
 
 In the world of cybercrime, fraudsters tend to follow global trends. When it comes to Covid-19, that means a rise in pandemic fraud content, whether it be targeted at aspects of the pandemic, or its knock-on effects. 
 
-In the UK alone, authorities [reported](https://www.bbc.com/news/technology-56499886) more than £34.5 million was stolen in pandemic-related scams from 2020 - 2021. 
+In the UK alone, authorities <a href="https://www.bbc.com/news/technology-56499886">reported</a> more than £34.5 million was stolen in pandemic-related scams from 2020 - 2021. 
 
-Just as fraudsters adapt to new situations, so too do [fraud detection](https://fingerprintjs.com/online-fraud-prevention-and-detection) and prevention methods. This article shows just how the landscape has changed since the Covid pandemic and what anti-fraud technology you need to cope with the new normal.
+Just as fraudsters adapt to new situations, so too do <a href="https://fingerprintjs.com/online-fraud-prevention-and-detection">fraud detection</a> and prevention methods. This article shows just how the landscape has changed since the Covid pandemic and what anti-fraud technology you need to cope with the new normal.
 
 ## How has online fraud changed due to the pandemic?
 
-The onset of Covid-19 has been called a [tremendous boon](https://www.protiviti.com/US-en/insights/pov-post-pandemic-fraud-landscape) for online criminals. Cybercrime was already trending up, so it’s difficult to isolate the exact effects of the pandemic, but there are notable examples of the situation having fuelled the fire.
+The onset of Covid-19 has been called a <a href="https://www.protiviti.com/US-en/insights/pov-post-pandemic-fraud-landscape">tremendous boon</a> for online criminals. Cybercrime was already trending up, so it’s difficult to isolate the exact effects of the pandemic, but there are notable examples of the situation having fuelled the fire.
 
-[Analysis](https://www.ft.com/content/30553ae9-cdfd-483c-a1ef-c04e3135f9da) shows spam messages rose by an astonishing 220 percent between February and March 2020, as the pandemic took hold. The number of malicious URLs nearly tripled in that time too. 
+<a href="https://www.ft.com/content/30553ae9-cdfd-483c-a1ef-c04e3135f9da">Analysis</a> shows spam messages rose by an astonishing 220 percent between February and March 2020, as the pandemic took hold. The number of malicious URLs nearly tripled in that time too. 
 
-The coronavirus also spawned new scams, preying on consumer misinformation and uncertainty. [Reuters](https://www.reuters.com/article/us-health-coronavirus-usa-fraud-idUSKCN251025) reported that from March to August, covid fraud cost consumers $100 million across the United States, much of it due to stimulus relief when much of the economy was shut down. While complete data in 2021 is difficult to come across, [the number of cybercrime complaints](https://www.iii.org/fact-statistic/facts-statistics-identity-theft-and-cybercrime) has risen every year from 2016 - 2020.
+The coronavirus also spawned new scams, preying on consumer misinformation and uncertainty. <a href="https://www.reuters.com/article/us-health-coronavirus-usa-fraud-idUSKCN251025">Reuters</a> reported that from March to August, covid fraud cost consumers $100 million across the United States, much of it due to stimulus relief when much of the economy was shut down. While complete data in 2021 is difficult to come across, <a href="https://www.iii.org/fact-statistic/facts-statistics-identity-theft-and-cybercrime">the number of cybercrime complaints</a> has risen every year from 2016 - 2020.
 
 The threat of online fraud is greater than it has ever been, both for consumers and online services. Whether it is specifically related to covid-19 fraud or any other type of online scam, it’s a virtual certainty that fraudsters will target your website this year.
 
@@ -50,9 +50,9 @@ The threat of online fraud is greater than it has ever been, both for consumers 
 
 Not only has the frequency of online fraud increased since the onset of the pandemic, but the nature of fraud attempts has changed. Many of these trends were coming into focus before the pandemic but were accelerated as more individuals worked, shopped, and socialized online.
 
-As described by [Interpol](https://www.interpol.int/en/News-and-Events/News/2020/INTERPOL-report-shows-alarming-rate-of-cyberattacks-during-COVID-19), one key change in recent years is the way scammers are moving away from targeting individuals, and increasingly going after organizations - particularly large businesses and even government organizations. Fraud awareness at major online companies is high as a result. Almost 70 percent of major organizations told a [Learn Bonds study](https://learnbonds.com/news/almost-70-of-major-organisations-to-increase-cybersecurity-spending-following-coronavirus-outbreak/) that they plan to increase their spending on cybersecurity since the covid outbreak. This can be explained both by the increase in threats overall, as well as by the changing nature of workplaces following lockdowns. As many white-collar workers are now working from home indefinitely, companies will need to institute stricter security measures around identity and access management. 
+As described by <a href=">https://www.interpol.int/en/News-and-Events/News/2020/INTERPOL-report-shows-alarming-rate-of-cyberattacks-during-COVID-19">Interpol</a>, one key change in recent years is the way scammers are moving away from targeting individuals, and increasingly going after organizations - particularly large businesses and even government organizations. Fraud awareness at major online companies is high as a result. Almost 70 percent of major organizations told a <a href="https://learnbonds.com/news/almost-70-of-major-organisations-to-increase-cybersecurity-spending-following-coronavirus-outbreak/">Learn Bonds study</a> that they plan to increase their spending on cybersecurity since the covid outbreak. This can be explained both by the increase in threats overall, as well as by the changing nature of workplaces following lockdowns. As many white-collar workers are now working from home indefinitely, companies will need to institute stricter security measures around identity and access management. 
 
-Not only are companies willing to invest in cybersecurity and fraud prevention, but their executives are also beginning to take the existential risk of security breaches more seriously. 18 percent of CEOs told a [2020 KPMG study](https://home.kpmg/xx/en/home/insights/2021/03/ceo-outlook-pulse.html) that online security threats were the greatest risk of derailing their company’s growth in the next three years. That number was nearly double the 10 percent of CEOs who had the same response six months earlier.
+Not only are companies willing to invest in cybersecurity and fraud prevention, but their executives are also beginning to take the existential risk of security breaches more seriously. 18 percent of CEOs told a <a href="https://home.kpmg/xx/en/home/insights/2021/03/ceo-outlook-pulse.html">2020 KPMG study</a> that online security threats were the greatest risk of derailing their company’s growth in the next three years. That number was nearly double the 10 percent of CEOs who had the same response six months earlier.
 
 ## What factors are influencing fraud post-pandemic?
 
@@ -61,7 +61,7 @@ In general, fraudsters react to global changes in the way people behave and craf
 When it comes to frauds in business since the pandemic, there are a few common trends that fraudsters are looking to take advantage of:
 
 * **Remote working:** Remote employees present a greater risk of fraud to your business. Unsupervised employees can charge for the time they spend not working, they are more able to steal company data, and they have more opportunities to fraudulently claim workplace compensation.
-* **Ecommerce:** [Two-thirds of consumers](https://www.synovus.com/business/resource-center/commercial-middle-market-insights/three-ways-the-pandemic-has-changed-business-fraud/) say they shop online more now than they did before the pandemic. There is a range of ways scammers are targeting online shoppers that can ultimately impact online businesses. One important example is payment fraud, where malicious actors make fraudulent purchases using phished or otherwise acquired credit cards.
+* **Ecommerce:** <a href="https://www.synovus.com/business/resource-center/commercial-middle-market-insights/three-ways-the-pandemic-has-changed-business-fraud/">Two-thirds of consumers</a> say they shop online more now than they did before the pandemic. There is a range of ways scammers are targeting online shoppers that can ultimately impact online businesses. One important example is payment fraud, where malicious actors make fraudulent purchases using phished or otherwise acquired credit cards.
 * **Supply scams:** Many industries report supply shortages in a post-pandemic world, and fraudsters can exploit the enthusiasm businesses might have at the possibility of getting hard-to-find supplies.
 
 ## Questions businesses should answer to quantify their fraud risk
@@ -70,7 +70,7 @@ When it comes to frauds in business since the pandemic, there are a few common t
 
 The rise in remote working presents an opportunity for fraudsters to exploit employees that have much less supervision than in a traditional office setting.
 
-The [FBI reported more than 19,000 complaints](https://www.techrepublic.com/article/business-email-compromise-scams-proved-costly-to-victims-in-2020/) of email phishing in 2020. One common technique had fraudsters masquerading as senior managers or executives in an attempt to get junior staff to reveal sensitive information. It’s important to have clear steps outlined so that employees working remotely know how to deal with suspicious emails or other fraud attempts.
+The <a href="https://www.techrepublic.com/article/business-email-compromise-scams-proved-costly-to-victims-in-2020/">FBI reported more than 19,000 complaints</a> of email phishing in 2020. One common technique had fraudsters masquerading as senior managers or executives in an attempt to get junior staff to reveal sensitive information. It’s important to have clear steps outlined so that employees working remotely know how to deal with suspicious emails or other fraud attempts.
 
 Having clear expectations for remote employees not only helps them to stay productive, but it’s also a form of pandemic fraud prevention. Working remotely comes with a degree of trust, and perhaps even leniency, but staff should know that if they’re being paid, they should be working. 
 
@@ -97,7 +97,7 @@ One way to reduce fraud in business is to manage the risks of the post-pandemic 
 
 Once you have a list of possible risks, you can identify which of them currently costs your business the most, as well as those that have a chance of becoming an existential threat in the future. 
 
-For example, e-commerce businesses often lose revenue from payment fraud. It’s [reported](https://www.concur.com/en-us/resource-center/infographics/post-pandemic-landscape-fraud-financial-services) that since early 2020, credit card fraud in the US is worth $11 billion. Globally, payment card fraud has also netted $28.65 billion.
+For example, e-commerce businesses often lose revenue from payment fraud. It’s <a href="https://www.concur.com/en-us/resource-center/infographics/post-pandemic-landscape-fraud-financial-services"reported</a> that since early 2020, credit card fraud in the US is worth $11 billion. Globally, payment card fraud has also netted $28.65 billion.
 
 For remote-first companies, occupational fraud or major data breaches may be your top priority. Occupational fraud has cost companies $3.6 billion in 2020. Data privacy, ransomware and phishing attacks, tech support, and the fact that employees submit home-based expenses are all new or different financial risks with a remote workforce. 
 
@@ -126,7 +126,7 @@ Business data gives you a real-world understanding of exactly what’s going on 
 Employees are the front line of any business's fraud prevention strategy. A weak link on your staff can end up being exploited by fraudsters, so it’s important to ensure all staff understands how to treat suspicious activity.
 
 * Make fraud management part of your onboarding process
-* Hold regular [fraud training sessions](https://www.regions.com/Insights/Small-Business/Risk-Management/anti-fraud-training) with your team
+* Hold regular <a href="(https://www.regions.com/Insights/Small-Business/Risk-Management/anti-fraud-training">fraud training sessions</a> with your team
 * Have a process for managing invoices
 * Ensure inbox managers report unsolicited emails
 * Notify team members of fraud attempts so they know what they look like
@@ -147,7 +147,7 @@ There are many fraud prevention software choices on the market, depending on you
 
 However, your fraud prevention software needs to be accurate, otherwise a lot of fraud will slip through the cracks. Companies can ensure their fraud prevention solution is working well by keeping track of fraud instances over time to see if their efforts are resulting in improvement.
 
-Introducing highly accurate identifiers can also help to improve fraud system performance. FingerprintJS Pro (that’s us) is a browser fingerprinting API that provides a [99.5% accurate visitor identifier](https://fingerprintjs.com/demo/) that can be used as a powerful signal for anti-fraud. 
+Introducing highly accurate identifiers can also help to improve fraud system performance. FingerprintJS Pro (that’s us) is a browser fingerprinting API that provides a <a href="https://fingerprintjs.com/demo/">99.5% accurate visitor identifier</a> that can be used as a powerful signal for anti-fraud. 
 
 Conclusion
 
