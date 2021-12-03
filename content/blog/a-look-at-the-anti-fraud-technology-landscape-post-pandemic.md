@@ -2,7 +2,7 @@
 templateKey: long-form-content
 metadata:
   title: A look at the anti-fraud technology landscape post-pandemic
-  url: https://fingerprintjs.com/anti-fraud-technology-post-pandemic
+  url: https://fingerprintjs.com/blog/anti-fraud-technology-post-pandemic
   image: /img/uploads/a-look-at-anti-fraud-technology-post-pandemic.png
   socialImage: /img/uploads/a-look-at-anti-fraud-technology-post-pandemic.png
   imageAlt: Coronavirus items and a shield for anti-fraud
