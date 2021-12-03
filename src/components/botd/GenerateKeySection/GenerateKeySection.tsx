@@ -11,7 +11,7 @@ export default function GenerateKeySection() {
   return (
     <Container className={styles.container}>
       <section className={styles.keyGenSection}>
-        <DevSVG className={styles.icon} />
+        <DevSVG className={styles.icon} id='generateKeySection' />
         <h1 className={styles.title}>Generate my API keys</h1>
         <p className={styles.description}>
           Enter your email to generate a unique token and code snippet. Install on your site to use our API for free.
