@@ -15,7 +15,7 @@ publishDate: 2021-12-03T05:18:30.225Z
 title: A look at the anti-fraud technology landscape post-pandemic
 isPublished: true
 tags:
-  - payment fraud
+  - anti-fraud technology
 authors:
   - Savannah Copland
 heroImage:
