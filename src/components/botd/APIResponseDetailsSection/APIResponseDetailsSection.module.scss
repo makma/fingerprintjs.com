@@ -48,4 +48,8 @@
   bottom: 119px;
   left: 342px;
   cursor: pointer;
+
+  @include media('<=phone') {
+    bottom: 100px;
+    left: 200px;  }
 }

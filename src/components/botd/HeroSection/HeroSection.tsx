@@ -73,6 +73,11 @@ export default function HeroSection() {
     }
   }, [visitorData])
 
+  const scrollToApiResponse = () => {
+    const section = document.querySelector('#ApiResponseDetails')
+    section && section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <Container className={styles.container} size='large'>
       <Section className={styles.descriptionSection}>
@@ -97,7 +102,6 @@ export default function HeroSection() {
       <Section className={styles.botDSection}>
         <div className={styles.botD}>
           <h2 className={styles.title}>Am I a bot?</h2>
-
           {isLoading ? (
             <h2 className={styles.subTitle}>Bot detection in progress...</h2>
           ) : isBot ? (
@@ -105,7 +109,9 @@ export default function HeroSection() {
           ) : (
             <h2 className={styles.subTitle}>You are not a bot</h2>
           )}
-          <p className={styles.seeDetails}>See details →</p>
+          <p className={styles.seeDetails} onClick={() => scrollToApiResponse()}>
+            See details →
+          </p>
           <CardsSection {...detectedBots} isLoading={isLoading} />
         </div>
       </Section>

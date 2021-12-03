@@ -9,7 +9,9 @@ import styles from './APIResponseDetailsSection.module.scss'
 export default function GenerateKeySection() {
   return (
     <Container size='large'>
-      <h1 className={styles.title}>API response details</h1>
+      <h1 className={styles.title} id='ApiResponseDetails'>
+        API response details
+      </h1>
       <div className={styles.root}>
         <section className={styles.snippetSection}>
           <CodeWindow
