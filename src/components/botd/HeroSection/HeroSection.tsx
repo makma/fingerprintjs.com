@@ -209,7 +209,23 @@ function Card({
       <div className={styles.info}>
         <div className={styles.botType}>
           <h3 className={styles.cardTitle}>{title}</h3>
-          <Tippy arrow placement='right' content={tipContent} theme='checkmark' maxWidth={448}>
+          <Tippy
+            arrow
+            placement='right'
+            content={tipContent}
+            theme='checkmark'
+            maxWidth={448}
+            popperOptions={{
+              modifiers: [
+                {
+                  name: 'flip',
+                  options: {
+                    fallbackPlacements: ['bottom'],
+                  },
+                },
+              ],
+            }}
+          >
             <InfoSvg tabIndex={0} className={styles.infoIcon} />
           </Tippy>
         </div>
