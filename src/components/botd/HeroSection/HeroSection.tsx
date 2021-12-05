@@ -30,7 +30,7 @@ interface DetectedBots {
 }
 
 export default function HeroSection() {
-  const visitorData = useBotDResponse()
+  const { visitorData } = useBotDResponse()
 
   const [isLoading, setIsLoading] = useState(true)
   const [isBot, setIsBot] = useState(false)
