@@ -1,0 +1,68 @@
+.container {
+  background-color: v('brand-water');
+  --contentWidth: 630px;
+
+  padding-top: rem(80px);
+  padding-bottom: rem(80px);
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(48px);
+  }
+}
+
+.topIcon {
+  height: rem(54px);
+  width: rem(90px);
+  margin-bottom: rem(40px);
+  align-self: center;
+}
+
+.button {
+  @include sans($size: 16px, $weight: 600, $lh: 150%);
+
+  background-color: v('white');
+  padding: rem(17px) rem(24px);
+  margin-bottom: rem(80px);
+  align-self: center;
+  border-radius: rem(6px);
+}
+.title {
+  font-size: rem(32px);
+  font-weight: v('bold');
+  letter-spacing: -0.01em;
+  line-height: 130%;
+  color: v('white');
+
+  margin-bottom: rem(16px);
+
+  @include media('<=phoneLandscape') {
+    font-size: rem(26px);
+    line-height: 120%;
+  }
+}
+.subTitle {
+  @include sans($size: 16px, $weight: 400, $lh: 150%, $color: v('white'));
+  margin-bottom: rem(40px);
+
+  @include media('<=phoneLandscape') {
+    font-size: rem(14px);
+    margin-bottom: rem(32px);
+  }
+}
+.logos {
+  display: flex;
+  justify-content: space-around;
+  .logo {
+    height: rem(40px);
+    fill: #6e7080;
+
+    @include media('<=phoneLandscape') {
+      height: rem(24px);
+    }
+  }
+}
