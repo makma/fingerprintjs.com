@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useReducer } from 'react'
 import Section from '../../common/Section'
 import Container from '../../common/Container'
 import Button from '../../common/Button'
@@ -6,6 +6,7 @@ import { URL } from '../../../constants/content'
 import { useBotDResponse } from '../../../hooks/useBotDResponse'
 import Tippy from '@tippyjs/react'
 import Skeleton from '../../Skeleton/Skeleton'
+import { scrollToElementById } from '../../../helpers/scrollToElemenBytID'
 
 import { ReactComponent as GithubIconSvg } from './svg/GithubSVG.svg'
 
@@ -23,60 +24,52 @@ import { ReactComponent as LoadingIconSvg } from './svg/LoadingIconSVG.svg'
 import styles from './HeroSection.module.scss'
 
 interface DetectedBots {
+  isBot: boolean
   automationTool: boolean
   browserSpoofing: boolean
   searchEngine: boolean
   vm: boolean
 }
 
+function botReducer(detectedBots: DetectedBots, updateDetectedBots: string[]) {
+  updateDetectedBots.forEach((bot) => bot in detectedBots && ((detectedBots[bot] = true), (detectedBots.isBot = true)))
+
+  return detectedBots
+}
+
 export default function HeroSection() {
   const { visitorData } = useBotDResponse()
 
   const [isLoading, setIsLoading] = useState(true)
-  const [isBot, setIsBot] = useState(false)
-  const [detectedBots, setdetectedBots] = useState<DetectedBots>({
+  const initialState = {
+    isBot: false,
     automationTool: false,
     browserSpoofing: false,
     searchEngine: false,
     vm: false,
-  })
+  }
+  const [botState, dispatch] = useReducer(botReducer, initialState)
 
   useEffect(() => {
     setIsLoading(true)
+    const detectedBots: string[] = []
     if (visitorData) {
       if (visitorData.bot.automationTool.probability > 0) {
-        setIsBot(true)
-        setdetectedBots((prevState) => ({
-          ...prevState,
-          automationTool: true,
-        }))
-      } else if (visitorData.bot.browserSpoofing.probability > 0) {
-        setIsBot(true)
-        setdetectedBots((prevState) => ({
-          ...prevState,
-          browserSpoofing: true,
-        }))
-      } else if (visitorData.bot.searchEngine.probability > 0) {
-        setIsBot(true)
-        setdetectedBots((prevState) => ({
-          ...prevState,
-          searchEngine: true,
-        }))
-      } else if (visitorData.vm.probability > 0) {
-        setIsBot(true)
-        setdetectedBots((prevState) => ({
-          ...prevState,
-          vm: true,
-        }))
+        detectedBots.push('automationTool')
       }
+      if (visitorData.bot.browserSpoofing.probability > 0) {
+        detectedBots.push('browserSpoofing')
+      }
+      if (visitorData.bot.searchEngine.probability > 0) {
+        detectedBots.push('searchEngine')
+      }
+      if (visitorData.vm.probability > 0) {
+        detectedBots.push('vm')
+      }
+      dispatch(detectedBots)
       setIsLoading(false)
     }
   }, [visitorData])
-
-  const scrollToElementById = (id: string) => {
-    const section = document.querySelector(`#${id}`)
-    section && section.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
 
   return (
     <Container className={styles.container} size='large'>
@@ -110,13 +103,13 @@ export default function HeroSection() {
 
           {isLoading ? (
             <h2 className={styles.subTitle}>Bot detection in progress...</h2>
-          ) : isBot ? (
+          ) : botState.isBot ? (
             <h2 className={styles.subTitle}>You are a bot</h2>
           ) : (
             <h2 className={styles.subTitle}>You are not a bot</h2>
           )}
           <p className={styles.seeDetails}>See details →</p>
-          <CardsSection {...detectedBots} isLoading={isLoading} />
+          <CardsSection {...botState} isLoading={isLoading} />
         </div>
       </Section>
     </Container>
