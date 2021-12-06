@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useReducer } from 'react'
 import Section from '../../common/Section'
 import Container from '../../common/Container'
 import Button from '../../common/Button'
@@ -6,6 +6,8 @@ import { URL } from '../../../constants/content'
 import { useBotDResponse } from '../../../hooks/useBotDResponse'
 import Tippy from '@tippyjs/react'
 import Skeleton from '../../Skeleton/Skeleton'
+import { scrollToElementById } from '../../../helpers/scrollToElemenBytID'
+import { repeatElement } from '../../../helpers/repeatElement'
 
 import { ReactComponent as GithubIconSvg } from './svg/GithubSVG.svg'
 
@@ -23,60 +25,52 @@ import { ReactComponent as LoadingIconSvg } from './svg/LoadingIconSVG.svg'
 import styles from './HeroSection.module.scss'
 
 interface DetectedBots {
+  isBot: boolean
   automationTool: boolean
   browserSpoofing: boolean
   searchEngine: boolean
   vm: boolean
 }
 
+function botReducer(detectedBots: DetectedBots, updateDetectedBots: string[]) {
+  updateDetectedBots.forEach((bot) => bot in detectedBots && ((detectedBots[bot] = true), (detectedBots.isBot = true)))
+
+  return detectedBots
+}
+
 export default function HeroSection() {
-  const visitorData = useBotDResponse()
+  const { visitorData } = useBotDResponse()
 
   const [isLoading, setIsLoading] = useState(true)
-  const [isBot, setIsBot] = useState(false)
-  const [detectedBots, setdetectedBots] = useState<DetectedBots>({
+  const initialState = {
+    isBot: false,
     automationTool: false,
     browserSpoofing: false,
     searchEngine: false,
     vm: false,
-  })
+  }
+  const [botState, dispatch] = useReducer(botReducer, initialState)
 
   useEffect(() => {
     setIsLoading(true)
+    const detectedBots: string[] = []
     if (visitorData) {
       if (visitorData.bot.automationTool.probability > 0) {
-        setIsBot(true)
-        setdetectedBots((prevState) => ({
-          ...prevState,
-          automationTool: true,
-        }))
-      } else if (visitorData.bot.browserSpoofing.probability > 0) {
-        setIsBot(true)
-        setdetectedBots((prevState) => ({
-          ...prevState,
-          browserSpoofing: true,
-        }))
-      } else if (visitorData.bot.searchEngine.probability > 0) {
-        setIsBot(true)
-        setdetectedBots((prevState) => ({
-          ...prevState,
-          searchEngine: true,
-        }))
-      } else if (visitorData.vm.probability > 0) {
-        setIsBot(true)
-        setdetectedBots((prevState) => ({
-          ...prevState,
-          vm: true,
-        }))
+        detectedBots.push('automationTool')
       }
+      if (visitorData.bot.browserSpoofing.probability > 0) {
+        detectedBots.push('browserSpoofing')
+      }
+      if (visitorData.bot.searchEngine.probability > 0) {
+        detectedBots.push('searchEngine')
+      }
+      if (visitorData.vm.probability > 0) {
+        detectedBots.push('vm')
+      }
+      dispatch(detectedBots)
       setIsLoading(false)
     }
   }, [visitorData])
-
-  const scrollToElementById = (id: string) => {
-    const section = document.querySelector(`#${id}`)
-    section && section.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
 
   return (
     <Container className={styles.container}>
@@ -109,7 +103,7 @@ export default function HeroSection() {
           <h2 className={styles.title}>Am I a bot?</h2>
           {isLoading ? (
             <h2 className={styles.subTitle}>Bot detection in progress...</h2>
-          ) : isBot ? (
+          ) : botState.isBot ? (
             <h2 className={styles.subTitle}>You are a bot</h2>
           ) : (
             <h2 className={styles.subTitle}>You are not a bot</h2>
@@ -117,7 +111,7 @@ export default function HeroSection() {
           <p className={styles.seeDetails} onClick={() => scrollToElementById('ApiResponseDetails')}>
             See details →
           </p>
-          <CardsSection {...detectedBots} isLoading={isLoading} />
+          <CardsSection {...botState} isLoading={isLoading} />
         </div>
       </Section>
     </Container>
@@ -128,68 +122,70 @@ interface CardsSectionProps extends DetectedBots {
   isLoading?: boolean
 }
 function CardsSection({ automationTool, browserSpoofing, searchEngine, vm, isLoading }: CardsSectionProps) {
-  const repeatElement = (length, fn) => Array.from({ length }, (_, i) => fn(i))
-
-  return isLoading ? (
-    <div className={styles.cards}>
-      {repeatElement(4, (i) => (
-        <LoadingCard key={i} />
-      ))}
-    </div>
-  ) : (
-    <div className={styles.cards}>
-      <Card
-        iconDetected={automationDetectedSVG}
-        iconNotDetected={automationNotDetectedSVG}
-        title='Automation Tool'
-        detected={automationTool}
-        tipContent={
-          <p>
-            <strong>Automation tool detection</strong> is helpful when you need to know if your website is used by
-            things like Puppeteer, Playwright and Selenium. These tools are used to create fake reviews, scrape your
-            premium content and mass-register fake user accounts.
-          </p>
-        }
-      />
-      <Card
-        iconDetected={searchEngineDetectedSVG}
-        iconNotDetected={searchEngineNotDetectedSVG}
-        title='Search Engine'
-        detected={searchEngine}
-        tipContent={
-          <p>
-            <strong>Search engine detection</strong> is important to know which bots should be ignored, because
-            they&apos;re good and which should be protected against, because they&apos;re bad.
-          </p>
-        }
-      />
-      <Card
-        iconDetected={browserDetectedSVG}
-        iconNotDetected={browserNotDetectedSVG}
-        title='Browser Spoofing'
-        detected={browserSpoofing}
-        tipContent={
-          <p>
-            <strong>Browser spoofing</strong> detection is helpful to know when headless browsers used to abuse your
-            website pretend to be regular iPhones or Android devices.
-          </p>
-        }
-      />
-      <Card
-        iconDetected={virtualMDetectedSVG}
-        iconNotDetected={virtualMNotDetectedSVG}
-        title='Virtual Machine'
-        detected={vm}
-        tipContent={
-          <p>
-            <strong>Virtual machine detection</strong> is useful to detect click farms, automated review fraud and junk
-            content generation. It&apos;s a strong signal that improves the reliability and accuracy of the previous
-            three detectors.
-          </p>
-        }
-      />
-    </div>
-  )
+  if (isLoading) {
+    return (
+      <section className={styles.cards}>
+        {repeatElement(4, (i) => (
+          <LoadingCard key={i} />
+        ))}
+      </section>
+    )
+  } else {
+    return (
+      <section className={styles.cards}>
+        <Card
+          iconDetected={automationDetectedSVG}
+          iconNotDetected={automationNotDetectedSVG}
+          title='Automation Tool'
+          detected={automationTool}
+          tipContent={
+            <p>
+              <strong>Automation tool detection</strong> is helpful when you need to know if your website is used by
+              things like Puppeteer, Playwright and Selenium. These tools are used to create fake reviews, scrape your
+              premium content and mass-register fake user accounts.
+            </p>
+          }
+        />
+        <Card
+          iconDetected={searchEngineDetectedSVG}
+          iconNotDetected={searchEngineNotDetectedSVG}
+          title='Search Engine'
+          detected={searchEngine}
+          tipContent={
+            <p>
+              <strong>Search engine detection</strong> is important to know which bots should be ignored, because
+              they&apos;re good and which should be protected against, because they&apos;re bad.
+            </p>
+          }
+        />
+        <Card
+          iconDetected={browserDetectedSVG}
+          iconNotDetected={browserNotDetectedSVG}
+          title='Browser Spoofing'
+          detected={browserSpoofing}
+          tipContent={
+            <p>
+              <strong>Browser spoofing</strong> detection is helpful to know when headless browsers used to abuse your
+              website pretend to be regular iPhones or Android devices.
+            </p>
+          }
+        />
+        <Card
+          iconDetected={virtualMDetectedSVG}
+          iconNotDetected={virtualMNotDetectedSVG}
+          title='Virtual Machine'
+          detected={vm}
+          tipContent={
+            <p>
+              <strong>Virtual machine detection</strong> is useful to detect click farms, automated review fraud and
+              junk content generation. It&apos;s a strong signal that improves the reliability and accuracy of the
+              previous three detectors.
+            </p>
+          }
+        />
+      </section>
+    )
+  }
 }
 
 interface CardProps {
