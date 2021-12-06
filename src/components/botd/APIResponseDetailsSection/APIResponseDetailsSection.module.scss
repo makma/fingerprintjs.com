@@ -47,14 +47,12 @@
   }
 }
 
+.apiJson {
+  max-height: rem(300px);
+}
 .infoIcon {
-  position: relative;
-  bottom: 119px;
-  left: 342px;
+  position: absolute;
+  bottom: 348px;
+  left: 270px;
   cursor: pointer;
-
-  @include media('<=phone') {
-    bottom: 100px;
-    left: 200px;
-  }
 }

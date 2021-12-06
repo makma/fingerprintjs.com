@@ -18,44 +18,59 @@ export default function GenerateKeySection() {
             codeBlocks={[
               {
                 code: `{
-  "visitorId": "Ibk1527CUFmcnjLwIs4A9",
-  "visits": [
-    {
-      "incognito": true,
-      "ip": "61.127.217.15",
-      "ipLocation": { ... },
-      "browserDetails": { ... }
-    }
-  ]
+  "bot":{
+      "automationTool":{
+        "status":"processed",
+        "probability":0
+      },
+      "browserSpoofing":{
+        "status":"processed",
+        "probability":0
+      },
+      "searchEngine":{
+        "status":"processed",
+        "probability":0
+      }
+  },
+  "vm":{
+      "status":"processed",
+      "probability":0
+  },
+  "ip":"186.XXX.XXX.XXX",
+  "requestId":"01FP8C8FQ8P189KVFP88C5FHY5",
+  "tag":""
 }`,
                 language: 'html',
                 type: '',
               },
             ]}
-          />
-          <Tippy
-            placement='right'
-            theme='checkmark'
-            maxWidth={450}
-            popperOptions={{
-              modifiers: [
-                {
-                  name: 'flip',
-                  options: {
-                    fallbackPlacements: ['bottom'],
-                  },
-                },
-              ],
-            }}
-            content={
-              <p>
-                <strong>Browser spoofing</strong> detection is helpful to know when headless browsers used to abuse your
-                website pretend to be regular iPhones or Android devices.
-              </p>
+            className={styles.apiJson}
+            tooltip={
+              <Tippy
+                placement='right'
+                theme='checkmark'
+                maxWidth={450}
+                popperOptions={{
+                  modifiers: [
+                    {
+                      name: 'flip',
+                      options: {
+                        fallbackPlacements: ['bottom'],
+                      },
+                    },
+                  ],
+                }}
+                content={
+                  <p>
+                    <strong>Browser spoofing</strong> detection is helpful to know when headless browsers used to abuse
+                    your website pretend to be regular iPhones or Android devices.
+                  </p>
+                }
+              >
+                <InfoSvg tabIndex={0} className={styles.infoIcon} />
+              </Tippy>
             }
-          >
-            <InfoSvg tabIndex={0} className={styles.infoIcon} />
-          </Tippy>
+          />
         </section>
         <section className={styles.details}>
           <h2 className={styles.detailsTitle}>
