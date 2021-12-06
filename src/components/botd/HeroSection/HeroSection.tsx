@@ -31,11 +31,28 @@ interface DetectedBots {
   searchEngine: boolean
   vm: boolean
 }
+enum BotType {
+  AutomationTool,
+  BrowserSpoofing,
+  SearchEngine,
+  Vm,
+}
 
-function botReducer(detectedBots: DetectedBots, updateDetectedBots: string[]) {
-  updateDetectedBots.forEach((bot) => bot in detectedBots && ((detectedBots[bot] = true), (detectedBots.isBot = true)))
+type Action = { detected: BotType }
 
-  return detectedBots
+function botReducer(detectedBots: DetectedBots, updateDetectedBot: Action) {
+  detectedBots = { ...detectedBots, isBot: true }
+
+  switch (updateDetectedBot.detected) {
+    case BotType.AutomationTool:
+      return { ...detectedBots, automationTool: true }
+    case BotType.BrowserSpoofing:
+      return { ...detectedBots, browserSpoofing: true }
+    case BotType.SearchEngine:
+      return { ...detectedBots, searchEngine: true }
+    case BotType.Vm:
+      return { ...detectedBots, vm: true }
+  }
 }
 
 export default function HeroSection() {
@@ -51,21 +68,19 @@ export default function HeroSection() {
   const [botState, dispatch] = useReducer(botReducer, initialState)
 
   useEffect(() => {
-    const detectedBots: string[] = []
     if (visitorData) {
       if (visitorData.bot.automationTool.probability > 0) {
-        detectedBots.push('automationTool')
+        dispatch({ detected: BotType.AutomationTool })
       }
       if (visitorData.bot.browserSpoofing.probability > 0) {
-        detectedBots.push('browserSpoofing')
+        dispatch({ detected: BotType.BrowserSpoofing })
       }
       if (visitorData.bot.searchEngine.probability > 0) {
-        detectedBots.push('searchEngine')
+        dispatch({ detected: BotType.SearchEngine })
       }
       if (visitorData.vm.probability > 0) {
-        detectedBots.push('vm')
+        dispatch({ detected: BotType.Vm })
       }
-      dispatch(detectedBots)
     }
   }, [visitorData])
 
