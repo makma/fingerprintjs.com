@@ -28,6 +28,7 @@
   .icon {
     width: rem(80px);
     padding-bottom: rem(32px);
+    @include scrollSection;
   }
 
   .title {
