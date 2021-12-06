@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '../../common/Container'
-import CodeWindow from '../../common/CodeWindowWithSelector'
+import CodeWindowWithSelector from '../../common/CodeWindowWithSelector'
 import Tippy from '@tippyjs/react'
 import { ReactComponent as InfoSvg } from './InfoIconSVG.svg'
 
@@ -14,8 +14,10 @@ export default function GenerateKeySection() {
       </h1>
       <div className={styles.root}>
         <section className={styles.snippetSection}>
-          <CodeWindow
-            singleCode={`{
+          <CodeWindowWithSelector
+            codeBlocks={[
+              {
+                code: `{
   "visitorId": "Ibk1527CUFmcnjLwIs4A9",
   "visits": [
     {
@@ -25,8 +27,11 @@ export default function GenerateKeySection() {
       "browserDetails": { ... }
     }
   ]
-}`}
-            language='html'
+}`,
+                language: 'html',
+                type: '',
+              },
+            ]}
           />
           <Tippy
             placement='right'

@@ -6,28 +6,21 @@ import { copyToClipboard } from '../../../helpers/clipboard'
 import { ReactComponent as CopySVG } from './CopySVG.svg'
 
 interface CodeWindowProps {
-  codeCDN?: string
-  codeNPM?: string
+  codeBlocks: { type: string; code: string; language: string }[]
   hasLineNumbers?: boolean
-  singleCode?: string
-  language?: string
 }
 
-export default memo(function CodeWindow({
-  codeCDN,
-  codeNPM,
-  hasLineNumbers = true,
-  singleCode,
-  language,
-}: CodeWindowProps) {
-  const [activeTab, setActiveTab] = useState('CDN')
+export default memo(function CodeWindowWithSelector({ codeBlocks, hasLineNumbers = true }: CodeWindowProps) {
+  const [activeTab, setActiveTab] = useState(codeBlocks[0])
+
+  const showTabs = codeBlocks.length > 1
 
   useEffect(() => {
     Prism.highlightAll()
   }, [activeTab])
 
-  const handleTab = (tab: string) => {
-    setActiveTab(tab)
+  const handleTab = (index: number) => {
+    setActiveTab(codeBlocks[index])
   }
 
   const onCopyClick = (text: string) => {
@@ -41,24 +34,21 @@ export default memo(function CodeWindow({
         <div className={classNames(styles.button, styles.minimize)} />
         <div className={classNames(styles.button, styles.expand)} />
       </div>
-      {codeCDN && codeNPM && (
+      {showTabs && (
         <>
           <div className={styles.nav}>
             <ul className={styles.tabs}>
-              <li
-                className={classNames(styles.tab, { [styles.active]: activeTab === 'CDN' })}
-                onClick={() => handleTab('CDN')}
-              >
-                CDN
-              </li>
-              <li
-                className={classNames(styles.tab, { [styles.active]: activeTab === 'NPM' })}
-                onClick={() => handleTab('NPM')}
-              >
-                NPM
-              </li>
+              {codeBlocks.map((block, index) => (
+                <li
+                  key={index}
+                  className={classNames(styles.tab, { [styles.active]: activeTab.type === block.type })}
+                  onClick={() => handleTab(index)}
+                >
+                  {block.type}
+                </li>
+              ))}
             </ul>
-            <div className={styles.copy} onClick={() => onCopyClick(activeTab === 'CDN' ? codeCDN : codeNPM)}>
+            <div className={styles.copy} onClick={() => onCopyClick(activeTab.code)}>
               <CopySVG className={styles.icon} />
               Copy
             </div>
@@ -66,19 +56,17 @@ export default memo(function CodeWindow({
           <div className={styles.content}>
             <pre>
               <code
-                className={classNames(styles.code, {
+                className={classNames(styles.code, `language-${activeTab.language}`, {
                   'line-numbers': hasLineNumbers,
-                  'language-html': activeTab === 'CDN',
-                  'language-javascript': activeTab === 'NPM',
                 })}
               >
-                {activeTab === 'CDN' ? codeCDN : codeNPM}
+                {activeTab.code}
               </code>
             </pre>
           </div>
         </>
       )}
-      {singleCode && (
+      {!showTabs && (
         <div className={styles.content}>
           <pre>
             <code
@@ -87,10 +75,10 @@ export default memo(function CodeWindow({
                 {
                   'line-numbers': hasLineNumbers,
                 },
-                `language-${language}`
+                `language-${activeTab.language}`
               )}
             >
-              {singleCode}
+              {activeTab.code}
             </code>
           </pre>
         </div>
