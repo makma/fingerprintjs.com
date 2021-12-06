@@ -121,66 +121,70 @@ interface CardsSectionProps extends DetectedBots {
   isLoading?: boolean
 }
 function CardsSection({ automationTool, browserSpoofing, searchEngine, vm, isLoading }: CardsSectionProps) {
-  return isLoading ? (
-    <div className={styles.cards}>
-      {repeatElement(4, (i) => (
-        <LoadingCard key={i} />
-      ))}
-    </div>
-  ) : (
-    <div className={styles.cards}>
-      <Card
-        iconDetected={automationDetectedSVG}
-        iconNotDetected={automationNotDetectedSVG}
-        title='Automation Tool'
-        detected={automationTool}
-        tipContent={
-          <p>
-            <strong>Automation tool detection</strong> is helpful when you need to know if your website is used by
-            things like Puppeteer, Playwright and Selenium. These tools are used to create fake reviews, scrape your
-            premium content and mass-register fake user accounts.
-          </p>
-        }
-      />
-      <Card
-        iconDetected={searchEngineDetectedSVG}
-        iconNotDetected={searchEngineNotDetectedSVG}
-        title='Search Engine'
-        detected={searchEngine}
-        tipContent={
-          <p>
-            <strong>Search engine detection</strong> is important to know which bots should be ignored, because
-            they&apos;re good and which should be protected against, because they&apos;re bad.
-          </p>
-        }
-      />
-      <Card
-        iconDetected={browserDetectedSVG}
-        iconNotDetected={browserNotDetectedSVG}
-        title='Browser Spoofing'
-        detected={browserSpoofing}
-        tipContent={
-          <p>
-            <strong>Browser spoofing</strong> detection is helpful to know when headless browsers used to abuse your
-            website pretend to be regular iPhones or Android devices.
-          </p>
-        }
-      />
-      <Card
-        iconDetected={virtualMDetectedSVG}
-        iconNotDetected={virtualMNotDetectedSVG}
-        title='Virtual Machine'
-        detected={vm}
-        tipContent={
-          <p>
-            <strong>Virtual machine detection</strong> is useful to detect click farms, automated review fraud and junk
-            content generation. It&apos;s a strong signal that improves the reliability and accuracy of the previous
-            three detectors.
-          </p>
-        }
-      />
-    </div>
-  )
+  if (isLoading) {
+    return (
+      <section className={styles.cards}>
+        {repeatElement(4, (i) => (
+          <LoadingCard key={i} />
+        ))}
+      </section>
+    )
+  } else {
+    return (
+      <section className={styles.cards}>
+        <Card
+          iconDetected={automationDetectedSVG}
+          iconNotDetected={automationNotDetectedSVG}
+          title='Automation Tool'
+          detected={automationTool}
+          tipContent={
+            <p>
+              <strong>Automation tool detection</strong> is helpful when you need to know if your website is used by
+              things like Puppeteer, Playwright and Selenium. These tools are used to create fake reviews, scrape your
+              premium content and mass-register fake user accounts.
+            </p>
+          }
+        />
+        <Card
+          iconDetected={searchEngineDetectedSVG}
+          iconNotDetected={searchEngineNotDetectedSVG}
+          title='Search Engine'
+          detected={searchEngine}
+          tipContent={
+            <p>
+              <strong>Search engine detection</strong> is important to know which bots should be ignored, because
+              they&apos;re good and which should be protected against, because they&apos;re bad.
+            </p>
+          }
+        />
+        <Card
+          iconDetected={browserDetectedSVG}
+          iconNotDetected={browserNotDetectedSVG}
+          title='Browser Spoofing'
+          detected={browserSpoofing}
+          tipContent={
+            <p>
+              <strong>Browser spoofing</strong> detection is helpful to know when headless browsers used to abuse your
+              website pretend to be regular iPhones or Android devices.
+            </p>
+          }
+        />
+        <Card
+          iconDetected={virtualMDetectedSVG}
+          iconNotDetected={virtualMNotDetectedSVG}
+          title='Virtual Machine'
+          detected={vm}
+          tipContent={
+            <p>
+              <strong>Virtual machine detection</strong> is useful to detect click farms, automated review fraud and
+              junk content generation. It&apos;s a strong signal that improves the reliability and accuracy of the
+              previous three detectors.
+            </p>
+          }
+        />
+      </section>
+    )
+  }
 }
 
 interface CardProps {
