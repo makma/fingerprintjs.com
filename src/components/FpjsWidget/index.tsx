@@ -13,6 +13,7 @@ import { getErrorMessage } from '../../helpers/error'
 import { FPJS_API_TOKEN, FPJS_VISITORS_ENDPOINT, MAPBOX_ACCESS_TOKEN } from '../../constants/env'
 import styles from './FpjsWidget.module.scss'
 import Skeleton from '../Skeleton/Skeleton'
+import { repeatElement } from '../../helpers/repeatElement'
 
 const apiToken = FPJS_API_TOKEN
 const endpoint = FPJS_VISITORS_ENDPOINT
@@ -196,8 +197,6 @@ async function loadFpjsHistory(endpoint: string, visitorId: string, apiToken: st
 }
 
 function LoadingState() {
-  const repeatElement = (length, fn) => Array.from({ length }, (_, i) => fn(i))
-
   return (
     <div className={classNames(styles.demo, styles.desktopOnly)}>
       <div className={styles.history}>

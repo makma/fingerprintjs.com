@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Botd from '@fpjs-incubator/botd-agent'
 import { BOTD_TOKEN } from '../constants/env'
+import { getErrorMessage } from '../helpers/error'
 
 export const useBotDResponse = () => {
   // TODO the botd team will add the export of the types in the next release
@@ -20,12 +21,7 @@ export const useBotDResponse = () => {
         setVisitorData(result)
       } catch (error) {
         setHasError(true)
-
-        if (typeof error === 'string') {
-          setError(error)
-        } else if (error instanceof Error) {
-          setError(error.message)
-        }
+        setError(getErrorMessage(error))
       }
     }
 

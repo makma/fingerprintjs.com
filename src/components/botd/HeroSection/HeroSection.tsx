@@ -7,6 +7,7 @@ import { useBotDResponse } from '../../../hooks/useBotDResponse'
 import Tippy from '@tippyjs/react'
 import Skeleton from '../../Skeleton/Skeleton'
 import { scrollToElementById } from '../../../helpers/scrollToElemenBytID'
+import { repeatElement } from '../../../helpers/repeatElement'
 
 import { ReactComponent as GithubIconSvg } from './svg/GithubSVG.svg'
 
@@ -120,8 +121,6 @@ interface CardsSectionProps extends DetectedBots {
   isLoading?: boolean
 }
 function CardsSection({ automationTool, browserSpoofing, searchEngine, vm, isLoading }: CardsSectionProps) {
-  const repeatElement = (length, fn) => Array.from({ length }, (_, i) => fn(i))
-
   return isLoading ? (
     <div className={styles.cards}>
       {repeatElement(4, (i) => (
