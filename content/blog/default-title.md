@@ -11,7 +11,7 @@ metadata:
   imageTitle: Online gambling fraud prevention
 featured: true
 publishDate: 2021-12-06T05:03:23.573Z
-title: Default Title
+title: "Online gambling fraud: effective preventative measures"
 isPublished: true
 tags:
   - gambling
