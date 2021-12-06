@@ -30,6 +30,14 @@
   margin-bottom: rem(80px);
   align-self: center;
   border-radius: rem(6px);
+  cursor: pointer;
+
+  @include transition(background-color);
+
+  &:focus,
+  &:hover {
+    background-color: adjust-color(c('white'), $lightness: -20%);
+  }
 }
 .title {
   font-size: rem(32px);
@@ -59,10 +67,13 @@
   justify-content: space-around;
   .logo {
     height: rem(40px);
+    max-width: rem(115px);
+
     fill: #6e7080;
 
     @include media('<=phoneLandscape') {
       height: rem(24px);
+      max-width: rem(70px);
     }
   }
 }
