@@ -25,11 +25,11 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 ---
-Online gambling was <a href="https://www.acuant.com/blog/online-gambling-being-gamed-by-fraudsters/">more popular than ever</a> in 2020. Pandemic lockdowns drove people towards at-home activities, and gambling sites were one of many beneficiaries. 
+Online gambling was <a href="https://www.acuant.com/blog/online-gambling-being-gamed-by-fraudsters/" target="_blank" rel="noopener">more popular than ever</a> in 2020. Pandemic lockdowns drove people towards at-home activities, and gambling sites were one of many beneficiaries. 
 
-However, as things become more popular with punters (or players), they also attract the attention of scammers. A general increase in internet usage has spurred a dramatic increase in the value of all types of cybercrime - <a href="https://cobalt.io/blog/cybersecurity-statistics-2021">up 300 percent</a>. 
+However, as things become more popular with punters (or players), they also attract the attention of scammers. A general increase in internet usage has spurred a dramatic increase in the value of all types of cybercrime - <a href="https://cobalt.io/blog/cybersecurity-statistics-2021" target="_blank" rel="noopener">up 300 percent</a>. 
 
-It’s a <a href="https://cobalt.io/blog/business-cost-of-cybercrime">multi-billion dollar industry</a> that is driving more and more business owners to protect themselves with [online fraud prevention](https://fingerprintjs.com/online-fraud-prevention-and-detection). 
+It’s a <a href="https://cobalt.io/blog/business-cost-of-cybercrime" target="_blank" rel="noopener">multi-billion dollar industry</a> that is driving more and more business owners to protect themselves with [online fraud prevention](https://fingerprintjs.com/online-fraud-prevention-and-detection). 
 
 For gambling websites, that means it’s more important than ever to protect both your business and your customers from the effects of online gambling fraud. 
 
@@ -45,7 +45,7 @@ There are a range of scenarios that fraudsters utilize to come out ahead, which 
 
 Online fraudsters generally have a low chance of success. People are becoming increasingly wary of falling for scams, and businesses are taking steps to protect themselves from all different types of [online payment fraud](https://fingerprintjs.com/payment-fraud/). 
 
-However, when fraudsters do succeed, the returns are lucrative. <a href="https://www.capita.com/sites/g/files/nginej291/files/2020-08/Ponemon-Global-Cost-of-Data-Breach-Study-2020.pdf">IBM</a> found the average business cost of a cyber attack in 2020 was nearly $4 million. 
+However, when fraudsters do succeed, the returns are lucrative. <a href="https://www.capita.com/sites/g/files/nginej291/files/2020-08/Ponemon-Global-Cost-of-Data-Breach-Study-2020.pdf" target="_blank" rel="noopener">IBM</a> found the average business cost of a cyber attack in 2020 was nearly $4 million. 
 
 Gambling platforms are at a greater risk of being targeted recently due to their burgeoning popularity since the 2020 pandemic. When more people flock to a certain trend, that means more potential victims for fraudsters to target. If a gambling site goes from having 1 million annual visitors to 2 million, that means there’s an extra million people who could be ripped off.
 
@@ -55,7 +55,7 @@ Gambing websites are also likely to have high transaction volume, with players m
 
 With online gambling scams on the rise, the risk to gambling websites is more than just losing money. Customers are more likely to prefer sites they feel safe on, which means they will avoid those that they believe can be easily exploited. 
 
-<a href="http://www.brandquarterly.com/stop-phishing-scams-ruining-brand-reputation">Brand Quarterly</a> reports that 42 percent of customers say they’re less likely to interact with a company that’s been involved in a scam attempt. This means that even if the fraud isn’t successful, that brand is very quickly tarnished in the minds of people who’ve been targeted by fraudsters.
+<a href="http://www.brandquarterly.com/stop-phishing-scams-ruining-brand-reputation" target="_blank" rel="noopener">Brand Quarterly</a> reports that 42 percent of customers say they’re less likely to interact with a company that’s been involved in a scam attempt. This means that even if the fraud isn’t successful, that brand is very quickly tarnished in the minds of people who’ve been targeted by fraudsters.
 
 Defrauded customers can quickly become a problem for companies too. Credit card holders can get defrauded money returned to them in the form of a chargeback, which comes directly from the businesses bank account that processed the scam. 
 
@@ -103,7 +103,7 @@ Bonuses can include free money for your first bet, coupons or discounts. These t
 
 Fraudsters can set up multiple accounts from different email addresses, devices or IP addresses. These bonuses may not be worth a lot, but it’s free money to the fraudster and money you’ve just given away for nothing. 
 
-H3 Credit Card Fraud
+### Credit Card Fraud
 
 For fraudsters who get their hands on a stolen credit card, online gambling sites can be a great place to drain the funds on that card. It can be as simple as opening an account, depositing the funds, and cashing out immediately. 
 
@@ -113,7 +113,7 @@ Stolen credit card credentials are commonly bought and sold on the dark web, so 
 
 ### Chargeback Fraud
 
-<a href="https://www.cardinalcommerce.com/fraud/chargebacks/what-is-chargeback-fraud">Chargeback fraud</a> is where customers exploit a form of insurance on their credit card that (ironically) protects them from fraud.
+<a href="https://www.cardinalcommerce.com/fraud/chargebacks/what-is-chargeback-fraud" target="_blank" rel="noopener">Chargeback fraud</a> is where customers exploit a form of insurance on their credit card that (ironically) protects them from fraud.
 
 A chargeback gambling transaction can be initiated by a customer when they’ve lost a lot of money. They can call their bank, or credit card issuer, and claim their card was stolen or used without their permission. 
 
@@ -123,7 +123,7 @@ In this instance, it helps the gambling site’s case if it can show it takes st
 
 ## How Can Merchants Prevent Online Gambling Fraud?
 
-The nature of online gambling means it’s <a href="https://www.experian.co.uk/blogs/latest-thinking/fraud-prevention/the-rise-in-online-gambling-and-digital-fraud-under-a-global-pandemic/">always going to be attractive to fraudsters.</a> However, there are things you can do to minimize online gambling risks, and they can make a significant difference.
+The nature of online gambling means it’s <a href="https://www.experian.co.uk/blogs/latest-thinking/fraud-prevention/the-rise-in-online-gambling-and-digital-fraud-under-a-global-pandemic/" target="_blank" rel="noopener">always going to be attractive to fraudsters.</a> However, there are things you can do to minimize online gambling risks, and they can make a significant difference.
 
 A general theme that helps to prevent online gambling fraud is knowing exactly who your customers are. When you do, customers can’t create multiple profiles and they can’t use credit cards that aren’t their own. You can also dispute chargeback fraud attempts.
 
