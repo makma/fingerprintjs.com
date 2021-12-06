@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useReducer } from 'react'
+import React, { useEffect, useReducer } from 'react'
 import Section from '../../common/Section'
 import Container from '../../common/Container'
 import Button from '../../common/Button'
 import { URL } from '../../../constants/content'
-import { useBotDResponse } from '../../../hooks/useBotDResponse'
+import { useBotD } from '../../../hooks/useBotDResponse'
 import Tippy from '@tippyjs/react'
 import Skeleton from '../../Skeleton/Skeleton'
 import { scrollToElementById } from '../../../helpers/scrollToElemenBytID'
@@ -39,9 +39,8 @@ function botReducer(detectedBots: DetectedBots, updateDetectedBots: string[]) {
 }
 
 export default function HeroSection() {
-  const { visitorData } = useBotDResponse()
+  const { visitorData, isLoading } = useBotD()
 
-  const [isLoading, setIsLoading] = useState(true)
   const initialState = {
     isBot: false,
     automationTool: false,
@@ -52,7 +51,6 @@ export default function HeroSection() {
   const [botState, dispatch] = useReducer(botReducer, initialState)
 
   useEffect(() => {
-    setIsLoading(true)
     const detectedBots: string[] = []
     if (visitorData) {
       if (visitorData.bot.automationTool.probability > 0) {
@@ -68,7 +66,6 @@ export default function HeroSection() {
         detectedBots.push('vm')
       }
       dispatch(detectedBots)
-      setIsLoading(false)
     }
   }, [visitorData])
 
