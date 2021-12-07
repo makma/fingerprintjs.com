@@ -49,12 +49,24 @@
   }
 }
 
-.apiJson {
-  max-height: rem(300px);
-}
 .infoIcon {
   position: absolute;
-  bottom: 348px;
-  left: 270px;
   cursor: pointer;
+}
+
+.automationTool {
+  bottom: 432px;
+  left: 257px;
+}
+.browserSpoofing {
+  bottom: 348px;
+  left: 265px;
+}
+.searchEngine {
+  bottom: 264px;
+  left: 240px;
+}
+.vm {
+  bottom: 159px;
+  left: 123px;
 }

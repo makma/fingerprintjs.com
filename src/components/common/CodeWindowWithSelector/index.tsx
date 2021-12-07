@@ -9,14 +9,14 @@ interface CodeWindowProps {
   codeBlocks: { type: string; code: string; language: string }[]
   hasLineNumbers?: boolean
   className?: string
-  tooltip?: React.ReactNode
+  tooltips?: React.ReactNode[]
 }
 
 export default memo(function CodeWindowWithSelector({
   codeBlocks,
   hasLineNumbers = true,
   className,
-  tooltip,
+  tooltips,
 }: CodeWindowProps) {
   const [activeTab, setActiveTab] = useState(codeBlocks[0])
 
@@ -73,7 +73,7 @@ export default memo(function CodeWindowWithSelector({
           >
             {activeTab.code}
           </code>
-          {tooltip}
+          {tooltips && tooltips.map((tooltip) => tooltip)}
         </pre>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import Container from '../../common/Container'
 import CodeWindowWithSelector from '../../common/CodeWindowWithSelector'
 import Tippy from '@tippyjs/react'
+import classNames from 'classnames'
 import { ReactComponent as InfoSvg } from './InfoIconSVG.svg'
 
 import styles from './APIResponseDetailsSection.module.scss'
@@ -45,31 +46,35 @@ export default function GenerateKeySection() {
               },
             ]}
             className={styles.apiJson}
-            tooltip={
-              <Tippy
-                placement='right'
-                theme='checkmark'
-                maxWidth={450}
-                popperOptions={{
-                  modifiers: [
-                    {
-                      name: 'flip',
-                      options: {
-                        fallbackPlacements: ['bottom'],
-                      },
-                    },
-                  ],
-                }}
-                content={
-                  <p>
-                    <strong>Browser spoofing</strong> detection is helpful to know when headless browsers used to abuse
-                    your website pretend to be regular iPhones or Android devices.
-                  </p>
-                }
-              >
-                <InfoSvg tabIndex={0} className={styles.infoIcon} />
-              </Tippy>
-            }
+            tooltips={[
+              <Tooltip key='automationTool' className={styles.automationTool}>
+                <p>
+                  <strong>Automation tool detection</strong> is helpful when you need to know if your website is used by
+                  things like Puppeteer, Playwright and Selenium. These tools are used to create fake reviews, scrape
+                  your premium content and mass-register fake user accounts.
+                </p>
+              </Tooltip>,
+              <Tooltip key='browserSpoofing' className={styles.browserSpoofing}>
+                <p>
+                  <strong>Browser spoofing</strong> detection is helpful to know when headless browsers used to abuse
+                  your website pretend to be regular iPhones or Android devices.
+                </p>
+              </Tooltip>,
+              <Tooltip key='searchEngine' className={styles.searchEngine}>
+                <p>
+                  <strong>Search engine detection</strong> is important to know which bots should be ignored, because
+                  they&apos;re good and which should be protected against, because they&apos;re bad.
+                </p>
+              </Tooltip>,
+
+              <Tooltip key='vm' className={styles.vm}>
+                <p>
+                  <strong>Virtual machine detection</strong> is useful to detect click farms, automated review fraud and
+                  junk content generation. It&apos;s a strong signal that improves the reliability and accuracy of the
+                  previous three detectors.
+                </p>
+              </Tooltip>,
+            ]}
           />
         </section>
         <section className={styles.details}>
@@ -84,5 +89,34 @@ export default function GenerateKeySection() {
         </section>
       </div>
     </Container>
+  )
+}
+
+interface TooltipProps {
+  children: React.ReactNode
+  className: string
+  key: string
+}
+function Tooltip({ children, className, key }: TooltipProps) {
+  return (
+    <Tippy
+      key={key}
+      placement='right'
+      theme='checkmark'
+      maxWidth={460}
+      popperOptions={{
+        modifiers: [
+          {
+            name: 'flip',
+            options: {
+              fallbackPlacements: ['bottom'],
+            },
+          },
+        ],
+      }}
+      content={children}
+    >
+      <InfoSvg tabIndex={0} className={classNames(className, styles.infoIcon)} />
+    </Tippy>
   )
 }
