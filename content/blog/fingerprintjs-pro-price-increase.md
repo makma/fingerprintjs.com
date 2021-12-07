@@ -6,7 +6,7 @@ metadata:
   imageAlt: FingerprintJS Pro Pricing Changes
   imageTitle: FingerprintJS Pro Pricing Changes
   socialImage: /img/uploads/pricing-changes.png
-  url: https://fingerprintjs.com/blog/price-change-2021
+  url: https://fingerprintjs.com/blog/price-change-2021/
   description: We are increasing the price of FingerprintJS Pro for all new paying
     accounts starting on or after January 1, 2022. Our new pricing will be $2
     for 1,000 API calls.
