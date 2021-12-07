@@ -48,7 +48,6 @@
   .card {
     display: flex;
     flex-direction: column;
-    width: 100%;
 
     .iconWrapper {
       height: 80px;
@@ -64,8 +63,6 @@
     }
 
     .cardDescription {
-      flex: 1 1 auto;
-
       @include sans($size: 16px, $weight: 400, $lh: 150%);
 
       @include media('<=phoneLandscape') {
