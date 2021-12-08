@@ -5,6 +5,8 @@ import { GeneratedPageContext } from '../../helpers/types'
 
 import HeroSection from '../../components/botd/HeroSection/HeroSection'
 import GenerateKeySection from '../../components/botd/GenerateKeySection/GenerateKeySection'
+import DocumentationSection from '../../components/botd/DocumentationSection/DocumentationSection'
+import IntegrationSection from '../../components/botd/IntegrationSection/IntegrationSection'
 import FeaturesSection from '../../components/botd/FeaturesSection/FeaturesSection'
 
 import useSiteMetadata from '../../hooks/useSiteMetadata'
@@ -29,6 +31,8 @@ export default function Botd({ pageContext }: AccountSharingProps) {
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
       <HeroSection />
       <GenerateKeySection />
+      <DocumentationSection />
+      <IntegrationSection />
       <FeaturesSection />
     </LayoutTemplate>
   )
