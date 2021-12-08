@@ -9,12 +9,11 @@ import { ReactComponent as OpensourceSvg } from './OpensourceSVG.svg'
 import styles from './DocumentationSection.module.scss'
 
 export default function DocumentationSection() {
-  // TODO change button link to botd doc page
   return (
     <Container className={styles.container}>
       <div className={styles.buttonSection}>
         <h1 className={styles.title}>Developer-friendly bot detection</h1>
-        <Button href={DOC_URL.documentationUrl} variant='primary' size='big'>
+        <Button href={DOC_URL.botDUrl} variant='primary' size='big'>
           Read documentation
         </Button>
       </div>
