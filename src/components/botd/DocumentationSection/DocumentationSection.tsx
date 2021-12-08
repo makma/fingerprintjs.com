@@ -13,7 +13,7 @@ export default function DocumentationSection() {
     <Container className={styles.container}>
       <div className={styles.buttonSection}>
         <h1 className={styles.title}>Developer-friendly bot detection</h1>
-        <Button href={DOC_URL.botDUrl} variant='primary' size='big'>
+        <Button href={DOC_URL.botDUrl} variant='primary' size='big' openNewTab>
           Read documentation
         </Button>
       </div>
