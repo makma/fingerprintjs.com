@@ -311,8 +311,10 @@
   }
 }
 
+// Due to the sticky header bar, when an element is scrolled
+// it is necessary to add this property so that it is not hidden under the bar
 @mixin scrollSection() {
   @include media('>desktop') {
-    scroll-margin-top: 135px;
+    scroll-margin-top: var(--header-height);
   }
 }
