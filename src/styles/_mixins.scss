@@ -310,3 +310,9 @@
     font-display: swap;
   }
 }
+
+@mixin scrollSection() {
+  @include media('>desktop') {
+    scroll-margin-top: 135px;
+  }
+}

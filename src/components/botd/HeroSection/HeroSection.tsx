@@ -3,7 +3,7 @@ import Section from '../../common/Section'
 import Container from '../../common/Container'
 import Button from '../../common/Button'
 import { URL } from '../../../constants/content'
-import { useBotD } from '../../../hooks/useBotDResponse'
+import { useBotD } from '../../../hooks/useBotD'
 import Tippy from '@tippyjs/react'
 import Skeleton from '../../Skeleton/Skeleton'
 import { scrollToElementById } from '../../../helpers/scrollToElemenBytID'
@@ -85,7 +85,7 @@ export default function HeroSection() {
   }, [visitorData])
 
   return (
-    <Container className={styles.container} size='large'>
+    <Container className={styles.container}>
       <Section className={styles.descriptionSection}>
         <h1 className={styles.title}>free open beta</h1>
         <h2 className={styles.subtitle}>Open source JavaScript bot detection library</h2>
@@ -113,7 +113,6 @@ export default function HeroSection() {
       <Section className={styles.botDSection}>
         <div className={styles.botD}>
           <h2 className={styles.title}>Am I a bot?</h2>
-
           {isLoading ? (
             <h2 className={styles.subTitle}>Bot detection in progress...</h2>
           ) : botState.isBot ? (
@@ -121,7 +120,9 @@ export default function HeroSection() {
           ) : (
             <h2 className={styles.subTitle}>You are not a bot</h2>
           )}
-          <p className={styles.seeDetails}>See details →</p>
+          <p className={styles.seeDetails} onClick={() => scrollToElementById('ApiResponseDetails')}>
+            See details →
+          </p>
           <CardsSection {...botState} isLoading={isLoading} />
         </div>
       </Section>

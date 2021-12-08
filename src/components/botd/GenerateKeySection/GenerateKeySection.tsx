@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '../../common/Container'
 import Button from '../../common/Button'
-import CodeWindow from '../../common/CodeWindowWithSelector'
+import CodeWindowWithSelector from '../../common/CodeWindowWithSelector'
 
 import { ReactComponent as DevSVG } from './DevSVG.svg'
 
@@ -9,7 +9,7 @@ import styles from './GenerateKeySection.module.scss'
 
 export default function GenerateKeySection() {
   return (
-    <Container className={styles.container} size='large'>
+    <Container className={styles.container}>
       <section className={styles.keyGenSection}>
         <DevSVG className={styles.icon} id='generateKeySection' />
         <h1 className={styles.title}>Generate my API keys</h1>
@@ -39,8 +39,10 @@ export default function GenerateKeySection() {
         </form>
       </section>
       <section className={styles.snippetSection}>
-        <CodeWindow
-          codeCDN={`<script>
+        <CodeWindowWithSelector
+          codeBlocks={[
+            {
+              code: `<script>
 // Initialize an agent at application startup.
 const botdPromise =
     import('https://openfpcdn.io/botd/v0.1')
@@ -53,8 +55,12 @@ botdPromise
     .then(botd => botd.detect())
     .then(result => console.log(result))
     .catch(error => console.error(error))
-</script>`}
-          codeNPM={`import Botd from '@fpjs-incubator/botd-agent';
+</script>`,
+              language: 'html',
+              type: 'CDN',
+            },
+            {
+              code: `import Botd from '@fpjs-incubator/botd-agent';
 
 // Initialize an agent at application startup.
 const botdPromise = Botd.load({
@@ -67,7 +73,11 @@ const botdPromise = Botd.load({
   const botd = await botdPromise
   const result = await botd.detect();
   console.log(result);
-})();`}
+})();`,
+              language: 'javascript',
+              type: 'NPM',
+            },
+          ]}
         />
       </section>
     </Container>
