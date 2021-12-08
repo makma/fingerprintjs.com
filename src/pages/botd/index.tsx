@@ -6,6 +6,9 @@ import { GeneratedPageContext } from '../../helpers/types'
 import HeroSection from '../../components/botd/HeroSection/HeroSection'
 import GenerateKeySection from '../../components/botd/GenerateKeySection/GenerateKeySection'
 import APIResponseDetailsSection from '../../components/botd/APIResponseDetailsSection/APIResponseDetailsSection'
+import DocumentationSection from '../../components/botd/DocumentationSection/DocumentationSection'
+import IntegrationSection from '../../components/botd/IntegrationSection/IntegrationSection'
+import FeaturesSection from '../../components/botd/FeaturesSection/FeaturesSection'
 
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
@@ -30,6 +33,9 @@ export default function Botd({ pageContext }: AccountSharingProps) {
       <HeroSection />
       <GenerateKeySection />
       <APIResponseDetailsSection />
+      <DocumentationSection />
+      <IntegrationSection />
+      <FeaturesSection />
     </LayoutTemplate>
   )
 }
