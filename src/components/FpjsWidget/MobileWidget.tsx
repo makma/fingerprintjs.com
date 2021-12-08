@@ -13,6 +13,7 @@ import Tippy from '@tippyjs/react'
 import styles from './MobileWidget.module.scss'
 import { MAPBOX_ACCESS_TOKEN } from '../../constants/env'
 import Skeleton from '../Skeleton/Skeleton'
+import { repeatElement } from '../../helpers/repeatElement'
 
 interface MobileWidgetProps extends CurrentVisitProps {
   isLoaded: boolean
@@ -132,8 +133,6 @@ export default function MobileWidget({ className, isLoaded, visits, visitorId }:
 }
 
 export function MobileLoadingState() {
-  const repeatElement = (length, fn) => Array.from({ length }, (_, i) => fn(i))
-
   return (
     <Swiper
       modules={[Lazy, Navigation]}
