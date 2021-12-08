@@ -18,7 +18,7 @@ import { ReactComponent as LogoSvg } from './fpjs.svg'
 import styles from './Header.module.scss'
 
 interface HeaderProps {
-  headerBarTitle?: string
+  headerBarTitle?: React.ReactNode
   headerBarLinkUrl?: string
 }
 export default function Header({ headerBarTitle, headerBarLinkUrl }: HeaderProps) {
