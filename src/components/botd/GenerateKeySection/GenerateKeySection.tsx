@@ -6,6 +6,8 @@ import { FormState } from '../../../types/FormState'
 import { generateBotDToken } from '../../../helpers/api'
 import classNames from 'classnames'
 import CodeWindowWithSelector from '../../common/CodeWindowWithSelector'
+import { copyToClipboard } from '../../../helpers/clipboard'
+import { ReactComponent as CopySVG } from '../../../img/CopySVG.svg'
 
 import { ReactComponent as DevSVG } from './DevSVG.svg'
 
@@ -15,7 +17,7 @@ export default function GenerateKeySection() {
   const [email, setEmail] = useState('')
   const { formState, updateFormState } = useForm(Forms.BotdGenerateToken)
 
-  const [botDToken, setBotDToken] = useState({ publicKey: '26234354623452345', secretKey: '21452346325234514' })
+  const [botDToken, setBotDToken] = useState({ publicKey: '', secretKey: '' })
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -106,11 +108,16 @@ export default function GenerateKeySection() {
 
             <h2 className={styles.subTitle}>Public Key</h2>
             <p className={styles.keyDescription}>Safe to use publicly on your web pages.</p>
-            <p className={styles.key}>{botDToken.publicKey}</p>
-
+            <div className={styles.keySection}>
+              <p className={styles.key}>{botDToken.publicKey}</p>
+              <CopySVG className={styles.copyIcon} onClick={() => copyToClipboard(botDToken.publicKey)} />
+            </div>
             <h2 className={styles.subTitle}>Secret Key</h2>
             <p className={styles.keyDescription}>Keep this key secret, use it to verify bots server-side.</p>
-            <p className={styles.key}>{botDToken.secretKey}</p>
+            <div className={styles.keySection}>
+              <p className={styles.key}>{botDToken.secretKey}</p>
+              <CopySVG className={styles.copyIcon} onClick={() => copyToClipboard(botDToken.secretKey)} />
+            </div>
           </>
         )}
       </section>

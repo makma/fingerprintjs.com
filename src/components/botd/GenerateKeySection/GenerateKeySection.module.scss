@@ -46,23 +46,41 @@
     @include sans($size: 20px, $lh: 150%, $weight: 600);
     letter-spacing: 0.01em;
 
-    padding-top: rem(40px);
+    padding-top: rem(32px);
   }
   .keyDescription {
     @include sans($size: 14px, $lh: 150%, $weight: 400);
 
     padding-bottom: rem(16px);
   }
-  .key {
-    font-family: v(ff-mono);
-    font-weight: v('bold');
-    font-size: rem(14px);
-    line-height: 150%;
-
-    display: inline-block;
+  .keySection {
+    display: inline-flex;
     background: #f9f9fb;
     border-radius: 4px;
     padding: rem(13.5px) rem(12px);
+
+    .key {
+      font-family: v(ff-mono);
+      font-weight: v('bold');
+      font-size: rem(14px);
+      line-height: 150%;
+    }
+
+    .copyIcon {
+      cursor: pointer;
+      fill: black;
+      margin-left: rem(9px);
+      height: rem(22px);
+      width: rem(22px);
+
+      @include transition(opacity);
+      @include transition-duration(0.1s);
+      @include transition-timing-function(ease-out);
+
+      &:active {
+        opacity: 0.3;
+      }
+    }
   }
 
   .description {

@@ -3,7 +3,7 @@ import styles from './CodeWindow.module.scss'
 import classNames from 'classnames'
 import Prism from 'prismjs'
 import { copyToClipboard } from '../../../helpers/clipboard'
-import { ReactComponent as CopySVG } from './CopySVG.svg'
+import { ReactComponent as CopySVG } from '../../../img/CopySVG.svg'
 
 interface CodeWindowProps {
   codeBlocks: { type: string; code: string; language: string }[]
