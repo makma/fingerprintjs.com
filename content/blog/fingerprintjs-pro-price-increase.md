@@ -26,7 +26,7 @@ customCTA:
   openCtaNewTab: false
   title: ""
 ---
-We are increasing the price of FingerprintJS Pro for all new paying accounts starting on or after January 1, 2022.
+We are increasing the price of FingerprintJS Pro for all new paying accounts starting on January 1, 2022.
 
 Our new pricing will be $2 for 1,000 API calls. For all On-Demand customers, pricing will still be billed based on monthly usage, with the minimum paid plan starting at $200 for 100,000 API calls. The free plan will continue to allow up to 20,000 API calls per month at no cost.
 
