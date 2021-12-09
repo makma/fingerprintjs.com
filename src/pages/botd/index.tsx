@@ -9,6 +9,7 @@ import APIResponseDetailsSection from '../../components/botd/APIResponseDetailsS
 import DocumentationSection from '../../components/botd/DocumentationSection/DocumentationSection'
 import IntegrationSection from '../../components/botd/IntegrationSection/IntegrationSection'
 import FeaturesSection from '../../components/botd/FeaturesSection/FeaturesSection'
+import FaqSection from '../../components/botd/FaqSection/FaqSection'
 
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
@@ -36,6 +37,7 @@ export default function Botd({ pageContext }: AccountSharingProps) {
       <DocumentationSection />
       <IntegrationSection />
       <FeaturesSection />
+      <FaqSection />
     </LayoutTemplate>
   )
 }
