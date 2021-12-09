@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import Container from '../../common/Container'
 import Button from '../../common/Button'
-import CodeWindow from '../../common/CodeWindowWithSelector'
 import { useForm, Forms } from '../../../hooks/useForm'
 import { FormState } from '../../../types/FormState'
 import { generateBotDToken } from '../../../helpers/api'
 import classNames from 'classnames'
+import CodeWindowWithSelector from '../../common/CodeWindowWithSelector'
 
 import { ReactComponent as DevSVG } from './DevSVG.svg'
 
@@ -56,7 +56,7 @@ export default function GenerateKeySection() {
   }
 
   return (
-    <Container className={styles.container} size='large'>
+    <Container className={styles.container}>
       <section className={styles.keyGenSection}>
         <DevSVG className={styles.icon} />
         {(formState === FormState.Default || formState === FormState.Loading) && (
@@ -115,8 +115,10 @@ export default function GenerateKeySection() {
         )}
       </section>
       <section className={styles.snippetSection}>
-        <CodeWindow
-          codeCDN={`<script>
+        <CodeWindowWithSelector
+          codeBlocks={[
+            {
+              code: `<script>
 // Initialize an agent at application startup.
 const botdPromise =
     import('https://openfpcdn.io/botd/v0.1')
@@ -129,8 +131,12 @@ botdPromise
     .then(botd => botd.detect())
     .then(result => console.log(result))
     .catch(error => console.error(error))
-</script>`}
-          codeNPM={`import Botd from '@fpjs-incubator/botd-agent';
+</script>`,
+              language: 'html',
+              type: 'CDN',
+            },
+            {
+              code: `import Botd from '@fpjs-incubator/botd-agent';
 
 // Initialize an agent at application startup.
 const botdPromise = Botd.load({
@@ -143,7 +149,11 @@ const botdPromise = Botd.load({
   const botd = await botdPromise
   const result = await botd.detect();
   console.log(result);
-})();`}
+})();`,
+              language: 'javascript',
+              type: 'NPM',
+            },
+          ]}
         />
       </section>
     </Container>

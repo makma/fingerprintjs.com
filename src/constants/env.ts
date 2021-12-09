@@ -48,6 +48,12 @@ export const FPJS_LEAD_URL =
     [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_FPJS_LEAD_URL,
   }) ?? ''
 
+export const BOTD_TOKEN =
+  getContextEnv<string>({
+    [NetlifyContext.Production]: process.env.GATSBY_BOTD_TOKEN,
+    [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_BOTD_TOKEN,
+  }) ?? ''
+
 export const FPJS_REGION = process.env.GATSBY_FPJS_REGION
 export const FPJS_DASHBOARD_ENDPOINT = process.env.GATSBY_FPJS_DASHBOARD_ENDPOINT
 export const FPJS_MONITORING_CLIENT_ID = process.env.GATSBY_FPJS_MONITORING_CLIENT_ID

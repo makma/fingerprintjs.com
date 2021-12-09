@@ -41,7 +41,6 @@
     position: relative;
 
     overflow-y: auto;
-    height: rem(334px);
 
     &::-webkit-scrollbar {
       width: rem(4px);
@@ -67,7 +66,8 @@
   display: flex;
   justify-content: space-between;
 
-  padding: rem(24px) 0;
+  padding-top: rem(24px);
+  margin: 0 rem(24px);
 
   .tabs {
     display: flex;
@@ -105,12 +105,9 @@
   }
 }
 
-.content,
-.nav {
-  margin: 0 rem(24px);
-}
-
 .content {
+  margin: rem(24px);
+
   code[class*='language-'],
   pre[class*='language-'] {
     font-size: rem(14px);

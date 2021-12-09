@@ -1,12 +1,14 @@
 .container {
-  padding-bottom: rem(128px);
+  padding-bottom: rem(140px);
 
   @include media('<=phoneLandscape') {
-    padding-bottom: rem(42px);
+    padding-bottom: rem(128px);
   }
 
   display: grid;
-  grid-template-columns: 50% 1fr;
+  grid-template-columns: 1fr 1fr;
+  column-gap: rem(32px);
+  --contentWidth: 1270px;
 
   @include media('<=desktop') {
     display: flex;
@@ -24,6 +26,7 @@
   .icon {
     width: rem(80px);
     padding-bottom: rem(32px);
+    @include scrollSection;
   }
 
   .title {
