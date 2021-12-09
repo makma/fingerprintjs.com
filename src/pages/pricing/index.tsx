@@ -8,6 +8,7 @@ import Button from '../../components/common/Button'
 import { PATH, URL } from '../../constants/content'
 import PriceCalculator from '../../components/PriceCalculator'
 import { Link } from 'gatsby'
+import BannerWithCTA from '../../components/BannerWithCTA/BannerWithCTA'
 
 import BreadcrumbsSEO from '../../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../../helpers/types'
@@ -43,6 +44,16 @@ export default function PricingPage({ pageContext }: PricingPageProps) {
 function HeaderSection() {
   return (
     <Section className={styles.headerSection}>
+      <Container size='large'>
+        <BannerWithCTA
+          title='Prices are increasing January 1st.'
+          ctaText='Learn more'
+          ctaHref='/blog/price-change-2021/'
+          variant='white'
+        >
+          Lock in current pricing by becoming a paid customer before 2022.
+        </BannerWithCTA>
+      </Container>
       <Container className={styles.headerContainer}>
         <p className={styles.headerDescription}>Transparent pricing for developers and businesses</p>
       </Container>

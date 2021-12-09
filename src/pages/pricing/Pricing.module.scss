@@ -1,12 +1,15 @@
 .headerSection {
-  padding: rem(40px) 0 rem(56px) 0;
+  padding: rem(32px) 0 rem(56px) 0;
 
   .headerContainer {
     text-align: center;
+    padding-top: rem(40px);
 
     --contentWidth: 700px;
 
     @include media('<=phoneLandscape') {
+      padding-top: rem(60px);
+
       text-align: left;
     }
 
