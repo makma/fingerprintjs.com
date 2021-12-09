@@ -41,7 +41,6 @@ export default function GenerateKeySection() {
       } else {
         updateFormState(FormState.Success)
         const data = await response.json()
-        console.log(data)
 
         const publicKey = data?.publicKey
         const secretKey = data?.secretKey
