@@ -18,30 +18,15 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const siteMetadata = useSiteMetadata()
 
-  return (
-    <LayoutTemplate
-      siteMetadata={siteMetadata}
-      headerBarTitle={
-        <span>
-          <strong>Prices are increasing January 1st.</strong> Lock in current pricing by becoming a paid customer before
-          2022.
-        </span>
-      }
-      headerBarLinkUrl='/blog/price-change-2021/'
-    >
-      {children}
-    </LayoutTemplate>
-  )
+  return <LayoutTemplate siteMetadata={siteMetadata}>{children}</LayoutTemplate>
 }
 
 interface LayoutTemplateProps extends LayoutProps {
   siteMetadata: GatsbyTypes.SiteSiteMetadata
-  headerBarTitle?: React.ReactNode
-  headerBarLinkUrl?: string
 }
 
 // We need this to not use static GraphQL queries in order use it in CMS preview (it runs it in browser directly)
-export function LayoutTemplate({ children, siteMetadata, headerBarTitle, headerBarLinkUrl }: LayoutTemplateProps) {
+export function LayoutTemplate({ children, siteMetadata }: LayoutTemplateProps) {
   const { title, description, siteUrl, image } = siteMetadata
   const gtmToken = GTM_TOKEN
   const { isEuUser } = useUserLocation()
@@ -87,7 +72,19 @@ export function LayoutTemplate({ children, siteMetadata, headerBarTitle, headerB
         <link rel='preconnect' href={TLS_ENDPOINT} />
         <link rel='preconnect' href={FPJS_VISITORS_ENDPOINT} />
       </Helmet>
-      <Header headerBarTitle={headerBarTitle} headerBarLinkUrl={headerBarLinkUrl} />
+      {siteUrl?.includes('/pricing') ? (
+        <Header />
+      ) : (
+        <Header
+          headerBarTitle={
+            <span>
+              <strong>Prices are increasing January 1st.</strong> Lock in current pricing by becoming a paid customer
+              before 2022.
+            </span>
+          }
+          headerBarLinkUrl='/blog/price-change-2021/'
+        />
+      )}
       {children}
       <Footer />
     </>
