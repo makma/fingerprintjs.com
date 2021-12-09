@@ -94,6 +94,10 @@
       font-size: rem(14px);
     }
   }
+
+  @include media('>desktop') {
+    min-height: rem(458px);
+  }
 }
 
 .snippetSection {
