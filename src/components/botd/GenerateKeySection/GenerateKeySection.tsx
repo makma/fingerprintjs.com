@@ -59,7 +59,7 @@ export default function GenerateKeySection() {
   return (
     <Container className={styles.container}>
       <section className={styles.keyGenSection}>
-        <DevSVG className={styles.icon} />
+        <DevSVG className={styles.icon} id='generateKeySection' />
         {(formState === FormState.Default || formState === FormState.Loading) && (
           <>
             <h1 className={styles.title}>Generate my API keys</h1>

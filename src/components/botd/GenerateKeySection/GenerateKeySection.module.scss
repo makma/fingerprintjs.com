@@ -90,6 +90,10 @@
     padding-right: rem(180px);
     min-height: rem(48px);
 
+    @include media('<=desktop') {
+      padding-right: 0;
+    }
+
     @include media('<=tablet') {
       font-size: rem(14px);
     }
@@ -117,6 +121,10 @@
 
     padding-top: rem(8px);
     padding-right: rem(180px);
+
+    @include media('<=desktop') {
+      padding-right: 0;
+    }
 
     @include media('<=phoneLandscape') {
       flex-direction: column;
