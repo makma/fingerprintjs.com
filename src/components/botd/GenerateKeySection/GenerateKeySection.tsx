@@ -97,7 +97,7 @@ export default function GenerateKeySection() {
         )}
         {formState === FormState.Failed && (
           <>
-            <h1 className={styles.title}>Something wrong happened!</h1>
+            <h1 className={styles.title}>Something went wrong</h1>
             <p className={styles.description}>Please try again.</p>
           </>
         )}
