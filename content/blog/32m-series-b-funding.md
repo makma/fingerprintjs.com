@@ -31,7 +31,7 @@ On behalf of the whole team at FingerprintJS, we are excited to announce that we
 
 ## Now more than ever is the time to try FingerprintJS Pro
 
-Over the past year we have made some [major updates to our product](https://fingerprintjs.com/blog/product-update-11-2021/), improving the onboarding experience, building out dashboard insights, and increasing identifier accuracy. 
+Over the past year we have made some [major updates to our product](https://fingerprintjs.com/blog/product-update-11-2021/), improving the onboarding experience, building out dashboard insights, and increasing identifier accuracy.
 
 We also have achieved some incredible milestones over the last year that have helped to make this recent round of funding possible, and cemented our ability to continue improving our offerings for years to come.
 
@@ -40,9 +40,6 @@ We also have achieved some incredible milestones over the last year that have he
 We crawled the Alexa top websites by traffic to see how many of them had our browser fingerprinting code installed:
 
 ![Top sites using FPJS](/img/uploads/web-crawler-stats-1-.png "Top sites using FPJS")
-
-
-
 
 <br>
 

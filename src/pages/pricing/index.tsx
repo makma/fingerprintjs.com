@@ -138,9 +138,8 @@ const faq = [
     question: 'How does the unlimited 10 day free trial work?',
     answer: (
       <>
-        New signups can try FingerprintJS Pro for free with no API request limits for 10 days. After the trial period
-        ends, the account can be upgraded to a paid plan or will be downgraded to a free plan with a 20,000 API request
-        limit.
+        New signups can request a 10-day trial whenever they want with no API request limits. After the trial period
+        ends, the account will be upgraded to a paid plan.
       </>
     ),
   },
