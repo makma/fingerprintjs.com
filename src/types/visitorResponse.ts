@@ -1,6 +1,6 @@
-import { FullIpExtendedGetResult } from '@fingerprintjs/fingerprintjs-pro'
+import { ExtendedGetResult } from '@fingerprintjs/fingerprintjs-pro'
 
-export interface VisitorResponse extends FullIpExtendedGetResult {
+export interface VisitorResponse extends ExtendedGetResult {
   timestamp: number
   browserDetails: {
     botProbability: number

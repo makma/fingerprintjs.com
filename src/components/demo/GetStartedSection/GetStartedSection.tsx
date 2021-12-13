@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './GetStartedSection.module.scss'
 import Section from '../../common/Section'
 import Container from '../../common/Container'
-import { DEFAULT_TRIAL_DAYS, URL } from '../../../constants/content'
+import { URL } from '../../../constants/content'
 
 import { ReactComponent as EbaySVG } from '../../../../static/img/company-logos/ebay.svg'
 import { ReactComponent as TargetSVG } from '../../../../static/img/company-logos/target.svg'
@@ -22,7 +22,7 @@ export default function GetStartedSection() {
         <h1 className={styles.title}>12% of the largest 500 websites use FingerprintJS</h1>
         <h2 className={styles.subTitle}>Get Started For Free Today</h2>
         <Button size='big' href={URL.signupUrl} className={styles.button}>
-          Start {DEFAULT_TRIAL_DAYS} Day Free Trial
+          Create Free Account
         </Button>
       </Container>
       <Container size='large' className={styles.clientsContainer}>

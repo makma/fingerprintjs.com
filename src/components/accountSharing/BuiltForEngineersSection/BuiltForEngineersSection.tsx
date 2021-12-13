@@ -25,7 +25,7 @@ export default function BuiltForEngineersSection() {
           icon={<PlaySVG />}
           title='Start For Free'
           description='Our lightweight Javascript agent can be installed in minutes. Create an account for free with no credit card.'
-          linkText='Start Free Trial →'
+          linkText='Create Free Account →'
           linkHref={URL.signupUrl}
         />
         <Card
