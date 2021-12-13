@@ -8,6 +8,7 @@ import Button from '../../components/common/Button'
 import { PATH, URL } from '../../constants/content'
 import PriceCalculator from '../../components/PriceCalculator'
 import { Link } from 'gatsby'
+import BannerWithCTA from '../../components/BannerWithCTA/BannerWithCTA'
 
 import BreadcrumbsSEO from '../../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../../helpers/types'
@@ -43,6 +44,16 @@ export default function PricingPage({ pageContext }: PricingPageProps) {
 function HeaderSection() {
   return (
     <Section className={styles.headerSection}>
+      <Container size='large'>
+        <BannerWithCTA
+          title='Prices are increasing January 1st.'
+          ctaText='Learn more'
+          ctaHref='/blog/price-change-2021/'
+          variant='white'
+        >
+          Lock in current pricing by becoming a paid customer before 2022.
+        </BannerWithCTA>
+      </Container>
       <Container className={styles.headerContainer}>
         <p className={styles.headerDescription}>Transparent pricing for developers and businesses</p>
       </Container>
@@ -127,9 +138,8 @@ const faq = [
     question: 'How does the unlimited 10 day free trial work?',
     answer: (
       <>
-        New signups can try FingerprintJS Pro for free with no API request limits for 10 days. After the trial period
-        ends, the account can be upgraded to a paid plan or will be downgraded to a free plan with a 20,000 API request
-        limit.
+        New signups can request a 10-day trial whenever they want with no API request limits. After the trial period
+        ends, the account will be upgraded to a paid plan.
       </>
     ),
   },

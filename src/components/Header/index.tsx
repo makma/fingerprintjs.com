@@ -18,7 +18,7 @@ import { ReactComponent as LogoSvg } from './fpjs.svg'
 import styles from './Header.module.scss'
 
 interface HeaderProps {
-  headerBarTitle?: string
+  headerBarTitle?: React.ReactNode
   headerBarLinkUrl?: string
 }
 export default function Header({ headerBarTitle, headerBarLinkUrl }: HeaderProps) {
@@ -74,7 +74,7 @@ export default function Header({ headerBarTitle, headerBarLinkUrl }: HeaderProps
                   Contact Sales
                 </Button>
                 <Button className={styles.signupButton} href={URL.signupUrl}>
-                  Free Trial
+                  Get Started
                 </Button>
                 <Button
                   label='Mobile Menu'
