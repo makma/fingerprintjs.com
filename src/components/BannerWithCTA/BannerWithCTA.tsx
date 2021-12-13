@@ -9,15 +9,15 @@ export interface BannerWithCTAProps {
   className?: string
   ctaText: string
   ctaHref: string
-  variant?: 'primary' | 'outline' | 'clear' | 'faded'
+  variant?: 'primary' | 'outline' | 'clear' | 'faded' | 'white'
 }
 
 export default function BannerWithCTA({ title, children, className, ctaText, ctaHref, variant }: BannerWithCTAProps) {
   return (
     <section className={classNames(styles.banner, className)}>
-      <h2 className={styles.title}>{title}</h2>
+      <h1 className={styles.title}>{title}</h1>
       <p className={styles.description}>{children}</p>
-      <Button href={ctaHref} variant={variant} className={styles.button}>
+      <Button href={ctaHref} variant={variant} className={styles.button} size={'big'}>
         {ctaText}
       </Button>
     </section>

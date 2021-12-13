@@ -1,20 +1,27 @@
 @import '../BlockQuote/BlockQuote.scss';
-$marginBottom: 6rem;
+$smallMargin: 2rem;
+$bigMargin: 6rem;
 
 .root {
-  p,
+  span,
   ul,
   ol,
   blockquote,
   table,
   iframe,
   deckgo-highlight-code {
-    margin-bottom: $marginBottom;
+    margin-top: $bigMargin;
+    margin-bottom: $bigMargin;
   }
   div[class*='WidgetPreviewContainer'] {
     img {
-      margin-bottom: $marginBottom;
+      margin-top: $bigMargin;
+      margin-bottom: $bigMargin;
     }
+  }
+
+  p {
+    margin-bottom: $smallMargin;
   }
 
   deckgo-highlight-code {
@@ -44,7 +51,11 @@ $marginBottom: 6rem;
       font-family: v('ff-mono');
       font-weight: v('bold');
 
-      margin-bottom: 2rem;
+      margin-bottom: $smallMargin;
+      margin-top: $smallMargin;
+    }
+    p + h#{$index} {
+      margin-top: $bigMargin;
     }
   }
 

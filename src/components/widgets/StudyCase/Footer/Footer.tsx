@@ -14,7 +14,7 @@ export default function Footer({ ctaTitle, ctaSubtitle }: FooterProps) {
         title={ctaTitle}
         primaryAction={{
           label: 'Get Started Today',
-          name: 'Start Free Trial',
+          name: 'Create Free Account',
           action: URL.signupUrl,
         }}
         secondaryAction={{
