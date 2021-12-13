@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { FullIpExtendedGetResult, GetOptions, Region } from '@fingerprintjs/fingerprintjs-pro'
+import { ExtendedGetResult, GetOptions, Region } from '@fingerprintjs/fingerprintjs-pro'
 import {
   FPJS_TOKEN,
   FPJS_ENDPOINT,
@@ -9,9 +9,8 @@ import {
   TLS_ENDPOINT,
 } from '../constants/env'
 
-const FpjsContext = React.createContext<{ visitorData?: FullIpExtendedGetResult }>({})
-const config: GetOptions<true, 'full'> = {
-  ipResolution: 'full',
+const FpjsContext = React.createContext<{ visitorData?: ExtendedGetResult }>({})
+const config: GetOptions<true> = {
   extendedResult: true,
   timeout: 30_000,
 }
@@ -36,7 +35,7 @@ function FpjsAppProvider({ children }: { children: React.ReactNode }) {
   const monitoringToken = FPJS_MONITORING_TOKEN ?? ''
   const tlsEndpoint = TLS_ENDPOINT
 
-  const [visitorData, setVisitorData] = useState<FullIpExtendedGetResult>()
+  const [visitorData, setVisitorData] = useState<ExtendedGetResult>()
 
   useEffect(() => {
     async function getVisitorData() {

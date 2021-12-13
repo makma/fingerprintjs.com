@@ -1,5 +1,5 @@
 .container {
-  background-color: adjust-color(c('brand-fire'));
+  background-color: adjust-color(c('brand-water'), $lightness: 13%, $saturation: -5%);
   color: v('white');
 
   padding-top: rem(11px);
@@ -12,7 +12,7 @@
   @include transition((background-color));
 
   &:hover {
-    background-color: adjust-color(c('brand-fire'), $lightness: -20%);
+    background-color: c('brand-water');
   }
 }
 
@@ -29,7 +29,11 @@
   flex-direction: row;
   justify-content: center;
 
-  column-gap: rem(12px);
+  column-gap: rem(24px);
+
+  @include media('<tablet') {
+    column-gap: rem(6px);
+  }
 }
 
 .text,
@@ -38,11 +42,11 @@
   letter-spacing: 0.04em;
   font-family: v(ff-sans);
   line-height: 150%;
-  font-weight: 600;
+  font-weight: 500;
 
   justify-content: flex-start;
 
-  @include media('<tablet') {
+  @include media('<desktop') {
     font-size: rem(12px);
   }
 
@@ -50,6 +54,15 @@
     font-size: rem(10px);
   }
 }
+.text {
+  @include media('<desktop') {
+    &:after {
+      content: ' →';
+    }
+  }
+}
 .arrow {
-  padding-top: 1px;
+  @include media('<desktop') {
+    display: none;
+  }
 }

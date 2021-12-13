@@ -45,14 +45,14 @@ async function getFolderEdges(folder, graphql, filter = '') {
   return data.allMarkdownRemark.edges
 }
 
-async function getTags(graphql) {
+async function getArrayFieldValues(graphql, name) {
   const { data, errors } = await graphql(`
     {
       allMarkdownRemark(
         filter: { frontmatter: { isPublished: { ne: false }, templateKey: { eq: "long-form-content" } } }
       ) {
-        group(field: frontmatter___tags) {
-          tag: fieldValue
+        group(field: frontmatter___${name}s) {
+          ${name}: fieldValue
           totalCount
         }
       }
@@ -135,7 +135,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const numFeaturedPages = Math.ceil(featuredPosts.length / postsPerPage)
   createPaginatedPages(numFeaturedPages, postsPerPage, 'blog/featured', 'src/templates/blog-featured.tsx', createPage)
 
-  const tags = await getTags(graphql)
+  const tags = await getArrayFieldValues(graphql, 'tag')
   tags.forEach(({ tag, totalCount }) => {
     const numTagPages = Math.ceil(totalCount / postsPerPage)
     const additionalContext = { tag }
@@ -145,6 +145,21 @@ exports.createPages = async ({ actions, graphql }) => {
       postsPerPage,
       `blog/tag/${tag}`,
       'src/templates/blog-tag.tsx',
+      createPage,
+      additionalContext
+    )
+  })
+
+  const authors = await getArrayFieldValues(graphql, 'author')
+  authors.forEach(({ author, totalCount }) => {
+    const numAuthorPages = Math.ceil(totalCount / postsPerPage)
+    const additionalContext = { author }
+
+    createPaginatedPages(
+      numAuthorPages,
+      postsPerPage,
+      `blog/author/${author}`,
+      'src/templates/author.tsx',
       createPage,
       additionalContext
     )

@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from '../../common/Section'
 import Container from '../../common/Container'
-import { URL, DOC_URL, MAILTO } from '../../../constants/content'
+import { DEFAULT_TRIAL_DAYS, URL, DOC_URL, MAILTO } from '../../../constants/content'
 
 import styles from './NextStepsSection.module.scss'
 
@@ -14,7 +14,7 @@ export default function NextStepsSection() {
         </header>
         <div className={styles.stepsSection}>
           <Step step='Try FingerprintJS free' url={URL.dashboardLoginUrl} linkText='Create account today >'>
-            Start your free 30-day trial and get 100% of features with no usage limits.
+            At anytime, start your free {DEFAULT_TRIAL_DAYS}-day trial and get 100% of features with no usage limits.
           </Step>
           <Step step='Read our docs' url={DOC_URL.documentationUrl} linkText='View docs >'>
             Learn how to implement FingerprintJS Pro on your website and start collecting VisitorIDs.
@@ -33,7 +33,7 @@ export default function NextStepsSection() {
 
 interface StepProps {
   step: string
-  children: string
+  children: React.ReactNode
   url: string
   linkText: string
 }

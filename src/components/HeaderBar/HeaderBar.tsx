@@ -6,7 +6,7 @@ import { isLocalLink } from '../../helpers/url'
 import styles from './HeaderBar.module.scss'
 
 export interface headerBarProps {
-  children: string
+  children: React.ReactNode
   linkUrl?: string
 }
 
@@ -17,12 +17,12 @@ export default function HeaderBar({ children, linkUrl }: headerBarProps) {
         {isLocalLink(linkUrl) ? (
           <Link className={styles.link} to={linkUrl}>
             <div className={styles.text}>{children}</div>
-            <div className={styles.arrow}>→</div>
+            <div className={styles.arrow}>Learn more →</div>
           </Link>
         ) : (
           <a className={styles.link} href={linkUrl} target='_blank' rel='noreferrer'>
             <div className={styles.text}>{children}</div>
-            <div className={styles.arrow}>→</div>
+            <div className={styles.arrow}>Learn more →</div>
           </a>
         )}
       </div>
