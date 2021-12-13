@@ -30,7 +30,7 @@ We are increasing the price of FingerprintJS Pro for all new paying accounts sta
 
 Our new pricing will be $2 for 1,000 API calls. For all On-Demand customers, pricing will still be billed based on monthly usage, with the minimum paid plan starting at $200 for 100,000 API calls. The free plan will continue to allow up to 20,000 API calls per month at no cost.
 
-This is a 100% increase from our current pricing. We have had the same price since 2019 - now it is finally time to adjust to current market conditions.
+This is a 100% increase from our current pricing. We have had the same price since 2019 and have invested heavily in the product since then, adding new features, increasing visitorID accuracy, and improving ease of use. Ultimately we believe that the service is now much more valuable to our customers, and plan to continue investing in Pro improvements in the coming year.
 
 ### For current paying customers
 
