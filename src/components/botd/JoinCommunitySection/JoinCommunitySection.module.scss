@@ -10,8 +10,10 @@
 }
 
 .container {
+  --contentWidth: 1270px;
+
   @include media('<=phoneLandscape') {
-    background-color: v('brand-water');
+    background-color: adjust-color(c('white'), $lightness: -20%);
     padding: 0 rem(20px);
   }
 }
@@ -21,7 +23,7 @@
   grid-template-columns: 1fr 1fr;
 
   @include media('>phoneLandscape') {
-    background-color: v('brand-water');
+    background-color: adjust-color(c('brand-fire'), $lightness: 9%, $saturation: 4%);
     border-radius: rem(16px);
   }
 
@@ -32,8 +34,7 @@
 }
 
 .descriptionSection {
-  padding-top: rem(75px);
-  padding-right: rem(132px);
+  padding: rem(64px);
 
   @include media('<=phoneLandscape') {
     padding: rem(48px) 0 0 0;
