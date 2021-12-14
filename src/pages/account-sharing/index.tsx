@@ -3,7 +3,6 @@ import { LayoutTemplate } from '../../components/Layout'
 import BreadcrumbsSEO from '../../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../../helpers/types'
 import Container from '../../components/common/Container'
-import { PostProps } from '../../components/Post/Post'
 
 import HeroSection from '../../components/accountSharing/HeroSection/HeroSection'
 import HowMuchLosingSection from '../../components/accountSharing/HowMuchLosingSection/HowMuchLosingSection'
@@ -35,14 +34,6 @@ export default function AccountSharingPage({ pageContext }: AccountSharingProps)
     siteUrl: `${siteMetadata.siteUrl}${pathname}`,
   }
 
-  const content: PostProps = {
-    title: '',
-    description: '',
-    publishDate: '',
-    path: '/',
-    tags: ['account sharing'],
-  }
-
   return (
     <LayoutTemplate siteMetadata={siteMetadata}>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
@@ -56,7 +47,9 @@ export default function AccountSharingPage({ pageContext }: AccountSharingProps)
       <ContactSalesSection />
       <Container size='large' className={styles.relatedArticles}>
         <RelatedArticles
-          article={content}
+          article={{
+            tags: ['account sharing'],
+          }}
           count={4}
           title='Account takeover prevention blogs'
           titleIsCentered
