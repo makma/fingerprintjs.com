@@ -25,8 +25,8 @@ heroImage:
   imageTitle: Permanently ban users from your website with FingerprintJS
 customCTA:
   title: Ready your ban hammer
-  description: Start a 10-day free trial of FingerprintJS and start protecting your site.
-  ctaText: Start Trial
+  description: Create a free account and start protecting your site.
+  ctaText: Start Now
   ctaUrl: https://dashboard.fingerprintjs.com/signup
   openCtaNewTab: false
   isPublished: true
