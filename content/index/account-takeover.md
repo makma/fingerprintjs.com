@@ -73,7 +73,7 @@ blocks:
       for your user's account security, merchant reputation, and more.
     image: /img/uploads/dash-usage-chart.png
     imageTitle: FingerprintJS dashboard
-    ctaText: Start Free Trial
+    ctaText: Create Free Account
     ctaUrl: https://dashboard.fingerprintjs.com/signup
 inlineCta:
   title: FingerprintJS for account takeover protection
