@@ -68,8 +68,8 @@ export default function HeroSection() {
   const [botState, dispatch] = useReducer(botReducer, initialState)
 
   useEffect(() => {
-    if (visitorData) {
-      if (visitorData.bot.automationTool.probability > 0) {
+    if (visitorData && 'bot' in visitorData) {
+      if (visitorData.bot.automationTools.probability > 0) {
         dispatch({ detected: BotType.AutomationTool })
       }
       if (visitorData.bot.browserSpoofing.probability > 0) {
