@@ -9,7 +9,7 @@ import Button from '../common/Button'
 import Container from '../common/Container'
 import { isBrowser } from '../../helpers/detector'
 import HeaderBar from '../../components/HeaderBar/HeaderBar'
-import { useCaseLinks } from '../../constants/content'
+import { useCaseLinks, products } from '../../constants/content'
 import classNames from 'classnames'
 import { URL, PATH } from '../../constants/content'
 import DropdownList from './DropdownList'
@@ -53,9 +53,7 @@ export default function Header({ headerBarTitle, headerBarLinkUrl }: HeaderProps
                 <Link to='/' className={`${styles.link} ${styles.linkLogo}`} title='Logo'>
                   <LogoSvg className={styles.logo} />
                 </Link>
-                <Link className={classNames(styles.link, styles.desktopOnly)} to='/why-fpjs/'>
-                  Why Us
-                </Link>
+                <DropdownList name='Products' list={products} />
                 <DropdownList name='Use Cases' list={useCaseLinks} />
                 <Link className={classNames(styles.link, styles.desktopOnly)} to='/demo/'>
                   Demo
