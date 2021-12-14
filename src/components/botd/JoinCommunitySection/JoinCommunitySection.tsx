@@ -10,7 +10,7 @@ import styles from './JoinCommunitySection.module.scss'
 export default function JoinCommunitySection() {
   return (
     <Container className={styles.container}>
-      <div className={styles.joinCommunitySection}>
+      <section className={styles.joinCommunitySection}>
         <div className={styles.labels}>
           <span>20K downloads</span>
           <span>58M API requests</span>
@@ -23,14 +23,12 @@ export default function JoinCommunitySection() {
           <Button href={URL.discordServerURL} variant='white' size='big' openNewTab>
             Discord
           </Button>
-          <Button href={URL.githubRepoUrl} variant='white' size='big' openNewTab>
-            <div className={styles.label}>
-              <GithubIconSvg className={styles.icon} />
-              <span>Github</span>
-            </div>
+          <Button className={styles.label} href={URL.githubRepoUrl} variant='white' size='big' openNewTab>
+            <GithubIconSvg className={styles.icon} />
+            <span>Github</span>
           </Button>
         </div>
-      </div>
+      </section>
     </Container>
   )
 }

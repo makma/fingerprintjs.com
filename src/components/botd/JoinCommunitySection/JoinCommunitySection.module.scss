@@ -49,7 +49,7 @@
     margin-bottom: rem(8px);
 
     @include media('<=desktop') {
-      font-: rem(30px);
+      font-size: rem(30px);
     }
 
     @include media('<=tablet') {
