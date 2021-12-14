@@ -27,7 +27,7 @@ export default function Botd({ pageContext }: AccountSharingProps) {
   let siteMetadata = useSiteMetadata()
   siteMetadata = {
     ...siteMetadata,
-    title: 'TOpen Source JavaScript Bot Detection Library - BotDODO',
+    title: 'Open Source JavaScript Bot Detection Library - Bot',
     description:
       'Identify bots in real time with our developer-friendly library. Detect automation tools, search bots, virtual machines and browser spoofing.',
     siteUrl: `${siteMetadata.siteUrl}${pathname}`,
