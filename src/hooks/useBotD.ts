@@ -4,9 +4,6 @@ import { BOTD_PUBLIC_TOKEN, BOTD_SECRET_TOKEN, BOTD_VERIFY_ENDPOINT } from '../c
 import { getErrorMessage } from '../helpers/error'
 
 export const useBotD = () => {
-  // TODO the botd team will add the export of the types in the next release
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
   const [visitorData, setVisitorData] = useState<BotdResponse>()
   const [hasError, setHasError] = useState(false)
   const [error, setError] = useState<string>()
