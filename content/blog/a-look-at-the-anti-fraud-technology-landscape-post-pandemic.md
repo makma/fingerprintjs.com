@@ -34,7 +34,7 @@ In the world of cybercrime, fraudsters tend to follow global trends. When it com
 
 In the UK alone, authorities <a href="https://www.bbc.com/news/technology-56499886" target="_blank" rel="noopener">reported</a> more than £34.5 million was stolen in pandemic-related scams from 2020 - 2021. 
 
-Just as fraudsters adapt to new situations, so too do <a href="https://fingerprintjs.com/online-fraud-prevention-and-detection" target="_blank" rel="noopener">fraud detection</a> and prevention methods. This article shows just how the landscape has changed since the Covid pandemic and what anti-fraud technology you need to cope with the new normal.
+Just as fraudsters adapt to new situations, so too do fraud detection and prevention methods. This article shows just how the landscape has changed since the Covid pandemic and what anti-fraud technology you need to cope with the new normal.
 
 ## How has online fraud changed due to the pandemic?
 
