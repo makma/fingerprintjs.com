@@ -4,7 +4,6 @@ import BreadcrumbsSEO from '../../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../../helpers/types'
 import Container from '../../components/common/Container'
 import RelatedArticles from '../../components/RelatedArticles/RelatedArticles'
-import { PostProps } from '../../components/Post/Post'
 
 import HeroSection from '../../components/botd/HeroSection/HeroSection'
 import GenerateKeySection from '../../components/botd/GenerateKeySection/GenerateKeySection'
@@ -33,13 +32,6 @@ export default function Botd({ pageContext }: AccountSharingProps) {
     siteUrl: `${siteMetadata.siteUrl}${pathname}`,
   }
 
-  const content: PostProps = {
-    title: '',
-    description: '',
-    publishDate: '',
-    path: '/',
-    tags: ['bot attacks'],
-  }
   return (
     <LayoutTemplate siteMetadata={siteMetadata}>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
@@ -50,7 +42,15 @@ export default function Botd({ pageContext }: AccountSharingProps) {
       <IntegrationSection />
       <FeaturesSection />
       <Container size='large' className={styles.relatedArticles}>
-        <RelatedArticles article={content} count={4} title='BotD related articles' titleIsCentered limitPostLines />
+        <RelatedArticles
+          article={{
+            tags: ['bot attacks'],
+          }}
+          count={4}
+          title='BotD related articles'
+          titleIsCentered
+          limitPostLines
+        />
       </Container>
     </LayoutTemplate>
   )
