@@ -13,6 +13,7 @@ metadata:
 featured: false
 publishDate: 2021-08-26T08:04:00.000Z
 title: Can you Prevent Browser Fingerprinting?
+isPublished: true
 tags:
   - fingerprinting
   - payment fraud
@@ -25,7 +26,6 @@ heroImage:
   imageTitle: Preventing Browser Fingerprinting
 customCTA:
   openCtaNewTab: false
-isPublished: true
 ---
 Browser fingerprinting is a method of identifying and tracking website visitors that doesn’t rely on cookies or login sessions. Instead, visitors are identified by collecting a series of browser parameters, from browser version to screen dimensions and installed fonts. Each parameter is of limited utility on its own, but when combined with others can be used to create a unique identifier for each website visitor.
 
@@ -89,7 +89,7 @@ To get started, create an `index.html` file with the following code between the 
 ></script>
 ```
 
-This will print the visitorID to the console, but it won’t work until we give it a proper token. You can [sign up](https://dashboard.fingerprintjs.com/signup) for a  free trial of FingerprintJS Pro to get a unique token for your website.
+This will print the visitorID to the console, but it won’t work until we give it a proper token. You can [sign up](https://dashboard.fingerprintjs.com/signup) for a  free account of FingerprintJS Pro to get a unique token for your website.
 
 Click the **tokens** tab on the left and copy the token marked **browser**. Replace `your-browser-token` in the `index.html` file with the token copied from FingerprintJS. Now you are ready to test. Start up a server and visit your new site. This demo uses [http-server](https://www.npmjs.com/package/http-server) because it installs quickly and is easy-to-use. 
 
