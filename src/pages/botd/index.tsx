@@ -2,6 +2,9 @@ import React from 'react'
 import { LayoutTemplate } from '../../components/Layout'
 import BreadcrumbsSEO from '../../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../../helpers/types'
+import Container from '../../components/common/Container'
+import RelatedArticles from '../../components/RelatedArticles/RelatedArticles'
+import { PostProps } from '../../components/Post/Post'
 
 import HeroSection from '../../components/botd/HeroSection/HeroSection'
 import GenerateKeySection from '../../components/botd/GenerateKeySection/GenerateKeySection'
@@ -13,6 +16,8 @@ import FeaturesSection from '../../components/botd/FeaturesSection/FeaturesSecti
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
 
+import styles from './botd.module.scss'
+
 interface AccountSharingProps {
   pageContext: GeneratedPageContext
 }
@@ -22,11 +27,19 @@ export default function Botd({ pageContext }: AccountSharingProps) {
   let siteMetadata = useSiteMetadata()
   siteMetadata = {
     ...siteMetadata,
-    title: 'TODO', //TODO
-    description: 'TODO', //TODO
+    title: 'TOpen Source JavaScript Bot Detection Library - BotDODO',
+    description:
+      'Identify bots in real time with our developer-friendly library. Detect automation tools, search bots, virtual machines and browser spoofing.',
     siteUrl: `${siteMetadata.siteUrl}${pathname}`,
   }
 
+  const content: PostProps = {
+    title: '',
+    description: '',
+    publishDate: '',
+    path: '/',
+    tags: ['bot attacks'],
+  }
   return (
     <LayoutTemplate siteMetadata={siteMetadata}>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
@@ -36,6 +49,9 @@ export default function Botd({ pageContext }: AccountSharingProps) {
       <DocumentationSection />
       <IntegrationSection />
       <FeaturesSection />
+      <Container size='large' className={styles.relatedArticles}>
+        <RelatedArticles article={content} count={4} title='BotD related articles' titleIsCentered limitPostLines />
+      </Container>
     </LayoutTemplate>
   )
 }

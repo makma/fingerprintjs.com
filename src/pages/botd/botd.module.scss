@@ -1,0 +1,8 @@
+.relatedArticles {
+  padding-top: rem(30px);
+  padding-bottom: rem(52px);
+
+  @include media('<=phoneLandscape') {
+    padding: 0 0 rem(65px) 0;
+  }
+}
