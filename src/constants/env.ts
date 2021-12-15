@@ -25,6 +25,12 @@ export const FPJS_API_TOKEN =
     [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_API_TOKEN,
   }) ?? 'test_fpjs_api_token'
 
+export const BOTD_TOKEN_ENDPOINT =
+  getContextEnv<string>({
+    [NetlifyContext.Production]: process.env.GATSBY_BOTD_TOKEN_ENDPOINT,
+    [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_BOTD_TOKEN_ENDPOINT,
+  }) ?? 'test_fpjs_api_token_endpoint'
+
 export const FPJS_ENDPOINT =
   getContextEnv<string>({
     [NetlifyContext.Production]: process.env.GATSBY_FPJS_ENDPOINT,

@@ -42,7 +42,7 @@
     padding-bottom: rem(60px);
   }
 }
-.subtitle {
+.subTitle {
   font-size: rem(44px);
   font-weight: v('bold');
 
@@ -106,7 +106,7 @@
   }
 }
 .botDSection {
-  .title {
+  .botTitle {
     @include sans($size: 14px, $weight: 600, $lh: 140%, $color: adjust-color(c('brand-water'), $alpha: -0.5));
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -120,7 +120,7 @@
     border-radius: rem(16px);
     padding: rem(24px);
 
-    .subtitle {
+    .botSubTitle {
       @include sans($size: 24px, $weight: 600, $lh: 100%);
       letter-spacing: 0.01em;
     }

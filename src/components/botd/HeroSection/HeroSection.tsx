@@ -88,7 +88,7 @@ export default function HeroSection() {
     <Container className={styles.container}>
       <Section className={styles.descriptionSection}>
         <h1 className={styles.title}>free open beta</h1>
-        <h2 className={styles.subtitle}>Open source JavaScript bot detection library</h2>
+        <h2 className={styles.subTitle}>Open source JavaScript bot detection library</h2>
         <p className={styles.description}>
           The BotD library accurately identifies bots in real time, all while providing full transparency into what data
           is collected. Add to your website with a few lines of JavaScript, no complicated integrations required.
@@ -112,13 +112,13 @@ export default function HeroSection() {
       </Section>
       <Section className={styles.botDSection}>
         <div className={styles.botD}>
-          <h2 className={styles.title}>Am I a bot?</h2>
+          <h2 className={styles.botTitle}>Am I a bot?</h2>
           {isLoading ? (
-            <h2 className={styles.subTitle}>Bot detection in progress...</h2>
+            <h2 className={styles.botSubTitle}>Bot detection in progress...</h2>
           ) : botState.isBot ? (
-            <h2 className={styles.subTitle}>You are a bot</h2>
+            <h2 className={styles.botSubTitle}>You are a bot</h2>
           ) : (
-            <h2 className={styles.subTitle}>You are not a bot</h2>
+            <h2 className={styles.botSubTitle}>You are not a bot</h2>
           )}
           <p className={styles.seeDetails} onClick={() => scrollToElementById('ApiResponseDetails')}>
             See details →
