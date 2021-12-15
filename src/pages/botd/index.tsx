@@ -2,6 +2,8 @@ import React from 'react'
 import { LayoutTemplate } from '../../components/Layout'
 import BreadcrumbsSEO from '../../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../../helpers/types'
+import Container from '../../components/common/Container'
+import RelatedArticles from '../../components/RelatedArticles/RelatedArticles'
 
 import HeroSection from '../../components/botd/HeroSection/HeroSection'
 import GenerateKeySection from '../../components/botd/GenerateKeySection/GenerateKeySection'
@@ -14,6 +16,8 @@ import FaqSection from '../../components/botd/FaqSection/FaqSection'
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
 
+import styles from './botd.module.scss'
+
 interface AccountSharingProps {
   pageContext: GeneratedPageContext
 }
@@ -23,8 +27,9 @@ export default function Botd({ pageContext }: AccountSharingProps) {
   let siteMetadata = useSiteMetadata()
   siteMetadata = {
     ...siteMetadata,
-    title: 'TODO', //TODO
-    description: 'TODO', //TODO
+    title: 'Open Source JavaScript Bot Detection Library - Bot',
+    description:
+      'Identify bots in real time with our developer-friendly library. Detect automation tools, search bots, virtual machines and browser spoofing.',
     siteUrl: `${siteMetadata.siteUrl}${pathname}`,
   }
 
@@ -38,6 +43,17 @@ export default function Botd({ pageContext }: AccountSharingProps) {
       <IntegrationSection />
       <FeaturesSection />
       <FaqSection />
+      <Container size='large' className={styles.relatedArticles}>
+        <RelatedArticles
+          article={{
+            tags: ['bot attacks'],
+          }}
+          count={4}
+          title='BotD related articles'
+          titleIsCentered
+          limitPostLines
+        />
+      </Container>
     </LayoutTemplate>
   )
 }
