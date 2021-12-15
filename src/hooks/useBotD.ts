@@ -4,7 +4,8 @@ import { BOTD_PUBLIC_TOKEN, BOTD_SECRET_TOKEN, BOTD_VERIFY_ENDPOINT } from '../c
 import { getErrorMessage } from '../helpers/error'
 
 export const useBotD = () => {
-  const [visitorData, setVisitorData] = useState<BotdResponse>()
+  type SuccessResponse = Extract<BotdResponse, { bot }>
+  const [visitorData, setVisitorData] = useState<SuccessResponse>()
   const [hasError, setHasError] = useState(false)
   const [error, setError] = useState<string>()
   const [isLoading, setIsLoading] = useState(true)
@@ -18,22 +19,20 @@ export const useBotD = () => {
           publicKey: BOTD_PUBLIC_TOKEN,
         })
         const botdResp = await botD.detect()
-
-        if ('requestId' in botdResp) {
-          const verifyBody = JSON.stringify({
-            secretKey: BOTD_SECRET_TOKEN,
-            requestId: botdResp.requestId,
-          })
-          const response = await fetch(BOTD_VERIFY_ENDPOINT, {
-            body: verifyBody,
-            method: 'POST',
-          })
-          const result: BotdResponse = await response.json()
-          setVisitorData(result)
-        } else {
-          setHasError(true)
-          setError(botdResp.error.message)
+        if ('error' in botdResp) {
+          throw new Error(botdResp.error.message)
         }
+
+        const verifyBody = JSON.stringify({
+          secretKey: BOTD_SECRET_TOKEN,
+          requestId: botdResp.requestId,
+        })
+        const response = await fetch(BOTD_VERIFY_ENDPOINT, {
+          body: verifyBody,
+          method: 'POST',
+        })
+        const result: SuccessResponse = await response.json()
+        setVisitorData(result)
       } catch (error) {
         setHasError(true)
         setError(getErrorMessage(error))
