@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
-import Botd from '@fpjs-incubator/botd-agent'
-import { BOTD_TOKEN } from '../constants/env'
+import Botd, { BotdResponse } from '@fpjs-incubator/botd-agent'
+import { BOTD_PUBLIC_TOKEN, BOTD_SECRET_TOKEN, BOTD_VERIFY_ENDPOINT } from '../constants/env'
 import { getErrorMessage } from '../helpers/error'
 
 export const useBotD = () => {
-  // TODO the botd team will add the export of the types in the next release
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [visitorData, setVisitorData] = useState<any>()
+  type SuccessResponse = Extract<BotdResponse, { bot }>
+  const [visitorData, setVisitorData] = useState<SuccessResponse>()
   const [hasError, setHasError] = useState(false)
   const [error, setError] = useState<string>()
   const [isLoading, setIsLoading] = useState(true)
@@ -17,10 +16,22 @@ export const useBotD = () => {
 
       try {
         const botD = await Botd.load({
-          token: BOTD_TOKEN,
-          mode: 'allData',
+          publicKey: BOTD_PUBLIC_TOKEN,
         })
-        const result = await botD.detect()
+        const botdResp = await botD.detect()
+        if ('error' in botdResp) {
+          throw new Error(botdResp.error.message)
+        }
+
+        const verifyBody = JSON.stringify({
+          secretKey: BOTD_SECRET_TOKEN,
+          requestId: botdResp.requestId,
+        })
+        const response = await fetch(BOTD_VERIFY_ENDPOINT, {
+          body: verifyBody,
+          method: 'POST',
+        })
+        const result: SuccessResponse = await response.json()
         setVisitorData(result)
       } catch (error) {
         setHasError(true)

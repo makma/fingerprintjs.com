@@ -1775,10 +1775,10 @@
   dependencies:
     tslib "^2.0.1"
 
-"@fpjs-incubator/botd-agent@^0.1.21":
-  version "0.1.21"
-  resolved "https://registry.yarnpkg.com/@fpjs-incubator/botd-agent/-/botd-agent-0.1.21.tgz#5ad3f18dfe383a85f9c7af277a739a6b46e6d0d4"
-  integrity sha512-+3d9TqC+Bu/ry4H7t5Kt4g+AVWx1oKYgpSdgkujY4g+QgIy76eYkU0n2zPSHTWCDCdkKY8mjlRQ385COvz9haA==
+"@fpjs-incubator/botd-agent@^0.1.23-beta.1":
+  version "0.1.23-beta.1"
+  resolved "https://registry.yarnpkg.com/@fpjs-incubator/botd-agent/-/botd-agent-0.1.23-beta.1.tgz#f567e80d86e3806b936b747fdf83f1c7aef04b35"
+  integrity sha512-kWJO/BAktxrHKK6v7KvtQvFBZO+BJz87eSkq4LZcZUrlnimCnW+remcilxesYzzMGbsXZPHcB+/UvZlrAcjUEQ==
   dependencies:
     tslib "^2.2.0"
 
