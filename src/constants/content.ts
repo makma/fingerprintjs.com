@@ -16,6 +16,7 @@ export const PATH = {
   paywall: '/paywall/',
   caseStudies: '/case-studies/',
   contactSales: '/contact-sales/',
+  botD: '/botd/',
 } as const
 
 export const URL = {
@@ -51,13 +52,18 @@ export const DOC_URL = {
 } as const
 
 export const useCaseLinks = [
-  { title: 'Account Sharing', url: PATH.accountSharing, isLocal: true },
   { title: 'Account Takeover', url: PATH.accountTakeover, isLocal: true },
   { title: 'Payment Fraud', url: PATH.paymentFraud, isLocal: true },
   { title: 'Paywall', url: PATH.paywall, isLocal: true },
   { title: 'Ecommerce', url: PATH.ecommerce, isLocal: true },
   { title: 'Gaming', url: PATH.gaming, isLocal: true },
   { title: 'Cryptocurrency', url: PATH.cryptocurrency, isLocal: true },
+]
+
+export const products = [
+  { title: 'Browser Fingerprinting API', url: PATH.whyFpjs, isLocal: true },
+  { title: 'Account Sharing Prevention', url: PATH.accountSharing, isLocal: true },
+  { title: 'Bot detection', url: PATH.botD, isLocal: true },
 ]
 
 export const defaultDataLayer = [{ branch: BRANCH }]

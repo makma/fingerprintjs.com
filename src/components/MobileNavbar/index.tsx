@@ -7,7 +7,7 @@ import Container from '../common/Container'
 import Button from '../common/Button'
 import classNames from 'classnames'
 import styles from './MobileNavbar.module.scss'
-import { useCaseLinks } from '../../constants/content'
+import { useCaseLinks, products } from '../../constants/content'
 import { URL, DOC_URL, PATH, MAILTO } from '../../constants/content'
 import DropdownMenu from './DropdownMenu'
 
@@ -23,9 +23,7 @@ export default function MobileNavbar() {
         </div>
         <div className={classNames(styles.links, styles.main)}>
           <Container size='large' className={styles.container}>
-            <Link to={PATH.whyFpjs} className={styles.link}>
-              Why Us
-            </Link>
+            <DropdownMenu name='Products' list={products} />
             <DropdownMenu name='Use Cases' list={useCaseLinks} />
             <Link to={PATH.demoUrl} className={styles.link}>
               Technical Demo
