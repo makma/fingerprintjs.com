@@ -7,7 +7,7 @@ import styles from './FaqSection.module.scss'
 export default function FaqSection() {
   return (
     <Container className={styles.container}>
-      <div className={styles.descriptionSection}>
+      <section className={styles.descriptionSection}>
         <h1 className={styles.title}>Protect your website from the harmful effects of bots</h1>
         <p className={styles.description}>
           Bots represent more than 40% of global website traffic and are responsible for the majority of cyberattacks.
@@ -18,13 +18,13 @@ export default function FaqSection() {
           perform XSS attacks and inject crypto-mining scripts, posing an existential risk to small and established
           websites alike.
         </p>
-      </div>
-      <div className={styles.faqSection}>
+      </section>
+      <section className={styles.faqSection}>
         <h3 className={styles.faqTitle}>How bots impact your site:</h3>
         <div>
           <Collapsible plusIcon sections={faq.map((entry) => ({ title: entry.question, content: entry.answer }))} />
         </div>
-      </div>
+      </section>
     </Container>
   )
 }

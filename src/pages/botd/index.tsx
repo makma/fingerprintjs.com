@@ -12,6 +12,7 @@ import DocumentationSection from '../../components/botd/DocumentationSection/Doc
 import IntegrationSection from '../../components/botd/IntegrationSection/IntegrationSection'
 import FeaturesSection from '../../components/botd/FeaturesSection/FeaturesSection'
 import FaqSection from '../../components/botd/FaqSection/FaqSection'
+import JoinCommunitySection from '../../components/botd/JoinCommunitySection/JoinCommunitySection'
 
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
@@ -43,6 +44,7 @@ export default function Botd({ pageContext }: AccountSharingProps) {
       <IntegrationSection />
       <FeaturesSection />
       <FaqSection />
+      <JoinCommunitySection />
       <Container size='large' className={styles.relatedArticles}>
         <RelatedArticles
           article={{
