@@ -9,11 +9,12 @@ export const useBotD = () => {
   const [hasError, setHasError] = useState(false)
   const [error, setError] = useState<string>()
   const [isLoading, setIsLoading] = useState(true)
+  const [reload, setReload] = useState(false)
 
   useEffect(() => {
     async function getVisitorData() {
+      setHasError(false)
       setIsLoading(true)
-
       try {
         const botD = await Botd.load({
           publicKey: BOTD_PUBLIC_TOKEN,
@@ -38,10 +39,14 @@ export const useBotD = () => {
         setError(getErrorMessage(error))
       }
       setIsLoading(false)
+      setReload(false)
     }
 
     getVisitorData()
-  }, [])
+  }, [reload])
 
-  return { visitorData, isLoading, hasError, error }
+  const refresh = () => {
+    setReload(true)
+  }
+  return { visitorData, isLoading, hasError, error, refresh }
 }

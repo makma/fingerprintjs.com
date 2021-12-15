@@ -8,6 +8,7 @@ import Tippy from '@tippyjs/react'
 import Skeleton from '../../Skeleton/Skeleton'
 import { scrollToElementById } from '../../../helpers/scrollToElemenBytID'
 import { repeatElement } from '../../../helpers/repeatElement'
+import classNames from 'classnames'
 
 import { ReactComponent as GithubIconSvg } from './svg/GithubSVG.svg'
 
@@ -21,6 +22,7 @@ import { ReactComponent as virtualMDetectedSVG } from './svg/VirtualMDetectedSVG
 import { ReactComponent as virtualMNotDetectedSVG } from './svg/VirtualMNotDetectedSVG.svg'
 import { ReactComponent as InfoSvg } from './svg/InfoTipSVG.svg'
 import { ReactComponent as LoadingIconSvg } from './svg/LoadingIconSVG.svg'
+import { ReactComponent as RefreshIconSvg } from '../../../img/RefreshSVG.svg'
 
 import styles from './HeroSection.module.scss'
 
@@ -56,7 +58,7 @@ function botReducer(detectedBots: DetectedBots, updateDetectedBot: Action) {
 }
 
 export default function HeroSection() {
-  const { visitorData, isLoading } = useBotD()
+  const { visitorData, isLoading, hasError, refresh } = useBotD()
 
   const initialState = {
     isBot: false,
@@ -90,8 +92,9 @@ export default function HeroSection() {
         <h1 className={styles.title}>free open beta</h1>
         <h2 className={styles.subTitle}>Open source JavaScript bot detection library</h2>
         <p className={styles.description}>
-          The BotD library accurately identifies bots in real time, all while providing full transparency into what data
-          is collected. Add to your website with a few lines of JavaScript, no complicated integrations required.
+          The BotD library accurately identifies <span className={styles.botsWord}>bots</span> in real time, all while
+          providing full transparency into what data is collected. Add to your website with a few lines of JavaScript,
+          no complicated integrations required.
         </p>
         <div className={styles.buttons}>
           <Button
@@ -115,6 +118,11 @@ export default function HeroSection() {
           <h2 className={styles.botTitle}>Am I a bot?</h2>
           {isLoading ? (
             <h2 className={styles.botSubTitle}>Bot detection in progress...</h2>
+          ) : hasError ? (
+            <h2 className={styles.botSubTitle}>
+              Bot detection failed
+              <RefreshIconSvg className={styles.tryAgainIcon} onClick={() => refresh()} />
+            </h2>
           ) : botState.isBot ? (
             <h2 className={styles.botSubTitle}>You are a bot</h2>
           ) : (
@@ -123,7 +131,7 @@ export default function HeroSection() {
           <p className={styles.seeDetails} onClick={() => scrollToElementById('ApiResponseDetails')}>
             See details →
           </p>
-          <CardsSection {...botState} isLoading={isLoading} />
+          <CardsSection {...botState} hasError={hasError} isLoading={isLoading} />
         </div>
       </Section>
     </Container>
@@ -132,72 +140,72 @@ export default function HeroSection() {
 
 interface CardsSectionProps extends DetectedBots {
   isLoading?: boolean
+  hasError?: boolean
 }
-function CardsSection({ automationTool, browserSpoofing, searchEngine, vm, isLoading }: CardsSectionProps) {
-  if (isLoading) {
+function CardsSection({ automationTool, browserSpoofing, searchEngine, vm, isLoading, hasError }: CardsSectionProps) {
+  if (isLoading || hasError) {
     return (
       <section className={styles.cards}>
         {repeatElement(4, (i) => (
-          <LoadingCard key={i} />
+          <LoadingCard key={i} error={hasError} />
         ))}
       </section>
     )
-  } else {
-    return (
-      <section className={styles.cards}>
-        <Card
-          iconDetected={automationDetectedSVG}
-          iconNotDetected={automationNotDetectedSVG}
-          title='Automation Tool'
-          detected={automationTool}
-          tipContent={
-            <p>
-              <strong>Automation tool detection</strong> is helpful when you need to know if your website is used by
-              things like Puppeteer, Playwright and Selenium. These tools are used to create fake reviews, scrape your
-              premium content and mass-register fake user accounts.
-            </p>
-          }
-        />
-        <Card
-          iconDetected={searchEngineDetectedSVG}
-          iconNotDetected={searchEngineNotDetectedSVG}
-          title='Search Engine'
-          detected={searchEngine}
-          tipContent={
-            <p>
-              <strong>Search engine detection</strong> is important to know which bots should be ignored, because
-              they&apos;re good and which should be protected against, because they&apos;re bad.
-            </p>
-          }
-        />
-        <Card
-          iconDetected={browserDetectedSVG}
-          iconNotDetected={browserNotDetectedSVG}
-          title='Browser Spoofing'
-          detected={browserSpoofing}
-          tipContent={
-            <p>
-              <strong>Browser spoofing</strong> detection is helpful to know when headless browsers used to abuse your
-              website pretend to be regular iPhones or Android devices.
-            </p>
-          }
-        />
-        <Card
-          iconDetected={virtualMDetectedSVG}
-          iconNotDetected={virtualMNotDetectedSVG}
-          title='Virtual Machine'
-          detected={vm}
-          tipContent={
-            <p>
-              <strong>Virtual machine detection</strong> is useful to detect click farms, automated review fraud and
-              junk content generation. It&apos;s a strong signal that improves the reliability and accuracy of the
-              previous three detectors.
-            </p>
-          }
-        />
-      </section>
-    )
   }
+  return (
+    <section className={styles.cards}>
+      <Card
+        iconDetected={automationDetectedSVG}
+        iconNotDetected={automationNotDetectedSVG}
+        title='Automation Tool'
+        detected={automationTool}
+        tipContent={
+          <p>
+            <strong>Automation tool detection</strong> is helpful when you need to know if your website is used by
+            things like Puppeteer, Playwright and Selenium. These tools are used to create fake reviews, scrape your
+            premium content and mass-register fake user accounts.
+          </p>
+        }
+      />
+      <Card
+        iconDetected={searchEngineDetectedSVG}
+        iconNotDetected={searchEngineNotDetectedSVG}
+        title='Search Engine'
+        detected={searchEngine}
+        tipContent={
+          <p>
+            <strong>Search engine detection</strong> is important to know which bots should be ignored, because
+            they&apos;re good and which should be protected against, because they&apos;re bad.
+          </p>
+        }
+      />
+      <Card
+        iconDetected={browserDetectedSVG}
+        iconNotDetected={browserNotDetectedSVG}
+        title='Browser Spoofing'
+        detected={browserSpoofing}
+        tipContent={
+          <p>
+            <strong>Browser spoofing</strong> detection is helpful to know when headless browsers used to abuse your
+            website pretend to be regular iPhones or Android devices.
+          </p>
+        }
+      />
+      <Card
+        iconDetected={virtualMDetectedSVG}
+        iconNotDetected={virtualMNotDetectedSVG}
+        title='Virtual Machine'
+        detected={vm}
+        tipContent={
+          <p>
+            <strong>Virtual machine detection</strong> is useful to detect click farms, automated review fraud and junk
+            content generation. It&apos;s a strong signal that improves the reliability and accuracy of the previous
+            three detectors.
+          </p>
+        }
+      />
+    </section>
+  )
 }
 
 interface CardProps {
@@ -254,17 +262,21 @@ function Card({
   )
 }
 
-function LoadingCard() {
+interface LoadingCarProps {
+  error?: boolean
+}
+
+function LoadingCard({ error }: LoadingCarProps) {
   return (
     <div className={styles.card}>
       <div className={styles.iconContainer}>
-        <LoadingIconSvg className={styles.botIcon} />
+        <LoadingIconSvg className={classNames(styles.botIcon, { [styles.errorState]: error })} />
       </div>
       <div className={styles.info}>
         <div className={styles.botType}>
-          <Skeleton height={24} width={114} />
+          <Skeleton height={24} width={114} className={classNames({ [styles.loadingError]: error })} />
         </div>
-        <Skeleton height={24} width={136} />
+        <Skeleton height={24} width={136} className={classNames({ [styles.loadingError]: error })} />
       </div>
     </div>
   )

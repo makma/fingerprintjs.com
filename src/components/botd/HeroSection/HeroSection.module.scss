@@ -67,6 +67,10 @@
   }
 }
 
+.botsWord {
+  color: c('brand-fire');
+}
+
 .buttons {
   .buttonOutlined {
     text-decoration: none;
@@ -123,11 +127,15 @@
     .botSubTitle {
       @include sans($size: 24px, $weight: 600, $lh: 100%);
       letter-spacing: 0.01em;
+
+      display: flex;
+      align-items: center;
     }
 
     .seeDetails {
       @include sans($size: 16px, $weight: 500, $lh: 150%, $color: c('brand-fire'));
       cursor: pointer;
+      display: inline-block;
 
       margin-top: rem(16px);
       margin-bottom: rem(40px);
@@ -140,6 +148,14 @@
 
     @include media('<=phoneLandscape') {
       padding: rem(16px);
+    }
+
+    .tryAgainIcon {
+      width: rem(16px);
+      height: rem(16px);
+      margin-left: rem(12px);
+
+      cursor: pointer;
     }
   }
   @include media('<=phoneLandscape') {
@@ -193,6 +209,17 @@
     .botIcon {
       width: rem(64px);
       height: rem(64px);
+
+      fill: #f2f2f7;
+
+      &.errorState {
+        fill: #ffe4ec;
+      }
     }
   }
+}
+
+.loadingError {
+  background-color: #ffe4ec;
+  animation: none;
 }
