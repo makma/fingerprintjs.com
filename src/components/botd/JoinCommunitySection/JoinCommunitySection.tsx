@@ -4,6 +4,7 @@ import Button from '../../common/Button'
 import { URL } from '../../../constants/content'
 
 import { ReactComponent as GithubIconSvg } from './GithubSVG.svg'
+import { ReactComponent as DiscordSVG } from './DiscordSVG.svg'
 
 import styles from './JoinCommunitySection.module.scss'
 
@@ -20,7 +21,8 @@ export default function JoinCommunitySection() {
           BotD is an open source project supported by contributing developers across the globe.
         </p>
         <div className={styles.buttons}>
-          <Button href={URL.discordServerURL} variant='white' size='big' openNewTab>
+          <Button className={styles.label} href={URL.discordServerURL} variant='white' size='big' openNewTab>
+            <DiscordSVG className={styles.icon} />
             Discord
           </Button>
           <Button className={styles.label} href={URL.githubRepoUrl} variant='white' size='big' openNewTab>
