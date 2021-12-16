@@ -56,7 +56,7 @@ export default function GenerateKeySection() {
               </Tooltip>,
               <Tooltip key='browserSpoofing' className={styles.browserSpoofing}>
                 <p>
-                  <strong>Browser spoofing</strong> detection is helpful to know when headless browsers used to abuse
+                  <strong>Browser spoofing detection</strong> is helpful to know when headless browsers used to abuse
                   your website pretend to be regular iPhones or Android devices.
                 </p>
               </Tooltip>,
@@ -66,12 +66,23 @@ export default function GenerateKeySection() {
                   they&apos;re good and which should be protected against, because they&apos;re bad.
                 </p>
               </Tooltip>,
-
               <Tooltip key='vm' className={styles.vm}>
                 <p>
                   <strong>Virtual machine detection</strong> is useful to detect click farms, automated review fraud and
                   junk content generation. It&apos;s a strong signal that improves the reliability and accuracy of the
                   previous three detectors.
+                </p>
+              </Tooltip>,
+              <Tooltip key='ip' className={styles.ip}>
+                <p>Client ip address.</p>
+              </Tooltip>,
+              <Tooltip key='requestId' className={styles.requestId}>
+                <p>Used to verify bot detection requests on the server.</p>
+              </Tooltip>,
+              <Tooltip key='tag' className={styles.tag}>
+                <p>
+                  String containing information associated with each request. Should be provided by BotD users in the
+                  browser API.
                 </p>
               </Tooltip>,
             ]}
