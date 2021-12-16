@@ -131,7 +131,7 @@ export default function GenerateKeySection() {
     ).then( Botd => Botd.load({ publicKey: '<public-key>' }))
   // Get the bot detection result when you need it.
   // Result will contain the requestId property, 
-  that you can securely verify on the server.
+  // that you can securely verify on the server.
   botdPromise
       .then(botd => botd.detect())
       .then(result => console.log(result))
@@ -149,7 +149,7 @@ const botdPromise = Botd.load({ publicKey: '<public-key>' });
 (async () => {
   // Get the bot detection result when you need it.
   // Result will contain the requestId property, 
-  that you can securely verify on the server.
+  // that you can securely verify on the server.
   const botd = await botdPromise
   const result = await botd.detect();
   console.log(result);
