@@ -41,7 +41,7 @@ export default function GenerateKeySection() {
   "requestId":"01FP8C8FQ8P189KVFP88C5FHY5",
   "tag":""
 }`,
-                language: 'html',
+                language: 'javascript',
                 type: '',
               },
             ]}
