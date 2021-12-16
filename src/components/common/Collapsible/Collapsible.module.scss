@@ -75,7 +75,7 @@ $side-padding: 2rem;
       font-size: rem(16px);
       color: adjust-color(c('brand-water'), $alpha: -0.3);
 
-      transition-timing-function: linear;
+      transition-timing-function: ease-in-out;
       transition-duration: 0.2s;
 
       padding: 0 rem(24px) 0 rem(24px);
@@ -93,8 +93,8 @@ $side-padding: 2rem;
       &.contentPlus {
         padding: 0 rem(24px) rem(24px) rem(24px);
 
-        transition-timing-function: ease-in;
-        transition-duration: 0.4s;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.2s;
       }
     }
   }
