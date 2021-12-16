@@ -24,7 +24,7 @@ export default function GenerateKeySection() {
     publicKey: string
     secretKey: string
   }
-  const [usedEmails, setUsedEmails] = useLocalStorage('email_keys', [] as MailKeys[])
+  const [usedEmails, setUsedEmails] = useLocalStorage('botd_keys', [] as MailKeys[])
 
   async function handleSubmit(e) {
     e.preventDefault()
