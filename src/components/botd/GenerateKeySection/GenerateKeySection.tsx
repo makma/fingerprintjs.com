@@ -7,6 +7,7 @@ import { generateBotDToken } from '../../../helpers/api'
 import classNames from 'classnames'
 import CodeWindowWithSelector from '../../common/CodeWindowWithSelector'
 import { copyToClipboard } from '../../../helpers/clipboard'
+import useLocalStorage from '../../../hooks/useLocalStorage'
 import { ReactComponent as CopySVG } from '../../../img/CopySVG.svg'
 
 import { ReactComponent as DevSVG } from './DevSVG.svg'
@@ -16,8 +17,14 @@ import styles from './GenerateKeySection.module.scss'
 export default function GenerateKeySection() {
   const [email, setEmail] = useState('')
   const { formState, updateFormState } = useForm(Forms.BotdGenerateToken)
-
   const [botDToken, setBotDToken] = useState({ publicKey: '', secretKey: '' })
+
+  interface MailKeys {
+    usedEmail: string
+    publicKey: string
+    secretKey: string
+  }
+  const [usedEmails, setUsedEmails] = useLocalStorage('email_keys', [] as MailKeys[])
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -32,27 +39,37 @@ export default function GenerateKeySection() {
       }, 5000)
     }
 
-    try {
-      const response = await generateBotDToken(email)
-      const status = response.status
+    const usedKeys = usedEmails.find(({ usedEmail }) => usedEmail === email)
 
-      if (status !== 200) {
-        onError()
-      } else {
-        updateFormState(FormState.Success)
-        const data = await response.json()
+    if (usedKeys) {
+      setBotDToken({ publicKey: usedKeys.publicKey, secretKey: usedKeys.secretKey })
+      updateFormState(FormState.Success)
+    } else {
+      try {
+        const response = await generateBotDToken(email)
+        const status = response.status
 
-        const publicKey = data?.publicKey
-        const secretKey = data?.secretKey
-
-        if (publicKey && secretKey) {
-          setBotDToken({ publicKey, secretKey })
-        } else {
+        if (status !== 200) {
           onError()
+        } else {
+          updateFormState(FormState.Success)
+          const data = await response.json()
+
+          const publicKey = data?.publicKey
+          const secretKey = data?.secretKey
+
+          if (publicKey && secretKey) {
+            setBotDToken({ publicKey, secretKey })
+
+            usedEmails.push({ usedEmail: email, publicKey: publicKey, secretKey: secretKey })
+            setUsedEmails(usedEmails)
+          } else {
+            onError()
+          }
         }
+      } catch (error) {
+        onError()
       }
-    } catch (error) {
-      onError()
     }
   }
 
