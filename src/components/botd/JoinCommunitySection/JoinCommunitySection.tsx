@@ -22,12 +22,16 @@ export default function JoinCommunitySection() {
         </p>
         <div className={styles.buttons}>
           <Button className={styles.label} href={URL.discordServerURL} variant='white' size='big' openNewTab>
-            <DiscordSVG className={styles.icon} />
-            Discord
+            <div className={styles.button}>
+              <DiscordSVG className={styles.icon} />
+              <span>Discord</span>
+            </div>
           </Button>
           <Button className={styles.label} href={URL.botDRepoUrl} variant='white' size='big' openNewTab>
-            <GithubIconSvg className={styles.icon} />
-            <span>Github</span>
+            <div className={styles.button}>
+              <GithubIconSvg className={styles.icon} />
+              <span>Github</span>
+            </div>
           </Button>
         </div>
       </section>
