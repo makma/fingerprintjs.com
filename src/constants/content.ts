@@ -22,7 +22,8 @@ export const PATH = {
 export const URL = {
   githubRepoUrl: 'https://github.com/fingerprintjs/fingerprintjs/',
   githubApiUrl: 'https://api.github.com/repos/fingerprintjs/fingerprintjs',
-  botdIntegrationsRepoUrl: 'https://github.com/fingerprintjs/botd-integrations',
+  botDRepoUrl: 'https://github.com/fingerprintjs/BotD',
+  botDIntegrationsRepoUrl: 'https://github.com/fingerprintjs/botd-integrations',
   dashboardLoginUrl: 'https://dashboard.fingerprintjs.com/login',
   careersUrl: 'https://careers.fingerprintjs.com/',
   careersConsoleLogUrl: 'https://grnh.se/bb9c55804us',
@@ -48,7 +49,7 @@ export const DOC_URL = {
   privacyPolicyUrl: 'https://dev.fingerprintjs.com/docs/privacy-policy/',
   browserSupportUrl: 'https://dev.fingerprintjs.com/docs/browser-support/',
   webhooksUrl: 'https://dev.fingerprintjs.com/docs/webhooks',
-  botDUrl: 'https://github.com/fingerprintjs/BotD',
+  botDUrl: 'https://github.com/fingerprintjs/BotD#botd-currently-in-beta',
 } as const
 
 export const useCaseLinks = [

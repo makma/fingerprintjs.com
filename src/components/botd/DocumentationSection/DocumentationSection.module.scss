@@ -6,7 +6,7 @@
 
   padding-bottom: rem(96px);
 
-  @include media('<=phoneLandscape') {
+  @include media('<=desktop') {
     display: flex;
     flex-direction: column;
     row-gap: rem(48px);

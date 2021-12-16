@@ -12,8 +12,8 @@ export default function JoinCommunitySection() {
     <Container className={styles.container}>
       <section className={styles.joinCommunitySection}>
         <div className={styles.labels}>
-          <span>20K downloads</span>
-          <span>58M API requests</span>
+          <span>+20K downloads</span>
+          <span>+58M API requests</span>
         </div>
         <h1 className={styles.title}>Join our growing community</h1>
         <p className={styles.description}>
@@ -23,7 +23,7 @@ export default function JoinCommunitySection() {
           <Button href={URL.discordServerURL} variant='white' size='big' openNewTab>
             Discord
           </Button>
-          <Button className={styles.label} href={URL.githubRepoUrl} variant='white' size='big' openNewTab>
+          <Button className={styles.label} href={URL.botDRepoUrl} variant='white' size='big' openNewTab>
             <GithubIconSvg className={styles.icon} />
             <span>Github</span>
           </Button>

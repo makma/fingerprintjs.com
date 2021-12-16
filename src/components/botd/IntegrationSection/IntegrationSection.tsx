@@ -19,7 +19,7 @@ export default function IntegrationSection() {
         Cloud integrations enable BotD to run at edge in a secure context to harden and protect your bot detection
         logic. See for yourself - all cloud integrations are 100% open source.
       </p>
-      <a href={URL.botdIntegrationsRepoUrl} className={styles.button} target='_blank' rel='noreferrer'>
+      <a href={URL.botDIntegrationsRepoUrl} className={styles.button} target='_blank' rel='noreferrer'>
         See integrations on GitHub
       </a>
       <div className={styles.logos}>
