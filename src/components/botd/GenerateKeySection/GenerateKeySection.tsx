@@ -125,18 +125,17 @@ export default function GenerateKeySection() {
           codeBlocks={[
             {
               code: `<script>
-// Initialize an agent at application startup.
-const botdPromise =
-    import('https://openfpcdn.io/botd/v0.1')
-    .then( Botd => Botd.load({
-        token: '<your-token>',
-        mode: 'allData'
-    }))
-// Get the bot detection result when you need it.
-botdPromise
-    .then(botd => botd.detect())
-    .then(result => console.log(result))
-    .catch(error => console.error(error))
+  // Initialize an agent at application startup.
+  const botdPromise = import(
+    'https://openfpcdn.io/botd/v0.1'
+    ).then( Botd => Botd.load({ publicKey: '<public-key>' }))
+  // Get the bot detection result when you need it.
+  // Result will contain the requestId property, 
+  that you can securely verify on the server.
+  botdPromise
+      .then(botd => botd.detect())
+      .then(result => console.log(result))
+      .catch(error => console.error(error))
 </script>`,
               language: 'html',
               type: 'CDN',
@@ -145,13 +144,12 @@ botdPromise
               code: `import Botd from '@fpjs-incubator/botd-agent';
 
 // Initialize an agent at application startup.
-const botdPromise = Botd.load({
-    token: "<token>",
-    mode: "allData"
-});
+const botdPromise = Botd.load({ publicKey: '<public-key>' });
 
 (async () => {
   // Get the bot detection result when you need it.
+  // Result will contain the requestId property, 
+  that you can securely verify on the server.
   const botd = await botdPromise
   const result = await botd.detect();
   console.log(result);
