@@ -128,16 +128,16 @@ export default function GenerateKeySection() {
   // Initialize an agent at application startup.
   const botdPromise = import(
     "https://openfpcdn.io/botd/v0.1"
-  ).then((Botd) =>
+  ).then( Botd =>
     Botd.load({ publicKey: "${botDToken.publicKey}" })
   );
   // Get the bot detection result when you need it.
   // Result will contain the requestId property,
   // that you can securely verify on the server.
   botdPromise
-    .then((botd) => botd.detect())
-    .then((result) => console.log(result))
-    .catch((error) => console.error(error));
+    .then(botd => botd.detect())
+    .then(result => console.log(result))
+    .catch(error => console.error(error))
 </script>`,
               language: 'html',
               type: 'CDN',
