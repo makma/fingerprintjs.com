@@ -56,7 +56,7 @@ export default memo(function CodeWindowWithSelector({
               </li>
             ))}
           </ul>
-          <div className={styles.copy} onClick={() => onCopyClick(activeTab.code)}>
+          <div className={styles.copy} onClick={() => onCopyClick(codeBlocks[activeIndex].code)}>
             <CopySVG className={styles.icon} />
             Copy
           </div>
