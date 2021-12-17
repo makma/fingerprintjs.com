@@ -12,7 +12,7 @@ import styles from './APIResponseDetailsSection.module.scss'
 export default function GenerateKeySection() {
   const { visitorData } = useBotD()
   const characterLength = 8.4
-  console.log(visitorData?.requestId.length)
+
   return (
     <Container className={styles.container}>
       <h1 className={styles.title} id='ApiResponseDetails'>
