@@ -17,7 +17,7 @@ export default function GenerateKeySection() {
   const [email, setEmail] = useState('')
   const { formState, updateFormState } = useForm(Forms.BotdGenerateToken)
 
-  const [botDToken, setBotDToken] = useState({ publicKey: '', secretKey: '' })
+  const [botDToken, setBotDToken] = useState({ publicKey: '<  your-public-token  >', secretKey: '' })
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -127,30 +127,34 @@ export default function GenerateKeySection() {
               code: `<script>
   // Initialize an agent at application startup.
   const botdPromise = import(
-    'https://openfpcdn.io/botd/v0.1'
-    ).then( Botd => Botd.load({ publicKey: '<public-key>' }))
+    "https://openfpcdn.io/botd/v0.1"
+  ).then((Botd) =>
+    Botd.load({ publicKey: "${botDToken.publicKey}" })
+  );
   // Get the bot detection result when you need it.
-  // Result will contain the requestId property, 
+  // Result will contain the requestId property,
   // that you can securely verify on the server.
   botdPromise
-      .then(botd => botd.detect())
-      .then(result => console.log(result))
-      .catch(error => console.error(error))
+    .then((botd) => botd.detect())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
 </script>`,
               language: 'html',
               type: 'CDN',
             },
             {
-              code: `import Botd from '@fpjs-incubator/botd-agent';
+              code: `import Botd from "@fpjs-incubator/botd-agent";
 
 // Initialize an agent at application startup.
-const botdPromise = Botd.load({ publicKey: '<public-key>' });
+const botdPromise = Botd.load({
+  publicKey: "${botDToken.publicKey}",
+});
 
 (async () => {
   // Get the bot detection result when you need it.
-  // Result will contain the requestId property, 
+  // Result will contain the requestId property,
   // that you can securely verify on the server.
-  const botd = await botdPromise
+  const botd = await botdPromise;
   const result = await botd.detect();
   console.log(result);
 })();`,
