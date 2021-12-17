@@ -19,13 +19,8 @@
   force = true
 
 [[redirects]]
-  from = "https://fingerprintjs.com/open-source/"
-  to = "https://fingerprintjs.com/github/"
-  force = true
-
-[[redirects]]
-  from = "http://fingerprintjs.com/open-source/"
-  to = "https://fingerprintjs.com/github/"
+  from = "/open-source/"
+  to = "/github/"
   force = true
 
 [context.branch-deploy]
