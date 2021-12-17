@@ -61,7 +61,7 @@ export default memo(function CodeWindowWithSelector({
         </div>
       )}
       <div className={classNames(className, styles.content)}>
-        <pre>
+        <pre className={styles.pre}>
           <code
             className={classNames(
               styles.code,

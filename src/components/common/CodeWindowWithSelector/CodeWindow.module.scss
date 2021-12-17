@@ -145,3 +145,17 @@
     color: #afd5fb;
   }
 }
+
+.pre {
+  &::-webkit-scrollbar {
+    width: rem(4px);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #434875;
+  }
+}
