@@ -12,6 +12,7 @@ metadata:
 featured: true
 publishDate: 2021-09-30T23:18:30.228Z
 title: How to Outsmart Fraudsters and Recognize Phishing Emails
+isPublished: true
 tags:
   - account takeover
   - payment fraud
@@ -25,7 +26,6 @@ heroImage:
   image: /img/uploads/how-to-outsmart-fraudsters-recognise-phishing-emails-1-.png
 customCTA:
   openCtaNewTab: false
-isPublished: true
 ---
 Phishing emails have become increasingly common and difficult to detect in recent years; in fact, they were the [most common online fraud type](https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf) in 2020, with nearly a quarter of a million phishing emails sent out to unwitting victims.
 
@@ -57,7 +57,7 @@ Cyber criminals will often employ phishing emails to trick readers into clicking
 
 Several key visual clues may allude to a potential phishing email attack in the works. The links may be buttons or graphics directly copied and pasted into the email body, in which case they may look off-center, oddly-shaped or malformed. For text links, users should be wary of hyperlinks with hidden or obfuscated URLS., as cyber criminals will use methods to cloak the malicious destination domain, so as not to tip off the user.
 
-![Bank Phishing Email](https://lh3.googleusercontent.com/eiUfsvLKZ8EGPLyZ2lJz-1o9aUzey8Tzc5dOOONEsgchZUhtXGUqpiOjIDINcU-DnM0XH3VTleuFFNMxa3AzTOENBcq4CS7BqRutpVXT34gl05HjZ1CMV8YKHKzUEVwA4err1lRu=s0 "Bank Phishing Email")
+![Bank Phishing Email](/img/uploads/hidden-url-email.png "Bank Phishing Email")
 
 Source: [bleepingcomputer.com](https://www.bleepingcomputer.com/news/security/microsoft-phishing-attack-uses-google-redirects-to-evade-detection/)
 
@@ -65,7 +65,7 @@ Source: [bleepingcomputer.com](https://www.bleepingcomputer.com/news/security/mi
 
 Cyber criminals use urgency as a way for disarming users and provoking them into taking action quickly.    This could take the form of an email marked as urgent, a request for an immediate response, and/or a threat of further action (e.g., legal proceedings, collections, reporting to law enforcement).
 
-![Bank Phishing Email](https://lh3.googleusercontent.com/ERKtkgM4X1d9MIPwNDQpqTqp2e_nEnWQZseiRdfcHSZttnDheSfzOE7ousWEs9-aIqcoE8w0vIMaSNsEKrmolmz6NkNhjtUqUEMoPzYVrQ77mNQtGczFWaQWD1B5BG-rTb961KOO=s0 "Bank Phishing Email")
+![Bank Phishing Email](/img/uploads/online-banking.png "Bank Phishing Email")
 
 Source: [consumeraffairs.com](https://www.consumeraffairs.com/news/bank-of-america-email-scam-still-going-strong-032017.html)
 
@@ -75,7 +75,7 @@ These urgent requests carry extra weight if the email purports to be from an emp
 
 Phishing emails often direct users to [open attachments](https://it.stonybrook.edu/help/kb/handling-unexpected-or-suspicious-email-attachments) that resemble innocuous files (e.g., documents/PDFs, spreadsheets, or high-resolution images). However, these attachments often contain malware and other malicious files used for gaining backdoor access to the user’s computer.
 
-![Phishing Malware Attachment](https://lh4.googleusercontent.com/FEzZhzZXdVrE4lWsc5CkZTQ7_mtv1G8k7-dAQ1Xh4UIL7wdAIXB1Zr5WuYm2UTqCxDIgZo4JJg1GmtUXhaBU3S4cWofzyo7U03E_x2d0PcsUq_0G6m9GgglvhEEkQY2tq3tA_ppi=s0 "Phishing Malware Attachment")
+![Phishing Malware Attachment](/img/uploads/malicious-file.png "Phishing Malware Attachment")
 
 Source: [microsoft.com.](https://www.microsoft.com/security/blog/2017/01/26/phishers-unleash-simple-but-effective-social-engineering-techniques-using-pdf-attachments/)
 
@@ -85,7 +85,7 @@ In some cases, an .exe file may come as an attachment — if the email and file 
 
 It’s important to keep in mind that most organizations these days, be it a government authority, service provider, bank, or other business, do not request private information via email, expressly because of security and privacy reasons. Any requests for  credit card information, bank details, or account access should therefore be scrutinized thoroughly.
 
-![Bank Phishing Email](https://lh4.googleusercontent.com/nzLIRJTf3iLQsw-LAebE_1VdenPMCkAQb9R8gVmo3L7lVF12g2GyH5Kx9cW9YGMQdhsFMpz8vOeMAtI_MD9MopelZkKW4mrO8Uo9LgQQljALHn-wYle3x3gEuW5U39VEbTOkjIxJ=s0 "Bank Phishing Email")
+![Bank Phishing Email](/img/uploads/commonwealth.png "Bank Phishing Email")
 
 Source: [mailguard.com.](https://www.mailguard.com.au/blog/commbank-brandjacked-phishing-email-scam)
 

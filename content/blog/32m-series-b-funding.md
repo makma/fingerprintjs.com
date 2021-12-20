@@ -19,7 +19,7 @@ tags:
 authors:
   - Dan Pinto
 heroImage:
-  image:
+  image: null
   imageAlt: FingerprintJS Series B
   imageTitle: FingerprintJS Series B
 customCTA:
@@ -31,7 +31,7 @@ On behalf of the whole team at FingerprintJS, we are excited to announce that we
 
 ## Now more than ever is the time to try FingerprintJS Pro
 
-Over the past year we have made some [major updates to our product](https://fingerprintjs.com/blog/product-update-11-2021/), improving the onboarding experience, building out dashboard insights, and increasing identifier accuracy. 
+Over the past year we have made some [major updates to our product](https://fingerprintjs.com/blog/product-update-11-2021/), improving the onboarding experience, building out dashboard insights, and increasing identifier accuracy.
 
 We also have achieved some incredible milestones over the last year that have helped to make this recent round of funding possible, and cemented our ability to continue improving our offerings for years to come.
 
@@ -39,7 +39,8 @@ We also have achieved some incredible milestones over the last year that have he
 
 We crawled the Alexa top websites by traffic to see how many of them had our browser fingerprinting code installed:
 
-![FingerprintJS Usage Across Alexa Top Sites](https://lh5.googleusercontent.com/VYwacGhlzJt811sbtIjryKRfdmQVHhudaIyTNtDgqhDeTame26RcUV2B0cjrWpwZLRnikc6noxsvJYmtv2crsh7yUJMscRe1szkmqXuLoVpriHMnqIFERLpCohKknTbmDF02GOut)
+![Top sites using FPJS](/img/uploads/web-crawler-stats-1-.png "Top sites using FPJS")
+
 <br>
 
 Among these websites are some of the most recognizable names in banking, e-commerce, cryptocurrency, and media. We see FingerprintJS code on login pages, payment forms, registration pages, lead forms, and in some cases running on every page. 
@@ -48,13 +49,12 @@ Among these websites are some of the most recognizable names in banking, e-comme
 
 We wanted to make it as easy as possible for those who are curious about FingerprintJS Pro to try our product. That’s why we created the most seamless signup process possible:
 
-* A 10-day trial with unlimited identifications
-* Following that, a free plan with up to 20,000 identifications per month
-* We also removed the requirement for a credit card to sign up
+* A free plan with up to 20,000 identifications per month, no credit card required
+* At anytime, upgrade to a 10-day trial with unlimited identifications
 
 Our new trial process makes it especially easy for our open source users to try Pro, as well as catering to individual developers and small sites that can use the product for free forever.
 
-### SOC2 Compliance 
+### SOC2 Compliance
 
 We achieved [SOC2 compliance](https://fingerprintjs.com/blog/soc-2-type-1/) this August, making it possible for us to provide enterprise customers with our Type 1 report. Even if your company does not require SOC2 from technology vendors, the report provides assurance of our commitment to best-in-class data security and privacy.
 

@@ -11,7 +11,7 @@ metadata:
   url: https://fingerprintjs.com/case-studies/review-fraud/
 header:
   subLabel: Case Study
-  markdown__Content: >
+  content: >
     The company was able to catch an additional 500 fake reviews per day with
     FingerprintJS Pro’s highly accurate visitor identification API, even when
     the perpetrators attempted to conceal their identity using a VPN or clearing
@@ -33,18 +33,18 @@ summary:
         description: 5M+ Monthly Unique Visitors
   results:
     - title: Caught over 500 fake reviews per day
-      markdown__Content: >
+      content: >
         Switching from FingerprintJS open source to Pro resulted in a massive
         increase in identification accuracy and put a stop to the vast majority
         of fake reviews.
       icon: /img/uploads/like.svg
     - title: Identified returning visitors using VPNs
-      markdown__Content: Pro’s VisitorID remained stable even as users attempted to
+      content: Pro’s VisitorID remained stable even as users attempted to
         conceal their identity, catching even the most sophisticated fake review
         services.
       icon: /img/uploads/incognito-1-.svg
     - title: Flexible solution for future fraud problems
-      markdown__Content: The company’s team plans to use FingerprintJS Pro to solve
+      content: The company’s team plans to use FingerprintJS Pro to solve
         other fraud use cases in the future due to its flexibility and accuracy.
       icon: /img/uploads/loop.svg
 footer:

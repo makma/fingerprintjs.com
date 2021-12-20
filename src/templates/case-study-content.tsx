@@ -68,7 +68,7 @@ export const pageQuery = graphql`
         header {
           subLabel
           subTitle
-          markdown__Content
+          content
           pdf {
             publicURL
           }
@@ -85,7 +85,7 @@ export const pageQuery = graphql`
             iconAlt
             iconTitle
             title
-            markdown__Content
+            content
           }
           overviewSection {
             description
@@ -185,13 +185,13 @@ function mapToHeader(queryHeader: QueryHeader, preview = false): HeaderProps {
     description: preview ? (
       <MarkdownContent
         markdown={
-          queryHeader?.markdown__Content ??
+          queryHeader?.content ??
           'Curabitur sollicitudin id mi ac ultrices. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas in ex turpis.'
         }
         className={headerStyles.content}
       />
     ) : (
-      <DangerouslyRenderHtmlContent content={queryHeader?.markdown__Content ?? ''} className={headerStyles.content} />
+      <DangerouslyRenderHtmlContent content={queryHeader?.content ?? ''} className={headerStyles.content} />
     ),
     pdfLink: queryHeader?.pdf?.publicURL ?? '/',
   } as HeaderProps
@@ -213,12 +213,12 @@ function mapToSummary(querySummary: QuerySummary, preview = false): SummaryProps
             children: preview ? (
               <MarkdownContent
                 markdown={
-                  result?.markdown__Content ??
+                  result?.content ??
                   'Sed ut fermentum dolor. Vivamus pulvinar nisi leo, in accumsan diam pretium id. Vestibulum aliquam posuere enim, sed finibus sapien fringilla pharetra. Ut sollicitudin nunc non dui placerat facilisis. Duis neque turpis, dictum sit amet sagittis ut, finibus ac eros. Cras pulvinar laoreet diam vel lacinia.'
                 }
               />
             ) : (
-              <DangerouslyRenderHtmlContent content={result?.markdown__Content ?? ''} />
+              <DangerouslyRenderHtmlContent content={result?.content ?? ''} />
             ),
           } as Result)
       ) ?? [],

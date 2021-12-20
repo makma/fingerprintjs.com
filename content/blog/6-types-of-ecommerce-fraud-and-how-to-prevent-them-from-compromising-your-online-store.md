@@ -83,7 +83,7 @@ This  fraud type is a complicated and increasingly common issue that's unique to
 
 The following is an example of a typical triangulation fraud incident. Three distinct parties are involved (not including the credit card owner): the fraudster, a customer attempting to make a purchase, and the merchant:
 
-![](https://lh4.googleusercontent.com/_S_HInRVzAe2_1fsZL_AdiWXlfYhiTgwr0fs4m4CWVX0i1sc_IEQljNnMiMi0O-uUv_H1kRKOTfT_KDFdaPFPNV_IuQqy4bjS_eQBkv99XvTqqEkr3S4wRLY30EKQNLYGisAomNq=s0)
+![Ecommerce fraud](/img/uploads/ecommerce-fraud.png "Ecommerce fraud")
 
 Source: chargebacks911.com
 

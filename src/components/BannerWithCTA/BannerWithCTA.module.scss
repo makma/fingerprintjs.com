@@ -1,42 +1,42 @@
 .banner {
-  border-radius: 1rem;
+  border-radius: rem(16px);
   background-color: v('brand-water');
   color: v('white');
+  text-align: center;
 
-  padding: 6rem 6rem;
+  padding: rem(40px);
+
+  background-image: url('../../img/EllipseSVG.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
 
   @include media('<=phoneLandscape') {
-    padding: 4rem 4rem;
+    padding: rem(40px) rem(16px);
+
+    background-image: url('../../img/EllipseMobileSVG.svg');
   }
 
   .title {
-    font-size: 4rem;
+    font-size: rem(32px);
+    line-height: 130%;
+    letter-spacing: -0.01em;
 
-    padding-bottom: 2.5rem;
+    padding-bottom: rem(8px);
 
     @include media('<=phoneLandscape') {
-      font-size: 2.5rem;
+      font-size: rem(24px);
     }
   }
 
   .description {
-    font-size: 2rem;
+    @include sans($size: 16px, $weight: 500, $lh: 150%);
 
-    padding-right: 20rem;
-    padding-bottom: 5rem;
-
-    @include media('<=phoneLandscape') {
-      font-size: 1.75rem;
-
-      padding-right: 0;
-    }
+    padding-bottom: rem(40px);
   }
 
   .button {
     @include media('<=phoneLandscape') {
-      font-size: 1.25rem;
-
-      height: 32px;
+      width: 100%;
     }
   }
 }

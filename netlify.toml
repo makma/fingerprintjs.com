@@ -8,5 +8,23 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "https://fpjs.io"
+  to = "https://fingerprintjs.com/"
+  force = true
+
+[[redirects]]
+  from = "http://fpjs.io"
+  to = "https://fingerprintjs.com/"
+  force = true
+
+[[redirects]]
+  from = "/open-source/"
+  to = "/github/"
+  force = true
+
 [context.branch-deploy]
   command = "yarn noIndexBuild"
+
+[[plugins]]
+  package = "@netlify/plugin-gatsby"

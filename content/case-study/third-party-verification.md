@@ -12,7 +12,7 @@ header:
   subLabel: Case Study
   subTitle: How one face-to-face sales software company exceeded third-party
     verification standards with FingerprintJS
-  markdown__Content: The company was able to greatly increase their identity
+  content: The company was able to greatly increase their identity
     verification accuracy, prevent fraud committed by sales representatives, and
     exceed compliance standards.
   pdf: /pdf/case-study/third-party-verification.pdf
@@ -22,20 +22,20 @@ summary:
       iconAlt: Business
       iconTitle: Business
       title: Reduced Fraud by 94%
-      markdown__Content: One major customer of the company reduced fraudulent sales by
+      content: One major customer of the company reduced fraudulent sales by
         94% with FingerprintJS’ high accuracy mobile device identification.
     - icon: /img/uploads/support.svg
       iconAlt: Support
       iconTitle: Support
       title: Seamless integration
-      markdown__Content: Using FingerprintJS Pro’s secure API, the company replaced
+      content: Using FingerprintJS Pro’s secure API, the company replaced
         their previous browser fingerprinting solution easily without disrupting
         existing security processes.
     - icon: /img/uploads/like.svg
       iconAlt: Satisfaction
       iconTitle: Satisfaction
       title: No disruption to customer experience
-      markdown__Content: The new visitor identification process reduced fraud without
+      content: The new visitor identification process reduced fraud without
         increasing ‘false positives,’ protecting customers without causing
         unnecessary hurdles in the purchasing process.
   overviewSection:

@@ -12,6 +12,7 @@ metadata:
 featured: true
 publishDate: 2021-06-11T02:38:04.814Z
 title: How Does Canvas Fingerprinting Work?
+isPublished: true
 tags:
   - fingerprinting
   - js
@@ -23,7 +24,6 @@ heroImage:
   image: /img/uploads/canvas-fingerprinting.png
   imageAlt: Canvas fingerprinting
   imageTitle: Canvas fingerprinting
-isPublished: true
 ---
 Identifying users on your website has many uses. From tracking engagement to preventing fraud, knowing how users interact with your application is a powerful tool for developers and businesses.
 
@@ -139,7 +139,7 @@ $('#hash-code').html(hash);
 </script>
 ```
 
-![Output of canvas fingerprint code above, showing text and shapes with various effects and the hash output above it.](https://i.imgur.com/3deuflB.png)
+![Output of canvas fingerprint code above, showing text and shapes with various effects and the hash output above it.](/img/uploads/canvas-output.png "Output of canvas fingerprint code above, showing text and shapes with various effects and the hash output above it.")
 
 That’s a screenshot generated using the above code. If you run it yourself, you should get a different hash code. You can try testing on similar systems. The closer they are, the tougher the test will be. If you get similar results, try expanding on the code until they differ.
 
@@ -147,9 +147,9 @@ You can vary the above canvas manipulation techniques or repeat them. The more y
 
 As you can see in the following examples (from [Codepen](https://codepen.io/jon/pen/rwBbgQ) and [JSFiddle](https://jsfiddle.net/piotrbartnik/dppqhtg3/1/)), canvas fingerprints can produce a wide range of images depending on the method used to generate them:
 
-![Example of a canvas fingerprint](https://i.imgur.com/9VjPNHu.png)
+![Example of a canvas fingerprint](/img/uploads/canvas-example.png "Example of a canvas fingerprint")
 
-![Example of a canvas fingerprint showing hash number](https://i.imgur.com/v3RIe4y.png)
+![Example of a canvas fingerprint showing hash number](/img/uploads/canvas-example-hash.png "Example of a canvas fingerprint showing hash number")
 
 ## Conclusion
 

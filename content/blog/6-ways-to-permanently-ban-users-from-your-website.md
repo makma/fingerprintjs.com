@@ -11,6 +11,7 @@ metadata:
 featured: true
 publishDate: 2021-05-17T20:01:48.851Z
 title: 6 Ways to Permanently Ban Users from Your Website
+isPublished: true
 tags:
   - web
   - fingerprinting
@@ -24,8 +25,8 @@ heroImage:
   imageTitle: Permanently ban users from your website with FingerprintJS
 customCTA:
   title: Ready your ban hammer
-  description: Start a 10-day free trial of FingerprintJS and start protecting your site.
-  ctaText: Start Trial
+  description: Create a free account and start protecting your site.
+  ctaText: Start Now
   ctaUrl: https://dashboard.fingerprintjs.com/signup
   openCtaNewTab: false
   isPublished: true
@@ -112,13 +113,13 @@ Putting a user in stealth mode—sometimes referred to as a shadowban or hellban
 
 Again, if you use WordPress, you can use plugins like [MarkTroll](https://wordpress.org/plugins/marktroll/#description) and [FreeBan](https://downloadfreewpplugins.com/wordpress/feenban/). With Disqus, you can [mark any user as shadowbanned](https://blog.disqus.com/introducing-shadow-banning-and-timeouts) from the admin dashboard.
 
-![The WordPress MarkTroll plugin](https://i.imgur.com/JU90J5K.png "The WordPress MarkTroll plugin")
+![The WordPress MarkTroll plugin](/img/uploads/ju90j5k.png "The WordPress MarkTroll plugin")
 
 The stealth mode method is very effective and stalls problematic users for a long time, even though they may eventually catch on and discover that something is wrong. Also, a problematic user who does eventually discover they are shadowbanned can simply create a new account and continue their activities.
 
 ## 6. FingerprintJS
 
-![FingerprintJS](https://i.imgur.com/CiCEyYz.png "FingerprintJS")
+![FingerprintJS](/img/uploads/ciceyyz.png "FingerprintJS")
 
 [FingerprintJS](https://fingerprintjs.com/) is a browser fingerprinting API as a service platform that can be used to uniquely identify users.
 

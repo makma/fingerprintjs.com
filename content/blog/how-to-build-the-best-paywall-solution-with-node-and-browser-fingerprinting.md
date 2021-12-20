@@ -12,6 +12,7 @@ metadata:
 featured: false
 publishDate: 2021-05-12T16:26:22.579Z
 title: How to Build the Best Paywall Solution with Node and Browser Fingerprinting
+isPublished: true
 tags:
   - fingerprinting
   - js
@@ -22,7 +23,6 @@ heroImage:
   image: /img/uploads/paywall-banner.png
   imageAlt: Paywall notification
   imageTitle: Paywall notification
-isPublished: true
 ---
 As online publications transition from monetization through digital advertising to charging consumers directly for their content, paywalls are becoming commonplace. And right on their heels are myriad innovations in circumventing them. For developers tasked with restricting site access to subscribers, it’s important to not only keep up with current paywall architecture, but also the latest tricks for getting around them. If you’re going to build a paywall that works, you have to know what you’re guarding against.
 
@@ -316,9 +316,9 @@ npm start
 
 When the server is running, you can access your news website at `http://localhost:8080` and get started with reading articles as you would on other sites. As soon as you exceed the maximum number of articles read, the paywall modal will pop up and inform you of the need to subscribe in order to regain access to the site's content.
 
-![An article on a home page](https://i.imgur.com/OCeMu5Y.png)
+![An article on a home page](/img/uploads/paywall-article-on.png "An article on a home page")
 
-![FingerprintJS’s test paywall modal](https://i.imgur.com/exrvdwe.png "FingerprintJS’s test paywall modal")
+![FingerprintJS’s test paywall modal](/img/uploads/paywall-test-modal.png "FingerprintJS’s test paywall modal")
 
 ## Conclusion
 

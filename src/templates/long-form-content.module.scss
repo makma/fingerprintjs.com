@@ -5,14 +5,14 @@
 
 .container {
   display: grid;
-  grid-template-columns: 1fr rem(604px) 1fr;
+  grid-template-columns: min(20vw, 300px) rem(766px) 1fr;
   grid-template-rows: auto;
 
-  column-gap: rem(24px);
+  column-gap: rem(34px);
 
   grid-template-areas:
     '. header .'
-    'author body cta';
+    'author body .';
 
   --contentWidth: 1232px;
 
@@ -22,7 +22,7 @@
     align-content: center;
     flex-direction: column;
 
-    --contentWidth: 604px;
+    --contentWidth: 766px;
   }
 
   @include media('<=phoneLandscape') {
@@ -102,7 +102,7 @@
 }
 
 .cta {
-  grid-area: cta;
+  grid-area: author;
 
   display: flex;
   flex-direction: column;
@@ -117,9 +117,15 @@
       margin-top: auto;
       position: sticky;
       bottom: rem(24px);
-
-      width: rem(290px);
     }
+  }
+}
+
+.footerTags {
+  padding-bottom: rem(48px);
+  .title {
+    @include sans($size: 20px, $weight: 600, $lh: 150%);
+    letter-spacing: 0.01em;
   }
 }
 
@@ -128,6 +134,6 @@
   padding-bottom: rem(16px);
 
   @include media('<=desktop') {
-    padding: rem(52px) 0 rem(16px) 0;
+    padding: rem(40px) 0 rem(16px) 0;
   }
 }

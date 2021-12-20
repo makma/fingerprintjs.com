@@ -13,6 +13,7 @@ metadata:
 featured: false
 publishDate: 2021-04-01T21:04:39.564Z
 title: The Top Browser Fingerprinting Techniques Explained
+isPublished: true
 tags:
   - fingerprinting
   - js
@@ -23,7 +24,6 @@ heroImage:
   image: /img/uploads/tw-ad-2-hd.png
   imageAlt: Screenshot of FingerprintJS visitorID data
   imageTitle: Screenshot of FingerprintJS visitorID data
-isPublished: true
 ---
 <b>To generate a highly accurate browser fingerprint, many techniques are used to gather information about the user that can differentiate them from millions of others online. In this article, we review some of the most common methods used in a browser fingerprinting script.</b>
 
@@ -89,4 +89,4 @@ If your users are often the target of phishing scams, you can require email or t
 
 For virtually all types of fraud, the first step in stopping the malicious activity on your website is accurate user identification technology. That way, you can accurately single out the bad apples while keeping your trusted users satisfied with your website performance. 
 
-Whether you have a newly-built website or you’ve been in the online industry for years, you can safeguard your leads, clients, and business if you can stop fraud at the source. [Start a 30-day trial](https://dashboard.fingerprintjs.com/signup) to see what accurate user identification technology can do for you.
+Whether you have a newly-built website or you’ve been in the online industry for years, you can safeguard your leads, clients, and business if you can stop fraud at the source. [Create a free account](https://dashboard.fingerprintjs.com/signup) to see what accurate user identification technology can do for you.
