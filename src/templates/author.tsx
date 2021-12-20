@@ -3,7 +3,7 @@ import React from 'react'
 import { LayoutTemplate } from '../components/Layout'
 import Container from '../components/common/Container'
 import { mapToPost } from '../components/Post/Post'
-import PostGrid from '../components/PostGrid/PostGrid'
+import Posts from '../components/Posts/Posts'
 import { GeneratedPageContext } from '../helpers/types'
 import PaginationNav from '../components/PaginationNav/PaginationNav'
 import BreadcrumbsSEO from '../components/Breadcrumbs/BreadcrumbsSEO'
@@ -64,7 +64,7 @@ export default function Author({ data, pageContext }: AuthorProps) {
           </div>
         </div>
 
-        <PostGrid
+        <Posts
           name={`${author} Articles`}
           posts={posts
             .map(({ node }) => node)
