@@ -11,6 +11,7 @@ metadata:
 featured: true
 publishDate: 2021-06-25T02:30:08.525Z
 title: How to Generate Browser Fingerprints in PHP
+isPublished: true
 tags:
   - fingerprinting
   - web
@@ -18,7 +19,6 @@ authors:
   - Aniket Bhattacharyea
 heroImage:
   image: /img/uploads/browser-fingerprints-in-php-1-.png
-isPublished: true
 ---
 Almost every web developer has to combat fraud at some point. Attacks might include malicious users trying to brute force passwords, place fraudulent orders, initiate bot attacks, or bypass your site’s paywall.
 
@@ -173,11 +173,11 @@ php -S localhost:8000
 
 Now, open your browser and navigate to `http://localhost:8000/register.php`. You should see a screen like this:
 
-![Screenshot showing the register screen](https://i.imgur.com/YiLYs9K.jpg)
+![Screenshot showing the register screen](/img/uploads/php-register.png "Screenshot showing the register screen")
 
 Try registering a user with some email and password. Once successfully registered, you should be redirected to the dashboard.
 
-![Screenshot showing the dashboard page](https://i.imgur.com/kMBHZ9V.jpg)
+![Screenshot showing the dashboard page](/img/uploads/php-dashboard.png "Screenshot showing the dashboard page")
 
 Come back to the `register.php` page again and try registering again *with a different email*. You will see that the app allows you to re-register.
 
@@ -187,11 +187,11 @@ In the next section, I’ll show you how to prevent re-registration using browse
 
 [FingerprintJS](https://fingerprintjs.com) is a fingerprinting service that uses a combination of fingerprinting, cookies, server-side techniques, and machine learning to generate a browser fingerprint that is up to [99.5% accurate](https://dev.fingerprintjs.com/docs/understanding-our-995-accuracy). 
 
-To get started with FingerprintJS, you will need a [FingerprintJS pro account](https://dashboard.fingerprintjs.com/signup). If you do not have an account, you can start a trial without usage limits for 10 days.
+To get started with FingerprintJS, you will need a [FingerprintJS pro account](https://dashboard.fingerprintjs.com/signup). If you do not have an account, you can start a free account with no credit card required.
 
 Once you have an account, visit your [dashboard](https://dashboard.fingerprintjs.com/) and select the subscription that you created while registering. Head to the `Tokens` section from the left sidebar and copy the active **browser** token.
 
-![List of active tokens in the dashboard](https://i.imgur.com/O3KXMrf.png)
+![List of active tokens in the dashboard](/img/uploads/php-active-tokens.png "List of active tokens in the dashboard")
 
 After you have the token, install the JavaScript agent. This JavaScript agent will run in the browser, so you do not need a backend PHP component to generate the fingerprint. The required snippet can either be downloaded from a CDN (content delivery network) or installed through NPM. In this example, I’ll use a CDN.
 
@@ -221,7 +221,7 @@ This snippet downloads the required JavaScript file and runs the `initFingerprin
 
 This function calls the FingerprintJS service to create a `visitorID` and prints it to the console. You can reload the registration page to see an alphanumeric hash in your JavaScript console.
 
-![Screenshot showing the visitorID printed to the console](https://i.imgur.com/i2Aup0o.jpg)
+![Screenshot showing the visitorID printed to the console](/img/uploads/php-print.png "Screenshot showing the visitorID printed to the console")
 
 Now that you have a unique visitor ID, you can send this with every request and store it in your database after registration.
 

@@ -3,8 +3,9 @@
 
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
-const remark = require('remark')
-const remarkHTML = require('remark-html')
+const webpack = require(`webpack`)
+const remark = require(`remark`)
+const remarkHTML = require(`remark-html`)
 
 async function getFolderEdges(folder, graphql, filter = '') {
   const { data, errors } = await graphql(`
@@ -44,14 +45,14 @@ async function getFolderEdges(folder, graphql, filter = '') {
   return data.allMarkdownRemark.edges
 }
 
-async function getTags(graphql) {
+async function getArrayFieldValues(graphql, name) {
   const { data, errors } = await graphql(`
     {
       allMarkdownRemark(
         filter: { frontmatter: { isPublished: { ne: false }, templateKey: { eq: "long-form-content" } } }
       ) {
-        group(field: frontmatter___tags) {
-          tag: fieldValue
+        group(field: frontmatter___${name}s) {
+          ${name}: fieldValue
           totalCount
         }
       }
@@ -134,7 +135,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const numFeaturedPages = Math.ceil(featuredPosts.length / postsPerPage)
   createPaginatedPages(numFeaturedPages, postsPerPage, 'blog/featured', 'src/templates/blog-featured.tsx', createPage)
 
-  const tags = await getTags(graphql)
+  const tags = await getArrayFieldValues(graphql, 'tag')
   tags.forEach(({ tag, totalCount }) => {
     const numTagPages = Math.ceil(totalCount / postsPerPage)
     const additionalContext = { tag }
@@ -144,6 +145,21 @@ exports.createPages = async ({ actions, graphql }) => {
       postsPerPage,
       `blog/tag/${tag}`,
       'src/templates/blog-tag.tsx',
+      createPage,
+      additionalContext
+    )
+  })
+
+  const authors = await getArrayFieldValues(graphql, 'author')
+  authors.forEach(({ author, totalCount }) => {
+    const numAuthorPages = Math.ceil(totalCount / postsPerPage)
+    const additionalContext = { author }
+
+    createPaginatedPages(
+      numAuthorPages,
+      postsPerPage,
+      `blog/author/${author}`,
+      'src/templates/author.tsx',
       createPage,
       additionalContext
     )
@@ -164,19 +180,6 @@ function createNodePath({ node, getNode }) {
   }
 }
 
-function preprocessMarkdown(obj) {
-  if (obj && typeof obj === 'object') {
-    Object.keys(obj).forEach((key) => {
-      if (key.startsWith('markdown__')) {
-        obj[key] = remark().use(remarkHTML).processSync(obj[key]).toString()
-      } else {
-        // We need to preprocess subobjects as well.
-        preprocessMarkdown(obj[key])
-      }
-    })
-  }
-}
-
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
@@ -188,10 +191,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     })
   }
-
-  // Replace the value of all markdown fields by the parsed HTML.
-  const frontmatter = node.frontmatter
-  preprocessMarkdown(frontmatter)
 }
 
 function getWebpackPlugin(config, name) {
@@ -215,6 +214,14 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
 
     actions.replaceWebpackConfig(config)
   }
+
+  actions.setWebpackConfig({
+    plugins: [
+      new webpack.IgnorePlugin({
+        resourceRegExp: /^netlify-identity-widget$/,
+      }),
+    ],
+  })
 }
 
 exports.sourceNodes = async ({ actions, getNodes }) => {
@@ -240,4 +247,48 @@ exports.sourceNodes = async ({ actions, getNodes }) => {
       }
     }
   })
+}
+exports.createSchemaCustomization = ({ actions }) => {
+  // Define the @md tag to mark a field which should be interpreted as markdown and converted to HTML
+  actions.createFieldExtension({
+    name: 'md',
+    extend() {
+      return {
+        resolve(source, args, context, info) {
+          const fieldValue = context.defaultFieldResolver(source, args, context, info)
+          return remark().use(remarkHTML).processSync(fieldValue).toString()
+        },
+      }
+    },
+  })
+  actions.createTypes(`
+    type MarkdownRemarkFrontmatter {
+      header: Header
+      summary: Summary
+      cardSection: CardSection
+      inlineCta: InlineCta
+    }
+    type Header{
+      content: String @md
+    }
+    type Summary{
+      results: [Results]
+    }
+    type Results implements Node{
+      content: String @md
+    }
+    type CardSection{
+      cards: [Cards]
+      blocks: [Blocks]
+    }
+    type Cards implements Node{
+      content: String @md
+    }
+    type Blocks implements Node{
+      content: String @md
+    }
+    type InlineCta{
+      subtitle: String @md
+    }
+`)
 }

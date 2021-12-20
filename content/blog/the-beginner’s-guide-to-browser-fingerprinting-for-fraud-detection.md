@@ -12,6 +12,7 @@ metadata:
 featured: false
 publishDate: 2020-12-24T16:11
 title: The Beginner’s Guide to Browser Fingerprinting for Fraud Detection
+isPublished: true
 tags:
   - js
   - web
@@ -22,7 +23,6 @@ heroImage:
   image: /img/uploads/3.png
   imageAlt: Fingerprint icon on map background
   imageTitle: Fingerprint icon on map background
-isPublished: true
 ---
 **Fraud looms on the minds of development teams for any website, but fraud prevention doesn’t have to be all-consuming, or even expensive.** With a highly accurate identifier it becomes much easier for developers to triage suspicious traffic and restrict access to users attempting to hack into accounts, make fraudulent purchases or simply spam your website. The key to identifying those most likely to commit fraud is either by past activity, or by associating specific patterns of use with a higher likelihood of fraudulence.
 
@@ -136,7 +136,7 @@ We would love to hear your questions and get feedback from the developer communi
 *Here are a few ways you can get involved*
 
 * Star, follow or fork our Github projects: [FingerprintJS](https://github.com/fingerprintjs/fingerprintjs) (browser fingerprinting) and [Fingerprint-Android](https://github.com/fingerprintjs/fingerprint-android)
-* Need more accurate browser fingerprinting for your business? Start a free trial of FingerprintJS Pro for [99.5% fingerprinting accuracy](https://fingerprintjs.com/) with unlimited API requests for the first 10 days.
+* Need more accurate browser fingerprinting for your business? Create a free FingerprintJS Pro account for [99.5% fingerprinting accuracy](https://fingerprintjs.com/).
 * [Email us](mailto:sales@fingerprintjs.com) your questions
 * Sign up for our [newsletter](https://mailchi.mp/708d84efc0c1/updates-signup) for updates
 

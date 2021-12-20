@@ -32,37 +32,31 @@ cardSection:
   cards:
     - icon: /img/uploads/account_fraud.png
       title: Anonymous user identification
-      content: Nulla sodales fringilla ex ac viverra. Nam maximus leo nec libero
-        tincidunt dignissim. Praesent gravida, velit eget finibus eleifend, arcu
-        nisl fermentum neque, vitae dignissim mi leo nec odio.
-      markdown__Content: Every visitor to your website is assigned a permanent
+      content: Every visitor to your website is assigned a permanent
         visitorID that can be used to identify visitors across browsing sessions
         and enforce your paywall limits.
       iconAlt: Anonymous user identification
       iconTitle: Anonymous user identification
     - icon: /img/uploads/incognito.svg
       title: Incognito mode detection
-      content: Ut elit mi, semper et mollis in, sodales vel sem. Donec maximus
-        condimentum sodales. Aliquam et ligula eu erat laoreet accumsan
-        ultricies id eros. Etiam in sapien in felis elementum commodo.
-      markdown__Content: Catch even your sneakiest of visitors trying to evade
+      content: Catch even your sneakiest of visitors trying to evade
         paywalls through incognito or private browsing mode.
       iconAlt: Incognito mode detection
       iconTitle: Incognito mode detection
     - icon: /img/uploads/geolocation.png
       title: Geolocation
-      markdown__Content: Capture detailed country, city, geoposition and timezone to
+      content: Capture detailed country, city, geoposition and timezone to
         better target and gate content to your visitors.
       iconTitle: Geolocation
       iconAlt: Geolocation
     - title: GDPR and CCPA compliant
       icon: /img/uploads/check.png
-      markdown__Content: FingerprintJS Pro is GDPR and CCPA compliant for use in fraud
+      content: FingerprintJS Pro is GDPR and CCPA compliant for use in fraud
         detection. For this use case, no visitor consent is required.
       iconAlt: Checkmark
       iconTitle: Checkmark
 blocks:
-  - markdown__Content: >-
+  - content: >-
       
 
       We have built a prototype of our paywall technology, available online for testing.
@@ -73,17 +67,11 @@ blocks:
     imageAlt: Paywall screenshot
     isImageAfterText: true
     isCtaButton: false
-    content: Morbi consectetur lorem ut tellus interdum ornare. Ut finibus faucibus
-      augue sit amet hendrerit. Pellentesque nec orci venenatis, tincidunt leo
-      at, tincidunt ante. Curabitur facilisis fringilla nisi. Phasellus eros
-      tellus, viverra dictum nibh id, ornare euismod purus. Etiam lobortis
-      consequat scelerisque. Maecenas luctus dui eget leo congue, quis pretium
-      nunc rutrum.
     image: /img/uploads/paywall-capture.png
     imageTitle: Paywall screenshot
     ctaText: Try our live paywall demo
     ctaUrl: https://paywall-example.fingerprintjs.com/
-  - markdown__Content: FingerprintJS Pro can be incorporated into off-the-shelf or
+  - content: FingerprintJS Pro can be incorporated into off-the-shelf or
       custom built paywalls. Whether you use a hard, metered or freemium
       paywall, incorporate our highly accurate visitorIDs into your workflows
       using our flexible API and webhooks. Design your perfect paywall and leave
@@ -92,19 +80,15 @@ blocks:
     imageAlt: FingerprintJS Pro dashboard
     isImageAfterText: false
     isCtaButton: false
-    image: /img/uploads/dashboard-tight.png
+    image: /img/uploads/dash-usage-chart.png
     imageTitle: FingerprintJS Pro dashboard
     ctaText: Read our documentation
     ctaUrl: https://dev.fingerprintjs.com/docs
 inlineCta:
   title: Try FingerprintJS free for 10 days
-  subtitle: Suspendisse vitae justo viverra, porttitor eros quis, lobortis libero.
-    Suspendisse semper vulputate nisl, vitae blandit lacus molestie eu. Ut elit
-    mi, semper et mollis in, sodales vel sem. Donec maximus condimentum sodales.
-    Aliquam et ligula eu erat laoreet accumsan ultricies id eros.
   buttonText: Sign Up Now
   buttonHref: https://dashboard.fingerprintjs.com/signup
-  markdown__Subtitle: Install our Javascript snippet on your website and begin
+  subtitle: Install our Javascript snippet on your website and begin
     collecting unique VisitorIDs, geolocation data and more immediately with no
     restrictions. This information can then be incorporated into your paywall
     workflows using our API and webhooks.

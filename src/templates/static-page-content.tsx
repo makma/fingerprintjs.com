@@ -97,11 +97,11 @@ export const pageQuery = graphql`
             iconAlt
             iconTitle
             title
-            markdown__Content
+            content
           }
         }
         blocks {
-          markdown__Content
+          content
           subheader
           image {
             childImageSharp {
@@ -117,7 +117,7 @@ export const pageQuery = graphql`
         }
         inlineCta {
           title
-          markdown__Subtitle
+          subtitle
           buttonText
           buttonHref
         }
@@ -207,13 +207,13 @@ function mapToCardSection(queryCardSection: QueryCardSection, preview = false): 
             content: preview ? (
               <MarkdownContent
                 markdown={
-                  card?.markdown__Content ??
+                  card?.content ??
                   'Sed ut fermentum dolor. Vivamus pulvinar nisi leo, in accumsan diam pretium id. Vestibulum aliquam posuere enim, sed finibus sapien fringilla pharetra. Ut sollicitudin nunc non dui placerat facilisis. Duis neque turpis, dictum sit amet sagittis ut, finibus ac eros. Cras pulvinar laoreet diam vel lacinia.'
                 }
                 className={cardStyles.content}
               />
             ) : (
-              <DangerouslyRenderHtmlContent content={card?.markdown__Content ?? ''} className={cardStyles.content} />
+              <DangerouslyRenderHtmlContent content={card?.content ?? ''} className={cardStyles.content} />
             ),
           } as Card)
       ) ?? [],
@@ -231,13 +231,13 @@ function mapToBlocks(queryBlocks: QueryBlock[], preview = false): BlockWithImage
           content: preview ? (
             <MarkdownContent
               markdown={
-                block?.markdown__Content ??
+                block?.content ??
                 'Sed ut fermentum dolor. Vivamus pulvinar nisi leo, in accumsan diam pretium id. Vestibulum aliquam posuere enim, sed finibus sapien fringilla pharetra. Ut sollicitudin nunc non dui placerat facilisis. Duis neque turpis, dictum sit amet sagittis ut, finibus ac eros. Cras pulvinar laoreet diam vel lacinia.'
               }
               className={blockStyles.content}
             />
           ) : (
-            <DangerouslyRenderHtmlContent content={block?.markdown__Content ?? ''} className={blockStyles.content} />
+            <DangerouslyRenderHtmlContent content={block?.content ?? ''} className={blockStyles.content} />
           ),
           image: block?.image,
           imageAlt: block?.imageAlt,
@@ -262,13 +262,13 @@ function mapToInlineCta(queryInlineCta: QueryInlineCta, preview = false): Inline
     subtitle: preview ? (
       <MarkdownContent
         markdown={
-          queryInlineCta?.markdown__Subtitle ??
+          queryInlineCta?.subtitle ??
           'Curabitur sollicitudin id mi ac ultrices. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas in ex turpis.'
         }
         className={ctaStyles.content}
       />
     ) : (
-      <DangerouslyRenderHtmlContent content={queryInlineCta?.markdown__Subtitle ?? ''} className={ctaStyles.content} />
+      <DangerouslyRenderHtmlContent content={queryInlineCta?.subtitle ?? ''} className={ctaStyles.content} />
     ),
     primaryAction: { name: queryInlineCta?.buttonText ?? 'Lorem ipsum', action: queryInlineCta?.buttonHref ?? '/' },
   } as InlineCtaProps

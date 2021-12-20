@@ -20,7 +20,7 @@ export default function ContactSalesForm() {
   const [url, setUrl] = useState('')
   const [description, setDescription] = useState('')
 
-  const { formState, updateFormState } = useForm(Forms.ContactSales)
+  const { formState, errorMessage, updateFormState, updateErrorMessage } = useForm(Forms.ContactSales)
   const { landingPage, previousPage, utmParams } = useViewTracking()
 
   async function handleSubmit(e) {
@@ -28,8 +28,17 @@ export default function ContactSalesForm() {
 
     updateFormState(FormState.Loading)
 
-    function onError() {
+    function onError(error?) {
       updateFormState(FormState.Failed)
+
+      if (error?.message) {
+        if (error?.data[0]?.instancePath) {
+          updateErrorMessage(`Validation error for ${error?.data[0]?.instancePath.substring(1)}`)
+        } else {
+          updateErrorMessage(error?.message)
+        }
+      }
+
       setTimeout(() => {
         updateFormState(FormState.Default)
       }, 50000)
@@ -41,7 +50,8 @@ export default function ContactSalesForm() {
       const status = response.status
 
       if (status !== 200) {
-        onError()
+        const { error } = await response.json()
+        onError(error)
       } else {
         updateFormState(FormState.Success)
         trackLeadSubmit()
@@ -85,7 +95,7 @@ export default function ContactSalesForm() {
               <input
                 className={styles.input}
                 id='email'
-                maxLength={80}
+                maxLength={64}
                 name='email'
                 size={20}
                 type='email'
@@ -136,12 +146,16 @@ export default function ContactSalesForm() {
         <>
           <ErrorSVG className={styles.logo} />
           <h2 className={styles.message}>An error occurred</h2>
-          <span className={styles.errorDescription}>
-            Please try again or contact{' '}
-            <a href={MAILTO.mailToUrl} className={styles.link}>
-              {URL.supportMail}
-            </a>
-          </span>
+          {errorMessage ? (
+            <span className={styles.errorDescription}>{errorMessage} </span>
+          ) : (
+            <span className={styles.errorDescription}>
+              Please try again or contact{' '}
+              <a href={MAILTO.mailToUrl} className={styles.link}>
+                {URL.supportMail}
+              </a>
+            </span>
+          )}
         </>
       )}
       {formState === FormState.Success && (

@@ -12,6 +12,7 @@ metadata:
 featured: false
 publishDate: 2021-03-12T13:35:01.712Z
 title: How to Prevent Card Testing Without Destroying Your Payment Conversions
+isPublished: true
 tags:
   - payment fraud
   - ecommerce fraud
@@ -19,7 +20,6 @@ tags:
   - gaming fraud
 authors:
   - Savannah Copland
-isPublished: true
 ---
 Imagine your online business is suddenly getting tons of new small purchases. As soon as you check each activity, you notice many of these purchases are being declined by the payment processor, and disputes for unauthorized purchases start rolling in. Investigating further, you realize it’s all a sham.
 
@@ -86,7 +86,7 @@ FingerprintJS provides a solution to identify fraudsters and prevent them from d
 
 Want to try FingerprintJS for payment fraud prevention? Here is how you can get started:
 
-* Start your [30-day trial](https://dashboard.fingerprintjs.com/signup)
+* Create a [free account](https://dashboard.fingerprintjs.com/signup)
 * Install our Javascript snippet to start collecting visitorIDs for every guest that comes to your site.
 * When a visitor attempts to make multiple purchases in a short time or with different credit cards, you can flag their account. You can also require additional verification to continue or fully block that visitor from making further purchases.
 * Anytime a flagged or suspicious visitorID is identified returning to the site, you can require additional verification for future purchases.

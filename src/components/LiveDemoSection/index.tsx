@@ -12,7 +12,7 @@ export default function LiveDemoSection() {
 
   return (
     <Section
-      className={styles.liveDemo}
+      className={styles.liveSection}
       backgroundImage={mainBackground}
       cssBackgroundPosition='35vw 40%'
       cssBackgroundRepeat='no-repeat'

@@ -13,6 +13,7 @@ featured: true
 publishDate: 2021-06-03T17:12:58.481Z
 title: "Bot Detection: Identifying Bot Traffic with Open-source Browser
   Fingerprinting Techniques"
+isPublished: true
 tags:
   - bot attacks
   - account takeover
@@ -24,7 +25,6 @@ heroImage:
   image: /img/uploads/bot-detection.png
   imageAlt: Bot detection radar
   imageTitle: Bot detection radar
-isPublished: true
 ---
 In 2020, [more than one-third](https://ppcprotect.com/how-many-of-the-internets-users-are-robots/) of internet traffic was **bot traffic**. Some of these bots serve a useful purpose as search engine crawlers, uptime monitors, and podcast feed fetchers. Others attempt to impersonate real users, steal data, or fill your website's comments with spam.
 
@@ -124,7 +124,7 @@ In the real world, it wouldn't be useful to show this ID to visitors, but you'll
 
 To test this portion of the tutorial out, run `npm start` from your terminal and visit `localhost:3000`. Your fingerprint will be different from mine, but you should see something like this:
 
-![Showing a user's fingerprint in the console](https://i.imgur.com/EbEvT8z.png)
+![Showing a user's fingerprint in the console](/img/uploads/ebevt8z.png)
 
 As you can see, the `fingerprint` variable that you logged to the console contains dozens of components that are used to create your unique visitor ID. These components are actually useful on their own for blocking bots. For example, you might be able to spot inconsistencies in the bot’s reported hardware or software. You might also find that specific combinations of values tend to indicate bot traffic.
 
@@ -185,11 +185,11 @@ Finally, update the `return` function. Here I’ve included an input form for us
 
 Refresh or restart your React application. Now, when you enter a username that does not match your current fingerprint, you’ll see an error message:
 
-![Your fingerprint does not match this username](https://i.imgur.com/RL96eBQ.png)
+![Your fingerprint does not match this username](/img/uploads/rl96ebq.png)
 
 On the other hand, when your username **does** match the known visitor ID, you will see a success message:
 
-![Your fingerprint does match this username](https://i.imgur.com/gFcmQ4o.png)
+![Your fingerprint does match this username](/img/uploads/gfcmq4o.png "Your fingerprint does match this username")
 
 In this way, you can use a browser fingerprint to help you identify and mitigate bot traffic. While this method alone won’t stop all kinds of bots, it’s one piece that will improve your application’s ability to stand up to malicious bots.
 

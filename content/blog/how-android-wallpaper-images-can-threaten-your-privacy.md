@@ -12,6 +12,7 @@ metadata:
 featured: true
 publishDate: 2021-10-05T19:20:01.785Z
 title: How Android Wallpaper Images Can Threaten Your Privacy
+isPublished: true
 tags:
   - fingerprinting
   - vulnerability
@@ -25,7 +26,6 @@ heroImage:
   imageTitle: Android Wallpaper Identifcation
 customCTA:
   openCtaNewTab: false
-isPublished: true
 ---
 Android 12’s highly anticipated Material You design system features wallpaper-based color theming and advanced customizations powered by color extraction. These UI enhancements allow users to select a wallpaper (i.e., a personal background image) from which an optimal palette of colors is automatically generated and applied to the device’s look and feel globally.
 
@@ -60,7 +60,7 @@ Starting with Android 8.1, the [getDrawable()](https://developer.android.com/ref
 
 Like iOS, Android allows users to determine which specific screens to use wallpaper images, and the integer argument “which” sets which exact wallpaper image to use for color extraction. There are two options: the constant values `WallpaperManager.FLAG_SYSTEM` or `WallpaperManager.FLAG_LOCK`.
 
-![Wallpaper setting in Android](https://lh4.googleusercontent.com/i01jTGYTFjPOjMlw-8E9Gt7T_tP32Ouv6oHeJ4fM7aMpZQwaFUwGrykPNBYLSNoyDK5jBjaCc3Pj2QP-f5282k-OeEJVIbnVn3JkmxAq3izNgjJ0wez_G2PV0YWJaPa7J6LE7BDE=s0 "Wallpaper setting in Android")
+![Wallpaper setting in Android](/img/uploads/lockscreen.png "Wallpaper setting in Android")
 
 ```
 // WallpaperManager.FLAG_LOCK for the the lock screen
@@ -80,7 +80,7 @@ The above code illustrates how to extract colors using a [context](https://devel
 
 The following is an example of color extraction using the new method with a real picture:
 
-![Color extraction example](https://lh6.googleusercontent.com/ZZjI-a9Zl2_-h5yhQiPMUNIV_ZR7l7kjEQTVa2P165qHHLbHLWNqVsDpX_iF-Nxo-D7lVMBC--eXSIXq5lPEYLagME4yUqLW2oTvQQi76qZ2nr-izcnVNB6zWardUvcr-vRZzfWe=s0 "Color extraction example")
+![Color extraction example](/img/uploads/color-extraction.png "Color extraction example")
 
 The methods may return null in some scenarios (e.g., when custom launchers redefine wallpaper management logic without using the `WallpaperManager` class). However, if a wallpaper was set once by `WallpaperManager`, the method will return a not-null value.
 
@@ -88,7 +88,7 @@ The methods may return null in some scenarios (e.g., when custom launchers redef
 
 Since Android is open source, we can readily determine how the method actually works. According to the [code](https://cs.android.com/android/platform/superproject/+/master:frameworks/base/core/java/com/android/internal/graphics/palette/VariationalKMeansQuantizer.java;l=31?q=KMeansQua&sq=&ss=android%2Fplatform%2Fsuperproject), colors are the result of work of Variational [K-means](https://en.wikipedia.org/wiki/K-means_clustering) quantizer. Every image pixel is represented by a color and every color is a [3-dimensional](https://en.wikipedia.org/wiki/Three-dimensional_space) point in space (e.g., RGB color space). All pixels form a set in space, and the algorithm performs clustering of the set on K parts with finding K points, which are equidistant from others in the set.
 
-![](https://lh4.googleusercontent.com/wZzelSbxnRMYVCB2uZ9LApfDN3KPKyYZ-DToP-adwRSzcQv_1nVisyhz-PdkyspqgQWjbmaN_HHQU9IXMeyd9-MaEHFW3tG3QKJdJsKiOmMw4DheEsUdcetMmtlXA6iU7Ibi10Pk=s0)
+![Kebab kiosks](/img/uploads/kebab.png "Kebab kiosks")
 
 Above is a visualization of how the K-means method works, courtesy of [vas3k](https://vas3k.com/blog/machine_learning/). This particular case is 3-means in a 2-dimensional space.
 

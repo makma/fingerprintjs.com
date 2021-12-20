@@ -11,6 +11,7 @@ metadata:
 featured: true
 publishDate: 2021-07-29T04:48:39.490Z
 title: "Incognito Mode Detection: Detecting Visitors Who Browse in Private Mode"
+isPublished: true
 tags:
   - fingerprinting
   - engineering
@@ -21,7 +22,6 @@ heroImage:
   image: /img/uploads/incognito-mode.png
   imageAlt: Incognito mode detection
   imageTitle: Incognito mode detection
-isPublished: true
 ---
 Browsers attempt to ensure a user’s privacy by offering Incognito mode, which allows the user to surf the internet without worrying about their history, cookies, or the information they enter being saved permanently. However, in a lot of business use cases, this can end up being harmful. Visitors may use Incognito mode to gain unlimited access to content, bypassing paywalls undetected. 
 
@@ -324,7 +324,7 @@ FingerprintJS is helpful in many use cases, including:
 
 ### How It Works
 
-[Create an account with a free trial](https://dashboard.fingerprintjs.com/signup). Enter your email to begin the onboarding process, entering some information like your website name. Accept the terms and conditions, and finally you will be given a code snippet to add to your website.
+[Create a free account](https://dashboard.fingerprintjs.com/signup). Enter your email to begin the onboarding process, entering some information like your website name. Accept the terms and conditions, and finally you will be given a code snippet to add to your website.
 
 ![Code Snippet from FingerprintJS](https://i.imgur.com/mZhJ6x1.png)
 

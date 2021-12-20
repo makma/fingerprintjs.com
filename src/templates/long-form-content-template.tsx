@@ -59,7 +59,7 @@ export default function LongFormContentTemplate({
       <Section className={styles.root}>
         <Container className={styles.container}>
           <header className={styles.header}>
-            {tags && <TagList link='/blog/tag/' tags={tags} format='title' />}
+            {tags && <TagList link='/blog/tag/' tags={tags} format='title' tagsLimit={3} />}
             <h1 className={styles.title}>{post.title}</h1>
             <div className={classNames(styles.actionBar, styles.desktopOnly)}>
               <ActionBar {...actionBar} />
@@ -78,6 +78,12 @@ export default function LongFormContentTemplate({
             </div>
             {heroImage.image && <HeroImageComponent {...heroImage} />}
             <ContentComponent content={body} className={styles.content} />
+            {tags && (
+              <div className={styles.footerTags}>
+                <h3 className={styles.title}>All article tags</h3>
+                <TagList tags={tags} format='title' />
+              </div>
+            )}
           </article>
           {customCTA.subHeader && (
             <aside className={styles.cta}>

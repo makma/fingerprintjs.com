@@ -10,6 +10,7 @@ metadata:
 featured: true
 publishDate: 2021-09-09T20:44:44.264Z
 title: How to Use FingerprintJS to Prevent Bot Attacks
+isPublished: true
 tags:
   - fingerprinting
   - account takeover
@@ -23,13 +24,10 @@ heroImage:
   image: /img/uploads/prevent-bot-attacks-5-.png
 customCTA:
   openCtaNewTab: false
-isPublished: true
 ---
 The purpose of this tutorial is to demonstrate how easy it is to detect and mitigate bad bot account signups with FingerprintJS Pro. Users will first create a sample registration website with basic security controls to prevent multiple signups, then simulate a bot attack to defeat those controls using open source tools. Lastly, they will integrate FingerprintJS Pro into the website’s security workflow to detect/stop advanced bots, even when other security methods have failed.
 
 As a starting point, readers may wish to (re)visit the tutorial on How to Prevent Multiple Signups With FingerprintJS Pro, which covers more basic attempts at multiple account creation (e.g., revisiting the registration form in incognito mode). 
-
-
 
 ### A WORLD OF BAD BOTS
 
@@ -46,19 +44,15 @@ According to [Imperva's 2021 Bad Bot Report](https://www.imperva.com/resources/r
 
 Bot attack prevention should be a shared concern amongst all website owners, whether it’s for preserving the accuracy of website traffic analytics or ensuring the safe operations of vaccine booking websites. Unfortunately, malicious actors continue refining their bots’ ability to mimic human behavior, making the goal of detection a constantly moving target.
 
-
-
 ### FINGERPRINTJS PRO AND BOT DETECTION
 
 This tutorial uses [FingerprintJS Pro](https://fingerprintjs.com/) to prevent bad bots from defeating an account signup form’s email verification system. As the most advanced browser fingerprinting solution on the market, FingerprintJS Pro can identify unique website visitors with an accuracy of 99.5%.
 
 It’s worth noting that while FingerprintJS Pro is highly effective at detecting fraudulent activity and abuse patterns typical of bots (e.g., repeat visits and multiple form submissions), it doesn’t explicitly differentiate between bot and human visitors. If you want to flag visitors based on their likelihood of being a bot, we have built an open source bot detection library to recognize bots through the detection of automation tools, browser spoofing, and virtual machines. This free library can be used in conjunction with FingerprintJS Pro to both detect bots and generate a persistent visitor identifier.
 
-
-
 ### TUTORIAL REQUIREMENTS
 
-* **[FingerprintJS Pro](https://dashboard.fingerprintjs.com/signup)** is required; new users can sign up for a free 10-day trial subscription with unlimited API requests.
+* **[FingerprintJS Pro](https://dashboard.fingerprintjs.com/signup)** is required; new users can sign up for a free account.
 * **[Splinter](https://github.com/cobrateam/splinter)** is used for simulating a user (or many users) completing the signup form. The popular Python-based testing framework enables the automation of browser actions like visiting URLs and interacting with web page elements, among others.
 * **[1secMAIL](https://1secmail.com)** is used to generate disposable mailboxes during the account creation process.
 
@@ -68,8 +62,6 @@ Lastly, the following items should be installed in the environment where the tut
 * **Pip** - for installing Splinter
 * **Node.js** - provides the JavaScript runtime environment and web server
 * **Docker/PostgreSQL** - for quickly spinning up a transient PostgreSQL instance 
-
-
 
 ### PREPARING THE SIGNUP FORM AND DATABASE
 
@@ -119,7 +111,7 @@ yarn start
 
 Open [localhost:3002/signup](http://localhost:3002/signup) in a browser. If everything is working correctly, the signup form should appear as follows:
 
-![Registration form](https://imgur.com/NBFBD2c.png)
+![Registration form](/img/uploads/bot-registration.png "Registration form")
 
 Insert a dummy email address and submit the form:
 
@@ -127,9 +119,7 @@ A page is displayed confirming that the account was created successfully.
 
 Start the registration process again with an empty form. Insert the same email address as before and submit the form—it should return the error `User with this email already exists`:
 
-![Email taken already](https://imgur.com/BsPa1E6.png)
-
-
+![Email taken already](/img/uploads/bot-email-taken.png "Email taken already")
 
 The following is the signup form’s `index.js` code:
 
@@ -312,11 +302,9 @@ python main.py
 
 The console should look something like this:
 
-![Console bot](https://imgur.com/fYrYnTM.png)
+![Console bot](/img/uploads/bot-console.png "Console bot")
 
 Future development might include additional code for reading the emails and opening the confirmation links; for the sake of brevity, it’s assumed that completing this part would successfully automate the signup process entirely. By integrating Splinter and 1secMAIL in an automated signup bot script, malicious actors can easily bypass the security controls of most website registration forms.
-
-
 
 ### Adding Extra Security with FingerprintJS Pro
 
@@ -423,7 +411,7 @@ Add the following snippet of code to `signup_form/views/signup.hbs`
 
 Verify that the integration is working correctly by reloading the page and checking the browser console. A string like this should appear:
 
-![Unique ID](https://imgur.com/09cpqPZ.png)
+![Unique ID](/img/uploads/bot-unique.png "Unique ID")
 
 This is the `visitorID` that can be used to reliably identify the browser, regardless of any masking or blocking attempts. Try opening the signup form in the browser’s incognito mode—notice that the `visitorID` is the same. 
 
@@ -514,7 +502,7 @@ alter table users
 
 Trying to create multiple accounts will result in the following error:
 
-![Error, already have an account](https://imgur.com/LSh3ndY.png)
+![Error, already have an account](/img/uploads/bot-effor.png "Error, already have an account")
 
 Run the signup bot against the new form and observe what happens: 
 
@@ -522,13 +510,11 @@ Run the signup bot against the new form and observe what happens:
 
 Even if different email addresses are used, **FingerprintJS** correctly flags the signup attempt as coming from the same visitor. At this point, a website operator could choose to block further sign-up attempts.
 
-
-
 ### Conclusion
 
 While it’s not possible to completely prevent bot attacks given their current sophistication levels, website operators can drastically reduce the risk of compromise by combining techniques like email validation and CAPTCHAS with [**FingerprintJS Pro**. ](https://dashboard.fingerprintjs.com/signup)This layered approach merges traditional techniques for confirming accounts with a solution that’s 99.5% accurate for identifying unique visitors. And for recognizing bot activity and identifying malicious bots, **[Botd](https://github.com/fingerprintjs/botd)** offers powerful bot detection in an easy-to-use, open source library.
 
 The full code for the examples used in this article can be found here:
 
-* [multiple\_registration\_form](https://github.com/fingerprintjs/multiple-signup-demo)
-* [fingerprintjs\_registration\_bot](https://github.com/amacgregor/fingerprintjs_registration_bot)
+* [multiple_registration_form](https://github.com/fingerprintjs/multiple-signup-demo)
+* [fingerprintjs_registration_bot](https://github.com/amacgregor/fingerprintjs_registration_bot)

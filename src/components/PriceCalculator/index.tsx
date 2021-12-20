@@ -162,18 +162,6 @@ function FeatureList({ title, features }: FeatureListProps) {
   )
 }
 
-const usage: Feature[] = [
-  {
-    description: 'Unlimited subscriptions',
-  },
-]
-const usageFreeTier: Feature[] = [
-  {
-    description: 'Unlimited subscriptions',
-    disabled: true,
-  },
-]
-
 const features: Feature[] = [
   {
     description: '99.5% accurate identification',
@@ -247,13 +235,11 @@ const enterpriseFeatures: Feature[] = [
 ]
 
 const freeTier: FeatureListProps[] = [
-  { title: 'Usage', features: usageFreeTier },
   { title: 'Features', features: features },
   { title: 'Operations', features: operationsFreeTier },
 ]
 
 const onDemand: FeatureListProps[] = [
-  { title: 'Usage', features: usage },
   { title: 'Features', features: features },
   { title: 'Operations', features: operations },
 ]

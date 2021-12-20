@@ -10,7 +10,7 @@ metadata:
 header:
   subLabel: Case Study
   subTitle: How a top 100 global consumer brand solved promotion fraud
-  markdown__Content: A major consumer brand built a state-of-the-art web portal
+  content: A major consumer brand built a state-of-the-art web portal
     for redeeming promotional items using FingerprintJS Pro. Their solution was
     able to maintain low levels of promotion fraud at events without requiring a
     cumbersome login process.
@@ -19,7 +19,7 @@ summary:
   results:
     - icon: /img/uploads/coupon.svg
       title: Discouraged promotion abuse
-      markdown__Content: With FingerprintJS’ visitor identification, the web portal
+      content: With FingerprintJS’ visitor identification, the web portal
         successfully stopped visitors from redeeming multiple offers at live
         event booths.
       iconAlt: coupon
@@ -28,14 +28,14 @@ summary:
       iconAlt: Business
       iconTitle: Business
       title: Improved conversion rates
-      markdown__Content: By not requiring a username and password and instead
+      content: By not requiring a username and password and instead
         validating promotion redeemers with FingerprintJS, participants redeemed
         more offers.
     - icon: /img/uploads/easy-to-use.svg
       iconAlt: Easy to use
       iconTitle: Easy to use
       title: Easy to install for a unique use case
-      markdown__Content: >
+      content: >
         FingerprintJS Pro’s un-opinionated visitor identification solution made
         it easy for the developer team to add visitor identification where it
         was needed while saving time configuring complicated rules engines.
