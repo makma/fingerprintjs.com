@@ -3,11 +3,16 @@ import Container from '../../common/Container'
 import CodeWindowWithSelector from '../../common/CodeWindowWithSelector'
 import Tippy from '@tippyjs/react'
 import classNames from 'classnames'
+import { useBotD } from '../../../hooks/useBotD'
+
 import { ReactComponent as InfoSvg } from './InfoIconSVG.svg'
 
 import styles from './APIResponseDetailsSection.module.scss'
 
 export default function GenerateKeySection() {
+  const { visitorData } = useBotD()
+  const characterLength = 8.4
+
   return (
     <Container className={styles.container}>
       <h1 className={styles.title} id='ApiResponseDetails'>
@@ -21,25 +26,25 @@ export default function GenerateKeySection() {
                 code: `{
   "bot":{
       "automationTool":{
-        "status":"processed",
-        "probability":0
+        "status":"${visitorData?.bot.automationTool.status ?? 'processed'}",
+        "probability":${visitorData?.bot.automationTool.probability ?? 0}
       },
       "browserSpoofing":{
-        "status":"processed",
-        "probability":0
+        "status":"${visitorData?.bot.browserSpoofing.status ?? 'processed'}",
+        "probability":${visitorData?.bot.browserSpoofing.probability ?? 0}
       },
       "searchEngine":{
-        "status":"processed",
-        "probability":0
+        "status":"${visitorData?.bot.searchEngine.status ?? 'processed'}",
+        "probability":${visitorData?.bot.searchEngine.probability ?? 0}
       }
   },
   "vm":{
-      "status":"processed",
-      "probability":0
+      "status":"${visitorData?.vm.status ?? 'processed'}",
+      "probability":${visitorData?.vm.probability ?? 0}
   },
-  "ip":"186.XXX.XXX.XXX",
-  "requestId":"01FP8C8FQ8P189KVFP88C5FHY5",
-  "tag":""
+  "ip":"${visitorData?.ip ?? '186.XXX.XXX.XXX'}",
+  "requestId":"${visitorData?.requestId ?? '01FP8C8FQ8P189KVFP88C5FHY5'}",
+  "tag":"${visitorData?.tag ?? ''}"
 }`,
                 language: 'javascript',
                 type: '',
@@ -73,13 +78,25 @@ export default function GenerateKeySection() {
                   previous three detectors.
                 </p>
               </Tooltip>,
-              <Tooltip key='ip' className={styles.ip}>
+              <Tooltip
+                key='ip'
+                className={styles.ip}
+                left={visitorData?.ip ? 139 + visitorData.ip.length * characterLength : 265}
+              >
                 <p>Client ip address.</p>
               </Tooltip>,
-              <Tooltip key='requestId' className={styles.requestId}>
+              <Tooltip
+                key='requestId'
+                className={styles.requestId}
+                left={visitorData?.requestId ? 199 + visitorData.requestId.length * characterLength : 417}
+              >
                 <p>Used to verify bot detection requests on the server.</p>
               </Tooltip>,
-              <Tooltip key='tag' className={styles.tag}>
+              <Tooltip
+                key='tag'
+                className={styles.tag}
+                left={visitorData?.tag ? 142 + visitorData.tag.length * characterLength : 142}
+              >
                 <p>
                   String containing information associated with each request. Should be provided by BotD users in the
                   browser API.
@@ -107,8 +124,9 @@ interface TooltipProps {
   children: React.ReactNode
   className: string
   key: string
+  left?: number
 }
-function Tooltip({ children, className, key }: TooltipProps) {
+function Tooltip({ children, className, key, left }: TooltipProps) {
   return (
     <Tippy
       key={key}
@@ -127,7 +145,11 @@ function Tooltip({ children, className, key }: TooltipProps) {
       }}
       content={children}
     >
-      <InfoSvg tabIndex={0} className={classNames(className, styles.infoIcon)} />
+      <InfoSvg
+        tabIndex={0}
+        className={classNames(className, styles.infoIcon)}
+        style={{ left: `${left}px` } as React.CSSProperties}
+      />
     </Tippy>
   )
 }
