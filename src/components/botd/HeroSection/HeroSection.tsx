@@ -90,7 +90,7 @@ export default function HeroSection() {
     <Container className={styles.container}>
       <Section className={styles.descriptionSection}>
         <h1 className={styles.title}>free open beta</h1>
-        <h2 className={styles.subTitle}>Open source JavaScript bot detection library</h2>
+        <h2 className={styles.subTitle}>Introducing BotD: an open source JavaScript bot detection library</h2>
         <p className={styles.description}>
           The BotD library accurately identifies <span className={styles.botsWord}>bots</span> in real time, all while
           providing full transparency into what data is collected. Add to your website with a few lines of JavaScript,
