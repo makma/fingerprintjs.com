@@ -17,7 +17,7 @@ export default function GenerateKeySection() {
   const [email, setEmail] = useState('')
   const { formState, updateFormState } = useForm(Forms.BotdGenerateToken)
 
-  const [botDToken, setBotDToken] = useState({ publicKey: '<  your-public-token  >', secretKey: '' })
+  const [botDToken, setBotDToken] = useState({ publicKey: '<your-public-key>', secretKey: '' })
 
   async function handleSubmit(e) {
     e.preventDefault()
