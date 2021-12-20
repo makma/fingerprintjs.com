@@ -16,7 +16,7 @@ export default function IntegrationSection() {
       <TopIconSvg className={styles.topIcon} />
       <h2 className={styles.title}>BotD integrates with all major cloud providers</h2>
       <p className={styles.subTitle}>
-        Cloud integrations enable BotD to run at edge in a secure context to harden and protect your bot detection
+        Cloud integrations enable BotD to run on edge in a secure context to harden and protect your bot detection
         logic. See for yourself - all cloud integrations are 100% open source.
       </p>
       <a href={URL.botDIntegrationsRepoUrl} className={styles.button} target='_blank' rel='noreferrer'>

@@ -56,8 +56,8 @@ export default function GenerateKeySection() {
               </Tooltip>,
               <Tooltip key='browserSpoofing' className={styles.browserSpoofing}>
                 <p>
-                  <strong>Browser spoofing detection</strong> is helpful to know when headless browsers used to abuse
-                  your website pretend to be regular iPhones or Android devices.
+                  <strong>Browser spoofing detection</strong> is helpful to know when headless browsers pretend to be
+                  regular iPhones or Android devices.
                 </p>
               </Tooltip>,
               <Tooltip key='searchEngine' className={styles.searchEngine}>
