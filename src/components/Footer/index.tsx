@@ -6,7 +6,7 @@ import { ReactComponent as TwitterSvg } from '../../img/twitter.svg'
 import { ReactComponent as SOC2SVG } from '../../img/soc2.svg'
 import Container from '../common/Container'
 import styles from './Footer.module.scss'
-import { useCaseLinks } from '../../constants/content'
+import { products, useCaseLinks } from '../../constants/content'
 import { PATH, URL, DOC_URL, MAILTO } from '../../constants/content'
 
 interface FooterLinkSection {
@@ -21,11 +21,6 @@ const footerLinks: FooterLinkSection[] = [
       {
         title: 'Technical Demo',
         url: `${PATH.demoUrl}`,
-        isLocal: true,
-      },
-      {
-        title: 'Why Us',
-        url: '/why-fpjs/',
         isLocal: true,
       },
       {
@@ -62,6 +57,10 @@ const footerLinks: FooterLinkSection[] = [
         url: `${URL.statusUrl}`,
       },
     ],
+  },
+  {
+    title: 'Products',
+    links: products,
   },
   {
     title: 'Use Cases',

@@ -23,6 +23,16 @@
   to = "/github/"
   force = true
 
+[[redirects]]
+  from = "/why-fpjs/"
+  to = "/products/browser-fingerprinting/"
+  force = true
+
+[[redirects]]
+  from = "/botd/"
+  to = "/products/bot-detection/"
+  force = true
+
 [context.branch-deploy]
   command = "yarn noIndexBuild"
 
