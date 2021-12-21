@@ -18,6 +18,11 @@
   to = "https://fingerprintjs.com/"
   force = true
 
+[[redirects]]
+  from = "/open-source/"
+  to = "/github/"
+  force = true
+
 [context.branch-deploy]
   command = "yarn noIndexBuild"
 

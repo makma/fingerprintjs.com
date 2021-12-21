@@ -100,6 +100,9 @@
     @include transition-duration(0.1s);
     @include transition-timing-function(ease-out);
 
+    &:hover {
+      opacity: 0.7;
+    }
     &:active {
       opacity: 0.5;
     }
@@ -115,7 +118,7 @@
     color: #ffffff;
     line-height: 150%;
   }
-  span[class='token comment'],
+
   span[class='token punctuation'] {
     color: #ffffff;
   }
@@ -140,5 +143,19 @@
   }
   span[class='token attr-value'] {
     color: #afd5fb;
+  }
+}
+
+.pre {
+  &::-webkit-scrollbar {
+    width: rem(4px);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #434875;
   }
 }

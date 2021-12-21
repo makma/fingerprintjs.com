@@ -85,9 +85,9 @@ blocks:
     ctaText: Try it out
     ctaUrl: https://dashboard.fingerprintjs.com/signup
 inlineCta:
-  title: Start your free trial today
+  title: Create your free account
   subtitle: "Install our Javascript snippet on your website and start collecting
-    visitorIDs free for 10 days. "
+    visitorIDs for free. "
   buttonText: Get Started
   buttonHref: https://dashboard.fingerprintjs.com/signup
 ---

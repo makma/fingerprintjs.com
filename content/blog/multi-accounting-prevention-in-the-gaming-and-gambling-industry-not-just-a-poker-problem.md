@@ -14,6 +14,7 @@ featured: false
 publishDate: 2021-03-11T14:03:03.858Z
 title: "Multi-accounting prevention in the gaming and gambling industry: not
   just a poker problem"
+isPublished: true
 tags:
   - fingerprinting
   - gambling
@@ -21,7 +22,6 @@ tags:
   - gaming fraud
 authors:
   - Savannah Copland
-isPublished: true
 ---
 Multi-accounting has historically been a huge problem for online gambling services and in particular poker websites. A quick Google search turns up both articles discouraging the practice, as well as forum posts asking for tips on how to successfully multi-account without getting caught. While poker websites have improved at catching multi-accounting users in recent years, the practice still regularly occurs at the highest levels of play. 
 
@@ -65,4 +65,4 @@ The best way to prevent multi-accounting is increase the difficulty for players 
 
 FingerprintJS Pro is a visitor identification service that provides 99.5% accurate visitorIDs using browser fingerprinting, cookies, server-side identification techniques and more. Using our API, gaming and gambling websites can cross-check users creating new accounts to see if they are already associated with multiple logins, and require additional authentication or block account creation as necessary.
 
-We work with many gambling and gaming companies around the world to stop multi-accounting, making their communities a more fun and equitable place to play. Start a [free trial](https://dashboard.fingerprintjs.com/signup) of FingerprintJS Pro with unlimited API requests for the first 10 days.
+We work with many gambling and gaming companies around the world to stop multi-accounting, making their communities a more fun and equitable place to play. Create a [free account](https://dashboard.fingerprintjs.com/signup) of FingerprintJS Pro with unlimited API requests for the first 10 days.

@@ -1,12 +1,12 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 50%;
   column-gap: rem(32px);
   --contentWidth: 1270px;
 
   padding-bottom: rem(96px);
 
-  @include media('<=phoneLandscape') {
+  @include media('<=desktop') {
     display: flex;
     flex-direction: column;
     row-gap: rem(48px);

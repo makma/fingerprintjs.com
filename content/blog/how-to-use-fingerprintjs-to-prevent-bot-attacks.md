@@ -52,7 +52,7 @@ It’s worth noting that while FingerprintJS Pro is highly effective at detectin
 
 ### TUTORIAL REQUIREMENTS
 
-* **[FingerprintJS Pro](https://dashboard.fingerprintjs.com/signup)** is required; new users can sign up for a free 10-day trial subscription with unlimited API requests.
+* **[FingerprintJS Pro](https://dashboard.fingerprintjs.com/signup)** is required; new users can sign up for a free account.
 * **[Splinter](https://github.com/cobrateam/splinter)** is used for simulating a user (or many users) completing the signup form. The popular Python-based testing framework enables the automation of browser actions like visiting URLs and interacting with web page elements, among others.
 * **[1secMAIL](https://1secmail.com)** is used to generate disposable mailboxes during the account creation process.
 

@@ -3,6 +3,6 @@
   padding-bottom: rem(52px);
 
   @include media('<=phoneLandscape') {
-    padding: 0 0 rem(65px) 0;
+    padding: rem(64px) 0 rem(65px) 0;
   }
 }

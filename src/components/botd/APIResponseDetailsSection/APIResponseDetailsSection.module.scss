@@ -10,7 +10,7 @@
   }
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 50%;
   column-gap: rem(32px);
 
   @include media('<=desktop') {
@@ -51,7 +51,6 @@
 
 .infoIcon {
   position: absolute;
-  cursor: pointer;
 }
 
 .automationTool {
@@ -69,4 +68,13 @@
 .vm {
   bottom: 159px;
   left: 123px;
+}
+.ip {
+  bottom: 76px;
+}
+.requestId {
+  bottom: 55px;
+}
+.tag {
+  bottom: 32px;
 }

@@ -12,6 +12,7 @@ metadata:
 featured: false
 publishDate: 2021-03-15T16:23:06.733Z
 title: How to minimize CAPTCHA API calls to streamline UX and improve conversions
+isPublished: true
 tags:
   - fingerprinting
   - bot attacks
@@ -21,7 +22,6 @@ heroImage:
   image: /img/uploads/crosswalks.png
   imageAlt: Captcha with crosswalks
   imageTitle: Captcha with crosswalks
-isPublished: true
 ---
 CAPTCHAs make it more difficult for bots to submit fraudulent information via online forms, but they can also get in the way of humans interacting with your website.
 
@@ -87,4 +87,4 @@ FingerprintJS Pro can be used in conjunction with CAPTCHA technologies to ensure
 
 ![A flowchart showing how FingerprintJS helps to triage suspicious traffic](/img/uploads/copy-of-the_power_of_fingerprinting_infographic_2.png "A flowchart showing how FingerprintJS helps to triage suspicious traffic")
 
-FingerprintJS provides fraud protection that helps to reduce friction for legitimate users, improving conversions and facilitating more streamlined user interactions. Want to try for yourself? Start your [30-day trial](https://dashboard.fingerprintjs.com/signup) today.
+FingerprintJS provides fraud protection that helps to reduce friction for legitimate users, improving conversions and facilitating more streamlined user interactions. Want to try for yourself? Create your [free account](https://dashboard.fingerprintjs.com/signup) today.

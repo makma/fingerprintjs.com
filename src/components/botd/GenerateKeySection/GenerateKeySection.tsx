@@ -17,7 +17,8 @@ import styles from './GenerateKeySection.module.scss'
 export default function GenerateKeySection() {
   const [email, setEmail] = useState('')
   const { formState, updateFormState } = useForm(Forms.BotdGenerateToken)
-  const [botDToken, setBotDToken] = useState({ publicKey: '', secretKey: '' })
+
+  const [botDToken, setBotDToken] = useState({ publicKey: '<your-public-key>', secretKey: '' })
 
   interface MailKeys {
     usedEmail: string
@@ -142,15 +143,16 @@ export default function GenerateKeySection() {
           codeBlocks={[
             {
               code: `<script>
-// Initialize an agent at application startup.
-const botdPromise =
-    import('https://openfpcdn.io/botd/v0.1')
-    .then( Botd => Botd.load({
-        token: '<your-token>',
-        mode: 'allData'
-    }))
-// Get the bot detection result when you need it.
-botdPromise
+  // Initialize an agent at application startup.
+  const botdPromise = import(
+    "https://openfpcdn.io/botd/v0.1"
+  ).then( Botd =>
+    Botd.load({ publicKey: "${botDToken.publicKey}" })
+  );
+  // Get the bot detection result when you need it.
+  // Result will contain the requestId property,
+  // that you can securely verify on the server.
+  botdPromise
     .then(botd => botd.detect())
     .then(result => console.log(result))
     .catch(error => console.error(error))
@@ -159,17 +161,18 @@ botdPromise
               type: 'CDN',
             },
             {
-              code: `import Botd from '@fpjs-incubator/botd-agent';
+              code: `import Botd from "@fpjs-incubator/botd-agent";
 
 // Initialize an agent at application startup.
 const botdPromise = Botd.load({
-    token: "<token>",
-    mode: "allData"
+  publicKey: "${botDToken.publicKey}",
 });
 
 (async () => {
   // Get the bot detection result when you need it.
-  const botd = await botdPromise
+  // Result will contain the requestId property,
+  // that you can securely verify on the server.
+  const botd = await botdPromise;
   const result = await botd.detect();
   console.log(result);
 })();`,

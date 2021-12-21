@@ -19,15 +19,17 @@ export default memo(function CodeWindowWithSelector({
   tooltips,
 }: CodeWindowProps) {
   const [activeTab, setActiveTab] = useState(codeBlocks[0])
+  const [activeIndex, setActiveIndex] = useState(0)
 
   const showTabs = codeBlocks.length > 1
 
   useEffect(() => {
     Prism.highlightAll()
-  }, [activeTab])
+  }, [activeTab, codeBlocks])
 
   const handleTab = (index: number) => {
     setActiveTab(codeBlocks[index])
+    setActiveIndex(index)
   }
 
   const onCopyClick = (text: string) => {
@@ -54,14 +56,14 @@ export default memo(function CodeWindowWithSelector({
               </li>
             ))}
           </ul>
-          <div className={styles.copy} onClick={() => onCopyClick(activeTab.code)}>
+          <div className={styles.copy} onClick={() => onCopyClick(codeBlocks[activeIndex].code)}>
             <CopySVG className={styles.icon} />
             Copy
           </div>
         </div>
       )}
       <div className={classNames(className, styles.content)}>
-        <pre>
+        <pre className={styles.pre}>
           <code
             className={classNames(
               styles.code,
@@ -71,7 +73,7 @@ export default memo(function CodeWindowWithSelector({
               `language-${activeTab.language}`
             )}
           >
-            {activeTab.code}
+            {codeBlocks[activeIndex].code}
           </code>
           {tooltips && tooltips.map((tooltip) => tooltip)}
         </pre>
