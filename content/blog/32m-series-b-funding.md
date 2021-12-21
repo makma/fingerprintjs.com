@@ -49,9 +49,8 @@ Among these websites are some of the most recognizable names in banking, e-comme
 
 We wanted to make it as easy as possible for those who are curious about FingerprintJS Pro to try our product. That’s why we created the most seamless signup process possible:
 
-* A 10-day trial with unlimited identifications
-* Following that, a free plan with up to 20,000 identifications per month
-* We also removed the requirement for a credit card to sign up
+* A free plan with up to 20,000 identifications per month, no credit card required
+* At anytime, upgrade to a 10-day trial with unlimited identifications
 
 Our new trial process makes it especially easy for our open source users to try Pro, as well as catering to individual developers and small sites that can use the product for free forever.
 

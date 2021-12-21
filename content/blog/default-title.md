@@ -28,8 +28,8 @@ customCTA:
 Online gambling was <a href="https://www.acuant.com/blog/online-gambling-being-gamed-by-fraudsters/" target="_blank" rel="noopener">more popular than ever</a> in 2020. Pandemic lockdowns drove people towards at-home activities, and gambling sites were one of many beneficiaries. 
 
 However, as things become more popular with punters (or players), they also attract the attention of scammers. A general increase in internet usage has spurred a dramatic increase in the value of all types of cybercrime - <a href="https://cobalt.io/blog/cybersecurity-statistics-2021" target="_blank" rel="noopener">up 300 percent</a>. 
-
-It’s a <a href="https://cobalt.io/blog/business-cost-of-cybercrime" target="_blank" rel="noopener">multi-billion dollar industry</a> that is driving more and more business owners to protect themselves with [online fraud prevention](https://fingerprintjs.com/online-fraud-prevention-and-detection). 
+ 
+It’s a <a href="https://cobalt.io/blog/business-cost-of-cybercrime" target="_blank" rel="noopener">multi-billion dollar industry</a> that is driving more and more business owners to protect themselves with online fraud prevention. 
 
 For gambling websites, that means it’s more important than ever to protect both your business and your customers from the effects of online gambling fraud. 
 
