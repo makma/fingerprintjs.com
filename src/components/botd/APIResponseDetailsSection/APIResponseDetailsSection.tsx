@@ -138,7 +138,7 @@ function Tooltip({ children, className, key, left }: TooltipProps) {
           {
             name: 'flip',
             options: {
-              fallbackPlacements: ['bottom'],
+              fallbackPlacements: ['bottom', 'top'],
             },
           },
         ],

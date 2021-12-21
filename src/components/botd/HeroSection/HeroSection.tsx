@@ -247,7 +247,7 @@ function Card({
                 {
                   name: 'flip',
                   options: {
-                    fallbackPlacements: ['bottom'],
+                    fallbackPlacements: ['bottom', 'left'],
                   },
                 },
               ],
