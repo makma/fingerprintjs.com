@@ -62,8 +62,7 @@ export default function GenerateKeySection() {
           if (publicKey && secretKey) {
             setBotDToken({ publicKey, secretKey })
 
-            usedEmails.push({ usedEmail: email, publicKey: publicKey, secretKey: secretKey })
-            setUsedEmails(usedEmails)
+            setUsedEmails([...usedEmails, { usedEmail: email, publicKey, secretKey }])
           } else {
             onError()
           }
