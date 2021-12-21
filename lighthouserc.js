@@ -14,7 +14,8 @@ module.exports = {
         'http://localhost/case-studies/edtech/index.html',
         'http://localhost/ecommerce/index.html',
         'http://localhost/github/index.html',
-        'http://localhost/account-sharing/index.html',
+        'http://localhost/products/account-sharing-prevention/index.html',
+        'http://localhost/products/bot-detection/index.html',
       ],
     },
     upload: {
