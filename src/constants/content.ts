@@ -14,8 +14,8 @@ export const PATH = {
   paywall: '/paywall/',
   caseStudies: '/case-studies/',
   contactSales: '/contact-sales/',
-  whyFpjs: '/products/browser-fingerprinting',
-  accountSharing: '/products/account-sharing-prevention',
+  whyFpjs: '/products/browser-fingerprinting/',
+  accountSharing: '/products/account-sharing-prevention/',
   botD: '/products/bot-detection/',
 } as const
 
