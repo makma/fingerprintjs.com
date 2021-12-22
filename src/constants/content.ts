@@ -64,7 +64,7 @@ export const useCaseLinks = [
 export const products = [
   { title: 'Browser Fingerprinting', url: PATH.whyFpjs, isLocal: true },
   { title: 'Account Sharing Prevention', url: PATH.accountSharing, isLocal: true },
-  { title: 'Bot detection', url: PATH.botD, isLocal: true },
+  { title: 'Bot Detection', url: PATH.botD, isLocal: true },
 ]
 
 export const defaultDataLayer = [{ branch: BRANCH }]
