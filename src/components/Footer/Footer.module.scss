@@ -30,7 +30,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-    @include media('<=tabletWide') {
+    @include media('<=desktop') {
       grid-template-columns: 1fr;
     }
 
@@ -58,14 +58,14 @@
 
       margin-right: 24px;
 
-      @include media('<=tabletWide') {
+      @include media('<=desktop') {
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
         margin-bottom: 40px;
       }
     }
 
     .contact {
-      @include media('<=tabletWide') {
+      @include media('<=desktop') {
         margin-right: 0;
       }
     }

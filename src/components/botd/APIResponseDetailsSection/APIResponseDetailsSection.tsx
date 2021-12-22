@@ -83,14 +83,18 @@ export default function GenerateKeySection() {
                 className={styles.ip}
                 left={visitorData?.ip ? 139 + visitorData.ip.length * characterLength : 265}
               >
-                <p>Client ip address.</p>
+                <p>
+                  <strong>Client ip address.</strong>
+                </p>
               </Tooltip>,
               <Tooltip
                 key='requestId'
                 className={styles.requestId}
                 left={visitorData?.requestId ? 199 + visitorData.requestId.length * characterLength : 417}
               >
-                <p>Used to verify bot detection requests on the server.</p>
+                <p>
+                  <strong>Request ID</strong> is used to verify bot detection requests on the server.
+                </p>
               </Tooltip>,
               <Tooltip
                 key='tag'
@@ -98,8 +102,8 @@ export default function GenerateKeySection() {
                 left={visitorData?.tag ? 142 + visitorData.tag.length * characterLength : 142}
               >
                 <p>
-                  String containing information associated with each request. Should be provided by BotD users in the
-                  browser API.
+                  <strong>Tag</strong> is a string containing information associated with each request. Should be
+                  provided by BotD users in the browser API.
                 </p>
               </Tooltip>,
             ]}
@@ -138,7 +142,7 @@ function Tooltip({ children, className, key, left }: TooltipProps) {
           {
             name: 'flip',
             options: {
-              fallbackPlacements: ['bottom'],
+              fallbackPlacements: ['bottom', 'top'],
             },
           },
         ],

@@ -14,6 +14,8 @@ import classNames from 'classnames'
 import { URL, PATH } from '../../constants/content'
 import DropdownList from './DropdownList'
 import { ReactComponent as LogoSvg } from './fpjs.svg'
+import { scrollToElementById } from '../../helpers/scrollToElemenBytID'
+import { useLocation } from '@reach/router'
 
 import styles from './Header.module.scss'
 
@@ -23,6 +25,7 @@ interface HeaderProps {
 }
 export default function Header({ headerBarTitle, headerBarLinkUrl }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { pathname } = useLocation()
 
   useEffect(() => {
     const mobileBodyClass = 'isMobileMenuOpen'
@@ -71,9 +74,16 @@ export default function Header({ headerBarTitle, headerBarLinkUrl }: HeaderProps
                 >
                   Contact Sales
                 </Button>
-                <Button className={styles.signupButton} href={URL.signupUrl}>
-                  Get Started
-                </Button>
+                {pathname === PATH.botD ? (
+                  <Button className={styles.signupButton} onClick={() => scrollToElementById('generateKeySection')}>
+                    Get Started
+                  </Button>
+                ) : (
+                  <Button className={styles.signupButton} href={URL.signupUrl}>
+                    Get Started
+                  </Button>
+                )}
+
                 <Button
                   label='Mobile Menu'
                   className={styles.mobileToggler}

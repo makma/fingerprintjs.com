@@ -10,13 +10,13 @@ export const PATH = {
   gaming: '/gaming/',
   cryptocurrency: '/cryptocurrency/',
   paymentFraud: '/payment-fraud/',
-  accountSharing: '/account-sharing/',
-  whyFpjs: '/why-fpjs/',
   blog: '/blog/',
   paywall: '/paywall/',
   caseStudies: '/case-studies/',
   contactSales: '/contact-sales/',
-  botD: '/botd/',
+  whyFpjs: '/products/browser-fingerprinting/',
+  accountSharing: '/products/account-sharing-prevention/',
+  botD: '/products/bot-detection/',
 } as const
 
 export const URL = {
@@ -62,9 +62,9 @@ export const useCaseLinks = [
 ]
 
 export const products = [
-  { title: 'Browser Fingerprinting API', url: PATH.whyFpjs, isLocal: true },
+  { title: 'Browser Fingerprinting', url: PATH.whyFpjs, isLocal: true },
   { title: 'Account Sharing Prevention', url: PATH.accountSharing, isLocal: true },
-  { title: 'Bot detection', url: PATH.botD, isLocal: true },
+  { title: 'Bot Detection', url: PATH.botD, isLocal: true },
 ]
 
 export const defaultDataLayer = [{ branch: BRANCH }]
