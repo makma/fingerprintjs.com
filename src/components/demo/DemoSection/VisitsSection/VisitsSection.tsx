@@ -7,6 +7,7 @@ import { VisitorResponse } from '../../../../types/visitorResponse'
 import Skeleton from '../../../Skeleton/Skeleton'
 import { getVisitTitle } from '../../../../helpers/fpjs-widget'
 import { StaticImage } from 'gatsby-plugin-image'
+import { repeatElement } from '../../../../helpers/repeatElement'
 
 import { ReactComponent as IncognitoSVG } from './IncognitoSVG.svg'
 
@@ -19,8 +20,6 @@ interface VisitsSectionProps {
   visits?: VisitorResponse[]
 }
 export default function VisitsSection({ isLoading, currentVisit, visits }: VisitsSectionProps) {
-  const repeatElement = (length, fn) => Array.from({ length }, (_, i) => fn(i))
-
   const ref = useRef<HTMLElement | null>(null)
   const entry = useIntersectionObserver(ref, { freezeOnceVisible: true })
   const isVisible = !!entry?.isIntersecting

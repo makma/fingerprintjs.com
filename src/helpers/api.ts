@@ -1,4 +1,4 @@
-import { FPJS_API_TOKEN, FPJS_VISITORS_ENDPOINT, FPJS_LEAD_URL } from '../constants/env'
+import { FPJS_API_TOKEN, FPJS_VISITORS_ENDPOINT, FPJS_LEAD_URL, BOTD_TOKEN_ENDPOINT } from '../constants/env'
 
 const apiToken = FPJS_API_TOKEN
 const endpoint = FPJS_VISITORS_ENDPOINT
@@ -28,6 +28,15 @@ export async function createNewLead(
       utm_info: utmParams,
       landingPage,
       previousPage,
+    }),
+  })
+}
+
+export async function generateBotDToken(customerEmail: string) {
+  return fetch(BOTD_TOKEN_ENDPOINT, {
+    method: 'POST',
+    body: JSON.stringify({
+      customer: customerEmail,
     }),
   })
 }

@@ -25,6 +25,12 @@ export const FPJS_API_TOKEN =
     [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_API_TOKEN,
   }) ?? 'test_fpjs_api_token'
 
+export const BOTD_TOKEN_ENDPOINT =
+  getContextEnv<string>({
+    [NetlifyContext.Production]: process.env.GATSBY_BOTD_TOKEN_ENDPOINT,
+    [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_BOTD_TOKEN_ENDPOINT,
+  }) ?? 'test_fpjs_api_token_endpoint'
+
 export const FPJS_ENDPOINT =
   getContextEnv<string>({
     [NetlifyContext.Production]: process.env.GATSBY_FPJS_ENDPOINT,
@@ -47,6 +53,24 @@ export const FPJS_LEAD_URL =
     [NetlifyContext.Production]: process.env.GATSBY_FPJS_LEAD_URL,
     [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_FPJS_LEAD_URL,
   }) ?? ''
+
+export const BOTD_PUBLIC_TOKEN =
+  getContextEnv<string>({
+    [NetlifyContext.Production]: process.env.GATSBY_BOTD_PUBLIC_TOKEN,
+    [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_BOTD_PUBLIC_TOKEN,
+  }) ?? ''
+
+export const BOTD_SECRET_TOKEN =
+  getContextEnv<string>({
+    [NetlifyContext.Production]: process.env.GATSBY_BOTD_SECRET_TOKEN,
+    [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_BOTD_SECRET_TOKEN,
+  }) ?? ''
+
+export const BOTD_VERIFY_ENDPOINT =
+  getContextEnv<string>({
+    [NetlifyContext.Production]: process.env.GATSBY_BOTD_VERIFY_ENDPOINT,
+    [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_BOTD_VERIFY_ENDPOINT,
+  }) ?? 'https://.fpapi.io/api/v1/verify'
 
 export const FPJS_REGION = process.env.GATSBY_FPJS_REGION
 export const FPJS_DASHBOARD_ENDPOINT = process.env.GATSBY_FPJS_DASHBOARD_ENDPOINT

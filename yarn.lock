@@ -2164,6 +2164,13 @@
   dependencies:
     tslib "^2.0.1"
 
+"@fpjs-incubator/botd-agent@^0.1.23-beta.1":
+  version "0.1.23-beta.1"
+  resolved "https://registry.yarnpkg.com/@fpjs-incubator/botd-agent/-/botd-agent-0.1.23-beta.1.tgz#f567e80d86e3806b936b747fdf83f1c7aef04b35"
+  integrity sha512-kWJO/BAktxrHKK6v7KvtQvFBZO+BJz87eSkq4LZcZUrlnimCnW+remcilxesYzzMGbsXZPHcB+/UvZlrAcjUEQ==
+  dependencies:
+    tslib "^2.2.0"
+
 "@gar/promisify@^1.0.1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.2.tgz#30aa825f11d438671d585bd44e7fd564535fc210"
