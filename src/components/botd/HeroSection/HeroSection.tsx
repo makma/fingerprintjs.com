@@ -186,7 +186,7 @@ function CardsSection({ automationTool, browserSpoofing, searchEngine, vm, isLoa
         detected={browserSpoofing}
         tipContent={
           <p>
-            <strong>Browser spoofing</strong> detection is helpful to know when headless browsers used to abuse your
+            <strong>Browser spoofing detection</strong> is helpful to know when headless browsers used to abuse your
             website pretend to be regular iPhones or Android devices.
           </p>
         }
