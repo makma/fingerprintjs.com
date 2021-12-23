@@ -19,8 +19,33 @@
   force = true
 
 [[redirects]]
+  from = "https://fingerprintjs.pro"
+  to = "https://fingerprintjs.com/"
+  force = true
+
+[[redirects]]
+  from = "http://fingerprintjs.pro"
+  to = "https://fingerprintjs.com/"
+  force = true
+
+[[redirects]]
   from = "/open-source/"
   to = "/github/"
+  force = true
+
+[[redirects]]
+  from = "/why-fpjs/"
+  to = "/products/browser-fingerprinting/"
+  force = true
+
+[[redirects]]
+  from = "/botd/"
+  to = "/products/bot-detection/"
+  force = true
+
+[[redirects]]
+  from = "/account-sharing/"
+  to = "/products/account-sharing-prevention/"
   force = true
 
 [context.branch-deploy]

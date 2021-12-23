@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@deckdeckgo/highlight-code": "^3.3.1",
+    "@fpjs-incubator/botd-agent": "^0.1.23-beta.1",
     "@fingerprintjs/fingerprintjs-pro": "^3.5.4",
     "@loadable/component": "^5.14.1",
     "@tippyjs/react": "^4.2.0",
@@ -76,8 +77,8 @@
     "swiper": "^7.0.6"
   },
   "devDependencies": {
-    "@babel/core": "7.16.0",
-    "@babel/preset-env": "7.16.4",
+    "@babel/core": "7.16.5",
+    "@babel/preset-env": "7.16.5",
     "@netlify/plugin-gatsby": "1.0.3",
     "@storybook/addon-actions": "6.3.12",
     "@storybook/addon-essentials": "6.3.12",
@@ -97,7 +98,7 @@
     "babel-loader": "8.2.3",
     "babel-plugin-prismjs": "2.1.0",
     "babel-preset-gatsby": "2.4.0",
-    "babel-preset-react-app": "10.0.0",
+    "babel-preset-react-app": "10.0.1",
     "bundlewatch": "0.3.2",
     "css-loader": "6.5.1",
     "eslint": "8.4.1",

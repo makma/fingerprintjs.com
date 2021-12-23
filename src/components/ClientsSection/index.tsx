@@ -11,7 +11,7 @@ import { ReactComponent as HsnSVG } from '../../../static/img/company-logos/hsn.
 import { ReactComponent as AgodaSVG } from '../../../static/img/company-logos/agoda.svg'
 import { ReactComponent as BAndHSVG } from '../../../static/img/company-logos/b_and_h.svg'
 import { ReactComponent as CoinBaseSVG } from '../../../static/img/company-logos/coinbase.svg'
-import { ReactComponent as NeimanMarcusSVG } from '../../../static/img/company-logos/neiman-marcus.svg'
+import { ReactComponent as HomeCreditSVG } from '../../../static/img/company-logos/home-credit.svg'
 import { ReactComponent as RockstarSVG } from '../../../static/img/company-logos/rockstar.svg'
 import { ReactComponent as CheckoutSVG } from '../../../static/img/company-logos/checkout.svg'
 import { ReactComponent as WesterUnionSVG } from '../../../static/img/company-logos/western-union.svg'
@@ -34,9 +34,9 @@ export default function ClientsSection() {
           <CompanyLogo icon={AmeritradeSVG} />
           <CompanyLogo icon={HsnSVG} />
           <CompanyLogo icon={AgodaSVG} />
-          <CompanyLogo icon={BAndHSVG} />
           <CompanyLogo icon={CoinBaseSVG} />
-          <CompanyLogo icon={NeimanMarcusSVG} />
+          <CompanyLogo icon={BAndHSVG} />
+          <CompanyLogo icon={HomeCreditSVG} />
           <CompanyLogo icon={RockstarSVG} />
           <CompanyLogo icon={CheckoutSVG} />
           <CompanyLogo icon={WesterUnionSVG} />

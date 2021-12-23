@@ -10,17 +10,20 @@ export const PATH = {
   gaming: '/gaming/',
   cryptocurrency: '/cryptocurrency/',
   paymentFraud: '/payment-fraud/',
-  accountSharing: '/account-sharing/',
-  whyFpjs: '/why-fpjs/',
   blog: '/blog/',
   paywall: '/paywall/',
   caseStudies: '/case-studies/',
   contactSales: '/contact-sales/',
+  whyFpjs: '/products/browser-fingerprinting/',
+  accountSharing: '/products/account-sharing-prevention/',
+  botD: '/products/bot-detection/',
 } as const
 
 export const URL = {
   githubRepoUrl: 'https://github.com/fingerprintjs/fingerprintjs/',
   githubApiUrl: 'https://api.github.com/repos/fingerprintjs/fingerprintjs',
+  botDRepoUrl: 'https://github.com/fingerprintjs/BotD',
+  botDIntegrationsRepoUrl: 'https://github.com/fingerprintjs/botd-integrations',
   dashboardLoginUrl: 'https://dashboard.fingerprintjs.com/login',
   careersUrl: 'https://careers.fingerprintjs.com/',
   careersConsoleLogUrl: 'https://grnh.se/bb9c55804us',
@@ -46,16 +49,22 @@ export const DOC_URL = {
   privacyPolicyUrl: 'https://dev.fingerprintjs.com/docs/privacy-policy/',
   browserSupportUrl: 'https://dev.fingerprintjs.com/docs/browser-support/',
   webhooksUrl: 'https://dev.fingerprintjs.com/docs/webhooks',
+  botDUrl: 'https://github.com/fingerprintjs/BotD#botd-currently-in-beta',
 } as const
 
 export const useCaseLinks = [
-  { title: 'Account Sharing', url: PATH.accountSharing, isLocal: true },
   { title: 'Account Takeover', url: PATH.accountTakeover, isLocal: true },
   { title: 'Payment Fraud', url: PATH.paymentFraud, isLocal: true },
   { title: 'Paywall', url: PATH.paywall, isLocal: true },
   { title: 'Ecommerce', url: PATH.ecommerce, isLocal: true },
   { title: 'Gaming', url: PATH.gaming, isLocal: true },
   { title: 'Cryptocurrency', url: PATH.cryptocurrency, isLocal: true },
+]
+
+export const products = [
+  { title: 'Browser Fingerprinting', url: PATH.whyFpjs, isLocal: true },
+  { title: 'Account Sharing Prevention', url: PATH.accountSharing, isLocal: true },
+  { title: 'Bot Detection', url: PATH.botD, isLocal: true },
 ]
 
 export const defaultDataLayer = [{ branch: BRANCH }]

@@ -3,9 +3,10 @@ import React from 'react'
 import { ArrayElement } from '../../helpers/types'
 import { mapToPost, PostProps } from '../Post/Post'
 import Posts from '../Posts/Posts'
+import { PartialWithRequired } from '../../helpers/types'
 
 export interface RelatedArticlesProps {
-  article: PostProps
+  article: PartialWithRequired<PostProps, 'tags'>
   count?: number
   title?: string
   titleIsCentered?: boolean
@@ -57,7 +58,11 @@ const relatedArticlesQuery = graphql`
 type PostQuery = NonNullable<
   ArrayElement<NonNullable<NonNullable<GatsbyTypes.RelatedArticlesQuery['allMarkdownRemark']>['edges']>>['node']
 >
-function getRelatedArticles(referenceArticle: PostProps, allArticles: PostQuery[], count: number): PostProps[] {
+function getRelatedArticles(
+  referenceArticle: PartialWithRequired<PostProps, 'tags'>,
+  allArticles: PostQuery[],
+  count: number
+): PostProps[] {
   const relatedArticles = allArticles.map((article) => mapToPost(article))
   const { tags: referenceTags = [] } = referenceArticle
   const similarity: Record<string, number> = {}

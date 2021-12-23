@@ -1,0 +1,57 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 50%;
+  column-gap: rem(32px);
+  --contentWidth: 1270px;
+
+  padding-top: rem(48px);
+  padding-bottom: rem(128px);
+
+  @include media('<=desktop') {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(40px);
+
+    padding-top: rem(64px);
+    padding-bottom: rem(64px);
+  }
+}
+
+.descriptionSection {
+  @include media('>desktop') {
+    padding-right: rem(165px);
+  }
+  .title {
+    font-size: rem(32px);
+    font-weight: v('bold');
+    letter-spacing: -0.01em;
+    line-height: 130%;
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(26px);
+    }
+  }
+  .description {
+    padding-top: rem(16px);
+    @include sans($size: 16px, $weight: 400, $lh: 150%);
+  }
+}
+
+.faqSection {
+  .faqTitle {
+    @include sans($size: 20px, $weight: 600, $lh: 150%);
+    letter-spacing: 0.01em;
+
+    padding-bottom: rem(24px);
+  }
+  .faqContent {
+    @include sans($size: 16px, $weight: 400, $lh: 150%, $color: var(--brand-water));
+  }
+  @include media('>desktop') {
+    max-width: rem(605px);
+
+    .faqContent {
+      width: rem(557px);
+    }
+  }
+}

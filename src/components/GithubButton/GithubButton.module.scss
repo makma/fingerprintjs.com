@@ -8,6 +8,12 @@
   align-items: center;
   justify-content: center;
   font-weight: v('bold');
+
+  &.white {
+    color: black;
+    mix-blend-mode: lighten;
+    font-weight: v('semi');
+  }
 }
 
 .button {
@@ -33,7 +39,7 @@
   user-select: none;
   font-weight: v(semi);
   white-space: nowrap;
-  @include transition((background-color));
+  @include transition((background-color, opacity));
   cursor: pointer;
 
   &:focus,
@@ -47,6 +53,24 @@
     display: flex;
     align-items: center;
     font-weight: v('bold');
+
+    &.white {
+      font-weight: v('semi');
+    }
+  }
+
+  &.white {
+    --bgColor: transparent;
+    --color: c('off-white');
+    --height: 42px;
+    @include sans($size: 14px, $weight: 600, $lh: 150%);
+    border: 1px solid v('white');
+
+    &:focus,
+    &:hover {
+      background-color: transparent;
+      opacity: 0.7;
+    }
   }
 
   .icon {
@@ -54,5 +78,9 @@
     height: 3rem;
     fill: adjust-color(c('brand-water'), $alpha: -0.5%);
     margin-right: 1rem;
+
+    &.white {
+      fill: c('off-white');
+    }
   }
 }

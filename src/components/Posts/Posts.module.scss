@@ -15,7 +15,9 @@
 }
 
 .alignNameCenter {
-  justify-content: center;
+  @include media('>phoneLandscape') {
+    justify-content: center;
+  }
 }
 
 .name {
