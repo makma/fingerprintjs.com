@@ -32,6 +32,9 @@ export const useBotD = () => {
           body: verifyBody,
           method: 'POST',
         })
+        if (!response.ok) {
+          throw new Error()
+        }
         const result: SuccessResponse = await response.json()
         setVisitorData(result)
       } catch (error) {
