@@ -9,17 +9,25 @@ import { useGithub } from '../../context/GithubContext'
 
 interface GithubButtonProps {
   className?: string | string[]
+  variant?: 'primary' | 'white'
 }
-export default function GithubButton({ className }: GithubButtonProps) {
+export default function GithubButton({ className, variant = 'primary' }: GithubButtonProps) {
   const { githubData } = useGithub()
 
   return (
-    <a className={classNames(styles.button, className)} href={URL.githubRepoUrl}>
-      <div className={styles.label}>
-        <GithubIconSvg className={styles.icon} />
+    <a
+      className={classNames(styles.button, className, { [styles.white]: variant === 'white' })}
+      href={URL.githubRepoUrl}
+    >
+      <div className={classNames(styles.label, { [styles.white]: variant === 'white' })}>
+        <GithubIconSvg className={classNames(styles.icon, { [styles.white]: variant === 'white' })} />
         <span>Star</span>
       </div>
-      {githubData && <div className={styles.counter}>{numberFormatter.format(githubData.stargazers_count)}</div>}
+      {githubData && (
+        <div className={classNames(styles.counter, { [styles.white]: variant === 'white' })}>
+          {numberFormatter.format(githubData.stargazers_count)}
+        </div>
+      )}
     </a>
   )
 }

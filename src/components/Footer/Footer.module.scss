@@ -1,81 +1,61 @@
 .footer {
   background-color: v('brand-water');
   color: v('white');
-  padding: 10rem 0 5rem 0;
-
-  @include media('<=phoneLandscape') {
-    padding: 40px 0;
-  }
+  padding: rem(40px) 0 rem(24px) 0;
 
   .copyrights {
-    margin-top: 5rem;
-    font-size: 1.75rem;
-    opacity: v('faded');
-    text-align: right;
+    margin-top: rem(24px);
 
-    @include media('<=phoneLandscape') {
-      text-align: left;
-    }
-
-    a {
-      @include transition((opacity));
-
-      &:hover {
-        opacity: v('extra-faded');
-      }
-    }
+    @include sans($size: 14px, $weight: 400, $lh: 150%);
   }
 
   .nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    row-gap: rem(40px);
 
     @include media('<=desktop') {
-      grid-template-columns: 1fr;
-    }
-
-    .menu {
-      margin-right: 4rem;
-
-      .docs {
-        @include media('<=phoneLandscape') {
-          margin-top: 4rem;
-        }
-      }
-      @include media('<=phoneLandscape') {
-        margin-right: 0;
-      }
+      display: flex;
+      row-gap: rem(64px);
     }
 
     .wrapper {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-      row-gap: 4rem;
-
-      @include media('<=phone') {
-        grid-template-columns: 1fr;
-      }
-
-      margin-right: 24px;
+      display: flex;
+      column-gap: rem(56px);
 
       @include media('<=desktop') {
-        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-        margin-bottom: 40px;
+        justify-content: space-between;
       }
-    }
 
-    .contact {
-      @include media('<=desktop') {
-        margin-right: 0;
+      @include media('<=phoneLandscape') {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: rem(48px);
+        row-gap: rem(40px);
       }
     }
 
     .contact,
     .menu {
-      font-size: 1.75rem;
+      font-size: rem(14px);
 
       .title {
-        margin-bottom: 1.5rem;
+        @include sans($size: 16px, $weight: 600, $lh: 150%);
+        margin-bottom: rem(12px);
+      }
+
+      .link,
+      .address {
+        font-style: normal;
+        @include sans($size: 14px, $weight: 400, $lh: 150%);
+      }
+
+      .fpjsLogo {
+        width: rem(260px);
+        height: rem(36px);
+        margin-bottom: rem(16px);
       }
     }
 
@@ -84,8 +64,6 @@
         display: block;
         padding: 0.5rem 0;
         @include transition((opacity));
-
-        opacity: 0.8;
 
         &:hover {
           opacity: v('extra-faded');
@@ -99,34 +77,17 @@
 
     .contact {
       .address {
-        font-style: normal;
+        display: flex;
+        flex-direction: column;
+        @include sans($size: 14px, $weight: 400, $lh: 150%);
         margin-bottom: 5rem;
 
-        a {
-          text-decoration: none;
-          color: inherit;
+        .mailto {
+          padding-top: rem(8px);
+          @include transition((opacity));
 
-          &.link {
-            position: relative;
-            font-weight: v('semi');
-
-            &:before {
-              content: '';
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              width: 100%;
-              height: 2px;
-              background-color: currentColor;
-              opacity: 1;
-              @include transition((opacity));
-            }
-
-            &:hover {
-              &:before {
-                opacity: 0;
-              }
-            }
+          &:hover {
+            opacity: v('extra-faded');
           }
         }
       }
@@ -134,10 +95,7 @@
       .social {
         display: flex;
         align-items: flex-end;
-
-        > * + * {
-          margin-left: 2rem;
-        }
+        column-gap: rem(12px);
 
         > span {
           height: 28px;
@@ -146,11 +104,7 @@
         .links {
           display: flex;
           align-items: center;
-          margin-top: 1rem;
-
-          > * + * {
-            margin-left: 1rem;
-          }
+          column-gap: rem(12px);
 
           .link {
             a {
@@ -159,36 +113,35 @@
 
             &:hover {
               svg {
-                opacity: 1;
+                opacity: v('extra-faded');
               }
             }
           }
 
           svg {
-            width: 3.5rem;
-            height: 3.5rem;
+            width: rem(43px);
+            height: rem(42px);
             fill: v('white');
-            opacity: v('muted');
             @include transition((opacity));
           }
         }
       }
-      .soc2Logo {
-        padding-top: rem(64px);
+    }
+  }
+}
 
-        svg {
-          width: rem(102px);
-          height: rem(102px);
-        }
-        @include media('<=phoneLandscape') {
-          padding-top: rem(32px);
+.logos {
+  @include media('<=desktop') {
+    justify-self: flex-end;
+  }
 
-          svg {
-            width: rem(80px);
-            height: rem(80px);
-          }
-        }
-      }
+  .soc2Logo {
+    display: flex;
+    column-gap: rem(8px);
+
+    svg {
+      width: rem(80px);
+      height: rem(80px);
     }
   }
 }
