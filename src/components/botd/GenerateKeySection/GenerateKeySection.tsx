@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Container from '../../common/Container'
 import Button from '../../common/Button'
-import { useForm, Forms } from '../../../hooks/useForm'
 import { FormState } from '../../../types/FormState'
 import { generateBotDToken } from '../../../helpers/api'
 import classNames from 'classnames'
@@ -16,7 +15,7 @@ import styles from './GenerateKeySection.module.scss'
 
 export default function GenerateKeySection() {
   const [email, setEmail] = useState('')
-  const { formState, updateFormState } = useForm(Forms.BotdGenerateToken)
+  const [formState, setFormState] = useState(FormState.Default)
 
   const [botDToken, setBotDToken] = useState({ publicKey: '<your-public-key>', secretKey: '' })
 
@@ -30,13 +29,13 @@ export default function GenerateKeySection() {
   async function handleSubmit(e) {
     e.preventDefault()
 
-    updateFormState(FormState.Loading)
+    setFormState(FormState.Loading)
 
     function onError() {
-      updateFormState(FormState.Failed)
+      setFormState(FormState.Failed)
 
       setTimeout(() => {
-        updateFormState(FormState.Default)
+        setFormState(FormState.Default)
       }, 5000)
     }
 
@@ -44,7 +43,7 @@ export default function GenerateKeySection() {
 
     if (usedKeys) {
       setBotDToken({ publicKey: usedKeys.publicKey, secretKey: usedKeys.secretKey })
-      updateFormState(FormState.Success)
+      setFormState(FormState.Success)
     } else {
       try {
         const response = await generateBotDToken(email)
@@ -53,7 +52,7 @@ export default function GenerateKeySection() {
         if (status !== 200) {
           onError()
         } else {
-          updateFormState(FormState.Success)
+          setFormState(FormState.Success)
           const data = await response.json()
 
           const publicKey = data?.publicKey
@@ -81,7 +80,7 @@ export default function GenerateKeySection() {
           <>
             <h1 className={styles.title}>Generate my API keys</h1>
             <p className={styles.description}>
-              Enter your email to generate a unique token and code snippet. Install on your site to use our API for
+              Enter your email to generate your unique keys and code snippet. Install on your site to use our API for
               free.
             </p>
             <form className={styles.generateKeyForm} onSubmit={handleSubmit}>

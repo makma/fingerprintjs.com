@@ -26,7 +26,6 @@ export const UPDATE_ERROR_MESSAGE = 'UPDATE_ERROR_MESSAGE'
 export enum Forms {
   Signup,
   ContactSales,
-  BotdGenerateToken,
 }
 
 interface GetStartedFormData {

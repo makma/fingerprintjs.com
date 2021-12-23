@@ -43,6 +43,11 @@
   to = "/products/bot-detection/"
   force = true
 
+[[redirects]]
+  from = "/account-sharing/"
+  to = "/products/account-sharing-prevention/"
+  force = true
+
 [context.branch-deploy]
   command = "yarn noIndexBuild"
 

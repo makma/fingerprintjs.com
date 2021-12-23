@@ -90,7 +90,11 @@ export default function HeroSection() {
     <Container className={styles.container}>
       <Section className={styles.descriptionSection}>
         <h1 className={styles.title}>free open beta</h1>
-        <h2 className={styles.subTitle}>Introducing BotD: an open source JavaScript bot detection library</h2>
+        <h2 className={styles.subTitle}>
+          Introducing BotD:
+          <br />
+          an open source JavaScript bot detection library
+        </h2>
         <p className={styles.description}>
           The BotD library accurately identifies{' '}
           <a className={styles.botsWord} onClick={() => scrollToElementById('ApiResponseDetails')}>

@@ -84,7 +84,7 @@ export default function GenerateKeySection() {
                 left={visitorData?.ip ? 139 + visitorData.ip.length * characterLength : 265}
               >
                 <p>
-                  <strong>Client ip address.</strong>
+                  <strong>Client IP address.</strong>
                 </p>
               </Tooltip>,
               <Tooltip
@@ -115,7 +115,7 @@ export default function GenerateKeySection() {
             detection.
           </h2>
           <p className={styles.description}>
-            Each detector result comes with a probability that you can use to make granular decision about blocking or
+            Each detector result comes with a probability that you can use to make granular decisions about blocking or
             mitigation strategies.
           </p>
         </section>
