@@ -1,0 +1,80 @@
+---
+templateKey: solution-content
+metadata:
+  title: Credential stuffing - FingerprintJS
+  image: /img/uploads/credential-stuffing.png
+  imageAlt: test alt
+  imageTitle: test title
+  description: Detect the automated injection of stolen usernames and passwords on
+    your login page before an attacker can do any damage.
+  url: https://fingerprintjs.com/solutions/less
+publishDate: 2021-11-12T15:48:01.198Z
+isPublished: true
+title: less
+description: Detect the automated injection of stolen usernames and passwords on
+  your login page before an attacker can do any damage.
+solutionCode:
+  iframeUrl: https://stackblitz.com/edit/node-e9yupj?ctl=1&embed=1&file=server/problems/CredentialStuffing.js&hideNavigation=1&view=editor
+  shareUrl: https://stackblitz.com/edit/node-e9yupj?file=server/problems/CredentialStuffing.js
+  docsUrl: https://github.com/
+funnel:
+  - Payment
+category:
+  - Employee
+industry:
+  - Media
+---
+
+## How credential stuffing works
+
+Credential stuffing is a method of account takeover where an attacker attempts to gain access to as many customer accounts as possible. It is typically performed as an automated (brute force) attack, utilizing bots to procedurally submit login requests while noting successful attempts.
+
+![Attacker tries leaked credentials](/img/uploads/credential-stuffing-diagram1.png)
+
+1. The attacker access lists of username and password pairs collected from data breaches. Over 3 billion credentials were reported stolen in 2016, and major breaches are being reported constantly, refreshing the available data for fraudsters to test.
+2. The attacker uses automated tools to test the username and password pairs on a web application, noting any successful attempts.
+3. The attacker uses the successful login credentials for profit. Depending on the service accessed, they may make fraudulent purchases, use the account for phishing or other scams, access private information, or sell the login credentials.
+
+## How FingerprintJS protects the login page
+
+![How FingerprintJS protects the login page](/img/uploads/credential-stuffing-diagram2.png)
+
+### What FingerprintJS does
+
+FingerprintJS Pro provides a unique identifier for every visitor to your website (the visitorID) that is collected passively anytime a visitor visits a webpage with our JavaScript fingerprinting agent installed. FingerprintJS Pro provides tools for validating the visitor identifiers sent by your frontend. For server-side validation, developers can utilize FingerprintJS Pro's Server API or Webhooks.
+
+Since you know your product and business landscape best, It's up to you to decide how to configure anti-fraud workflows to utilize the visitorID to catch fraud on your website. Below, we have described some best practices you can use as a jumping-off point for your own custom solution.
+
+### Configuring FingerprintJS for credential stuffing prevention
+
+To use FingerprintJS effectively to prevent all forms of account-related fraud, you should configure logic that utilizes the visitorID in conjunction with time-stamped login credentials to validate users. It is important to think through both the logic used to determine suspicious activity, as well as the challenge actions that should be taken when a visitor is flagged.
+
+### Suspicious Activity Logic
+
+We recommend that when a visitor attempts to log in, the visitorID and login credentials are sent to your application server where they can be persisted in the storage layer. Using this data, you can compare the current visitorID and credential pairing to previous attempts to catch threats.
+
+Some recommended logic rules for credential stuffing are included below.
+
+#### Using visitorIDs only:
+
+- Check if the login request does not contain a visitorID. Stop users without a visitorID from being able to login.
+- Check the provided visitorID's integrity with the Server API or Webhooks. Do not log in users with invalid or forged visitorIDs.
+- Check the Confidence score. Challenge login attempts with additional authentication if the confidence score is lower than 0.99.
+- Check the timestamp of the provided visitorId. If the timestamp is old, do not log in the user.
+
+#### Using credential + visitorID pairs:
+
+- Track unsuccessful login attempts per visitorId during the given time window (e.g. 24 hours). Take additional authentication action after 10 failed login attempts during this window, and notify the account owner.
+- Check if the visitorID has attempted or successfully logged into other accounts. Require additional authentication if the visitorID is associated with 3 or more accounts, and notify the account owner(s) of suspicious behavior.
+
+### Challenge Actions
+
+For suspicious login attempts as defined by your suspicious activity logic, you can require additional verification or authentication steps to stop fraudsters from further access.
+
+In all the cases above, we suggest ignoring login attempts, notifying account owners about suspicious activity via email/SMS/phone, or challenging the attempted login with two factor authentication.
+
+## Explore our credential stuffing prevention demo
+
+To demonstrate the above concepts, we have build a credential stuffing prevention demo. Use this demo to see how you can use FingerprintJS in conjunction with simple logic rules to protect a login form.
+
+[**Full technical solution →**](https://www.fingerprintjs.com/) [**Full login protection documentation →**](https://www.fingerprintjs.com/)
