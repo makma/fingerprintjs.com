@@ -20,9 +20,9 @@ export default function Solutions({ data }: SolutionsProps) {
   let siteMetadata = useSiteMetadata()
   siteMetadata = {
     ...siteMetadata,
-    title: 'FingerprintJS Solutions | FingerprintJS',
+    title: 'Solutions - FingerprintJS Pro',
     description:
-      'We are an open source powered company working to prevent online fraud for websites of all sizes. Learn about our browser fingerprinting API and more on our blog.',
+      'Solve any fraud problem with our user identification API. Explore our full code solutions for payment fraud, account takeover and more.',
     siteUrl: `${siteMetadata.siteUrl}${pathname}`,
   }
   return (
@@ -49,17 +49,17 @@ export const pageQuery = graphql`
     ) {
       ...SolutionData
     }
-    funnel: allMarkdownRemark {
+    funnel: allMarkdownRemark(filter: {frontmatter: {isPublished: {ne: false}}}) {
         group(field: frontmatter___funnel) {
           tag: fieldValue
         }
       }   
-    category: allMarkdownRemark {
+    category: allMarkdownRemark(filter: {frontmatter: {isPublished: {ne: false}}}) {
       group(field: frontmatter___category) {
         tag: fieldValue
       }
     }  
-    industry: allMarkdownRemark {
+    industry: allMarkdownRemark(filter: {frontmatter: {isPublished: {ne: false}}}) {
       group(field: frontmatter___industry) {
         tag: fieldValue
       }

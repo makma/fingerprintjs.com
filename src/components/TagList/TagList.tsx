@@ -12,6 +12,7 @@ export interface TagListProps {
   direction?: 'horizontal' | 'vertical'
   link?: string
   tagsLimit?: number
+  className?: string
 }
 
 export default function TagList({
@@ -21,6 +22,7 @@ export default function TagList({
   direction = 'horizontal',
   link,
   tagsLimit,
+  className,
 }: TagListProps) {
   function formatTag(tag: string) {
     switch (format) {
@@ -34,7 +36,7 @@ export default function TagList({
   const limit = tagsLimit ? tagsLimit : tags.length
 
   return (
-    <ul className={styles.root}>
+    <ul className={classNames(styles.root, className)}>
       {tags?.slice(-limit).map((tag) => (
         <li
           key={tag}
@@ -53,7 +55,9 @@ export default function TagList({
               </Link>
             )
           ) : (
-            <span className={styles.tagNoLink}>{formatTag(tag)}</span>
+            <span style={{ borderColor: '#f2f2f7' }} className={classNames(styles.tagNoLink)}>
+              {formatTag(tag)}
+            </span>
           )}
         </li>
       ))}

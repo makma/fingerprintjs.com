@@ -303,7 +303,7 @@ collections:
               },
             ],
         }
-  - name: 'Solutions'
+  - name: 'solutions'
     label: 'Solutions'
     folder: content/solutions/solutions
     create: true
@@ -326,8 +326,20 @@ collections:
             ],
         }
       - { label: Publish date, name: publishDate, widget: datetime }
-      - { label: Title, name: title, widget: string, default: 'Default Title' }
       - { label: Publish solution, name: isPublished, widget: boolean, default: true }
+      - { label: Title, name: title, widget: string, default: 'Default Title' }
+      - { label: Description, name: description, widget: string }
+      - {
+          label: Solution Code,
+          name: solutionCode,
+          widget: object,
+          fields:
+            [
+              { label: Embed URL, name: iframeUrl, widget: string },
+              { label: Share URL, name: shareUrl, widget: string },
+              { label: Documentation URL, name: docsUrl, widget: string },
+            ],
+        }
       - name: funnel
         label: Funnel
         widget: relation
@@ -355,6 +367,7 @@ collections:
         displayFields: ['name']
         multiple: true
         default: ['Payment Processing']
+      - { label: Body, name: body, widget: markdown }
   - name: 'funnel'
     label: 'Funnel Tags'
     folder: content/solutions/tags/funnel

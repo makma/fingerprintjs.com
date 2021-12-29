@@ -12,8 +12,9 @@ import DocumentationSection from '../../../components/botd/DocumentationSection/
 import IntegrationSection from '../../../components/botd/IntegrationSection/IntegrationSection'
 import FeaturesSection from '../../../components/botd/FeaturesSection/FeaturesSection'
 import FaqSection from '../../../components/botd/FaqSection/FaqSection'
-import JoinCommunitySection from '../../../components/botd/JoinCommunitySection/JoinCommunitySection'
+import JoinCommunitySection from '../../../components/JoinCommunitySection/JoinCommunitySection'
 
+import { URL } from '../../../constants/content'
 import useSiteMetadata from '../../../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
 
@@ -44,7 +45,14 @@ export default function Botd({ pageContext }: AccountSharingProps) {
       <IntegrationSection />
       <FeaturesSection />
       <FaqSection />
-      <JoinCommunitySection />
+      <JoinCommunitySection
+        title='Join our growing community'
+        discordLink={URL.discordServerURL}
+        githubLink={URL.botDRepoUrl}
+        labels={['+20K downloads', '+58M API requests']}
+      >
+        BotD is an open source project supported by contributing developers across the globe.
+      </JoinCommunitySection>
       <Container size='large' className={styles.relatedArticles}>
         <RelatedArticles
           article={{
