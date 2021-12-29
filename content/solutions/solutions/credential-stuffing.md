@@ -5,7 +5,8 @@ metadata:
   image: /img/uploads/credential-stuffing.png
   imageAlt: test alt
   imageTitle: test title
-  description: Explore our full code solution for credential stuffing prevention. Stop automated attacks on your login page with our user identification API.
+  description: Explore our full code solution for credential stuffing prevention.
+    Stop automated attacks on your login page with our user identification API.
   url: https://fingerprintjs.com/solutions/credential-stuffing
 publishDate: 2021-11-12T15:48:01.198Z
 isPublished: true
@@ -26,8 +27,12 @@ industry:
   - Gaming
   - Gambling
   - Financial
+bottomLinks:
+  - text: Full technical solution →
+    url: https://www.fingerprintjs.com/
+  - text: Full login protection documentation →
+    url: https://www.fingerprintjs.com/
 ---
-
 ## How credential stuffing works
 
 Credential stuffing is a method of account takeover where an attacker attempts to gain access to as many customer accounts as possible. It is typically performed as an automated (brute force) attack, utilizing bots to procedurally submit login requests while noting successful attempts.
@@ -60,15 +65,15 @@ Some recommended logic rules for credential stuffing are included below.
 
 #### Using visitorIDs only:
 
-- Check if the login request does not contain a visitorID. Stop users without a visitorID from being able to login.
-- Check the provided visitorID's integrity with the Server API or Webhooks. Do not log in users with invalid or forged visitorIDs.
-- Check the Confidence score. Challenge login attempts with additional authentication if the confidence score is lower than 0.99.
-- Check the timestamp of the provided visitorId. If the timestamp is old, do not log in the user.
+* Check if the login request does not contain a visitorID. Stop users without a visitorID from being able to login.
+* Check the provided visitorID's integrity with the Server API or Webhooks. Do not log in users with invalid or forged visitorIDs.
+* Check the Confidence score. Challenge login attempts with additional authentication if the confidence score is lower than 0.99.
+* Check the timestamp of the provided visitorId. If the timestamp is old, do not log in the user.
 
 #### Using credential + visitorID pairs:
 
-- Track unsuccessful login attempts per visitorId during the given time window (e.g. 24 hours). Take additional authentication action after 10 failed login attempts during this window, and notify the account owner.
-- Check if the visitorID has attempted or successfully logged into other accounts. Require additional authentication if the visitorID is associated with 3 or more accounts, and notify the account owner(s) of suspicious behavior.
+* Track unsuccessful login attempts per visitorId during the given time window (e.g. 24 hours). Take additional authentication action after 10 failed login attempts during this window, and notify the account owner.
+* Check if the visitorID has attempted or successfully logged into other accounts. Require additional authentication if the visitorID is associated with 3 or more accounts, and notify the account owner(s) of suspicious behavior.
 
 ### Challenge Actions
 
@@ -79,5 +84,3 @@ In all the cases above, we suggest ignoring login attempts, notifying account ow
 ## Explore our credential stuffing prevention demo
 
 To demonstrate the above concepts, we have build a credential stuffing prevention demo. Use this demo to see how you can use FingerprintJS in conjunction with simple logic rules to protect a login form.
-
-[**Full technical solution →**](https://www.fingerprintjs.com/) [**Full login protection documentation →**](https://www.fingerprintjs.com/)
