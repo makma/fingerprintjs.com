@@ -185,3 +185,24 @@ $layoutBreakpoint: '<=1250px';
     padding: rem(40px) 0 rem(16px) 0;
   }
 }
+
+.bottomLinks {
+  display: flex;
+  column-gap: rem(24px);
+
+  @include media('<=phoneLandscape') {
+    flex-direction: column;
+    row-gap: rem(16px);
+  }
+
+  a {
+    @include sans($size: 20px, $weight: 600, $lh: 150%, $color: v('brand-fire'));
+    @include transition((color));
+    &:hover {
+      color: adjust-color(c('brand-fire'), $lightness: -20%);
+    }
+    @include media('<=phoneLandscape') {
+      font-size: rem(16px);
+    }
+  }
+}

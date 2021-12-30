@@ -78,5 +78,3 @@ In all the cases above, we suggest ignoring login attempts, notifying account ow
 ## Explore our credential stuffing prevention demo
 
 To demonstrate the above concepts, we have build a credential stuffing prevention demo. Use this demo to see how you can use FingerprintJS in conjunction with simple logic rules to protect a login form.
-
-[**Full technical solution →**](https://www.fingerprintjs.com/) [**Full login protection documentation →**](https://www.fingerprintjs.com/)

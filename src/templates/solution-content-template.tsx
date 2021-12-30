@@ -15,6 +15,10 @@ import TagList from '../components/TagList/TagList'
 
 import styles from './solution-content.module.scss'
 
+export interface BottomLink {
+  text: string
+  url: string
+}
 export interface TemplateProps {
   metadata: GatsbyTypes.SiteSiteMetadata
   solution?: SolutionProps
@@ -28,6 +32,7 @@ export interface TemplateProps {
   docsUrl: string
   body: string | React.ReactNode
   contentComponent?: React.FunctionComponent<{ content: string | React.ReactNode; className?: string }>
+  bottomLinks?: BottomLink[]
 }
 
 export default function SolutionContentTemplate({
@@ -43,6 +48,7 @@ export default function SolutionContentTemplate({
   docsUrl,
   body,
   contentComponent,
+  bottomLinks,
 }: TemplateProps) {
   const ContentComponent = contentComponent ?? Content
   const { githubData } = useGithub()
@@ -82,6 +88,15 @@ export default function SolutionContentTemplate({
           </section>
           <section className={styles.bodySection}>
             <ContentComponent content={body} className={styles.content} />
+            {bottomLinks && (
+              <div className={styles.bottomLinks}>
+                {bottomLinks.map(({ text, url }) => (
+                  <a key={url} href={url} target='_blank' rel='noreferrer'>
+                    {text}
+                  </a>
+                ))}
+              </div>
+            )}
           </section>
         </Container>
         <JoinCommunitySection

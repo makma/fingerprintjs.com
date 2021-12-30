@@ -8,7 +8,7 @@ import PreviewProviders from '../cms/PreviewProviders'
 import { DangerouslyRenderHtmlContent } from '../components/Content/Content'
 import { mapToSolution } from '../components/solutions/Solution/Solution'
 
-import SolutionContentTemplate from './solution-content-template'
+import SolutionContentTemplate, { BottomLink } from './solution-content-template'
 
 interface SolutionContentProps {
   data: GatsbyTypes.SolutionContentQuery
@@ -39,6 +39,7 @@ export default function SolutionContent({ data }: SolutionContentProps) {
   const shareUrl = data.markdownRemark.frontmatter.solutionCode.shareUrl as string
   const docsUrl = data.markdownRemark.frontmatter.solutionCode.docsUrl as string
   const body = data.markdownRemark.html
+  const bottomLinks = data.markdownRemark.frontmatter.bottomLinks as BottomLink[]
 
   return (
     <SolutionContentTemplate
@@ -54,6 +55,7 @@ export default function SolutionContent({ data }: SolutionContentProps) {
       shareUrl={shareUrl}
       docsUrl={docsUrl}
       body={body}
+      bottomLinks={bottomLinks}
     />
   )
 }
@@ -89,6 +91,10 @@ export const pageQuery = graphql`
           shareUrl
           docsUrl
         }
+        bottomLinks {
+          text
+          url
+        }
       }
     }
   }
@@ -104,6 +110,7 @@ export function SolutionContentPreview({ entry, widgetFor }: PreviewTemplateComp
   const title = entry.getIn(['data', 'title'])
   const description = entry.getIn(['data', 'description'])
   const codeSection = entry.getIn(['data', 'solutionCode'])?.toObject()
+  const bottomLinks = entry.getIn(['data', 'bottomLinks'])?.toJS() as BottomLink[]
 
   return (
     <PreviewProviders>
@@ -118,6 +125,7 @@ export function SolutionContentPreview({ entry, widgetFor }: PreviewTemplateComp
         shareUrl={codeSection?.shareUrl ?? ''}
         docsUrl={codeSection?.docsUrl ?? ''}
         body={widgetFor('body') ?? <></>}
+        bottomLinks={bottomLinks}
       />
     </PreviewProviders>
   )
