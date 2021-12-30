@@ -109,7 +109,7 @@ function TagGroup({ tags, label }: TagGroupProps) {
   return (
     <div className={styles.tag}>
       <span className={styles.tagLabel}>{label}</span>
-      <TagList className={styles.tagList} tags={tags} format='title' />
+      <TagList link='/solutions' className={styles.tagList} tags={tags} format='title' />
     </div>
   )
 }

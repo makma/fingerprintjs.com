@@ -10,6 +10,7 @@ export interface TagListProps {
   activeTag?: string
   format?: 'upper' | 'title'
   direction?: 'horizontal' | 'vertical'
+  tagLink?: string
   link?: string
   tagsLimit?: number
   className?: string
@@ -20,6 +21,7 @@ export default function TagList({
   activeTag,
   format = 'upper',
   direction = 'horizontal',
+  tagLink,
   link,
   tagsLimit,
   className,
@@ -46,11 +48,11 @@ export default function TagList({
             { [styles.vertical]: direction === 'vertical' }
           )}
         >
-          {link ? (
+          {tagLink || link ? (
             tag === activeTag ? (
               <span className={classNames(styles.tag, styles.highlight)}>{formatTag(tag)}</span>
             ) : (
-              <Link to={`${link}${tag}/`} className={styles.tag}>
+              <Link to={link ?? `${tagLink}${tag}/`} className={styles.tag} state={{ selectedTag: tag }}>
                 {formatTag(tag)}
               </Link>
             )

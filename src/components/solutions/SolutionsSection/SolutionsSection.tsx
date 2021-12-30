@@ -4,8 +4,8 @@ import Grid from '../../Grid/Grid'
 import Container from '../../common/Container'
 import classNames from 'classnames'
 import { kebabToTitle, pluralize } from '../../../helpers/case'
-
 import styles from './SolutionsSection.module.scss'
+import { useLocation } from '@reach/router'
 
 export interface SolutionsSectionProps {
   solutions: Array<SolutionProps>
@@ -13,11 +13,22 @@ export interface SolutionsSectionProps {
   categoryTags: string[]
   industryTags: string[]
 }
+interface selectedTag {
+  selectedTag?: string
+}
+
 export default function SolutionsSection({ solutions, funnelTags, categoryTags, industryTags }: SolutionsSectionProps) {
-  const [selectedTags, setSelectedTags] = useState(new Set())
-  const [filteredSolutions, setFilteredSolutions] = useState(solutions)
+  const locationState = useLocation().state as selectedTag
+  const tagFromState = locationState?.selectedTag
+  const initialSolutions = tagFromState
+    ? solutions.filter((solution) => solution.tags?.some((tag) => tag === tagFromState))
+    : solutions
+
+  const [selectedTags, setSelectedTags] = useState(new Set(tagFromState ? [tagFromState] : []))
+
+  const [filteredSolutions, setFilteredSolutions] = useState(initialSolutions)
   const [fade, setFade] = useState(true)
-  const [numberOfSolutions, setNumberOfSolutions] = useState(solutions.length)
+  const [numberOfSolutions, setNumberOfSolutions] = useState(initialSolutions.length)
 
   // Funnel has the value "Other" and we want to show it at the end of the list
   // Since it is the only value that matters its position in the list, we simply send it at the end
