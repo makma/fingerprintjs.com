@@ -159,7 +159,7 @@ export default function Footer() {
               <CCPA_SVG />
               <GDPR_SVG />
             </div>
-            <div className={styles.copyrights}>&copy; 2021 FingerprintJS, Inc</div>
+            <div className={styles.copyrights}>&copy; 2022 FingerprintJS, Inc</div>
           </section>
         </nav>
       </Container>

@@ -72,19 +72,7 @@ export function LayoutTemplate({ children, siteMetadata }: LayoutTemplateProps) 
         <link rel='preconnect' href={TLS_ENDPOINT} />
         <link rel='preconnect' href={FPJS_VISITORS_ENDPOINT} />
       </Helmet>
-      {siteUrl?.includes('/pricing') ? (
-        <Header />
-      ) : (
-        <Header
-          headerBarTitle={
-            <span>
-              <strong>Prices are increasing January 1st.</strong> Lock in current pricing by becoming a paid customer
-              before 2022.
-            </span>
-          }
-          headerBarLinkUrl='/blog/price-change-2021/'
-        />
-      )}
+      <Header />
       {children}
       <Footer />
     </>

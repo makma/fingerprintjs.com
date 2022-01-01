@@ -71,3 +71,5 @@ export const defaultDataLayer = [{ branch: BRANCH }]
 
 // When changing this, some markdown files need to be changed as well.
 export const DEFAULT_TRIAL_DAYS = 10
+
+export const THOUSAND_IDENTIFICATIONS_PRICE = 0.002

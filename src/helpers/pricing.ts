@@ -1,3 +1,4 @@
+import { THOUSAND_IDENTIFICATIONS_PRICE } from '../constants/content'
 export const minimumIdentifications = 100000
 export const freeApiCalls = 20000
 
@@ -35,5 +36,5 @@ export function calculatePrice(identifications: number): string {
     notation: 'standard',
   }
 
-  return numberFormatter(currencyFormatOptions).format(identifications / 1000)
+  return numberFormatter(currencyFormatOptions).format(identifications * THOUSAND_IDENTIFICATIONS_PRICE)
 }
