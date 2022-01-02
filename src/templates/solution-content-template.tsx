@@ -102,7 +102,7 @@ export default function SolutionContentTemplate({
         <JoinCommunitySection
           title='Join the community'
           discordLink={URL.discordServerURL}
-          githubLink={URL.githubRepoUrl}
+          githubLink={URL.githubCommunityRepoUrl}
           {...starsLabel}
         >
           FingerprintJS’ open source technology is supported by contributing developers across the globe. Stay up to
