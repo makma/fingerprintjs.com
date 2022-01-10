@@ -1,5 +1,4 @@
 .container {
-  background-color: adjust-color(c('brand-water'), $lightness: 13%, $saturation: -5%);
   color: v('white');
 
   padding-top: rem(11px);
@@ -36,7 +35,7 @@
   }
 }
 
-.text,
+.text p,
 .arrow {
   font-size: rem(14px);
   letter-spacing: 0.04em;
@@ -54,7 +53,7 @@
     font-size: rem(10px);
   }
 }
-.text {
+.text p {
   @include media('<desktop') {
     &:after {
       content: ' →';

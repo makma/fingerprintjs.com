@@ -11,22 +11,46 @@ import { BASE_URL, URL } from '../../constants/content'
 import { defaultDataLayer } from '../../constants/content'
 import { enableAnalytics } from '../../helpers/gtm'
 import { useUserLocation } from '../../hooks/useUserLocation'
+import { useStaticQuery, graphql } from 'gatsby'
 
 interface LayoutProps {
   children: React.ReactNode
 }
 export function Layout({ children }: LayoutProps) {
   const siteMetadata = useSiteMetadata()
+  const data = useStaticQuery<GatsbyTypes.NotificationQueryQuery>(graphql`
+    query NotificationQuery {
+      notificationBarYaml {
+        arrowText
+        barBody
+        showNotBar
+        url
+        backgroundColor
+      }
+    }
+  `)
 
-  return <LayoutTemplate siteMetadata={siteMetadata}>{children}</LayoutTemplate>
+  return data.notificationBarYaml?.showNotBar ? (
+    <LayoutTemplate siteMetadata={siteMetadata} notificationBar={data.notificationBarYaml}>
+      {children}
+    </LayoutTemplate>
+  ) : (
+    <LayoutTemplate siteMetadata={siteMetadata}>{children}</LayoutTemplate>
+  )
 }
 
 interface LayoutTemplateProps extends LayoutProps {
   siteMetadata: GatsbyTypes.SiteSiteMetadata
+  notificationBar?: {
+    arrowText?: string
+    barBody?: string
+    url?: string
+    backgroundColor?: string
+  }
 }
 
 // We need this to not use static GraphQL queries in order use it in CMS preview (it runs it in browser directly)
-export function LayoutTemplate({ children, siteMetadata }: LayoutTemplateProps) {
+export function LayoutTemplate({ children, siteMetadata, notificationBar }: LayoutTemplateProps) {
   const { title, description, siteUrl, image } = siteMetadata
   const gtmToken = GTM_TOKEN
   const { isEuUser } = useUserLocation()
@@ -72,7 +96,7 @@ export function LayoutTemplate({ children, siteMetadata }: LayoutTemplateProps) 
         <link rel='preconnect' href={TLS_ENDPOINT} />
         <link rel='preconnect' href={FPJS_VISITORS_ENDPOINT} />
       </Helmet>
-      <Header />
+      <Header notificationBar={notificationBar} />
       {children}
       <Footer />
     </>

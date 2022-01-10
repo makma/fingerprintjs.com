@@ -89,6 +89,7 @@ module.exports = {
       options: {
         path: `${__dirname}/static`,
         name: 'uploads',
+        ignore: [`**/config.yml`],
       },
     },
     {
@@ -108,6 +109,7 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-transformer-yaml',
     {
       resolve: 'gatsby-transformer-remark',
       options: {

@@ -303,3 +303,15 @@ collections:
               },
             ],
         }
+  - label: Notification Bar
+    name: notificationBar
+    files:
+      - label: Configuration
+        name: notificationBar
+        file: 'content/notification-bar/notificationConfig.yml'
+        fields:
+          - { label: Show notification bar, name: showNotBar, widget: boolean, default: true }
+          - { label: Bar text, name: barBody, widget: markdown }
+          - { label: Arrow text, name: arrowText, widget: string, required: false }
+          - { label: URL, name: url, widget: string, required: false }
+          - { label: Background color, name: backgroundColor, widget: 'color' }

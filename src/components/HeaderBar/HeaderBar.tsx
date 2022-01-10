@@ -8,21 +8,23 @@ import styles from './HeaderBar.module.scss'
 export interface headerBarProps {
   children: React.ReactNode
   linkUrl?: string
+  arrowText?: string
+  backgroundColor?: string
 }
 
-export default function HeaderBar({ children, linkUrl }: headerBarProps) {
+export default function HeaderBar({ children, linkUrl, arrowText, backgroundColor }: headerBarProps) {
   return linkUrl ? (
-    <Container className={styles.container} size='large'>
+    <Container style={{ backgroundColor: backgroundColor ?? '#20265a' }} className={styles.container} size='large'>
       <div className={styles.headerBar}>
         {isLocalLink(linkUrl) ? (
           <Link className={styles.link} to={linkUrl}>
             <div className={styles.text}>{children}</div>
-            <div className={styles.arrow}>Learn more →</div>
+            {arrowText && <div className={styles.arrow}>{arrowText} →</div>}
           </Link>
         ) : (
           <a className={styles.link} href={linkUrl} target='_blank' rel='noreferrer'>
             <div className={styles.text}>{children}</div>
-            <div className={styles.arrow}>Learn more →</div>
+            {arrowText && <div className={styles.arrow}>{arrowText} →</div>}
           </a>
         )}
       </div>

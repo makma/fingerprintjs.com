@@ -20,10 +20,14 @@ import { useLocation } from '@reach/router'
 import styles from './Header.module.scss'
 
 interface HeaderProps {
-  headerBarTitle?: React.ReactNode
-  headerBarLinkUrl?: string
+  notificationBar?: {
+    arrowText?: string
+    barBody?: string
+    url?: string
+    backgroundColor?: string
+  }
 }
-export default function Header({ headerBarTitle, headerBarLinkUrl }: HeaderProps) {
+export default function Header({ notificationBar }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { pathname } = useLocation()
 
@@ -46,7 +50,15 @@ export default function Header({ headerBarTitle, headerBarLinkUrl }: HeaderProps
 
   return (
     <>
-      {headerBarTitle && <HeaderBar linkUrl={headerBarLinkUrl}>{headerBarTitle}</HeaderBar>}
+      {notificationBar && (
+        <HeaderBar
+          linkUrl={notificationBar.url}
+          arrowText={notificationBar.arrowText}
+          backgroundColor={notificationBar.backgroundColor}
+        >
+          {<div dangerouslySetInnerHTML={{ __html: notificationBar.barBody ?? '' }} />}
+        </HeaderBar>
+      )}
       <header className={styles.header}>
         <Navbar />
         <div className={styles.nav}>

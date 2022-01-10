@@ -290,5 +290,8 @@ exports.createSchemaCustomization = ({ actions }) => {
     type InlineCta{
       subtitle: String @md
     }
+    type NotificationBarYaml implements Node {
+      barBody: String @md
+    }
 `)
 }
