@@ -4,7 +4,7 @@ name: CI
 on: [push]
 jobs:
   checks:
-    name: 'CI checks: lint, prettier, build'
+    name: 'CI checks: lint, prettier, test, build'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -49,6 +49,9 @@ jobs:
 
       - name: run prettier
         run: yarn run prettier
+
+      - name: run test
+        run: yarn run test:ci
 
   lighthouse:
     name: Lighthouse
