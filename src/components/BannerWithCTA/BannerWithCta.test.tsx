@@ -1,5 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
+
 import BannerWithCTA from './BannerWithCTA'
 
 describe('Banner with CTA', () => {
@@ -9,6 +11,6 @@ describe('Banner with CTA', () => {
         test description
       </BannerWithCTA>
     )
-    console.log(component)
+    expect(component.container).toHaveTextContent('test description')
   })
 })
