@@ -15,4 +15,5 @@ module.exports = {
   testURL: `http://localhost`,
   setupFiles: [`<rootDir>/src/test/loadershim.js`],
   setupFilesAfterEnv: [`<rootDir>/src/test/setupTests.ts`],
+  automock: false,
 }

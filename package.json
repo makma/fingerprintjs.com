@@ -142,8 +142,5 @@
     "build-storybook": "build-storybook",
     "prettier": "prettier -c .",
     "prettier:fix": "prettier --write --loglevel=error ."
-  },
-  "jest": {
-    "automock": false
   }
 }
