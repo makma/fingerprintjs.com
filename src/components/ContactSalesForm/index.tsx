@@ -125,6 +125,7 @@ export default function ContactSalesForm() {
               <textarea
                 className={styles.textArea}
                 name='description'
+                id='description'
                 rows={3}
                 placeholder='Tell us about your project, needs, or any questions you may have'
                 onChange={(e) => setDescription(e.target.value)}
