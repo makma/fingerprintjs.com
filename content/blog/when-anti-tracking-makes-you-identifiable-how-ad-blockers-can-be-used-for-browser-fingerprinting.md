@@ -431,5 +431,4 @@ For higher identification accuracy, we also developed the [FingerprintJS Pro API
 
 * Star, follow or fork our [GitHub project](https://github.com/fingerprintjs/fingerprintjs)
 * Email us your questions at oss@fingerprintJS.com
-* Sign up to our [newsletter](https://mailchi.mp/708d84efc0c1/updates-signup) for updates
 * Join our team to work on exciting research in online security: work@fingerprintjs.com
