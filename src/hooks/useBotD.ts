@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import Botd, { BotdResponse } from '@fpjs-incubator/botd-agent'
+import Botd from '@fpjs-incubator/botd-agent'
+import { SuccessResponse } from '../types/botResponse'
 import { BOTD_PUBLIC_TOKEN, BOTD_SECRET_TOKEN, BOTD_VERIFY_ENDPOINT } from '../constants/env'
 import { getErrorMessage } from '../helpers/error'
 
 export const useBotD = () => {
-  type SuccessResponse = Extract<BotdResponse, { bot }>
   const [visitorData, setVisitorData] = useState<SuccessResponse>()
   const [hasError, setHasError] = useState(false)
   const [error, setError] = useState<string>()

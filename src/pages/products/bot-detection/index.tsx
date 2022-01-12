@@ -16,6 +16,7 @@ import JoinCommunitySection from '../../../components/botd/JoinCommunitySection/
 
 import useSiteMetadata from '../../../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
+import { useBotD } from '../../../hooks/useBotD'
 
 import styles from './botd.module.scss'
 
@@ -34,12 +35,13 @@ export default function Botd({ pageContext }: AccountSharingProps) {
     siteUrl: `${siteMetadata.siteUrl}${pathname}`,
   }
 
+  const { visitorData, isLoading, hasError, refresh } = useBotD()
   return (
     <LayoutTemplate siteMetadata={siteMetadata}>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
-      <HeroSection />
-      <GenerateKeySection />
-      <APIResponseDetailsSection />
+      <HeroSection visitorData={visitorData} isLoading={isLoading} hasError={hasError} refresh={refresh} />
+      <GenerateKeySection requestId={visitorData?.requestId} />
+      <APIResponseDetailsSection visitorData={visitorData} />
       <DocumentationSection />
       <IntegrationSection />
       <FeaturesSection />

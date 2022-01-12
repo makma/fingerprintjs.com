@@ -7,17 +7,25 @@ import classNames from 'classnames'
 import CodeWindowWithSelector from '../../common/CodeWindowWithSelector'
 import { copyToClipboard } from '../../../helpers/clipboard'
 import useLocalStorage from '../../../hooks/useLocalStorage'
+import { useVisitorData } from '../../../context/FpjsContext'
+
 import { ReactComponent as CopySVG } from '../../../img/CopySVG.svg'
 
 import { ReactComponent as DevSVG } from './DevSVG.svg'
 
 import styles from './GenerateKeySection.module.scss'
 
-export default function GenerateKeySection() {
+interface GenerateKeySectionProps {
+  requestId?: string
+}
+
+export default function GenerateKeySection({ requestId }: GenerateKeySectionProps) {
   const [email, setEmail] = useState('')
   const [formState, setFormState] = useState(FormState.Default)
 
   const [botDToken, setBotDToken] = useState({ publicKey: '<your-public-key>', secretKey: '' })
+
+  const { visitorData } = useVisitorData()
 
   interface MailKeys {
     usedEmail: string
@@ -46,7 +54,12 @@ export default function GenerateKeySection() {
       setFormState(FormState.Success)
     } else {
       try {
-        const response = await generateBotDToken(email)
+        const tag = {
+          ...(requestId && { requestId }),
+          ...(visitorData?.visitorId && { visitorId: visitorData?.visitorId }),
+        }
+
+        const response = await generateBotDToken(email, JSON.stringify(tag))
         const status = response.status
 
         if (status !== 200) {
