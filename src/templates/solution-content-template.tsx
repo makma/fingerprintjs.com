@@ -79,7 +79,7 @@ export default function SolutionContentTemplate({
             <iframe className={styles.iframe} src={iframeUrl} />
             <div className={styles.buttons}>
               <Button className={styles.button} href={shareUrl} size='big' openNewTab>
-                View demo in Stackblitz
+                Run demo in your browser
               </Button>
               <Button className={styles.button} href={docsUrl} variant='outline' size='big' openNewTab>
                 Documentation
