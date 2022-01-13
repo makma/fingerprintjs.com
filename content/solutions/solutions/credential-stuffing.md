@@ -43,7 +43,7 @@ Credential stuffing is a method of account takeover where an attacker attempts t
 2. An attacker uses automated tools to test the username and password pairs on a web application, noting any successful attempts.
 3. As soon as a successful login happens, an attacker uses credentials for profit. Depending on the service accessed, they may make fraudulent purchases, use the account for phishing or other scams, access private information, or sell the login credentials.
 
-## How FingerprintJS protects the login page
+## How FingerprintJS protects your login page
 
 ![How FingerprintJS protects the login page](/img/uploads/credential-stuffing-diagram2.png)
 
