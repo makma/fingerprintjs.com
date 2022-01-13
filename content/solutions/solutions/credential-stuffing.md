@@ -11,7 +11,7 @@ metadata:
 publishDate: 2021-11-12T15:48:01.198Z
 isPublished: true
 title: Credential stuffing
-description: Detect the automated injection of stolen usernames and passwords on
+description: Detect automated injection of stolen usernames and passwords on
   your login page before an attacker can do any damage.
 solutionCode:
   iframeUrl: https://stackblitz.com/edit/node-e9yupj?devtoolsheight=33&embed=1&file=docs/credential-stuffing.md
@@ -39,9 +39,9 @@ Credential stuffing is a method of account takeover where an attacker attempts t
 
 ![Attacker tries leaked credentials](/img/uploads/credential-stuffing-diagram1.png)
 
-1. The attacker access lists of username and password pairs collected from data breaches. Over 3 billion credentials were reported stolen in 2016, and major breaches are being reported constantly, refreshing the available data for fraudsters to test.
-2. The attacker uses automated tools to test the username and password pairs on a web application, noting any successful attempts.
-3. The attacker uses the successful login credentials for profit. Depending on the service accessed, they may make fraudulent purchases, use the account for phishing or other scams, access private information, or sell the login credentials.
+1. An attacker access lists of username and password pairs collected from data breaches. Over 3 billion credentials were reported stolen in 2016, and major breaches are being reported constantly, refreshing the available data for fraudsters to test.
+2. An attacker uses automated tools to test the username and password pairs on a web application, noting any successful attempts.
+3. An attacker uses the successful login credentials for profit. Depending on the service accessed, they may make fraudulent purchases, use the account for phishing or other scams, access private information, or sell the login credentials.
 
 ## How FingerprintJS protects the login page
 
