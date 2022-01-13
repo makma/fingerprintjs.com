@@ -14,8 +14,8 @@ title: Credential stuffing
 description: Detect the automated injection of stolen usernames and passwords on
   your login page before an attacker can do any damage.
 solutionCode:
-  iframeUrl: https://stackblitz.com/edit/node-e9yupj?ctl=1&embed=1&file=server/problems/CredentialStuffing.js&hideNavigation=1&view=editor
-  shareUrl: https://stackblitz.com/edit/node-e9yupj?file=server/problems/CredentialStuffing.js
+  iframeUrl: https://stackblitz.com/edit/node-e9yupj?devtoolsheight=33&embed=1&file=docs/credential-stuffing.md
+  shareUrl: https://stackblitz.com/edit/node-e9yupj?file=docs/credential-stuffing.md
   docsUrl: https://github.com/
 funnel:
   - Login
