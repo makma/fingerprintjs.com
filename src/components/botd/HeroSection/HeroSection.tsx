@@ -3,12 +3,12 @@ import Section from '../../common/Section'
 import Container from '../../common/Container'
 import Button from '../../common/Button'
 import { URL } from '../../../constants/content'
-import { useBotD } from '../../../hooks/useBotD'
 import Tippy from '@tippyjs/react'
 import Skeleton from '../../Skeleton/Skeleton'
 import { scrollToElementById } from '../../../helpers/scrollToElemenBytID'
 import { repeatElement } from '../../../helpers/repeatElement'
 import classNames from 'classnames'
+import { SuccessResponse } from '../../../types/botResponse'
 
 import { ReactComponent as GithubIconSvg } from './svg/GithubSVG.svg'
 
@@ -57,9 +57,13 @@ function botReducer(detectedBots: DetectedBots, updateDetectedBot: Action) {
   }
 }
 
-export default function HeroSection() {
-  const { visitorData, isLoading, hasError, refresh } = useBotD()
-
+interface HeroSectionProps {
+  visitorData?: SuccessResponse
+  isLoading?: boolean
+  hasError?: boolean
+  refresh: () => void
+}
+export default function HeroSection({ visitorData, isLoading, hasError, refresh }: HeroSectionProps) {
   const initialState = {
     isBot: false,
     automationTool: false,

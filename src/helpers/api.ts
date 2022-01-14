@@ -32,11 +32,12 @@ export async function createNewLead(
   })
 }
 
-export async function generateBotDToken(customerEmail: string) {
+export async function generateBotDToken(customerEmail: string, tag: string) {
   return fetch(BOTD_TOKEN_ENDPOINT, {
     method: 'POST',
     body: JSON.stringify({
       customer: customerEmail,
+      tag,
     }),
   })
 }

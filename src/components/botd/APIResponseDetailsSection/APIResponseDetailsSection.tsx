@@ -3,14 +3,16 @@ import Container from '../../common/Container'
 import CodeWindowWithSelector from '../../common/CodeWindowWithSelector'
 import Tippy from '@tippyjs/react'
 import classNames from 'classnames'
-import { useBotD } from '../../../hooks/useBotD'
-
+import { SuccessResponse } from '../../../types/botResponse'
 import { ReactComponent as InfoSvg } from './InfoIconSVG.svg'
 
 import styles from './APIResponseDetailsSection.module.scss'
 
-export default function GenerateKeySection() {
-  const { visitorData } = useBotD()
+interface APIResponseDetailsSectionProps {
+  visitorData?: SuccessResponse
+}
+
+export default function APIResponseDetailsSection({ visitorData }: APIResponseDetailsSectionProps) {
   const characterLength = 8.4
 
   return (

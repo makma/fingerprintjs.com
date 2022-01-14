@@ -14,6 +14,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
   download?: boolean
   openNewTab?: boolean
+  disabled?: boolean
 }
 
 export default memo(function Button({
@@ -28,6 +29,7 @@ export default memo(function Button({
   onClick,
   download,
   openNewTab,
+  disabled,
 }: ButtonProps) {
   const classes = classNames(
     styles.button,
@@ -37,6 +39,7 @@ export default memo(function Button({
     { [styles.white]: variant === 'white' },
     { [styles.small]: size === 'small' },
     { [styles.big]: size === 'big' },
+    { [styles.disabled]: disabled },
     className
   )
   const newTabProps = openNewTab && { target: '_blank', rel: 'noreferrer' }
