@@ -38,15 +38,21 @@ summary:
         increase in identification accuracy and put a stop to the vast majority
         of fake reviews.
       icon: /img/uploads/like.svg
+      iconAlt: Like
+      iconTitle: Like
     - title: Identified returning visitors using VPNs
       content: Pro’s VisitorID remained stable even as users attempted to
         conceal their identity, catching even the most sophisticated fake review
         services.
       icon: /img/uploads/incognito-1-.svg
+      iconAlt: Incognito
+      iconTitle: Incognito
     - title: Flexible solution for future fraud problems
       content: The company’s team plans to use FingerprintJS Pro to solve
         other fraud use cases in the future due to its flexibility and accuracy.
       icon: /img/uploads/loop.svg
+      iconAlt: Loop
+      iconTitle: Loop
 footer:
   ctaTitle: Get in Touch
   ctaSubtitle: Learn how FingerprintJS Pro can help your business build a custom

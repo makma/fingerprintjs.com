@@ -1,3 +1,3 @@
 ---
-name: Android
+name: android
 ---

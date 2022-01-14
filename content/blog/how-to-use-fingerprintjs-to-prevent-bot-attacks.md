@@ -22,6 +22,8 @@ authors:
   - Allan MacGregor
 heroImage:
   image: /img/uploads/prevent-bot-attacks-5-.png
+  imageAlt: Prevent bot attacks
+  imageTitle: Prevent bot attacks
 customCTA:
   openCtaNewTab: false
 ---

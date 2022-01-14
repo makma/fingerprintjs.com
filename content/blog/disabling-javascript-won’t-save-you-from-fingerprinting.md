@@ -18,6 +18,8 @@ authors:
   - Sergey Mostsevenko
 heroImage:
   image: /img/uploads/no-javascript-fingerprinting.png
+  imageAlt: No javascript fingerprinting
+  imageTitle: No javascript fingerprinting
 customCTA:
   openCtaNewTab: false
 isPublished: true

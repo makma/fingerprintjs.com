@@ -19,6 +19,8 @@ authors:
   - Aniket Bhattacharyea
 heroImage:
   image: /img/uploads/browser-fingerprints-in-php-1-.png
+  imageAlt: Browser fingerprinting in PHP
+  imageTitle: Browser fingerprinting in PHP
 ---
 Almost every web developer has to combat fraud at some point. Attacks might include malicious users trying to brute force passwords, place fraudulent orders, initiate bot attacks, or bypass your site’s paywall.
 

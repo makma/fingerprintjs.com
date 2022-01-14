@@ -143,7 +143,7 @@ exports.createPages = async ({ actions, graphql }) => {
     createPaginatedPages(
       numTagPages,
       postsPerPage,
-      `blog/tag/${tag}`,
+      `blog/tag/${tag.toLowerCase()}`,
       'src/templates/blog-tag.tsx',
       createPage,
       additionalContext
@@ -158,7 +158,7 @@ exports.createPages = async ({ actions, graphql }) => {
     createPaginatedPages(
       numAuthorPages,
       postsPerPage,
-      `blog/author/${author}`,
+      `blog/author/${author.toLowerCase()}`,
       'src/templates/author.tsx',
       createPage,
       additionalContext

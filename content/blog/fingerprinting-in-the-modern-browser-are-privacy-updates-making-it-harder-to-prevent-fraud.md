@@ -5,7 +5,7 @@ metadata:
   description: Are privacy updates making it harder to use browser fingerprinting
     for anti-fraud? We go through the major modern browsers and determine what
     is still possible to keep your website safe.
-  url: http://fingerprintjs.com/blog/browser-fingerprinting-privacy
+  url: https://fingerprintjs.com/blog/browser-fingerprinting-privacy
   image: /img/uploads/modern-browser.png
   imageAlt: Browser fingerprinting privacy shield
   imageTitle: Browser fingerprinting privacy shield

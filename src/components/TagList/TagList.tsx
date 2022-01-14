@@ -44,7 +44,7 @@ export default function TagList({
           {tag === activeTag ? (
             <span className={classNames(styles.tag, styles.highlight)}>{formatTag(tag)}</span>
           ) : (
-            <Link to={`/blog/tag/${tag}/`} className={styles.tag}>
+            <Link to={`/blog/tag/${tag.toLowerCase()}/`} className={styles.tag}>
               {formatTag(tag)}
             </Link>
           )}

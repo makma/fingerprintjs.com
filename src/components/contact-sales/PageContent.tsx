@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Container from '../../components/common/Container'
-import Section from '../../components/common/Section'
-import ContactSalesForm from '../../components/ContactSalesForm'
+import Container from '../common/Container'
+import Section from '../common/Section'
+import ContactSalesForm from '../ContactSalesForm'
 
 import styles from './contact-sales.module.scss'
 

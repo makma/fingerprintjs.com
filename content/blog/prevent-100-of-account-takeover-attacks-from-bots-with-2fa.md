@@ -19,6 +19,8 @@ authors:
   - Leon Yen
 heroImage:
   image: /img/uploads/prevent-100-of-account-takeover-attacks-from-bots-with-2fa.png
+  imageAlt: Account takeover
+  imageTitle: Account takeover
 customCTA:
   openCtaNewTab: false
 isPublished: true

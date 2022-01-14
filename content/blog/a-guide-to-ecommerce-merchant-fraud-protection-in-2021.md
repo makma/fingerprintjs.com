@@ -19,6 +19,8 @@ authors:
   - Leon Yen
 heroImage:
   image: /img/uploads/a-guide-to-ecommerce-merchant-fraud-protection-in-2024-1-.png
+  imageAlt: Ecommerce merchant fraud protection
+  imageTitle: Ecommerce merchant fraud protection
 customCTA:
   openCtaNewTab: false
 isPublished: true

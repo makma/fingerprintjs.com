@@ -19,7 +19,7 @@ export interface AuthorComponentProps {
 
 export default function AuthorComponent({ author, className }: AuthorComponentProps) {
   return (
-    <Link to={`/blog/author/${author.name}/`} className={classNames(className, styles.root)}>
+    <Link to={`/blog/author/${author.name.toLowerCase()}/`} className={classNames(className, styles.root)}>
       <PreviewCompatibleImage
         imageInfo={author.photo}
         altTag={`${author.name} photo`}

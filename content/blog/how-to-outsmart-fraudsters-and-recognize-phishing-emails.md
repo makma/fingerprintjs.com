@@ -21,8 +21,8 @@ tags:
 authors:
   - Leon Yen
 heroImage:
-  imageAlt: ""
-  imageTitle: ""
+  imageAlt: Pishing emails
+  imageTitle: Pishing emails
   image: /img/uploads/how-to-outsmart-fraudsters-recognise-phishing-emails-1-.png
 customCTA:
   openCtaNewTab: false

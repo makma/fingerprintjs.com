@@ -30,24 +30,25 @@ export const URL = {
   linkedinUrl: 'https://www.linkedin.com/company/fingerprintjs/',
   twitterUrl: 'https://twitter.com/FingerprintJs/',
   signupUrl: 'https://dashboard.fingerprintjs.com/signup',
-  statusUrl: 'https://status.fingerprintjs.com/',
+  statusUrl: 'https://status.fingerprintjs.com',
   supportMail: 'support@fingerprintjs.com',
   discordServerURL: 'https://discord.gg/ad6R2ttHVX',
 } as const
 
 export const MAILTO = { mailToUrl: `mailto:${URL.supportMail}` } as const
 
+// links to readme should not have trailing slash to prevent forwarding
 export const DOC_URL = {
-  documentationUrl: 'https://dev.fingerprintjs.com/',
-  getStartedUrl: 'https://dev.fingerprintjs.com/docs/quick-start-guide/',
-  proVsOpenUrl: 'https://dev.fingerprintjs.com/docs/pro-vs-open-source/',
-  browserFingerprintUrl: 'https://dev.fingerprintjs.com/docs/browser-fingerprinting/',
-  incognitoUrl: 'https://dev.fingerprintjs.com/docs/incognito-private-mode-detection/',
-  serverApiUrl: 'https://dev.fingerprintjs.com/docs/server-api/',
-  legalUrl: 'https://dev.fingerprintjs.com/docs/dpa-gdpr/',
-  termOfUseUrl: 'https://dev.fingerprintjs.com/docs/terms-of-service/',
-  privacyPolicyUrl: 'https://dev.fingerprintjs.com/docs/privacy-policy/',
-  browserSupportUrl: 'https://dev.fingerprintjs.com/docs/browser-support/',
+  documentationUrl: 'https://dev.fingerprintjs.com/docs',
+  getStartedUrl: 'https://dev.fingerprintjs.com/docs/quick-start-guide',
+  proVsOpenUrl: 'https://dev.fingerprintjs.com/docs/pro-vs-open-source',
+  browserFingerprintUrl: 'https://dev.fingerprintjs.com/docs/browser-fingerprinting',
+  incognitoUrl: 'https://dev.fingerprintjs.com/docs/incognito-private-mode-detection',
+  serverApiUrl: 'https://dev.fingerprintjs.com/docs/server-api',
+  legalUrl: 'https://dev.fingerprintjs.com/docs/dpa-gdpr',
+  termOfUseUrl: 'https://dev.fingerprintjs.com/docs/terms-of-service',
+  privacyPolicyUrl: 'https://dev.fingerprintjs.com/docs/privacy-policy',
+  browserSupportUrl: 'https://dev.fingerprintjs.com/docs/browser-support',
   webhooksUrl: 'https://dev.fingerprintjs.com/docs/webhooks',
   botDUrl: 'https://github.com/fingerprintjs/BotD#botd-currently-in-beta',
 } as const

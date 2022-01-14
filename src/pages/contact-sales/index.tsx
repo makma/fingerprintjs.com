@@ -5,7 +5,7 @@ import { LayoutTemplate } from '../../components/Layout'
 import { GeneratedPageContext } from '../../helpers/types'
 import BreadcrumbsSEO from '../../components/Breadcrumbs/BreadcrumbsSEO'
 
-import PageContent from './PageContent'
+import PageContent from '../../components/contact-sales/PageContent'
 
 interface ContactSalesPageProps {
   pageContext: GeneratedPageContext
