@@ -125,6 +125,7 @@ export default function ContactSalesForm() {
               <textarea
                 className={styles.textArea}
                 name='description'
+                id='description'
                 rows={3}
                 placeholder='Tell us about your project, needs, or any questions you may have'
                 onChange={(e) => setDescription(e.target.value)}
@@ -161,7 +162,7 @@ export default function ContactSalesForm() {
       {formState === FormState.Success && (
         <>
           <ConfirmSVG className={styles.logo} />
-          <h2 className={styles.message}>We’ll reach out to you shortly</h2>
+          <h2 className={styles.message}>We&apos;ll reach out to you shortly</h2>
         </>
       )}
     </Section>
