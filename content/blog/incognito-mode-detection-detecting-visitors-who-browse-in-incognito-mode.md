@@ -368,7 +368,7 @@ Finally, to see the “answer,” add the following in the HTML:
 
 Now, you’re ready to detect whether visitors are using Incognito mode or not.
 
-Let’s test this on different major browsers. Also, you can test using the live version deployed [here](https://fingerprintjs.com/demo).
+Let’s test this on different major browsers. Also, you can test using the live version deployed [here](https://fingerprintjs.com/demo/).
 
 ### Testing on Chrome
 
