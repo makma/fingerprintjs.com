@@ -4,8 +4,7 @@
 }
 
 .photo {
-  width: 6rem;
-  height: 6rem;
+  flex-shrink: 0;
 }
 
 .textContainer {
