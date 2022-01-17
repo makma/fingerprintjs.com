@@ -153,7 +153,12 @@ module.exports = {
       options: {
         ref: true,
         svgoConfig: {
-          plugins: [{ cleanupIDs: false }],
+          plugins: [
+            {
+              name: 'cleanupIDs',
+              active: false,
+            },
+          ],
         },
       },
     },
