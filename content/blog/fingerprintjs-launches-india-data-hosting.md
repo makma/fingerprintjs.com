@@ -25,7 +25,7 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 ---
-We are excited to announce the launch in India (Mumbai). This builds on top of our existing data centers in Europe and the USA.
+We are excited to announce the launch of data hosting in India (Mumbai). This builds on top of our existing data centers in Europe and the USA.
 
 The launch of the Mumbai region allows us to better support our existing Indian customers and fully reach compliance with India’s personal data protection requirements for all industries. This data center will also improve performance for Asia-based customers.
 
