@@ -53,9 +53,16 @@
       }
 
       .fpjsLogo {
-        width: rem(260px);
-        height: rem(36px);
+        object-fit: contain;
         margin-bottom: rem(16px);
+
+        @include media('>phone') {
+          height: auto;
+          width: rem(200px);
+        }
+        @include media('<=phone') {
+          width: rem(140px);
+        }
       }
     }
 

@@ -98,15 +98,12 @@
 .logo {
   object-fit: contain;
 
-  @include media('>tablet') {
+  @include media('>phone') {
     height: auto;
-    width: 200px;
-  }
-  @include media('<=tablet') {
-    width: 150px;
+    width: rem(200px);
   }
   @include media('<=phone') {
-    width: 120px;
+    width: rem(140px);
   }
 }
 
