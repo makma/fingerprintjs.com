@@ -4,6 +4,8 @@ import GetStartedForm from '../GetStartedForm'
 import Container from '../common/Container'
 import Section from '../common/Section'
 import { useMainBackgroundImage } from '../../hooks/useBackgroundImage'
+import { ReactComponent as InfoSvg } from '../../img/info.svg'
+import Tippy from '@tippyjs/react'
 
 import styles from './LiveDemoSection.module.scss'
 
@@ -20,11 +22,17 @@ export default function LiveDemoSection() {
     >
       <Container size='large' className={styles.container}>
         <header className={styles.header}>
-          <h1 className={styles.title}>Browser Fingerprinting API</h1>
+          <h1 className={styles.title}>The highest accuracy device identification for mobile and web</h1>
           <p className={styles.description}>
-            Stop fraud, spam, and account takeovers with
-            <em> 99.5% accurate </em>
-            browser fingerprinting as a service.
+            Stop fraud, spam, and account takeover with
+            <em>
+              {' '}
+              99.5% accurate
+              <Tippy content='Leading device identification competitors offer 40-60% accuracy.'>
+                <InfoSvg tabIndex={0} />
+              </Tippy>{' '}
+            </em>
+            device fingerprinting as a service.
           </p>
           <GetStartedForm className={styles.form} />
         </header>

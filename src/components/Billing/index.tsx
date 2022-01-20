@@ -70,7 +70,7 @@ export default function Billing() {
               <Link to={PATH.contactSales} style={{ cursor: 'pointer', textDecoration: 'underline' }}>
                 Contact sales
               </Link>{' '}
-              for an enterprise license, 99.9% uptime SLA and 24/7 dedicated support.
+              for an enterprise license, 99.9% uptime SLA and dedicated support.
             </p>
           </div>
           <div className={styles.payment}>

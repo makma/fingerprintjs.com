@@ -99,7 +99,7 @@
   }
 
   @include media('<=phoneLandscape') {
-    padding: 0 3rem;
+    padding: 0 rem(20px);
   }
 }
 
@@ -112,4 +112,18 @@
 .description {
   font-size: 3rem;
   margin: 3rem 0 5rem 0;
+
+  svg {
+    margin: 0 0 rem(2px) rem(4px);
+    width: rem(16px);
+    height: rem(16px);
+    fill: v('brand-fire');
+  }
+}
+
+.title,
+.description {
+  @include media('<=phoneLandscape') {
+    text-align: left;
+  }
 }
