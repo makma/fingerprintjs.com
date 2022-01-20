@@ -10,14 +10,21 @@ export interface TagListProps {
   activeTag?: string
   format?: 'upper' | 'title'
   direction?: 'horizontal' | 'vertical'
+  tagLink?: string
+  link?: string
   tagsLimit?: number
+  className?: string
 }
+
 export default function TagList({
   tags,
   activeTag,
   format = 'upper',
   direction = 'horizontal',
+  tagLink,
+  link,
   tagsLimit,
+  className,
 }: TagListProps) {
   function formatTag(tag: string) {
     switch (format) {
@@ -31,7 +38,7 @@ export default function TagList({
   const limit = tagsLimit ? tagsLimit : tags.length
 
   return (
-    <ul className={styles.root}>
+    <ul className={classNames(styles.root, className)}>
       {tags?.slice(-limit).map((tag) => (
         <li
           key={tag}
@@ -41,12 +48,18 @@ export default function TagList({
             { [styles.vertical]: direction === 'vertical' }
           )}
         >
-          {tag === activeTag ? (
-            <span className={classNames(styles.tag, styles.highlight)}>{formatTag(tag)}</span>
+          {tagLink || link ? (
+            tag === activeTag ? (
+              <span className={classNames(styles.tag, styles.highlight)}>{formatTag(tag)}</span>
+            ) : (
+              <Link to={link ?? `${tagLink}${tag.toLowerCase()}/`} className={styles.tag} state={{ selectedTag: tag }}>
+                {formatTag(tag)}
+              </Link>
+            )
           ) : (
-            <Link to={`/blog/tag/${tag.toLowerCase()}/`} className={styles.tag}>
+            <span style={{ borderColor: '#f2f2f7' }} className={classNames(styles.tagNoLink)}>
               {formatTag(tag)}
-            </Link>
+            </span>
           )}
         </li>
       ))}

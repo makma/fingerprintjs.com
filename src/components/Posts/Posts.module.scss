@@ -31,32 +31,6 @@
   }
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
-
-  @include media('<=desktop') {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include media('<=tabletWide') {
-    grid-template-columns: 1fr;
-  }
-}
-
-.threePerRow {
-  grid-template-columns: repeat(3, 1fr);
-
-  @include media('<=desktop') {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include media('<=tabletWide') {
-    grid-template-columns: 1fr;
-  }
-}
-
 .tags {
   min-width: 20rem;
   margin-right: 4rem;
@@ -70,8 +44,7 @@
   }
 }
 
-.swiperSection,
-.grid {
+.swiperSection {
   margin-top: rem(52px);
 
   @include media('<=tabletWide') {

@@ -1,0 +1,27 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  margin-top: rem(52px);
+
+  @include media('<=desktop') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media('<=tabletWide') {
+    grid-template-columns: 1fr;
+    margin-top: rem(28px);
+  }
+}
+
+.threePerRow {
+  grid-template-columns: repeat(3, 1fr);
+
+  @include media('<=desktop') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media('<=tabletWide') {
+    grid-template-columns: 1fr;
+  }
+}

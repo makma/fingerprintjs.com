@@ -59,7 +59,7 @@ export default function LongFormContentTemplate({
       <Section className={styles.root}>
         <Container className={styles.container}>
           <header className={styles.header}>
-            {tags && <TagList tags={tags} format='title' tagsLimit={3} />}
+            {tags && <TagList tagLink='/blog/tag/' tags={tags} format='title' tagsLimit={3} />}
             <h1 className={styles.title}>{post.title}</h1>
             <div className={classNames(styles.actionBar, styles.desktopOnly)}>
               <ActionBar {...actionBar} />

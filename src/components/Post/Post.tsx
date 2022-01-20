@@ -20,7 +20,7 @@ export interface PostProps {
   tags?: string[]
   activeTag?: string
   variant?: 'card' | 'wide'
-  perRow?: 'four' | 'three'
+  perRow?: 3 | 4
   limitTextLines?: boolean
   className?: string
 }
@@ -48,7 +48,7 @@ export default function Post({
       {imageFluid && (
         <div
           className={classNames(styles.wrapper, {
-            [styles.threePerRow]: perRow === 'three',
+            [styles.threePerRow]: perRow === 3,
             [styles.wideWrapper]: variant === 'wide',
           })}
         >
@@ -68,7 +68,7 @@ export default function Post({
           <p className={classNames(styles.description, { [styles.descriptionLimit]: limitTextLines })}>{description}</p>
         </div>
 
-        {tags && <TagList tags={tags} activeTag={activeTag} format='title' />}
+        {tags && <TagList tagLink='/blog/tag/' tags={tags} activeTag={activeTag} format='title' />}
       </div>
     </Link>
   )

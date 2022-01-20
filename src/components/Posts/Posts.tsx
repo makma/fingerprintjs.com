@@ -4,30 +4,60 @@ import classNames from 'classnames'
 import TagList from '../TagList/TagList'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper'
+import Grid from '../Grid/Grid'
 
-import styles from './PostGrid.module.scss'
+import styles from './Posts.module.scss'
 
-export interface PostGridProps {
+export interface PostsProps {
   posts: Array<PostProps>
   name?: string
   link?: React.ReactNode
   tags?: string[]
-  perRow?: 'four' | 'three'
+  perRow?: 3 | 4
   nameIsCentered?: boolean
   limitPostLines?: boolean
   useSwiper?: boolean
 }
-export default function PostGrid({
+export default function Posts({
   posts,
   name,
   nameIsCentered,
   link,
   tags,
-  perRow = 'four',
+  perRow = 4,
   limitPostLines,
   useSwiper = false,
-}: PostGridProps) {
+}: PostsProps) {
   return useSwiper ? (
+    <SwiperPosts
+      posts={posts}
+      name={name}
+      nameIsCentered={nameIsCentered}
+      perRow={perRow}
+      limitPostLines={limitPostLines}
+    />
+  ) : (
+    <PostGrid
+      posts={posts}
+      name={name}
+      nameIsCentered={nameIsCentered}
+      link={link}
+      perRow={perRow}
+      tags={tags}
+      limitPostLines={limitPostLines}
+    />
+  )
+}
+
+interface SwiperPostsProps {
+  posts: Array<PostProps>
+  name?: string
+  perRow?: 3 | 4
+  nameIsCentered?: boolean
+  limitPostLines?: boolean
+}
+function SwiperPosts({ name, nameIsCentered, perRow, limitPostLines, posts }: SwiperPostsProps) {
+  return (
     <>
       <div className={classNames(styles.row, { [styles.alignNameCenter]: nameIsCentered })}>
         <h2 className={styles.name}>{name}</h2>
@@ -66,21 +96,31 @@ export default function PostGrid({
           <div className={classNames('swiper-pagination', styles.bullets)} />
         </Swiper>
       </div>
-      <div className={classNames(styles.grid, styles.desktopOnly)}>
-        {posts.map((post) => {
+      <Grid
+        items={posts.map((post) => {
           return <Post perRow={perRow} key={post.path} limitTextLines={limitPostLines} {...post} />
         })}
-      </div>
+        perRow={perRow}
+        className={styles.desktopOnly}
+      />
     </>
-  ) : (
+  )
+}
+
+interface PostGridProps extends SwiperPostsProps {
+  link?: React.ReactNode
+  tags?: string[]
+  className?: string | string[]
+}
+function PostGrid({ posts, name, link, tags, perRow, nameIsCentered, limitPostLines }: PostGridProps) {
+  return (
     <div className={styles.root}>
       {tags && (
         <div className={styles.tags}>
           <h2>Tags</h2>
-          <TagList tags={tags} direction='vertical' format='title' />
+          <TagList tagLink='/blog/tag/' tags={tags} direction='vertical' format='title' />
         </div>
       )}
-
       <div className={styles.posts}>
         {name && (
           <div className={classNames(styles.row, { [styles.alignNameCenter]: nameIsCentered })}>
@@ -88,11 +128,12 @@ export default function PostGrid({
             {link}
           </div>
         )}
-        <div className={classNames(styles.grid, { [styles.threePerRow]: perRow === 'three' })}>
-          {posts.map((post) => {
+        <Grid
+          items={posts.map((post) => {
             return <Post perRow={perRow} key={post.path} limitTextLines={limitPostLines} {...post} />
           })}
-        </div>
+          perRow={perRow}
+        />
       </div>
     </div>
   )

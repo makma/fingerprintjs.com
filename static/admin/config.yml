@@ -134,7 +134,7 @@ collections:
       - { label: Title, name: title, widget: string, default: 'Default Title' }
       - { label: Publish article, name: isPublished, widget: boolean, default: true }
       - name: tags
-        label: Tags
+        label: Blog Tags
         widget: relation
         collection: 'tag'
         searchFields: ['name']
@@ -183,7 +183,7 @@ collections:
         }
       - { label: Body, name: body, widget: markdown }
   - name: 'tag'
-    label: 'Tag'
+    label: 'Blog Tags'
     folder: content/tag
     create: true
     fields:
@@ -302,6 +302,110 @@ collections:
                 default: 'Learn how FingerprintJS Pro can help your business build a custom solution to prevent online fraud.',
               },
             ],
+        }
+  - name: 'solutions'
+    label: 'Solutions'
+    folder: content/solutions/solutions
+    create: true
+    delete: true
+    fields:
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'solution-content' }
+      - {
+          label: Metadata,
+          name: metadata,
+          widget: object,
+          fields:
+            [
+              { label: Title, name: title, widget: string, default: 'Default Title' },
+              { label: Description, name: description, widget: string },
+              { label: URL, name: url, widget: string },
+              { label: Cover Image, name: image, widget: image },
+              { label: Image Alt, name: imageAlt, widget: string, required: false },
+              { label: Image Title, name: imageTitle, widget: string, required: false },
+              { label: Social Share Image (2:1 ratio), name: socialImage, widget: image, required: false },
+            ],
+        }
+      - { label: Publish date, name: publishDate, widget: datetime }
+      - { label: Publish solution, name: isPublished, widget: boolean, default: true }
+      - { label: Title, name: title, widget: string, default: 'Default Title' }
+      - { label: Description, name: description, widget: string }
+      - {
+          label: Solution Code,
+          name: solutionCode,
+          widget: object,
+          fields:
+            [
+              { label: Embed URL, name: iframeUrl, widget: string },
+              { label: Share URL, name: shareUrl, widget: string },
+              { label: Documentation URL, name: docsUrl, widget: string },
+            ],
+        }
+      - name: funnel
+        label: Funnel
+        widget: relation
+        collection: 'funnel'
+        searchFields: ['name']
+        valueField: 'name'
+        displayFields: ['name']
+        multiple: true
+        default: ['Other']
+      - name: category
+        label: Category
+        widget: relation
+        collection: 'category'
+        searchFields: ['name']
+        valueField: 'name'
+        displayFields: ['name']
+        multiple: true
+        default: ['Authentication']
+      - name: industry
+        label: Industry
+        widget: relation
+        collection: 'industry'
+        searchFields: ['name']
+        valueField: 'name'
+        displayFields: ['name']
+        multiple: true
+        default: ['Payment Processing']
+      - { label: Body, name: body, widget: markdown }
+      - label: 'Bottom links'
+        name: 'bottomLinks'
+        widget: 'list'
+        fields:
+          - { label: 'Text', name: 'text', widget: 'string' }
+          - { label: 'URL', name: 'url', widget: 'string' }
+  - name: 'funnel'
+    label: 'Funnel Tags'
+    folder: content/solutions/tags/funnel
+    create: true
+    fields:
+      - {
+          label: 'Name',
+          name: 'name',
+          widget: string,
+          pattern: ['[a-z]+[a-z\-]*', 'Must be all lowercase words, optionally separated by a "-".'],
+        }
+  - name: 'category'
+    label: 'Category Tags'
+    folder: content/solutions/tags/category
+    create: true
+    fields:
+      - {
+          label: 'Name',
+          name: 'name',
+          widget: string,
+          pattern: ['[a-z]+[a-z\-]*', 'Must be all lowercase words, optionally separated by a "-".'],
+        }
+  - name: 'industry'
+    label: 'Industry Tags'
+    folder: content/solutions/tags/industry
+    create: true
+    fields:
+      - {
+          label: 'Name',
+          name: 'name',
+          widget: string,
+          pattern: ['[a-z]+[a-z\-]*', 'Must be all lowercase words, optionally separated by a "-".'],
         }
   - label: Notification Bar
     name: notificationBar

@@ -60,36 +60,41 @@ $bigMargin: 6rem;
   }
 
   h1 {
-    font-size: 4rem;
+    font-size: rem(44px);
+    line-height: 120%;
+    letter-spacing: -0.01em;
 
     @include media('<=phoneLandscape') {
-      font-size: rem(29px);
+      font-size: rem(26px);
     }
   }
   h2 {
-    font-size: 3.75rem;
+    font-size: rem(32px);
+    line-height: 130%;
+    letter-spacing: -0.01em;
 
     @include media('<=phoneLandscape') {
-      font-size: rem(27px);
+      font-size: rem(24px);
     }
   }
 
   h3 {
-    font-size: 3rem;
+    @include sans($size: 24px, $weight: 600, $lh: 150%);
+    letter-spacing: 0.01em;
 
     @include media('<=phoneLandscape') {
-      font-size: rem(25px);
+      font-size: rem(18px);
     }
   }
 
   @for $index from 4 through 6 {
     h#{$index} {
-      font-size: 2.75rem;
+      @include sans($size: 20px, $weight: 600, $lh: 150%);
     }
   }
 
   p {
-    font-size: 2.6rem;
+    @include sans($size: 20px, $weight: 400, $lh: 150%);
     overflow-wrap: break-word;
 
     @include media('<=phoneLandscape') {
@@ -108,7 +113,7 @@ $bigMargin: 6rem;
       margin: 0;
       padding: 0;
 
-      font-size: 2.6rem;
+      font-size: rem(20px);
 
       @include media('<=phoneLandscape') {
         font-size: rem(18px);
