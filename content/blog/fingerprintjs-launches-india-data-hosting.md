@@ -35,7 +35,7 @@ We’re focused on supporting the continued growth of our global customer base. 
 
 You can select Asia API (Mumbai) when creating a new account. We recommend any prospects in Asia or the Middle East select this data center on signup for best performance.
 
-![Signup India hosting selection](/img/uploads/image-11-.png "Signup India hosting selection")
+![Signup India hosting selection](/img/uploads/india-region-selector.png "Signup India hosting selection")
 
 ### For current customers
 
