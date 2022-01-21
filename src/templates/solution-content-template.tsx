@@ -9,7 +9,7 @@ import { SolutionProps } from '../components/solutions/Solution/Solution'
 import JoinCommunitySection from '../components/JoinCommunitySection/JoinCommunitySection'
 import RelatedSolutions from '../components/RelatedSolutions/RelatedSolutions'
 import { URL } from '../constants/content'
-import { useGithub } from '../context/GithubContext'
+import { useGithubFpjs } from '../context/GithubContext'
 
 import TagList from '../components/TagList/TagList'
 
@@ -51,7 +51,7 @@ export default function SolutionContentTemplate({
   bottomLinks,
 }: TemplateProps) {
   const ContentComponent = contentComponent ?? Content
-  const { githubData } = useGithub()
+  const { githubData } = useGithubFpjs()
   const starsLabel = githubData && {
     labels: [`${Math.floor(githubData?.stargazers_count / 1000)}K+ Stars`],
   }

@@ -21,8 +21,8 @@ export const PATH = {
 
 export const URL = {
   githubRepoUrl: 'https://github.com/fingerprintjs/fingerprintjs/',
+  githubApiUrl: 'https://api.github.com/repos/fingerprintjs',
   githubCommunityRepoUrl: 'https://github.com/fingerprintjs/home',
-  githubApiUrl: 'https://api.github.com/repos/fingerprintjs/fingerprintjs',
   botDRepoUrl: 'https://github.com/fingerprintjs/BotD',
   botDIntegrationsRepoUrl: 'https://github.com/fingerprintjs/botd-integrations',
   dashboardLoginUrl: 'https://dashboard.fingerprintjs.com/login',

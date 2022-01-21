@@ -5,14 +5,14 @@ import classNames from 'classnames'
 import { URL } from '../../constants/content'
 import { numberFormatter } from '../../helpers/format'
 
-import { useGithub } from '../../context/GithubContext'
+import { useGithubFpjs } from '../../context/GithubContext'
 
 interface GithubButtonProps {
   className?: string | string[]
   variant?: 'primary' | 'white'
 }
 export default function GithubButton({ className, variant = 'primary' }: GithubButtonProps) {
-  const { githubData } = useGithub()
+  const { githubData } = useGithubFpjs()
 
   return (
     <a

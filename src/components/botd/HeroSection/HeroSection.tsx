@@ -9,6 +9,7 @@ import { scrollToElementById } from '../../../helpers/scrollToElemenBytID'
 import { repeatElement } from '../../../helpers/repeatElement'
 import classNames from 'classnames'
 import { SuccessResponse } from '../../../types/botResponse'
+import { useGithub } from '../../../hooks/useGithub'
 
 import { ReactComponent as GithubIconSvg } from './svg/GithubSVG.svg'
 
@@ -90,10 +91,15 @@ export default function HeroSection({ visitorData, isLoading, hasError, refresh 
     }
   }, [visitorData])
 
+  const { githubData } = useGithub('BotD')
+
   return (
     <Container className={styles.container}>
       <Section className={styles.descriptionSection}>
-        <h1 className={styles.title}>free open beta</h1>
+        <div className={styles.labels}>
+          <span className={styles.title}>free open beta</span>
+          <span className={styles.title}>{githubData?.stargazers_count} stars</span>
+        </div>
         <h2 className={styles.subTitle}>
           Introducing BotD:
           <br />
