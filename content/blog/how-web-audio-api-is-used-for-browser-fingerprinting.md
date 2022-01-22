@@ -12,6 +12,7 @@ metadata:
 featured: true
 publishDate: 2021-03-18T13:12:29.612Z
 title: How the Web Audio API is used for audio fingerprinting
+isPublished: true
 tags:
   - fingerprinting
   - js
@@ -19,7 +20,6 @@ tags:
   - web
 authors:
   - Savannah Copland
-isPublished: true
 ---
 Did you know that you can identify web browsers without using cookies or asking for permissions?\
 \
@@ -373,5 +373,4 @@ For higher identification accuracy, we also developed the <a href="https://finge
 
 * Star, follow or fork our <a href="https://github.com/fingerprintjs/fingerprintjs" target="_blank" rel="noopener"><span>GitHub project</span></a>
 * Email us your questions at oss@fingerprintJS.com
-* Sign up to our <a href="https://mailchi.mp/708d84efc0c1/updates-signup" target="_blank" rel="noopener"><span>newsletter</span></a> for updates
 * Join our team to work on exciting research in online security: <a href="mailto:work@fingerprintjs.com" target="_blank" rel="noopener"><span>work@fingerprintjs.com</span></a>
