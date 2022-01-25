@@ -32,7 +32,7 @@ export default function ServerApiSection() {
         <div className={styles.content}>
           <CodeWindow
             code={`curl https://api.fpjs.io/visitors/:visitId \\
-  -H 'Authorization: Bearer eyJ0eXAiOiJKV1...'`}
+  -H 'Auth-Token: Bearer eyJ0eXAiOiJKV1...'`}
           />
           <CodeWindow
             code={`{
