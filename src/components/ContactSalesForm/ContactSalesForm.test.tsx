@@ -1,12 +1,17 @@
 import React from 'react'
 import { renderWithProviders, screen } from '../../test/test-utils'
 import userEvent from '@testing-library/user-event'
+import * as FPJS from '@fingerprintjs/fingerprintjs-pro'
 
 import ContactSalesForm from './index'
 
 describe('Contact Sales Form', () => {
   beforeEach(() => {
     fetchMock.resetMocks()
+    const fpjsLoadMock = FPJS.load as jest.Mock
+    fpjsLoadMock.mockResolvedValue({
+      get: jest.fn().mockResolvedValue('n/a'),
+    })
   })
 
   it('should show a success message if the form is submitted correctly', async () => {

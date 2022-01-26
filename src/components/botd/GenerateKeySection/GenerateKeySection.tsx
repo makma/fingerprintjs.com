@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Container from '../../common/Container'
 import Button from '../../common/Button'
+import { useForm, Forms } from '../../../hooks/useForm'
 import { FormState } from '../../../types/FormState'
 import { generateBotDToken } from '../../../helpers/api'
 import classNames from 'classnames'
@@ -21,7 +22,7 @@ interface GenerateKeySectionProps {
 
 export default function GenerateKeySection({ requestId }: GenerateKeySectionProps) {
   const [email, setEmail] = useState('')
-  const [formState, setFormState] = useState(FormState.Default)
+  const { formState, updateFormState } = useForm(Forms.BotdGenerateToken)
 
   const [botDToken, setBotDToken] = useState({ publicKey: '<your-public-key>', secretKey: '' })
 
@@ -40,13 +41,12 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
   async function handleSubmit(e) {
     e.preventDefault()
 
-    setFormState(FormState.Loading)
+    updateFormState(FormState.Loading)
 
     function onError() {
-      setFormState(FormState.Failed)
-
+      updateFormState(FormState.Failed)
       setTimeout(() => {
-        setFormState(FormState.Default)
+        updateFormState(FormState.Default)
       }, 5000)
     }
 
@@ -54,7 +54,7 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
 
     if (usedKeys) {
       setBotDToken({ publicKey: usedKeys.publicKey, secretKey: usedKeys.secretKey })
-      setFormState(FormState.Success)
+      updateFormState(FormState.Success)
     } else {
       try {
         const tag = {
@@ -68,7 +68,7 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
         if (status !== 200) {
           onError()
         } else {
-          setFormState(FormState.Success)
+          updateFormState(FormState.Success)
           const data = await response.json()
 
           const publicKey = data?.publicKey
@@ -87,6 +87,18 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
       }
     }
   }
+
+  // Check before the first render if the status is successful and in this case show the last key saved in local storage
+  useEffect(() => {
+    if (formState === FormState.Success) {
+      const sessionKey = usedEmails[usedEmails.length - 1]
+      if (sessionKey) {
+        setBotDToken({ publicKey: sessionKey.publicKey, secretKey: sessionKey.secretKey })
+        return
+      }
+    }
+    updateFormState(FormState.Default)
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Container className={styles.container}>
