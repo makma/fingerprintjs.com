@@ -7,16 +7,18 @@ import { GeneratedPageContext } from '../helpers/types'
 import { useLocation } from '@reach/router'
 import useSiteMetadata from '../hooks/useSiteMetadata'
 import PaginationNav from '../components/PaginationNav/PaginationNav'
-import { mapToPost } from '../components/Post/Post'
-import Posts from '../components/Posts/Posts'
+
 import BreadcrumbsSEO from '../components/Breadcrumbs/BreadcrumbsSEO'
+import Grid from '../components/Grid/Grid'
+import CaseStudy, { mapToCaseStudy } from '../components/CaseStudy/CaseStudy'
 
 interface CaseStudyProps {
   data: GatsbyTypes.CaseStudiesQuery
   pageContext: CaseStudiesContext
 }
 export default function CaseStudies({ data, pageContext }: CaseStudyProps) {
-  const { edges: posts } = data.posts
+  const { edges: caseStudiesData } = data.caseStudies
+  const caseStudies = caseStudiesData.map(({ node }) => mapToCaseStudy(node))
   const breadcrumbs = pageContext.breadcrumb.crumbs
 
   const { pathname } = useLocation()
@@ -38,8 +40,12 @@ export default function CaseStudies({ data, pageContext }: CaseStudyProps) {
         <Container size='large'>
           <h1>Case Studies</h1>
 
-          <Posts posts={posts.map(({ node }) => node).map((node) => mapToPost(node))} perRow={4} />
-
+          <Grid
+            items={caseStudies.map((caseStudy) => {
+              return <CaseStudy key={caseStudy.path} {...caseStudy} />
+            })}
+            perRow={4}
+          />
           <PaginationNav currentPage={currentPage} numPages={numPages} basePath='/case-studies/' />
         </Container>
       </Section>
@@ -49,12 +55,12 @@ export default function CaseStudies({ data, pageContext }: CaseStudyProps) {
 
 export const pageQuery = graphql`
   query CaseStudies($skip: Int!, $limit: Int!) {
-    posts: allMarkdownRemark(
+    caseStudies: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/(case-study)/.*\\.md$/" } }
       limit: $limit
       skip: $skip
     ) {
-      ...PostData
+      ...CaseStudyData
     }
   }
 `
