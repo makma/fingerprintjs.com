@@ -21,19 +21,19 @@
 }
 
 .wide {
-  margin-top: 2rem;
+  margin-top: rem(44px);
+
+  @include media('<=tabletWide') {
+    margin-top: rem(32px);
+  }
 
   .content {
     &:before {
-      content: 'FEATURED ARTICLE';
+      content: 'FEATURED';
       position: relative;
       display: block;
-      margin-bottom: 3rem;
-
-      font-family: v('ff-mono');
-      font-weight: v('bold');
-
-      color: c('brand-fire');
+      @include sans($size: 14px, $weight: 600, $lh: 140%, $color: adjust-color(c('brand-water'), $alpha: -0.5));
+      letter-spacing: 0.04em;
     }
   }
 
@@ -43,65 +43,60 @@
 
   @include media('>tabletWide') {
     display: grid;
-    gap: 3rem;
-
-    grid-template-columns: 3fr 1fr;
-    grid-template-areas: 'content image';
+    grid-template-columns: 1fr 1fr;
 
     justify-content: space-around;
 
     min-height: 35rem;
 
-    @include media('<=desktop') {
-      grid-template-columns: 2fr 2fr;
-    }
-
     .content {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      grid-area: content;
+      justify-content: flex-start;
 
-      padding: 4rem;
+      padding: rem(28px);
     }
 
     .title {
-      font-size: 3rem;
+      font-size: rem(36px);
+
+      @include media('<=desktop') {
+        font-size: rem(20px);
+      }
     }
 
     .description {
-      font-size: 2rem;
+      font-size: rem(16px);
+
+      @include media('<=desktop') {
+        font-size: rem(14px);
+      }
     }
 
     .wrapper {
-      height: 100%;
+      width: 100%;
+      aspect-ratio: 1.7;
       padding: 0;
     }
 
     .image {
-      grid-area: image;
-      width: rem(540px);
-
       object-fit: cover;
       object-position: center;
     }
+  }
+  .description {
+    margin-bottom: rem(16px);
+  }
+  .tagList {
+    margin-top: auto;
   }
 }
 
 .wrapper {
   display: flex;
-}
-
-.wideWrapper {
-  height: 170px;
-
-  @include media('>phoneLandscape', '<=desktop') {
-    height: 360px;
-  }
-}
-
-.threePerRow {
-  height: 200px;
+  width: 100%;
+  aspect-ratio: 1.7;
+  padding: 0;
 }
 
 .image {

@@ -1,4 +1,4 @@
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import React from 'react'
 import Section from '../components/common/Section'
 import { LayoutTemplate } from '../components/Layout'
@@ -18,7 +18,9 @@ interface BlogProps {
 }
 export default function Blog({ data, pageContext }: BlogProps) {
   const { edges: posts } = data.posts
-  const { edges: featuredPosts } = data.featuredPosts
+  const { edges: featuredPostsEdges } = data.featuredPosts
+  const featuredPosts: Array<PostProps> = featuredPostsEdges.map(({ node }) => mapToPost(node))
+
   const tags = data.tags.group.map(({ tag }) => tag) as string[]
   const { pathname } = useLocation()
   let siteMetadata = useSiteMetadata()
@@ -35,11 +37,11 @@ export default function Blog({ data, pageContext }: BlogProps) {
 
   return (
     <LayoutTemplate siteMetadata={siteMetadata}>
-      <Section>
+      <Section className={styles.root}>
         <Container size='large'>
-          <h1>Blog Articles</h1>
+          <h2 className={styles.title}>Blog Articles</h2>
 
-          {isFirst && <Featured featuredPosts={featuredPosts.map(({ node }) => node).map((node) => mapToPost(node))} />}
+          {isFirst && featuredPosts.length > 0 && <Post {...featuredPosts[0]} variant='wide' />}
           <Posts
             name='All Articles'
             posts={posts.map(({ node }) => node).map((node) => mapToPost(node))}
@@ -47,7 +49,7 @@ export default function Blog({ data, pageContext }: BlogProps) {
             perRow={3}
           />
 
-          <PaginationNav currentPage={currentPage} numPages={numPages} basePath='/blog/' />
+          <PaginationNav currentPage={currentPage} numPages={numPages} basePath='/blog/' className={styles.buttons} />
         </Container>
       </Section>
     </LayoutTemplate>
@@ -90,26 +92,4 @@ export const pageQuery = graphql`
 interface BlogContext extends GeneratedPageContext {
   currentPage: number
   numPages: number
-}
-
-function Featured({ featuredPosts }: { featuredPosts: Array<PostProps> }) {
-  const hasMainFeaturedPost = featuredPosts.length > 0
-  const hasFeaturedPosts = featuredPosts.length - 1 > 0
-
-  return (
-    <div>
-      {hasMainFeaturedPost && <Post {...featuredPosts[0]} variant='wide' />}
-      {hasFeaturedPosts && (
-        <Posts
-          name='Featured'
-          posts={featuredPosts.slice(1)}
-          link={
-            <Link to='/blog/featured/' className={styles.link}>
-              See all →
-            </Link>
-          }
-        />
-      )}
-    </div>
-  )
 }

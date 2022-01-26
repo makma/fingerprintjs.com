@@ -12,6 +12,7 @@ import BreadcrumbsSEO from '../components/Breadcrumbs/BreadcrumbsSEO'
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs'
 import useSiteMetadata from '../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
+import styles from './blog-tag.module.scss'
 
 interface BlogTagProps {
   data: GatsbyTypes.BlogTagQuery
@@ -45,7 +46,7 @@ export default function BlogTag({ data, pageContext }: BlogTagProps) {
 
       <Section>
         <Container size='large'>
-          <h1>{`${kebabToTitle(tag)}`} Articles</h1>
+          <h1 className={styles.title}>{`${kebabToTitle(tag)}`} Articles</h1>
 
           <Posts
             posts={posts

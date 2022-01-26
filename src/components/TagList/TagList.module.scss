@@ -2,18 +2,31 @@
   margin-top: 2rem;
 }
 
+.rootVertical {
+  overflow-x: auto;
+  white-space: nowrap;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .horizontal {
   display: inline-block;
 }
 
 .vertical {
-  display: flex;
-  margin: 0 !important;
+  display: inline-block;
 
-  .tag {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  @include media('>tabletWide') {
+    display: flex;
+    margin: 0 !important;
+
+    .tag {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 }
 
@@ -41,5 +54,8 @@
 
 .highlight {
   border: 1px solid c('brand-fire');
-  color: c('brand-fire');
+  background-color: v('brand-fire');
+  color: v('white');
+
+  pointer-events: none;
 }

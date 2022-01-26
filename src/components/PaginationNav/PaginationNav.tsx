@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import classNames from 'classnames'
+import Button from '../common/Button'
 
 import styles from './PaginationNav.module.scss'
 
@@ -8,24 +8,25 @@ interface PaginationNavProps {
   currentPage: number
   numPages: number
   basePath: string
+  className?: string
 }
-export default function PaginationNav({ currentPage, numPages, basePath }: PaginationNavProps) {
+export default function PaginationNav({ currentPage, numPages, basePath, className }: PaginationNavProps) {
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
   const prevPage = currentPage - 1 === 1 ? basePath : `${basePath}${currentPage - 1}/`
   const nextPage = `${basePath}${currentPage + 1}/`
 
   return numPages > 1 ? (
-    <div className={classNames(styles.root, { [styles.first]: isFirst }, { [styles.last]: isLast })}>
+    <div className={classNames(styles.root, className, { [styles.first]: isFirst }, { [styles.last]: isLast })}>
       {!isFirst && (
-        <Link to={prevPage} className={styles.link}>
-          ← Previous Page
-        </Link>
+        <Button href={prevPage} variant='outline' size='big' className={styles.button}>
+          Previous Page
+        </Button>
       )}
       {!isLast && (
-        <Link to={nextPage} className={styles.link}>
-          Next Page →
-        </Link>
+        <Button href={nextPage} variant='primary' size='big' className={styles.buttons}>
+          Next Page
+        </Button>
       )}
     </div>
   ) : null

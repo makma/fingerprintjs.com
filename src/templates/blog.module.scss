@@ -1,4 +1,21 @@
+.root {
+  padding: rem(46px) 0;
+}
+
+.title {
+  font-size: rem(32px);
+
+  @include media('<=tabletWide') {
+    font-size: rem(26px);
+  }
+}
 .link {
   color: c('brand-fire');
   border-bottom: 1px solid v('brand-fire');
+}
+
+.buttons {
+  @include media('>tabletWide') {
+    padding-right: rem(192px);
+  }
 }

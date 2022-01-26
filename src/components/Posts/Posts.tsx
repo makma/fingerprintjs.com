@@ -110,21 +110,14 @@ function SwiperPosts({ name, nameIsCentered, perRow, limitPostLines, posts }: Sw
 interface PostGridProps extends SwiperPostsProps {
   link?: React.ReactNode
   tags?: string[]
-  className?: string | string[]
 }
 function PostGrid({ posts, name, link, tags, perRow, nameIsCentered, limitPostLines }: PostGridProps) {
   return (
-    <div className={styles.root}>
-      {tags && (
-        <div className={styles.tags}>
-          <h2>Tags</h2>
-          <TagList tagLink='/blog/tag/' tags={tags} direction='vertical' format='title' />
-        </div>
-      )}
+    <div className={styles.postGrid}>
       <div className={styles.posts}>
         {name && (
           <div className={classNames(styles.row, { [styles.alignNameCenter]: nameIsCentered })}>
-            <h2 className={styles.name}>{name}</h2>
+            <h2 className={classNames(styles.name, { [styles.nameThreePerRow]: perRow === 3 })}>{name}</h2>
             {link}
           </div>
         )}
@@ -135,6 +128,14 @@ function PostGrid({ posts, name, link, tags, perRow, nameIsCentered, limitPostLi
           perRow={perRow}
         />
       </div>
+      {tags && (
+        <aside className={styles.tags}>
+          <div className={styles.sticky}>
+            <caption>Tags</caption>
+            <TagList tagLink='/blog/tag/' tags={tags} direction='vertical' format='title' />
+          </div>
+        </aside>
+      )}
     </div>
   )
 }

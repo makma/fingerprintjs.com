@@ -61,15 +61,17 @@ export default function Post({
         </div>
       )}
 
-      <div className={styles.content}>
+      <article className={styles.content}>
         <div>
           <span className={styles.publishDate}>{publishDate}</span>
           <h1 className={classNames(styles.title, { [styles.titleLimit]: limitTextLines })}>{title}</h1>
           <p className={classNames(styles.description, { [styles.descriptionLimit]: limitTextLines })}>{description}</p>
         </div>
 
-        {tags && <TagList tagLink='/blog/tag/' tags={tags} activeTag={activeTag} format='title' />}
-      </div>
+        {tags && (
+          <TagList className={styles.tagList} tagLink='/blog/tag/' tags={tags} activeTag={activeTag} format='title' />
+        )}
+      </article>
     </Link>
   )
 }
@@ -140,7 +142,7 @@ export const query = graphql`
             description
             image {
               childImageSharp {
-                gatsbyImageData(width: 512, quality: 100, layout: CONSTRAINED, aspectRatio: 1.7)
+                gatsbyImageData(quality: 100, layout: CONSTRAINED, aspectRatio: 1.7)
               }
             }
             imageAlt

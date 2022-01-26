@@ -126,8 +126,6 @@ exports.createPages = async ({ actions, graphql }) => {
   /*   const solutions = await getFolderEdges('solutions/solutions', graphql, 'frontmatter: { isPublished: { ne: false } }')
   solutions.forEach((edge) => createPageFromEdge(edge, createPage)) */
 
-  const featuredPosts = await getFolderEdges('blog', graphql, 'frontmatter: { featured: { eq: true } }')
-
   const postsPerPage = 12
 
   const numBlogPages = Math.ceil(blogPosts.length / postsPerPage)
@@ -135,9 +133,6 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const numCaseStudyPages = Math.ceil(caseStudies.length / postsPerPage)
   createPaginatedPages(numCaseStudyPages, postsPerPage, 'case-studies', 'src/templates/case-studies.tsx', createPage)
-
-  const numFeaturedPages = Math.ceil(featuredPosts.length / postsPerPage)
-  createPaginatedPages(numFeaturedPages, postsPerPage, 'blog/featured', 'src/templates/blog-featured.tsx', createPage)
 
   const tags = await getArrayFieldValues(graphql, 'tag')
   tags.forEach(({ tag, totalCount }) => {

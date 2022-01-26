@@ -38,7 +38,7 @@ export default function TagList({
   const limit = tagsLimit ? tagsLimit : tags.length
 
   return (
-    <ul className={classNames(styles.root, className)}>
+    <ul className={classNames(className, styles.root, { [styles.rootVertical]: direction === 'vertical' })}>
       {tags?.slice(-limit).map((tag) => (
         <li
           key={tag}

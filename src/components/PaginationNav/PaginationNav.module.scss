@@ -1,20 +1,20 @@
 .root {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  column-gap: rem(16px);
 
   width: 100%;
   padding-top: 6rem;
+
+  @include media('<=phoneLandscape') {
+    justify-content: space-between;
+
+    .button {
+      min-width: rem(152px);
+    }
+  }
 }
 
 .first {
   justify-content: flex-end;
-}
-
-.last {
-  justify-content: flex-start;
-}
-
-.link {
-  color: c('brand-fire');
-  border-bottom: 1px solid v('brand-fire');
 }
