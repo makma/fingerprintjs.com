@@ -8,8 +8,7 @@ $bigMargin: 6rem;
   ol,
   blockquote,
   table,
-  iframe,
-  deckgo-highlight-code {
+  iframe {
     margin-top: $bigMargin;
     margin-bottom: $bigMargin;
   }
@@ -22,28 +21,6 @@ $bigMargin: 6rem;
 
   p {
     margin-bottom: $smallMargin;
-  }
-
-  deckgo-highlight-code {
-    --deckgo-highlight-code-carbon-toolbar-display: none;
-    --deckgo-highlight-code-carbon-header-padding: 8px;
-
-    font-weight: 500;
-    --deckgo-highlight-code-color: #abb2bf;
-    --deckgo-highlight-code-background: #282c34;
-    --deckgo-highlight-code-token-punctuation: #abb2bf;
-    --deckgo-highlight-code-token-atrule: #c678dd;
-    --deckgo-highlight-code-token-operator: #56b6c2;
-    --deckgo-highlight-code-token-regex: #f1fa8c;
-    --deckgo-highlight-code-token-selector: #98c379;
-    --deckgo-highlight-code-token-function: #61afef;
-    --deckgo-highlight-code-font-family: var(--ff-mono);
-    --deckgo-highlight-code-font-size: 2rem;
-    --deckgo-highlight-code-line-numbers: #4f5665;
-
-    @include media('<=phone') {
-      --deckgo-highlight-code-font-size: 1.5rem;
-    }
   }
 
   @for $index from 1 through 6 {
@@ -239,5 +216,47 @@ $bigMargin: 6rem;
       margin-top: rem(24px);
       margin-bottom: 0;
     }
+  }
+
+  pre[class*='language-'] {
+    padding: rem(16px);
+    border-radius: rem(8px);
+    margin: rem(48px) 0;
+    box-shadow: rgba(0, 0, 0, 0.55) 0 8px 16px;
+
+    &::-webkit-scrollbar {
+      width: rem(4px);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #434875;
+    }
+    &:before {
+      padding: rem(16px);
+      border-radius: rem(8px);
+      margin: rem(48px) 0;
+      box-shadow: rgba(0, 0, 0, 0.55) 0 8px 16px;
+
+      &::-webkit-scrollbar {
+        width: rem(4px);
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #434875;
+      }
+    }
+  }
+
+  :not(pre) > code[class*='language-'],
+  pre[class*='language-'] {
+    background: #282a36;
   }
 }

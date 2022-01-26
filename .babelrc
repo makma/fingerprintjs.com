@@ -4,7 +4,8 @@
     [
       "prismjs",
       {
-        "languages": ["javascript", "html"],
+        // we need to include all languages used on the site including those used in markdown
+        "languages": ["javascript", "html", "css", "php", "sql", "bash", "python", "hbs"],
         "plugins": ["line-numbers"]
       }
     ]

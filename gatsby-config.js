@@ -139,10 +139,12 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-highlight-code`,
+            resolve: `gatsby-remark-prismjs`,
             options: {
-              terminal: 'carbon',
-              lineNumbers: false,
+              showLineNumbers: false,
+              // If setting this to true, the parser won't handle and highlight inline
+              // code used in markdown i.e. single backtick code like `this`.
+              noInlineHighlight: true,
             },
           },
         ],

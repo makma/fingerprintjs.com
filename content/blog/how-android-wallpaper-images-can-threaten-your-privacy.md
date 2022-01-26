@@ -41,7 +41,7 @@ The WallpaperManager class was introduced in 2009 as part of the release of Andr
 
 Using the following code, a drawable resource can be represented as a byte array:
 
-```
+```js
 private fun calculateWallpaperBytes(): ByteArray {
    val imageBitmap = wallpaperManager.drawable.toBitmap()
    val stream = ByteArrayOutputStream()
@@ -62,7 +62,7 @@ Like iOS, Android allows users to determine which specific screens to use wallpa
 
 ![Wallpaper setting in Android](/img/uploads/lockscreen.png "Wallpaper setting in Android")
 
-```
+```js
 // WallpaperManager.FLAG_LOCK for the the lock screen
 
 val colors = WallpaperManager
@@ -112,7 +112,7 @@ As you may recall, developers can use byte arrays to restore wallpaper images pr
 
 We have an ID that contains 256 bits, is unique across all applications, and only changes when the device wallpaper changes. The code for getting the ID is:
 
-```
+```js
 val id = hasher.hash(
 if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O_MR1) {
 extractWallpaperBytes()
