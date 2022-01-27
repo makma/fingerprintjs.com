@@ -72,7 +72,11 @@ export default function Author({ data, pageContext }: AuthorProps) {
             .map((post) => ({ ...post }))}
         />
 
-        <PaginationNav currentPage={currentPage} numPages={numPages} basePath={`/blog/author/${author}/`} />
+        <PaginationNav
+          currentPage={currentPage}
+          numPages={numPages}
+          basePath={`/blog/author/${author.toLowerCase()}/`}
+        />
       </Container>
     </LayoutTemplate>
   )
