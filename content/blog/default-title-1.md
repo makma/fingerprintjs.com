@@ -25,7 +25,7 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 ---
-<i>Note: This is a guest post by Josip Miskovic, a full-stack [software developer](https://josipmisko.com/) who specializes in ecommerce. Throughout his career, he helped prevent fraud for ecommerce stores with more than 10,000 daily customers.</i>
+<i>Note: This is a guest post by Josip Miskovic, a full-stack <a href="https://josipmisko.com/" target="_blank" rel="noopener>software developer</a> who specializes in ecommerce. Throughout his career, he helped prevent fraud for ecommerce stores with more than 10,000 daily customers.</i>
 
 Every year, businesses lose billions of dollars to refund fraud. This type of fraud occurs when criminals use stolen credit card information to make fraudulent purchases and then request refunds for those items. 
 
