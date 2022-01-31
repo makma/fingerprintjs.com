@@ -12,12 +12,12 @@ metadata:
   image: /img/uploads/refund-fraud_-how-to-identify-chargeback-fraud.png
 featured: false
 publishDate: 2022-01-31T14:41:04.163Z
-title: Default Title
+title: "Refund Fraud: How to Identify Chargeback Fraud"
 isPublished: false
 tags:
   - ecommerce fraud
 authors:
-  - Savannah Copland
+  - Josip Miskovic
 heroImage:
   imageAlt: Review fraud prevention
   imageTitle: Review fraud prevention
