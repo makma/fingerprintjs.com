@@ -13,7 +13,7 @@ metadata:
 featured: true
 publishDate: 2022-01-31T14:41:04.163Z
 title: "Refund Fraud: How to Identify Chargeback Fraud"
-isPublished: false
+isPublished: true
 tags:
   - ecommerce fraud
 authors:
