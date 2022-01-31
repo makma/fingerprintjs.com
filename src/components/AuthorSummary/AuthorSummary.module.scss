@@ -1,0 +1,71 @@
+.authorSummary {
+  padding-bottom: rem(96px);
+
+  display: flex;
+  column-gap: rem(32px);
+
+  @include media('<=phoneLandscape') {
+    padding-bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .photo {
+    width: rem(128px);
+    height: rem(128px);
+    border-radius: 50%;
+
+    @include media('<=phoneLandscape') {
+      width: rem(96px);
+      height: rem(96px);
+
+      margin-bottom: rem(24px);
+    }
+  }
+  .aboutAuthor {
+    font-size: rem(32px);
+    padding-bottom: rem(16px);
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(24px);
+    }
+  }
+
+  .authorInfo {
+    .bioTitle {
+      margin-top: rem(16px);
+    }
+    .title,
+    .bioTitle {
+      @include sans($size: 14px, $weight: 600, $lh: 140%, $color: adjust-color(c('brand-water'), $alpha: -0.5));
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+
+      margin-bottom: rem(4px);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(11px);
+      }
+    }
+
+    .description {
+      font-size: rem(16px);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(14px);
+      }
+    }
+  }
+
+  .articlesTitle {
+    @include sans($size: 20px, $weight: 600, $lh: 150%);
+    letter-spacing: 0.01em;
+
+    padding-top: rem(52px);
+
+    @include media('>phoneLandscape') {
+      display: none;
+    }
+  }
+}

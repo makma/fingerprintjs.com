@@ -17,6 +17,8 @@ export interface PostsProps {
   nameIsCentered?: boolean
   limitPostLines?: boolean
   useSwiper?: boolean
+  activeTag?: string
+  tagLink?: string
 }
 export default function Posts({
   posts,
@@ -27,6 +29,8 @@ export default function Posts({
   perRow = 4,
   limitPostLines,
   useSwiper = false,
+  activeTag,
+  tagLink,
 }: PostsProps) {
   return useSwiper ? (
     <SwiperPosts
@@ -45,6 +49,8 @@ export default function Posts({
       perRow={perRow}
       tags={tags}
       limitPostLines={limitPostLines}
+      activeTag={activeTag}
+      tagLink={tagLink}
     />
   )
 }
@@ -110,8 +116,20 @@ function SwiperPosts({ name, nameIsCentered, perRow, limitPostLines, posts }: Sw
 interface PostGridProps extends SwiperPostsProps {
   link?: React.ReactNode
   tags?: string[]
+  activeTag?: string
+  tagLink?: string
 }
-function PostGrid({ posts, name, link, tags, perRow, nameIsCentered, limitPostLines }: PostGridProps) {
+function PostGrid({
+  posts,
+  name,
+  link,
+  tags,
+  perRow,
+  nameIsCentered,
+  limitPostLines,
+  activeTag,
+  tagLink,
+}: PostGridProps) {
   return (
     <div className={styles.postGrid}>
       <div className={styles.posts}>
@@ -123,7 +141,9 @@ function PostGrid({ posts, name, link, tags, perRow, nameIsCentered, limitPostLi
         )}
         <Grid
           items={posts.map((post) => {
-            return <Post perRow={perRow} key={post.path} limitTextLines={limitPostLines} {...post} />
+            return (
+              <Post perRow={perRow} key={post.path} limitTextLines={limitPostLines} activeTag={activeTag} {...post} />
+            )
           })}
           perRow={perRow}
         />
@@ -132,7 +152,13 @@ function PostGrid({ posts, name, link, tags, perRow, nameIsCentered, limitPostLi
         <aside className={styles.tags}>
           <div className={styles.sticky}>
             <caption>Tags</caption>
-            <TagList tagLink='/blog/tag/' tags={tags} direction='vertical' format='title' />
+            <TagList
+              tagLink={tagLink ?? '/blog/tag/'}
+              tags={tags}
+              direction='vertical'
+              format='title'
+              activeTag={activeTag}
+            />
           </div>
         </aside>
       )}

@@ -68,6 +68,29 @@ async function getArrayFieldValues(graphql, name) {
   return data.allMarkdownRemark.group
 }
 
+async function getArrayAuthorsTags(graphql, author) {
+  const { data, errors } = await graphql(`
+    {
+      allMarkdownRemark(
+        filter: { frontmatter: { authors: {in: ["${author}"]}, isPublished: { ne: false }, templateKey: { eq: "long-form-content" } } }
+      ) {
+        group(field: frontmatter___tags) {
+          tag: fieldValue
+          totalCount
+        }
+      }
+    }
+  `)
+
+  if (errors) {
+    // eslint-disable-next-line no-console
+    errors.forEach((e) => console.error(e.toString()))
+    return Promise.reject(errors)
+  }
+
+  return data.allMarkdownRemark.group
+}
+
 function withTrailingSlash(path) {
   return path.endsWith('/') ? path : `${path}/`
 }
@@ -163,6 +186,28 @@ exports.createPages = async ({ actions, graphql }) => {
       additionalContext
     )
   })
+
+  const createAuthorTagPages = authors.map(async (authorObj) => {
+    const author = authorObj.author
+    const authorTags = await getArrayAuthorsTags(graphql, author)
+
+    if (authorTags) {
+      authorTags.forEach(({ tag, totalCount }) => {
+        const numAuthorTagPages = Math.ceil(totalCount / postsPerPage)
+        const additionalContext = { author, tag }
+
+        createPaginatedPages(
+          numAuthorTagPages,
+          postsPerPage,
+          `blog/author/${author.toLowerCase()}/${tag}`,
+          'src/templates/author-tag.tsx',
+          createPage,
+          additionalContext
+        )
+      })
+    }
+  })
+  await Promise.all(createAuthorTagPages)
 }
 
 function createNodePath({ node, getNode }) {

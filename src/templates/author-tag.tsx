@@ -13,18 +13,18 @@ import AuthorSummary from '../components/AuthorSummary/AuthorSummary'
 
 import styles from './author.module.scss'
 
-interface AuthorProps {
-  data: GatsbyTypes.BlogAuthorQuery
-  pageContext: AuthorContext
+interface AuthorTagProps {
+  data: GatsbyTypes.BlogAuthorTagQuery
+  pageContext: AuthorTagContext
 }
-export default function Author({ data, pageContext }: AuthorProps) {
+export default function AuthorTag({ data, pageContext }: AuthorTagProps) {
   const { edges: posts } = data.posts
   const bio = data.authorData?.frontmatter?.bio
   const photo = data.authorData?.frontmatter?.photo?.childImageSharp?.gatsbyImageData
   const role = data.authorData?.frontmatter?.role
-  const tags = data.posts.group.map(({ tag }) => tag) as string[]
+  const tags = data.allTags.group.map(({ tag }) => tag) as string[]
 
-  const { currentPage, numPages, author } = pageContext
+  const { currentPage, numPages, author, tag } = pageContext
   const breadcrumbs = pageContext.breadcrumb.crumbs.filter(({ pathname }) => pathname !== '/blog/author')
   const { pathname } = useLocation()
   let siteMetadata = useSiteMetadata()
@@ -40,19 +40,20 @@ export default function Author({ data, pageContext }: AuthorProps) {
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
 
       <Container size='large' className={styles.authorSection}>
-        <AuthorSummary author={author} role={role} bio={bio} photo={photo} />
+        <AuthorSummary author={author} role={role} bio={bio} photo={photo} linkBack />
         <Posts
           name={`${author}'s Articles`}
           posts={posts.map(({ node }) => mapToPost(node))}
           tags={tags}
           perRow={3}
+          activeTag={tag}
           tagLink={`/blog/author/${author.toLowerCase()}/`}
         />
 
         <PaginationNav
           currentPage={currentPage}
           numPages={numPages}
-          basePath={`/blog/author/${author.toLowerCase()}/`}
+          basePath={`/blog/author/${author.toLowerCase()}/${tag}/`}
         />
       </Container>
     </LayoutTemplate>
@@ -60,17 +61,24 @@ export default function Author({ data, pageContext }: AuthorProps) {
 }
 
 export const pageQuery = graphql`
-  query BlogAuthor($skip: Int!, $limit: Int!, $author: String) {
-    posts: allMarkdownRemark(
+  query BlogAuthorTag($skip: Int!, $limit: Int!, $author: String, $tag: String) {
+    allTags: allMarkdownRemark(
       filter: {fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}, frontmatter: {authors: {in: [$author]}, templateKey: {eq: "long-form-content"}, isPublished: {ne: false}}}
       sort: {order: DESC, fields: frontmatter___publishDate}
       limit: $limit
       skip: $skip
     ) {
-      ...PostData
       group(field: frontmatter___tags) {
        tag: fieldValue
       }
+    }
+    posts: allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}, frontmatter: {authors: {in: [$author]},tags: { in: [$tag] }, templateKey: {eq: "long-form-content"}, isPublished: {ne: false}}}
+      sort: {order: DESC, fields: frontmatter___publishDate}
+      limit: $limit
+      skip: $skip
+    ) {
+      ...PostData
     }
     authorData: markdownRemark(frontmatter: {title: {eq: $author}}) {
       frontmatter {
@@ -86,8 +94,9 @@ export const pageQuery = graphql`
   }
 `
 
-interface AuthorContext extends GeneratedPageContext {
+interface AuthorTagContext extends GeneratedPageContext {
   currentPage: number
   numPages: number
   author: string
+  tag: string
 }
