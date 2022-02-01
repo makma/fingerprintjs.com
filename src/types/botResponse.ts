@@ -1,3 +1,19 @@
-import { BotdResponse } from '@fpjs-incubator/botd-agent'
+export interface SuccessResponse {
+  requestId: string
+  ip: string
+  tag: string
+  bot: {
+    automationTool: DetectNote
+    searchEngine: DetectNote
+    browserSpoofing: DetectNote
+  }
+  vm: DetectNote
+}
 
-export type SuccessResponse = Extract<BotdResponse, { bot }>
+interface DetectNote {
+  status: DetectStatus
+  probability: number
+  type?: string
+}
+
+type DetectStatus = 'processed' | 'notEnoughData' | 'error'
