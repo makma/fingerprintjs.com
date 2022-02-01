@@ -99,7 +99,9 @@ export default memo(function FpjsWidget() {
                         key={requestId}
                         onClick={() => setCurrentVisit(visits[i])}
                       >
-                        {i === 0 ? 'Current visit' : getVisitTitle(timestamp)}
+                        <span className={styles.visitLabel}>
+                          {i === 0 ? 'Current visit' : getVisitTitle(timestamp)}
+                        </span>
                         {incognito && <IncognitoSvg />}
                       </li>
                     )
