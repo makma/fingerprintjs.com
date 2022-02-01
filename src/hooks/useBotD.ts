@@ -4,20 +4,22 @@ import { SuccessResponse } from '../types/botResponse'
 import { BOTD_PUBLIC_TOKEN, BOTD_SECRET_TOKEN, BOTD_VERIFY_ENDPOINT } from '../constants/env'
 import { getErrorMessage } from '../helpers/error'
 
-export const useBotD = () => {
+export const useBotD = (publicToken?: string, secretToken?: string) => {
   const [visitorData, setVisitorData] = useState<SuccessResponse>()
   const [hasError, setHasError] = useState(false)
   const [error, setError] = useState<string>()
   const [isLoading, setIsLoading] = useState(true)
   const [reload, setReload] = useState(false)
 
+  const publicKey = publicToken ?? BOTD_PUBLIC_TOKEN
+  const secretKey = secretToken ?? BOTD_SECRET_TOKEN
   useEffect(() => {
     async function getVisitorData() {
       setHasError(false)
       setIsLoading(true)
       try {
         const botD = await Botd.load({
-          publicKey: BOTD_PUBLIC_TOKEN,
+          publicKey,
         })
         const botdResp = await botD.detect()
         if ('error' in botdResp) {
@@ -25,7 +27,7 @@ export const useBotD = () => {
         }
 
         const verifyBody = JSON.stringify({
-          secretKey: BOTD_SECRET_TOKEN,
+          secretKey,
           requestId: botdResp.requestId,
         })
         const response = await fetch(BOTD_VERIFY_ENDPOINT, {
@@ -46,7 +48,7 @@ export const useBotD = () => {
     }
 
     getVisitorData()
-  }, [reload])
+  }, [reload, publicKey, secretKey])
 
   const refresh = () => {
     setReload(true)

@@ -11,6 +11,8 @@ import { ReactComponent as ConfirmSVG } from './confirmSVG.svg'
 import { ReactComponent as ErrorSVG } from './errorSVG.svg'
 import { URL, MAILTO } from '../../constants/content'
 import { useViewTracking } from '../../context/HistoryListener'
+import { useBotD } from '../../hooks/useBotD'
+import { BOTD_PUBLIC_TOKEN_CONTACT_SALES, BOTD_SECRET_TOKEN_CONTACT_SALES } from '../../constants/env'
 
 import styles from './ContactSalesForm.module.scss'
 
@@ -22,6 +24,7 @@ export default function ContactSalesForm() {
 
   const { formState, errorMessage, updateFormState, updateErrorMessage } = useForm(Forms.ContactSales)
   const { landingPage, previousPage, utmParams } = useViewTracking()
+  useBotD(BOTD_PUBLIC_TOKEN_CONTACT_SALES, BOTD_SECRET_TOKEN_CONTACT_SALES)
 
   async function handleSubmit(e) {
     e.preventDefault()

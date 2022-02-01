@@ -66,6 +66,18 @@ export const BOTD_SECRET_TOKEN =
     [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_BOTD_SECRET_TOKEN,
   }) ?? ''
 
+export const BOTD_PUBLIC_TOKEN_CONTACT_SALES =
+  getContextEnv<string>({
+    [NetlifyContext.Production]: process.env.GATSBY_PUBLIC_TOKEN_CONTACT_SALES,
+    [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_BOTD_PUBLIC_TOKEN,
+  }) ?? ''
+
+export const BOTD_SECRET_TOKEN_CONTACT_SALES =
+  getContextEnv<string>({
+    [NetlifyContext.Production]: process.env.GATSBY_SECRET_TOKEN_CONTACT_SALES,
+    [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_BOTD_SECRET_TOKEN,
+  }) ?? ''
+
 export const BOTD_VERIFY_ENDPOINT =
   getContextEnv<string>({
     [NetlifyContext.Production]: process.env.GATSBY_BOTD_VERIFY_ENDPOINT,
