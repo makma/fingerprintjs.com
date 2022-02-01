@@ -55,6 +55,9 @@
       @include media('<=phoneLandscape') {
         font-size: rem(14px);
       }
+      a {
+        text-decoration: underline;
+      }
     }
   }
 

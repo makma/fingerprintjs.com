@@ -38,7 +38,7 @@ function Content({ author, photo, role, bio }: AuthorSummaryProps) {
         {bio && (
           <>
             <h3 className={styles.bioTitle}>Bio</h3>
-            <span className={styles.description}>{bio}</span>
+            {<span className={styles.description} dangerouslySetInnerHTML={{ __html: bio }} />}
           </>
         )}
       </div>

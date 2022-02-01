@@ -311,6 +311,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       summary: Summary
       cardSection: CardSection
       inlineCta: InlineCta
+      bio: String @md
     }
     type Header{
       content: String @md
