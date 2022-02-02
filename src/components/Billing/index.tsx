@@ -24,8 +24,9 @@ export default function Billing() {
   const [monthlyPaymentLabel, setMonthlyPaymentLabel] = useState(pricingTable[defaultValue].label)
 
   const handleSliderChange = (newValue: number) => {
+    const roundedValue = Math.round(newValue)
     setSliderValue(newValue)
-    recalculatePricing(sliderTable[newValue].value)
+    recalculatePricing(sliderTable[roundedValue].value)
   }
 
   const recalculatePricing = (value: number) => {
@@ -45,7 +46,7 @@ export default function Billing() {
   }
 
   useEffect(() => {
-    recalculatePricing(sliderTable[sliderValue].value)
+    recalculatePricing(sliderTable[Math.round(sliderValue)].value)
   }, [sliderTable, sliderValue])
 
   return (
@@ -76,9 +77,9 @@ export default function Billing() {
           <div className={styles.payment}>
             <div>
               <span className={styles.price}>{monthlyPaymentLabel} </span>
-              {sliderValue !== sliderConfig.max && 'per month'}
+              {Math.round(sliderValue) !== sliderConfig.max && 'per month'}
             </div>
-            {sliderValue !== sliderConfig.max ? (
+            {Math.round(sliderValue) !== sliderConfig.max ? (
               <>
                 <div className={styles.billed}>billed monthly</div>
                 <div className={styles.switcher}>

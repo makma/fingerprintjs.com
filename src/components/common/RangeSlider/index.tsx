@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import classNames from 'classnames'
 import styles from './RangeSlider.module.scss'
 
@@ -9,13 +9,13 @@ export interface SliderValue {
 
 interface RangeSliderProps {
   currentValue: number // index for range slider
-  values: SliderValue[]
+  values: Array<SliderValue>
   config: {
     min: number
     max: number
   }
   handleValueChange: (arg0: number) => void
-  onlyCurrentValue?: boolean
+  labelsBelow?: boolean
 }
 
 export default function RangeSlider({
@@ -23,14 +23,25 @@ export default function RangeSlider({
   values,
   config: { min, max },
   handleValueChange,
-  onlyCurrentValue,
+  labelsBelow,
 }: RangeSliderProps) {
-  const thumbSize = onlyCurrentValue ? 22 : 18
+  const thumbSize = labelsBelow ? 22 : 18
+  const ref = useRef<HTMLInputElement | null>(null)
+
+  const changeSliderValue = (value: number) => {
+    handleValueChange(value)
+    setSliderOffsetCss(calculateSliderOffset(min, max, value))
+  }
 
   const handleSliderValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    ref.current?.setAttribute('step', 'any')
     const newValue = Number(e.target.value)
-    handleValueChange(newValue)
-    setSliderOffsetCss(calculateSliderOffset(min, max, newValue))
+    changeSliderValue(newValue)
+  }
+
+  const moveToClosestValue = () => {
+    ref.current?.setAttribute('step', '1')
+    setSliderOffsetCss(calculateSliderOffset(min, max, Math.round(currentValue)))
   }
 
   const calculateSliderOffset = (min: number, max: number, value: number) => {
@@ -45,24 +56,30 @@ export default function RangeSlider({
 
   return (
     <div
-      className={classNames(styles.slider, { [styles.sliderOnlyCurrent]: onlyCurrentValue })}
+      className={classNames(styles.slider, { [styles.sliderLabelsBelow]: labelsBelow })}
       style={{ '--left': sliderOffsetCss, '--thumb-size': `${thumbSize}px` } as React.CSSProperties}
     >
-      {!onlyCurrentValue && (
+      {!labelsBelow && (
         <>
-          <span className={styles.output}>{values[currentValue].label}</span>
+          <span className={styles.output}>{values[Math.round(currentValue)].label}</span>
           <label htmlFor='billingSlider' className={styles.label}>
-            {values.map(({ label }) => (
-              <span key={`slider_label_${label}`} className={styles.text}>
-                {label}
-              </span>
-            ))}
+            {values.map((value, index) => {
+              return (
+                <span
+                  key={`slider_label_${value.label}`}
+                  className={styles.text}
+                  onClick={() => changeSliderValue(index)}
+                >
+                  {value.label}
+                </span>
+              )
+            })}
           </label>
         </>
       )}
-      <div className={classNames(styles.inputContainer, { [styles.containerOnlyCurrent]: onlyCurrentValue })}>
+      <div className={classNames(styles.inputContainer, { [styles.containerLabelsBelow]: labelsBelow })}>
         <input
-          className={classNames(styles.input, { [styles.inputOnlyCurrent]: onlyCurrentValue })}
+          className={classNames(styles.input, { [styles.inputLabelsBelow]: labelsBelow })}
           type='range'
           min={min}
           max={max}
@@ -70,15 +87,25 @@ export default function RangeSlider({
           name='billing-slider'
           aria-label='Price slider'
           onChange={handleSliderValueChange}
+          step={'any'}
+          onMouseUp={moveToClosestValue}
+          onTouchEnd={moveToClosestValue}
+          ref={ref}
         />
       </div>
-      {onlyCurrentValue && (
-        <label htmlFor='billingSlider' className={styles.onlyCurrentLabel}>
-          {values.map(({ label }) => (
-            <span key={`slider_label_${label}`} className={styles.onlyCurrentText}>
-              {label}
-            </span>
-          ))}
+      {labelsBelow && (
+        <label htmlFor='billingSlider' className={styles.labelBelow}>
+          {values.map((value, index) => {
+            return (
+              <span
+                key={`slider_label_${value.label}`}
+                className={styles.labelBelowText}
+                onClick={() => changeSliderValue(index)}
+              >
+                {value.label}
+              </span>
+            )
+          })}
         </label>
       )}
     </div>

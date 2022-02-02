@@ -27,7 +27,7 @@
   }
 
   .label,
-  .onlyCurrentLabel {
+  .labelBelow {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,10 +37,11 @@
     font-size: 1.75rem;
 
     .text,
-    .onlyCurrentText {
+    .labelBelowText {
       flex: 1;
       text-align: center;
       font-weight: v(semi);
+      cursor: pointer;
 
       @for $i from 2 to 5 {
         &:nth-child(#{$i}) {
@@ -57,7 +58,7 @@
       }
     }
 
-    .onlyCurrentText {
+    .labelBelowText {
       @include sans($size: 16px, $weight: v(semi), $lh: 130%);
 
       margin-top: rem(28px);
@@ -86,7 +87,7 @@
     align-items: center;
   }
 
-  .containerOnlyCurrent {
+  .containerLabelsBelow {
     height: rem(30px);
   }
 
@@ -152,7 +153,7 @@
       box-shadow: 0 5px 14px 0 adjust-color(c('brand-water'), $alpha: -0.9);
     }
   }
-  .inputOnlyCurrent {
+  .inputLabelsBelow {
     // Adding padding to increase the clickable space
     padding: rem(30px) 0;
 
@@ -178,7 +179,7 @@
   }
 }
 
-.sliderOnlyCurrent {
+.sliderLabelsBelow {
   @include media('<=phoneLandscape') {
     padding-top: 0;
   }

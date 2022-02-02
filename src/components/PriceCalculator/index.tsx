@@ -24,8 +24,9 @@ export default function PriceCalculator() {
   const [monthlyPaymentLabel, setMonthlyPaymentLabel] = useState('$0')
 
   const handleSliderChange = (newValue: number) => {
+    const roundedValue = Math.round(newValue)
     setSliderValue(newValue)
-    recalculatePricing(sliderTable[newValue].value)
+    recalculatePricing(sliderTable[roundedValue].value)
   }
 
   const recalculatePricing = (value: number) => {
@@ -53,7 +54,7 @@ export default function PriceCalculator() {
           currentValue={sliderValue}
           config={sliderConfig}
           handleValueChange={handleSliderChange}
-          onlyCurrentValue
+          labelsBelow
         />
       </article>
       <article className={styles.cards}>
@@ -61,15 +62,15 @@ export default function PriceCalculator() {
           label='FingerprintJS Pro'
           price={monthlyPaymentLabel}
           billingDescription={
-            sliderValue === sliderConfig.min
+            Math.round(sliderValue) === sliderConfig.min
               ? 'Free forever for developers and small sites up to 20K identifications per month.'
               : 'On-demand pricing based on monthly usage.'
           }
-          ctaText={sliderValue === sliderConfig.min ? 'Create Free Account' : 'Start Free Trial'}
+          ctaText={Math.round(sliderValue) === sliderConfig.min ? 'Create Free Account' : 'Start Free Trial'}
           ctaHref={URL.signupUrl}
-          featureList={sliderValue === sliderConfig.min ? freeTier : onDemand}
+          featureList={Math.round(sliderValue) === sliderConfig.min ? freeTier : onDemand}
           footNote='* FingerprintJS is compliant as the data processor. You need to be compliant as the data controller and use identification for fraud under legitimate interest or ask for user consent.'
-          disabled={sliderValue === sliderConfig.max}
+          disabled={Math.round(sliderValue) === sliderConfig.max}
         />
         <PricingCard
           enterprise
