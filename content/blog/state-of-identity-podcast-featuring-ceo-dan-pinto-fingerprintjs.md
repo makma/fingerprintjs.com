@@ -12,6 +12,7 @@ metadata:
 featured: true
 publishDate: 2021-08-19T14:02:00.000Z
 title: "State of Identity Podcast: Featuring CEO Dan Pinto, FingerprintJS"
+isPublished: true
 tags:
   - fingerprinting
 authors:
@@ -20,13 +21,12 @@ heroImage:
   image: /img/uploads/fingerprintjs.png
   imageAlt: State of Identity Podcast - FingerprintJS
   imageTitle: State of Identity Podcast - FingerprintJS
-isPublished: true
 ---
 We are excited to announce our featured episode on OWI's State of Identity podcast.
 
 Host Cameron D'Ambrosi interviewed CEO Dan Pinto on the origin story of FingerprintJS, the power of anonymous identification to reduce friction while preventing online fraud, and the future of identity management in a post-pandemic world.
 
-## [Listen to the podcast](https://oneworldidentity.com/podcast/fingerprintjs-fraud-at-the-source/)
+## [Listen to the podcast](https://liminal.co/podcast/fingerprintjs-fraud-at-the-source/)
 
 <br>
 <br>
