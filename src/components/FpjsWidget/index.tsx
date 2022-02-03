@@ -10,12 +10,12 @@ import MobileWidget, { MobileLoadingState } from './MobileWidget'
 import { useVisitorData } from '../../context/FpjsContext'
 import useRollbar from '../../hooks/useRollbar'
 import { getErrorMessage } from '../../helpers/error'
-import { FPJS_API_TOKEN, FPJS_VISITORS_ENDPOINT, MAPBOX_ACCESS_TOKEN } from '../../constants/env'
+import { FPJS_SECRET_TOKEN, FPJS_VISITORS_ENDPOINT, MAPBOX_ACCESS_TOKEN } from '../../constants/env'
 import styles from './FpjsWidget.module.scss'
 import Skeleton from '../Skeleton/Skeleton'
 import { repeatElement } from '../../helpers/repeatElement'
 
-const apiToken = FPJS_API_TOKEN
+const secretToken = FPJS_SECRET_TOKEN
 const endpoint = FPJS_VISITORS_ENDPOINT
 const mapboxToken = MAPBOX_ACCESS_TOKEN
 
@@ -38,7 +38,7 @@ export default memo(function FpjsWidget() {
         return
       }
       try {
-        const { visits } = await loadFpjsHistory(endpoint, visitorId, apiToken)
+        const { visits } = await loadFpjsHistory(endpoint, visitorId, secretToken)
 
         if (!isCancelled) {
           setIsLoaded(true)
@@ -193,8 +193,8 @@ function CurrentVisit({ currentVisit, visits, visitorId }: CurrentVisitProps) {
   )
 }
 
-async function loadFpjsHistory(endpoint: string, visitorId: string, apiToken: string) {
-  const response = await fetch(`${endpoint}${visitorId}?token=${apiToken}&limit=20`)
+async function loadFpjsHistory(endpoint: string, visitorId: string, secretToken: string) {
+  const response = await fetch(`${endpoint}${visitorId}?token=${secretToken}&limit=20`)
   return await response.json()
 }
 

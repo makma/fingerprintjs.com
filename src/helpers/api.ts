@@ -1,10 +1,10 @@
-import { FPJS_API_TOKEN, FPJS_VISITORS_ENDPOINT, FPJS_MGMT_API_HOST, BOTD_TOKEN_ENDPOINT } from '../constants/env'
+import { FPJS_SECRET_TOKEN, FPJS_VISITORS_ENDPOINT, FPJS_MGMT_API_HOST, BOTD_TOKEN_ENDPOINT } from '../constants/env'
 
-const apiToken = FPJS_API_TOKEN
+const secretToken = FPJS_SECRET_TOKEN
 const endpoint = FPJS_VISITORS_ENDPOINT
 
 export async function loadFpjsHistory(visitorId: string) {
-  const response = await fetch(`${endpoint}${visitorId}?token=${apiToken}&limit=20`)
+  const response = await fetch(`${endpoint}${visitorId}?token=${secretToken}&limit=20`)
   return await response.json()
 }
 

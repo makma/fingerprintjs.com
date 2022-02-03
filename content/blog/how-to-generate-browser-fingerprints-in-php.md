@@ -191,9 +191,9 @@ In the next section, I’ll show you how to prevent re-registration using browse
 
 To get started with FingerprintJS, you will need a [FingerprintJS pro account](https://dashboard.fingerprintjs.com/signup). If you do not have an account, you can start a free account with no credit card required.
 
-Once you have an account, visit your [dashboard](https://dashboard.fingerprintjs.com/) and select the subscription that you created while registering. Head to the `Tokens` section from the left sidebar and copy the active **browser** token.
+Once you have an account, visit your [dashboard](https://dashboard.fingerprintjs.com/) and select the subscription that you created while registering. Head to the `Tokens` section from the left sidebar and copy the active **public** token.
 
-![List of active tokens in the dashboard](/img/uploads/php-active-tokens.png "List of active tokens in the dashboard")
+![List of active tokens in the dashboard](/img/uploads/public-token-location.png "List of active tokens in the dashboard")
 
 After you have the token, install the JavaScript agent. This JavaScript agent will run in the browser, so you do not need a backend PHP component to generate the fingerprint. The required snippet can either be downloaded from a CDN (content delivery network) or installed through NPM. In this example, I’ll use a CDN.
 

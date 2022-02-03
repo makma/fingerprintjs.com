@@ -7,11 +7,11 @@ enum NetlifyContext {
 }
 const context: NetlifyContext = getNetlifyContext()
 
-export const FPJS_TOKEN =
+export const FPJS_PUBLIC_TOKEN =
   getContextEnv<string>({
-    [NetlifyContext.Production]: process.env.GATSBY_FPJS_TOKEN,
-    [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_FPJS_TOKEN,
-  }) ?? 'test_client_token'
+    [NetlifyContext.Production]: process.env.GATSBY_FPJS_PUBLIC_TOKEN,
+    [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_FPJS_PUBLIC_TOKEN,
+  }) ?? 'test_public_token'
 
 export const GTM_TOKEN =
   getContextEnv<string>({
@@ -19,17 +19,17 @@ export const GTM_TOKEN =
     [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_GTM_TOKEN,
   }) ?? 'test_gtm_token'
 
-export const FPJS_API_TOKEN =
+export const FPJS_SECRET_TOKEN =
   getContextEnv<string>({
-    [NetlifyContext.Production]: process.env.GATSBY_FPJS_API_TOKEN,
-    [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_API_TOKEN,
-  }) ?? 'test_fpjs_api_token'
+    [NetlifyContext.Production]: process.env.GATSBY_FPJS_SECRET_TOKEN,
+    [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_SECRET_TOKEN,
+  }) ?? 'test_fpjs_secret_token'
 
 export const BOTD_TOKEN_ENDPOINT =
   getContextEnv<string>({
     [NetlifyContext.Production]: process.env.GATSBY_BOTD_TOKEN_ENDPOINT,
     [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_BOTD_TOKEN_ENDPOINT,
-  }) ?? 'test_fpjs_api_token_endpoint'
+  }) ?? 'test_botd_token_endpoint'
 
 export const FPJS_ENDPOINT =
   getContextEnv<string>({

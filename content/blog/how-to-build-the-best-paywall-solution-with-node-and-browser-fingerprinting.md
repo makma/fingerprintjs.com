@@ -61,7 +61,7 @@ Prerequisites:
 
 First, create an account with FingerprintJS. The sign-up process is quick, intuitive, and conventional, and you can try it without usage limits for 10 days.
 
-Once you’ve signed up, you’ll be presented with a quick start guide for both a CDN and an NPM implementation. The code snippet for each approach will include your generated browser token which you’ll use later in this tutorial, so keep this value close at hand. If need be, you can access the Tokens page from the left-side menu at any point to fetch and generate API and browser tokens.
+Once you’ve signed up, you’ll be presented with a quick start guide for both a CDN and an NPM implementation. The code snippet for each approach will include your generated public token which you’ll use later in this tutorial, so keep this value close at hand. If need be, you can access the Tokens page from the left-side menu at any point to fetch and generate public and secret tokens.
 
 ### Set Up the Web Application
 
@@ -279,7 +279,7 @@ body
  )
 ```
 
-As shown in the previous code snippet, additional JavaScript functions are loaded to the site using the `main.js` file from the `public/js` directory. This file has two functions: one is responsible for initializing FingerprintJS with your browser token once the library has finished downloading. The other makes use of the loaded and token configured FingerprintJS object to fetch the unique visitor ID. The visitor ID is then used to query the paywall API route to track the articles read. 
+As shown in the previous code snippet, additional JavaScript functions are loaded to the site using the `main.js` file from the `public/js` directory. This file has two functions: one is responsible for initializing FingerprintJS with your public token once the library has finished downloading. The other makes use of the loaded and token configured FingerprintJS object to fetch the unique visitor ID. The visitor ID is then used to query the paywall API route to track the articles read. 
 
 ```
 var fpLoaded = function (fp) {
@@ -301,7 +301,7 @@ var fpLoaded = function (fp) {
 }
 
 function initFingerprintJS() {
- FingerprintJS.load({token: 'your-token', region: 'eu'})
+ FingerprintJS.load({token: 'your-public-token', region: 'eu'})
    .then(fp => fpLoaded(fp));
 }
 ```

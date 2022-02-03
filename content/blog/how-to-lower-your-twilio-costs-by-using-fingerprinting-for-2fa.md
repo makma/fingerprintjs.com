@@ -237,11 +237,11 @@ Next, add the FingerprintJS script to your `views/layout.hbs` file just above th
 …
 ```
 
-Once you have your FingerprintJS token, you can add the following to your `public/javascripts/index.js` file:
+Once you have your FingerprintJS public token, you can add the following to your `public/javascripts/index.js` file:
 
 ```javascript
 $(document).ready(() => {
-    FingerprintJS.load({token: 'YOUR_TOKEN_HERE'})
+    FingerprintJS.load({token: 'YOUR_PUBLIC_TOKEN_HERE'})
         .then((fp) => fp.get())
         .then((result) => {
             console.log(result.visitorId);

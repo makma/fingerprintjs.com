@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { ExtendedGetResult, GetOptions, Region } from '@fingerprintjs/fingerprintjs-pro'
 import {
-  FPJS_TOKEN,
+  FPJS_PUBLIC_TOKEN,
   FPJS_ENDPOINT,
   FPJS_REGION,
   FPJS_MONITORING_CLIENT_ID,
@@ -28,7 +28,7 @@ export function FpjsProvider({ children }: { children: React.ReactNode }) {
 }
 
 function FpjsAppProvider({ children }: { children: React.ReactNode }) {
-  const clientToken = FPJS_TOKEN
+  const publicToken = FPJS_PUBLIC_TOKEN
   const endpoint = FPJS_ENDPOINT
   const region = FPJS_REGION as Region
   const monitoringClientId = FPJS_MONITORING_CLIENT_ID ?? ''
@@ -42,7 +42,7 @@ function FpjsAppProvider({ children }: { children: React.ReactNode }) {
       try {
         const FP = await import('@fingerprintjs/fingerprintjs-pro')
         const fp = await FP.load({
-          token: clientToken,
+          token: publicToken,
           endpoint,
           region,
           tlsEndpoint,
@@ -65,7 +65,7 @@ function FpjsAppProvider({ children }: { children: React.ReactNode }) {
     }
 
     getVisitorData()
-  }, [clientToken, endpoint, tlsEndpoint, region, monitoringClientId, monitoringToken])
+  }, [publicToken, endpoint, tlsEndpoint, region, monitoringClientId, monitoringToken])
 
   return <FpjsContext.Provider value={{ visitorData }}>{children}</FpjsContext.Provider>
 }
