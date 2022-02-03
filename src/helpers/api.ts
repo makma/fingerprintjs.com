@@ -1,4 +1,4 @@
-import { FPJS_API_TOKEN, FPJS_VISITORS_ENDPOINT, FPJS_LEAD_URL, BOTD_TOKEN_ENDPOINT } from '../constants/env'
+import { FPJS_API_TOKEN, FPJS_VISITORS_ENDPOINT, FPJS_MGMT_API_HOST, BOTD_TOKEN_ENDPOINT } from '../constants/env'
 
 const apiToken = FPJS_API_TOKEN
 const endpoint = FPJS_VISITORS_ENDPOINT
@@ -17,7 +17,7 @@ export async function createNewLead(
   previousPage: string,
   utmParams: Record<string, string>
 ) {
-  return fetch(FPJS_LEAD_URL, {
+  return fetch(`${FPJS_MGMT_API_HOST}/salesforce/leads`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

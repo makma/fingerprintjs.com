@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { handlePriceChange, pricingTable, freeApiCalls } from '../../helpers/pricing'
+import { handlePriceChange, pricingTable } from '../../helpers/pricing'
 import RangeSlider, { SliderValue } from '../common/RangeSlider'
 import classNames from 'classnames'
 import Button from '../common/Button'
@@ -7,6 +7,7 @@ import styles from './PriceCalculator.module.scss'
 import { PATH, URL } from '../../constants/content'
 import { ReactComponent as CheckSVG } from '../../img/CheckSVG.svg'
 import { ReactComponent as CloseSvg } from '../../img/close.svg'
+import { usePriceData } from '../../hooks/usePriceData'
 
 const sliderConfig = {
   min: 0,
@@ -15,7 +16,9 @@ const sliderConfig = {
 }
 
 export default function PriceCalculator() {
-  const sliderTable = pricingTable.map(({ label, value }) => {
+  const { overagePrice, flatAmount } = usePriceData()
+
+  const sliderTable = pricingTable(flatAmount).map(({ label, value }) => {
     return { label, value } as SliderValue
   })
 
@@ -34,11 +37,11 @@ export default function PriceCalculator() {
       case Infinity:
         setMonthlyPaymentLabel('Contact Us')
         break
-      case freeApiCalls:
+      case flatAmount:
         setMonthlyPaymentLabel('$0')
         break
       default: {
-        const newPrice = handlePriceChange(value)
+        const newPrice = handlePriceChange(value, overagePrice)
         setMonthlyPaymentLabel(newPrice)
         break
       }

@@ -6,6 +6,7 @@ const { createFilePath } = require('gatsby-source-filesystem')
 const webpack = require(`webpack`)
 const remark = require(`remark`)
 const remarkHTML = require(`remark-html`)
+const fetch = require(`node-fetch`)
 
 async function getFolderEdges(folder, graphql, filter = '') {
   const { data, errors } = await graphql(`
@@ -268,8 +269,8 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
   })
 }
 
-exports.sourceNodes = async ({ actions, getNodes }) => {
-  const { createNodeField } = actions
+exports.sourceNodes = async ({ actions, getNodes, createContentDigest }) => {
+  const { createNodeField, createNode } = actions
 
   const blogPosts = getNodes().filter(
     (node) => node.internal.type === 'MarkdownRemark' && /(blog)\/.*.md$/.test(node.fileAbsolutePath)
@@ -291,6 +292,51 @@ exports.sourceNodes = async ({ actions, getNodes }) => {
       }
     }
   })
+
+  const createPriceNode = (priceData) => {
+    const nodeData = {
+      ...priceData,
+      id: 'api-price',
+      parent: null,
+      children: [],
+      internal: {
+        type: 'API_Price',
+        contentDigest: createContentDigest({ priceData }),
+      },
+    }
+    createNode(nodeData)
+  }
+
+  const defaultOveragePrice = process.env.GATSBY_DEFAULT_OVERAGE_PRICE ?? 0.2
+  const defaultFlatAmount = process.env.GATSBY_DEFAULT_FLAT_AMOUNT ?? 20000
+  const defaultPrepaidQuantity = process.env.GATSBY_DEFAULT_PREPAID_QUANTITY ?? 100000
+
+  const defaultPriceData = {
+    overagePrice: defaultOveragePrice,
+    flatAmount: defaultFlatAmount,
+    prepaidQuantity: defaultPrepaidQuantity,
+  }
+
+  const apiUrl =
+    process.env.CONTEXT === 'production'
+      ? process.env.GATSBY_FPJS_MGMT_API_HOST
+      : process.env.GATSBY_PREVIEW_FPJS_MGMT_API_HOST
+
+  if (apiUrl) {
+    const result = await fetch(`${apiUrl}/prices?${new URLSearchParams({ 'product[]': 'api' })}`)
+    if (!result.ok) {
+      createPriceNode(defaultPriceData)
+      return
+    }
+    const resultData = await result.json()
+    createPriceNode({
+      overagePrice: resultData.data.api.overagePrice ?? defaultOveragePrice,
+      flatAmount: resultData.data.api.flatAmount ?? defaultFlatAmount,
+      prepaidQuantity: resultData.data.api.prepaidQuantity ?? defaultPrepaidQuantity,
+    })
+  } else {
+    createPriceNode(defaultPriceData)
+  }
 }
 exports.createSchemaCustomization = ({ actions }) => {
   // Define the @md tag to mark a field which should be interpreted as markdown and converted to HTML

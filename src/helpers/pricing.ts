@@ -1,40 +1,29 @@
-import { THOUSAND_IDENTIFICATIONS_PRICE } from '../constants/content'
-export const minimumIdentifications = 100000
-export const freeApiCalls = 20000
+import { kFormatter } from './format'
 
-export const pricingTable = [
-  { label: '20K', value: 20000 },
-  { label: '100K', value: 100000 },
-  { label: '500K', value: 500000 },
-  { label: '1M', value: 1000000 },
-  { label: '1M+', value: Infinity },
-]
+export function pricingTable(freeTierValue: number) {
+  const pricingTable = [
+    { label: kFormatter(freeTierValue), value: freeTierValue },
+    { label: '100K', value: 100000 },
+    { label: '500K', value: 500000 },
+    { label: '1M', value: 1000000 },
+    { label: '1M+', value: Infinity },
+  ]
 
-const numberFormatter = (currencyFormatOptions: {
-  maximumSignificantDigits: number
-  style: string
-  currencyDisplay: string
-  currency: string
-  notation: string
-}) => {
-  return Intl.NumberFormat('en-US', currencyFormatOptions)
+  return pricingTable
 }
-
-export function handlePriceChange(currentValue: number): string {
+export function handlePriceChange(currentValue: number, overagePrice: number): string {
   const value = Number(currentValue)
-  const newPrice = calculatePrice(value)
+  const newPrice = calculatePrice(value, overagePrice)
 
   return newPrice
 }
 
-export function calculatePrice(identifications: number): string {
-  const currencyFormatOptions = {
+export function calculatePrice(identifications: number, overagePrice: number): string {
+  return Intl.NumberFormat('en-US', {
     maximumSignificantDigits: 3,
     style: 'currency',
     currencyDisplay: 'symbol',
     currency: 'USD',
     notation: 'standard',
-  }
-
-  return numberFormatter(currencyFormatOptions).format(identifications * THOUSAND_IDENTIFICATIONS_PRICE)
+  }).format(identifications * (overagePrice / 100))
 }

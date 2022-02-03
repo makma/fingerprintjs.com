@@ -48,10 +48,10 @@ export const TLS_ENDPOINT = getContextEnv<string>({
   [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_TLS_ENDPOINT,
 })
 
-export const FPJS_LEAD_URL =
+export const FPJS_MGMT_API_HOST =
   getContextEnv<string>({
-    [NetlifyContext.Production]: process.env.GATSBY_FPJS_LEAD_URL,
-    [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_FPJS_LEAD_URL,
+    [NetlifyContext.Production]: process.env.GATSBY_FPJS_MGMT_API_HOST,
+    [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_FPJS_MGMT_API_HOST,
   }) ?? ''
 
 export const BOTD_PUBLIC_TOKEN =

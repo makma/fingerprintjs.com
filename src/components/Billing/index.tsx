@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { handlePriceChange, pricingTable, freeApiCalls } from '../../helpers/pricing'
+import React, { useState } from 'react'
+import { handlePriceChange, pricingTable } from '../../helpers/pricing'
 import Container from '../common/Container'
 import Section from '../common/Section'
 import RangeSlider, { SliderValue } from '../common/RangeSlider'
@@ -7,6 +7,7 @@ import Button from '../common/Button'
 import styles from './Billing.module.scss'
 import { PATH } from '../../constants/content'
 import { Link } from 'gatsby'
+import { usePriceData } from '../../hooks/usePriceData'
 
 const sliderConfig = {
   min: 0,
@@ -15,39 +16,36 @@ const sliderConfig = {
 }
 
 export default function Billing() {
-  const sliderTable = pricingTable.map(({ label, value }) => {
+  const { overagePrice, flatAmount } = usePriceData()
+  const sliderTable = pricingTable(flatAmount).map(({ label, value }) => {
     return { label, value } as SliderValue
   })
 
   const defaultValue = 0
   const [sliderValue, setSliderValue] = useState(defaultValue)
-  const [monthlyPaymentLabel, setMonthlyPaymentLabel] = useState(pricingTable[defaultValue].label)
+  const [monthlyPaymentLabel, setMonthlyPaymentLabel] = useState('$0')
 
   const handleSliderChange = (newValue: number) => {
     const roundedValue = Math.round(newValue)
     setSliderValue(newValue)
-    recalculatePricing(sliderTable[roundedValue].value)
+    recalculatePricing(sliderTable[roundedValue].value, overagePrice)
   }
 
-  const recalculatePricing = (value: number) => {
+  const recalculatePricing = (value: number, overagePrice: number) => {
     switch (value) {
       case Infinity:
         setMonthlyPaymentLabel('Custom pricing')
         break
-      case freeApiCalls:
+      case flatAmount:
         setMonthlyPaymentLabel('$0')
         break
       default: {
-        const newPrice = handlePriceChange(value)
+        const newPrice = handlePriceChange(value, overagePrice)
         setMonthlyPaymentLabel(newPrice)
         break
       }
     }
   }
-
-  useEffect(() => {
-    recalculatePricing(sliderTable[Math.round(sliderValue)].value)
-  }, [sliderTable, sliderValue])
 
   return (
     <Section className={styles.section}>
