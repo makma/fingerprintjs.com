@@ -36,4 +36,12 @@ Default.args = {
   cardSection: cardSectionDefault.args as CardSectionProps,
   blocks: blocksDefault.args?.blocks as BlockWithImage[],
   hero: heroDefault.args as HeroProps,
+  content: {
+    title: 'Lorem Ipsum',
+    description:
+      'Nulla ac elementum dolor. Duis finibus elit elit, nec volutpat augue venenatis id. Etiam tincidunt nisi lorem, eu venenatis nunc finibus quis. Curabitur at diam quis neque ultricies tristique.',
+    publishDate: 'January 25, 2021',
+    path: '/lorem-ipsum',
+  },
+  relatedArticlesTitle: 'Lorem Ipsum',
 }

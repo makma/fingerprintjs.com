@@ -15,4 +15,6 @@ Default.args = {
   children: 'Sign up to our newsletter for anti-fraud news',
   ctaText: 'Subscribe',
   ctaHref: '/',
+  hideWhenScroll: false,
+  openCtaNewTab: false,
 }

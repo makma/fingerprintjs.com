@@ -4,7 +4,7 @@ import PreviewCompatibleImage, { ImageInfo } from '../common/PreviewCompatibleIm
 import styles from './HeroImage.module.scss'
 
 export interface HeroImageComponentProps {
-  image: ImageInfo
+  image: ImageInfo | string
   imageAlt?: string
   imageTitle?: string
 }
