@@ -9,7 +9,7 @@ module.exports = {
     '\\.svg$': `<rootDir>/src/test/__mocks__/svg.tsx`,
   },
   testPathIgnorePatterns: [`node_modules`, `\\.cache`, `<rootDir>.*/public`],
-  transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
+  transformIgnorePatterns: [`node_modules/(?!(gatsby|swiper|ssr-window|dom7)/)`], //added Swiper node molules folder to make it work with jest
   globals: {
     __PATH_PREFIX__: ``,
   },

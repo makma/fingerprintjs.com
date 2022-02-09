@@ -24,14 +24,18 @@ export default memo(function FpjsWidget() {
   const [visits, setVisits] = useState<VisitorResponse[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [isLoaded, setIsLoaded] = useState(false)
-
-  const { visitorData } = useVisitorData()
+  const [hasError, setHasError] = useState(false)
+  const { visitorData, hasFpjsError } = useVisitorData()
   const visitorId = visitorData?.visitorId
   const rollbar = useRollbar()
 
   useEffect(() => {
     let isCancelled = false
     setIsLoading(true)
+    if (hasFpjsError) {
+      setHasError(true)
+      return
+    }
 
     async function fetchVisits() {
       if (!visitorId) {
@@ -47,6 +51,7 @@ export default memo(function FpjsWidget() {
         }
       } catch (e) {
         if (e) {
+          setHasError(true)
           rollbar.error('Unable to load visits', getErrorMessage(e))
         }
       } finally {
@@ -60,13 +65,13 @@ export default memo(function FpjsWidget() {
     return () => {
       isCancelled = true
     }
-  }, [visitorId, rollbar])
+  }, [visitorId, rollbar, hasFpjsError])
 
   return (
     <div className={styles.container}>
-      {isLoading ? (
+      {isLoading || hasError ? (
         <>
-          <LoadingState />
+          <LoadingState hasError={hasError} />
           <MobileLoadingState />
         </>
       ) : (
@@ -198,7 +203,11 @@ async function loadFpjsHistory(endpoint: string, visitorId: string, secretToken:
   return await response.json()
 }
 
-function LoadingState() {
+interface LoadingStateProps {
+  hasError: boolean
+}
+
+function LoadingState({ hasError }: LoadingStateProps) {
   return (
     <div className={classNames(styles.demo, styles.desktopOnly)}>
       <div className={styles.history}>
@@ -214,6 +223,15 @@ function LoadingState() {
         </div>
       </div>
       <CurrentVisitLoading />
+      <noscript className={styles.errorMessage}>
+        <h1 className={styles.message}>Enable JS to run the demo</h1>
+      </noscript>
+      {hasError && (
+        <div className={styles.errorMessage}>
+          <h2 className={styles.tryMessage}>An error occurred.</h2>
+          <h2 className={styles.tryMessage}>Please refresh the page or try in incognito mode.</h2>
+        </div>
+      )}
     </div>
   )
 }

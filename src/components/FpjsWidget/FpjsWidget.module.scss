@@ -466,3 +466,23 @@
 .visitLoading {
   margin-bottom: rem(6px);
 }
+
+.errorMessage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: rem(10px);
+  border-radius: rem(5px);
+  background-color: rgba(255, 255, 255, 0.7);
+
+  .message {
+    white-space: nowrap;
+  }
+
+  .tryMessage {
+    text-align: center;
+    font-size: rem(20px);
+    white-space: nowrap;
+  }
+}

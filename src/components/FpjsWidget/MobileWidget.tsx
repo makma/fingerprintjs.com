@@ -1,7 +1,7 @@
 import React from 'react'
 import { ReactComponent as ChevronRightSvg } from '../../img/chevron-right.svg'
 import { ReactComponent as ChevronLeftSvg } from '../../img/chevron-left.svg'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperSlide } from '../../../node_modules/swiper/react/swiper-react' //using this way to import swiper to fix issue with Jest https://github.com/nolimits4web/swiper/issues/4871
 import { Lazy, Navigation, Pagination } from 'swiper'
 
 import classNames from 'classnames'

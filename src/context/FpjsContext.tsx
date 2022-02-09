@@ -8,8 +8,12 @@ import {
   FPJS_MONITORING_TOKEN,
   TLS_ENDPOINT,
 } from '../constants/env'
+type FormContextType = {
+  visitorData?: ExtendedGetResult
+  hasFpjsError?: boolean
+}
 
-const FpjsContext = React.createContext<{ visitorData?: ExtendedGetResult }>({})
+const FpjsContext = React.createContext<FormContextType>({})
 const config: GetOptions<true> = {
   extendedResult: true,
   timeout: 30_000,
@@ -36,6 +40,7 @@ function FpjsAppProvider({ children }: { children: React.ReactNode }) {
   const tlsEndpoint = TLS_ENDPOINT
 
   const [visitorData, setVisitorData] = useState<ExtendedGetResult>()
+  const [hasFpjsError, setHasFpjsError] = useState(false)
 
   useEffect(() => {
     async function getVisitorData() {
@@ -53,10 +58,15 @@ function FpjsAppProvider({ children }: { children: React.ReactNode }) {
             : undefined,
         })
         const result = await fp.get(config)
+        if (!result) {
+          setHasFpjsError(true)
+          return
+        }
         setVisitorData(result)
       } catch (error) {
         // Adds a special name to JS agent errors so that they can be found in Rollbar easily.
         if (error instanceof Error) {
+          setHasFpjsError(true)
           error.message = `${error.name}: ${error.message}`
           error.name = 'FPJSAgentError'
           throw error
@@ -67,7 +77,7 @@ function FpjsAppProvider({ children }: { children: React.ReactNode }) {
     getVisitorData()
   }, [publicToken, endpoint, tlsEndpoint, region, monitoringClientId, monitoringToken])
 
-  return <FpjsContext.Provider value={{ visitorData }}>{children}</FpjsContext.Provider>
+  return <FpjsContext.Provider value={{ visitorData, hasFpjsError }}>{children}</FpjsContext.Provider>
 }
 
 export default FpjsContext
