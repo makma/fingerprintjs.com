@@ -21,9 +21,10 @@ describe('Contact Sales Form', () => {
     userEvent.type(screen.getByLabelText('Your name'), 'John')
     userEvent.type(screen.getByLabelText('Work email'), 'john@gmail.com')
     userEvent.type(screen.getByLabelText('Company Website'), 'www.test.com')
+    userEvent.type(screen.getByPlaceholderText('1 (702) 123-4567'), '+1 2124567890')
     userEvent.type(screen.getByLabelText('Tell us about your project'), 'test description')
 
-    userEvent.click(screen.getByRole('button'))
+    userEvent.click(screen.getByText('Submit'))
 
     await screen.findByText("We'll reach out to you shortly")
 
@@ -36,9 +37,10 @@ describe('Contact Sales Form', () => {
     userEvent.type(screen.getByLabelText('Your name'), 'John')
     userEvent.type(screen.getByLabelText('Work email'), 'john@gmail.com')
     userEvent.type(screen.getByLabelText('Company Website'), 'www.test.com')
+    userEvent.type(screen.getByPlaceholderText('1 (702) 123-4567'), '+1 2124567890')
     userEvent.type(screen.getByLabelText('Tell us about your project'), 'test description')
 
-    userEvent.click(screen.getByRole('button'))
+    userEvent.click(screen.getByText('Submit'))
 
     await screen.findByText('An error occurred')
 

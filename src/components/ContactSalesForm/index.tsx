@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Button from '../common/Button'
 import Section from '../../components/common/Section'
 import classNames from 'classnames'
@@ -13,6 +13,8 @@ import { URL, MAILTO } from '../../constants/content'
 import { useViewTracking } from '../../context/HistoryListener'
 import { useBotD } from '../../hooks/useBotD'
 import { BOTD_PUBLIC_TOKEN_CONTACT_SALES, BOTD_SECRET_TOKEN_CONTACT_SALES } from '../../constants/env'
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 
 import styles from './ContactSalesForm.module.scss'
 
@@ -21,6 +23,7 @@ export default function ContactSalesForm() {
   const [email, setEmail] = useState('')
   const [url, setUrl] = useState('')
   const [description, setDescription] = useState('')
+  const [phone, setPhone] = useState('')
 
   const { formState, errorMessage, updateFormState, updateErrorMessage } = useForm(Forms.ContactSales)
   const { landingPage, previousPage, utmParams } = useViewTracking()
@@ -49,7 +52,16 @@ export default function ContactSalesForm() {
     }
 
     try {
-      const response = await createNewLead(formName, email, url, description, landingPage, previousPage, utmParams)
+      const response = await createNewLead(
+        formName,
+        email,
+        url,
+        phone,
+        description,
+        landingPage,
+        previousPage,
+        utmParams
+      )
       const status = response.status
 
       if (status !== 200) {
@@ -62,6 +74,13 @@ export default function ContactSalesForm() {
     } catch (error) {
       onError()
     }
+  }
+
+  const inputRef = useRef<HTMLInputElement | null>(null)
+
+  const handlePhoneChange = (phone: string) => {
+    setPhone(phone)
+    inputRef.current?.focus()
   }
 
   return (
@@ -121,6 +140,18 @@ export default function ContactSalesForm() {
                 onChange={(e) => setUrl(e.target.value)}
                 disabled={formState === FormState.Loading}
                 required
+              />
+              <label className={styles.label} htmlFor='phone'>
+                Phone number
+              </label>
+              <PhoneInput
+                inputClass={styles.phoneInput}
+                buttonClass={styles.phoneDropdown}
+                country={'us'}
+                value={phone}
+                onChange={(phone) => handlePhoneChange(phone)}
+                enableSearch
+                inputProps={{ ref: inputRef, name: 'phoneInput' }}
               />
               <label className={styles.label} htmlFor='description'>
                 Tell us about your project

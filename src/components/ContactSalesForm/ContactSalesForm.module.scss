@@ -52,10 +52,6 @@
     color: adjust-color(c('brand-water'), $alpha: -0.5);
     max-width: rem(287px);
   }
-
-  & + .input {
-    margin-top: 1.75rem;
-  }
 }
 
 .button {
@@ -131,5 +127,18 @@ select:focus {
     &:hover {
       color: adjust-color(c('brand-fire'), $lightness: -20%);
     }
+  }
+}
+
+.phoneInput {
+  border-radius: rem(8px) !important;
+  width: 100% !important;
+  height: rem(50px) !important;
+}
+
+.phoneDropdown {
+  border-radius: rem(8px) 0 0 rem(8px) !important;
+  > div {
+    border-radius: rem(8px) 0 0 rem(8px) !important;
   }
 }
