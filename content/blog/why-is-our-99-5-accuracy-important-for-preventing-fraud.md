@@ -46,7 +46,7 @@ FingerprintJS Pro incorporates over 100 unique signals to achieve 99.5% accuracy
 
 ## Why high accuracy matters
 
-Why is such high accuracy important? See below how a sample size of 100K devices is accurately measured over time with FingerprintJS Pro’s accuracy (99.5%)\[1] versus a lower accuracy solution (60%).\[2]
+Why is such high accuracy important? See below how a sample size of 100K devices is accurately measured over time with FingerprintJS Pro’s accuracy (99.5%)<small>[1]</small> versus a lower accuracy solution (60%).<small>[2]</small>
 
 ![FingerprintJS Pro accuracy over time](/img/uploads/why-accuracy-matters_-graph.png "FingerprintJS Pro accuracy over time")
 
@@ -56,6 +56,6 @@ With a low accuracy alternative, your fraud system could misidentify nearly 90% 
 
 Find out how much fraud FingerprintJS Pro can prevent for your business by designing a trial with our expert team. [Contact us](https://fingerprintjs.com/contact-sales/) and get hands-on guidance for how to incorporate FingerprintJS Pro’s high accuracy identification into your fraud stack.
 
-\[1] To learn more about the methodology used to define our 99.5% identification accuracy, read [our documentation](https://dev.fingerprintjs.com/docs/understanding-our-995-accuracy).
+<i><small>[1] To learn more about the methodology used to define our 99.5% identification accuracy, read [our documentation](https://dev.fingerprintjs.com/docs/understanding-our-995-accuracy).</small></i>
 
-\[2] In a [fingerprinting study](https://hal.inria.fr/hal-01718234v2) from KTH Royal Institute of Technology, 33.6% of users were correctly identified. [Other studies](https://www.researchgate.net/publication/332873650_Browser_Fingerprinting_A_survey) from EFF and Inria found accuracy between 80-90%, but those studies predate current web privacy policies. For the purposes of this comparison, we assumed a 60% accuracy rate.
+<i><small>[2] In a [fingerprinting study](https://hal.inria.fr/hal-01718234v2) from KTH Royal Institute of Technology, 33.6% of users were correctly identified. [Other studies](https://www.researchgate.net/publication/332873650_Browser_Fingerprinting_A_survey) from EFF and Inria found accuracy between 80-90%, but those studies predate current web privacy policies. For the purposes of this comparison, we assumed a 60% accuracy rate.</small></i>
