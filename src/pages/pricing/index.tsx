@@ -82,7 +82,7 @@ function FAQSection() {
       question: 'Do you offer annual billing and discounts?',
       answer: (
         <p className={styles.faqContent}>
-          Yes we do offer annual billing and discounts. Please{' '}
+          Yes - we offer annual billing and discounts. Please{' '}
           <Link to={PATH.contactSales} className={styles.link}>
             contact sales{' '}
           </Link>

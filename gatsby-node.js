@@ -294,6 +294,10 @@ exports.sourceNodes = async ({ actions, getNodes, createContentDigest }) => {
   })
 
   const createPriceNode = (priceData) => {
+    // eslint-disable-next-line no-console
+    console.info(
+      `The following values will be used for the price sections: \nOverage price: ${priceData.overagePrice}, Flat amount:  ${priceData.flatAmount}, Prepaid quantity:  ${priceData.prepaidQuantity}\n `
+    )
     const nodeData = {
       ...priceData,
       id: 'api-price',
@@ -312,9 +316,10 @@ exports.sourceNodes = async ({ actions, getNodes, createContentDigest }) => {
   const defaultPrepaidQuantity = process.env.GATSBY_DEFAULT_PREPAID_QUANTITY ?? 100000
 
   const defaultPriceData = {
-    overagePrice: defaultOveragePrice,
-    flatAmount: defaultFlatAmount,
-    prepaidQuantity: defaultPrepaidQuantity,
+    // Node treats all environment variables as strings
+    overagePrice: Number(defaultOveragePrice),
+    flatAmount: Number(defaultFlatAmount),
+    prepaidQuantity: Number(defaultPrepaidQuantity),
   }
 
   const apiUrl =
@@ -323,8 +328,14 @@ exports.sourceNodes = async ({ actions, getNodes, createContentDigest }) => {
       : process.env.GATSBY_PREVIEW_FPJS_MGMT_API_HOST
 
   if (apiUrl) {
-    const result = await fetch(`${apiUrl}/prices?${new URLSearchParams({ 'product[]': 'api' })}`)
+    const result = await fetch(`${apiUrl}/prices?${new URLSearchParams({ 'product[]': 'api' })}`, {
+      headers: {
+        [process.env.GATSBY_CUSTOM_HEADER_WAF]: true,
+      },
+    })
     if (!result.ok) {
+      // eslint-disable-next-line no-console
+      console.error('An error has occurred getting price values from the endpoint. Default values will be used.')
       createPriceNode(defaultPriceData)
       return
     }
@@ -335,6 +346,8 @@ exports.sourceNodes = async ({ actions, getNodes, createContentDigest }) => {
       prepaidQuantity: resultData.data.api.prepaidQuantity ?? defaultPrepaidQuantity,
     })
   } else {
+    // eslint-disable-next-line no-console
+    console.error('The endpoint to get the prices is not defined. Default values will be used.')
     createPriceNode(defaultPriceData)
   }
 }
