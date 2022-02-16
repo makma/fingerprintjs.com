@@ -1,7 +1,7 @@
 ---
 templateKey: long-form-content
 metadata:
-  title: Why is our 99.5% accuracy important for preventing fraud?
+  title: Why is 99.5% accuracy important for preventing fraud?
   description: FingerprintJS Pro's visitorID is the most accurate device
     identifier available. Learn why this matters when it comes to catching
     fraudsters and protecting your online business.
@@ -12,7 +12,7 @@ metadata:
   socialImage: /img/uploads/why-accuracy-matters.png
 featured: true
 publishDate: 2022-02-16T02:30:40.426Z
-title: Why is our 99.5% accuracy important for preventing fraud?
+title: Why is 99.5% accuracy important for preventing fraud?
 isPublished: true
 tags:
   - fingerprinting
