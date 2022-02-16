@@ -27,11 +27,11 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 ---
-Device identification is an essential weapon in the fight against fraud. The majority of fraud is committed by a small percentage of users. These bad actors are often repeat visitors that are constantly trying to conceal their identity. By accurately identifying devices, you can better spot patterns of fraud and block these users from taking advantage of your business.  
+Device identification is an essential weapon in the fight against fraud. The majority of fraud is committed by a small percentage of users, often visiting a targeted website multiple times in order to commit fraud using different login credentials, credit cards and names. By accurately identifying devices even when the user is attempting to conceal their identity, you can better spot patterns of fraud and block fraudsters from taking advantage of your business.  
 
 ## IP addresses and cookies no longer suffice
 
-Device identification has traditionally relied on IP addresses and cookies. For many years, these two mechanisms were sufficient, as IP addresses rarely changed, being statically assigned to individual devices or households.) Cookies had no restrictions on cross-site tracking and identifier storage as there was no public awareness about privacy implications of doing so.
+Device identification has traditionally relied on IP addresses and cookies. For many years, these two mechanisms were sufficient, as IP addresses rarely changed, being statically assigned to individual devices or households. Cookies had no restrictions on cross-site tracking and identifier storage as there was no public awareness about privacy implications of doing so.
 
 Today the importance of IP addresses and cookies in preventing fraud have significantly diminished to the point of being useless. 
 
