@@ -328,7 +328,7 @@ FingerprintJS is helpful in many use cases, including:
 
 ![Code Snippet from FingerprintJS](https://i.imgur.com/mZhJ6x1.png)
 
-This snippet loads the FingerprintJS script to your webpage from the CDN. Once it’s loaded, you can start using FingerprintJS with the token given to your account (it’s part of the code in the snippet). 
+This snippet loads the FingerprintJS script to your webpage from the CDN. Once it’s loaded, you can start using FingerprintJS with the API key given to your account (it’s part of the code in the snippet). 
 
 Before adding this code to your website, make sure to check your email and verify your email address with FingerprintJS first. This is necessary for the subscription to take effect.
 

@@ -225,7 +225,7 @@ While a browser fingerprint **alone** is not strong enough to act as a second fo
 
 *Note: security is a very application-specific topic, so don’t take my advice here as a blanket rule for every situation. You’ll need to weigh the risk for your use case.*
 
-Let’s look at how you can use [FingerprintJS](https://fingerprintjs.com/) to generate a browser fingerprint that’s 99.5% accurate and will allow you to bypass 2FA in some situations. To start, you need to sign up and get a security token that you will use for identification:
+Let’s look at how you can use [FingerprintJS](https://fingerprintjs.com/) to generate a browser fingerprint that’s 99.5% accurate and will allow you to bypass 2FA in some situations. To start, you need to sign up and get a public API key that you will use for identification:
 
 ![Fingerprint JS subscription dashboard](/img/uploads/twilio-sub-dah.png "Fingerprint JS subscription dashboard")
 
@@ -237,11 +237,11 @@ Next, add the FingerprintJS script to your `views/layout.hbs` file just above th
 …
 ```
 
-Once you have your FingerprintJS public token, you can add the following to your `public/javascripts/index.js` file:
+Once you have your FingerprintJS public API key, you can add the following to your `public/javascripts/index.js` file:
 
 ```javascript
 $(document).ready(() => {
-    FingerprintJS.load({token: 'YOUR_PUBLIC_TOKEN_HERE'})
+    FingerprintJS.load({token: 'your-public-api-key'})
         .then((fp) => fp.get())
         .then((result) => {
             console.log(result.visitorId);

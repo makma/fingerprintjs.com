@@ -75,7 +75,7 @@ To get started, create an `index.html` file with the following code between the 
 ```
 <script>
   function initFingerprintJS() {
-    const fpPromise = FingerprintJS.load({ token: 'your-public-token' });
+    const fpPromise = FingerprintJS.load({ token: 'your-public-api-key' });
 
     fpPromise
       .then(fp => fp.get())
@@ -89,9 +89,9 @@ To get started, create an `index.html` file with the following code between the 
 ></script>
 ```
 
-This will print the visitorID to the console, but it won’t work until we give it a proper token. You can [sign up](https://dashboard.fingerprintjs.com/signup) for a  free account of FingerprintJS Pro to get a unique token for your website.
+This will print the visitorID to the console, but it won’t work until we give it a proper API key. You can [sign up](https://dashboard.fingerprintjs.com/signup) for a  free account of FingerprintJS Pro to get a unique API key for your website.
 
-Click the **tokens** tab on the left and copy the token marked **public**. Replace `your-public-token` in the `index.html` file with the token copied from FingerprintJS. Now you are ready to test. Start up a server and visit your new site. This demo uses [http-server](https://www.npmjs.com/package/http-server) because it installs quickly and is easy-to-use. 
+Click the **API Keys** tab on the left and copy the API key marked **public**. Replace `your-public-api-key` in the `index.html` file with the  copied from FingerprintJS. Now you are ready to test. Start up a server and visit your new site. This demo uses [http-server](https://www.npmjs.com/package/http-server) because it installs quickly and is easy-to-use. 
 
 First visit the site in a normal Chrome browser instance with cookies enabled. If you open up the Chrome developer console, you should see your unique visitorID printed out.
 

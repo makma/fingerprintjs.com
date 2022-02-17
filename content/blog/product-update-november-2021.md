@@ -83,7 +83,7 @@ We have added an Integration Status check-list that highlights the key steps to 
 * Ad blockers will not block our JS Agent from loading
 * FingerprintJS becomes harder to detect by automated blockers and fraudsters
 
-3. [Request Filtering](https://dev.fingerprintjs.com/docs/request-filtering): You can filter out unwanted visitor identifications using the request filtering rules by either whitelisting or blacklisting websites that use your application token.
+3. [Request Filtering](https://dev.fingerprintjs.com/docs/request-filtering): You can filter out unwanted visitor identifications using the request filtering rules by either whitelisting or blacklisting websites that use your application API key.
 4. [Webhooks](https://dev.fingerprintjs.com/docs/webhooks): Utilize server-to-server network communication to request your application’s API when an event occurs. This allows you to be notified immediately when an event occurs on your application.
 
 ![Integration Status](/img/uploads/integration-status.png "Integration Status")

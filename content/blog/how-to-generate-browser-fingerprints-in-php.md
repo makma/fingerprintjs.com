@@ -191,11 +191,11 @@ In the next section, I’ll show you how to prevent re-registration using browse
 
 To get started with FingerprintJS, you will need a [FingerprintJS pro account](https://dashboard.fingerprintjs.com/signup). If you do not have an account, you can start a free account with no credit card required.
 
-Once you have an account, visit your [dashboard](https://dashboard.fingerprintjs.com/) and select the subscription that you created while registering. Head to the `Tokens` section from the left sidebar and copy the active **public** token.
+Once you have an account, visit your [dashboard](https://dashboard.fingerprintjs.com/) and select the subscription that you created while registering. Head to the `API Keys` section from the left sidebar and copy the active **public** API key.
 
-![List of active tokens in the dashboard](/img/uploads/public-token-location.png "List of active tokens in the dashboard")
+![List of active API keys in the dashboard](/img/uploads/public-api-key-location.png "List of active API keys in the dashboard")
 
-After you have the token, install the JavaScript agent. This JavaScript agent will run in the browser, so you do not need a backend PHP component to generate the fingerprint. The required snippet can either be downloaded from a CDN (content delivery network) or installed through NPM. In this example, I’ll use a CDN.
+After you have the API key, install the JavaScript agent. This JavaScript agent will run in the browser, so you do not need a backend PHP component to generate the fingerprint. The required snippet can either be downloaded from a CDN (content delivery network) or installed through NPM. In this example, I’ll use a CDN.
 
 Inside your PHP application’s HTML, add the following to your `<head>` tag:
 
@@ -212,14 +212,14 @@ This snippet downloads the required JavaScript file and runs the `initFingerprin
 ```html
 <script>
   function initFingerprintJS() {
-    FingerprintJS.load({token: '<YOUR_TOKEN_HERE>'})
+    FingerprintJS.load({token: 'your-public-api-key'})
       .then(fp => fp.get())
       .then(result => console.log(result.visitorId));
   }
 </script>
 ```
 
-**Note that you need to replace `<YOUR_TOKEN_HERE>` with the actual token you copied from your dashboard.**
+**Note that you need to replace `your-public-api-key` with the actual Public API key you copied from your dashboard.**
 
 This function calls the FingerprintJS service to create a `visitorID` and prints it to the console. You can reload the registration page to see an alphanumeric hash in your JavaScript console.
 
@@ -244,7 +244,7 @@ And change the `initFingerprintJS()` function to set the value of the field:
 ```html
 <script>
   function initFingerprintJS() {
-    FingerprintJS.load({token: '<YOUR_TOKEN_HERE>'})
+    FingerprintJS.load({token: 'your-public-api-key'})
       .then(fp => fp.get())
       .then(result => {
           document.getElementById('visitorId').value = result.visitorId
