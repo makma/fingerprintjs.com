@@ -12,7 +12,7 @@ metadata:
 featured: true
 publishDate: 2022-02-21T19:19:03.589Z
 title: "Buy Now, Pay Later: The Ultimate Research Guide"
-isPublished: true
+isPublished: false
 tags:
   - ecommerce fraud
   - anti-fraud technology
