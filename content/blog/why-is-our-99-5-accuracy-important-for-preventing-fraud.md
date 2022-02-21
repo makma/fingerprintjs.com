@@ -6,10 +6,10 @@ metadata:
     identifier available. Learn why this matters when it comes to catching
     fraudsters and protecting your online business.
   url: https://fingerprintjs.com/blog/device-fingerprinting-accuracy
-  image: /img/uploads/why-accuracy-matters.png
+  image: /img/uploads/why-accuracy-matters-1-.png
   imageAlt: device fingerprinting accuracy
   imageTitle: device fingerprinting accuracy
-  socialImage: /img/uploads/why-accuracy-matters.png
+  socialImage: /img/uploads/why-accuracy-matters-1-.png
 featured: true
 publishDate: 2022-02-16T02:30:40.426Z
 title: Why is 99.5% accuracy important for preventing fraud?
@@ -21,7 +21,7 @@ tags:
 authors:
   - Savannah Copland
 heroImage:
-  image: /img/uploads/why-accuracy-matters.png
+  image: /img/uploads/why-accuracy-matters-1-.png
   imageAlt: device fingerprinting accuracy
   imageTitle: device fingerprinting accuracy
 customCTA:
