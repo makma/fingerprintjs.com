@@ -43,9 +43,9 @@ There are a number of BNPL companies out there, but some of them are far more po
 
 Klarna is by far the largest of these companies, with $53 billion in GMV (gross merchandise volume). Afterpay is a distant second, with $11 billion in GMV. Affirm comes in at $4.6 billion in GMV, Zip at $2.1 billion in GMV, and Sezzle at roughly $400 million in GMV. 
 
-With [well over 50 BNPL firms](https://www.cbinsights.com/research/buy-now-pay-later-global-market-map/) on the market, there’s a very long tail of providers with much smaller gross merchandise volume figures. 
+With <a href="https://www.cbinsights.com/research/buy-now-pay-later-global-market-map/">well over 50 BNPL firms</a> on the market, there’s a very long tail of providers with much smaller gross merchandise volume figures. 
 
-One [reason](https://fintechmagazine.com/venture-capital/four-reasons-why-klarna-biggest-fintech-europe) Klarna is so much larger than the other companies is that it was one of the first solutions to offer a great BNPL solution with silent credit checks done in the background, enabling consumers to spend right away and not incur interest. They’ve also strategically expanded and partnered with over 100,000 retailers, and they offer a top-rated software that’s seamless for both buyers and merchants alike.
+One <a href="https://fintechmagazine.com/venture-capital/four-reasons-why-klarna-biggest-fintech-europe">reason</a> Klarna is so much larger than the other companies is that it was one of the first solutions to offer a great BNPL solution with silent credit checks done in the background, enabling consumers to spend right away and not incur interest. They’ve also strategically expanded and partnered with over 100,000 retailers, and they offer a top-rated software that’s seamless for both buyers and merchants alike.
 
 It will be interesting to see how these companies compete in the coming years. With the increasing popularity of buy now pay later, they are all likely to see continued growth.
 
@@ -65,9 +65,9 @@ Credit card companies profit by charging high interest rates on debt. BNPL compa
 
 BNPL companies make money from retailer partnerships, instead of from the customer. This is typically in the form of a cut from retail sales, so that the more customers spend, the greater the profits for the BNPL firm.
 
-Practical Ecommerce [reports](https://www.practicalecommerce.com/what-merchants-should-know-about-buy-now-pay-later) that merchants usually pay around 2 to 8 percent of the purchase amount, while some providers also charge a flat fee of 30 cents per transaction.
+Practical Ecommerce <a href="https://www.practicalecommerce.com/what-merchants-should-know-about-buy-now-pay-later">reports</a> that merchants usually pay around 2 to 8 percent of the purchase amount, while some providers also charge a flat fee of 30 cents per transaction.
 
-Affirm is one of the leading BNPL companies, and they are quickly growing in popularity. In a recent study, it was revealed [64%](https://morningconsult.com/2021/07/27/buy-now-pay-later-bnpl-credit-card-customer-differences/) of US BNPL customers are low income. This is because BNPL companies make it easy for people to make immediate purchases with no interest rates.
+Affirm is one of the leading BNPL companies, and they are quickly growing in popularity. In a recent study, it was revealed <a href="https://morningconsult.com/2021/07/27/buy-now-pay-later-bnpl-credit-card-customer-differences/">64%</a> of US BNPL customers are low income. This is because BNPL companies make it easy for people to make immediate purchases with no interest rates.
 
 This results in greater sales and order values, which is why retailers partner with BNPL providers, in spite of their relatively high fees,
 
