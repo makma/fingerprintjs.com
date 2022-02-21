@@ -27,8 +27,6 @@ customCTA:
 ---
 In the past, if you wanted to buy something expensive, you had to save up for it. But nowadays, there are a ton of different payment options that allow you to spread the cost of your purchase over time. Buy now, pay later (BNPL) means exactly that: you can buy what you want now, and pay for it in installments over the next several weeks, months, or even years. It's often used by people who don't want to wait for their paychecks to come in, or by those who don't have enough money saved up for a big purchase.
 
-
-
 That said, it's also an industry rife with fraud. So, if you're thinking about offering buy now, pay later services to your customers, it's important to be aware of the risks involved and take steps to mitigate them. 
 
 In this article, we'll take a deep dive into the BNPL industry and its players to get a better understanding of the current landscape, the risks facing the industry and where this technology might be headed in the future. More specifically, we will look at BNPL companies by region and growth, how exactly BNPL companies democratize credit, the rise of BNPL fraud, and more.
@@ -113,7 +111,7 @@ Repayments with a stolen credit card are when a fraudster uses a stolen credit c
 
 # What are the risks of buy now, pay later?
 
-As we've explored, the BNPL industry is facing increasing fraud risks. However, it's not just fraud that companies need to worry about. There are a number of [other risks](https://www.consumerreports.org/shopping-retail/hidden-risks-of-buy-now-pay-later-plans-a7495893275/) associated with this payment method.
+As we've explored, the BNPL industry is facing increasing fraud risks. However, it's not just fraud that companies need to worry about. There are a number of <a href="https://www.consumerreports.org/shopping-retail/hidden-risks-of-buy-now-pay-later-plans-a7495893275/">other risks</a> associated with this payment method.
 
 For one, there's the possibility of being charged interest and fees if you're late on your payments. This can quickly spiral out of control, especially if you're not careful about how much you're spending.
 
@@ -123,7 +121,7 @@ Finally, it's easy to get carried away and spend more than you can afford when u
 
 # Buy now, pay later companies by region
 
-Allied Market Research projects that BNPL will reach a valuation of almost [$4 trillion by 2030](https://www.alliedmarketresearch.com/buy-now-pay-later-market-A12528). So, it's no surprise that startups in this space are sprouting up all over the world. In order to help you keep track of the biggest and most notable BNPL companies in each region, we've put together this handy list.
+Allied Market Research projects that BNPL will reach a valuation of almost <a href="https://www.alliedmarketresearch.com/buy-now-pay-later-market-A12528">$4 trillion by 2030</a>. So, it's no surprise that startups in this space are sprouting up all over the world. In order to help you keep track of the biggest and most notable BNPL companies in each region, we've put together this handy list.
 
 ## North America
 
@@ -133,11 +131,11 @@ At the same time, an increasing focus on data and analytics is allowing companie
 
 Some BNPL players in the US include:
 
-* [Affirm](https://www.affirm.com/)
-* [ChargeAfter](https://chargeafter.com/)
-* [SplitIt](https://www.splitit.com/)
-* [Sezzle](https://sezzle.com/how-it-works)
-* [Scratchpay](https://scratchpay.com/)
+* <a href="https://www.affirm.com/">Affirm</a>
+* <a href="https://chargeafter.com/">ChargeAfter</a>
+* <a href="https://www.splitit.com/">SplitIt</a>
+* <a href="https://sezzle.com/how-it-works">Sezzle</a>
+* <a href="https://scratchpay.com/">Scratchpay</a>
 
 ### Affirm
 
@@ -155,7 +153,7 @@ They claim approval rates of 85%, an average order value (AOV) increase of 45%, 
 
 Since 2012, SplitIt has been a leading BNPL solution, allowing customers to use their own credit card and spread the cost of their purchase over time. Unlike other "buy now, pay later" options, SplitIt doesn't charge any interest or fees, making it a more affordable option for responsible credit card users. 
 
-They were founded in NY and [last raised $100 million](https://www.afr.com/technology/splitit-raises-100-million-to-tap-us-uk-boom-20200805-p55isl) in late 2020. Their mission is to provide a better way for customers to buy the things they need and want, without having to worry about interest or fees.
+They were founded in NY and <a href="https://www.afr.com/technology/splitit-raises-100-million-to-tap-us-uk-boom-20200805-p55isl">last raised $100 million</a> in late 2020. Their mission is to provide a better way for customers to buy the things they need and want, without having to worry about interest or fees.
 
 ### Sezzle
 
@@ -173,11 +171,11 @@ They have the highest approvals rate in the industry, and charge no hidden fees 
 
 Africa is a key region for the development of BNPL, as it is home to a number of mobile-first countries. In addition, there is a large, untapped market for BNPL services in Africa.
 
-Africa has a youthful population, with almost [60%](https://www.citiesalliance.org/newsroom/news/cities-alliance-news/%C2%A0burgeoning-africa-youth-population-potential-or-challenge%C2%A0#:~:text=Almost%2060%25%20of%20Africa's%20population,Africa%20the%20world's%20youngest%20continent.) of the population below the age of 25. This presents a major opportunity for BNPL providers to tap into Africa’s growing youth population.
+Africa has a youthful population, with almost <a href="https://www.citiesalliance.org/newsroom/news/cities-alliance-news/%C2%A0burgeoning-africa-youth-population-potential-or-challenge%C2%A0#:~:text=Almost%2060%25%20of%20Africa's%20population,Africa%20the%20world's%20youngest%20continent.">60%</a> of the population below the age of 25. This presents a major opportunity for BNPL providers to tap into Africa’s growing youth population.
 
-Africa also has a large unbanked population, which represents a significant opportunity for BNPL providers. In fact, [57%](https://thefintechtimes.com/top-african-challenger-banks-helping-the-unbanked-through-mobile-services/#:~:text=Around%2057%25%20of%20the%20population,options%20to%20serve%20its%20citizens.) of the population in Africa does not have access to formal financial services. This provides an opportunity for BNPL providers to provide financial services to the continent’s vast population, by taking advantage of alternative data sources for approvals.
+Africa also has a large unbanked population, which represents a significant opportunity for BNPL providers. In fact, <a href="https://thefintechtimes.com/top-african-challenger-banks-helping-the-unbanked-through-mobile-services/#:~:text=Around%2057%25%20of%20the%20population,options%20to%20serve%20its%20citizens.">57%</a> of the population in Africa does not have access to formal financial services. This provides an opportunity for BNPL providers to provide financial services to the continent’s vast population, by taking advantage of alternative data sources for approvals.
 
-Africa is also a mobile-first continent, with [around half](https://www.gsma.com/mobileeconomy/sub-saharan-africa/#:~:text=By%20the%20end%20of%202020,almost%2020%20million%20on%202019.) of the population using mobile phones. This presents a major opportunity for providers of mobile-based BNPL services. BNPL players include [Motito](https://motito.co/), [CredPal](https://credpal.com/), [Lipa Later](https://lipalater.com/), and [Sympl](https://sympl.ai/).
+Africa is also a mobile-first continent, with <a href="https://www.gsma.com/mobileeconomy/sub-saharan-africa/#:~:text=By%20the%20end%20of%202020,almost%2020%20million%20on%202019.">around half</a> of the population using mobile phones. This presents a major opportunity for providers of mobile-based BNPL services. BNPL players include <a href="https://motito.co/">Motito</a>, <a href="https://credpal.com/">CredPal</a>,<a href="https://lipalater.com/">Lipa Later</a>, and <a href="https://sympl.ai/">Sympl</a>.
 
 ### Motito
 
