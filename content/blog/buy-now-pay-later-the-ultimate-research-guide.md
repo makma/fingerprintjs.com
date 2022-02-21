@@ -209,14 +209,14 @@ Players include [Simpl](https://getsimpl.com/), [ZestMoney](https://www.zestmone
 
 ### Simpl
 
-Simpl, a six-year-old startup, has raised [$83 million](https://techcrunch.com/2021/11/30/india-fintech-simpl-raises-40-million/) to date, with Valar Ventures and IA Ventures leading its Series B round. LFH Ventures and some existing investors also participated in the round. Simpl partners with popular online brands and offers their customers the ability to make purchases without paying for them at that very moment. 
+Simpl, a six-year-old startup, has raised <a href="https://techcrunch.com/2021/11/30/india-fintech-simpl-raises-40-million/">$83 million</a> to date, with Valar Ventures and IA Ventures leading its Series B round. LFH Ventures and some existing investors also participated in the round. Simpl partners with popular online brands and offers their customers the ability to make purchases without paying for them at that very moment. 
 
 Over the years, it has also developed a range of offerings, including a one-time checkout feature; Bill Box, which allows customers to automate their recurring expense payouts, and splitting a bill in three parts. As digital payments increase their reach in India, buy now, pay later services have started to gain fast traction.
 
 ### ZestMoney
 
-Since its inception in 2016, ZestMoney has become one of the fastest-growing fintechs in India. The company's unique offering allows users to shop online and pay back later through easy installments, using mobile technology, digital banking, and artificial intelligence.\
-\
+Since its inception in 2016, ZestMoney has become one of the fastest-growing fintechs in India. The company's unique offering allows users to shop online and pay back later through easy installments, using mobile technology, digital banking, and artificial intelligence.
+
 This makes it easier for people who wouldn't normally be able to get loans for consumer purchases to still have access to the things they need and want. 
 
 ### ePayLater
@@ -225,11 +225,11 @@ Since its launch in 2015, ePayLater has been providing a zero cost credit soluti
 
 ## China
 
-In China, BNPL is expanding rapidly, with multiple players entering the market in early 2021. [Bloomberg Intelligence estimates](https://www.bloomberg.com/professional/blog/buy-now-pay-later-11-3-trillion-opportunity-in-china-u-s-just-beginning/) that BNPL's penetration of global retail e-commerce will reach 1.6% in 2020, and could grow to 4% by 2023. 
+In China, BNPL is expanding rapidly, with multiple players entering the market in early 2021. <a href="https://www.bloomberg.com/professional/blog/buy-now-pay-later-11-3-trillion-opportunity-in-china-u-s-just-beginning/">Bloomberg Intelligence estimates</a> that BNPL's penetration of global retail e-commerce will reach 1.6% in 2020, and could grow to 4% by 2023. 
 
 China may not reach 4% penetration for another 10 years, but this would still turn it into a $233 billion market. BNPL's expansion into China's offline consumption market (66.2 trillion yuan in 2020) is also underway, with overseas markets providing valuable experiences.
 
-Chinese BNPL players include [Alibaba](https://breadnews.com/2021/08/05/no-money-no-problems-bnpl-companies-let-millennials-spend-what-they-dont-have/) and [LexinFintech](https://www.fool.com/investing/2021/02/12/lexinfintech-enters-buy-now-pay-later-market-china/).
+Chinese BNPL players include <a href="https://breadnews.com/2021/08/05/no-money-no-problems-bnpl-companies-let-millennials-spend-what-they-dont-have/">Alibaba</a> and <a href="https://www.fool.com/investing/2021/02/12/lexinfintech-enters-buy-now-pay-later-market-china/">LexinFintech</a>.
 
 ### Alibaba
 
@@ -241,7 +241,7 @@ Amid the COVID-19 pandemic, LexinFintech struggled in 2020. However, BNPL produc
 
 ## Europe
 
-Home to the 800-pound gorilla in the BNPL space, [Klarna](https://www.klarna.com/us/), Europe’s BNPL landscape is unsurprisingly well-developed. Other notable players include [Alma](https://www.getalma.com/), [Divido](https://www.divido.com/), [Butter](https://www.butter.co.uk/booking/?searchType=hotels), and [Zilch](https://www.payzilch.com/how-zilch-works/), all of which have made inroads into the market through aggressive marketing and product offerings.
+Home to the 800-pound gorilla in the BNPL space, <a href="https://www.klarna.com/us/">Klarna</a>, Europe’s BNPL landscape is unsurprisingly well-developed. Other notable players include <a href="https://www.getalma.com/">Alma</a>, <a href="https://www.divido.com/">Divido</a>, <a href="https://www.butter.co.uk/">Butter</a>, and [Zilch](https://www.payzilch.com/how-zilch-works/), all of which have made inroads into the market through aggressive marketing and product offerings.
 
 ### Klarna
 
