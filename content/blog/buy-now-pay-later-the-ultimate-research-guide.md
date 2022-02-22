@@ -32,7 +32,7 @@ customCTA:
 exclude: Table of Contents
 from-heading: 1
 to-heading: 3
-ordered: true
+ordered: false
 ```
 
 In the past, if you wanted to buy something expensive, you had to save up for it. But nowadays, there are a ton of different payment options that allow you to spread the cost of your purchase over time. Buy now, pay later (BNPL) means exactly that: you can buy what you want now, and pay for it in installments over the next several weeks, months, or even years. It's often used by people who don't want to wait for their paychecks to come in, or by those who don't have enough money saved up for a big purchase.
