@@ -269,17 +269,17 @@ This UK-based company is looking to put a nail in the coffin of the credit card,
 
 ### Zilch
 
-London-based Zilch is a <a href="Mastercard-partnered</a> BNPL app that allows customers to shop anywhere Mastercard is accepted, without any interest or added fees. Zilch claims to be as safe as using your bank card and has raised [over $339 million](https://www.crunchbase.com/organization/zilch-technology-limited) in investment to date - making it one of the most successful BNPL platforms in Europe.
+London-based Zilch is a <a href="https://zpr.io/pxHfwqk68wSe">Mastercard-partnered</a> BNPL app that allows customers to shop anywhere Mastercard is accepted, without any interest or added fees. Zilch claims to be as safe as using your bank card and has raised <a href="https://www.crunchbase.com/organization/zilch-technology-limited">over $339 million</a> in investment to date - making it one of the most successful BNPL platforms in Europe.
 
 ## Southeast Asia
 
 Southeast Asia is a key market for BNPL, with a large and growing population, rapid economic growth, and a young demographic. In addition, Southeast Asia is a region where cash is still prevalent, providing an opportunity for BNPL providers to displace cash transactions.
 
-The Southeast Asia BNPL market is currently fragmented, with a number of small players operating in the region. This presents an opportunity for larger players to enter the market and gain market share. The leading BNPL providers in the region include [Atome](https://www.atome.sg/), [Rely](https://www.rely.sg/), [TendoPay](https://tendopay.ph/), and [Fundiin](https://fundiin.vn/).
+The Southeast Asia BNPL market is currently fragmented, with a number of small players operating in the region. This presents an opportunity for larger players to enter the market and gain market share. The leading BNPL providers in the region include <a href="https://www.atome.sg/">Atome</a>, <a href="https://www.rely.sg/">Rely</a>, <a href="https://tendopay.ph/">TendoPay</a>, and <a href="https://fundiin.vn/">Fundiin</a>.
 
 ### Atome
 
-Southeast Asia is entering the BNPL foray in a big way, with a new partnership between StanChart and Atome. The two companies are coming together to deliver mobile-first financial services for consumers across Asia, with a planned [$500 million](https://www.finews.asia/finance/35529-stanchart-enters-bnpl-space-with-atome-investment) financing to support Atome to expand its regional ecosystem of merchants and customers.
+Southeast Asia is entering the BNPL foray in a big way, with a new partnership between StanChart and Atome. The two companies are coming together to deliver mobile-first financial services for consumers across Asia, with a planned <a href="https://www.finews.asia/finance/35529-stanchart-enters-bnpl-space-with-atome-investment">$500 million</a> financing to support Atome to expand its regional ecosystem of merchants and customers.
 
 Atome is a young company, but it's quickly making a name for itself in the region. It has a presence across Southeast Asia, India and Greater China, and partners with over 5,000 online and offline retailers. It also operates the digital lending platform Kredit Pintar in Indonesia.
 
@@ -289,17 +289,17 @@ With this new partnership, Atome is poised for even more growth in the coming ye
 
 ### Rely
 
-Singapore's very own BNPL superstar, Rely, is shaking up the e-commerce scene with their innovative interest-free installment service. This young company has already raised an impressive [$75 million](https://www.crunchbase.com/organization/rely-265a) and is gearing up to expand.
+Singapore's very own BNPL superstar, Rely, is shaking up the e-commerce scene with their innovative interest-free installment service. This young company has already raised an impressive <a href="https://www.crunchbase.com/organization/rely-265a">$75 million</a> and is gearing up to expand.
 
 ### TendoPay
 
-Filipino consumers now have access to convenient, affordable installment loans through TendoPay, thanks to a [strategic investment](https://fintechnews.ph/45009/lending/australian-bnpl-firm-zip-drives-expansion-in-south-east-asia-with-investment-in-tendopay/) by Zip, the leading Australian BNPL provider. Since 2018, TendoPay has been providing digital installment plan solutions, with a focus on responsible lending. 
+Filipino consumers now have access to convenient, affordable installment loans through TendoPay, thanks to a <a href="https://fintechnews.ph/45009/lending/australian-bnpl-firm-zip-drives-expansion-in-south-east-asia-with-investment-in-tendopay/">strategic investment</a> by Zip, the leading Australian BNPL provider. Since 2018, TendoPay has been providing digital installment plan solutions, with a focus on responsible lending. 
 
 This platform gives Filipino consumers the flexibility to repay their loans over a range of terms, from 15 days to 24 months. With Zip's support, TendoPay is well-positioned to continue scaling and expand its reach in the Philippines.
 
 ### Fundiin
 
-Vietnamese fintech startup Fundiin has raised [$1.8 million](https://vir.com.vn/bnpl-fundiin-raises-18-million-in-oversubscribed-seed-round-87594.html) in a seed round with participation from Genesia Ventures, JAFCO Asia, Xffirmers, Trihill Capital, and others.
+Vietnamese fintech startup Fundiin has raised <a href="https://vir.com.vn/bnpl-fundiin-raises-18-million-in-oversubscribed-seed-round-87594.html">$1.8 million</a> in a seed round with participation from Genesia Ventures, JAFCO Asia, Xffirmers, Trihill Capital, and others.
 
 Fundiin is the leading BNPL provider in Vietnam, and helps retailers increase sales by up to 30%. Via its zero-cost buy-now-pay-later facilities, Fundiin allows customers to spread the cost of their purchases over time, without incurring any additional charges.
 
@@ -313,27 +313,27 @@ Latin America is a large and diverse region that comprises a number of countries
 
 While BNPL has been making waves, Latin America remains largely untouched by the growing trend. Nelo, a startup founded by experienced international growth team leaders, plans to change that.
 
-With $20 million in [new funding](https://techcrunch.com/2021/10/12/nelo-joins-the-bnpl-rush-with-20m-in-new-funding-and-the-mexican-market-in-its-sights/), Nelo is poised to bring BNPL to Mexico and beyond. The company's app already lets users make purchases from some of the biggest names in ecommerce, including Amazon, Mercado Libre, Telcel, Netflix, and Spotify.
+With $20 million in <a href="https://techcrunch.com/2021/10/12/nelo-joins-the-bnpl-rush-with-20m-in-new-funding-and-the-mexican-market-in-its-sights/">new funding</a>, Nelo is poised to bring BNPL to Mexico and beyond. The company's app already lets users make purchases from some of the biggest names in ecommerce, including Amazon, Mercado Libre, Telcel, Netflix, and Spotify.
 
 So far, Nelo has been successful in attracting merchants like Steve Madden and Ben & Frank. And with its fresh influx of cash, there's no telling how far it will go.
 
 ### Addi
 
-Following $200 million of debt and equity, Addi is now valued at [over $700 million](https://www.pymnts.com/news/investment-tracker/2021/bnpl-firm-addi-pushes-value-to-700m-following-200m-fundraise/). This Latin American BNPL company has been expanding rapidly, with plans to open an office in Mexico in 2022 and to broaden its reach to other markets.
+Following $200 million of debt and equity, Addi is now valued at <a href="https://www.pymnts.com/news/investment-tracker/2021/bnpl-firm-addi-pushes-value-to-700m-following-200m-fundraise/">over $700 million</a>. This Latin American BNPL company has been expanding rapidly, with plans to open an office in Mexico in 2022 and to broaden its reach to other markets.
 
 ### Atrato
 
-Atrato is a Mexican-based BNPL firm that last raised [$15 million](https://contxto.com/en/mexico/bnpl-investment-in-latin-american-startups-growing/) in debt. Atrato's technology allows it to finance up to $150,000 Mexican pesos ($7,545 USD) in a matter of minutes, making it an attractive option for larger e-commerce payments.
+Atrato is a Mexican-based BNPL firm that last raised <a href="https://contxto.com/en/mexico/bnpl-investment-in-latin-american-startups-growing/">$15 million</a> in debt. Atrato's technology allows it to finance up to $150,000 Mexican pesos ($7,545 USD) in a matter of minutes, making it an attractive option for larger e-commerce payments.
 
 ## Australia & New Zealand
 
 Perhaps surprisingly, given the relative isolation of the two countries, both Australia and New Zealand have fairly active BNPL markets. This is likely due to a combination of factors including the wide range of products and services available for purchase via BNPL, the sheer convenience, and the ability to spread payments out over time.
 
-Players here include [Zip](https://zip.co/), [Openpay](https://www.opy.com/), [Limepay](https://www.limepay.com.au/), [Payright](https://payright.com.au/), [Afterpay](https://www.afterpay.com/), [Brighte](https://brighte.com.au/support/buy-now-pay-later-code-of-practice), and many others.
+Players here include <a href="https://zip.co/">Zip</a>, <a href="https://www.opy.com/">Openpay</a>, <a href="https://www.limepay.com.au/">Limepay</a>, <a href="https://payright.com.au/">Payright</a>, <a href="https://www.afterpay.com/">Afterpay</a>, <a href="https://brighte.com.au/support/buy-now-pay-later-code-of-practice">Brighte</a>, and many others.
 
 ### Zip
 
-[Zip](https://zip.co/) is a Sydney-born global payment platform that lets customers split any purchase into 4 installments over 6 weeks. With over 8 million shoppers using Zip, it's one of the most popular BNPL platforms in the world. Businesses can integrate Zip's flexible payment platform in minutes, without needing any APIs. 
+<a href="https://zip.co/">Zip</a> is a Sydney-born global payment platform that lets customers split any purchase into 4 installments over 6 weeks. With over 8 million shoppers using Zip, it's one of the most popular BNPL platforms in the world. Businesses can integrate Zip's flexible payment platform in minutes, without needing any APIs. 
 
 Zip has helped businesses increase their conversion rate by 20%, topline sales by 20%, repeat customer rate by 80%, and average order value by 60%.
 
@@ -341,41 +341,41 @@ These metrics perfectly illustrate why merchants choose to partner with BNPL pla
 
 ### Openpay
 
-Australian BNPL contender Openpay offers smarter payment plans for bigger purchases, with limits up to $20,000. And now, with a new [partnership deal](https://www.reuters.com/markets/deals/australias-openpay-strikes-bnpl-partnership-deal-with-american-express-2021-12-01/) in place with American Express, Openpay is set to take on the global market
+Australian BNPL contender Openpay offers smarter payment plans for bigger purchases, with limits up to $20,000. And now, with a new <a href="https://www.reuters.com/markets/deals/australias-openpay-strikes-bnpl-partnership-deal-with-american-express-2021-12-01/">partnership deal</a> in place with American Express, Openpay is set to take on the global market
 
-However, with the [departure of CEO Michael Eidel](https://fst.net.au/financial-services-news/openpay-ceo-to-depart-with-the-bnpl-to-back-away-from-uk-expansion/), some industry insiders are wondering whether Openpay's ambitious plans will still go ahead. Only time will tell whether this Australian startup can make it big in the global BNPL market.
+However, with the <a href="https://fst.net.au/financial-services-news/openpay-ceo-to-depart-with-the-bnpl-to-back-away-from-uk-expansion/">departure of CEO Michael Eidel</a>, some industry insiders are wondering whether Openpay's ambitious plans will still go ahead. Only time will tell whether this Australian startup can make it big in the global BNPL market.
 
 ### Limepay
 
 Finding a niche in the competitive Australian payments landscape, LimePay offers an easy and convenient way to pay for goods and services online. With no redirects or extra logins, LimePay puts users in control of their payments. 
 
-Plus, through a [partnership with Domain](https://www.savings.com.au/news/limepay-finds-their-niche-in-the-bnpl-market), LimePay offers home sellers the ability to market, renovate or upgrade their home before paying back the costs once the property is sold.
+Plus, through a <a href="https://www.savings.com.au/news/limepay-finds-their-niche-in-the-bnpl-market">partnership with Domain</a>, LimePay offers home sellers the ability to market, renovate or upgrade their home before paying back the costs once the property is sold.
 
 ## Middle East
 
-The Middle East BNPL landscape is rapidly evolving, with new players and partnerships emerging on a regular basis. While the market is still in its early stages of development, it is showing strong potential for future growth, with players including [Cashew](https://www.cashewpayments.com/), [Tabby](https://tabby.ai/), [Shahry](https://shahry.app/en/), [Postpay](https://postpay.io/), and [Tamara](https://tamara.co/en/index.html).
+The Middle East BNPL landscape is rapidly evolving, with new players and partnerships emerging on a regular basis. While the market is still in its early stages of development, it is showing strong potential for future growth, with players including <a href="https://www.cashewpayments.com/">Cashew</a>, <a href="https://tabby.ai/">Tabby</a>, <a href="https://shahry.app/en/">Shahry</a>, <a href="https://postpay.io/">Postpay</a>, and <a href="https://tamara.co/en/index.html">Tamara</a>.
 
 ### Tabby
 
-Seeking to dominate the Gulf Cooperation Council states' (GCC) BNPL landscape, Tabby has announced it has secured a massive [$50 million](https://techcrunch.com/2021/08/04/dubai-based-buy-now-pay-later-platform-tabby-raises-50m-at-300m-valuation/) in Series B funding. Valued at $300 million, this latest round of investment will help Tabby further cement its position as the leading buy now, pay later solution in the region.
+Seeking to dominate the Gulf Cooperation Council states' (GCC) BNPL landscape, Tabby has announced it has secured a massive <a href="https://techcrunch.com/2021/08/04/dubai-based-buy-now-pay-later-platform-tabby-raises-50m-at-300m-valuation/">$50 million</a> in Series B funding. Valued at $300 million, this latest round of investment will help Tabby further cement its position as the leading buy now, pay later solution in the region.
 
 Founded by Hosam Arab following his departure from fashion retailer Namshi, Tabby was conceived as a solution to the economic difficulties faced by the MENA and GCC region. With this latest injection of capital, Tabby looks poised to take on even more prominence in these markets.
 
 ### Tamara
 
-Saudi BNPL firm recently raised a [$110 million Series A](https://www.menabytes.com/tamara-series-a/) led by Checkout.com, following an earlier $6 million seed round. Launching in [2020](https://www.pymnts.com/buy-now-pay-later/2021/bnpl-was-highly-needed-across-mena-where-banks-now-play-catch-up-with-fintechs/), they expanded incredibly rapidly.
+Saudi BNPL firm recently raised a <a href="https://www.menabytes.com/tamara-series-a/">$110 million Series A</a> led by Checkout.com, following an earlier $6 million seed round. Launching in <a href="https://www.pymnts.com/buy-now-pay-later/2021/bnpl-was-highly-needed-across-mena-where-banks-now-play-catch-up-with-fintechs/">2020</a>, they expanded incredibly rapidly.
 
 Tamara lets consumers split payments in thirds: One third upon purchase, and the rest over the course of 60 days, of coures without fees or interest.
 
 ### Cashew
 
-An early-stage startup, [Cashew](https://gulfbusiness.com/the-sme-story-ibtissam-ouassif-co-founder-of-cashew-payments/) has already secured $13.5 million in funding for its pre-series A round. Operating out of the DIFC and Saudi Arabia, Cashew is expanding to other GCC markets. 
+An early-stage startup, <a href="https://gulfbusiness.com/the-sme-story-ibtissam-ouassif-co-founder-of-cashew-payments/">Cashew</a> has already secured $13.5 million in funding for its pre-series A round. Operating out of the DIFC and Saudi Arabia, Cashew is expanding to other GCC markets. 
 
 The company credits its success to its investment in technology and team building, with all money going back into the business rather than toward loan repayment. Strong product and technology teams are the heart of Cashew's business model and continue to propel it forward.
 
 # Where is buy now, pay later headed?
 
-As global consumers become increasingly comfortable with the idea of making purchases with a few clicks or taps, the popularity of buy now, pay later services continues to grow. In fact, the global BNPL market is expected to hit [$1 trillion](https://www.cbinsights.com/research/report/buy-now-pay-later-outlook/) in annual gross merchandise volume by 2025, according to a report from CBInsights.
+As global consumers become increasingly comfortable with the idea of making purchases with a few clicks or taps, the popularity of buy now, pay later services continues to grow. In fact, the global BNPL market is expected to hit <a href="https://www.cbinsights.com/research/report/buy-now-pay-later-outlook/">$1 trillion</a> in annual gross merchandise volume by 2025, according to a report from CBInsights.
 
 Strategic partnerships and consolidation are becoming key to success in the BNPL market. Late last year, for example, Square agreed to acquire Afterpay, an Australian company that offers BNPL services, for [$29 billion](https://www.inc.com/teresa-xie/square-afterpay-buy-now-pay-later.html). And in January of this year, Zip and Sezzle were [in talks to merge](https://www.smh.com.au/business/banking-and-finance/zip-and-sezzle-in-merger-talks-as-bnpl-consolidation-heats-up-20220125-p59qzy.html) amidst industry consolidation.
 
