@@ -259,4 +259,10 @@ $bigMargin: 6rem;
   pre[class*='language-'] {
     background: #282a36;
   }
+
+  @for $index from 1 through 6 {
+    h#{$index} {
+      @include scrollSection;
+    }
+  }
 }

@@ -26,9 +26,18 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 ---
+## Table of Contents
+
+```toc
+exclude: Table of Contents
+from-heading: 1
+to-heading: 3
+ordered: true
+```
+
 In the past, if you wanted to buy something expensive, you had to save up for it. But nowadays, there are a ton of different payment options that allow you to spread the cost of your purchase over time. Buy now, pay later (BNPL) means exactly that: you can buy what you want now, and pay for it in installments over the next several weeks, months, or even years. It's often used by people who don't want to wait for their paychecks to come in, or by those who don't have enough money saved up for a big purchase.
 
-That said, it's also an industry rife with fraud. So, if you're thinking about offering buy now, pay later services to your customers, it's important to be aware of the risks involved and take steps to mitigate them. 
+That said, it's also an industry rife with fraud. So, if you're thinking about offering buy now, pay later services to your customers, it's important to be aware of the risks involved and take steps to mitigate them. 
 
 In this article, we'll take a deep dive into the BNPL industry and its players to get a better understanding of the current landscape, the risks facing the industry and where this technology might be headed in the future. More specifically, we will look at BNPL companies by region and growth, how exactly BNPL companies democratize credit, the rise of BNPL fraud, and more.
 
@@ -40,9 +49,9 @@ There are a number of BNPL companies out there, but some of them are far more po
 
 ![Biggest BNPL providers](/img/uploads/biggest-buy-now-pay-later-providers.png "Biggest BNPL providers")
 
-Klarna is by far the largest of these companies, with $53 billion in GMV (gross merchandise volume). Afterpay is a distant second, with $11 billion in GMV. Affirm comes in at $4.6 billion in GMV, Zip at $2.1 billion in GMV, and Sezzle at roughly $400 million in GMV. 
+Klarna is by far the largest of these companies, with $53 billion in GMV (gross merchandise volume). Afterpay is a distant second, with $11 billion in GMV. Affirm comes in at $4.6 billion in GMV, Zip at $2.1 billion in GMV, and Sezzle at roughly $400 million in GMV. 
 
-With <a href="https://www.cbinsights.com/research/buy-now-pay-later-global-market-map/" target="_blank" rel="noopener noreferrer">well over 50 BNPL firms</a> on the market, there’s a very long tail of providers with much smaller gross merchandise volume figures. 
+With <a href="https://www.cbinsights.com/research/buy-now-pay-later-global-market-map/" target="_blank" rel="noopener noreferrer">well over 50 BNPL firms</a> on the market, there’s a very long tail of providers with much smaller gross merchandise volume figures. 
 
 One <a href="https://fintechmagazine.com/venture-capital/four-reasons-why-klarna-biggest-fintech-europe" target="_blank" rel="noopener noreferrer">reason</a> Klarna is so much larger than the other companies is that it was one of the first solutions to offer a great BNPL solution with silent credit checks done in the background, enabling consumers to spend right away and not incur interest. They’ve also strategically expanded and partnered with over 100,000 retailers, and they offer a top-rated software that’s seamless for both buyers and merchants alike.
 
@@ -84,11 +93,11 @@ Second, BNPL companies are benefiting from a strong economy. With low unemployme
 
 Finally, BNPL companies are benefiting from the increasing popularity of e-commerce. As more consumers shift their spending online, they are looking for ways to buy items without having to pay up front. BNPL services provide an easy way to do this.
 
-What does the future hold for the BNPL industry? There is no doubt that it will continue to grow in popularity, as more consumers and businesses discover the benefits of these services. 
+What does the future hold for the BNPL industry? There is no doubt that it will continue to grow in popularity, as more consumers and businesses discover the benefits of these services. 
 
 However, there is also potential for a slowdown if the economy weakens or if there is a major recession. In any case, the BNPL industry is here to stay and is likely to experience continued growth in the years ahead.
 
-# Buy now, pay later faces increasing fraud losses 
+# Buy now, pay later faces increasing fraud losses 
 
 It's no secret that online payment fraud is on the rise. In fact, according to Juniper Research, global eCommerce fraud losses hit $17.5 billion in 2020, jumping by an alarming $2.5 billion in 2021 to hit <a href="https://www.juniperresearch.com/press/ecommerce-losses-online-payment-fraud-exceed-20bn" target="_blank" rel="noopener noreferrer">$20 billion</a>. These losses are expected to grow even further, with the payment card industry facing <a href="https://www.paymentsdive.com/news/card-industry-faces-400b-in-fraud-losses-over-next-decade-nilson-says/611521/" target="_blank" rel="noopener noreferrer">$400 billion</a> in fraud losses over the next decade.
 
@@ -140,31 +149,31 @@ Some BNPL players in the US include:
 
 ### Affirm
 
-Affirm is a financial technology company based in San Francisco. They offer installment loans to consumers for use at the point of sale, allowing them to finance a purchase without hidden fees or sneaky fine print. Affirm is traded as AFRM on Nasdaq and employs over 1,000 people. 
+Affirm is a financial technology company based in San Francisco. They offer installment loans to consumers for use at the point of sale, allowing them to finance a purchase without hidden fees or sneaky fine print. Affirm is traded as AFRM on Nasdaq and employs over 1,000 people. 
 
 Their goal is to provide a better alternative to credit card companies, with no fees, no hidden charges, and no regrets.
 
 ### ChargeAfter
 
-From new furniture to appliances and car parts, millions of Americans prefer to use BNPL solutions in order to spread out the cost of their purchase over time. ChargeAfter is a global network with a complete solution for Point-of-Sale Financing from multiple lenders, offering shoppers flexible financing options such as 0% APR, installment loans, buy now pay later, open lines of credit, and lease to own offers. 
+From new furniture to appliances and car parts, millions of Americans prefer to use BNPL solutions in order to spread out the cost of their purchase over time. ChargeAfter is a global network with a complete solution for Point-of-Sale Financing from multiple lenders, offering shoppers flexible financing options such as 0% APR, installment loans, buy now pay later, open lines of credit, and lease to own offers. 
 
 They claim approval rates of 85%, an average order value (AOV) increase of 45%, and sales increasing by 30%. ChargeAfter is enabling equal monthly payments, flexible payments, and more for Americans all across the country.
 
 ### SplitIt
 
-Since 2012, SplitIt has been a leading BNPL solution, allowing customers to use their own credit card and spread the cost of their purchase over time. Unlike other "buy now, pay later" options, SplitIt doesn't charge any interest or fees, making it a more affordable option for responsible credit card users. 
+Since 2012, SplitIt has been a leading BNPL solution, allowing customers to use their own credit card and spread the cost of their purchase over time. Unlike other "buy now, pay later" options, SplitIt doesn't charge any interest or fees, making it a more affordable option for responsible credit card users. 
 
 They were founded in NY and <a href="https://www.afr.com/technology/splitit-raises-100-million-to-tap-us-uk-boom-20200805-p55isl" target="_blank" rel="noopener noreferrer">last raised $100 million</a> in late 2020. Their mission is to provide a better way for customers to buy the things they need and want, without having to worry about interest or fees.
 
 ### Sezzle
 
-With Sezzle, shoppers can purchase today and make four interest-free payments over six weeks. This flexible payment solution helps increase conversions, average order value, and customer satisfaction. Plus, Sezzle claims to be the highest-rated Buy Now, Pay Later solution. 
+With Sezzle, shoppers can purchase today and make four interest-free payments over six weeks. This flexible payment solution helps increase conversions, average order value, and customer satisfaction. Plus, Sezzle claims to be the highest-rated Buy Now, Pay Later solution. 
 
 Signing up is quick and easy, and approval decisions are instant. You can use Sezzle at over 44,000 brands worldwide.
 
 ### Scratchpay
 
-Americans with medical expenses often face a difficult choice: pay for care up-front, or use a high-interest credit card and risk accruing debt. Scratchpay is changing that, with a patient financing solution that is simple, affordable, and doesn't affect your credit score. 
+Americans with medical expenses often face a difficult choice: pay for care up-front, or use a high-interest credit card and risk accruing debt. Scratchpay is changing that, with a patient financing solution that is simple, affordable, and doesn't affect your credit score. 
 
 They have the highest approvals rate in the industry, and charge no hidden fees or penalties. Plus, you can pay off your balance at any time without incurring interest. So if you need to finance a medical procedure, Scratchpay is a top choice for many.
 
@@ -184,9 +193,9 @@ PayLater by Motito is a Ghanian payment method that allows you to buy now and pa
 
 ### CredPal
 
-CredPal is a Nigerian BNPL startup offering two payment options: Pay in 30 days (0% interest for all qualifying payments) or spread payment between 2 - 6 months. This makes it convenient for customers to shop from their partnered merchants, whether online or in-store, and enjoy discounts and cashback. 
+CredPal is a Nigerian BNPL startup offering two payment options: Pay in 30 days (0% interest for all qualifying payments) or spread payment between 2 - 6 months. This makes it convenient for customers to shop from their partnered merchants, whether online or in-store, and enjoy discounts and cashback. 
 
-For merchants, CredPal provides a platform that helps them acquire more customers and increase sales. 
+For merchants, CredPal provides a platform that helps them acquire more customers and increase sales. 
 
 ### Lipa Later
 
@@ -194,7 +203,7 @@ Lipa Later, a buy now pay later company operating in Kenya, Rwanda, Uganda and N
 
 ### Sympl
 
-Buy Now, Pay Later is becoming increasingly popular in Egypt, and Sympl has emerged as a leading company in the space. They announced a <a href="https://www.pymnts.com/bnpl/2021/buy-now-pay-later-catches-on-in-egypt-with-6m-investment-in-sympl/" target="_blank" rel="noopener noreferrer">$6 million</a> seed funding round led by UAE's Beco Capital, with the goal of expanding their merchant network and footprint across Egypt and internationally. 
+Buy Now, Pay Later is becoming increasingly popular in Egypt, and Sympl has emerged as a leading company in the space. They announced a <a href="https://www.pymnts.com/bnpl/2021/buy-now-pay-later-catches-on-in-egypt-with-6m-investment-in-sympl/" target="_blank" rel="noopener noreferrer">$6 million</a> seed funding round led by UAE's Beco Capital, with the goal of expanding their merchant network and footprint across Egypt and internationally. 
 
 Sympl offers customers a zero-interest payment plan in three to five installments, after charging an upfront fixed fee. The process is simple - payment plans are approved at checkout with no pre-registration required - and merchants can also sell directly to consumers on short-term, zero-interest payment plans.
 
@@ -210,7 +219,7 @@ Players include <a href="https://getsimpl.com/" target="_blank" rel="noopener no
 
 ### Simpl
 
-Simpl, a six-year-old startup, has raised <a href="https://techcrunch.com/2021/11/30/india-fintech-simpl-raises-40-million/" target="_blank" rel="noopener noreferrer">$83 million</a> to date, with Valar Ventures and IA Ventures leading its Series B round. LFH Ventures and some existing investors also participated in the round. Simpl partners with popular online brands and offers their customers the ability to make purchases without paying for them at that very moment. 
+Simpl, a six-year-old startup, has raised <a href="https://techcrunch.com/2021/11/30/india-fintech-simpl-raises-40-million/" target="_blank" rel="noopener noreferrer">$83 million</a> to date, with Valar Ventures and IA Ventures leading its Series B round. LFH Ventures and some existing investors also participated in the round. Simpl partners with popular online brands and offers their customers the ability to make purchases without paying for them at that very moment. 
 
 Over the years, it has also developed a range of offerings, including a one-time checkout feature; Bill Box, which allows customers to automate their recurring expense payouts, and splitting a bill in three parts. As digital payments increase their reach in India, buy now, pay later services have started to gain fast traction.
 
@@ -218,7 +227,7 @@ Over the years, it has also developed a range of offerings, including a one-time
 
 Since its inception in 2016, ZestMoney has become one of the fastest-growing fintechs in India. The company's unique offering allows users to shop online and pay back later through easy installments, using mobile technology, digital banking, and artificial intelligence.
 
-This makes it easier for people who wouldn't normally be able to get loans for consumer purchases to still have access to the things they need and want. 
+This makes it easier for people who wouldn't normally be able to get loans for consumer purchases to still have access to the things they need and want. 
 
 ### ePayLater
 
@@ -226,7 +235,7 @@ Since its launch in 2015, ePayLater has been providing a zero cost credit soluti
 
 ## China
 
-In China, BNPL is expanding rapidly, with multiple players entering the market in early 2021. <a href="https://www.bloomberg.com/professional/blog/buy-now-pay-later-11-3-trillion-opportunity-in-china-u-s-just-beginning/" target="_blank" rel="noopener noreferrer">Bloomberg Intelligence estimates</a> that BNPL's penetration of global retail e-commerce will reach 1.6% in 2020, and could grow to 4% by 2023. 
+In China, BNPL is expanding rapidly, with multiple players entering the market in early 2021. <a href="https://www.bloomberg.com/professional/blog/buy-now-pay-later-11-3-trillion-opportunity-in-china-u-s-just-beginning/" target="_blank" rel="noopener noreferrer">Bloomberg Intelligence estimates</a> that BNPL's penetration of global retail e-commerce will reach 1.6% in 2020, and could grow to 4% by 2023. 
 
 China may not reach 4% penetration for another 10 years, but this would still turn it into a $233 billion market. BNPL's expansion into China's offline consumption market (66.2 trillion yuan in 2020) is also underway, with overseas markets providing valuable experiences.
 
@@ -238,7 +247,7 @@ Alibaba's Alipay has been offering a BNPL option for their customers since 2019,
 
 ### LexinFintech
 
-Amid the COVID-19 pandemic, LexinFintech struggled in 2020. However, BNPL product Maiya could give them a boost in the Chinese market. 
+Amid the COVID-19 pandemic, LexinFintech struggled in 2020. However, BNPL product Maiya could give them a boost in the Chinese market. 
 
 ## Europe
 
@@ -250,11 +259,11 @@ By transaction volume, Klarna is the world leader in BNPL (Buy Now Pay Later) pa
 
 Klarna is a trusted name in online financial services, providing payment solutions for online storefronts and direct payments, as well as post-purchase payments. With over 1 billion in revenue, Klarna is a major player in the fintech world.
 
-Klarna's easy-to-use app makes it simple to split any purchase into 4 interest-free payments, whether you're shopping online or in-store. 
+Klarna's easy-to-use app makes it simple to split any purchase into 4 interest-free payments, whether you're shopping online or in-store. 
 
 ### Alma
 
-Top Klarna competitor, <a href="https://techcrunch.com/2020/03/11/alma-is-a-klarna-like-payment-startup-that-lets-you-buy-now-and-pay-later/" target="_blank" rel="noopener noreferrer">Alma</a>, is a French BNPL heavyweight that has been making waves since its 2017 launch. Boasting more than USD 59.4 million in <a href="https://www.pymnts.com/news/investment-tracker/2021/french-bnpl-startup-alma-notches-59-4-in-million-series-b-funding/" target="_blank" rel="noopener noreferrer">recent equity</a> from top investors, Alma has quickly grown to 4,000+ merchants and processes hundreds of millions in euros each year. 
+Top Klarna competitor, <a href="https://techcrunch.com/2020/03/11/alma-is-a-klarna-like-payment-startup-that-lets-you-buy-now-and-pay-later/" target="_blank" rel="noopener noreferrer">Alma</a>, is a French BNPL heavyweight that has been making waves since its 2017 launch. Boasting more than USD 59.4 million in <a href="https://www.pymnts.com/news/investment-tracker/2021/french-bnpl-startup-alma-notches-59-4-in-million-series-b-funding/" target="_blank" rel="noopener noreferrer">recent equity</a> from top investors, Alma has quickly grown to 4,000+ merchants and processes hundreds of millions in euros each year. 
 
 Offering a top-rated BNPL experience with a 4.8/5 Trustpilot rating, Alma is definitely one to watch in the payment space.
 
@@ -292,7 +301,7 @@ Singapore's very own BNPL superstar, Rely, is shaking up the e-commerce scene wi
 
 ### TendoPay
 
-Filipino consumers now have access to convenient, affordable installment loans through TendoPay, thanks to a <a href="https://fintechnews.ph/45009/lending/australian-bnpl-firm-zip-drives-expansion-in-south-east-asia-with-investment-in-tendopay/" target="_blank" rel="noopener noreferrer">strategic investment</a> by Zip, the leading Australian BNPL provider. Since 2018, TendoPay has been providing digital installment plan solutions, with a focus on responsible lending. 
+Filipino consumers now have access to convenient, affordable installment loans through TendoPay, thanks to a <a href="https://fintechnews.ph/45009/lending/australian-bnpl-firm-zip-drives-expansion-in-south-east-asia-with-investment-in-tendopay/" target="_blank" rel="noopener noreferrer">strategic investment</a> by Zip, the leading Australian BNPL provider. Since 2018, TendoPay has been providing digital installment plan solutions, with a focus on responsible lending. 
 
 This platform gives Filipino consumers the flexibility to repay their loans over a range of terms, from 15 days to 24 months. With Zip's support, TendoPay is well-positioned to continue scaling and expand its reach in the Philippines.
 
@@ -332,7 +341,7 @@ Players here include <a href="https://zip.co/" target="_blank" rel="noopener nor
 
 ### Zip
 
-<a href="https://zip.co/" target="_blank" rel="noopener noreferrer">Zip</a> is a Sydney-born global payment platform that lets customers split any purchase into 4 installments over 6 weeks. With over 8 million shoppers using Zip, it's one of the most popular BNPL platforms in the world. Businesses can integrate Zip's flexible payment platform in minutes, without needing any APIs. 
+<a href="https://zip.co/" target="_blank" rel="noopener noreferrer">Zip</a> is a Sydney-born global payment platform that lets customers split any purchase into 4 installments over 6 weeks. With over 8 million shoppers using Zip, it's one of the most popular BNPL platforms in the world. Businesses can integrate Zip's flexible payment platform in minutes, without needing any APIs. 
 
 Zip has helped businesses increase their conversion rate by 20%, topline sales by 20%, repeat customer rate by 80%, and average order value by 60%.
 
@@ -346,7 +355,7 @@ However, with the <a href="https://fst.net.au/financial-services-news/openpay-ce
 
 ### Limepay
 
-Finding a niche in the competitive Australian payments landscape, LimePay offers an easy and convenient way to pay for goods and services online. With no redirects or extra logins, LimePay puts users in control of their payments. 
+Finding a niche in the competitive Australian payments landscape, LimePay offers an easy and convenient way to pay for goods and services online. With no redirects or extra logins, LimePay puts users in control of their payments. 
 
 Plus, through a <a href="https://www.savings.com.au/news/limepay-finds-their-niche-in-the-bnpl-market" target="_blank" rel="noopener noreferrer">partnership with Domain</a>, LimePay offers home sellers the ability to market, renovate or upgrade their home before paying back the costs once the property is sold.
 
@@ -368,7 +377,7 @@ Tamara lets consumers split payments in thirds: One third upon purchase, and the
 
 ### Cashew
 
-An early-stage startup, <a href="https://gulfbusiness.com/the-sme-story-ibtissam-ouassif-co-founder-of-cashew-payments/" target="_blank" rel="noopener noreferrer">Cashew</a> has already secured $13.5 million in funding for its pre-series A round. Operating out of the DIFC and Saudi Arabia, Cashew is expanding to other GCC markets. 
+An early-stage startup, <a href="https://gulfbusiness.com/the-sme-story-ibtissam-ouassif-co-founder-of-cashew-payments/" target="_blank" rel="noopener noreferrer">Cashew</a> has already secured $13.5 million in funding for its pre-series A round. Operating out of the DIFC and Saudi Arabia, Cashew is expanding to other GCC markets. 
 
 The company credits its success to its investment in technology and team building, with all money going back into the business rather than toward loan repayment. Strong product and technology teams are the heart of Cashew's business model and continue to propel it forward.
 
@@ -380,4 +389,4 @@ Strategic partnerships and consolidation are becoming key to success in the BNPL
 
 Regulations are also an increasingly important consideration for companies operating in the BNPL space. In the United Kingdom, for example, regulators are <a href="https://www.lexology.com/library/detail.aspx?g=2f09844a-5a0b-43f7-af2b-7cc11ca27dab" target="_blank" rel="noopener noreferrer">closely watching</a> the growth of BNPL services, and there are some concerns that they could be used for fraud or other illegal activities.
 
-**At the same time, growing transaction volume means an increased risk of fraud. In order to protect themselves, BNPLs can use tools like [FingerprintJS](https://fingerprintjs.com/). This device fingerprinting allows websites to effortlessly stop fraud, spam, and account takeover.**
+**At the same time, growing transaction volume means an increased risk of fraud. In order to protect themselves, BNPLs can use tools like [FingerprintJS](/). This device fingerprinting allows websites to effortlessly stop fraud, spam, and account takeover.**
