@@ -1,20 +1,13 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { ExtendedGetResult, GetOptions, Region } from '@fingerprintjs/fingerprintjs-pro'
-import {
-  FPJS_PUBLIC_TOKEN,
-  FPJS_ENDPOINT,
-  FPJS_REGION,
-  FPJS_MONITORING_CLIENT_ID,
-  FPJS_MONITORING_TOKEN,
-  TLS_ENDPOINT,
-} from '../constants/env'
+import * as FingerprintJS from '@fingerprintjs/fingerprintjs-pro'
+import { FPJS_PUBLIC_TOKEN, FPJS_REGION, FPJS_CDN_URL } from '../constants/env'
 type FormContextType = {
-  visitorData?: ExtendedGetResult
+  visitorData?: FingerprintJS.ExtendedGetResult
   hasFpjsError?: boolean
 }
 
 const FpjsContext = React.createContext<FormContextType>({})
-const config: GetOptions<true> = {
+const config: FingerprintJS.GetOptions<true> = {
   extendedResult: true,
   timeout: 30_000,
 }
@@ -33,29 +26,19 @@ export function FpjsProvider({ children }: { children: React.ReactNode }) {
 
 function FpjsAppProvider({ children }: { children: React.ReactNode }) {
   const publicToken = FPJS_PUBLIC_TOKEN
-  const endpoint = FPJS_ENDPOINT
-  const region = FPJS_REGION as Region
-  const monitoringClientId = FPJS_MONITORING_CLIENT_ID ?? ''
-  const monitoringToken = FPJS_MONITORING_TOKEN ?? ''
-  const tlsEndpoint = TLS_ENDPOINT
+  const region = FPJS_REGION as FingerprintJS.Region
+  const cdnUrl = FPJS_CDN_URL
 
-  const [visitorData, setVisitorData] = useState<ExtendedGetResult>()
+  const [visitorData, setVisitorData] = useState<FingerprintJS.ExtendedGetResult>()
   const [hasFpjsError, setHasFpjsError] = useState(false)
 
   useEffect(() => {
     async function getVisitorData() {
       try {
-        const FP = await import('@fingerprintjs/fingerprintjs-pro')
-        const fp = await FP.load({
+        const fp = await FingerprintJS.load({
           token: publicToken,
-          endpoint,
           region,
-          tlsEndpoint,
-
-          // It may break after a @fingerprintjs/fingerprintjs-pro update. Please check when updating.
-          debug: monitoringToken
-            ? FP.makeRemoteDebugger({ clientId: monitoringClientId, token: monitoringToken })
-            : undefined,
+          cdnUrl,
         })
         const result = await fp.get(config)
         if (!result) {
@@ -75,7 +58,7 @@ function FpjsAppProvider({ children }: { children: React.ReactNode }) {
     }
 
     getVisitorData()
-  }, [publicToken, endpoint, tlsEndpoint, region, monitoringClientId, monitoringToken])
+  }, [publicToken, region, cdnUrl])
 
   return <FpjsContext.Provider value={{ visitorData, hasFpjsError }}>{children}</FpjsContext.Provider>
 }
