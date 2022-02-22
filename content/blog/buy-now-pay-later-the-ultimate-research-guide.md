@@ -37,7 +37,7 @@ The popularity of buy now, pay later services is on the rise, as more and more p
 
 There are a number of BNPL companies out there, but some of them are far more popular than others. According to corporate data sources <a href="https://www.statista.com/statistics/1255448/bnpl-providers-ranked-by-transactions/" target="_blank" rel="noopener noreferrer">curated by Statista</a>, the top five BNPL companies by transaction volume are Klarna, Afterpay, Affirm, Zip, and Sezzle.
 
-![](https://lh4.googleusercontent.com/57kPsoy71Za03xc54Suk-As1hVmoG3ljJCI17EFNXOXsqqy4okfHOo6irAeGV1dlGZq1-f-QeVKm0UcU9XzXjccd7ujhVT9HwkUBQ2kxidgBPYApMxfPuEToQMoUNQV8KeX-iZTH)
+![Biggest BNPL providers](/img/uploads/biggest-buy-now-pay-later-providers.png "Biggest BNPL providers")
 
 Klarna is by far the largest of these companies, with $53 billion in GMV (gross merchandise volume). Afterpay is a distant second, with $11 billion in GMV. Affirm comes in at $4.6 billion in GMV, Zip at $2.1 billion in GMV, and Sezzle at roughly $400 million in GMV. 
 
@@ -282,8 +282,6 @@ The Southeast Asia BNPL market is currently fragmented, with a number of small p
 Southeast Asia is entering the BNPL foray in a big way, with a new partnership between StanChart and Atome. The two companies are coming together to deliver mobile-first financial services for consumers across Asia, with a planned <a href="https://www.finews.asia/finance/35529-stanchart-enters-bnpl-space-with-atome-investment" target="_blank" rel="noopener noreferrer">$500 million</a> financing to support Atome to expand its regional ecosystem of merchants and customers.
 
 Atome is a young company, but it's quickly making a name for itself in the region. It has a presence across Southeast Asia, India and Greater China, and partners with over 5,000 online and offline retailers. It also operates the digital lending platform Kredit Pintar in Indonesia.
-
-
 
 With this new partnership, Atome is poised for even more growth in the coming years. StanChart's vast experience in the financial sector will help Atome to reach even more consumers, while Atome's technical expertise will help StanChart to move into the BNPL space. It's a win-win for both companies, and consumers throughout Asia will benefit from their collaboration.
 
