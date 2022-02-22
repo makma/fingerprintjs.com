@@ -9,6 +9,7 @@ metadata:
   image: /img/uploads/bnpls-in-2022-the-ultimate-research-guide.png
   imageAlt: BNPLs in 2022
   imageTitle: BNPLs in 2022
+  socialImage: /img/uploads/bnpls-in-2022-the-ultimate-research-guide.png
 featured: true
 publishDate: 2022-02-21T19:19:03.589Z
 title: "Buy Now, Pay Later: The Ultimate Research Guide"
