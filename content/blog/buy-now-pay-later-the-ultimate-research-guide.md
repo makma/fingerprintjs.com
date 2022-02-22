@@ -75,7 +75,7 @@ In recent years, the buy now, pay later industry has seen rapid growth, with ven
 
 CBInsights has analyzed <a href="https://www.cbinsights.com/reports/CB-Insights_Buy-Now-Pay-Later-Outlook.pdf" target="_blank" rel="noopener noreferrer">the growth of BNPL funding</a>. Here’s an overview.
 
-![](https://lh3.googleusercontent.com/npvI-gssHciCLhINY7cUOEfBxYQ2OOoKnifpbnHm4eLSrir0CXxwisu74t_acakfHFTHtUPTaP_riaA8zpERu8a5vr4w2y_FFnts7Gb3II_8dV86sRDe2iakqe3HzA-SgSTYMU1h)
+![BNPL funding](/img/uploads/bnpl-funding.png "BNPL funding")
 
 What is behind this dramatic growth? There are several factors at play. First, BNPL services are attractive to consumers because they offer a convenient way to pay for items over time. This is also true for small businesses and entrepreneurs, who may not have the cash flow to purchase goods or services upfront.
 
