@@ -35,7 +35,7 @@ In this article, we'll take a deep dive into the BNPL industry and its players t
 
 The popularity of buy now, pay later services is on the rise, as more and more people are looking for ways to spread out their payments and avoid interest payments.
 
-There are a number of BNPL companies out there, but some of them are far more popular than others. According to corporate data sources [curated by Statista](https://www.statista.com/statistics/1255448/bnpl-providers-ranked-by-transactions/), the top five BNPL companies by transaction volume are Klarna, Afterpay, Affirm, Zip, and Sezzle.
+There are a number of BNPL companies out there, but some of them are far more popular than others. According to corporate data sources <a href="https://www.statista.com/statistics/1255448/bnpl-providers-ranked-by-transactions/">curated by Statista</a>, the top five BNPL companies by transaction volume are Klarna, Afterpay, Affirm, Zip, and Sezzle.
 
 ![](https://lh4.googleusercontent.com/57kPsoy71Za03xc54Suk-As1hVmoG3ljJCI17EFNXOXsqqy4okfHOo6irAeGV1dlGZq1-f-QeVKm0UcU9XzXjccd7ujhVT9HwkUBQ2kxidgBPYApMxfPuEToQMoUNQV8KeX-iZTH)
 
@@ -71,9 +71,9 @@ This results in greater sales and order values, which is why retailers partner w
 
 # Buy now, pay later venture capital funding by year
 
-In recent years, the buy now, pay later industry has seen rapid growth, with venture capitalists pouring billions of dollars into the sector. BNPL companies raised [$11 billion](https://www.telegraph.co.uk/business/2021/12/29/buy-now-pay-later-firms-raise-increased-108bn-2021/) in venture capital in 2021, up from just [$291 million in 2018](https://www.cbinsights.com/reports/CB-Insights_Buy-Now-Pay-Later-Outlook.pdf).
+In recent years, the buy now, pay later industry has seen rapid growth, with venture capitalists pouring billions of dollars into the sector. BNPL companies raised <a href="https://www.telegraph.co.uk/business/2021/12/29/buy-now-pay-later-firms-raise-increased-108bn-2021/">$11 billion</a> in venture capital in 2021, up from just <a href="https://www.cbinsights.com/reports/CB-Insights_Buy-Now-Pay-Later-Outlook.pdf">$291 million in 2018</a>.
 
-CBInsights has analyzed [the growth of BNPL funding](https://www.cbinsights.com/reports/CB-Insights_Buy-Now-Pay-Later-Outlook.pdf). Here’s an overview.
+CBInsights has analyzed <a href="https://www.cbinsights.com/reports/CB-Insights_Buy-Now-Pay-Later-Outlook.pdf">the growth of BNPL funding</a>. Here’s an overview.
 
 ![](https://lh3.googleusercontent.com/npvI-gssHciCLhINY7cUOEfBxYQ2OOoKnifpbnHm4eLSrir0CXxwisu74t_acakfHFTHtUPTaP_riaA8zpERu8a5vr4w2y_FFnts7Gb3II_8dV86sRDe2iakqe3HzA-SgSTYMU1h)
 
@@ -89,11 +89,11 @@ However, there is also potential for a slowdown if the economy weakens or if the
 
 # Buy now, pay later faces increasing fraud losses 
 
-It's no secret that online payment fraud is on the rise. In fact, according to Juniper Research, global eCommerce fraud losses hit $17.5 billion in 2020, jumping by an alarming $2.5 billion in 2021 to hit [$20 billion](https://www.juniperresearch.com/press/ecommerce-losses-online-payment-fraud-exceed-20bn). These losses are expected to grow even further, with the payment card industry facing [$400 billion](https://www.paymentsdive.com/news/card-industry-faces-400b-in-fraud-losses-over-next-decade-nilson-says/611521/) in fraud losses over the next decade.
+It's no secret that online payment fraud is on the rise. In fact, according to Juniper Research, global eCommerce fraud losses hit $17.5 billion in 2020, jumping by an alarming $2.5 billion in 2021 to hit <a href="https://www.juniperresearch.com/press/ecommerce-losses-online-payment-fraud-exceed-20bn">$20 billion</a>. These losses are expected to grow even further, with the payment card industry facing <a href="https://www.paymentsdive.com/news/card-industry-faces-400b-in-fraud-losses-over-next-decade-nilson-says/611521/">$400 billion</a> in fraud losses over the next decade.
 
 BNPL solutions, in particular, are coming under increased attack as fraudsters find new ways to exploit the system. While BNPL can be a more convenient way for customers to pay for their purchases, it also leaves merchants vulnerable to fraudulent transactions.
 
-In fact, identity theft in Australia involving BNPL [doubled](https://www.reuters.com/article/us-australia-bnpl-fraud-exclusive-idUSKBN2A906Q) to a record in 2020, data by Reuters indicated. As explored in a [Financial Review article](https://www.afr.com/companies/financial-services/caught-up-in-the-great-buy-now-pay-later-scam-20220131-p59sj7), BNPL solutions enable a “frictionless” process, a double-edged sword that also makes it easier for scammers to commit fraud.
+In fact, identity theft in Australia involving BNPL <a href="https://www.reuters.com/article/us-australia-bnpl-fraud-exclusive-idUSKBN2A906Q">doubled</a> to a record in 2020, data by Reuters indicated. As explored in a <a href="https://www.afr.com/companies/financial-services/caught-up-in-the-great-buy-now-pay-later-scam-20220131-p59sj7">Financial Review article</a>, BNPL solutions enable a “frictionless” process, a double-edged sword that also makes it easier for scammers to commit fraud.
 
 What are the main drivers of this surge in payment fraud? There are several reasons:
 
@@ -101,7 +101,7 @@ What are the main drivers of this surge in payment fraud? There are several reas
 * The increasing use of mobile devices for online shopping
 * The increasing sophistication of fraudsters
 
-Payment fraud takes many different forms, but the [most common types](https://www.information-age.com/fraud-scenarios-in-buy-now-pay-later-ecosystem-123497123/) are account takeover, abusing the default line of credit for new accounts, and repayments with a stolen credit card.
+Payment fraud takes many different forms, but the <a href="https://www.information-age.com/fraud-scenarios-in-buy-now-pay-later-ecosystem-123497123/">most common types</a> are account takeover, abusing the default line of credit for new accounts, and repayments with a stolen credit card.
 
 Account takeover is when a fraudster gains access to a victim's account and uses it to make fraudulent purchases. This type of fraud is becoming increasingly common as criminals use ever-more sophisticated methods to steal login credentials.
 
@@ -189,23 +189,23 @@ For merchants, CredPal provides a platform that helps them acquire more customer
 
 ### Lipa Later
 
-Lipa Later, a buy now pay later company operating in Kenya, Rwanda, Uganda and Nigeria, has raised [$12 million](https://www.pymnts.com/pymnts-post/news/investment-tracker/2022/kenyan-bnpl-startup-lipa-later-raises-12m-eyes-more-african-markets/?c=lipa-later) from a group of investors.
+Lipa Later, a buy now pay later company operating in Kenya, Rwanda, Uganda and Nigeria, has raised <a href="https://www.pymnts.com/pymnts-post/news/investment-tracker/2022/kenyan-bnpl-startup-lipa-later-raises-12m-eyes-more-african-markets/?c=lipa-later">$12 million</a> from a group of investors.
 
 ### Sympl
 
-Buy Now, Pay Later is becoming increasingly popular in Egypt, and Sympl has emerged as a leading company in the space. They announced a [$6 million](https://www.pymnts.com/bnpl/2021/buy-now-pay-later-catches-on-in-egypt-with-6m-investment-in-sympl/) seed funding round led by UAE's Beco Capital, with the goal of expanding their merchant network and footprint across Egypt and internationally. 
+Buy Now, Pay Later is becoming increasingly popular in Egypt, and Sympl has emerged as a leading company in the space. They announced a <a href="https://www.pymnts.com/bnpl/2021/buy-now-pay-later-catches-on-in-egypt-with-6m-investment-in-sympl/">$6 million</a> seed funding round led by UAE's Beco Capital, with the goal of expanding their merchant network and footprint across Egypt and internationally. 
 
 Sympl offers customers a zero-interest payment plan in three to five installments, after charging an upfront fixed fee. The process is simple - payment plans are approved at checkout with no pre-registration required - and merchants can also sell directly to consumers on short-term, zero-interest payment plans.
 
 ## India
 
-India is the world's second-most populous country with over 1.3 billion people, and it is also one of the most diverse countries in the world, with 22 official languages. The Indian economy is set to become the [third-largest in the world](https://www.livemint.com/economy/india-to-become-3rd-largest-economy-in-2031-says-cebr-11640510927249.html) by 2031, according to projections by CEBR.
+India is the world's second-most populous country with over 1.3 billion people, and it is also one of the most diverse countries in the world, with 22 official languages. The Indian economy is set to become the <a href="https://www.livemint.com/economy/india-to-become-3rd-largest-economy-in-2031-says-cebr-11640510927249.html">third-largest in the world</a> by 2031, according to projections by CEBR.
 
-The retail sector in India was estimated to be worth $779 billion in 2019 and is expected to grow to [$1.4 trillion](<https://www.ibef.org/industry/retail-india.aspx#:~:text=%2C%20and%20Italy).-,Market%20Size,US%24%201.8%20trillion%20by%202030.>) by 2026. The credit card penetration rate in India is extremely low at around [3 percent](https://www.businessinsider.in/business/startups/news/only-3-in-100-indians-have-a-credit-card-this-former-payu-india-cofounder-is-hoping-to-change-that/articleshow/86089396.cms), as compared to the global average of [19 percent](https://www.theglobaleconomy.com/rankings/people_with_credit_cards/). This presents a huge opportunity for growth in the payments industry in India.
+The retail sector in India was estimated to be worth $779 billion in 2019 and is expected to grow to <a href="https://www.ibef.org/industry/retail-india.aspx#:~:text=%2C%20and%20Italy).-,Market%20Size,US%24%201.8%20trillion%20by%202030.">$1.4 trillion</a> by 2026. The credit card penetration rate in India is extremely low at around [3 percent](https://www.businessinsider.in/business/startups/news/only-3-in-100-indians-have-a-credit-card-this-former-payu-india-cofounder-is-hoping-to-change-that/articleshow/86089396.cms), as compared to the global average of <a href="https://www.theglobaleconomy.com/rankings/people_with_credit_cards/">19 percent</a>. This presents a huge opportunity for growth in the payments industry in India.
 
 The growth of the BNPL segment in India has been fuelled by the growth of digital payments in India. The usage of digital payments has grown rapidly in India in recent years due to the increase in smartphone penetration and the launch of smart cities and other digital initiatives.
 
-Players include [Simpl](https://getsimpl.com/), [ZestMoney](https://www.zestmoney.in/), and [ePayLater](https://www.epaylater.in/).
+Players include <a href="https://getsimpl.com/">Simpl</a>, <a href="https://www.zestmoney.in/">ZestMoney</a>, and <a href="https://www.epaylater.in/">ePayLater</a>.
 
 ### Simpl
 
@@ -253,23 +253,23 @@ Klarna's easy-to-use app makes it simple to split any purchase into 4 interest-f
 
 ### Alma
 
-Top Klarna competitor, [Alma](https://techcrunch.com/2020/03/11/alma-is-a-klarna-like-payment-startup-that-lets-you-buy-now-and-pay-later/), is a French BNPL heavyweight that has been making waves since its 2017 launch. Boasting more than USD 59.4 million in [recent equity](https://www.pymnts.com/news/investment-tracker/2021/french-bnpl-startup-alma-notches-59-4-in-million-series-b-funding/) from top investors, Alma has quickly grown to 4,000+ merchants and processes hundreds of millions in euros each year. 
+Top Klarna competitor, <a href="https://techcrunch.com/2020/03/11/alma-is-a-klarna-like-payment-startup-that-lets-you-buy-now-and-pay-later/">Alma</a>, is a French BNPL heavyweight that has been making waves since its 2017 launch. Boasting more than USD 59.4 million in <a href="https://www.pymnts.com/news/investment-tracker/2021/french-bnpl-startup-alma-notches-59-4-in-million-series-b-funding/">recent equity</a> from top investors, Alma has quickly grown to 4,000+ merchants and processes hundreds of millions in euros each year. 
 
 Offering a top-rated BNPL experience with a 4.8/5 Trustpilot rating, Alma is definitely one to watch in the payment space.
 
 ### Divido
 
-Divido, a London-based platform for retail finance, has secured a [$30 million](https://techcrunch.com/2021/06/02/divido-bags-30m-to-take-its-buy-now-pay-later-platform-to-more-markets/) Series B round of funding to fuel its international expansion. The company's platform enables retailers to offer consumers the option to buy now, pay later at the point of sale. This proven payment solution helps merchants grow their sales and expand their customer base.
+Divido, a London-based platform for retail finance, has secured a <a href="https://techcrunch.com/2021/06/02/divido-bags-30m-to-take-its-buy-now-pay-later-platform-to-more-markets/">$30 million</a> Series B round of funding to fuel its international expansion. The company's platform enables retailers to offer consumers the option to buy now, pay later at the point of sale. This proven payment solution helps merchants grow their sales and expand their customer base.
 
 ### Butter
 
-Traditional BNPL providers have been limited to online transactions, but [Butter](https://www.finextra.com/newsarticle/39356/butter-introduces-bnpl-card) is shaking things up with the launch of its own BNPL card. This physical card will make it easier than ever to buy what you want now and pay for it later.
+Traditional BNPL providers have been limited to online transactions, but <a href="https://www.finextra.com/newsarticle/39356/butter-introduces-bnpl-card">Butter</a> is shaking things up with the launch of its own BNPL card. This physical card will make it easier than ever to buy what you want now and pay for it later.
 
 This UK-based company is looking to put a nail in the coffin of the credit card, which is seeing a decline in popularity. More and more people are turning to BNPL as a way to spread out their payments.
 
 ### Zilch
 
-London-based Zilch is a [Mastercard-partnered](https://zpr.io/pxHfwqk68wSe) BNPL app that allows customers to shop anywhere Mastercard is accepted, without any interest or added fees. Zilch claims to be as safe as using your bank card and has raised [over $339 million](https://www.crunchbase.com/organization/zilch-technology-limited) in investment to date - making it one of the most successful BNPL platforms in Europe.
+London-based Zilch is a <a href="Mastercard-partnered</a> BNPL app that allows customers to shop anywhere Mastercard is accepted, without any interest or added fees. Zilch claims to be as safe as using your bank card and has raised [over $339 million](https://www.crunchbase.com/organization/zilch-technology-limited) in investment to date - making it one of the most successful BNPL platforms in Europe.
 
 ## Southeast Asia
 
