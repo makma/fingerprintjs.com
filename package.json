@@ -81,7 +81,7 @@
   "devDependencies": {
     "@babel/core": "7.16.12",
     "@babel/preset-env": "7.16.11",
-    "@netlify/plugin-gatsby": "2.0.2",
+    "@netlify/plugin-gatsby": "2.0.4",
     "@storybook/addon-actions": "6.3.12",
     "@storybook/addon-essentials": "6.3.12",
     "@storybook/addon-links": "6.3.12",

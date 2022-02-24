@@ -6,7 +6,8 @@ import Section from '../common/Section'
 import { useMainBackgroundImage } from '../../hooks/useBackgroundImage'
 import { ReactComponent as InfoSvg } from '../../img/info.svg'
 import Tippy from '@tippyjs/react'
-
+import { Link } from 'gatsby'
+import { isBrowser } from '../../helpers/detector'
 import styles from './LiveDemoSection.module.scss'
 
 export default function LiveDemoSection() {
@@ -28,7 +29,20 @@ export default function LiveDemoSection() {
             <em>
               {' '}
               99.5% accurate
-              <Tippy content='Leading device identification competitors offer 40-60% accuracy.'>
+              <Tippy
+                interactive
+                delay={250}
+                maxWidth={270}
+                appendTo={isBrowser() ? document.body : undefined} // to prevent the tooltip from taking space from the description
+                content={
+                  <>
+                    Leading competitors offer 40-60% accuracy.{' '}
+                    <Link className={styles.tipLink} to='/blog/device-fingerprinting-accuracy/'>
+                      Why this matters &gt;
+                    </Link>
+                  </>
+                }
+              >
                 <InfoSvg tabIndex={0} />
               </Tippy>{' '}
             </em>
