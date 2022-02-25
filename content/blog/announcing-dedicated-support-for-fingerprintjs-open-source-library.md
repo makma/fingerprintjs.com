@@ -27,7 +27,7 @@ Last year was an incredible milestone-filled year for FingerprintJS. We announce
 
 Our [open source browser fingerprinting library](https://github.com/fingerprintjs/fingerprintjs) is core to the heart of FingerprintJS. With [over 750K downloads every month](https://www.npmjs.com/package/@fingerprintjs/fingerprintjs) and over 16 thousand stars on GitHub, our active open source community allows us to grow and improve our product from specific customer requests.  While we have expanded and professionalized our open source offering to create [FingerprintJS Pro](https://dev.fingerprintjs.com/docs/pro-vs-open-source), our open source library will forever be available for developers to use in any way they see fit. To better support our community, we have significantly increased our support resources, which now include dedicated open source support reps.
 
-To receive support, we have several channels available for you to get in touch: 
+**To receive support, we have several channels available for you to get in touch:** 
 
 * Reach out to our team at [oss-support@fingerprintjs.com](mailto:oss-support@fingerprintjs.com) for private support - you can expect responses within 2 business days in most cases. We can help with technical setup, troubleshooting best practices, and proof of concept design - don’t be afraid to ask!
 * Submit any bugs or issues you encounter using [GitHub Issues](https://github.com/fingerprintjs/fingerprintjs/issues)
