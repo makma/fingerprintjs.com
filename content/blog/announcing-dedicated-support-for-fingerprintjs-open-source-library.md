@@ -4,7 +4,7 @@ metadata:
   title: Announcing dedicated support for FingerprintJS Open Source Library
   description: "FingerprintJS expands its dedicated support resources for their
     open source GitHub library. "
-  url: https://fingerprintjs.com/blog/open-source-support
+  url: https://fingerprintjs.com/blog/open-source-support/
   image: /img/uploads/open-source-support.png
   imageAlt: FingerprintJS launches open source support
 featured: true
