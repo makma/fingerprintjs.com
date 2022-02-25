@@ -7,6 +7,7 @@ metadata:
   url: https://fingerprintjs.com/blog/open-source-support/
   image: /img/uploads/open-source-support.png
   imageAlt: FingerprintJS launches open source support
+  imageTitle: FingerprintJS launches open source support
 featured: true
 publishDate: 2022-02-25T23:02:16.455Z
 title: Announcing dedicated support for FingerprintJS Open Source Library
@@ -18,6 +19,7 @@ authors:
 heroImage:
   image: /img/uploads/open-source-support.png
   imageAlt: FingerprintJS launches open source support
+  imageTitle: FingerprintJS launches open source support
 customCTA:
   openCtaNewTab: false
 ---
