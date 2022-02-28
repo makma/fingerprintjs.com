@@ -15,7 +15,7 @@ isPublished: true
 tags:
   - announcements
 authors:
-  - Courtney Rogin
+  - Martin Makarsky
 heroImage:
   image: /img/uploads/open-source-support.png
   imageAlt: FingerprintJS launches open source support
