@@ -138,6 +138,5 @@ We would love to hear your questions and get feedback from the developer communi
 * Star, follow or fork our Github projects: [FingerprintJS](https://github.com/fingerprintjs/fingerprintjs) (browser fingerprinting) and [Fingerprint-Android](https://github.com/fingerprintjs/fingerprint-android)
 * Need more accurate browser fingerprinting for your business? Create a free FingerprintJS Pro account for [99.5% fingerprinting accuracy](/).
 * [Email us](mailto:sales@fingerprintjs.com) your questions
-* Sign up for our [newsletter](https://mailchi.mp/708d84efc0c1/updates-signup) for updates
 
 ![FingerprintJS Logo](/img/uploads/fp_logo_cmyk_color.jpg "FingerprintJS Logo")
