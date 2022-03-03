@@ -212,7 +212,7 @@ This snippet downloads the required JavaScript file and runs the `initFingerprin
 ```html
 <script>
   function initFingerprintJS() {
-    FingerprintJS.load({token: 'your-public-api-key'})
+    FingerprintJS.load({apiKey: 'your-public-api-key'})
       .then(fp => fp.get())
       .then(result => console.log(result.visitorId));
   }
@@ -244,7 +244,7 @@ And change the `initFingerprintJS()` function to set the value of the field:
 ```html
 <script>
   function initFingerprintJS() {
-    FingerprintJS.load({token: 'your-public-api-key'})
+    FingerprintJS.load({apiKey: 'your-public-api-key'})
       .then(fp => fp.get())
       .then(result => {
           document.getElementById('visitorId').value = result.visitorId

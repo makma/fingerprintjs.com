@@ -49,7 +49,7 @@ To begin, you’ll need a FingerprintJS Pro subscription. If you don’t have on
 
 Once you have an account, open the dashboard and take a look at the Subscription menu on the left side of the window. Click the API Keys label and copy any active public key. 
 
-![How to get a Public Key in FingerprintJS](/img/uploads/public-api-key-location.png "How to get a Public Token in FingerprintJS")
+![How to get a Public Key in FingerprintJS](/img/uploads/public-api-key-location.png "How to get a Public API Key in FingerprintJS")
 
 ## Frontend
 
@@ -63,7 +63,7 @@ Open the template for your signup page – which is  [views/signup.hbs](https://
 <script>
 function initFingerprintJS() {
   FingerprintJS.load({
-    token: "your-public-api-key",
+    apiKey: "your-public-api-key",
     region: "eu",
   })
     .then((fp) => fp.get())
@@ -77,7 +77,7 @@ function initFingerprintJS() {
 ></script>
 ```
 
-**Note that for `({token:’your-public-api-key’})` you will need to enter the alphanumeric API key code from your dashboard.** Also, if you look at the main branch, you’ll notice that the API key is stored in the `.env` variables and not directly in the code. This is a much more secure way of storing your API keys but if you just want to do some local testing, you can leave it in the code.
+**Note that for `({apiKey:’your-public-api-key’})` you will need to enter the alphanumeric API key code from your dashboard.** Also, if you look at the main branch, you’ll notice that the API key is stored in the `.env` variables and not directly in the code. This is a much more secure way of storing your API keys but if you just want to do some local testing, you can leave it in the code.
 
 Save the page after you’ve installed the snippet, then open your browser’s developer console and load the site. You should see an alphanumeric hash in the console.
 
@@ -103,7 +103,7 @@ Then you want to set the visitorID as the value of this field, so go to line 65 
 <script>
 function initFingerprintJS() {
   FingerprintJS.load({
-    token: "your-public-api-key",
+    apiKey: "your-public-api-key",
     region: "eu",
   })
     .then((fp) => fp.get())

@@ -66,7 +66,7 @@ You can use FingerprintJS’ open-source library by installing via the NPM packa
 After you [create an account](https://dashboard.fingerprintjs.com/signup) and obtain a public API key, you can obtain a user’s unique fingerprint with a few lines of code:
 
 ```js
-const fpPromise = FingerprintJS.load({ token: 'your-public-api-key' })
+const fpPromise = FingerprintJS.load({ apiKey: 'your-public-api-key' })
 
 fpPromise
   .then(fp => fp.get())

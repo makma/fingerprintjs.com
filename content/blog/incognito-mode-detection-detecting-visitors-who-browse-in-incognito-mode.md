@@ -344,7 +344,7 @@ This will be the code snippet now:
 
 ```js
 function initFingerprintJS() {
-	FingerprintJS.load({ token: 'fNmQOkVpWOuulOZhhYuv' })
+	FingerprintJS.load({ apiKey: 'fNmQOkVpWOuulOZhhYuv' })
 		.then(fp => fp.get({extendedResult: true}))
 		.then(result => {
                 //check if incognito was detected

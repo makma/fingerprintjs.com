@@ -301,7 +301,7 @@ var fpLoaded = function (fp) {
 }
 
 function initFingerprintJS() {
- FingerprintJS.load({token: 'your-public-api-key', region: 'eu'})
+ FingerprintJS.load({apiKey: 'your-public-api-key', region: 'eu'})
    .then(fp => fpLoaded(fp));
 }
 ```

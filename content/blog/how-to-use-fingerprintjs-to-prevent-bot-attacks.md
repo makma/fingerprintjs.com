@@ -323,7 +323,7 @@ After successfully registering, a snippet of code is provided to add to the webs
 ```html
 <script>
   function initFingerprintJS() {
-    FingerprintJS.load({token: 'my-public-api-key'})
+    FingerprintJS.load({apiKey: 'my-public-api-key'})
       .then(fp => fp.get())
       .then(result => console.log(result.visitorId));
   }
@@ -399,7 +399,7 @@ Add the following snippet of code to `signup_form/views/signup.hbs`
 
 <script>
   function initFingerprintJS() {
-    FingerprintJS.load({token: 'my-public-api-key'})
+    FingerprintJS.load({apiKey: 'my-public-api-key'})
       .then(fp => fp.get())
       .then(result => console.log(result.visitorId));
   }
@@ -439,7 +439,7 @@ Next, make use of the `visitorID` value by passing it to the server upon form su
 
 <script>
   function initFingerprintJS() {
-    FingerprintJS.load({token: 'my-public-api-key'})
+    FingerprintJS.load({apiKey: 'my-public-api-key'})
       .then(fp => fp.get())
       .then(result => {
         document.getElementById('visitorId').value = result.visitorId

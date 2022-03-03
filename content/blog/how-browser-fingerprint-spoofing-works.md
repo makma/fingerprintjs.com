@@ -75,7 +75,7 @@ To get started, create an `index.html` file with the following code between the 
 ```
 <script>
   function initFingerprintJS() {
-    const fpPromise = FingerprintJS.load({ token: 'your-public-api-key' });
+    const fpPromise = FingerprintJS.load({ apiKey: 'your-public-api-key' });
 
     fpPromise
       .then(fp => fp.get())

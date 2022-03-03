@@ -30,7 +30,7 @@ export default function MadeForDevelopersSection() {
           <CodeWindow
             code={`import FP from '@fingerprintjs/fingerprintjs-pro';
 
-FP.load({ token })
+FP.load({ apiKey })
   .then(fp => fp.get({ extendedResult: true }))
   .then(res => {
     console.log(res.visitorId);

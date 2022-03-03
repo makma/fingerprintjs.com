@@ -241,7 +241,7 @@ Once you have your FingerprintJS public API key, you can add the following to yo
 
 ```javascript
 $(document).ready(() => {
-    FingerprintJS.load({token: 'your-public-api-key'})
+    FingerprintJS.load({apiKey: 'your-public-api-key'})
         .then((fp) => fp.get())
         .then((result) => {
             console.log(result.visitorId);
