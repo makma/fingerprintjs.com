@@ -17,6 +17,7 @@ export const PATH = {
   whyFpjs: '/products/browser-fingerprinting/',
   accountSharing: '/products/account-sharing-prevention/',
   botD: '/products/bot-detection/',
+  bnpl: '/buy-now-pay-later/',
 } as const
 
 export const URL = {
@@ -61,6 +62,7 @@ export const useCaseLinks = [
   { title: 'Ecommerce', url: PATH.ecommerce, isLocal: true },
   { title: 'Gaming', url: PATH.gaming, isLocal: true },
   { title: 'Cryptocurrency', url: PATH.cryptocurrency, isLocal: true },
+  { title: 'Buy Now Pay Later', url: PATH.bnpl, isLocal: true },
 ]
 
 export const products = [

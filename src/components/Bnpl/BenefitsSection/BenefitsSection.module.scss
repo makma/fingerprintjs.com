@@ -1,0 +1,15 @@
+.benefitsSection {
+  padding: rem(96px) 0;
+
+  @include media('<phoneLandscape') {
+    padding: rem(64px) 0;
+  }
+
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(112px);
+
+  @include media('<phoneLandscape') {
+    row-gap: rem(64px);
+  }
+}

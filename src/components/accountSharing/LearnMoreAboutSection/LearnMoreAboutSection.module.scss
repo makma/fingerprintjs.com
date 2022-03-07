@@ -125,13 +125,21 @@
   }
 
   .tagSection {
-    list-style: inside url('../../../img/Elipse.svg');
+    list-style: none;
+
+    li::before {
+      list-style-position: inside;
+      content: '\2022';
+      color: c('brand-fire');
+      font-size: rem(30px);
+      vertical-align: middle;
+      margin-right: rem(10px);
+    }
   }
 
   .tag {
     font-family: v(ff-sans);
     font-size: rem(20px);
     font-weight: v('semi');
-    margin-bottom: rem(13px);
   }
 }

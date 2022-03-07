@@ -1,0 +1,48 @@
+.clients {
+  padding: rem(40px) 0 rem(56px) 0;
+  background-color: var(--off-white);
+
+  .header {
+    margin-bottom: rem(32px);
+    text-align: center;
+  }
+
+  .title {
+    @include sans($size: 11px, $weight: 600, $lh: 140%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .content {
+    display: flex;
+    column-gap: rem(96px);
+    justify-content: center;
+    align-items: center;
+
+    @include media('<=phoneLandscape') {
+      column-gap: rem(48px);
+    }
+
+    .homeCredit {
+      height: rem(60px);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(40px);
+      }
+    }
+    .zip {
+      height: rem(32px);
+
+      @include media('<=phoneLandscape') {
+        height: rem(22px);
+      }
+    }
+    .simpl {
+      height: rem(40px);
+
+      @include media('<=phoneLandscape') {
+        height: rem(24px);
+      }
+    }
+  }
+}
