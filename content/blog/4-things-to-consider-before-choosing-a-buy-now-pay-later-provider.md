@@ -13,7 +13,7 @@ metadata:
 featured: true
 publishDate: 2022-03-10T21:07:28.670Z
 title: 4 things to consider before choosing a buy now, pay later provider
-isPublished: false
+isPublished: true
 tags:
   - ecommerce fraud
 authors:
