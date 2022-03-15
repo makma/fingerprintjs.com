@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@fingerprintjs/fingerprintjs-pro": "^3.6.0-beta.0",
-    "@fpjs-incubator/botd-agent": "^0.1.23",
+    "@fpjs-incubator/botd-agent": "0.1.24",
     "@loadable/component": "^5.15.2",
     "@tippyjs/react": "^4.2.0",
     "classnames": "^2.2.6",
