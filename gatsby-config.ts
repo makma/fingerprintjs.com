@@ -107,7 +107,14 @@ const config: GatsbyConfig = {
       },
     },
     'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`],
+        },
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-transformer-yaml',
     {
