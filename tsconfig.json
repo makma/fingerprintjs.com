@@ -20,5 +20,5 @@
     "skipLibCheck": true,
     "esModuleInterop": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "gatsby-node.ts", "gatsby-config.ts", "gatsby-browser.tsx"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

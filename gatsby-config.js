@@ -1,9 +1,8 @@
-import type { GatsbyConfig } from 'gatsby'
-import path from 'path'
+const path = require('path')
 
 const baseUrl = process.env.CONTEXT === 'deploy-preview' ? process.env.DEPLOY_PRIME_URL : 'https://fingerprintjs.com'
 
-const resolvePath = (directoryName: string, pathName: string) => {
+const resolvePath = (directoryName, pathName) => {
   const result = path.join(directoryName, pathName)
   if (process.platform === 'win32') {
     return result.replace(/\\/g, '\\\\')
@@ -48,7 +47,7 @@ const rssPostQuery = `
 }
 `
 
-const config: GatsbyConfig = {
+module.exports = {
   siteMetadata: {
     title: 'FingerprintJS Pro - Browser fingerprinting and fraud detection API',
     description: 'Stop fraud, spam, and account takeovers with 99.5% accurate browser fingerprinting as a service.',
@@ -74,7 +73,7 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-plugin-sass',
       options: {
         implementation: require('sass'),
-        additionalData: `@import "${resolvePath(path.resolve(), '/src/styles/common')}";`,
+        additionalData: `@import "${resolvePath(__dirname, '/src/styles/common')}";`,
         cssLoaderOptions: {
           esModule: false,
           modules: {
@@ -87,7 +86,7 @@ const config: GatsbyConfig = {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: path.resolve(`static`),
+        path: `${__dirname}/static`,
         name: 'uploads',
         ignore: [`**/config.yml`],
       },
@@ -95,26 +94,19 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: path.resolve(`content`),
+        path: `${__dirname}/content/`,
         name: 'index',
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: path.resolve(`src/img`),
+        path: `${__dirname}/src/img`,
         name: 'images',
       },
     },
     'gatsby-plugin-image',
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        defaults: {
-          formats: [`auto`],
-        },
-      },
-    },
+    'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-transformer-yaml',
     {
@@ -217,7 +209,7 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        modulePath: path.resolve(`src/cms/cms.js`),
+        modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
     {
@@ -286,4 +278,3 @@ const config: GatsbyConfig = {
     'MarkdownRemark.fields.author': 'MarkdownRemark[]',
   },
 }
-export default config
