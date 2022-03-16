@@ -2,7 +2,7 @@
 templateKey: long-form-content
 metadata:
   title: How to prevent chargeback credit card fraud revenue loss
-  url: /blog/prevent-credit-card-chargeback-fraud
+  url: fingerprintjs.com/blog/prevent-credit-card-chargeback-fraud
   description: Credit card chargebacks is one of the most common and costly forms
     of financial fraud. The good news is that there's several prevention
     measures eCommerce businesses can take to reduce the likelihood of it
