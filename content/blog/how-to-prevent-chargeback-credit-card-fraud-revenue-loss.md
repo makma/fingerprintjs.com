@@ -14,7 +14,7 @@ metadata:
 featured: true
 publishDate: 2022-03-15T17:10:36.060Z
 title: How to prevent chargeback credit card fraud revenue loss
-isPublished: false
+isPublished: true
 tags:
   - ecommerce fraud
   - payment fraud
