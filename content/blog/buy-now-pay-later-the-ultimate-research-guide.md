@@ -97,7 +97,7 @@ What does the future hold for the BNPL industry? There is no doubt that it will 
 
 However, there is also potential for a slowdown if the economy weakens or if there is a major recession. In any case, the BNPL industry is here to stay and is likely to experience continued growth in the years ahead.
 
-# Buy now, pay later faces increasing fraud losses 
+# Buy now, pay later faces increasing fraud losses
 
 It's no secret that online payment fraud is on the rise. In fact, according to Juniper Research, global eCommerce fraud losses hit $17.5 billion in 2020, jumping by an alarming $2.5 billion in 2021 to hit <a href="https://www.juniperresearch.com/press/ecommerce-losses-online-payment-fraud-exceed-20bn" target="_blank" rel="noopener noreferrer">$20 billion</a>. These losses are expected to grow even further, with the payment card industry facing <a href="https://www.paymentsdive.com/news/card-industry-faces-400b-in-fraud-losses-over-next-decade-nilson-says/611521/" target="_blank" rel="noopener noreferrer">$400 billion</a> in fraud losses over the next decade.
 
@@ -189,7 +189,7 @@ Africa is also a mobile-first continent, with <a href="https://www.gsma.com/mobi
 
 ### Motito
 
-PayLater by Motito is a Ghanian payment method that allows you to buy now and pay later. They pride themselves in making hire purchases as easy as possible, with a focus on African startups and customers. With just 5 employees, Motito is a very early-stage startup dedicated to providing a better way for people to buy what they need and want.
+PayLater by Motito is a Ghanaian payment method that allows you to buy now and pay later. They pride themselves in making hire purchases as easy as possible, with a focus on African startups and customers. With just 5 employees, Motito is a very early-stage startup dedicated to providing a better way for people to buy what they need and want.
 
 ### CredPal
 
