@@ -55,7 +55,7 @@ Gambing websites are also likely to have high transaction volume, with players m
 
 With online gambling scams on the rise, the risk to gambling websites is more than just losing money. Customers are more likely to prefer sites they feel safe on, which means they will avoid those that they believe can be easily exploited. 
 
-[47% of consumers said in one survey](https://www.mytotalretail.com/article/e-commerce-retailers-face-long-term-challenges-as-payment-fraud-damages-customer-trust/) that if they encounters any issues in the payment process, they'll abandon a brand and go elsewhere. This means that even if there isn't any successful fraud attempts, that brand is very quickly tarnished in the minds of people who’ve been targeted by fraudsters.
+[47% of consumers said in one survey](https://www.mytotalretail.com/article/e-commerce-retailers-face-long-term-challenges-as-payment-fraud-damages-customer-trust/) that if they encounter any issues in the payment process, they'll abandon a brand and go elsewhere. This means that even if there are not any successful fraud attempts, that brand is very quickly tarnished in the minds of people who’ve been targeted by fraudsters.
 
 Defrauded customers can quickly become a problem for companies too. Credit card holders can get defrauded money returned to them in the form of a chargeback, which comes directly from the businesses bank account that processed the scam. 
 
