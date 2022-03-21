@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 import * as FingerprintJS from '@fingerprintjs/fingerprintjs-pro'
-import { FPJS_PUBLIC_TOKEN, FPJS_REGION, FPJS_CDN_URL } from '../constants/env'
+import { FPJS_PUBLIC_TOKEN, FPJS_REGION, FPJS_SCRIPT_URL_PATTERN } from '../constants/env'
 type FormContextType = {
   visitorData?: FingerprintJS.ExtendedGetResult
   hasFpjsError?: boolean
@@ -25,9 +25,9 @@ export function FpjsProvider({ children }: { children: React.ReactNode }) {
 }
 
 function FpjsAppProvider({ children }: { children: React.ReactNode }) {
-  const publicToken = FPJS_PUBLIC_TOKEN
+  const publicApiKey = FPJS_PUBLIC_TOKEN
   const region = FPJS_REGION as FingerprintJS.Region
-  const cdnUrl = FPJS_CDN_URL
+  const scriptUrlPattern = FPJS_SCRIPT_URL_PATTERN
 
   const [visitorData, setVisitorData] = useState<FingerprintJS.ExtendedGetResult>()
   const [hasFpjsError, setHasFpjsError] = useState(false)
@@ -36,9 +36,9 @@ function FpjsAppProvider({ children }: { children: React.ReactNode }) {
     async function getVisitorData() {
       try {
         const fp = await FingerprintJS.load({
-          token: publicToken,
+          apiKey: publicApiKey,
           region,
-          cdnUrl,
+          scriptUrlPattern,
         })
         const result = await fp.get(config)
         if (!result) {
@@ -58,7 +58,7 @@ function FpjsAppProvider({ children }: { children: React.ReactNode }) {
     }
 
     getVisitorData()
-  }, [publicToken, region, cdnUrl])
+  }, [publicApiKey, region, scriptUrlPattern])
 
   return <FpjsContext.Provider value={{ visitorData, hasFpjsError }}>{children}</FpjsContext.Provider>
 }

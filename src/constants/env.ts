@@ -13,9 +13,9 @@ export const FPJS_PUBLIC_TOKEN =
     [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_FPJS_PUBLIC_TOKEN,
   }) ?? 'test_public_token'
 
-export const FPJS_CDN_URL = getContextEnv<string | undefined>({
-  [NetlifyContext.Production]: process.env.GATSBY_FPJS_CDN_URL,
-  [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_FPJS_CDN_URL,
+export const FPJS_SCRIPT_URL_PATTERN = getContextEnv<string | undefined>({
+  [NetlifyContext.Production]: process.env.GATSBY_FPJS_SCRIPT_URL_PATTERN,
+  [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_FPJS_SCRIPT_URL_PATTERN,
 })
 
 export const GTM_TOKEN =
