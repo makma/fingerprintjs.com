@@ -28,7 +28,7 @@ customCTA:
 Online gambling was <a href="https://www.acuant.com/blog/online-gambling-being-gamed-by-fraudsters/" target="_blank" rel="noopener">more popular than ever</a> in 2020. Pandemic lockdowns drove people towards at-home activities, and gambling sites were one of many beneficiaries. 
 
 However, as things become more popular with punters (or players), they also attract the attention of scammers. A general increase in internet usage has spurred a dramatic increase in the value of all types of cybercrime - <a href="https://cobalt.io/blog/cybersecurity-statistics-2021" target="_blank" rel="noopener">up 300 percent</a>. 
- 
+
 It’s a <a href="https://cobalt.io/blog/business-cost-of-cybercrime" target="_blank" rel="noopener">multi-billion dollar industry</a> that is driving more and more business owners to protect themselves with online fraud prevention. 
 
 For gambling websites, that means it’s more important than ever to protect both your business and your customers from the effects of online gambling fraud. 
@@ -55,7 +55,7 @@ Gambing websites are also likely to have high transaction volume, with players m
 
 With online gambling scams on the rise, the risk to gambling websites is more than just losing money. Customers are more likely to prefer sites they feel safe on, which means they will avoid those that they believe can be easily exploited. 
 
-<a href="http://www.brandquarterly.com/stop-phishing-scams-ruining-brand-reputation" target="_blank" rel="noopener">Brand Quarterly</a> reports that 42 percent of customers say they’re less likely to interact with a company that’s been involved in a scam attempt. This means that even if the fraud isn’t successful, that brand is very quickly tarnished in the minds of people who’ve been targeted by fraudsters.
+[47% of consumers said in one survey](https://www.mytotalretail.com/article/e-commerce-retailers-face-long-term-challenges-as-payment-fraud-damages-customer-trust/) that if they encounters any issues in the payment process, they'll abandon a brand and go elsewhere. This means that even if there isn't any successful fraud attempts, that brand is very quickly tarnished in the minds of people who’ve been targeted by fraudsters.
 
 Defrauded customers can quickly become a problem for companies too. Credit card holders can get defrauded money returned to them in the form of a chargeback, which comes directly from the businesses bank account that processed the scam. 
 
@@ -95,7 +95,7 @@ For example, the fraudster can bet hard on one hand that doesn’t have great ca
 
 Manipulating games this way can make a big difference to the chances other players have of winning. It is an important part of gambling that everyone has a fair chance to win based on the odds of the game; all of the above multi-accounting tricks make it less likely your fair players will have an enjoyable experience.
 
-### Bonus Abuse 
+### Bonus Abuse
 
 In this scenario, the gambling platform is the one that is going to be paying out of pocket for fraud. This is one of the more basic online gambling scams that takes advantage of online casinos making offers to new account holders. 
 
