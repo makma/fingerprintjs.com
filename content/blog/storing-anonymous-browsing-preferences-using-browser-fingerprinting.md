@@ -6,7 +6,7 @@ metadata:
     cases, followed by a tutorial on implementing dark mode to demonstrate how
     to remember anonymous users’ cloaked preferences.
   url: https://fingerprintjs.com/blog/storing-anonymous-browser-preferences
-  image: /img/uploads/storing-anonymous-browsing-preferences-using-browser-fingerprintingv1.png
+  image: /img/uploads/storing-anonymous-browsing-preferences-using-browser-fingerprintingv3.png
   imageAlt: illustration of incognito browser window
 featured: true
 publishDate: 2022-03-22T21:41:54.209Z
@@ -19,7 +19,7 @@ authors:
   - Shahed Nasser
 heroImage:
   imageAlt: illustration of incognito browser window
-  image: /img/uploads/storing-anonymous-browsing-preferences-using-browser-fingerprintingv1.png
+  image: /img/uploads/storing-anonymous-browsing-preferences-using-browser-fingerprintingv3.png
 customCTA:
   openCtaNewTab: false
 ---
