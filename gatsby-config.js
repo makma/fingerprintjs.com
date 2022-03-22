@@ -49,8 +49,8 @@ const rssPostQuery = `
 
 module.exports = {
   siteMetadata: {
-    title: 'FingerprintJS Pro - Browser fingerprinting and fraud detection API',
-    description: 'Stop fraud, spam, and account takeovers with 99.5% accurate browser fingerprinting as a service.',
+    title: 'FingerprintJS Pro - Device fingerprinting and fraud detection API',
+    description: 'Stop fraud, spam, and account takeovers with 99.5% accurate device fingerprinting as a service.',
     siteUrl: baseUrl,
     image: 'https://fingerprintjs.com/img/fpjs-preview.png',
   },
