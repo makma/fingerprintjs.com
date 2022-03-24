@@ -1,5 +1,5 @@
 import React from 'react'
-import CodeWindow from '../common/CodeWindow'
+import CodeWindowWithSelector from '../common/CodeWindowWithSelector'
 import Container from '../common/Container'
 import Section from '../common/Section'
 import ToolsTextBlock from '../common/ToolsTextBlock'
@@ -27,15 +27,21 @@ export default function MadeForDevelopersSection() {
           </div>
         </header>
         <div className={styles.content}>
-          <CodeWindow
-            code={`import FP from '@fingerprintjs/fingerprintjs-pro';
+          <CodeWindowWithSelector
+            codeBlocks={[
+              {
+                code: `import FP from '@fingerprintjs/fingerprintjs-pro';
 
 FP.load({ apiKey })
   .then(fp => fp.get({ extendedResult: true }))
   .then(res => {
     console.log(res.visitorId);
     console.log(res.incognito);
-  });`}
+  });`,
+                language: 'javascript',
+                type: '',
+              },
+            ]}
           />
         </div>
       </Container>

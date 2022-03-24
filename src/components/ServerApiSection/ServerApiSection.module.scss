@@ -1,14 +1,8 @@
 .flexibleApi {
-  background-color: adjust-color(c('brand-water'), $lightness: 10%, $saturation: 10%);
-  background-image: url('../../img/flexible-api-background.svg');
-  background-repeat: no-repeat;
-  background-position: -10% 240%;
-  color: v('white');
-  overflow-x: hidden;
-  padding-top: 7rem;
+  padding: rem(96px) 0;
 
   @include media('<=phoneLandscape') {
-    padding-top: 3.5rem;
+    padding: rem(96px) 0;
   }
 }
 
@@ -16,12 +10,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  > * + * {
-    @include media('>desktop') {
-      margin-right: 7rem;
-    }
-  }
+  align-items: start;
+  column-gap: rem(32px);
 
   @include media('<=desktop') {
     display: block;
@@ -29,13 +19,9 @@
 }
 
 .title {
-  font-size: 5rem;
+  font-size: rem(32px);
   font-weight: v(bold);
-  margin-bottom: 3rem;
-
-  @include media('<=phone') {
-    font-size: 3rem;
-  }
+  margin-bottom: rem(40px);
 }
 
 .header,
@@ -48,31 +34,18 @@
   max-width: 50%;
 
   @include media('<=desktop') {
-    margin-top: 4rem;
+    margin-top: rem(32px);
     max-width: 100%;
-  }
-
-  > * + * {
-    margin-top: 3rem;
   }
 }
 
 .tools {
-  display: flex;
-  align-items: flex-start;
-  color: #ffffff;
-
-  > * + * {
-    margin-top: 2rem;
-
-    @include media('>phoneLandscape') {
-      margin-top: 0;
-      margin-left: 2rem;
-    }
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: rem(32px);
 
   @include media('<=phoneLandscape') {
-    flex-wrap: wrap;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -80,4 +53,29 @@
   width: 7rem;
   height: 7rem;
   fill: v('white');
+}
+
+.visitorId {
+  top: 32px;
+  left: 385px;
+}
+.visits {
+  top: 53px;
+  left: 350px;
+}
+.incognito {
+  top: 95px;
+  left: 260px;
+}
+.ip {
+  bottom: 117px;
+  left: 293px;
+}
+.ipLocation {
+  bottom: 95px;
+  left: 293px;
+}
+.browserDetails {
+  bottom: 75px;
+  left: 320px;
 }

@@ -1,10 +1,10 @@
 import React from 'react'
 import { ReactComponent as ToolsSvg } from './tools.svg'
-import { ReactComponent as IntegrationsSvg } from '../../img/api_webhooks.svg'
+import { ReactComponent as IntegrationsSvg } from './integration.svg'
 import Container from '../common/Container'
 import Section from '../common/Section'
 import ToolsTextBlock from '../common/ToolsTextBlock'
-import CodeWindow from '../common/CodeWindow'
+import CodeWindowWithSelector, { CodeTooltip } from '../common/CodeWindowWithSelector'
 import styles from './ServerApiSection.module.scss'
 
 export default function ServerApiSection() {
@@ -30,12 +30,10 @@ export default function ServerApiSection() {
           </div>
         </header>
         <div className={styles.content}>
-          <CodeWindow
-            code={`curl https://api.fpjs.io/visitors/:visitId \\
-  -H 'Auth-Token: Bearer eyJ0eXAiOiJKV1...'`}
-          />
-          <CodeWindow
-            code={`{
+          <CodeWindowWithSelector
+            codeBlocks={[
+              {
+                code: `{
   "visitorId": "Ibk1527CUFmcnjLwIs4A9",
   "visits": [
     {
@@ -45,8 +43,40 @@ export default function ServerApiSection() {
       "browserDetails": { ... }
     }
   ]
-}`}
-            hasControls={false}
+}`,
+                language: 'javascript',
+                type: '',
+              },
+            ]}
+            tooltips={[
+              <CodeTooltip key='visitorId' className={styles.visitorId}>
+                <p>
+                  A permanent <strong>visitorID</strong> that can be used to identify visitors trying to change their
+                  identity via proxies or other techniques.
+                </p>
+              </CodeTooltip>,
+              <CodeTooltip key='incognito' className={styles.incognito}>
+                <p>
+                  A true or false value that shows whether a visitor is using <strong>incognito</strong> mode.
+                </p>
+              </CodeTooltip>,
+              <CodeTooltip key='ip' className={styles.ip}>
+                <p>
+                  <strong>IP address</strong> of the visit.
+                </p>
+              </CodeTooltip>,
+              <CodeTooltip key='ipLocation' className={styles.ipLocation}>
+                <p>
+                  Provides the <strong>location</strong> of a visitor on a city level based on IP address of the visit.
+                </p>
+              </CodeTooltip>,
+              <CodeTooltip key='browserDetails' className={styles.browserDetails}>
+                <p>
+                  Other <strong>details</strong> such as the name and version of the browser and operating system of the
+                  visit.
+                </p>
+              </CodeTooltip>,
+            ]}
           />
         </div>
       </Container>

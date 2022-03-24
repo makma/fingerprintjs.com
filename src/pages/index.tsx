@@ -17,8 +17,8 @@ export default function IndexPage() {
       <div>
         <LiveDemoSection />
         <ClientsSection />
-        <MadeForDevelopersSection />
         <ServerApiSection />
+        <MadeForDevelopersSection />
         <UseCasesSection />
         <Billing />
         <SOCSection />

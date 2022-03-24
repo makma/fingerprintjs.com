@@ -1,27 +1,16 @@
 .developerFriendly {
-  background-color: adjust-color(c('brand-water'), $lightness: 15%);
-  position: relative;
-  --div-color: #{adjust-color(c('brand-water'), $lightness: 25%, $saturation: -25%)};
-  --div-dash-size: 25px;
-  padding-bottom: 7rem;
+  padding: rem(96px) 0;
 
   @include media('<=phoneLandscape') {
-    padding-bottom: 3.5rem;
+    padding: rem(64px) 0;
   }
 }
 
 .container {
   display: flex;
-  align-items: top;
+  align-items: start;
   justify-content: space-between;
-  // @include gap(2rem);
-  position: relative;
-
-  > * + * {
-    @include media('>desktop') {
-      margin-left: 2rem;
-    }
-  }
+  column-gap: rem(32px);
 
   @include media('<=desktop') {
     display: block;
@@ -34,45 +23,25 @@
 }
 
 .content {
+  max-width: 50%;
+
   @include media('<=desktop') {
-    margin-top: 4rem;
+    margin-top: rem(32px);
+    max-width: 100%;
   }
 }
-
 .title {
-  font-size: 5rem;
+  font-size: rem(32px);
   font-weight: v(bold);
-  color: v('white');
-  padding-bottom: 4rem;
-  margin-bottom: 6rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  margin-right: 4rem;
-
-  @include media('<=phone') {
-    font-size: 3rem;
-  }
-}
-
-.description {
-  color: v('white');
-  opacity: v('muted');
+  margin-bottom: rem(40px);
 }
 
 .tools {
-  display: flex;
-  align-items: flex-start;
-  color: #ffffff;
-
-  > * + * {
-    margin-top: 2rem;
-
-    @include media('>phoneLandscape') {
-      margin-top: 0;
-      margin-left: 2rem;
-    }
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: rem(32px);
 
   @include media('<=phoneLandscape') {
-    flex-wrap: wrap;
+    grid-template-columns: 1fr;
   }
 }

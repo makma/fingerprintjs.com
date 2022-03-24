@@ -4,6 +4,8 @@ import classNames from 'classnames'
 import Prism from 'prismjs'
 import { copyToClipboard } from '../../../helpers/clipboard'
 import { ReactComponent as CopySVG } from '../../../img/CopySVG.svg'
+import Tippy from '@tippyjs/react'
+import { ReactComponent as InfoSvg } from './InfoIconSVG.svg'
 
 interface CodeWindowProps {
   codeBlocks: { type: string; code: string; language: string }[]
@@ -81,3 +83,37 @@ export default memo(function CodeWindowWithSelector({
     </div>
   )
 })
+
+export interface CodeTooltipProps {
+  children: React.ReactNode
+  className: string
+  key: string
+  left?: number
+}
+export function CodeTooltip({ children, className, key, left }: CodeTooltipProps) {
+  return (
+    <Tippy
+      key={key}
+      placement='right'
+      theme='checkmark'
+      maxWidth={460}
+      popperOptions={{
+        modifiers: [
+          {
+            name: 'flip',
+            options: {
+              fallbackPlacements: ['bottom', 'top'],
+            },
+          },
+        ],
+      }}
+      content={children}
+    >
+      <InfoSvg
+        tabIndex={0}
+        className={classNames(className, styles.infoIcon)}
+        style={{ left: `${left}px` } as React.CSSProperties}
+      />
+    </Tippy>
+  )
+}
