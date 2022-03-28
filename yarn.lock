@@ -3155,10 +3155,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fingerprintjs/fingerprintjs-pro@^3.6.0-beta.1":
-  version "3.6.0-beta.1"
-  resolved "https://npm.fpregistry.io/@fingerprintjs/fingerprintjs-pro/-/fingerprintjs-pro-3.6.0-beta.1.tgz#6e3badacd49040a3a5de815801b561c9853a8a99"
-  integrity sha512-xmWOG5FqTpLKIkxLm1v+i9We63PXfswARUObZD7Zuy2Eso7Z1wqZdMYZXIOaK2wY7yXKUE/jx/8/AJM0/iHrXw==
+"@fingerprintjs/fingerprintjs-pro@^3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@fingerprintjs/fingerprintjs-pro/-/fingerprintjs-pro-3.6.0.tgz#214324a274ebbce1c8a04f0e2025ca0efb55a4c9"
+  integrity sha512-RaJPsx7K/VKXSXR/nAHgpUUAv6J+dkoboVHW8wiTYcwOB8LMFJ1GwWorkBHLSmnFTIDw7+v6BUtmKHjJeeSKYg==
   dependencies:
     tslib "^2.0.1"
 
