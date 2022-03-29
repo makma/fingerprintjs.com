@@ -3,7 +3,7 @@ templateKey: long-form-content
 metadata:
   title: 8 Common Signs of an Email Phishing Attempt
   url: https://fingerprintjs.com/blog/common-email-phishing-attack-signs
-  image: /img/uploads/s_-blog-illus_-8-common-indicators-of-phishing-email-attack-attempts-compressed.gif
+  image: /img/uploads/8-common-indicators-of-phishing-email-attack-attempts.png
   imageAlt: Illustration of a letter being opened by a fishing hook depicting a
     phishing email
   description: Email phishing is exceedingly common, and while they have low
@@ -19,7 +19,7 @@ tags:
 authors:
   - Courtney Rogin
 heroImage:
-  image: /img/uploads/s_-blog-illus_-8-common-indicators-of-phishing-email-attack-attempts-compressed.gif
+  image: /img/uploads/8-common-indicators-of-phishing-email-attack-attempts.png
   imageAlt: Illustration of a letter being opened by a fishing hook depicting a
     phishing email
 customCTA:
