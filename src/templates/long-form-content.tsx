@@ -98,6 +98,8 @@ export const pageQuery = graphql`
             childImageSharp {
               gatsbyImageData(placeholder: BLURRED, quality: 100, layout: FULL_WIDTH)
             }
+            publicURL
+            extension
           }
           imageAlt
           imageTitle

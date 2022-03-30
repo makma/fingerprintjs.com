@@ -52,7 +52,7 @@ const PreviewCompatibleImage = ({ className, imageStyle, imageInfo, titleTag, al
     return <img className={className} style={style} src={image} alt={alt} title={title} />
   }
 
-  if (!childImageSharp && extension === 'svg') {
+  if (!childImageSharp && (extension === 'svg' || extension === 'gif')) {
     return <img className={className} src={publicURL} alt={alt} title={title} />
   }
 
