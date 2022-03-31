@@ -6,6 +6,7 @@ import { copyToClipboard } from '../../../helpers/clipboard'
 import { ReactComponent as CopySVG } from '../../../img/CopySVG.svg'
 import Tippy from '@tippyjs/react'
 import { ReactComponent as InfoSvg } from './InfoIconSVG.svg'
+import { isBrowser } from '../../../helpers/detector'
 
 interface CodeWindowProps {
   codeBlocks: { type: string; code: string; language: string }[]
@@ -93,6 +94,8 @@ export interface CodeTooltipProps {
 export function CodeTooltip({ children, className, key, left }: CodeTooltipProps) {
   return (
     <Tippy
+      interactive
+      appendTo={isBrowser() ? document.body : undefined} // to prevent the tooltip from taking space from the description
       key={key}
       placement='right'
       theme='checkmark'

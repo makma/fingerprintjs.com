@@ -8,6 +8,7 @@ export interface SuccessResponse {
     browserSpoofing: DetectNote
   }
   vm: DetectNote
+  verifyCounter: number
 }
 
 interface DetectNote {

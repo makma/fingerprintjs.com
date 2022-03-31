@@ -43,6 +43,7 @@ export default function APIResponseDetailsSection({ visitorData }: APIResponseDe
   },
   "ip":"${visitorData?.ip ?? '186.XXX.XXX.XXX'}",
   "requestId":"${visitorData?.requestId ?? '01FP8C8FQ8P189KVFP88C5FHY5'}",
+  "verifyCounter": ${visitorData?.verifyCounter ?? '1'},
   "tag":"${visitorData?.tag ?? ''}"
 }`,
                 language: 'javascript',
@@ -93,6 +94,27 @@ export default function APIResponseDetailsSection({ visitorData }: APIResponseDe
               >
                 <p>
                   <strong>Request ID</strong> is used to verify bot detection requests on the server.
+                </p>
+              </CodeTooltip>,
+              <CodeTooltip
+                key='verifyCounter'
+                className={styles.verifyCounter}
+                left={
+                  visitorData?.verifyCounter ? 232 + visitorData.verifyCounter.toString().length * characterLength : 232
+                }
+              >
+                <p>
+                  <strong>Verify counter</strong> is the number of verify calls for the request Id. You can use it to
+                  prevent{' '}
+                  <a
+                    className={styles.link}
+                    href='https://github.com/fingerprintjs/BotD/discussions/54'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    replay attacks
+                  </a>
+                  .
                 </p>
               </CodeTooltip>,
               <CodeTooltip

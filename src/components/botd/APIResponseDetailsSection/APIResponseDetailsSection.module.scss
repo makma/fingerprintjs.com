@@ -50,27 +50,39 @@
 }
 
 .automationTool {
-  bottom: 432px;
+  bottom: 452px;
   left: 257px;
 }
 .browserSpoofing {
-  bottom: 348px;
+  bottom: 368px;
   left: 265px;
 }
 .searchEngine {
-  bottom: 264px;
+  bottom: 284px;
   left: 240px;
 }
 .vm {
-  bottom: 159px;
+  bottom: 179px;
   left: 123px;
 }
 .ip {
-  bottom: 76px;
+  bottom: 96px;
 }
 .requestId {
-  bottom: 55px;
+  bottom: 75px;
+}
+.verifyCounter {
+  bottom: 54px;
 }
 .tag {
   bottom: 32px;
+}
+
+.link {
+  cursor: pointer;
+  color: v('brand-fire');
+
+  &:hover {
+    color: adjust-color(c('brand-fire'), $lightness: -20%);
+  }
 }

@@ -8,9 +8,8 @@
 
 .container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  align-items: start;
   column-gap: rem(32px);
 
   @include media('<=desktop') {
