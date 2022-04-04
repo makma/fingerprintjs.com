@@ -141,15 +141,11 @@ describe('FingerprintJS Demo Widget', () => {
 
     expect(fetchMock).toHaveBeenCalledTimes(1)
   })
-
   it('Should display an error message if the core API or TLS endpoints fail or are blocked', async () => {
     fetchMock.mockResponseOnce(JSON.stringify(visitsHistory), {
       status: 200,
     })
-
-    fpjsLoadMock.mockResolvedValue({
-      get: jest.fn().mockResolvedValue(undefined),
-    })
+    fpjsLoadMock.mockRejectedValue(new Error())
 
     renderWithProviders(<FpjsWidget />)
     await act(() => Promise.resolve())

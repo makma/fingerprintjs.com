@@ -1,11 +1,15 @@
 import React, { FC, ReactElement } from 'react'
 import { render, RenderOptions } from '@testing-library/react'
 import { FormProvider } from '../hooks/useForm'
-import { FpjsProvider } from '../context/FpjsContext'
+import { FpjsProvider } from '@fingerprintjs/fingerprintjs-pro-react'
 
 const AllTheProviders: FC = ({ children }) => {
   return (
-    <FpjsProvider>
+    <FpjsProvider
+      loadOptions={{
+        apiKey: 'public-key',
+      }}
+    >
       <FormProvider>{children}</FormProvider>
     </FpjsProvider>
   )

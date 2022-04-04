@@ -132,9 +132,7 @@ describe('BotD - Generate Key Section', () => {
   })
 
   it('should have the button disabled if the visitorId is missing', async () => {
-    fpjsLoadMock.mockResolvedValue({
-      get: jest.fn().mockResolvedValue(undefined),
-    })
+    fpjsLoadMock.mockRejectedValue(new Error())
 
     renderWithProviders(<GenerateKeySection requestId={visitorId} />)
     await act(() => Promise.resolve())
