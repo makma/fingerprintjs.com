@@ -34,10 +34,12 @@ export const URL = {
   signupUrl: 'https://dashboard.fingerprintjs.com/signup',
   statusUrl: 'https://status.fingerprintjs.com',
   supportMail: 'support@fingerprintjs.com',
+  salesMail: 'sales@fingerprintjs.com',
   discordServerURL: 'https://discord.gg/ad6R2ttHVX',
 } as const
 
 export const MAILTO = { mailToUrl: `mailto:${URL.supportMail}` } as const
+export const MAILTO_SALES = { mailToUrl: `mailto:${URL.salesMail}` } as const
 
 // links to readme should not have trailing slash to prevent forwarding
 export const DOC_URL = {

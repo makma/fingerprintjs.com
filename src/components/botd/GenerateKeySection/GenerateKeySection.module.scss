@@ -116,7 +116,7 @@
   padding-top: rem(48px);
 
   .label {
-    @include sans($size: 16px, $lh: 130%, $weight: 600);
+    @include sans($size: 16px, $lh: 150%, $weight: 600);
   }
   .form {
     display: flex;
@@ -178,6 +178,29 @@
     .loadingButton {
       background-color: adjust-color(c('brand-fire'), $lightness: -20%);
       cursor: wait;
+    }
+  }
+}
+
+.poweredBy {
+  display: flex;
+  column-gap: rem(6px);
+  padding-top: rem(17px);
+  @include sans($size: 12px, $weight: 400, $lh: 125%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+  letter-spacing: 0.004em;
+
+  .link {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .botD {
+    fill: adjust-color(c('brand-water'), $alpha: -0.3);
+
+    width: rem(20px);
+
+    @include media('<=phoneLandscape') {
+      width: rem(16px);
     }
   }
 }

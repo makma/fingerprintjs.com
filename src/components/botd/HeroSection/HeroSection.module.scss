@@ -14,7 +14,7 @@
 .botDSection {
   padding-top: rem(72.5px);
   padding-bottom: rem(145px);
-
+  z-index: 0;
   @include media('<=desktop') {
     padding-top: rem(48px);
     padding-bottom: rem(60px);

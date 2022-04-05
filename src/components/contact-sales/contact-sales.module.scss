@@ -6,14 +6,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: rem(170px);
-  padding-bottom: rem(60px);
+  padding-bottom: rem(66px);
 
-  background-image: url('../../img/ellipseBG.svg');
-  background-position: calc(50% - 450px) 100%;
+  background-image: url('../../img/EllipseBG.png');
+  background-position: calc(50%) 100%;
   background-repeat: no-repeat;
 
   @include media('<=desktop') {
     column-gap: rem(75px);
+
+    background-position: 50% 100%;
   }
 
   @include media('<=tabletWide') {
@@ -25,22 +27,23 @@
     flex-direction: column;
     align-items: center;
 
-    background-image: url('../../img/ellipseMobileBG.svg');
-    background-position: top left;
+    background-image: url('../../img/EllipseMobile.png');
+
+    background-position: 100% 54%;
+    background-size: contain;
   }
 
-  @include media('<=phone') {
-    background-position: center left;
-    background-size: contain;
+  @include media('<=phoneLandscape') {
   }
 }
 
 .clients {
   padding-top: rem(85px);
   max-width: rem(400px);
+  z-index: unset;
 
   @include media('<=tablet') {
-    padding-top: rem(88px);
+    padding-top: rem(72px);
   }
 
   .title {
@@ -48,7 +51,7 @@
     font-family: v(ff-sans);
     font-size: rem(14px);
     line-height: 140%;
-    color: adjust-color(c('brand-water'), $alpha: -0.5);
+    color: adjust-color(c('brand-water'), $alpha: -0.3);
     text-transform: uppercase;
     letter-spacing: 0.03em;
     font-weight: 500;
@@ -72,5 +75,54 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+.contactSalesSection {
+  display: flex;
+  flex-direction: column;
+
+  .poweredBy {
+    @include media('>tablet') {
+      padding-left: rem(32px);
+    }
+    padding-top: rem(24px);
+
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(4px);
+  }
+  .botdDescription {
+    display: flex;
+    column-gap: rem(6px);
+    align-items: center;
+  }
+  .botdDescription,
+  .text {
+    min-height: rem(20px);
+
+    @include sans($size: 14px, $weight: 500, $lh: 125%);
+    letter-spacing: 0.004em;
+    color: v('off-white');
+
+    @include media('<=phoneLandscape') {
+      min-height: rem(17px);
+      font-size: rem(12px);
+    }
+
+    .link {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .botD {
+      fill: white;
+
+      width: rem(20px);
+
+      @include media('<=phoneLandscape') {
+        width: rem(16px);
+      }
+    }
   }
 }

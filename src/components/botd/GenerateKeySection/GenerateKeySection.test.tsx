@@ -3,8 +3,14 @@ import { renderWithProviders, screen, act } from '../../../test/test-utils'
 import userEvent from '@testing-library/user-event'
 import GenerateKeySection from './GenerateKeySection'
 import * as FPJS from '@fingerprintjs/fingerprintjs-pro'
+import * as Turing from '@fpjs-incubator/turing'
 
 const fpjsLoadMock = FPJS.load as jest.Mock
+
+beforeAll(() => {
+  jest.spyOn(Turing, 'ready').mockImplementation(async (fn) => fn())
+  jest.spyOn(Turing, 'execute').mockResolvedValue('test-session-id')
+})
 
 beforeEach(() => {
   fetchMock.resetMocks()
@@ -151,7 +157,7 @@ describe('BotD - Generate Key Section', () => {
     expect(screen.getByLabelText('Work email')).toBeDisabled()
   })
 
-  it('Should show an error message if the endpoint fails', async () => {
+  it('should show an error message if the endpoint fails', async () => {
     fetchMock.mockReject(new Error('server error'))
 
     fpjsLoadMock.mockResolvedValue({
@@ -166,6 +172,30 @@ describe('BotD - Generate Key Section', () => {
     userEvent.click(screen.getByRole('button'))
 
     await screen.findByText('Something went wrong')
+
+    expect(fetchMock).toHaveBeenCalledTimes(1)
+  })
+
+  it('should show an error message if the answer to the challenge question was incorrect', async () => {
+    fetchMock.mockResponseOnce(
+      JSON.stringify({
+        error: { param: 'Turing', message: 'turing challenge is not verified' },
+      }),
+      { status: 400 }
+    )
+
+    fpjsLoadMock.mockResolvedValue({
+      get: jest.fn().mockResolvedValue(fpResponse),
+    })
+
+    renderWithProviders(<GenerateKeySection requestId={visitorId} />)
+    await act(() => Promise.resolve())
+
+    expect(screen.getByLabelText('Work email')).not.toBeDisabled()
+    userEvent.type(screen.getByLabelText('Work email'), 'john2@gmail.com')
+    userEvent.click(screen.getByRole('button'))
+
+    await screen.findByText('The answer to the challenge question was incorrect.', { exact: false })
 
     expect(fetchMock).toHaveBeenCalledTimes(1)
   })

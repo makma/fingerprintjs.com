@@ -1,3 +1,9 @@
+.contactSalesFormSection {
+  min-height: rem(765px);
+  z-index: unset;
+  flex: 1;
+}
+
 .contactSalesForm {
   width: 100%;
 }
@@ -13,8 +19,7 @@
   margin-bottom: rem(4px);
 
   font-family: v('ff-sans');
-  font-size: rem(14px);
-  color: adjust-color(c('brand-water'), $alpha: -0.3);
+  font-size: rem(16px);
   font-weight: v('semi');
 }
 
@@ -62,6 +67,10 @@
     background-color: adjust-color(c('brand-fire'), $lightness: -20%);
     cursor: wait;
   }
+
+  @include media('<=tablet') {
+    width: 100%;
+  }
 }
 
 .input,
@@ -90,7 +99,6 @@ select:focus {
     font-size: rem(16px);
     font-weight: v('normal');
     line-height: 150%;
-    color: adjust-color(c('brand-water'), $alpha: -0.3);
   }
 }
 .stateSection {
@@ -141,4 +149,8 @@ select:focus {
   > div {
     border-radius: rem(8px) 0 0 rem(8px) !important;
   }
+}
+
+.errorDescription {
+  text-align: center;
 }

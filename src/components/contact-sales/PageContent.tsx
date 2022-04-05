@@ -3,6 +3,8 @@ import React from 'react'
 import Container from '../common/Container'
 import Section from '../common/Section'
 import ContactSalesForm from '../ContactSalesForm'
+import { ReactComponent as BotD } from '../../img/BotdBowl.svg'
+import { PATH, MAILTO_SALES } from '../../constants/content'
 
 import styles from './contact-sales.module.scss'
 
@@ -10,7 +12,30 @@ export default function PageContent() {
   return (
     <Section className={styles.root}>
       <Container size='large' className={styles.container}>
-        <ContactSalesForm />
+        <section className={styles.contactSalesSection}>
+          <ContactSalesForm />
+          <div className={styles.poweredBy}>
+            <p className={styles.botdDescription}>
+              <span>
+                <BotD className={styles.botD} />
+              </span>
+              <span>
+                Our form spam detection is powered by{' '}
+                <a className={styles.link} href={PATH.botD}>
+                  BotD
+                </a>
+                .
+              </span>
+            </p>
+            <p className={styles.text}>
+              If you have problems with submission please{' '}
+              <a className={styles.link} href={MAILTO_SALES.mailToUrl}>
+                contact us via email
+              </a>
+              .
+            </p>
+          </div>
+        </section>
         <ClientsSection />
       </Container>
     </Section>

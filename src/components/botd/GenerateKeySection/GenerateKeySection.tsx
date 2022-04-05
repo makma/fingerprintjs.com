@@ -9,9 +9,12 @@ import CodeWindowWithSelector from '../../common/CodeWindowWithSelector'
 import { copyToClipboard } from '../../../helpers/clipboard'
 import useLocalStorage from '../../../hooks/useLocalStorage'
 import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
-
+import { initTuring } from '../../../helpers/turing'
+import * as Turing from '@fpjs-incubator/turing'
+import { BOTD_PUBLIC_KEY_TURING } from '../../../constants/env'
+import { PATH } from '../../../constants/content'
+import { ReactComponent as BotD } from '../../../img/BotdBowl.svg'
 import { ReactComponent as CopySVG } from '../../../img/CopySVG.svg'
-
 import { ReactComponent as DevSVG } from './DevSVG.svg'
 
 import styles from './GenerateKeySection.module.scss'
@@ -22,7 +25,7 @@ interface GenerateKeySectionProps {
 
 export default function GenerateKeySection({ requestId }: GenerateKeySectionProps) {
   const [email, setEmail] = useState('')
-  const { formState, updateFormState } = useForm(Forms.BotdGenerateToken)
+  const { formState, updateFormState, errorMessage, updateErrorMessage } = useForm(Forms.BotdGenerateToken)
 
   const [botDToken, setBotDToken] = useState({ publicKey: '<your-public-key>', secretKey: '' })
 
@@ -41,9 +44,12 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
   async function handleSubmit(e) {
     e.preventDefault()
 
-    updateFormState(FormState.Loading)
-
-    function onError() {
+    function onError(error?) {
+      if (error?.error?.message === 'turing challenge is not verified') {
+        updateErrorMessage('The answer to the challenge question was incorrect.')
+        updateFormState(FormState.Failed)
+        return
+      }
       updateFormState(FormState.Failed)
       setTimeout(() => {
         updateFormState(FormState.Default)
@@ -57,16 +63,22 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
       updateFormState(FormState.Success)
     } else {
       try {
+        const sessionId = await Turing.execute()
+        updateFormState(FormState.Loading)
+        if (!sessionId) {
+          throw new Error()
+        }
         const tag = {
           ...(requestId && { requestId }),
           ...(visitorId && { visitorId }),
         }
 
-        const response = await generateBotDToken(email, JSON.stringify(tag))
+        const response = await generateBotDToken(email, JSON.stringify(tag), sessionId)
         const status = response.status
-
         if (status !== 200) {
-          onError()
+          const error = await response.json()
+
+          onError(error)
         } else {
           updateFormState(FormState.Success)
           const data = await response.json()
@@ -76,7 +88,6 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
 
           if (publicKey && secretKey) {
             setBotDToken({ publicKey, secretKey })
-
             setUsedEmails([...usedEmails, { usedEmail: email, publicKey, secretKey }])
           } else {
             onError()
@@ -97,6 +108,7 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
         return
       }
     }
+    initTuring()
     updateFormState(FormState.Default)
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -111,7 +123,7 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
               Enter your email to generate your unique keys and code snippet. Install on your site to use our API for
               free.
             </p>
-            <form className={styles.generateKeyForm} onSubmit={handleSubmit}>
+            <div className={styles.generateKeyForm} data-sitekey={BOTD_PUBLIC_KEY_TURING}>
               <label className={styles.label} htmlFor='email'>
                 Work email
               </label>
@@ -133,16 +145,29 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
                   size='big'
                   className={classNames({ [styles.loadingButton]: formState === FormState.Loading })}
                   disabled={disableButton}
+                  onClick={handleSubmit}
                 >
                   Generate keys
                 </Button>
               </div>
-            </form>
+            </div>
+            <p className={styles.poweredBy}>
+              <span>
+                <BotD className={styles.botD} />
+              </span>
+              <span>
+                Our form spam detection is powered by{' '}
+                <a className={styles.link} href={PATH.botD}>
+                  BotD
+                </a>
+                .
+              </span>
+            </p>
           </>
         )}
         {formState === FormState.Failed && (
           <>
-            <h1 className={styles.title}>Something went wrong</h1>
+            <h1 className={styles.title}>{errorMessage ?? 'Something went wrong'}</h1>
             <p className={styles.description}>Please try again.</p>
           </>
         )}

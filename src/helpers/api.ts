@@ -16,7 +16,8 @@ export async function createNewLead(
   description: string,
   landingPage: string,
   previousPage: string,
-  utmParams: Record<string, string>
+  utmParams: Record<string, string>,
+  sessionId: string
 ) {
   return fetch(`${FPJS_MGMT_API_HOST}/salesforce/leads`, {
     method: 'POST',
@@ -30,16 +31,18 @@ export async function createNewLead(
       utm_info: utmParams,
       landingPage,
       previousPage,
+      sessionId,
     }),
   })
 }
 
-export async function generateBotDToken(customerEmail: string, tag: string) {
+export async function generateBotDToken(customerEmail: string, tag: string, sessionId: string) {
   return fetch(BOTD_TOKEN_ENDPOINT, {
     method: 'POST',
     body: JSON.stringify({
       customer: customerEmail,
       tag,
+      sessionId,
     }),
   })
 }
