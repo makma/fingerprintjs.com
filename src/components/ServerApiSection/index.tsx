@@ -55,6 +55,12 @@ export default function ServerApiSection() {
                   identity via proxies or other techniques.
                 </p>
               </CodeTooltip>,
+              <CodeTooltip key='visits' className={styles.visits}>
+                <p>
+                  A <strong>history of visits</strong> for this visitorID. Annotate each visit with a custom metadata
+                  tag to have a full trail of individual user activity.
+                </p>
+              </CodeTooltip>,
               <CodeTooltip key='incognito' className={styles.incognito}>
                 <p>
                   A true or false value that shows whether a visitor is using <strong>incognito</strong> mode.
