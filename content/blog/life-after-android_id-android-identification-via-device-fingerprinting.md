@@ -16,6 +16,7 @@ isPublished: true
 tags:
   - java
   - fingerprinting
+  - android
 authors:
   - Savannah Copland
 heroImage:
