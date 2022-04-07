@@ -40,7 +40,7 @@ export const FPJS_VISITORS_ENDPOINT =
   getContextEnv<string>({
     [NetlifyContext.Production]: process.env.GATSBY_FPJS_VISITORS_ENDPOINT,
     [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_FPJS_VISITORS_ENDPOINT,
-  }) ?? 'https://history.demo.fpaux.net/pamplemousse/'
+  }) ?? 'https://h1.fingerprintjs.com/pamplemousse/'
 
 export const FPJS_MGMT_API_HOST =
   getContextEnv<string>({
@@ -70,7 +70,7 @@ export const BOTD_VERIFY_ENDPOINT =
   getContextEnv<string>({
     [NetlifyContext.Production]: process.env.GATSBY_BOTD_VERIFY_ENDPOINT,
     [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_BOTD_VERIFY_ENDPOINT,
-  }) ?? 'https://.fpapi.io/api/v1/verify'
+  }) ?? 'https://botd.fpapi.io/api/v1/verify'
 
 export const FPJS_REGION = process.env.GATSBY_FPJS_REGION
 export const FPJS_DASHBOARD_ENDPOINT = process.env.GATSBY_FPJS_DASHBOARD_ENDPOINT
