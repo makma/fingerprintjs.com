@@ -132,7 +132,7 @@ Of course, that’s not the end of it. Malware authors know about TLS fingerprin
 
 Once you identify a bot, you can block its IP address or employ a bot protection service. And if you’re a webmaster, web developer, or planning to deploy a website that asks users for some form of input, you should implement a [CAPTCHA](https://www.cloudflare.com/learning/bots/how-captchas-work/).
 
-Consider also trying our [botd open-source library](https://github.com/fingerprintjs/BotD) for your bot protection needs. 
+Consider also trying our [BotD open-source library](https://github.com/fingerprintjs/BotD) for your bot protection needs. 
 
 ### DDoS Protection
 
