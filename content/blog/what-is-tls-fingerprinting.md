@@ -30,9 +30,10 @@ At its most basic level, Transport Layer Security (TLS) is an algorithm that enc
 TLS fingerprinting is the identification of a client based on the fields in its `Client Hello` message during a TLS handshake. 
 
 A few ways common uses of TLS fingerprinting:
-To gather information about a client on the web, such as operating system or browser version.
-Analyzing the encrypted TLS traffic, your ISP can guess which websites you are using and what actions you take while on the web.
-To gather information about a remote server, such as operating system or server software.
+
+* To gather information about a client on the web, such as operating system or browser version.
+* Analyzing the encrypted TLS traffic, your ISP can guess which websites you are using and what actions you take while on the web.
+* To gather information about a remote server, such as operating system or server software.
 
 Uniquely identifying a client can also be helpful for anti-fraud use cases, as malicious users often will try to conceal their identity to perform multiple fraudulent activities on a website. While identifying users using cookies and browser fingerprinting, TLS fingerprinting can be another accurate identification layer to your anti-fraud stack. 
 
@@ -45,8 +46,6 @@ The handshake process begins with the client requesting the server initiate a se
 The server then analyzes this request and compares the list of cipher suites in the `Client Hello` with the list of ciphers supported by the server. Then it sends a `Server Hello` message to the client, containing its TLS protocol, the chosen cipher suite, and the server’s SSL certificate that includes the server’s public encryption key.
 
 A few more steps in the handshake process are not relevant for the TLS fingerprinting.
-
-More technical info on the TLS handshake
 
 When the client receives the server’s digital certificate, it uses the public key from the issuing certificate authority to verify the certificate’s digital signature. The server’s name on the certificate should match the server’s DNS name, and the certificate shouldn’t be expired.
 
@@ -137,7 +136,7 @@ Consider also trying our [botd open-source library](https://github.com/fingerpri
 
 ### DDoS Protection
 
-Distributed Denial of Service (DDoS) is an attack that aims to overwhelm a target website or infrastructure with junk traffic using a botnet. One notable example is the [Mirai botnet](https://www.cloudflare.com/learning/ddos/glossary/mirai-botnet/), which [attackedDyn in late 2016](https://www.theguardian.com/technology/2016/oct/26/ddos-attack-dyn-mirai-botnet), resulting in the unavailability of top sites like Twitter and Reddit.
+Distributed Denial of Service (DDoS) is an attack that aims to overwhelm a target website or infrastructure with junk traffic using a botnet. One notable example is the [Mirai botnet](https://www.cloudflare.com/learning/ddos/glossary/mirai-botnet/), which [attacked Dyn in late 2016](https://www.theguardian.com/technology/2016/oct/26/ddos-attack-dyn-mirai-botnet), resulting in the unavailability of top sites like Twitter and Reddit.
 
 Once you detect a surge of traffic to your website or network, investigate the `Client Hello` messages of all connected devices. If these devices are infected with the same malware (which is the case of a DDoS), the cipher suites in their `Client Hello` fields will be the same.
 
