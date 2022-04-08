@@ -44,11 +44,6 @@ The handshake process begins with the client requesting the server initiate a se
 
 The server then analyzes this request and compares the list of cipher suites in the `Client Hello` with the list of ciphers supported by the server. Then it sends a `Server Hello` message to the client, containing its TLS protocol, the chosen cipher suite, and the server’s SSL certificate that includes the server’s public encryption key.
 
-/\*\* Can we add here a paragraph with an excellent human analogy? Maybe something like:
-
-* Client: Hi, I’m from Canada (the IP address), and I speak English and French (cipher suites).
-* Server: Hi, this is my passport (certificate). I speak English and Spanish (cipher suites). Let’s use English as our language.
-
 A few more steps in the handshake process are not relevant for the TLS fingerprinting.
 
 More technical info on the TLS handshake
@@ -158,7 +153,7 @@ Armed with this knowledge, you can block the IP addresses used by these devices.
 
 ### Vulnerable Applications
 
-Applications evolve and are updated if the need arises. For example, the latest Firefox version at the time of writing is 91.0.2, which uses TLS.1.3. If TLS fingerprinting reveals a TLS `Client Hello` for a Firefox version using [TLS 1.0 or TLS 1.1, both of which lack recommended cryptographic algorithms according to IETF](https://datatracker.ietf.org/doc/rfc8996/), you can inform the user to update their browsers. You can block them from accessing your website or network as a last resort.
+Applications evolve and are updated if the need arises. For example, the latest Firefox version at the time of writing is 91.0.2, which uses TLS 1.3. If TLS fingerprinting reveals a TLS `Client Hello` for a Firefox version using [TLS 1.0 or TLS 1.1, both of which lack recommended cryptographic algorithms according to IETF](https://datatracker.ietf.org/doc/rfc8996/), you can inform the user to update their browsers. You can block them from accessing your website or network as a last resort.
 
 ## Get in touch
 
