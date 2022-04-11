@@ -4,6 +4,7 @@ import { VisitorResponse } from '../../../types/visitorResponse'
 import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
 import { loadFpjsHistory } from '../../../helpers/api'
 import { getErrorMessage } from '../../../helpers/error'
+import { getConfig } from '../../../helpers/fpjs'
 
 import VisitorSection from './VisitorSection/VisitorSection'
 import AlgorithmSection from './AlgorithmSection/AlgorithmSection'
@@ -11,11 +12,11 @@ import VisitsSection from './VisitsSection/VisitsSection'
 
 export default function DemoSection() {
   const [currentVisit, setCurrentVisit] = useState<VisitorResponse>()
+  const [visitorId, setVisitorId] = useState<string>()
   const [visits, setVisits] = useState<VisitorResponse[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
-  const { data } = useVisitorData()
-  const visitorId = data?.visitorId
+  const { getData } = useVisitorData(getConfig, { immediate: false })
   const rollbar = useRollbar()
 
   useEffect(() => {
@@ -23,6 +24,10 @@ export default function DemoSection() {
     setIsLoading(true)
 
     async function fetchVisits() {
+      if (!visitorId) {
+        const data = await getData(true)
+        setVisitorId(data?.visitorId)
+      }
       if (!visitorId) {
         return
       }
@@ -46,7 +51,7 @@ export default function DemoSection() {
     return () => {
       isCancelled = true
     }
-  }, [visitorId, rollbar])
+  }, [getData, visitorId, rollbar])
 
   return (
     <>

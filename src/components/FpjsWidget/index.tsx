@@ -14,6 +14,7 @@ import { FPJS_SECRET_TOKEN, FPJS_VISITORS_ENDPOINT, MAPBOX_ACCESS_TOKEN } from '
 import styles from './FpjsWidget.module.scss'
 import Skeleton from '../Skeleton/Skeleton'
 import { repeatElement } from '../../helpers/repeatElement'
+import { getConfig } from '../../helpers/fpjs'
 
 const secretToken = FPJS_SECRET_TOKEN
 const endpoint = FPJS_VISITORS_ENDPOINT
@@ -21,12 +22,12 @@ const mapboxToken = MAPBOX_ACCESS_TOKEN
 
 export default memo(function FpjsWidget() {
   const [currentVisit, setCurrentVisit] = useState<VisitorResponse>()
+  const [visitorId, setVisitorId] = useState<string>()
   const [visits, setVisits] = useState<VisitorResponse[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [isLoaded, setIsLoaded] = useState(false)
   const [hasError, setHasError] = useState(false)
-  const { data, error } = useVisitorData()
-  const visitorId = data?.visitorId
+  const { getData, error } = useVisitorData(getConfig, { immediate: false })
   const rollbar = useRollbar()
 
   useEffect(() => {
@@ -38,6 +39,10 @@ export default memo(function FpjsWidget() {
     }
 
     async function fetchVisits() {
+      if (!visitorId) {
+        const data = await getData(true)
+        setVisitorId(data?.visitorId)
+      }
       if (!visitorId) {
         return
       }
@@ -65,7 +70,7 @@ export default memo(function FpjsWidget() {
     return () => {
       isCancelled = true
     }
-  }, [visitorId, rollbar, error])
+  }, [getData, visitorId, rollbar, error])
 
   return (
     <div className={styles.container}>

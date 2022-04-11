@@ -8,3 +8,8 @@ export function getRelativeUrl(url: string) {
 }
 
 export const isLocalLink = (link: string) => /^\/(?!\/)/.test(link)
+
+export const getHostname = (url: string) => {
+  // use URL constructor and return hostname
+  return new URL(url).hostname
+}

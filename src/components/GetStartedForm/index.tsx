@@ -12,6 +12,7 @@ import { Forms, useForm } from '../../hooks/useForm'
 import Tippy from '@tippyjs/react'
 import { ReactComponent as InfoSvg } from '../../img/info.svg'
 import { useViewTracking } from '../../context/HistoryListener'
+import { getConfig } from '../../helpers/fpjs'
 
 import styles from './GetStartedForm.module.scss'
 import { DEFAULT_TRIAL_DAYS } from '../../constants/content'
@@ -21,8 +22,7 @@ interface GetStartedFormProps {
 }
 
 export default function GetStartedForm({ className }: GetStartedFormProps) {
-  const { data } = useVisitorData()
-  const visitorId = data?.visitorId
+  const { getData } = useVisitorData(getConfig, { immediate: false })
   const dashboardEndpoint = FPJS_DASHBOARD_ENDPOINT
   const [email, setEmail] = useState('')
   const { formState, errorMessage, updateFormState, updateErrorMessage } = useForm(Forms.Signup)
@@ -32,7 +32,8 @@ export default function GetStartedForm({ className }: GetStartedFormProps) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     updateFormState(FormState.Loading)
-
+    const data = await getData(false)
+    const visitorId = data?.visitorId
     const { ok, error } = await fetch(`${dashboardEndpoint}/signup`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

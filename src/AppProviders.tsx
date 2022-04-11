@@ -5,7 +5,6 @@ import * as FingerprintJS from '@fingerprintjs/fingerprintjs-pro'
 import { GithubProvider } from './context/GithubContext'
 import { HistoryListener } from './context/HistoryListener'
 import { FPJS_PUBLIC_TOKEN, FPJS_REGION, FPJS_SCRIPT_URL_PATTERN } from './constants/env'
-import { CacheLocation } from '@fingerprintjs/fingerprintjs-pro-spa'
 
 export type Props = {
   children: React.ReactNode
@@ -39,7 +38,6 @@ function AppLighthouseProvider({ children }: { children: React.ReactNode }) {
           region,
           scriptUrlPattern,
         }}
-        cacheLocation={CacheLocation.NoCache}
       >
         {children}
       </FpjsProvider>

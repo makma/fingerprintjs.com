@@ -1,12 +1,8 @@
 import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
-import * as FingerprintJS from '@fingerprintjs/fingerprintjs-pro'
+import { getConfig } from '../helpers/fpjs'
 
-const config: FingerprintJS.GetOptions<true> = {
-  extendedResult: true,
-  timeout: 30_000,
-}
 export const useUserLocation = () => {
-  const { data } = useVisitorData(config)
+  const { data } = useVisitorData(getConfig)
   const userRegion = data?.ipLocation?.continent?.code?.toUpperCase()
   const isEuUser = userRegion === 'EU'
 

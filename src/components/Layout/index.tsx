@@ -5,8 +5,14 @@ import Header from '../Header'
 
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 import { useConsolePromotionMessage } from '../../hooks/useConsolePromotionMessage'
-import { FPJS_SCRIPT_URL_PATTERN, FPJS_VISITORS_ENDPOINT, GTM_TOKEN } from '../../constants/env'
-import { withTrailingSlash } from '../../helpers/url'
+import {
+  FPJS_SCRIPT_URL_PATTERN,
+  FPJS_VISITORS_ENDPOINT,
+  FPJS_TLS_ENDPOINT,
+  FPJS_INGRESS_ENDPOINT,
+  GTM_TOKEN,
+} from '../../constants/env'
+import { withTrailingSlash, getHostname } from '../../helpers/url'
 import { BASE_URL, URL } from '../../constants/content'
 import { defaultDataLayer } from '../../constants/content'
 import { enableAnalytics } from '../../helpers/gtm'
@@ -54,6 +60,7 @@ export function LayoutTemplate({ children, siteMetadata, notificationBar }: Layo
   const { title, description, siteUrl, image } = siteMetadata
   const gtmToken = GTM_TOKEN
   const { isEuUser } = useUserLocation()
+  const cdnHost = FPJS_SCRIPT_URL_PATTERN && `https://${getHostname(FPJS_SCRIPT_URL_PATTERN)}`
 
   useEffect(() => {
     if (isEuUser === false) {
@@ -92,8 +99,10 @@ export function LayoutTemplate({ children, siteMetadata, notificationBar }: Layo
         <script>
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','${gtmToken}');`}
         </script>
-        {!!FPJS_SCRIPT_URL_PATTERN && <link rel='preconnect' href={FPJS_SCRIPT_URL_PATTERN} />}
+        {!!FPJS_SCRIPT_URL_PATTERN && <link rel='preconnect' href={cdnHost} />}
         <link rel='preconnect' href={FPJS_VISITORS_ENDPOINT} />
+        <link rel='preconnect' href={FPJS_TLS_ENDPOINT} />
+        <link rel='preconnect' href={FPJS_INGRESS_ENDPOINT} />
       </Helmet>
       <Header notificationBar={notificationBar} />
       {children}
