@@ -3223,10 +3223,10 @@
     fflate "^0.7.3"
     tslib "^2.2.0"
 
-"@fpjs-incubator/turing@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@fpjs-incubator/turing/-/turing-0.0.6.tgz#38b6fb45011b07ced2208421464da073956d007c"
-  integrity sha512-KTKq9R4lMwSaTpsB9cMqvbBVdes4U5YfS4rtW4mrFakGmMAsCUOMI432kGPZGeLspNjKPetN4k93cU6VUJGe6A==
+"@fpjs-incubator/turing@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@fpjs-incubator/turing/-/turing-0.0.7.tgz#4feafab1cb7ac31e37478ac739cc3a779ff4cc75"
+  integrity sha512-Rb9APTumQXG4OPCS4YsKy4oNFqGtm85ozP/WdDfnxTJBgzkX5k3dxIDWIwimx/RzPIVs1XatRFY4YPUquEaYCA==
   dependencies:
     "@fpjs-incubator/botd-agent" "^0.1.23"
     tslib "^2.2.0"
