@@ -24,11 +24,11 @@ heroImage:
     now, pay later payment methods
 customCTA:
   openCtaNewTab: true
-  ctaUrl: https://fingerprintjs.com/buy-now-pay-later/
-  description: Increase approval rates and minimize fraud losses with high
-    accuracy device identification.
-  ctaText: Learn More
-  title: Buy now, pay later fraud prevention with FingerprintJS
+  ctaUrl: https://try.fingerprintjs.com/en-us/free-pdf-preventing-buy-now-pay-later-fraud-with-fingerprintjs
+  description: Solve costly fraud in Buy Now, Pay Later transactions with device
+    identification. Learn more in our new guide.
+  ctaText: Download Now
+  title: "Free PDF: Preventing BNPL fraud with FingerprintJS"
 ---
 The way consumers shop and purchase goods online are rapidly shifting and evolving. With [online shopping sales in the US growing 14.5% in 2021 alone](https://www.digitalcommerce360.com/article/us-ecommerce-sales/), more people are shopping online than ever. Previously, with cash payments unavailable while shopping online, you only had the option to pay with a debit or credit card to make purchases.
 
