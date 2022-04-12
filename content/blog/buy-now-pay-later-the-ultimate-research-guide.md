@@ -24,7 +24,12 @@ heroImage:
   imageAlt: BNPLs in 2022
   imageTitle: BNPLs in 2022
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: "Free PDF: Preventing BNPL fraud with FingerprintJS"
+  description: Solve costly fraud in Buy Now, Pay Later transactions with device
+    identification. Learn more in our new guide.
+  ctaText: Download Now
+  ctaUrl: https://try.fingerprintjs.com/en-us/free-pdf-preventing-buy-now-pay-later-fraud-with-fingerprintjs
 ---
 ## Table of Contents
 
