@@ -46,14 +46,15 @@ export default function Bnpl({ pageContext }: BnplProps) {
       <BenefitsSection />
       <Container size='large'>
         <BannerWithCTA
-          title='Let us help you get started'
-          ctaText='Contact us'
-          ctaHref={PATH.contactSales}
+          title='Free PDF: Preventing BNPL Fraud'
+          ctaText='Download'
+          ctaHref='https://try.fingerprintjs.com/en-us/free-pdf-preventing-buy-now-pay-later-fraud-with-fingerprintjs'
           variant='white'
           className={styles.ctaSection}
+          openNewTab
         >
-          Get in touch with our team of experts - we can help you design a proof of concept for your BNPL&apos;s unique
-          needs.
+          Get an in-depth look at how to prevent fraud in this $100 billion industry with Fingerprint JS in our free PDF
+          download.
         </BannerWithCTA>
       </Container>
     </LayoutTemplate>
