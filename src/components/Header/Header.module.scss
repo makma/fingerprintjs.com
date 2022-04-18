@@ -62,8 +62,11 @@
     + * {
       margin-left: 3.75rem;
 
-      @media screen and (max-width: 1050px) {
-        margin-left: 3rem;
+      @media screen and (max-width: 1150px) {
+        margin-left: 1.5rem;
+      }
+      @media screen and (max-width: 1060px) {
+        margin-left: 0.7rem;
       }
     }
   }

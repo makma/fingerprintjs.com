@@ -40,6 +40,9 @@ export default function MobileNavbar() {
             <Link to={PATH.pricingUrl} className={styles.link}>
               Pricing
             </Link>
+            <Link to={PATH.careers} className={styles.link}>
+              Careers
+            </Link>
             <a href={DOC_URL.documentationUrl} target='_blank' rel='noreferrer' className={styles.link}>
               Docs
             </a>

@@ -11,7 +11,7 @@
   background-repeat: no-repeat;
 
   @include media('<=phoneLandscape') {
-    padding: rem(40px) rem(16px);
+    padding: rem(40px) rem(16px) rem(20px) rem(16px);
 
     background-image: url('../../img/EllipseMobileSVG.svg');
   }

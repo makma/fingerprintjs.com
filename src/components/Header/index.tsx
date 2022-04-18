@@ -70,11 +70,14 @@ export default function Header({ notificationBar }: HeaderProps) {
                 </Link>
                 <DropdownList name='Products' list={products} />
                 <DropdownList name='Use Cases' list={useCaseLinks} />
-                <Link className={classNames(styles.link, styles.desktopOnly)} to='/demo/'>
+                <Link className={classNames(styles.link, styles.desktopOnly)} to={PATH.demoUrl}>
                   Demo
                 </Link>
-                <Link className={classNames(styles.link, styles.desktopOnly)} to='/pricing/'>
+                <Link className={classNames(styles.link, styles.desktopOnly)} to={PATH.pricingUrl}>
                   Pricing
+                </Link>
+                <Link className={classNames(styles.link, styles.desktopOnly)} to={PATH.careers}>
+                  Careers
                 </Link>
               </div>
               <div className={styles.navRight}>

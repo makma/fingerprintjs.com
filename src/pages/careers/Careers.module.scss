@@ -1,0 +1,22 @@
+.heroSection {
+  padding: rem(44px) 0 rem(64px) 0;
+  h1,
+  p,
+  a {
+    font-family: v(ff-sans);
+  }
+}
+
+.ctaSection {
+  margin: rem(40px) 0;
+
+  h1,
+  p,
+  a {
+    font-family: v(ff-sans);
+  }
+
+  @include media('<=phoneLandscape') {
+    margin: rem(20px) 0;
+  }
+}

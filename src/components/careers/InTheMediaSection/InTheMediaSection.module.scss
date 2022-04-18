@@ -1,0 +1,84 @@
+.root {
+  padding: rem(64px) 0 0 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: rem(96px);
+}
+
+.title {
+  padding-bottom: rem(54px);
+  text-transform: uppercase;
+
+  @include sans($size: 14px, $weight: v('semi'), $lh: 140%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+  letter-spacing: -0.02em;
+
+  @include media('<=phone') {
+    font-size: rem(12px);
+
+    padding-bottom: rem(32px);
+  }
+}
+
+.logos {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-items: center;
+
+  height: rem(38px);
+  width: 100%;
+
+  @include media('<=desktop') {
+    flex-flow: row wrap;
+    justify-content: space-around;
+    box-sizing: border-box;
+
+    column-gap: rem(32px);
+    row-gap: rem(32px);
+
+    height: 100%;
+    width: 100%;
+  }
+  .link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  .venture {
+    height: rem(24px);
+
+    @include media('<=phoneLandscape') {
+      height: rem(20px);
+    }
+  }
+
+  .theVerge {
+    height: rem(30px);
+
+    @include media('<=phoneLandscape') {
+      height: rem(26px);
+    }
+  }
+  .techCrunch {
+    height: rem(38px);
+
+    @include media('<=phoneLandscape') {
+      height: rem(32px);
+    }
+  }
+  .gizmodo {
+    height: rem(24px);
+  }
+  .register {
+    height: rem(32px);
+
+    @include media('<=phoneLandscape') {
+      height: rem(28px);
+    }
+  }
+}

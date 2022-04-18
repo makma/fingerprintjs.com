@@ -55,7 +55,7 @@ const footerLinks: FooterLinkSection[] = [
       },
       {
         title: 'Careers',
-        url: `${URL.careersUrl}`,
+        url: `${PATH.careers}`,
       },
       {
         title: 'Login',

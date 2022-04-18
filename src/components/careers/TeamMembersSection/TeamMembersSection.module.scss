@@ -1,0 +1,298 @@
+.root {
+  padding: 0;
+}
+
+.box {
+  background-color: v('off-white');
+  border-radius: rem(24px);
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 rem(20px);
+    .label {
+      border: 4px solid v('off-white');
+
+      margin-top: rem(56px);
+      padding: rem(10px);
+      background: #f04405;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: rem(12px);
+      transform: rotate(-15deg);
+
+      .labelText {
+        font-family: v(ff-mono);
+
+        color: c('off-white');
+        text-align: center;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: rem(24px);
+        line-height: 110%;
+      }
+    }
+    .headerTitle {
+      padding-top: rem(36px);
+
+      @include sans($size: 32px, $weight: v('bold'), $lh: 130%);
+      letter-spacing: -0.02em;
+
+      @include media('<=phone') {
+        font-size: rem(24px);
+      }
+    }
+    .headerDescription {
+      padding-top: rem(8px);
+      max-width: rem(607px);
+      text-align: center;
+
+      @include sans($size: 16px, $weight: 500, $lh: 150%);
+
+      @include media('<=phone') {
+        font-size: rem(14px);
+      }
+    }
+  }
+
+  .worldSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    padding: rem(24px) rem(34px) rem(40px) rem(34px);
+
+    @include media('<=phoneLandscape') {
+      padding: rem(34px) 0 rem(20px) 0;
+    }
+    .member {
+      position: relative;
+
+      @include media('<=desktop') {
+        transform: scale(0.7);
+      }
+
+      @include media('<=tablet') {
+        transform: scale(0.6);
+      }
+
+      @include media('<=phoneLandscape') {
+        transform: scale(0.45);
+      }
+      .memberIcon {
+        height: rem(83px);
+      }
+      .memberNumber {
+        min-width: 3ch;
+        text-align: center;
+        font-family: v(ff-mono);
+        color: c('off-white');
+        line-height: 110%;
+        font-size: rem(20px);
+        font-weight: 500;
+        position: absolute;
+
+        bottom: 53%;
+        left: 24%;
+      }
+    }
+    .photo3 {
+      top: 24%;
+      left: 5%;
+
+      @include media('<=phoneLandscape') {
+        top: 24%;
+        left: 4%;
+      }
+    }
+    .photo4 {
+      top: 15%;
+      left: 12%;
+
+      @include media('<=phoneLandscape') {
+        top: 10%;
+        left: 6%;
+      }
+    }
+    .photo5 {
+      top: 22%;
+      left: 14%;
+
+      @include media('<=phoneLandscape') {
+        top: 19%;
+        left: 10%;
+      }
+    }
+    .photo6 {
+      top: 18%;
+      left: 18%;
+      @include media('<=phoneLandscape') {
+        top: 18%;
+        left: 18%;
+      }
+    }
+    .photo7 {
+      top: 13%;
+      left: 43%;
+    }
+
+    .photo8 {
+      top: 18%;
+      left: 47%;
+
+      @include media('<=phoneLandscape') {
+        top: 21%;
+        left: 49%;
+      }
+    }
+    .photo9 {
+      top: 9%;
+      left: 54%;
+    }
+    .photo10 {
+      top: 10%;
+      right: 30%;
+
+      @include media('<=phoneLandscape') {
+        top: 10%;
+        right: 25%;
+      }
+    }
+
+    .photo11 {
+      top: 12%;
+      right: 15%;
+    }
+    .photo2 {
+      top: 32%;
+      left: 12%;
+    }
+    .photo1 {
+      bottom: 12%;
+      left: 22%;
+      @include media('<=phoneLandscape') {
+        bottom: 10%;
+        left: 20%;
+      }
+    }
+    .photo12 {
+      bottom: 22%;
+      left: 24%;
+
+      @include media('<=phoneLandscape') {
+        bottom: 22%;
+        left: 16%;
+      }
+    }
+    .photo13 {
+      bottom: 32%;
+      left: 27%;
+      @include media('<=phoneLandscape') {
+        bottom: 30%;
+        left: 22%;
+      }
+    }
+    .photo14 {
+      top: 29%;
+      left: 17%;
+      @include media('<=phoneLandscape') {
+        top: 32%;
+        left: 18%;
+      }
+    }
+    .photo15 {
+      top: 32%;
+      left: 7%;
+      @include media('<=phoneLandscape') {
+        display: none;
+      }
+    }
+    .photo16 {
+      top: 15%;
+      left: 7%;
+      @include media('<=phoneLandscape') {
+        display: none;
+      }
+    }
+    .photo18 {
+      top: 23%;
+      left: 10%;
+      @include media('<=phoneLandscape') {
+        display: none;
+      }
+    }
+    .photo20 {
+      top: 22%;
+      left: 53%;
+      @include media('<=phoneLandscape') {
+        display: none;
+      }
+    }
+    .photo21 {
+      top: 16%;
+      left: 56%;
+      @include media('<=phoneLandscape') {
+        display: none;
+      }
+    }
+    .photo22 {
+      top: 9%;
+      left: 47%;
+      @include media('<=phoneLandscape') {
+        display: none;
+      }
+    }
+    .photo23 {
+      top: 14%;
+      left: 51%;
+      @include media('<=phoneLandscape') {
+        display: none;
+      }
+    }
+    .photo1,
+    .photo2,
+    .photo3,
+    .photo4,
+    .photo5,
+    .photo6,
+    .photo7,
+    .photo8,
+    .photo9,
+    .photo10,
+    .photo11,
+    .photo12,
+    .photo13,
+    .photo14,
+    .photo15,
+    .photo16,
+    .photo17,
+    .photo18,
+    .photo19,
+    .photo20,
+    .photo21,
+    .photo22,
+    .photo23 {
+      position: absolute;
+
+      width: rem(74px);
+      height: rem(74px);
+
+      @include media('<=desktop') {
+        width: rem(60px);
+        height: rem(60px);
+      }
+
+      @include media('<=tablet') {
+        width: rem(50px);
+        height: rem(50px);
+      }
+
+      @include media('<=phoneLandscape') {
+        width: rem(45px);
+        height: rem(45px);
+      }
+    }
+  }
+}
