@@ -84,7 +84,7 @@ In the following image, I connected to the same GitHub repo using Firefox 91 and
 
 In this case for Firefox 91, it's [AES 128](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) with [GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode). Google Chrome uses X25519, also called [Curve25519](https://en.wikipedia.org/wiki/Curve25519).
 
-A client might alter its User-Agent string to display another browser version and operating system, but its `Client Hello` will reveal its actual browser version and operating system.
+A client might alter its User-Agent string to display another browser version and operating system, but its `Client Hello` can sometimes reveal its actual browser version and operating system.
 
 Finally, versions of a particular browser (eg, Chrome 81 and 93) contain a different list of preferred ciphers.
 
@@ -120,7 +120,7 @@ JA3 and JA3S offer insurance against the possibility that malware and a legitima
 
 ### Bot Detection
 
-A bot is a virtual machine programmed to perform specific actions on other devices often resulting in a cyberattack. In some cases, a network of these devices are used to complete larger scale cyberattacks, commonly known as a *botnet*. Researchers can track botnets to identify what they have in common, such as some form of malware, and then share the research results with the security community in the form of IOCs (Indicators of Compromise).
+A bot is an application programmed to perform specific actions on other devices often resulting in a cyberattack. In some cases, a network of these devices are used to complete larger scale cyberattacks, commonly known as a *botnet*. Researchers can track botnets to identify what they have in common, such as some form of malware, and then share the research results with the security community in the form of IOCs (Indicators of Compromise).
 
 These IOCs will contain specific details, like the TLS library that the malware has employed to secure its communication, as documented by Sophos in early 2021, [nearly half of malware now uses TLS to conceal communications](https://news.sophos.com/en-us/2021/04/21/nearly-half-of-malware-now-use-tls-to-conceal-communications/).
 
@@ -132,7 +132,7 @@ Of course, that’s not the end of it. Malware authors know about TLS fingerprin
 
 Once you identify a bot, you can block its IP address or employ a bot protection service. And if you’re a webmaster, web developer, or planning to deploy a website that asks users for some form of input, you should implement a [CAPTCHA](https://www.cloudflare.com/learning/bots/how-captchas-work/).
 
-Consider also trying our [BotD open-source library](https://github.com/fingerprintjs/BotD) for your bot protection needs. 
+Consider also trying our [BotD open-source library](https://github.com/fingerprintjs/BotD) for your bot detection needs. 
 
 ### DDoS Protection
 
