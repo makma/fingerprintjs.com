@@ -59,7 +59,7 @@ export default function CareersPage({ pageContext }: CareersPageProps) {
         openNewTab
         variant='secondary'
       >
-        We&apos;re a 100% remote, global team on the cutting-edge of online security. Join us!
+        We&apos;re a 100% remote, global team on the cutting edge of online security. Join us!
       </HeroSection>
       <MissionAndVisionSection />
       <WhatWeOfferSection />
@@ -75,7 +75,7 @@ export default function CareersPage({ pageContext }: CareersPageProps) {
           ctaHref={URL.careersUrl}
           variant='white'
         >
-          We&apos;re a 100% remote, global team on the cutting-edge of online security. Join us!
+          We&apos;re a 100% remote, global team on the cutting edge of online security. Join us!
         </BannerWithCTA>
       </Container>
       <InTheMediaSection />
