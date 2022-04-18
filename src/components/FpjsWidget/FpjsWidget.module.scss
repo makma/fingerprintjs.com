@@ -22,16 +22,9 @@
   width: 100%;
 
   svg {
-    opacity: 0;
     outline: none;
     width: 2rem;
     height: 2rem;
-  }
-
-  &.loaded {
-    svg {
-      opacity: 1;
-    }
   }
 
   .header {
