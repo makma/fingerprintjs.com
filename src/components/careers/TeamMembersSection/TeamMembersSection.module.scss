@@ -99,7 +99,7 @@
       }
     }
     .photo3 {
-      top: 24%;
+      top: 25%;
       left: 5%;
 
       @include media('<=phoneLandscape') {
@@ -108,7 +108,7 @@
       }
     }
     .photo4 {
-      top: 15%;
+      top: 14%;
       left: 12%;
 
       @include media('<=phoneLandscape') {
@@ -117,8 +117,8 @@
       }
     }
     .photo5 {
-      top: 22%;
-      left: 14%;
+      top: 24%;
+      left: 15%;
 
       @include media('<=phoneLandscape') {
         top: 19%;
@@ -126,12 +126,8 @@
       }
     }
     .photo6 {
-      top: 18%;
-      left: 18%;
-      @include media('<=phoneLandscape') {
-        top: 18%;
-        left: 18%;
-      }
+      top: 15%;
+      left: 16%;
     }
     .photo7 {
       top: 13%;
@@ -152,8 +148,8 @@
       left: 54%;
     }
     .photo10 {
-      top: 10%;
-      right: 30%;
+      top: 14%;
+      right: 27%;
 
       @include media('<=phoneLandscape') {
         top: 10%;
@@ -166,11 +162,11 @@
       right: 15%;
     }
     .photo2 {
-      top: 32%;
-      left: 12%;
+      top: 33%;
+      left: 11%;
     }
     .photo1 {
-      bottom: 12%;
+      bottom: 10%;
       left: 22%;
       @include media('<=phoneLandscape') {
         bottom: 10%;
@@ -178,8 +174,8 @@
       }
     }
     .photo12 {
-      bottom: 22%;
-      left: 24%;
+      bottom: 23%;
+      left: 22%;
 
       @include media('<=phoneLandscape') {
         bottom: 22%;
@@ -211,14 +207,21 @@
     }
     .photo16 {
       top: 15%;
-      left: 7%;
+      left: 5%;
+      @include media('<=phoneLandscape') {
+        display: none;
+      }
+    }
+    .photo17 {
+      bottom: 16%;
+      left: 25%;
       @include media('<=phoneLandscape') {
         display: none;
       }
     }
     .photo18 {
-      top: 23%;
-      left: 10%;
+      top: 20%;
+      left: 9%;
       @include media('<=phoneLandscape') {
         display: none;
       }
@@ -231,8 +234,8 @@
       }
     }
     .photo21 {
-      top: 16%;
-      left: 56%;
+      top: 30%;
+      left: 65%;
       @include media('<=phoneLandscape') {
         display: none;
       }

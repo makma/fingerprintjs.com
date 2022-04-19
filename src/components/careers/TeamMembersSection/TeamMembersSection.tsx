@@ -37,14 +37,12 @@ export default function TeamMembersSection({ totalMembers }: TeamMembersSectionP
             <div className={styles.photo1}>
               <StaticImage placeholder='none' src='./photos/Photo1.png' alt='Team Member Photo' />
             </div>
-
-            <div className={styles.photo3}>
-              <StaticImage placeholder='none' src='./photos/Photo3.png' alt='Team Member Photo' />
-            </div>
             <div className={styles.photo4}>
               <StaticImage placeholder='none' src='./photos/Photo4.png' alt='Team Member Photo' />
             </div>
-
+            <div className={styles.photo5}>
+              <StaticImage placeholder='none' src='./photos/Photo5.png' alt='Team Member Photo' />
+            </div>
             <div className={styles.photo6}>
               <StaticImage placeholder='none' src='./photos/Photo6.png' alt='Team Member Photo' />
             </div>
@@ -72,6 +70,9 @@ export default function TeamMembersSection({ totalMembers }: TeamMembersSectionP
             <div className={styles.photo15}>
               <StaticImage placeholder='none' src='./photos/Photo15.png' alt='Team Member Photo' />
             </div>
+            <div className={styles.photo3}>
+              <StaticImage placeholder='none' src='./photos/Photo3.png' alt='Team Member Photo' />
+            </div>
             <div className={styles.photo16}>
               <StaticImage placeholder='none' src='./photos/Photo16.png' alt='Team Member Photo' />
             </div>
@@ -81,8 +82,8 @@ export default function TeamMembersSection({ totalMembers }: TeamMembersSectionP
             <div className={styles.photo18}>
               <StaticImage placeholder='none' src='./photos/Photo18.png' alt='Team Member Photo' />
             </div>
-            <div className={styles.photo5}>
-              <StaticImage placeholder='none' src='./photos/Photo5.png' alt='Team Member Photo' />
+            <div className={styles.photo17}>
+              <StaticImage placeholder='none' src='./photos/Photo17.png' alt='Team Member Photo' />
             </div>
             <div className={styles.photo20}>
               <StaticImage placeholder='none' src='./photos/Photo20.png' alt='Team Member Photo' />
