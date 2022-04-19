@@ -106,7 +106,7 @@ function createPageFromEdge(edge, createPage, additionalContext = {}) {
   const url = edge.node.frontmatter.metadata?.url
 
   createPage({
-    path: url ? getRelativeUrl(url) : edge.node.fields.slug,
+    path: url ? getRelativeUrl(url.replace(/\s+/g, '-')) : edge.node.fields.slug.replace(/\s+/g, '-'),
     tags: edge.node.frontmatter.tags,
     component: path.resolve(`src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`),
     // additional data can be passed via context
@@ -121,7 +121,7 @@ function createPaginatedPages(numPages, itemsPerPage, pathname, template, create
   for (let i = 0; i < numPages; ++i) {
     createPage({
       // The first page doesn't need a number.
-      path: `${pathname}${i === 0 ? '/' : `/${i + 1}/`}`,
+      path: `${pathname.replace(/\s+/g, '-')}${i === 0 ? '/' : `/${i + 1}/`}`,
       component: path.resolve(template),
       context: {
         limit: itemsPerPage,

@@ -10,6 +10,8 @@ import BreadcrumbsSEO from '../components/Breadcrumbs/BreadcrumbsSEO'
 import useSiteMetadata from '../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
 import AuthorSummary from '../components/AuthorSummary/AuthorSummary'
+import { Helmet } from 'react-helmet'
+import { withTrailingSlash, withoutTrailingSlash, normalizeWord } from '../helpers/url'
 
 import styles from './author.module.scss'
 
@@ -28,35 +30,44 @@ export default function AuthorTag({ data, pageContext }: AuthorTagProps) {
   const breadcrumbs = pageContext.breadcrumb.crumbs.filter(({ pathname }) => pathname !== '/blog/author')
   const { pathname } = useLocation()
   let siteMetadata = useSiteMetadata()
+  const pageUrl = `${siteMetadata.siteUrl}${pathname}`
+
   siteMetadata = {
     ...siteMetadata,
     title: `${author}'s Articles - FingerprintJS Blog | FingerprintJS`,
     description: `We are an open source powered company working to prevent online fraud for websites of all sizes. Read our articles written by ${author} on our blog.`,
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
+    siteUrl: pageUrl,
   }
 
+  const authorUrl = withoutTrailingSlash(pageUrl).slice(0, withoutTrailingSlash(pageUrl).lastIndexOf('/'))
+
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
-      {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
+    <>
+      <Helmet>
+        <link rel='canonical' key={withTrailingSlash(authorUrl)} href={withTrailingSlash(authorUrl)} />
+      </Helmet>
+      <LayoutTemplate siteMetadata={siteMetadata}>
+        {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
 
-      <Container size='large' className={styles.authorSection}>
-        <AuthorSummary author={author} role={role} bio={bio} photo={photo} linkBack />
-        <Posts
-          name={`${author}'s Articles`}
-          posts={posts.map(({ node }) => mapToPost(node))}
-          tags={tags}
-          perRow={3}
-          activeTag={tag}
-          tagLink={`/blog/author/${author.toLowerCase()}/`}
-        />
+        <Container size='large' className={styles.authorSection}>
+          <AuthorSummary author={author} role={role} bio={bio} photo={photo} linkBack />
+          <Posts
+            name={`${author}'s Articles`}
+            posts={posts.map(({ node }) => mapToPost(node))}
+            tags={tags}
+            perRow={3}
+            activeTag={tag}
+            tagLink={`/blog/author/${normalizeWord(author)}/`}
+          />
 
-        <PaginationNav
-          currentPage={currentPage}
-          numPages={numPages}
-          basePath={`/blog/author/${author.toLowerCase()}/${tag}/`}
-        />
-      </Container>
-    </LayoutTemplate>
+          <PaginationNav
+            currentPage={currentPage}
+            numPages={numPages}
+            basePath={`/blog/author/${normalizeWord(author)}/${normalizeWord(tag)}/`}
+          />
+        </Container>
+      </LayoutTemplate>
+    </>
   )
 }
 

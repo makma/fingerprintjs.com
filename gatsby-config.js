@@ -68,7 +68,13 @@ module.exports = {
         useAutoGen: true,
       },
     },
-    'gatsby-plugin-react-helmet',
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: baseUrl,
+      },
+    },
     {
       resolve: 'gatsby-plugin-sass',
       options: {

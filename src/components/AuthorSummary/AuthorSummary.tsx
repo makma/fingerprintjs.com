@@ -3,6 +3,7 @@ import React from 'react'
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import styles from './AuthorSummary.module.scss'
 import { Link } from 'gatsby'
+import { normalizeWord } from '../../helpers/url'
 
 interface AuthorSummaryProps {
   author: string
@@ -13,7 +14,7 @@ interface AuthorSummaryProps {
 }
 export default function AuthorSummary({ author, photo, role, bio, linkBack }: AuthorSummaryProps) {
   return linkBack ? (
-    <Link to={`/blog/author/${author.toLowerCase()}/`} className={styles.authorSummary}>
+    <Link to={`/blog/author/${normalizeWord(author)}/`} className={styles.authorSummary}>
       <Content author={author} photo={photo} role={role} bio={bio} />
     </Link>
   ) : (

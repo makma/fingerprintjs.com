@@ -2,6 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import PreviewCompatibleImage, { ImageInfo } from '../common/PreviewCompatibleImage/PreviewCompatibleImage'
 import { Link } from 'gatsby'
+import { normalizeWord } from '../../helpers/url'
 
 import styles from './Author.module.scss'
 
@@ -19,7 +20,7 @@ export interface AuthorComponentProps {
 
 export default function AuthorComponent({ author, className }: AuthorComponentProps) {
   return (
-    <Link to={`/blog/author/${author.name.toLowerCase()}/`} className={classNames(className, styles.root)}>
+    <Link to={`/blog/author/${normalizeWord(author.name)}/`} className={classNames(className, styles.root)}>
       <PreviewCompatibleImage
         imageInfo={author.photo}
         altTag={`${author.name} photo`}

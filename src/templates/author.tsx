@@ -10,6 +10,7 @@ import BreadcrumbsSEO from '../components/Breadcrumbs/BreadcrumbsSEO'
 import useSiteMetadata from '../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
 import AuthorSummary from '../components/AuthorSummary/AuthorSummary'
+import { normalizeWord } from '../helpers/url'
 
 import styles from './author.module.scss'
 
@@ -46,13 +47,13 @@ export default function Author({ data, pageContext }: AuthorProps) {
           posts={posts.map(({ node }) => mapToPost(node))}
           tags={tags}
           perRow={3}
-          tagLink={`/blog/author/${author.toLowerCase()}/`}
+          tagLink={`/blog/author/${normalizeWord(author)}/`}
         />
 
         <PaginationNav
           currentPage={currentPage}
           numPages={numPages}
-          basePath={`/blog/author/${author.toLowerCase()}/`}
+          basePath={`/blog/author/${normalizeWord(author)}/`}
         />
       </Container>
     </LayoutTemplate>

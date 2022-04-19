@@ -55,7 +55,11 @@ export default function BlogTag({ data, pageContext }: BlogTagProps) {
               .map((post) => ({ ...post, activeTag: tag }))}
           />
 
-          <PaginationNav currentPage={currentPage} numPages={numPages} basePath={`/blog/tag/${tag.toLowerCase()}/`} />
+          <PaginationNav
+            currentPage={currentPage}
+            numPages={numPages}
+            basePath={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}/`}
+          />
         </Container>
       </Section>
     </LayoutTemplate>

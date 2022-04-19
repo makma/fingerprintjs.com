@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { kebabToTitle, kebabToUpper } from '../../helpers/case'
 import classNames from 'classnames'
+import { normalizeWord } from '../../helpers/url'
 
 import styles from './TagList.module.scss'
 
@@ -52,7 +53,7 @@ export default function TagList({
             tag === activeTag ? (
               <span className={classNames(styles.tag, styles.highlight)}>{formatTag(tag)}</span>
             ) : (
-              <Link to={link ?? `${tagLink}${tag.toLowerCase()}/`} className={styles.tag} state={{ selectedTag: tag }}>
+              <Link to={link ?? `${tagLink}${normalizeWord(tag)}/`} className={styles.tag} state={{ selectedTag: tag }}>
                 {formatTag(tag)}
               </Link>
             )
