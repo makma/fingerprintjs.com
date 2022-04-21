@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import GithubButton from '../GithubButton'
+import { ReactComponent as GithubSVG } from './github.svg'
 import { ReactComponent as LinkedInSvg } from './linkedin.svg'
 import { ReactComponent as TwitterSvg } from './twitter.svg'
 import { ReactComponent as SOC2_SVG } from '../../img/SocSVG.svg'
@@ -16,7 +16,7 @@ import { PATH, URL, DOC_URL, MAILTO } from '../../constants/content'
 
 interface FooterLinkSection {
   title: string
-  links: { title: string; url: string; isLocal?: boolean }[]
+  links: { title: string | React.ReactNode; url: string; isLocal?: boolean }[]
 }
 
 const footerLinks: FooterLinkSection[] = [
@@ -54,8 +54,14 @@ const footerLinks: FooterLinkSection[] = [
         url: `${DOC_URL.privacyPolicyUrl}`,
       },
       {
-        title: 'Careers',
+        title: (
+          <>
+            Careers
+            <p className={styles.hiring}>We&lsquo;re hiring</p>
+          </>
+        ),
         url: `${PATH.careers}`,
+        isLocal: true,
       },
       {
         title: 'Login',
@@ -116,21 +122,23 @@ export default function Footer() {
               </a>
             </address>
             <div className={styles.social}>
-              <GithubButton variant='white' />
-              <div>
-                <ul className={styles.links}>
-                  <li className={styles.link}>
-                    <a href={URL.linkedinUrl} target='_blank' rel='noreferrer' aria-label='LinkedIn link'>
-                      <LinkedInSvg />
-                    </a>
-                  </li>
-                  <li className={styles.link}>
-                    <a href={URL.twitterUrl} target='_blank' rel='noreferrer' aria-label='Twitter link'>
-                      <TwitterSvg />
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              <ul className={styles.links}>
+                <li className={styles.link}>
+                  <a href={URL.githubRepoUrl} target='_blank' rel='noreferrer' aria-label='GitHub link'>
+                    <GithubSVG />
+                  </a>
+                </li>
+                <li className={styles.link}>
+                  <a href={URL.linkedinUrl} target='_blank' rel='noreferrer' aria-label='LinkedIn link'>
+                    <LinkedInSvg />
+                  </a>
+                </li>
+                <li className={styles.link}>
+                  <a href={URL.twitterUrl} target='_blank' rel='noreferrer' aria-label='Twitter link'>
+                    <TwitterSvg />
+                  </a>
+                </li>
+              </ul>
             </div>
           </section>
           <section className={styles.wrapper}>
@@ -140,9 +148,11 @@ export default function Footer() {
                   <h3 className={styles.title}>{title}</h3>
                   {links.map(({ title, url, isLocal }) => {
                     return isLocal ? (
-                      <Link className={styles.link} key={url} to={url} target='_blank' rel='noreferrer'>
-                        {title}
-                      </Link>
+                      <>
+                        <Link className={styles.link} key={url} to={url} target='_blank' rel='noreferrer'>
+                          {title}
+                        </Link>
+                      </>
                     ) : (
                       <a className={styles.link} key={url} href={url} target='_blank' rel='noreferrer'>
                         {title}

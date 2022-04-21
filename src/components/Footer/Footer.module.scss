@@ -1,7 +1,7 @@
 .footer {
   background-color: v('brand-water');
   color: v('white');
-  padding: rem(40px) 0 rem(24px) 0;
+  padding: rem(64px) 0 rem(24px) 0;
 
   .copyrights {
     margin-top: rem(24px);
@@ -23,7 +23,7 @@
 
     .wrapper {
       display: flex;
-      column-gap: rem(56px);
+      column-gap: rem(42px);
 
       @include media('<=desktop') {
         justify-content: space-between;
@@ -32,7 +32,7 @@
       @include media('<=phoneLandscape') {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        column-gap: rem(48px);
+        column-gap: rem(20px);
         row-gap: rem(40px);
       }
     }
@@ -52,6 +52,16 @@
         @include sans($size: 14px, $weight: 400, $lh: 150%);
       }
 
+      .hiring {
+        @include sans($size: 10px, $weight: 600, $lh: 140%, $color: c('brand-fire'));
+        text-transform: uppercase;
+        padding: rem(4px) rem(6px);
+        background: rgba(240, 68, 5, 0.1);
+        border-radius: 4px;
+        white-space: nowrap;
+        margin-left: rem(4px);
+      }
+
       .fpjsLogo {
         object-fit: contain;
         margin-bottom: rem(16px);
@@ -68,7 +78,7 @@
 
     .menu {
       .link {
-        display: block;
+        display: flex;
         padding: 0.5rem 0;
         @include transition((opacity));
 
@@ -87,7 +97,7 @@
         display: flex;
         flex-direction: column;
         @include sans($size: 14px, $weight: 400, $lh: 150%);
-        margin-bottom: 5rem;
+        margin-bottom: rem(24.5px);
 
         .mailto {
           padding-top: rem(8px);
@@ -102,16 +112,11 @@
       .social {
         display: flex;
         align-items: flex-end;
-        column-gap: rem(12px);
-
-        > span {
-          height: 28px;
-        }
 
         .links {
           display: flex;
           align-items: center;
-          column-gap: rem(12px);
+          column-gap: rem(24px);
 
           .link {
             a {
@@ -126,8 +131,6 @@
           }
 
           svg {
-            width: rem(43px);
-            height: rem(42px);
             fill: v('white');
             @include transition((opacity));
           }
@@ -147,8 +150,8 @@
     column-gap: rem(8px);
 
     svg {
-      width: rem(80px);
-      height: rem(80px);
+      width: rem(66px);
+      height: rem(66px);
     }
   }
 }

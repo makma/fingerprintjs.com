@@ -123,7 +123,7 @@ collections:
               { label: Title, name: title, widget: string, default: 'Default Title' },
               { label: Description, name: description, widget: string },
               { label: URL, name: url, widget: string },
-              { label: Cover Image (DON'T USE GIFS), name: image, widget: image },
+              { label: Cover Image, name: image, widget: image },
               { label: Image Alt, name: imageAlt, widget: string, required: false },
               { label: Image Title, name: imageTitle, widget: string, required: false },
               { label: Social Share Image (2:1 ratio), name: socialImage, widget: image, required: false },

@@ -40,24 +40,29 @@ export default function Post({
   className,
 }: PostProps) {
   const imageFluid = image?.childImageSharp?.gatsbyImageData
+  const gifImage = image?.extension === 'gif'
   return (
     <Link
       to={getRelativeUrl(path)}
       className={classNames(className, styles.post, { [styles.wide]: variant === 'wide' })}
     >
-      {imageFluid && (
+      {(imageFluid || gifImage) && (
         <div
           className={classNames(styles.wrapper, {
             [styles.threePerRow]: perRow === 3,
             [styles.wideWrapper]: variant === 'wide',
           })}
         >
-          <GatsbyImage
-            image={imageFluid}
-            className={styles.image}
-            alt={imageAlt ? imageAlt : title}
-            title={imageTitle}
-          />
+          {imageFluid ? (
+            <GatsbyImage
+              image={imageFluid}
+              className={styles.image}
+              alt={imageAlt ? imageAlt : title}
+              title={imageTitle}
+            />
+          ) : (
+            <img className={styles.image} src={image.publicURL} alt={imageAlt ? imageAlt : title} title={imageTitle} />
+          )}
         </div>
       )}
 
@@ -144,6 +149,8 @@ export const query = graphql`
               childImageSharp {
                 gatsbyImageData(quality: 100, layout: CONSTRAINED, aspectRatio: 1.7)
               }
+              extension
+              publicURL
             }
             imageAlt
             imageTitle
