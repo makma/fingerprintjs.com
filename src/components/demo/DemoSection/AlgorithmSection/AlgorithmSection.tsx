@@ -22,13 +22,20 @@ import styles from './AlgorithmSection.module.scss'
 import useIntersectionObserver from '../../../../hooks/useIntersectionObserver'
 
 interface AlgorithmSectionProps {
-  isLoading?: boolean
+  isVisitDetailsLoading?: boolean
+  isVisitHistoryLoading?: boolean
   currentVisit?: VisitorResponse
   visits?: VisitorResponse[]
   visitorId?: string
 }
 
-export default function AlgorithmSection({ isLoading, visits, currentVisit, visitorId }: AlgorithmSectionProps) {
+export default function AlgorithmSection({
+  isVisitDetailsLoading,
+  isVisitHistoryLoading,
+  visits,
+  currentVisit,
+  visitorId,
+}: AlgorithmSectionProps) {
   const offset = getTimezoneOffset()
   const width = isBrowser() ? window.screen.width : ''
   const height = isBrowser() ? window.screen.height : ''
@@ -45,7 +52,7 @@ export default function AlgorithmSection({ isLoading, visits, currentVisit, visi
           Browser fingerprinting details
         </h2>
         <section ref={ref} className={classNames(styles.browserSignals, { [styles.visible]: isVisible })}>
-          {isLoading ? (
+          {isVisitDetailsLoading ? (
             <>
               <Card icon={<IncognitoCardSVG />} isLoading />
               <Card icon={<PlanetSVG />} isLoading />
@@ -79,14 +86,14 @@ export default function AlgorithmSection({ isLoading, visits, currentVisit, visi
         <section className={classNames(styles.visitHistory, { [styles.visible]: isVisible })}>
           <div className={styles.visitSection}>
             <Visit current title='Current visit' />
-            {isLoading ? (
+            {isVisitHistoryLoading ? (
               <>
                 <Visit isLoading />
                 <Visit isLoading />
               </>
             ) : (
               visits &&
-              visits.slice(0, 2).map((visit, index) => {
+              visits.slice(1, 3).map((visit, index) => {
                 return <Visit key={index} incognito={visit.incognito} title={getVisitTitle(visit.timestamp)} />
               })
             )}
@@ -105,7 +112,7 @@ export default function AlgorithmSection({ isLoading, visits, currentVisit, visi
         </div>
         <h2 className={classNames(styles.visitorIdTitle, { [styles.visible]: isVisible })}>Your visitor Id</h2>
         <section className={classNames(styles.visitorId, { [styles.visible]: isVisible })}>
-          {isLoading ? (
+          {isVisitDetailsLoading ? (
             <Card variant='visitor' icon={<VisitorSVG />} isLoading isVisible={isVisible} />
           ) : (
             <Card variant='visitor' icon={<VisitorSVG />} title={visitorId} isVisible={isVisible} />

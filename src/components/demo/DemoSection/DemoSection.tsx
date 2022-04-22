@@ -16,7 +16,7 @@ export default function DemoSection() {
   const [visits, setVisits] = useState<VisitorResponse[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
-  const { getData } = useVisitorData(getConfig, { immediate: false })
+  const { getData, isLoading: isFpjsLoading } = useVisitorData(getConfig, { immediate: false })
   const rollbar = useRollbar()
 
   useEffect(() => {
@@ -27,6 +27,20 @@ export default function DemoSection() {
       if (!visitorId) {
         const data = await getData(true)
         setVisitorId(data?.visitorId)
+        const visitsFpjs = [
+          {
+            ...data,
+            browserDetails: {
+              browserName: data?.browserName,
+              os: data?.os,
+              osVersion: data?.osVersion,
+              device: data?.device,
+            },
+          },
+        ] as VisitorResponse[]
+
+        setVisits(visitsFpjs)
+        setCurrentVisit(visitsFpjs[0])
       }
       if (!visitorId) {
         return
@@ -55,8 +69,14 @@ export default function DemoSection() {
 
   return (
     <>
-      <VisitorSection isLoading={isLoading} currentVisit={currentVisit} visitorId={visitorId} />
-      <AlgorithmSection isLoading={isLoading} visitorId={visitorId} visits={visits} currentVisit={currentVisit} />
+      <VisitorSection isLoading={isFpjsLoading} currentVisit={currentVisit} visitorId={visitorId} />
+      <AlgorithmSection
+        isVisitHistoryLoading={isLoading}
+        isVisitDetailsLoading={isFpjsLoading}
+        visitorId={visitorId}
+        visits={visits}
+        currentVisit={currentVisit}
+      />
       <VisitsSection isLoading={isLoading} visits={visits} currentVisit={currentVisit} />
     </>
   )

@@ -76,9 +76,15 @@ export default function VisitsSection({ isLoading, currentVisit, visits }: Visit
             </tr>
             <tr className={styles.selected}>
               <td>Current visit</td>
-              <td>
-                <Skeleton className={styles.visitSkeleton} width={24} />
-              </td>
+              {currentVisit ? (
+                <td className={classNames({ [styles.incognito]: currentVisit.incognito })}>
+                  {currentVisit.incognito ? 'Yes' : 'No'}
+                </td>
+              ) : (
+                <td>
+                  <Skeleton className={styles.visitSkeleton} width={24} />
+                </td>
+              )}
             </tr>
             {repeatElement(5, (i) => (
               <tr key={i}>
