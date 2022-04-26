@@ -42,7 +42,7 @@ export default function WhatWeOfferSection() {
           <Card
             icon={<TechSVG />}
             title='Tech'
-            description='We hook you up with a brand new Macbook so you can do your best work (you get to keep it after 3 years).'
+            description='We hook you up with a Macbook so you can do your best work (you get to keep it after 3 years).'
           />
           <Card
             icon={<CultureSVG />}

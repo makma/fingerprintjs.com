@@ -28,7 +28,7 @@ export const URL = {
   botDRepoUrl: 'https://github.com/fingerprintjs/BotD',
   botDIntegrationsRepoUrl: 'https://github.com/fingerprintjs/botd-integrations',
   dashboardLoginUrl: 'https://dashboard.fingerprintjs.com/login',
-  careersUrl: 'https://careers.fingerprintjs.com/',
+  careersUrl: 'https://boards.greenhouse.io/fingerprintjs/',
   careersConsoleLogUrl: 'https://grnh.se/bb9c55804us',
   linkedinUrl: 'https://www.linkedin.com/company/fingerprintjs/',
   twitterUrl: 'https://twitter.com/FingerprintJs/',
