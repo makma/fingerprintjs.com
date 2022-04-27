@@ -83,7 +83,7 @@ export default function VisitorSection({ isLoading, currentVisit, visitorId }: V
         </section>
         <section className={styles.idSection}>
           <div className={classNames(styles.card, { [styles.incognito]: incognito })}>
-            {isLoading ? loadingCard : loadedCard}
+            {!isLoading && visitorId ? loadedCard : loadingCard}
           </div>
           <footer className={styles.footer}>
             {incognito
