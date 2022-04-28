@@ -25,7 +25,7 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 ---
-At its most basic level, Transport Layer Security (TLS) is an algorithm that encrypts all your internet traffic and helps you stay secure online. To be more precise, it is a protocol used to encrypt web-based communications between a client and a server using suites of cryptographic algorithms. Before TLS can be used in communication, the client and server go through a process known as the *TLS handshake*.
+At its most basic level, Transport Layer Security (TLS) is an algorithm that encrypts all your internet traffic and helps you stay secure online. To be more precise, it is a protocol used to encrypt web-based communications between a client and a server using suites of cryptographic algorithms. Before TLS can be used in communication, the client and server go through a process known as the *TLS handshake*. 
 
 TLS fingerprinting is the identification of a client based on the fields in its `Client Hello` message during a TLS handshake. 
 
