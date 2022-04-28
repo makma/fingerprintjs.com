@@ -22,8 +22,8 @@ export default function OurInvestorsSection() {
         <h2 className={styles.title}>Our Investors</h2>
         <p className={styles.description}>
           We have raised $44M and are backed by Craft Ventures (previously invested in Tesla, Facebook, Airbnb), Nexus
-          VP (previously invested in Postman, Hasura) and Uncorrelated Ventures (previously invested in Redis, Rollbar &
-          Gradle).
+          Venture Partners (previously invested in Postman, Hasura) and Uncorrelated Ventures (previously invested in
+          Redis, Rollbar & Gradle).
         </p>
         <div className={styles.logos}>
           <span className={styles.logo}>

@@ -84,7 +84,7 @@ export function OurValuesSection() {
           <Card
             icon={<FailLearnGrowSVG />}
             title='Fail. Learn. Grow.'
-            description="We aren't afraid to take big bets and make mistakes along the way in order to build a truly successful business."
+            description="We aren't afraid to take big bets and make mistakes along the way in order to build a truly successful business. All ideas are welcome and evaluated equally based on merit, not position."
           />
           <Card
             icon={<SeriouslySVG />}
