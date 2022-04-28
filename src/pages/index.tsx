@@ -1,6 +1,7 @@
 import React from 'react'
 import { Layout } from '../components/Layout'
 import ClientsSection from '../components/ClientsSection'
+import AccuracySection from '../components/AccuracySection/AccuracySection'
 import LiveDemoSection from '../components/LiveDemoSection'
 import MadeForDevelopersSection from '../components/MadeForDevelopersSection'
 import ServerApiSection from '../components/ServerApiSection'
@@ -17,6 +18,7 @@ export default function IndexPage() {
       <div>
         <LiveDemoSection />
         <ClientsSection />
+        <AccuracySection />
         <ServerApiSection />
         <MadeForDevelopersSection />
         <UseCasesSection />

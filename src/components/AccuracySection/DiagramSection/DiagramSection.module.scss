@@ -1,0 +1,299 @@
+$tabletBreakpoint: 1300px;
+
+$mobileBreakpoint: 740px;
+
+.root {
+  padding: 0 0 rem(64px) 0;
+}
+
+.container {
+  text-align: center;
+
+  .mobileTabs {
+    @media screen and (max-width: $mobileBreakpoint) {
+      display: inline-block;
+      margin-bottom: rem(16px);
+    }
+    display: none;
+
+    padding: rem(8px);
+
+    background: rgba(13, 16, 43, 0.08);
+    border-radius: rem(16px);
+  }
+  .selectButton {
+    background-color: rgba(255, 255, 255, 0);
+    color: #ffffff;
+
+    mix-blend-mode: normal;
+    box-shadow: none;
+
+    @include transition((background-color, opacity));
+    @include transition-duration(0.5s);
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    & + .selectButton {
+      margin-left: rem(8px);
+    }
+
+    @media screen and (max-width: $tabletBreakpoint) {
+      font-size: rem(12px);
+      padding: 0 rem(19px);
+      height: rem(44px);
+    }
+
+    @media screen and (max-width: $mobileBreakpoint) {
+      padding: 0 rem(20px);
+      height: rem(49px);
+      font-size: rem(14px);
+      color: var(--brand-water);
+    }
+  }
+  .showButton {
+    background-color: #ffffff;
+    color: var(--brand-water);
+    pointer-events: none;
+
+    &:focus,
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .card {
+    position: relative;
+
+    border-radius: rem(24px);
+    background: linear-gradient(116.61deg, #2d357a -27.65%, #0d102b 77.94%);
+    color: v('white');
+    text-align: center;
+    min-height: rem(654px);
+
+    padding: rem(24px) rem(48px);
+
+    @media screen and (max-width: $tabletBreakpoint) {
+      min-height: rem(423px);
+
+      padding: rem(13px) rem(36px) rem(45px) rem(26px);
+    }
+
+    @media screen and (max-width: $mobileBreakpoint) {
+      min-height: rem(550px);
+      padding: 0;
+    }
+    .tabs {
+      display: inline-block;
+
+      @media screen and (max-width: $mobileBreakpoint) {
+        display: none;
+      }
+
+      padding: rem(8px);
+
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: rem(16px);
+    }
+    .accuracyDescription {
+      position: absolute;
+      max-width: rem(306px);
+      right: rem(100px);
+
+      @media screen and (max-width: $tabletBreakpoint) {
+        max-width: rem(190px);
+        font-size: rem(12px);
+
+        top: 25px;
+        right: 50%;
+        transform: translate(315px);
+      }
+      @media screen and (max-width: $mobileBreakpoint) {
+        display: none;
+      }
+    }
+
+    .diagram {
+      position: relative;
+      height: rem(560px);
+      justify-items: center;
+
+      background-image: url('/img/diagram-section/background.svg');
+      background-repeat: no-repeat;
+      background-position-y: rem(-46px);
+      background-size: rem(1128px) rem(560px);
+
+      @include transition(background-image);
+      @include transition-duration(0.4s);
+      @include transition-timing-function(linear);
+
+      @media screen and (max-width: $tabletBreakpoint) {
+        background-image: url('/img/diagram-section/backgroundTabletBefore.svg');
+        background-position: center;
+        background-size: rem(633px) rem(312px);
+        height: rem(312px);
+      }
+
+      @media screen and (max-width: $mobileBreakpoint) {
+        height: rem(550px);
+
+        background-image: url('/img/diagram-section/backgroundMobileBefore.svg');
+        background-size: rem(360px) rem(550px);
+
+        border-radius: rem(24px);
+      }
+    }
+    .afterBackground {
+      background-image: url('/img/diagram-section/backgroundAfter.svg');
+
+      @media screen and (max-width: $tabletBreakpoint) {
+        background-image: url('/img/diagram-section/backgroundTabletAfter.png');
+      }
+
+      @media screen and (max-width: $mobileBreakpoint) {
+        background-image: url('/img/diagram-section/backgroundMobileAfter.png');
+      }
+    }
+
+    .incomingFlow {
+      position: absolute;
+      max-width: rem(197px);
+      left: rem(-10px);
+      bottom: rem(59px);
+
+      @media screen and (max-width: $tabletBreakpoint) {
+        bottom: rem(-10px);
+
+        left: 50%;
+        transform: translate(-350px);
+      }
+      @media screen and (max-width: $mobileBreakpoint) {
+        display: none;
+      }
+    }
+    .otherServices {
+      position: absolute;
+      max-width: rem(259px);
+      left: rem(450px);
+      bottom: rem(201px);
+
+      @media screen and (max-width: $tabletBreakpoint) {
+        width: rem(166px);
+
+        bottom: rem(50px);
+        left: 50%;
+        transform: translate(-50%);
+      }
+
+      @media screen and (max-width: $mobileBreakpoint) {
+        width: rem(220px);
+        bottom: rem(190px);
+      }
+    }
+    .fingerService {
+      position: absolute;
+      width: rem(221px);
+      left: rem(460px);
+      bottom: rem(180px);
+      @media screen and (max-width: $tabletBreakpoint) {
+        bottom: rem(50px);
+        left: 50%;
+        transform: translate(-50%);
+      }
+      @media screen and (max-width: $mobileBreakpoint) {
+        bottom: rem(190px);
+      }
+    }
+    .visitor,
+    .visitorId {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: rem(6px);
+      padding: rem(10px);
+
+      @media screen and (max-width: $tabletBreakpoint) {
+        padding: rem(7px);
+      }
+    }
+    .visitor {
+      left: rem(330px);
+      top: rem(105px);
+
+      @media screen and (max-width: $tabletBreakpoint) {
+        top: rem(75px);
+
+        left: 50%;
+        transform: translate(-135px);
+      }
+
+      @media screen and (max-width: $mobileBreakpoint) {
+        top: rem(90px);
+
+        transform: translate(-85px);
+      }
+    }
+    .visitorId {
+      right: rem(275px);
+      top: rem(142px);
+
+      @media screen and (max-width: $tabletBreakpoint) {
+        top: rem(95px);
+
+        right: 50%;
+        transform: translate(165px);
+      }
+
+      @media screen and (max-width: $mobileBreakpoint) {
+        top: rem(365px);
+
+        transform: translate(115px);
+      }
+    }
+    .trusted,
+    .suspicious {
+      display: flex;
+      column-gap: rem(8px);
+      align-items: center;
+
+      position: absolute;
+
+      @media screen and (max-width: $mobileBreakpoint) {
+        display: none;
+      }
+    }
+    .trusted {
+      right: rem(220px);
+      top: rem(60px);
+
+      @media screen and (max-width: $tabletBreakpoint) {
+        top: rem(50px);
+
+        right: 50%;
+        transform: translate(190px);
+      }
+    }
+    .suspicious {
+      right: rem(100px);
+      bottom: rem(100px);
+
+      @media screen and (max-width: $tabletBreakpoint) {
+        bottom: rem(20px);
+
+        right: 50%;
+        transform: translate(280px);
+      }
+    }
+  }
+}
+.fingerService,
+.otherServices,
+.accuracyDescription,
+.incomingFlow {
+  @include sans($size: 14px, $weight: 500, $lh: 150%);
+}
+
+.visitor,
+.visitorId,
+.trusted,
+.suspicious {
+  @include sans($size: 14px, $weight: 700, $lh: 150%);
+}
