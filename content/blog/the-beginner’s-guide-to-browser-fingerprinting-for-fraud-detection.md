@@ -127,21 +127,19 @@ It is also important to note that users intending to commit fraud are much more 
 
 ## Browser vs. Device Fingerprinting
 
-Our FingerprintJS open source library is intended for browser fingerprinting - it identifies visitors to a website using all modern mobile and desktop browsers. However, if you want to identify users of a native mobile app, Pro can do that for you as well. FingerprintJS Pro's native Android and iOS integrations allows developers to integrate device identification into native Android apps. Visit the official GitHub repository for examples and package downloads.
+Our "core" [FingerprintJS](https://github.com/fingerprintjs/fingerprintjs) library is intended for browser fingerprinting - it identifies visitors to a website using all modern mobile and desktop browsers. The signals available for mobile app developers are different from signals that can be retrieved in the browser however, and vary between iOS, Android, and other mobile operating systems.
 
+If you want to identify users of a native mobile app, we have a few options in our product suite:
+* FingerprintJS Pro, in addition to browser fingerprinting, includes high-accuracy native [Android](https://dev.fingerprintjs.com/docs/native-android-integration) and [iOS](https://dev.fingerprintjs.com/docs/native-ios-integration) integrations that allow developers to integrate device identification into native Android and iOS apps.
+* Our [iOS open source library](https://github.com/fingerprintjs/fingerprintjs-ios)
+* Our [Android open source library](https://github.com/fingerprintjs/fingerprintjs-android)
 
+## Get Involved
 
+We would love to hear your questions and get feedback on our fingerprinting technology.
 
-you will need to use a device fingerprinting function that is made specifically for each mobile operating system. The signals available for mobile app developers are different from signals that can be retrieved in the browser, and vary between iOS, Android, and other mobile operating systems.
-
-Our team recently launched Fingerprint Android, our first open source library for identifying unique Android devices. You can read more about how our Fingerprint Android library works in our article about its launch.
-Get Involved
-We would love to hear your questions and get feedback from the developer community on our fingerprinting technology.
-
-*Here are a few ways you can get involved*
+*Here are a few ways you can get involved:*
 
 * Star, follow or fork our Github projects: [FingerprintJS](https://github.com/fingerprintjs/fingerprintjs) (browser fingerprinting) and [Fingerprint-Android](https://github.com/fingerprintjs/fingerprint-android)
 * Need more accurate browser fingerprinting for your business? Create a free FingerprintJS Pro account for [99.5% fingerprinting accuracy](/).
-* [Email us](mailto:sales@fingerprintjs.com) your questions
-
-![FingerprintJS Logo](/img/uploads/fp_logo_cmyk_color.jpg "FingerprintJS Logo")
+* Think FingerprintJS could help your business?[Contact our sales team](https://fingerprintjs.com/contact-sales/) with your questions
