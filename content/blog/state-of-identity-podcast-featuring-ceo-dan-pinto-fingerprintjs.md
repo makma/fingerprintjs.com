@@ -13,6 +13,7 @@ featured: true
 publishDate: 2021-08-19T14:02:00.000Z
 title: "State of Identity Podcast: Featuring CEO Dan Pinto, FingerprintJS"
 isPublished: true
+isHidden: false
 tags:
   - fingerprinting
 authors:

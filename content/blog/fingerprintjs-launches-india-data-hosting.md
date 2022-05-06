@@ -14,6 +14,7 @@ featured: true
 publishDate: 2022-01-19T20:56:25.125Z
 title: FingerprintJS launches India data hosting
 isPublished: true
+isHidden: false
 tags:
   - announcements
 authors:

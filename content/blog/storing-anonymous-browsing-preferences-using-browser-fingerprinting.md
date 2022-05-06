@@ -12,6 +12,7 @@ featured: true
 publishDate: 2022-03-22T21:41:54.209Z
 title: " Storing Anonymous Browsing Preferences Using Browser Fingerprinting "
 isPublished: true
+isHidden: false
 tags:
   - fingerprinting
   - engineering

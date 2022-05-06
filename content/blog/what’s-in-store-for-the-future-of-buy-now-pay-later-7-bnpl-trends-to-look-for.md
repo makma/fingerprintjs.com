@@ -14,6 +14,7 @@ featured: true
 publishDate: 2022-03-30T18:36:57.102Z
 title: What’s in Store for the Future of Buy Now, Pay Later? 7 BNPL Trends to Look For
 isPublished: true
+isHidden: false
 tags:
   - buy now pay later
 authors:

@@ -74,7 +74,7 @@ export default function AuthorTag({ data, pageContext }: AuthorTagProps) {
 export const pageQuery = graphql`
   query BlogAuthorTag($skip: Int!, $limit: Int!, $author: String, $tag: String) {
     allTags: allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}, frontmatter: {authors: {in: [$author]}, templateKey: {eq: "long-form-content"}, isPublished: {ne: false}}}
+      filter: {fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}, frontmatter: {authors: {in: [$author]}, templateKey: {eq: "long-form-content"}, isPublished: {ne: false}, isHidden: {ne: true}}}
       sort: {order: DESC, fields: frontmatter___publishDate}
       limit: $limit
       skip: $skip
@@ -84,7 +84,7 @@ export const pageQuery = graphql`
       }
     }
     posts: allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}, frontmatter: {authors: {in: [$author]},tags: { in: [$tag] }, templateKey: {eq: "long-form-content"}, isPublished: {ne: false}}}
+      filter: {fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}, frontmatter: {authors: {in: [$author]},tags: { in: [$tag] }, templateKey: {eq: "long-form-content"}, isPublished: {ne: false}, isHidden: {ne: true}}}
       sort: {order: DESC, fields: frontmatter___publishDate}
       limit: $limit
       skip: $skip

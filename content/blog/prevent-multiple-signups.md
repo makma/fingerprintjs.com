@@ -13,6 +13,7 @@ featured: false
 publishDate: 2021-03-16T18:09:51.690Z
 title: "How to Prevent Multiple Signups With FingerprintJS Pro "
 isPublished: true
+isHidden: false
 tags:
   - fingerprinting
   - account sharing

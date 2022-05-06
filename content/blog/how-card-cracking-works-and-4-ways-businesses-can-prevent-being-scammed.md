@@ -14,6 +14,7 @@ featured: true
 publishDate: 2022-04-28T16:21:48.909Z
 title: "How Card Cracking Works and 4 Ways Businesses Can Prevent Being Scammed "
 isPublished: true
+isHidden: false
 tags:
   - payment fraud
 authors:

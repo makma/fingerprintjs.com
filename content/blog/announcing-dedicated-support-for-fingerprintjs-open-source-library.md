@@ -12,6 +12,7 @@ featured: true
 publishDate: 2022-02-25T23:02:16.455Z
 title: Announcing dedicated support for FingerprintJS Open Source Library
 isPublished: true
+isHidden: false
 tags:
   - announcements
 authors:

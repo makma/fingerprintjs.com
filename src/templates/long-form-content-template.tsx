@@ -12,6 +12,7 @@ import CustomizableCTA, { CustomizableCTAProps } from '../components/Customizabl
 import HeroImageComponent, { HeroImageComponentProps } from '../components/HeroImage/HeroImage'
 import TagList from '../components/TagList/TagList'
 import classNames from 'classnames'
+import { Helmet } from 'react-helmet'
 
 import ActionBar, { ActionBarProps } from '../components/ActionBar/ActionBar'
 
@@ -29,6 +30,7 @@ export interface TemplateProps {
   actionBar: ActionBarProps
   customCTA: CustomizableCTAProps
   tags: string[]
+  isHidden?: boolean
 }
 
 export default function LongFormContentTemplate({
@@ -42,60 +44,68 @@ export default function LongFormContentTemplate({
   actionBar,
   customCTA,
   tags,
+  isHidden = false,
 }: TemplateProps) {
   const ContentComponent = contentComponent ?? Content
 
   return (
-    <LayoutTemplate siteMetadata={metadata}>
-      {breadcrumbs && (
-        <>
-          <BreadcrumbsSEO breadcrumbs={breadcrumbs} />
-          <Container size='large'>
-            <Breadcrumbs breadcrumbs={breadcrumbs.slice(1)} />
-          </Container>
-        </>
+    <>
+      {isHidden && (
+        <Helmet>
+          <meta name='robots' content='noindex' />
+        </Helmet>
       )}
+      <LayoutTemplate siteMetadata={metadata}>
+        {breadcrumbs && (
+          <>
+            {!isHidden && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
+            <Container size='large'>
+              <Breadcrumbs breadcrumbs={breadcrumbs.slice(1)} />
+            </Container>
+          </>
+        )}
 
-      <Section className={styles.root}>
-        <Container className={styles.container}>
-          <header className={styles.header}>
-            {tags && <TagList tagLink='/blog/tag/' tags={tags} format='title' tagsLimit={3} />}
-            <h1 className={styles.title}>{post.title}</h1>
-            <div className={classNames(styles.actionBar, styles.desktopOnly)}>
-              <ActionBar {...actionBar} />
-            </div>
-          </header>
-          {authors && (
-            <div className={styles.authors}>
-              {authors.map((author) => (
-                <AuthorComponent key={author.name} author={author} className={styles.author} />
-              ))}
-            </div>
-          )}
-          <article className={styles.body}>
-            <div className={classNames(styles.actionBar, styles.mobileOnly)}>
-              <ActionBar {...actionBar} />
-            </div>
-            {heroImage.image && <HeroImageComponent {...heroImage} />}
-            <ContentComponent content={body} className={styles.content} />
-            {tags && (
-              <div className={styles.footerTags}>
-                <h3 className={styles.title}>All article tags</h3>
-                <TagList tags={tags} format='title' />
+        <Section className={styles.root}>
+          <Container className={styles.container}>
+            <header className={styles.header}>
+              {tags && <TagList tagLink='/blog/tag/' tags={tags} format='title' tagsLimit={3} />}
+              <h1 className={styles.title}>{post.title}</h1>
+              <div className={classNames(styles.actionBar, styles.desktopOnly)}>
+                <ActionBar {...actionBar} />
+              </div>
+            </header>
+            {authors && (
+              <div className={styles.authors}>
+                {authors.map((author) => (
+                  <AuthorComponent key={author.name} author={author} className={styles.author} />
+                ))}
               </div>
             )}
-          </article>
-          {customCTA.subHeader && (
-            <aside className={styles.cta}>
-              <CustomizableCTA className={styles.card} {...customCTA} />
-            </aside>
-          )}
-        </Container>
+            <article className={styles.body}>
+              <div className={classNames(styles.actionBar, styles.mobileOnly)}>
+                <ActionBar {...actionBar} />
+              </div>
+              {heroImage.image && <HeroImageComponent {...heroImage} />}
+              <ContentComponent content={body} className={styles.content} />
+              {tags && (
+                <div className={styles.footerTags}>
+                  <h3 className={styles.title}>All article tags</h3>
+                  <TagList tags={tags} format='title' />
+                </div>
+              )}
+            </article>
+            {customCTA.subHeader && (
+              <aside className={styles.cta}>
+                <CustomizableCTA className={styles.card} {...customCTA} />
+              </aside>
+            )}
+          </Container>
 
-        <Container size='large' className={styles.relatedArticles}>
-          <RelatedArticles article={post} count={4} limitPostLines={true} />
-        </Container>
-      </Section>
-    </LayoutTemplate>
+          <Container size='large' className={styles.relatedArticles}>
+            <RelatedArticles article={post} count={4} limitPostLines={true} />
+          </Container>
+        </Section>
+      </LayoutTemplate>
+    </>
   )
 }

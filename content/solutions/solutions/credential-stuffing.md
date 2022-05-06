@@ -10,6 +10,7 @@ metadata:
   url: https://fingerprintjs.com/solutions/credential-stuffing
 publishDate: 2021-11-12T15:48:01.198Z
 isPublished: true
+isHidden: false
 title: Credential stuffing
 description: Detect automated injection of stolen usernames and passwords on
   your login page before an attacker can do any damage.

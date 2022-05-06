@@ -14,6 +14,7 @@ featured: true
 publishDate: 2022-03-29T18:14:21.581Z
 title: 8 Common Signs of an Email Phishing Attempt
 isPublished: true
+isHidden: false
 tags:
   - account takeover
 authors:

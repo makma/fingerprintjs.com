@@ -14,6 +14,7 @@ featured: false
 publishDate: 2022-01-04T17:42:48.471Z
 title: Steps to prevent account takeover in banks and fintech
 isPublished: true
+isHidden: false
 tags:
   - account takeover
 authors:

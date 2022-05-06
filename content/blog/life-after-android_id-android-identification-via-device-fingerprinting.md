@@ -13,6 +13,7 @@ featured: true
 publishDate: 2020-12-08T16:18
 title: "Life after ANDROID_ID: Android Identification via Device Fingerprinting"
 isPublished: true
+isHidden: false
 tags:
   - java
   - fingerprinting

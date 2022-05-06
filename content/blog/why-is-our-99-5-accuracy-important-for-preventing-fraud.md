@@ -14,6 +14,7 @@ featured: true
 publishDate: 2022-02-16T02:30:40.426Z
 title: Why is 99.5% accuracy important for preventing fraud?
 isPublished: true
+isHidden: false
 tags:
   - fingerprinting
   - engineering

@@ -27,6 +27,7 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 isPublished: true
+isHidden: false
 ---
 Account takeover fraud occurs when malicious actors steal login credentials to access customer accounts. Organizations that store user login information should be especially wary of these threats, both to protect themselves and their customers.
 

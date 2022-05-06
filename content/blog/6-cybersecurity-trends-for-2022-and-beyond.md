@@ -14,6 +14,7 @@ featured: false
 publishDate: 2021-11-12T19:38:53.155Z
 title: 6 Cybersecurity Trends for 2022 and Beyond
 isPublished: true
+isHidden: false
 tags:
   - account takeover
   - bot attacks

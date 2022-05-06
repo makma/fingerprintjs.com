@@ -23,6 +23,7 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 isPublished: true
+isHidden: false
 ---
 Fingerprinting is a way to identify website users without using cookies or data storage. Instead, device properties like language and installed fonts are used to create highly accurate, unique identifiers that work even if the browser has incognito mode turned on.
 

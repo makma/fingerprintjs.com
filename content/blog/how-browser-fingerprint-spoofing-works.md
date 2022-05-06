@@ -14,6 +14,7 @@ featured: false
 publishDate: 2021-08-26T08:04:00.000Z
 title: Can you Prevent Browser Fingerprinting?
 isPublished: true
+isHidden: false
 tags:
   - fingerprinting
   - payment fraud

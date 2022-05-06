@@ -25,6 +25,7 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 isPublished: true
+isHidden: false
 ---
 The newly revised Payment Services Directive ([PSD2, Directive (EU) 2015/2366](http://data.europa.eu/eli/dir/2015/2366/oj/eng)) includes updated measures for making online payments safer and more secure. Unfortunately, this extra layer of customer protection may also reduce revenue for merchants due to cart abandonment or rejected payments. 
 

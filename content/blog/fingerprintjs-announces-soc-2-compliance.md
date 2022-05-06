@@ -28,6 +28,7 @@ customCTA:
   ctaText: Contact Sales
   ctaUrl: https://fingerprintjs.com/contact-sales/
 isPublished: true
+isHidden: false
 ---
 FingerprintJS is committed to keeping our customer and company data safe to the highest possible standards.
 

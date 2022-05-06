@@ -16,7 +16,7 @@ const gatsbyRequiredRules = path.join(process.cwd(), 'node_modules', 'gatsby', '
 const rssPostQuery = `
 {
   allMarkdownRemark(
-    filter: {fields: {slug: {regex: "/blog/"}}, frontmatter: {isPublished: {ne: false}}}
+    filter: {fields: {slug: {regex: "/blog/"}}, frontmatter: {isPublished: {ne: false}, isHidden: {ne: true}}}
     sort: {order: DESC, fields: frontmatter___publishDate}
     limit: 15
   ) {
@@ -61,7 +61,38 @@ module.exports = {
         allowList: ['BRANCH', 'CONTEXT', 'DEPLOY_PRIME_URL'],
       },
     },
-    'gatsby-plugin-sitemap',
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+        {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage {
+            edges {
+              node {
+                path
+                pageContext
+              }
+            }
+          }
+        }
+        `,
+        resolvePages: ({ allSitePage: { edges: allPages } }) => allPages.map((page) => ({ ...page.node })),
+        excludes: [],
+        filterPages: (page) => {
+          if (
+            // Exclude pages marked with "noindex"
+            page.pageContext.noIndex
+          ) {
+            return true
+          }
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-breadcrumb`,
       options: {
@@ -69,12 +100,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
-      options: {
-        siteUrl: baseUrl,
-      },
-    },
     {
       resolve: 'gatsby-plugin-sass',
       options: {

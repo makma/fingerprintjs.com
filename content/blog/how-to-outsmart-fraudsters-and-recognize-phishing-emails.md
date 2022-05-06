@@ -13,6 +13,7 @@ featured: true
 publishDate: 2021-09-30T23:18:30.228Z
 title: How to Outsmart Fraudsters and Recognize Phishing Emails
 isPublished: true
+isHidden: false
 tags:
   - account takeover
   - payment fraud

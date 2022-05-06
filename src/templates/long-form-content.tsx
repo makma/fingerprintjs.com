@@ -40,6 +40,7 @@ export default function LongFormContent({ data, pageContext }: LongFormContentPr
   const actionBar = mapToAction(data.markdownRemark.frontmatter)
   const customCTA = mapToCustomCta(data.markdownRemark.frontmatter.customCTA)
   const tags = data.markdownRemark.frontmatter.tags as string[]
+  const isHidden = data.markdownRemark.frontmatter.isHidden
 
   return (
     <LongFormContentTemplate
@@ -54,6 +55,7 @@ export default function LongFormContent({ data, pageContext }: LongFormContentPr
       actionBar={actionBar}
       customCTA={customCTA}
       tags={tags}
+      isHidden={isHidden}
     />
   )
 }
@@ -111,6 +113,7 @@ export const pageQuery = graphql`
           ctaUrl
           openCtaNewTab
         }
+        isHidden
       }
     }
   }

@@ -14,6 +14,7 @@ publishDate: 2021-05-25T20:09:52.736Z
 title: "Fingerprinting in the Modern Browser: Are Privacy Updates Making It
   Harder to Prevent Fraud?"
 isPublished: true
+isHidden: false
 tags:
   - fingerprinting
   - account takeover

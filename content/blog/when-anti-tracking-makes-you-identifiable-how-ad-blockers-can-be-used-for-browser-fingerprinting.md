@@ -14,6 +14,7 @@ featured: true
 publishDate: 2021-07-01T13:48:02.818Z
 title: How ad blockers can be used for browser fingerprinting
 isPublished: true
+isHidden: false
 tags:
   - fingerprinting
   - engineering

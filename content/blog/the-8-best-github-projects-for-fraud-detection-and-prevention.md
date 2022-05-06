@@ -13,6 +13,7 @@ featured: false
 publishDate: 2021-08-16T16:57:09.641Z
 title: The 8 Best GitHub Projects for Fraud Detection and Prevention
 isPublished: true
+isHidden: false
 tags:
   - engineering
 authors:

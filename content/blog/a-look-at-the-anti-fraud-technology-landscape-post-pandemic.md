@@ -14,6 +14,7 @@ featured: false
 publishDate: 2021-12-03T05:18:30.225Z
 title: A look at the anti-fraud technology landscape post-pandemic
 isPublished: true
+isHidden: false
 tags:
   - anti-fraud technology
 authors:

@@ -71,7 +71,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/(blog)/.*\\.md$/" }
-        frontmatter: { tags: { in: [$tag] }, templateKey: {eq: "long-form-content"}, isPublished: {ne: false} }
+        frontmatter: { tags: { in: [$tag] }, templateKey: {eq: "long-form-content"}, isPublished: {ne: false}, isHidden: {ne: true} }
       }
       sort: { order: DESC, fields: frontmatter___publishDate }
       limit: $limit

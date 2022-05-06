@@ -27,7 +27,7 @@ const relatedSolutionsQuery = graphql`
     allMarkdownRemark(
       filter: {
         fileAbsolutePath: {regex: "/(solutions)/(solutions).*\\.md$/"}
-        frontmatter: { isPublished: {ne: false} }
+        frontmatter: { isPublished: {ne: false}, isHidden: {ne: true} }
       }
       sort: { order: DESC, fields: frontmatter___publishDate }
       limit: 1000

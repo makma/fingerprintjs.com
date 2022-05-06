@@ -13,6 +13,7 @@ featured: true
 publishDate: 2021-11-08T17:39:09.786Z
 title: Product Update - November 2021
 isPublished: true
+isHidden: false
 tags:
   - engineering
   - announcements

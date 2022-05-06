@@ -13,6 +13,7 @@ featured: false
 publishDate: 2021-03-15T16:23:06.733Z
 title: How to minimize CAPTCHA API calls to streamline UX and improve conversions
 isPublished: true
+isHidden: false
 tags:
   - fingerprinting
   - bot attacks

@@ -61,7 +61,7 @@ export const pageQuery = graphql`
     posts: allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/(blog)/.*\\.md$/" }
-        frontmatter: { isPublished: {ne: false} } 
+        frontmatter: { isPublished: {ne: false}, isHidden: {ne: true} } 
       }        
       sort: { order: DESC, fields: frontmatter___publishDate }
       limit: $limit
@@ -73,7 +73,7 @@ export const pageQuery = graphql`
     featuredPosts: allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/(blog)/.*\\.md$/" }
-        frontmatter: { featured: { eq: true }, isPublished: {ne: false} }
+        frontmatter: { featured: { eq: true }, isPublished: {ne: false}, isHidden: {ne: true} }
       }
       sort: { order: DESC, fields: frontmatter___publishDate }
       limit: 5

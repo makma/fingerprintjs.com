@@ -24,6 +24,7 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 isPublished: true
+isHidden: false
 ---
 Microsoft’s cloud services see over 300 million fraudulent sign-in attempts every day, so when it recommends two-factor authentication (2FA) to [prevent account takeovers,](/account-takeover/) internet users are well advised to take heed. But don’t just take its word for it — Google claims that <a href="https://security.googleblog.com/2019/05/new-research-how-effective-is-basic.html" target="_blank" rel="noopener">100% of automated bots</a> can be blocked with 2FA, not to mention 99% of bulk phishing attacks and 66% of targeted attacks.
 

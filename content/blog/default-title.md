@@ -13,6 +13,7 @@ featured: true
 publishDate: 2021-12-06T05:03:23.573Z
 title: "Online gambling fraud: effective preventative measures"
 isPublished: true
+isHidden: false
 tags:
   - gambling
   - gaming fraud

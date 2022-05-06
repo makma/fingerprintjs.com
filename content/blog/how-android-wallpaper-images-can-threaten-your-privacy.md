@@ -13,6 +13,7 @@ featured: true
 publishDate: 2021-10-05T19:20:01.785Z
 title: How Android Wallpaper Images Can Threaten Your Privacy
 isPublished: true
+isHidden: false
 tags:
   - fingerprinting
   - vulnerability

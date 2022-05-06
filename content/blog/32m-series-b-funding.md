@@ -14,6 +14,7 @@ featured: true
 publishDate: 2021-11-09T21:19:13.020Z
 title: $32M series B funding
 isPublished: true
+isHidden: false
 tags:
   - announcements
 authors:

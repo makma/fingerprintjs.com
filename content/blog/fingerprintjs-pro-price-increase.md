@@ -14,6 +14,7 @@ featured: false
 publishDate: 2021-12-07T15:57:02.123Z
 title: FingerprintJS Pro price increase
 isPublished: true
+isHidden: false
 tags:
   - announcements
 authors:

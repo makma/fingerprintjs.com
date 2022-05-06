@@ -12,6 +12,7 @@ featured: true
 publishDate: 2021-06-25T02:30:08.525Z
 title: How to Generate Browser Fingerprints in PHP
 isPublished: true
+isHidden: false
 tags:
   - fingerprinting
   - web

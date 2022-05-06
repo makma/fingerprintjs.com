@@ -13,6 +13,7 @@ featured: false
 publishDate: 2021-05-12T16:26:22.579Z
 title: How to Build the Best Paywall Solution with Node and Browser Fingerprinting
 isPublished: true
+isHidden: false
 tags:
   - fingerprinting
   - js

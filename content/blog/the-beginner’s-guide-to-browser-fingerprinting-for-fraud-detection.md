@@ -13,6 +13,7 @@ featured: false
 publishDate: 2020-12-24T16:11
 title: The Beginner’s Guide to Browser Fingerprinting for Fraud Detection
 isPublished: true
+isHidden: false
 tags:
   - js
   - web

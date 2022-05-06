@@ -28,6 +28,7 @@ customCTA:
   ctaText: Learn more
   ctaUrl: https://fingerprintjs.com/ecommerce/
 isPublished: true
+isHidden: false
 ---
 <i>Author’s Note: While coupon glittering typically refers to the exploitation of glitches associated with coupons used at brick-and-mortar stores, online retailers should take note of the techniques used by online glittering communities. Online fraudsters can similarly take advantage of loopholes in discount and promo codes offered, and share exploits within these online forums.
 

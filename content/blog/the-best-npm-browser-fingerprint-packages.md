@@ -14,6 +14,7 @@ featured: true
 publishDate: 2021-11-19T04:45:06.742Z
 title: The Best NPM Browser Fingerprint Packages
 isPublished: true
+isHidden: false
 tags:
   - fingerprinting
 authors:

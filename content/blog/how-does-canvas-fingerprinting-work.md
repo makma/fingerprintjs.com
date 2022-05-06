@@ -13,6 +13,7 @@ featured: true
 publishDate: 2021-06-11T02:38:04.814Z
 title: How Does Canvas Fingerprinting Work?
 isPublished: true
+isHidden: false
 tags:
   - fingerprinting
   - js

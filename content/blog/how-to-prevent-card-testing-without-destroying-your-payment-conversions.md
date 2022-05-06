@@ -13,6 +13,7 @@ featured: false
 publishDate: 2021-03-12T13:35:01.712Z
 title: How to Prevent Card Testing Without Destroying Your Payment Conversions
 isPublished: true
+isHidden: false
 tags:
   - payment fraud
   - ecommerce fraud

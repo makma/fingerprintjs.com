@@ -9,6 +9,7 @@ featured: false
 publishDate: 2022-01-12T21:53:07.819Z
 title: Test private blog
 isPublished: false
+isHidden: false
 tags:
   - fingerprinting
 authors:

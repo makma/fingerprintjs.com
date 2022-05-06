@@ -14,6 +14,7 @@ featured: false
 publishDate: 2021-04-01T21:04:39.564Z
 title: The Top Browser Fingerprinting Techniques Explained
 isPublished: true
+isHidden: false
 tags:
   - fingerprinting
   - js

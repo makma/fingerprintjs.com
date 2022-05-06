@@ -24,6 +24,7 @@ heroImage:
 customCTA:
   openCtaNewTab: false
 isPublished: true
+isHidden: false
 ---
 The risk of fraud for online businesses is higher than it’s ever been in history. [Ecommerce fraud](https://www.chargebackgurus.com/blog/the-5-types-of-e-commerce-fraud) topped $12 million in 2020, with [89% of businesses](https://offers.worldpayglobal.com/global-payment-risk.html) losing money to payment fraud that year. And with cyber criminals using increasingly sophisticated and effective methods, website operators must maintain a vigilant stance in order to protect themselves and their customers.
 

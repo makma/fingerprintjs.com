@@ -13,6 +13,7 @@ featured: false
 publishDate: 2021-07-05T16:52:52.426Z
 title: How to Lower Your Twilio Costs by Using Fingerprinting for 2FA
 isPublished: true
+isHidden: false
 tags:
   - account takeover
   - bot attacks

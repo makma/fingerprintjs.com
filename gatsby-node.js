@@ -52,7 +52,7 @@ async function getArrayFieldValues(graphql, name) {
   const { data, errors } = await graphql(`
     {
       allMarkdownRemark(
-        filter: { frontmatter: { isPublished: { ne: false }, templateKey: { eq: "long-form-content" } } }
+        filter: { frontmatter: { isPublished: { ne: false }, isHidden: {ne: true}, templateKey: { eq: "long-form-content" } } }
       ) {
         group(field: frontmatter___${name}s) {
           ${name}: fieldValue
@@ -75,7 +75,7 @@ async function getArrayAuthorsTags(graphql, author) {
   const { data, errors } = await graphql(`
     {
       allMarkdownRemark(
-        filter: { frontmatter: { authors: {in: ["${author}"]}, isPublished: { ne: false }, templateKey: { eq: "long-form-content" } } }
+        filter: { frontmatter: { authors: {in: ["${author}"]}, isPublished: { ne: false }, isHidden: {ne: true}, templateKey: { eq: "long-form-content" } } }
       ) {
         group(field: frontmatter___tags) {
           tag: fieldValue
@@ -142,8 +142,19 @@ exports.createPages = async ({ actions, graphql }) => {
   const pages = await getFolderEdges('index', graphql)
   pages.forEach((edge) => createPageFromEdge(edge, createPage))
 
-  const blogPosts = await getFolderEdges('blog', graphql, 'frontmatter: { isPublished: { ne: false } }')
+  const blogPosts = await getFolderEdges(
+    'blog',
+    graphql,
+    'frontmatter: { isPublished: { ne: false }, isHidden: {ne: true} }'
+  )
   blogPosts.forEach((edge) => createPageFromEdge(edge, createPage))
+
+  const blogPostsHidden = await getFolderEdges(
+    'blog',
+    graphql,
+    'frontmatter: { isPublished: { ne: false }, isHidden: {ne: false} }'
+  )
+  blogPostsHidden.forEach((edge) => createPageFromEdge(edge, createPage, { noIndex: true }))
 
   const caseStudies = await getFolderEdges('case-study', graphql)
   caseStudies.forEach((edge) => createPageFromEdge(edge, createPage))
@@ -403,6 +414,12 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type NotificationBarYaml implements Node {
       barBody: String @md
+    }
+    type SitePage implements Node {
+      context: SitePageContext
+    }
+    type SitePageContext {
+      noIndex: Boolean
     }
     type MarkdownRemark implements Node {
       socialCard: File @link(from: "fields.socialCardId")

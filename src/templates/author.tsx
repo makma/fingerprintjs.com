@@ -63,7 +63,7 @@ export default function Author({ data, pageContext }: AuthorProps) {
 export const pageQuery = graphql`
   query BlogAuthor($skip: Int!, $limit: Int!, $author: String) {
     posts: allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}, frontmatter: {authors: {in: [$author]}, templateKey: {eq: "long-form-content"}, isPublished: {ne: false}}}
+      filter: {fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}, frontmatter: {authors: {in: [$author]}, templateKey: {eq: "long-form-content"}, isPublished: {ne: false}, isHidden: {ne: true}}}
       sort: {order: DESC, fields: frontmatter___publishDate}
       limit: $limit
       skip: $skip

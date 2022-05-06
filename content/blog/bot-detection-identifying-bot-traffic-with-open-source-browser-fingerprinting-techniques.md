@@ -14,6 +14,7 @@ publishDate: 2021-06-03T17:12:58.481Z
 title: "Bot Detection: Identifying Bot Traffic with Open-source Browser
   Fingerprinting Techniques"
 isPublished: true
+isHidden: false
 tags:
   - bot attacks
   - account takeover

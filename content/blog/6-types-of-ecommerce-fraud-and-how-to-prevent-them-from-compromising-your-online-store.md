@@ -15,6 +15,7 @@ featured: true
 publishDate: 2021-09-15T19:02:17.906Z
 title: 6 Types of Ecommerce Fraud and How To Prevent Them From Harming Your Customers
 isPublished: true
+isHidden: false
 tags:
   - fingerprinting
   - bot attacks

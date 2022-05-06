@@ -11,6 +11,7 @@ featured: true
 publishDate: 2021-09-09T20:44:44.264Z
 title: How to Use FingerprintJS to Prevent Bot Attacks
 isPublished: true
+isHidden: false
 tags:
   - fingerprinting
   - account takeover
