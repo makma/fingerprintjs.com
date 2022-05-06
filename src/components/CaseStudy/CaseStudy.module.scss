@@ -18,7 +18,18 @@
     transform: translateY(-0.4px);
   }
 }
+.wrapper {
+  display: flex;
+  width: 100%;
+  aspect-ratio: 2;
+  padding: 0;
+}
 
+.image {
+  width: 100%;
+
+  border-radius: rem(16px);
+}
 .content {
   height: 100%;
   display: flex;

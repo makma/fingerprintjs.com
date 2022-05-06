@@ -7,6 +7,8 @@ const webpack = require(`webpack`)
 const remark = require(`remark`)
 const remarkHTML = require(`remark-html`)
 const fetch = require(`node-fetch`)
+const { createSocialCardNode } = require('./src/node/social-card/create-social-card-node')
+const { createSocialCardId } = require('./src/node/create-node-field/create-social-card-id')
 
 async function getFolderEdges(folder, graphql, filter = '') {
   const { data, errors } = await graphql(`
@@ -225,7 +227,7 @@ function createNodePath({ node, getNode }) {
   }
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = async ({ node, actions, getNode, getCache, createNodeId }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
@@ -235,6 +237,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     })
+
+    if (node.frontmatter.templateKey === 'case-study-content') {
+      const socialCardNode = await createSocialCardNode(node, actions, getCache, createNodeId)
+      createSocialCardId(node, socialCardNode, actions)
+    }
   }
 }
 
@@ -396,6 +403,9 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type NotificationBarYaml implements Node {
       barBody: String @md
+    }
+    type MarkdownRemark implements Node {
+      socialCard: File @link(from: "fields.socialCardId")
     }
 `)
 }

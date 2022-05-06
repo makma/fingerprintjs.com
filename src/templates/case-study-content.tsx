@@ -13,6 +13,7 @@ import BreadcrumbsSEO from '../components/Breadcrumbs/BreadcrumbsSEO'
 import { withTrailingSlash } from '../helpers/url'
 import { Breadcrumb } from '../components/Breadcrumbs/Breadcrumbs'
 import PreviewProviders from '../cms/PreviewProviders'
+import { BASE_URL } from '../constants/content'
 
 import styles from './case-study-content.module.scss'
 
@@ -35,7 +36,7 @@ export default function CaseStudyContent({ data, pageContext }: CaseStudyContent
     return null
   }
 
-  const metadata = mapToMetadata(data.markdownRemark.frontmatter.metadata)
+  const metadata = mapToMetadata(data.markdownRemark.frontmatter.metadata, data.markdownRemark.socialCard?.publicURL)
   const header = mapToHeader(data.markdownRemark.frontmatter.header)
   const summary = mapToSummary(data.markdownRemark.frontmatter.summary)
   const body = data.markdownRemark.html
@@ -99,6 +100,9 @@ export const pageQuery = graphql`
           ctaTitle
           ctaSubtitle
         }
+      }
+      socialCard {
+        publicURL
       }
     }
   }
@@ -165,11 +169,12 @@ export function CaseStudyContentPreview({ entry, widgetFor }: PreviewTemplateCom
 type QueryMetadata = NonNullable<
   NonNullable<GatsbyTypes.CaseStudyContentQuery['markdownRemark']>['frontmatter']
 >['metadata']
-function mapToMetadata(queryMetadata: QueryMetadata): GatsbyTypes.SiteSiteMetadata {
+function mapToMetadata(queryMetadata: QueryMetadata, imageUrl?: string): GatsbyTypes.SiteSiteMetadata {
   return {
     title: queryMetadata?.title ?? '',
     description: queryMetadata?.description ?? '',
     siteUrl: withTrailingSlash(queryMetadata?.url ?? ''),
+    image: `${BASE_URL}${imageUrl}` ?? '',
   } as GatsbyTypes.SiteSiteMetadata
 }
 
