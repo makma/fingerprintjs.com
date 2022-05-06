@@ -26,7 +26,7 @@ heroImage:
 ---
 **Fraud looms on the minds of development teams for any website, but fraud prevention doesn’t have to be all-consuming, or even expensive.** With a highly accurate identifier it becomes much easier for developers to triage suspicious traffic and restrict access to users attempting to hack into accounts, make fraudulent purchases or simply spam your website. The key to identifying those most likely to commit fraud is either by past activity, or by associating specific patterns of use with a higher likelihood of fraudulence.
 
-Browser fingerprinting technologies are a cornerstone technology for developer-led fraud prevention that cuts through spoofing attempts to accurately identify users, and it can do this without requiring additional permissions from the user. Our open source [browser fingerprinting library](https://github.com/fingerprintjs/fingerprintjs) has over 12K stars on Github and is used by 8,000+ websites. Fingerprinting techniques on their own have been found to be over [90% accurate](https://arstechnica.com/information-technology/2017/02/now-sites-can-fingerprint-you-online-even-when-you-use-multiple-browsers/) in correctly identifying a unique user in the browser, and when used in conjunction with usage history, fuzzy matching, and probability engines, this accuracy can be further improved.
+Browser fingerprinting technologies are a cornerstone technology for developer-led fraud prevention that cuts through spoofing attempts to accurately identify users, and it can do this without requiring additional permissions from the user. Our open source [browser fingerprinting library](https://github.com/fingerprintjs/fingerprintjs) has over 16K stars on Github and is used by 8,000+ websites, including 12% of the top 500 by traffic. Fingerprinting techniques on their own have been found to be over [90% accurate](https://arstechnica.com/information-technology/2017/02/now-sites-can-fingerprint-you-online-even-when-you-use-multiple-browsers/) in correctly identifying a unique user in the browser, and when used in conjunction with usage history, fuzzy matching, and probability engines, this accuracy can be further improved.
 
 ## How Fingerprinting Works
 
@@ -127,7 +127,12 @@ It is also important to note that users intending to commit fraud are much more 
 
 ## Browser vs. Device Fingerprinting
 
-Our FingerprintJS open source library as well as our Pro API are intended for browser fingerprinting - they can accurately identify visitors to a website using all modern mobile and desktop browsers. However, if you want to identify users of a native mobile app, you will need to use a device fingerprinting function that is made specifically for each mobile operating system. The signals available for mobile app developers are different from signals that can be retrieved in the browser, and vary between iOS, Android, and other mobile operating systems.
+Our FingerprintJS open source library is intended for browser fingerprinting - it identifies visitors to a website using all modern mobile and desktop browsers. However, if you want to identify users of a native mobile app, Pro can do that for you as well. FingerprintJS Pro's native Android and iOS integrations allows developers to integrate device identification into native Android apps. Visit the official GitHub repository for examples and package downloads.
+
+
+
+
+you will need to use a device fingerprinting function that is made specifically for each mobile operating system. The signals available for mobile app developers are different from signals that can be retrieved in the browser, and vary between iOS, Android, and other mobile operating systems.
 
 Our team recently launched Fingerprint Android, our first open source library for identifying unique Android devices. You can read more about how our Fingerprint Android library works in our article about its launch.
 Get Involved
