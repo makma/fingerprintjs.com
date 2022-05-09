@@ -123,6 +123,6 @@ FingerprintJS for iOS doesn’t use any private or restricted APIs and is meant 
 ### There’s several ways to get involved with us:
 
 * Test out our demo application
-* [Visit the README](https://dev.fingerprintjs.com/docs) and integrate the library in your projects
+* [Visit the README](https://github.com/fingerprintjs/fingerprintjs/blob/master/readme.md) and integrate the library in your projects
 * [Tell your friends about us and recommend us on GitHub](https://github.com/fingerprintjs/fingerprintjs)
 * [PS: We’re hiring for several developer roles!](https://fingerprintjs.com/careers/)
