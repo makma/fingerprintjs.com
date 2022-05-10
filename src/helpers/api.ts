@@ -13,13 +13,14 @@ export async function createNewLead(
   email: string,
   url: string,
   phone: string,
+  jobTitle: string,
   description: string,
   landingPage: string,
   previousPage: string,
   utmParams: Record<string, string>,
   sessionId: string
 ) {
-  return fetch(`${FPJS_MGMT_API_HOST}/salesforce/leads`, {
+  return fetch(`${FPJS_MGMT_API_HOST}/hubspot/leads`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -28,6 +29,7 @@ export async function createNewLead(
       url,
       description,
       phone,
+      jobTitle,
       utm_info: utmParams,
       landingPage,
       previousPage,

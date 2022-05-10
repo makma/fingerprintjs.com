@@ -25,6 +25,7 @@ export default function ContactSalesForm() {
   const [url, setUrl] = useState('')
   const [description, setDescription] = useState('')
   const [phone, setPhone] = useState('')
+  const [jobTitle, setJobTitle] = useState('')
 
   const { formState, errorMessage, updateFormState, updateErrorMessage } = useForm(Forms.ContactSales)
   const { landingPage, previousPage, utmParams } = useViewTracking()
@@ -43,6 +44,7 @@ export default function ContactSalesForm() {
         email,
         url,
         phone,
+        jobTitle,
         description,
         landingPage,
         previousPage,
@@ -57,6 +59,9 @@ export default function ContactSalesForm() {
       } else {
         updateFormState(FormState.Success)
         trackLeadSubmit()
+        setTimeout(() => {
+          window.location.replace(URL.aliyaCalendar)
+        }, 500)
       }
     } catch (error) {
       onError()
@@ -70,6 +75,10 @@ export default function ContactSalesForm() {
           updateErrorMessage(`Validation error for ${error?.data[0]?.instancePath.substring(1)}`)
         } else if (error?.param === 'Turing') {
           updateErrorMessage('The answer to the challenge question was incorrect.')
+          trackLeadSubmit(false)
+          return
+        } else if (error?.param === 'Email / Phone') {
+          updateErrorMessage('The format of your email or phone is incorrect.')
           trackLeadSubmit(false)
           return
         } else {
@@ -137,6 +146,20 @@ export default function ContactSalesForm() {
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={formState === FormState.Loading}
                   required
+                />
+                <label className={styles.label} htmlFor='jobTitle'>
+                  Job title
+                </label>
+                <input
+                  className={styles.input}
+                  id='jobTitle'
+                  maxLength={40}
+                  name='jobTitle'
+                  size={20}
+                  type='text'
+                  placeholder='Developer'
+                  onChange={(e) => setJobTitle(e.target.value)}
+                  disabled={formState === FormState.Loading}
                 />
                 <label className={styles.label} htmlFor='url'>
                   Company Website
