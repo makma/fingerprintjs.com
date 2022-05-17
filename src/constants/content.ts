@@ -14,7 +14,7 @@ export const PATH = {
   paywall: '/paywall/',
   caseStudies: '/case-studies/',
   contactSales: '/contact-sales/',
-  whyFpjs: '/products/browser-fingerprinting/',
+  whyFpjs: '/products/device-identification/',
   accountSharing: '/products/account-sharing-prevention/',
   botD: '/products/bot-detection/',
   bnpl: '/buy-now-pay-later/',
@@ -70,7 +70,7 @@ export const useCaseLinks = [
 ]
 
 export const products = [
-  { title: 'Browser Fingerprinting', url: PATH.whyFpjs, isLocal: true },
+  { title: 'Device Identification', url: PATH.whyFpjs, isLocal: true },
   { title: 'Account Sharing Prevention', url: PATH.accountSharing, isLocal: true },
   { title: 'Bot Detection', url: PATH.botD, isLocal: true },
 ]
