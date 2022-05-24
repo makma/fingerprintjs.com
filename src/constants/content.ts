@@ -37,7 +37,7 @@ export const URL = {
   supportMail: 'support@fingerprintjs.com',
   salesMail: 'sales@fingerprintjs.com',
   discordServerURL: 'https://discord.gg/ad6R2ttHVX',
-  aliyaCalendar: 'https://calendly.com/fpjs-aliya/contact-sales-fingerprintjs',
+  contactSalesCalendar: 'https://try.fingerprintjs.com/meetings/chris-mcdonnell',
 } as const
 
 export const MAILTO = { mailToUrl: `mailto:${URL.supportMail}` } as const
