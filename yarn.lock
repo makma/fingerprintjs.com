@@ -2,6 +2,36 @@
 # yarn lockfile v1
 
 
+"@amplitude/analytics-connector@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@amplitude/analytics-connector/-/analytics-connector-1.4.2.tgz#5a87f35d014fa50cb283202d8fde78fa266712c2"
+  integrity sha512-bA9hLDobWA5HBHsdv1hI2+VmQOQ8AA4e3/YB9ng80J8NOLNN2zX/952YSf36Ns86QUm9pPCKHnYrlzMFU61X2g==
+  dependencies:
+    "@amplitude/ua-parser-js" "0.7.26"
+
+"@amplitude/types@^1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@amplitude/types/-/types-1.10.0.tgz#dfaf7cc25f533a1e2b0ef0ad675371b396733c0f"
+  integrity sha512-xN0gnhutztv6kqHaZ2bre18anQV5GDmMXOeipTvI670g2VjNbPfOzMwu1LN4p1NadYq+GqYI223UcZrXR+R4Pw==
+
+"@amplitude/ua-parser-js@0.7.26":
+  version "0.7.26"
+  resolved "https://registry.yarnpkg.com/@amplitude/ua-parser-js/-/ua-parser-js-0.7.26.tgz#18d889d84d2ba90c248ab6fcd7e3dd07f1c9c86e"
+  integrity sha512-62/Rid6YQ7F2KT/5vTre41Y26ivrEoFC8lbrsJZqBKaiXMJWG0YpNv9RgxNSaZS2jPLVQgoB/FFeWxihOLfIcg==
+
+"@amplitude/ua-parser-js@0.7.31":
+  version "0.7.31"
+  resolved "https://registry.yarnpkg.com/@amplitude/ua-parser-js/-/ua-parser-js-0.7.31.tgz#749bf7cb633cfcc7ff3c10805bad7c5f6fbdbc61"
+  integrity sha512-+z8UGRaj13Pt5NDzOnkTBy49HE2CX64jeL0ArB86HAtilpnfkPB7oqkigN7Lf2LxscMg4QhFD7mmCfedh3rqTg==
+
+"@amplitude/utils@^1.0.5":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@amplitude/utils/-/utils-1.10.0.tgz#138b0ba4e5755540a9e4abf426b7a25d045418a9"
+  integrity sha512-/R8j8IzFH0GYfA6ehQDm5IEzt71gIeMdiYYFIzZp6grERQlgJcwNJMAiza0o2JwwTDIruzqdB3c/vLVjuakp+w==
+  dependencies:
+    "@amplitude/types" "^1.10.0"
+    tslib "^1.9.3"
+
 "@ampproject/remapping@^2.1.0":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@ampproject/remapping/-/remapping-2.1.2.tgz#4edca94973ded9630d20101cd8559cedb8d8bd34"
@@ -2851,6 +2881,13 @@
   version "7.16.7"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.16.7.tgz#03ff99f64106588c9c403c6ecb8c3bafbbdff1fa"
   integrity sha512-9E9FJowqAsytyOY6LG+1KuueckRL+aQW+mKvXRXnuFGyRAyepJPmEo9vgMfXUA6O9u3IeEdv9MAkppFcaQwogQ==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
+"@babel/runtime@^7.3.4":
+  version "7.18.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.18.3.tgz#c7b654b57f6f63cf7f8b418ac9ca04408c4579f4"
+  integrity sha512-38Y8f7YUhce/K7RMwTp7m0uCumpv9hZkitCbBClqQIow1qSbCvGkcegKOXpEWCQLfWmevgRiWokZ1GkpfhbZug==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -6292,6 +6329,11 @@
   resolved "https://registry.yarnpkg.com/@turist/time/-/time-0.0.2.tgz#32fe0ce708ea0f4512776bd313409f1459976dda"
   integrity sha512-qLOvfmlG2vCVw5fo/oz8WAZYlpe5a5OurgTj3diIxJCdjRHpapC+vQCz3er9LV79Vcat+DifBjeAhOAdmndtDQ==
 
+"@types/amplitude-js@^8.16.1":
+  version "8.16.1"
+  resolved "https://registry.yarnpkg.com/@types/amplitude-js/-/amplitude-js-8.16.1.tgz#400c2ff0c506ec242b2b70a39c146f98c2c09c34"
+  integrity sha512-BYMq1yN8RdA8czpsW6dDz0Se9PSI5vS+ABhkxsERqCmCEzkgcM1KS+C+cxzkMedn6Bm1QRn6MB9LebleIo0FxQ==
+
 "@types/aria-query@^4.2.0":
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/@types/aria-query/-/aria-query-4.2.2.tgz#ed4e0ad92306a704f9fb132a0cfcf77486dbe2bc"
@@ -7539,6 +7581,18 @@ alphanum-sort@^1.0.2:
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
+amplitude-js@^8.18.3:
+  version "8.18.3"
+  resolved "https://registry.yarnpkg.com/amplitude-js/-/amplitude-js-8.18.3.tgz#cec2424f139ea5cfc4e8bbefb8e2101f027bba05"
+  integrity sha512-Qs4bspIufDZ9UcG1FLgOPoOP8qJUN/W5IoueOcmi+6u5fX+wigDNfLlbaga2sZ5/Tk6qUUWT+ZuNouLA3+2izQ==
+  dependencies:
+    "@amplitude/analytics-connector" "1.4.2"
+    "@amplitude/ua-parser-js" "0.7.31"
+    "@amplitude/utils" "^1.0.5"
+    "@babel/runtime" "^7.3.4"
+    blueimp-md5 "^2.10.0"
+    query-string "5"
+
 anser@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/anser/-/anser-2.1.0.tgz#a7309c9f29886f19af56cb30c79fc60ea483944e"
@@ -8557,6 +8611,11 @@ bluebird@^3.3.5, bluebird@^3.5.5, bluebird@^3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
+
+blueimp-md5@^2.10.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/blueimp-md5/-/blueimp-md5-2.19.0.tgz#b53feea5498dcb53dc6ec4b823adb84b729c4af0"
+  integrity sha512-DRQrD6gJyy8FbiE4s+bDoXS9hiW3Vbx5uCdwvcCf3zLHL+Iv7LtGHLpr+GZV8rHG8tK766FGYBwRbu8pELTt+w==
 
 bmp-js@^0.1.0:
   version "0.1.0"
@@ -19987,7 +20046,7 @@ qs@^6.10.0, qs@^6.5.2, qs@^6.9.4:
   dependencies:
     side-channel "^1.0.4"
 
-query-string@^5.0.1:
+query-string@5, query-string@^5.0.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/query-string/-/query-string-5.1.1.tgz#a78c012b71c17e05f2e3fa2319dd330682efb3cb"
   integrity sha512-gjWOsm2SoGlgLEdAGt7a6slVOk9mGiXmPFMqrEhLQ68rhQuBnpfs3+EmlvqKyxnCo9/PPlF+9MtY02S1aFg+Jw==
