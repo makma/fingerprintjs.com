@@ -216,6 +216,9 @@ const enterpriseFeatures: Feature[] = [
     description: 'SAML SSO',
   },
   {
+    description: 'Zero trust mode',
+  },
+  {
     description: '99.9% SLA standard',
   },
   {
