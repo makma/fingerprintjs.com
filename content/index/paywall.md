@@ -2,11 +2,11 @@
 title: paywall
 templateKey: static-page-content
 metadata:
-  title: Paywall Security Software | For Developers | FingerprintJS
-  description: Secure Your Paywall Solution With FingerprintJS User
+  title: Paywall Security Software | For Developers | Fingerprint
+  description: Secure Your Paywall Solution With Fingerprint User
     Identification. Enable Anonymous User Identification, Geolocation, Incognito
     Mode Detection & More.
-  url: https://fingerprintjs.com/paywall
+  url: https://fingerprint.com/paywall
   image: /img/uploads/fpjs_cover3.png
 relatedTitle: Related Articles
 tags:
@@ -14,7 +14,7 @@ tags:
 invertContent: false
 hero:
   title: "Make your paywall software leakproof "
-  description: FingerprintJS helps media companies, subscription services and
+  description: Fingerprint helps media companies, subscription services and
     content creators monetize more effectively with accurate visitor
     identification. Catch visitors attempting to circumvent paywall rules with
     visitorIDs that remain stable through incognito browsing, clearing cookies,
@@ -24,7 +24,7 @@ hero:
   ctaHref: https://paywall-example.fingerprintjs.com/
   openCtaNewTab: true
 cardSection:
-  title: FingerprintJS Pro's Paywall Services
+  title: Fingerprint Pro's Paywall Services
   subtitle: Internet savvy users know how to circumvent your paywall and get
     unlimited views of your content. Make sure that all your website visitors
     pay their share to view your content without having to replace your existing
@@ -51,7 +51,7 @@ cardSection:
       iconAlt: Geolocation
     - title: GDPR and CCPA compliant
       icon: /img/uploads/check.png
-      content: FingerprintJS Pro is GDPR and CCPA compliant for use in fraud
+      content: Fingerprint Pro is GDPR and CCPA compliant for use in fraud
         detection. For this use case, no visitor consent is required.
       iconAlt: Checkmark
       iconTitle: Checkmark
@@ -71,21 +71,21 @@ blocks:
     imageTitle: Paywall screenshot
     ctaText: Try our live paywall demo
     ctaUrl: https://paywall-example.fingerprintjs.com/
-  - content: FingerprintJS Pro can be incorporated into off-the-shelf or
+  - content: Fingerprint Pro can be incorporated into off-the-shelf or
       custom built paywalls. Whether you use a hard, metered or freemium
       paywall, incorporate our highly accurate visitorIDs into your workflows
       using our flexible API and webhooks. Design your perfect paywall and leave
       the world-class user identification to us.
-    subheader: Easily integrate FingerprintJS with your paywall
-    imageAlt: FingerprintJS Pro dashboard
+    subheader: Easily integrate Fingerprint with your paywall
+    imageAlt: Fingerprint Pro dashboard
     isImageAfterText: false
     isCtaButton: false
     image: /img/uploads/dash-usage-chart.png
-    imageTitle: FingerprintJS Pro dashboard
+    imageTitle: Fingerprint Pro dashboard
     ctaText: Read our documentation
     ctaUrl: https://dev.fingerprintjs.com/docs
 inlineCta:
-  title: Try FingerprintJS free for 10 days
+  title: Try Fingerprint free for 10 days
   buttonText: Sign Up Now
   buttonHref: https://dashboard.fingerprintjs.com/signup
   subtitle: Install our Javascript snippet on your website and begin

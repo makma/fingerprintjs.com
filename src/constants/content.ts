@@ -35,7 +35,7 @@ export const URL = {
   twitterUrl: 'https://twitter.com/FingerprintJs/',
   signupUrl: 'https://dashboard.fingerprintjs.com/signup',
   statusUrl: 'https://status.fingerprintjs.com',
-  supportMail: 'support@fingerprintjs.com',
+  supportMail: 'support@fingerprint.com',
   salesMail: 'sales@fingerprintjs.com',
   worKMail: 'work@fingerprintjs.com',
   discordServerURL: 'https://discord.gg/ad6R2ttHVX',
