@@ -68,12 +68,17 @@
 }
 
 .small {
-  height: 32px;
+  height: rem(32px);
   padding: 0 1.5rem;
 }
 
+.medium {
+  height: rem(46px);
+  padding: 0 rem(16px);
+}
+
 .big {
-  height: 58px;
+  height: rem(58px);
   padding: 0 rem(24px);
 
   font-weight: 500;
@@ -123,7 +128,6 @@
   color: $color;
   @include transition((opacity));
 
-  &:focus,
   &:hover {
     background-color: $backgroundColor;
     opacity: 0.7;

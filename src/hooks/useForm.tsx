@@ -27,6 +27,8 @@ export enum Forms {
   Signup,
   ContactSales,
   BotdGenerateToken,
+  NewsletterBanner,
+  NewsletterFooter,
 }
 
 interface GetStartedFormData {

@@ -7,6 +7,7 @@ import Post, { mapToPost, PostProps } from '../components/Post/Post'
 import Posts from '../components/Posts/Posts'
 import PaginationNav from '../components/PaginationNav/PaginationNav'
 import useSiteMetadata from '../hooks/useSiteMetadata'
+import NewsletterBanner from '../components/NewsletterBanner/NewsletterBanner'
 import { useLocation } from '@reach/router'
 import { GeneratedPageContext } from '../helpers/types'
 
@@ -50,6 +51,7 @@ export default function Blog({ data, pageContext }: BlogProps) {
           />
 
           <PaginationNav currentPage={currentPage} numPages={numPages} basePath='/blog/' className={styles.buttons} />
+          <NewsletterBanner />
         </Container>
       </Section>
     </LayoutTemplate>

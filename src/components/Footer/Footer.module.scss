@@ -14,7 +14,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-    row-gap: rem(40px);
+    row-gap: rem(96px);
 
     @include media('<=desktop') {
       display: flex;
@@ -133,6 +133,26 @@
             fill: v('white');
             @include transition((opacity));
           }
+        }
+      }
+
+      .newsLetter {
+        max-width: rem(400px);
+        text-align: left;
+        padding-top: rem(64px);
+
+        .title {
+          @include sans($size: 16px, $weight: 600, $lh: 150%);
+          padding-bottom: rem(8px);
+        }
+
+        .description {
+          @include sans($size: 14px, $weight: 400, $lh: 140%);
+          padding-bottom: rem(40px);
+        }
+
+        @media screen and (max-width: 1240px) {
+          max-width: rem(320px);
         }
       }
     }

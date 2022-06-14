@@ -41,6 +41,17 @@ export async function createNewLead(
   })
 }
 
+export async function subscribeToNewsletter(email: string, utmParams: Record<string, string>) {
+  return fetch(`${FPJS_MGMT_API_HOST}/hubspot/newsletter`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email,
+      utm_info: utmParams,
+    }),
+  })
+}
+
 export async function generateBotDToken(customerEmail: string, tag: string, sessionId: string) {
   return fetch(BOTD_TOKEN_ENDPOINT, {
     method: 'POST',

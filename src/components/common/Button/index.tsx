@@ -6,7 +6,7 @@ import { isLocalLink } from '../../../helpers/url'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'outline' | 'clear' | 'faded' | 'white'
-  size?: 'small' | 'big'
+  size?: 'small' | 'medium' | 'big'
   href?: string
   mobileIcon?: React.ReactNode
   children?: React.ReactNode
@@ -38,6 +38,7 @@ export default memo(function Button({
     { [styles.faded]: variant === 'faded' },
     { [styles.white]: variant === 'white' },
     { [styles.small]: size === 'small' },
+    { [styles.medium]: size === 'medium' },
     { [styles.big]: size === 'big' },
     { [styles.disabled]: disabled },
     className

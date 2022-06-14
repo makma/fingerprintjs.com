@@ -1,0 +1,66 @@
+.container {
+  border-radius: rem(16px);
+  box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
+
+  margin-top: rem(88px);
+  padding: rem(39px) rem(137px) rem(64px) rem(96px);
+
+  @include media('<=desktop') {
+    padding: rem(24px) rem(16px);
+  }
+
+  @include media('<=tabletWide') {
+    margin-top: rem(104px);
+  }
+  .banner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media('<=tabletWide') {
+      flex-direction: column-reverse;
+      row-gap: rem(16px);
+    }
+    .subscribeSection {
+      max-width: rem(512px);
+      text-align: left;
+      .title {
+        @include sans($size: 44px, $weight: 700, $lh: 120%);
+        letter-spacing: -0.02em;
+        padding-bottom: rem(8px);
+
+        @include media('<=phoneLandscape') {
+          font-size: rem(24px);
+        }
+      }
+
+      .description {
+        @include sans($size: 16px, $weight: 500, $lh: 150%);
+      }
+
+      @include media('<=tabletWide') {
+        text-align: center;
+      }
+    }
+
+    .iconSection {
+      .letterIcon {
+        width: rem(250px);
+        height: rem(226px);
+
+        @include media('<=tabletWide') {
+          display: none;
+        }
+      }
+      .letterIconMobile {
+        width: rem(121px);
+        height: rem(117px);
+
+        @include media('>tabletWide') {
+          display: none;
+        }
+      }
+    }
+  }
+}

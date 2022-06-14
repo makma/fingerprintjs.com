@@ -1,0 +1,123 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .message,
+  .failedMessage {
+    @include sans($size: 14px, $weight: 400, $lh: 150%);
+    padding-top: rem(8px);
+  }
+  .failedMessage {
+    color: #f44336;
+  }
+  .loadingButton {
+    cursor: wait;
+  }
+}
+.primary {
+  .form {
+    display: flex;
+    column-gap: rem(8px);
+
+    padding: rem(40px) rem(25px) 0 0;
+    @include media('<=desktop') {
+      padding-right: 0;
+    }
+
+    @include media('<=phoneLandscape') {
+      flex-direction: column;
+      row-gap: rem(8px);
+    }
+
+    .input {
+      resize: none;
+      align-self: stretch;
+      border: 0;
+      box-shadow: 0 0 0 1px #c4cdd5;
+
+      -webkit-appearance: none;
+      background-color: c('white');
+      @include sans($size: 16px, $lh: 150%);
+
+      line-height: rem(21px);
+
+      width: 100%;
+      height: rem(57px);
+      padding: rem(16px);
+
+      flex: 1;
+      border-radius: rem(6px);
+
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 2px #393e9e;
+        outline: none;
+      }
+
+      &::placeholder {
+        color: adjust-color(c('brand-water'), $alpha: -0.5);
+        max-width: rem(287px);
+      }
+    }
+
+    .input select:focus {
+      @include media('<=phoneLandscape') {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.white {
+  .form {
+    display: flex;
+    column-gap: rem(8px);
+
+    padding-top: rem(24px);
+
+    .input {
+      resize: none;
+      align-self: stretch;
+      border-radius: rem(6px);
+      border: 1px solid #ffffff;
+      color: c('white');
+
+      background: transparent;
+
+      -webkit-appearance: none;
+      @include sans($size: 14px, $lh: 150%);
+
+      line-height: rem(21px);
+
+      width: 100%;
+      height: rem(46px);
+      padding: rem(16px);
+
+      flex: 1;
+
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 2px #393e9e;
+        outline: none;
+      }
+
+      &::placeholder {
+        color: #ffffff;
+        opacity: 0.67;
+        max-width: rem(287px);
+      }
+    }
+
+    .input select:focus {
+      @include media('<=phoneLandscape') {
+        font-size: 14px;
+      }
+    }
+    .button {
+      box-shadow: none;
+    }
+  }
+  .message {
+    color: c('white');
+  }
+}

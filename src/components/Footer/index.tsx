@@ -9,6 +9,9 @@ import { ReactComponent as GDPR_SVG } from '../../img/GdprSVG.svg'
 
 import { ReactComponent as FpjsSVG } from '../../../static/img/company-logos/fpjs-white.svg'
 
+import SubscribeNewsletterForm from '../SubscribeNewsletterForm/SubscribeNewsletterForm'
+import { Forms } from '../../hooks/useForm'
+
 import Container from '../common/Container'
 import styles from './Footer.module.scss'
 import { products, useCaseLinks } from '../../constants/content'
@@ -139,6 +142,11 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
+            </div>
+            <div className={styles.newsLetter}>
+              <h1 className={styles.title}>Subscribe to newsletter</h1>
+              <p className={styles.description}>Get updates about company news and new features of Fingerprint Pro.</p>
+              <SubscribeNewsletterForm variant='white' origin={Forms.NewsletterFooter} />
             </div>
           </section>
           <section className={styles.wrapper}>

@@ -1,0 +1,51 @@
+.section {
+  border-radius: rem(16px);
+  box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
+
+  margin-top: rem(64px);
+  margin-bottom: rem(64px);
+
+  padding: rem(39px) rem(137px) rem(64px) rem(96px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include media('<=desktop') {
+    padding: rem(24px) rem(16px);
+  }
+
+  @include media('<=tabletWide') {
+    margin-top: rem(54px);
+  }
+
+  .banner {
+    max-width: rem(512px);
+    text-align: center;
+    .title {
+      @include sans($size: 44px, $weight: 700, $lh: 120%);
+      letter-spacing: -0.02em;
+      padding-bottom: rem(8px);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(24px);
+      }
+    }
+
+    .description {
+      @include sans($size: 16px, $weight: 500, $lh: 150%);
+    }
+
+    .iconSection {
+      .letterIcon {
+        width: rem(130px);
+
+        padding-bottom: rem(24px);
+
+        @include media('<=phoneLandscape') {
+          padding-bottom: rem(16px);
+        }
+      }
+    }
+  }
+}
