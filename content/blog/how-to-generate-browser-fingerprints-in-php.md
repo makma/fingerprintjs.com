@@ -188,7 +188,7 @@ In the next section, I’ll show you how to prevent re-registration using browse
 
 ### Using Fingerprint
 
-[Fingerprint]() is a fingerprinting service that uses a combination of fingerprinting, cookies, server-side techniques, and machine learning to generate a browser fingerprint that is up to [99.5% accurate](https://dev.fingerprintjs.com/docs/understanding-our-995-accuracy). 
+[Fingerprint]() is a fingerprinting service that uses a combination of fingerprinting, cookies, server-side techniques, and machine learning to generate a browser fingerprint that is up to [99.5% accurate](https://dev.fingerprint.com/docs/understanding-our-995-accuracy). 
 
 To get started with Fingerprint, you will need a [Fingerprint Pro account](https://dashboard.fingerprintjs.com/signup). If you do not have an account, you can start a free account with no credit card required.
 

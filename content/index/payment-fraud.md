@@ -71,7 +71,7 @@ blocks:
     image: /img/uploads/dash-usage-chart.png
     imageTitle: Fingerprint Pro dashboard
     ctaText: Read our documentation
-    ctaUrl: https://dev.fingerprintjs.com/docs/introduction
+    ctaUrl: https://dev.fingerprint.com/docs/introduction
   - subheader: Developer-friendly integrations
     imageAlt: Fingerprint Pro Javascript snippet
     isImageAfterText: false

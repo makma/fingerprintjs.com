@@ -40,6 +40,7 @@ export const URL = {
   worKMail: 'work@fingerprintjs.com',
   discordServerURL: 'https://discord.gg/ad6R2ttHVX',
   contactSalesCalendar: 'https://try.fingerprintjs.com/meetings/chris-mcdonnell',
+  docsUrl: 'https://dev.fingerprint.com',
 } as const
 
 export const MAILTO = { mailToUrl: `mailto:${URL.supportMail}` } as const
@@ -48,19 +49,19 @@ export const MAILTO_SALES = { mailToUrl: `mailto:${URL.salesMail}` } as const
 
 // links to readme should not have trailing slash to prevent forwarding
 export const DOC_URL = {
-  documentationUrl: 'https://dev.fingerprintjs.com/docs',
-  getStartedUrl: 'https://dev.fingerprintjs.com/docs/quick-start-guide',
-  proVsOpenUrl: 'https://dev.fingerprintjs.com/docs/pro-vs-open-source',
-  browserFingerprintUrl: 'https://dev.fingerprintjs.com/docs/browser-fingerprinting',
-  incognitoUrl: 'https://dev.fingerprintjs.com/docs/incognito-private-mode-detection',
-  serverApiUrl: 'https://dev.fingerprintjs.com/docs/server-api',
-  legalUrl: 'https://dev.fingerprintjs.com/docs/dpa-gdpr',
-  termOfUseUrl: 'https://dev.fingerprintjs.com/docs/terms-of-service',
-  privacyPolicyUrl: 'https://dev.fingerprintjs.com/docs/privacy-policy',
-  browserSupportUrl: 'https://dev.fingerprintjs.com/docs/browser-support',
-  webhooksUrl: 'https://dev.fingerprintjs.com/docs/webhooks',
+  documentationUrl: `${URL.docsUrl}/docs`,
+  getStartedUrl: `${URL.docsUrl}/docs/quick-start-guide`,
+  proVsOpenUrl: `${URL.docsUrl}/docs/pro-vs-open-source`,
+  browserFingerprintUrl: `${URL.docsUrl}/docs/browser-fingerprinting`,
+  incognitoUrl: `${URL.docsUrl}/docs/incognito-private-mode-detection`,
+  serverApiUrl: `${URL.docsUrl}/docs/server-api`,
+  legalUrl: `${URL.docsUrl}/docs/dpa-gdpr`,
+  termOfUseUrl: `${URL.docsUrl}/docs/terms-of-service`,
+  privacyPolicyUrl: `${URL.docsUrl}/docs/privacy-policy`,
+  browserSupportUrl: `${URL.docsUrl}/docs/browser-support`,
+  webhooksUrl: `${URL.docsUrl}/docs/webhooks`,
   botDUrl: 'https://github.com/fingerprintjs/BotD#botd-currently-in-beta',
-  zeroTrustUrl: 'https://dev.fingerprintjs.com/docs/zero-trust-mode',
+  zeroTrustUrl: `${URL.docsUrl}/docs/zero-trust-mode`,
 } as const
 
 export const useCaseLinks = [

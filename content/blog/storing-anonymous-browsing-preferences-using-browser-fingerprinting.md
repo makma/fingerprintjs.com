@@ -290,7 +290,7 @@ fpPromise
 
 If you don’t know the value of your public API key, go to your [Fingerprint Dashboard](https://dashboard.fingerprintjs.com/), choose *API Keys* from the sidebar, then copy the value for type *Public*.
 
-Note: Requests to the Fingerprint API may be blocked from a local origin such as `localhost`. Learn more about [Request Filtering](https://dev.fingerprintjs.com/docs/request-filtering) to allow requests from development environments.
+Note: Requests to the Fingerprint API may be blocked from a local origin such as `localhost`. Learn more about [Request Filtering](https://dev.fingerprint.com/docs/request-filtering) to allow requests from development environments.
 
 Next, you'll send the request to the endpoint created earlier. To do that, install `axios` as a dependency:
 

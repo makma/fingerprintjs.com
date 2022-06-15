@@ -62,7 +62,7 @@ blocks:
     image: /img/uploads/account-spider.png
     imageTitle: Sources of account takeover
     ctaText: Read our documentation
-    ctaUrl: https://dev.fingerprintjs.com/docs/introduction
+    ctaUrl: https://dev.fingerprint.com/docs/introduction
   - subheader: Strong Account Protection means fewer chargebacks
     imageAlt: Fingerprint dashboard
     isImageAfterText: false

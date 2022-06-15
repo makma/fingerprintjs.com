@@ -83,7 +83,7 @@ blocks:
     image: /img/uploads/dash-usage-chart.png
     imageTitle: Fingerprint Pro dashboard
     ctaText: Read our documentation
-    ctaUrl: https://dev.fingerprintjs.com/docs
+    ctaUrl: https://dev.fingerprint.com/docs
 inlineCta:
   title: Try Fingerprint free for 10 days
   buttonText: Sign Up Now

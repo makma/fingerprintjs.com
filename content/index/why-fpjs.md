@@ -34,7 +34,7 @@ cardSection:
         identify up to 99.5% of unique visitors.
 
 
-        [How we calculate 99.5% accuracy >](https://dev.fingerprintjs.com/docs/understanding-our-995-accuracy)
+        [How we calculate 99.5% accuracy >](https://dev.fingerprint.com/docs/understanding-our-995-accuracy)
       iconAlt: 99.5% fingerprint accuracy
       iconTitle: 99.5% fingerprint accuracy
     - title: Committed to open source

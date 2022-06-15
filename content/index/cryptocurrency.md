@@ -50,7 +50,7 @@ blocks:
     image: /img/uploads/dash-usage-chart.png
     imageTitle: Fingerprint Pro dashboard
     ctaText: Read our documentation
-    ctaUrl: https://dev.fingerprintjs.com/docs/introduction
+    ctaUrl: https://dev.fingerprint.com/docs/introduction
   - subheader: Reduce chargebacks with payment authentication
     imageAlt: Fingerprint Pro subscription screen
     isImageAfterText: false

@@ -315,7 +315,7 @@ When traditional security measures fail to prevent unauthorized accounts from be
 
 > *A browser fingerprint* is a set of information related to a user’s device. This includes a device’s hardware, operating system, browser, and configuration. Browser fingerprinting is the process of collecting information through a web browser to build a fingerprint of a device. 
 
-[Fingerprint](https://dev.fingerprintjs.com/docs/introduction) uses browser fingerprinting among other techniques to generate a `visitorID` value. This value is then returned to the application, providing a persistent record of a specific user.
+[Fingerprint](https://dev.fingerprint.com/docs/introduction) uses browser fingerprinting among other techniques to generate a `visitorID` value. This value is then returned to the application, providing a persistent record of a specific user.
 
 To start implementing Fingerprint Pro, create a new [Fingerprint account](https://dashboard.fingerprintjs.com/signup/)—it’s free for 10 days and includes unlimited API calls.
 

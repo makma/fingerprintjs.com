@@ -122,7 +122,7 @@ You can test the open-source library on their [live demo](https://fingerprintjs.
 
 #### Pro version
 
-Fingerprint Pro has an identification accuracy of 99.5% and provides documentation on [how this accuracy score is calculated](https://dev.fingerprintjs.com/docs/understanding-our-995-accuracy).  The Pro version also includes a confidence score, that it claims is [more accurate than for the open-source version](https://dev.fingerprintjs.com/docs/understanding-your-confidence-score#pro-vs-open-source) as it can take into account server-side signals as well as client-side.
+Fingerprint Pro has an identification accuracy of 99.5% and provides documentation on [how this accuracy score is calculated](https://dev.fingerprint.com/docs/understanding-our-995-accuracy).  The Pro version also includes a confidence score, that it claims is [more accurate than for the open-source version](https://dev.fingerprint.com/docs/understanding-your-confidence-score#pro-vs-open-source) as it can take into account server-side signals as well as client-side.
 
 You can test out the Pro version in an [interactive demo](/demo/) on Fingerprint’ website.
 

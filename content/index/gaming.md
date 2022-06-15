@@ -67,7 +67,7 @@ cardSection:
         fingerprinting technology available.
 
 
-        [How we calculate 99.5% accuracy >](https://dev.fingerprintjs.com/docs/understanding-our-995-accuracy)
+        [How we calculate 99.5% accuracy >](https://dev.fingerprint.com/docs/understanding-our-995-accuracy)
       icon: /img/uploads/anonymous_user_identification.png
       iconAlt: Manual fraud screening
       iconTitle: Manual fraud screening
@@ -85,7 +85,7 @@ blocks:
     image: /img/uploads/fpjs-flowchart-smaller.png
     imageTitle: How Fingerprint Protects gaming fraud
     ctaText: Read our documentation
-    ctaUrl: https://dev.fingerprintjs.com/docs/introduction
+    ctaUrl: https://dev.fingerprint.com/docs/introduction
   - subheader: Protect your players' accounts and your bottom-line with anti-fraud
       protection from login to payment.
     imageAlt: Fingerprint Pro usage dashboard
