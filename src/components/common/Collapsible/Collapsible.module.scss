@@ -34,6 +34,17 @@ $side-padding: 2rem;
       font-size: rem(18px);
 
       padding: rem(20px) rem(24px);
+
+      svg {
+        opacity: 0.3;
+        @include transition((opacity));
+        @include transition-duration(0.3s);
+      }
+      &:hover {
+        svg {
+          opacity: 1;
+        }
+      }
     }
 
     .icon {
@@ -75,10 +86,11 @@ $side-padding: 2rem;
       font-size: rem(16px);
       color: adjust-color(c('brand-water'), $alpha: -0.3);
 
-      transition-timing-function: ease-in-out;
-      transition-duration: 0.2s;
-
       padding: 0 rem(24px) 0 rem(24px);
+
+      position: relative;
+      top: rem(-10px);
+      transition: 0.2s all ease, top 0.3s ease 0.3s, opacity 0.75s ease 0.3s;
     }
 
     &.open {
@@ -87,14 +99,13 @@ $side-padding: 2rem;
       max-height: 125rem;
       opacity: 1;
 
-      transition-duration: 0.2s;
+      transition-duration: 0.3s;
       transition-timing-function: ease;
 
       &.contentPlus {
         padding: 0 rem(24px) rem(24px) rem(24px);
-
-        transition-timing-function: ease-in-out;
-        transition-duration: 0.2s;
+        top: 0;
+        transition: 0.2s all ease, top 0.3s ease 0.3s, opacity 0.75s ease 0.3s;
       }
     }
   }
