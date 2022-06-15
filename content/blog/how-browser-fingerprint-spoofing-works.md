@@ -90,7 +90,7 @@ To get started, create an `index.html` file with the following code between the 
 ></script>
 ```
 
-This will print the visitorID to the console, but it won’t work until we give it a proper API key. You can [sign up](https://dashboard.fingerprintjs.com/signup) for a  free account of Fingerprint Pro to get a unique API key for your website.
+This will print the visitorID to the console, but it won’t work until we give it a proper API key. You can [sign up](https://dashboard.fingerprint.com/signup) for a  free account of Fingerprint Pro to get a unique API key for your website.
 
 Click the **API Keys** tab on the left and copy the API key marked **public**. Replace `your-public-api-key` in the `index.html` file with the  copied from Fingerprint. Now you are ready to test. Start up a server and visit your new site. This demo uses [http-server](https://www.npmjs.com/package/http-server) because it installs quickly and is easy-to-use. 
 
@@ -108,4 +108,4 @@ You can also verify that Fingerprint works over a VPN connection. Using a cloud 
 
 It is worth restating that Fingerprint generates an accurate visitor for each browser-device combination and not for each device. Because Fingerprint visitorIDs are derived from many browser attributes—some universal, others vendor-specific—a website visitor using both Chrome and Firefox will most likely be assigned a separate, unique visitorID for each browser type. This means that a user could escape being associated with a previous visit if they used a different browser, though this trick would only work as long as they had new browsers to use.
 
-Browser fingerprinting can be an invaluable resource for developers looking to mitigate fraud, spam, and account takeovers, as it can accurately identify users even when they attempt to conceal themselves. As demonstrated in the example above, [Fingerprint]() provides this capability with maximum accuracy and minimal fuss. Website operators looking to reduce fraud can test drive browser fingerprinting immediately with a [free account](https://dashboard.fingerprintjs.com/signup).
+Browser fingerprinting can be an invaluable resource for developers looking to mitigate fraud, spam, and account takeovers, as it can accurately identify users even when they attempt to conceal themselves. As demonstrated in the example above, [Fingerprint]() provides this capability with maximum accuracy and minimal fuss. Website operators looking to reduce fraud can test drive browser fingerprinting immediately with a [free account](https://dashboard.fingerprint.com/signup).

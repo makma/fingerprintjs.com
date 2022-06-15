@@ -20,7 +20,7 @@ hero:
     identifying users, and empowering technical teams to use that data in a way
     that works for their applications.
   ctaText: Create Account
-  ctaHref: https://dashboard.fingerprintjs.com
+  ctaHref: https://dashboard.fingerprint.com
   openCtaNewTab: false
 cardSection:
   title: Why Fingerprint is different
@@ -91,7 +91,7 @@ blocks:
     image: /img/uploads/dash-usage-chart.png
     imageTitle: Fingerprint Pro dashboard
     ctaText: Create Free Account
-    ctaUrl: https://dashboard.fingerprintjs.com/signup
+    ctaUrl: https://dashboard.fingerprint.com/signup
 inlineCta:
   title: Get Fingerprint free and unlimited
   subtitle: Teams can try Fingerprint free for 10 days. Install our Javascript
@@ -99,5 +99,5 @@ inlineCta:
     data and more. This information can then be fused into your authentication
     workflows easily using our API and webhooks.
   buttonText: Get Started
-  buttonHref: https://dashboard.fingerprintjs.com/signup
+  buttonHref: https://dashboard.fingerprint.com/signup
 ---

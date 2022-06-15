@@ -30,7 +30,7 @@ Our [open source browser fingerprinting library](https://github.com/fingerprintj
 
 **To receive support, we have several channels available for you to get in touch:** 
 
-* Reach out to our team at [oss-support@fingerprintjs.com](mailto:oss-support@fingerprintjs.com) for private support - you can expect responses within 2 business days in most cases. We can help with technical setup, troubleshooting best practices, and proof of concept design - don’t be afraid to ask!
+* Reach out to our team at [oss-support@fingerprint.com](mailto:oss-support@fingerprint.com) for private support - you can expect responses within 2 business days in most cases. We can help with technical setup, troubleshooting best practices, and proof of concept design - don’t be afraid to ask!
 * Submit any bugs or issues you encounter using [GitHub Issues](https://github.com/fingerprintjs/fingerprintjs/issues)
 * Have questions that may benefit the broader Fingerprint community? Start a [discussion](https://github.com/fingerprintjs/fingerprintjs/discussions) on GitHub - our team will also be actively responding to discussions there.
 * [Join our Discord channel](https://discord.gg/ad6R2ttHVX) to meet other Fingerprint users and stay up-to-date on new releases and updates.

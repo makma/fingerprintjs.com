@@ -21,7 +21,7 @@ hero:
     protect the login process without hindering customer experience. Try for
     free - no credit card required.
   ctaText: Sign Up Now
-  ctaHref: https://dashboard.fingerprintjs.com/signup
+  ctaHref: https://dashboard.fingerprint.com/signup
   openCtaNewTab: false
 cardSection:
   title: Fingerprint helps to prevent account takeover identity theft
@@ -74,10 +74,10 @@ blocks:
     image: /img/uploads/dash-usage-chart.png
     imageTitle: Fingerprint dashboard
     ctaText: Create Free Account
-    ctaUrl: https://dashboard.fingerprintjs.com/signup
+    ctaUrl: https://dashboard.fingerprint.com/signup
 inlineCta:
   title: Fingerprint for account takeover protection
   subtitle: Create a free account and get 100% of features.
   buttonText: Get Started
-  buttonHref: https://dashboard.fingerprintjs.com/signup
+  buttonHref: https://dashboard.fingerprint.com/signup
 ---

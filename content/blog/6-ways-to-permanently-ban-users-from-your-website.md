@@ -28,7 +28,7 @@ customCTA:
   title: Ready your ban hammer
   description: Create a free account and start protecting your site.
   ctaText: Start Now
-  ctaUrl: https://dashboard.fingerprintjs.com/signup
+  ctaUrl: https://dashboard.fingerprint.com/signup
   openCtaNewTab: false
   isPublished: true
 ---

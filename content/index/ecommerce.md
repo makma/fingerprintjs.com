@@ -21,7 +21,7 @@ hero:
     your existing website and payment workflows with our flexible,
     developer-friendly API. "
   ctaText: Create Free Account
-  ctaHref: https://dashboard.fingerprintjs.com/signup
+  ctaHref: https://dashboard.fingerprint.com/signup
   openCtaNewTab: false
 cardSection:
   title: "Add Fingerprint to your tech stack to:"
@@ -90,5 +90,5 @@ inlineCta:
     you can protect your income against fraudulent orders that waste resources
     on labor, shipping, products, chargebacks, fines and more.
   buttonText: Get Started
-  buttonHref: https://dashboard.fingerprintjs.com/signup
+  buttonHref: https://dashboard.fingerprint.com/signup
 ---

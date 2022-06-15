@@ -87,7 +87,7 @@ blocks:
 inlineCta:
   title: Try Fingerprint free for 10 days
   buttonText: Sign Up Now
-  buttonHref: https://dashboard.fingerprintjs.com/signup
+  buttonHref: https://dashboard.fingerprint.com/signup
   subtitle: Install our Javascript snippet on your website and begin
     collecting unique VisitorIDs, geolocation data and more immediately with no
     restrictions. This information can then be incorporated into your paywall

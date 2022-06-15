@@ -18,7 +18,7 @@ hero:
     forms of gaming and gambling fraud, including credential stuffing, cheating
     schemes, arbitrage, and more.
   ctaText: Create Free Account
-  ctaHref: https://dashboard.fingerprintjs.com/signup
+  ctaHref: https://dashboard.fingerprint.com/signup
   openCtaNewTab: false
 cardSection:
   title: Stop gaming fraud by adding fingerprinting to your tech stack
@@ -98,11 +98,11 @@ blocks:
     image: /img/uploads/dash-usage-chart.png
     imageTitle: Fingerprint Pro usage dashboard
     ctaText: Sign up now
-    ctaUrl: https://dashboard.fingerprintjs.com/signup
+    ctaUrl: https://dashboard.fingerprint.com/signup
 inlineCta:
   title: Try Fingerprint for gaming fraud prevention
   subtitle: Install our Javascript snippet on your site to start collecting unique
     VisitorIDs, geolocation data, visit history, and more immediately.
   buttonText: Get Started
-  buttonHref: https://dashboard.fingerprintjs.com/signup
+  buttonHref: https://dashboard.fingerprint.com/signup
 ---

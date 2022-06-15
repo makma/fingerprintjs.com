@@ -46,7 +46,7 @@ Check out the `initial-project-setup` branch and keep adding to the code as we g
 
 ## Getting an API Key
 
-To begin, you’ll need a Fingerprint Pro subscription. If you don’t have one, you can [create a free account](https://dashboard.fingerprintjs.com/signup).
+To begin, you’ll need a Fingerprint Pro subscription. If you don’t have one, you can [create a free account](https://dashboard.fingerprint.com/signup).
 
 Once you have an account, open the dashboard and take a look at the Subscription menu on the left side of the window. Click the API Keys label and copy any active public key. 
 

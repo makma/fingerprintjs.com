@@ -325,7 +325,7 @@ Fingerprint is helpful in many use cases, including:
 
 ### How It Works
 
-[Create a free account](https://dashboard.fingerprintjs.com/signup). Enter your email to begin the onboarding process, entering some information like your website name. Accept the terms and conditions, and finally you will be given a code snippet to add to your website.
+[Create a free account](https://dashboard.fingerprint.com/signup). Enter your email to begin the onboarding process, entering some information like your website name. Accept the terms and conditions, and finally you will be given a code snippet to add to your website.
 
 ![Code Snippet from Fingerprint](https://i.imgur.com/mZhJ6x1.png)
 

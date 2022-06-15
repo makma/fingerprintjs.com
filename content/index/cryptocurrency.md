@@ -19,7 +19,7 @@ hero:
     accurate browser fingerprinting API, it's easy to identify fraudsters aiming
     to steal account credentials and transfer coins into their own wallets.
   ctaText: Create Account
-  ctaHref: https://dashboard.fingerprintjs.com/signup
+  ctaHref: https://dashboard.fingerprint.com/signup
   openCtaNewTab: false
 cardSection:
   title: Prevent online fraud from putting your exchange at risk
@@ -62,11 +62,11 @@ blocks:
     image: /img/uploads/dash-subscriptions.png
     imageTitle: Fingerprint Pro subscription screen
     ctaText: Create free account
-    ctaUrl: https://dashboard.fingerprintjs.com/signup
+    ctaUrl: https://dashboard.fingerprint.com/signup
 inlineCta:
   title: Try Fingerprint Free
   subtitle: Installation of Fingerprint' Javascript agent is easy. Start
     collecting unique VisitorIDs in minutes with a free account.
   buttonText: Get Started
-  buttonHref: https://dashboard.fingerprintjs.com/signup
+  buttonHref: https://dashboard.fingerprint.com/signup
 ---

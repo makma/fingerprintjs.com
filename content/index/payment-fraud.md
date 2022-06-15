@@ -18,7 +18,7 @@ hero:
     identification. Use Fingerprint to keep chargebacks to a minimum,
     protecting your bottom-line and seller reputation.
   ctaText: Create Account
-  ctaHref: https://dashboard.fingerprintjs.com/signup
+  ctaHref: https://dashboard.fingerprint.com/signup
   openCtaNewTab: false
 cardSection:
   title: Add Fingerprint to your tech stack to protect your payments
@@ -83,11 +83,11 @@ blocks:
     image: /img/uploads/fpjs-snippet-code.png
     imageTitle: Fingerprint Pro Javascript snippet
     ctaText: Try it out
-    ctaUrl: https://dashboard.fingerprintjs.com/signup
+    ctaUrl: https://dashboard.fingerprint.com/signup
 inlineCta:
   title: Create your free account
   subtitle: "Install our Javascript snippet on your website and start collecting
     visitorIDs for free. "
   buttonText: Get Started
-  buttonHref: https://dashboard.fingerprintjs.com/signup
+  buttonHref: https://dashboard.fingerprint.com/signup
 ---
