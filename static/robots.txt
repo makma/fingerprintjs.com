@@ -1,4 +1,4 @@
-# Not all robots are good at writing high-quality javascript, but if you’re one of them, join us here -> https://careers.fingerprint.com
+# Not all robots are good at writing high-quality javascript, but if you’re one of them, join us here -> https://fingerprint.com/careers/jobs/
 
 User-agent: *
 Allow: /
