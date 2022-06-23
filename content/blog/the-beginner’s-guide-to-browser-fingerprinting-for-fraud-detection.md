@@ -2,9 +2,10 @@
 templateKey: long-form-content
 metadata:
   title: "What is Browser Fingerprinting: A Beginner's Guide - Fingerprint  "
-  description: Browser fingerprinting is a useful tool for developers to detect
-    fraudulent activity on their website. Learn how this identification
-    technique works with a real-life example.
+  description: Browser fingerprinting is a type of fraud prevention that
+    accurately identify users and flag fraudulent visitors through numerous
+    identification signals. Learn more about how it works and how it’s
+    implemented on today’s websites.
   url: https://fingerprint.com/blog/what-is-browser-fingerprinting
   image: /img/uploads/3.png
   imageAlt: Browser fingerprinting
