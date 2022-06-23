@@ -32,17 +32,20 @@ customCTA:
   ctaUrl: https://try.fingerprintjs.com/en-us/oss-vs-pro-comparison-pdf
   openCtaNewTab: true
 ---
-**Fraud looms on the minds of development teams for any website, but fraud prevention doesn’t have to be all-consuming, or even expensive.** With a highly accurate identifier it becomes much easier for developers to triage suspicious traffic and restrict access to users attempting to hack into accounts, make fraudulent purchases or simply spam your website. The key to identifying those most likely to commit fraud is either by past activity, or by associating specific patterns of use with a higher likelihood of fraudulence.
+**Fraud looms on the minds of development teams for any website, but fraud prevention doesn't have to be all-consuming or expensive.** With a highly accurate identifier, it becomes much easier for developers to triage suspicious traffic and restrict access to users attempting to hack into accounts, make fraudulent purchases or spam your website. The key to identifying those most likely to commit fraud is either by past activity or by associating specific use patterns with a higher likelihood of fraudulence.
 
-Browser fingerprinting technologies are a cornerstone technology for developer-led fraud prevention that cuts through spoofing attempts to accurately identify users, and it can do this without requiring additional permissions from the user. Our open source [browser fingerprinting library](https://github.com/fingerprintjs/fingerprintjs) has over 16K stars on Github and is used by 8,000+ websites, including 12% of the top 500 by traffic. Fingerprinting techniques on their own have been found to be over [90% accurate](https://arstechnica.com/information-technology/2017/02/now-sites-can-fingerprint-you-online-even-when-you-use-multiple-browsers/) in correctly identifying a unique user in the browser, and when used in conjunction with usage history, fuzzy matching, and probability engines, this accuracy can be further improved.
+### What is Browser Fingerprinting?
+
+Browser fingerprinting technologies are a cornerstone for developer-led fraud prevention that cuts through spoofing attempts to identify users accurately. Moreover, it can do this without requiring additional permissions from the user. \
+Our open-source [browser fingerprinting library](https://github.com/fingerprintjs/fingerprintjs) has over 16K stars on Github and is used by 8,000+ websites, including 12% of the top 500 by traffic. Fingerprinting techniques on their own are over [90% accurate](https://arstechnica.com/information-technology/2017/02/now-sites-can-fingerprint-you-online-even-when-you-use-multiple-browsers/) in correctly identifying a unique user in the browser. This accuracy can be further improved when used in conjunction with usage history, fuzzy matching, and probability engines.
 
 ## How Fingerprinting Works
 
 #### Identifying a Vehicle
 
-Here’s an analogy: let’s say you’re a detective in a large city trying to find one specific car suspected of being a bank robber’s getaway vehicle, as captured by a security camera. To find this car your plan is to go to a busy intersection and take note of all the details of passing cars until you find one that matches the vehicle on the security camera. Ideally, you would like to be able to uniquely identify the car, such that only one vehicle in the city matches your description, otherwise you’ll have to question multiple drivers.
+Here's an analogy: let's say you're a detective in a large city trying to find one specific car suspected of being a bank robber's getaway, as captured by a security camera. To find this car, you plan to go to a busy intersection and note all the details of passing cars until you find one that matches the vehicle on the security camera. Ideally, you would like to uniquely identify the car such that only one vehicle in the city fits your description. Otherwise, you'll have to question multiple drivers.
 
-If the security camera caught some basic details (or signals) about the car, you’ll be able to narrow your search considerably:
+If the security camera caught some basic details (or signals) about the car, you'd be able to narrow your search considerably:
 
 * Color (red)
 * Manufacturer (Ford)
@@ -51,103 +54,101 @@ If the security camera caught some basic details (or signals) about the car, you
 * Brand of tires (stock Goodyears)
 * Age/year (2015-2021)
 
-With these signals, you may be able to uniquely identify the vehicle right away, especially if any of the specifics are particularly rare. However, in a city with millions of drivers, there may be hundreds of red Ford F-150 trucks with standard-issue tires. The more standard the combination of signals, the harder it is to get a unique match.
+With these signals, you may be able to uniquely identify the vehicle right away, especially if any of the specifics are particularly rare. However, hundreds of red Ford F-150 trucks may have standard-issue tires in a city with millions of drivers. The more standard the combination of signals, the harder it is to get a unique match.
 
-In those cases, you hope that your camera may have gotten lucky and matched on a more unique signal about the vehicle:
+In those cases, you hope that your camera may have gotten lucky and matched a unique signal about the vehicle:
 
-* Wood panelling
+* Wood paneling
 * Custom decal or logo
 * Body damage/rust patterns
 * Interior decorations
 
-One of these signals may quickly narrow down your search. A red Ford F-150 truck with a local company’s logo could very well be unique, even in a large city.
+One of these signals may quickly narrow down your search. For example, a red Ford F-150 truck with a local company's logo could be unique, even in a large city.\
+\
+There is, of course, the most uniquely identifiable element of a car - the license plate. License plates serve the express purpose of uniquely identifying a car, but they aren't helpful if the vehicle owner removes their plates or swaps them with fakes. So it's essential to have a backup for when this identification method fails.
 
-There is, of course, the most uniquely identifiable element of a car - the license plate. License plates serve the express purpose of uniquely identifying a car, but they aren’t useful if the vehicle owner removes their plates or swaps them with fakes. It’s important to have a backup for when this method of identification fails.
-
-By assembling a broad and comprehensive set of identifiers you can narrow the list of suspects to make singling out a bad-actor much easier.
+By assembling a comprehensive set of identifiers, you can narrow the list of suspects to make singling out a bad actor much more manageable.
 
 #### Identifying a Visitor
 
-Fingerprinting works almost exactly the same as the example above. Now, you are trying to identify a visitor to a web or mobile application (suspect) by capturing signals passed via the visitor’s browser or device (car) captured through a fingerprinting function (security camera).
+Fingerprinting works almost the same as the example above. Now, you are trying to identify a visitor to a web or mobile application (suspect) by capturing signals passed via the visitor's browser or device (car) captured through a fingerprinting function (security camera).\
+Browsers can capture many signals, including:
 
-A lot of signals can be captured by the browser, including:
-
-* User agent details (browsers installed and their versions, operating system)
+* User-agent details (browsers installed and their versions, operating system)
 * Hardware details (screen resolution, battery usage, device memory)
 * Browser plugins used
-* Browser and OS settings
+* The browser and OS settings
 * WebGL parameters
 
-When a visitor lands on a webpage, the fingerprinting function collects signals and compiles them into a hash that can be stored. Any time this visitor returns to the website, their fingerprint can be compared to past visit history to identify suspicious behavior or past fraudulent activity.
+When a visitor lands on a webpage, the fingerprinting function collects signals and compiles them into a hash that can be stored. Then, when visitors return to the website, match any past visit to their current visit to identify suspicious behavior or past fraudulent activity.
 
 ## Accuracy
 
-For a fingerprint to be useful as a method of identifying visitors, it needs to have a high accuracy. Our Fingerprint Pro tool has a 99.5% accuracy rate, which means for every 1,000 visits, 995 are correctly associated with a unique identifier.
+For a fingerprint to be helpful as a method of identifying visitors, it must have high accuracy. Our Fingerprint Pro tool has a 99.5% accuracy rate, which means for every 1,000 visits, 995 of the visits were correctly associated with a unique identifier.
 
-For the 5 out of 1,000 that are not correctly identified, they can be described as either false positives or false negatives:
+For the 5 out of 1,000 visitors not correctly identified, they are either false positives or false negatives:
 
-* False positive: multiple unique visitors are given the same fingerprint
-* False negative: one visitor over multiple visits are given different fingerprints
+* **False-positive:** multiple unique visitors are associated with the same fingerprint
+* **False-negative**: one visitor over numerous visits is assigned different fingerprints
 
-To reduce false positives and false negatives, your fingerprint should combine not only many signals, but the right combination of signals that balance both uniqueness and stability. If a signal is highly unique, it will reduce your chances of a false negative, whereas stable signals will reduce your chances of a false positive.
+When reducing the likelihood of false positives and negatives, a fingerprint should combine many signals and the right combination of signals that balance uniqueness and stability. For example, a highly unique signal will reduce your chances of a false negative, whereas stable signals will reduce your chances of a false positive.
 
 ![Graphic of signals by stability and uniqueness](/img/uploads/capture.png "Graphic of signals by stability and uniqueness")
 
-This framework can also be used to remove signals from your fingerprinting function altogether. If a signal has both low uniqueness and low stability, it is likely to change or be spoofed frequently, and doesn’t contribute meaningfully to uniqueness. To our car example, this might be whether a car has a dirty windshield - you cannot count on this signal to improve your chances of finding the correct car. In the world of browser fingerprinting, current battery level is a poor signal, and so while it is accessible, we remove it from our fingerprinting function.
+Using this framework, you can remove signals from your fingerprinting function altogether. If a signal has low uniqueness and stability, it is likely to change or be spoofed frequently and doesn't contribute meaningfully to identity. For our car example, this might be whether a car has a dirty windshield - you cannot count on this signal to improve your chances of finding the right vehicle. In browser fingerprinting, the current battery level is a poor signal, so while it is accessible, we remove it from our fingerprinting function.
 
 ## The Case for Cookies
 
-Special consideration should be given to perfectly unique identifiers that are not always available.
+There should be special consideration for perfectly unique identifiers that are not always available.
 
-Cookies work by storing a unique identifier hash in the browser when a visitor first lands on your website. When a visitor has a cookie that matches a previous visit record in your database, you can be certain that these two visitors are the same. However, cookies are a very easy identifier to conceal:
+Cookies work by storing a unique identifier hash in the browser when a visitor first lands on your website. When a visitor has a cookie that matches a previous visit record in your database, you can be confident that these two visitors are the same. However, cookies are a very easy identifier to conceal:
 
-* Cookies can be cleared in browser settings
+* Clearing cookies within browser settings
 * Adblockers can disable cookies by default
-* Visitors can revoke consent to being cookied as part of GDPR or CCPA
+* Visitors can revoke consent for a website to track their cookies as part of GDPR or CCPA
 
-In these cases, instead of including a cookie as an identifier in your fingerprinting function, it can be more useful to use logic to determine when to use cookies as your identifier:
+In these cases, instead of including a cookie as an identifier in your fingerprinting function, it can be more beneficial to use logic to determine when to use cookies as your identifier:
 
-* If cookie matches a previous record: use cookie
-* If no cookie matches previous record: use fingerprint
+* **If a cookie matches a previous record:** use a cookie
+* **If no cookie matches the previous record:** use a fingerprint
 
-One of the main advantages of fingerprinting is that it is stateless. A well-implemented fingerprint can remain stable through multiple sessions, incognito browsing, uninstalling or reinstalling apps, or clearing cookies. For that reason, using the two methods in conjunction with one another can give a higher % accuracy than either identification method alone.
+One of the main advantages of fingerprinting is that it is stateless. Therefore, a well-implemented fingerprint can remain stable through multiple sessions, incognito browsing, uninstalling or reinstalling apps, or clearing cookies. For that reason, using the two methods in conjunction with one another can give a higher % accuracy than either identification method alone.
 
-*Fingerprint Pro achieves its high rate of accuracy by using fingerprinting, cookies and additional machine learning techniques that incorporate IP address and geolocation.* One challenge is keeping up with changes in available signals as new browser versions are released. Anytime Chrome or Safari is updated, for example, identification techniques need to be re-evaluated to determine if further tweaks need to be made to keep accuracy high. Our team is constantly looking to improve our accuracy by iterating on the signals, algorithms, and techniques used.
+*Fingerprint Pro achieves its high accuracy rate by using fingerprinting, cookies, and additional machine learning techniques that incorporate IP address and geolocation.* One challenge is keeping up with changes in available signals as new browser versions are released. Anytime Chrome or Safari updates, identification techniques need to be re-evaluated to determine if there should be more tweaks to keep accuracy high. Our team is constantly working on the signals, algorithms, and techniques.
 
 ## Fraud Applications For Fingerprinting
 
-An important first principle for dealing with fraud is that only a small percentage of visitors are responsible for the [majority of fraud cases](https://www.f5.com/labs/articles/threat-intelligence/2020-phishing-and-fraud-report#_fig19). A developer team aiming to reduce fraud on their website will need to find ways to isolate these visitors, verify their identity through authentication, and blacklist them as needed. However, you will want to avoid putting up these roadblocks for the rest of your ‘trusted’ traffic, as additional authentication can be detrimental to the user experience, slowing your users’ ability to access their account, make purchases, and engage with your website.
+A crucial first principle for dealing with fraud is that only a tiny percentage of visitors are responsible for most [fraud cases](https://www.f5.com/labs/articles/threat-intelligence/2020-phishing-and-fraud-report#_fig19). Therefore, a developer team aiming to reduce fraud on their website will need to find ways to isolate these visitors, verify their identity through authentication, and block them as required. However, you will want to avoid putting up these roadblocks for the rest of your ''trusted'' traffic, as additional authentication can be detrimental to the user experience, slowing your users' ability to access their account, make purchases, and engage with your website.
 
-Account takeover is a common form of fraud where malicious users try to log in to other users’ accounts, and is an excellent use-case for fingerprinting technology. Additional security at login can make account takeover much more difficult, though the type of authentication used may depend on the suspicious behavior your website experiences most often:
+Account takeover is a common form of fraud where malicious users try to log in to other users' accounts and is an excellent use case for fingerprinting technology. Additional security at login can make account takeover much more difficult, though the type of authentication used may depend on the suspicious behavior your website experiences most often:
 
-* *For bot or brute force attacks* (one user or a network of bots trying many combinations of usernames/passwords):
+* **For bot or brute force attacks** (*one user or a network of bots trying many combinations of usernames/passwords*):
+* * Show a captcha after one unsuccessful login attempt on a fingerprint.
+  * Lock user out of attempting login after five unsuccessful attempts on a fingerprint.
+* **For phished accounts** (*a user obtained someone else's legitimate login information through a scam or social engineering*):
+* * Require two-factor or email authentication when attempting to log in with a new fingerprint.
+  * Blocklist specific fingerprinted visitors from your site based on their fingerprint.
 
-  * Show a captcha after 1 unsuccessful login attempt on a fingerprint.
-  * Lock user out of attempting login after 5 unsuccessful attempts on a fingerprint.
-* *For phished accounts* (a user obtained someone else’s legitimate login information through a scam or social engineering):
+In each case, an accurate fingerprint allows your team to pinpoint users attempting fraudulent behavior while keeping your trusted users unhindered. In addition, you can incorporate the type of authentication needed into your website by using existing workflows without fundamentally changing your site's architecture.
 
-  * Require two-factor or email authentication when attempting to login with a new fingerprint.
-  * Blacklist specific fingerprinted visitors from your site based on their fingerprint.
+It is also important to note that users intending to commit fraud are much more likely to use techniques to conceal their identity, including using incognito mode, browsing via a VPN, and disabling cookies. That'sThat's also where fingerprinting shines, as it can associate these users without needing easily concealed identifiers like cookies and IP addresses.
 
-In each of these cases, an accurate fingerprint allows your team to pinpoint users that are attempting fraudulent behavior, while keeping your trusted users unhindered. The type of authentication needed can be incorporated into your website by using existing workflows without having to fundamentally change the architecture of your site.
+## Browser Fingerprinting vs. Device Fingerprinting
 
-It is also important to note that users intending to commit fraud are much more likely to use techniques to conceal their identity, including using incognito mode, browsing via a VPN, and disabling cookies. That’s also where fingerprinting shines, as it can associate these users without needing easily concealed identifiers like cookies and IP addresses.
-
-## Browser vs. Device Fingerprinting
-
-Our "core" [Fingerprint](https://github.com/fingerprintjs/fingerprintjs) library is intended for browser fingerprinting - it identifies visitors to a website using all modern mobile and desktop browsers. The signals available for mobile app developers are different from signals that can be retrieved in the browser however, and vary between iOS, Android, and other mobile operating systems.
+Intended for browser fingerprinting, our "core" [Fingerprint](https://github.com/fingerprintjs/fingerprintjs) library identifies visitors to a website using all modern mobile and desktop browsers. However, the signals available for mobile app developers are different from signals that can be retrieved in the browser and vary between iOS, Android, and other mobile operating systems.
 
 If you want to identify users of a native mobile app, we have a few options in our product suite:
+
 * Fingerprint Pro, in addition to browser fingerprinting, includes high-accuracy native [Android](https://dev.fingerprint.com/docs/native-android-integration) and [iOS](https://dev.fingerprint.com/docs/native-ios-integration) integrations that allow developers to integrate device identification into native Android and iOS apps.
-* Our [iOS open source library](https://github.com/fingerprintjs/fingerprintjs-ios)
-* Our [Android open source library](https://github.com/fingerprintjs/fingerprintjs-android)
+* Our [iOS open-source library](https://github.com/fingerprintjs/fingerprintjs-ios)
+* Our [Android open-source library](https://github.com/fingerprintjs/fingerprintjs-android)
 
 ## Get Involved
 
-We would love to hear your questions and get feedback on our fingerprinting technology.
+We would love to hear your questions and feedback on our fingerprinting technology.
 
-*Here are a few ways you can get involved:*
+Here are a few ways you can get involved:
 
-* Star, follow or fork our Github projects: [Fingerprint](https://github.com/fingerprintjs/fingerprintjs) (browser fingerprinting) and [Fingerprint-Android](https://github.com/fingerprintjs/fingerprint-android)
-* Need more accurate browser fingerprinting for your business? Create a free Fingerprint Pro account for [99.5% fingerprinting accuracy](/).
-* Think Fingerprint could help your business?[Contact our sales team](https://fingerprint.com/contact-sales/) with your questions
+* Star, follow or fork our Github projects: [Fingerprint](https://github.com/fingerprintjs/fingerprintjs) (browser fingerprinting) and [Fingerprint-Android](https://github.com/fingerprintjs/fingerprint-android).
+* Need more accurate browser fingerprinting for your business? Create a free Fingerprint Pro account for [99.5% fingerprinting accuracy](https://fingerprint.com/).
+* Think Fingerprint could help your business? [Contact our sales team](https://fingerprint.com/contact-sales/) with your questions.
