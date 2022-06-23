@@ -102,6 +102,9 @@ export const GREENHOUSE_COMPANY_ID =
     [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_GREENHOUSE_COMPANY_ID,
   }) ?? 'fingerprinttest'
 
+export const CONTACT_SALES_CALENDAR =
+  process.env.GATSBY_CONTACT_SALES_CALENDAR ?? 'https://try.fingerprintjs.com/meetings/chris-mcdonnell'
+
 export const FPJS_REGION = process.env.GATSBY_FPJS_REGION
 export const FPJS_DASHBOARD_ENDPOINT = process.env.GATSBY_FPJS_DASHBOARD_ENDPOINT
 export const GITHUB_API_TOKEN = process.env.GATSBY_GITHUB_API_TOKEN

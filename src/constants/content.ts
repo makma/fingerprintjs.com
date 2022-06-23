@@ -1,4 +1,4 @@
-import { BRANCH, HOST } from './env'
+import { BRANCH, HOST, CONTACT_SALES_CALENDAR } from './env'
 
 export const BASE_URL = HOST
 
@@ -39,7 +39,7 @@ export const URL = {
   salesMail: 'sales@fingerprint.com',
   worKMail: 'work@fingerprint.com',
   discordServerURL: 'https://discord.gg/ad6R2ttHVX',
-  contactSalesCalendar: 'https://try.fingerprintjs.com/meetings/chris-mcdonnell',
+  contactSalesCalendar: CONTACT_SALES_CALENDAR,
   docsUrl: 'https://dev.fingerprint.com',
 } as const
 
