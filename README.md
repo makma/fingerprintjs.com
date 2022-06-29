@@ -1,4 +1,4 @@
-# fingerprintjs.com website code
+# fingerprint.com website code
 
 ## How to deploy
 
