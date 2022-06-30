@@ -28,7 +28,7 @@ customCTA:
   title: Comparing OSS vs. Pro?
   description: Download our PDF guide with a full comparison.
   ctaText: Get the PDF
-  ctaUrl: https://try.fingerprintjs.com/en-us/oss-vs-pro-comparison-pdf
+  ctaUrl: https://try.fingerprint.com/en-us/oss-vs-pro-comparison-pdf
 ---
 **Behind the scenes of all analytics, attribution and anti-fraud tools is an identifier that can track returning visits from a logged-out visitor.** Cookies, IP addresses and local storage have been traditionally used for this purpose, but they have drawbacks, particularly if the traffic has a high rate of incognito browsing. With a highly accurate identifier it becomes much easier for developers to analyze visitor behavior, personalize web experiences, and collect reliable attribution data.
 

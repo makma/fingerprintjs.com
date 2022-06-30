@@ -48,7 +48,7 @@ export default function Bnpl({ pageContext }: BnplProps) {
         <BannerWithCTA
           title='Free PDF: Preventing BNPL Fraud'
           ctaText='Download'
-          ctaHref='https://try.fingerprintjs.com/en-us/free-pdf-preventing-buy-now-pay-later-fraud-with-fingerprintjs'
+          ctaHref='https://try.fingerprint.com/en-us/free-pdf-preventing-buy-now-pay-later-fraud-with-fingerprintjs'
           variant='white'
           className={styles.ctaSection}
           openNewTab
