@@ -4,7 +4,8 @@ import { getConfig } from '../helpers/fpjs'
 export const useUserLocation = () => {
   const { data } = useVisitorData(getConfig)
   const userRegion = data?.ipLocation?.continent?.code?.toUpperCase()
-  const isEuUser = userRegion === 'EU'
+  const userCountry = data?.ipLocation?.country?.code?.toUpperCase()
 
-  return { isEuUser, userRegion }
+  const isEuUser = userRegion === 'EU'
+  return { isEuUser, userRegion, userCountry }
 }

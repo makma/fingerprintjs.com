@@ -55,14 +55,14 @@ interface LayoutTemplateProps extends LayoutProps {
 export function LayoutTemplate({ children, siteMetadata, notificationBar }: LayoutTemplateProps) {
   const { title, description, siteUrl, image } = siteMetadata
   const gtmToken = GTM_TOKEN
-  const { isEuUser } = useUserLocation()
+  const { isEuUser, userCountry } = useUserLocation()
   const { pathname } = useLocation()
 
   useEffect(() => {
-    if (isEuUser === false) {
+    if (isEuUser === false || userCountry === 'GB') {
       enableAnalytics()
     }
-  }, [isEuUser])
+  }, [isEuUser, userCountry])
 
   useEffect(() => {
     amplitudeLogEvent('view marketing page', { route: pathname })
