@@ -13,7 +13,7 @@ export default function MadeForDevelopersSection() {
           <h2 className={styles.title}>Made for developers</h2>
           <div className={styles.tools}>
             <ToolsTextBlock
-              title={'Built on proven open-source library'}
+              title={'Built on FingerprintJS, proven open-source library'}
               text={
                 'Since 2012, Fingerprint has been used to identify billions of users. Our Pro solution was developed based on feedback to provide unparalleled accuracy, ease of use, and security.'
               }
