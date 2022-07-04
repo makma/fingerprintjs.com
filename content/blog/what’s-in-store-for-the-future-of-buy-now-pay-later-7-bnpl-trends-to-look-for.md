@@ -59,7 +59,7 @@ Additionally, the ability for retailers to offer multiple installment payment pr
 
 ## “Shop now, pay later” - shifting marketing strategies for retailers
 
-Retailers may not advertise in their email or social media marketing campaigns that they offer pay by credit card. However, a BNPL option may be less obvious to consumers and worth including in ongoing marketing campaigns. Many consumers are still warming up to using a buy now and pay later at checkout, and many retailers still have yet to offer it as a payment option. 
+Retailers may not advertise in their email or social media marketing campaigns that they offer pay by credit card. However, a BNPL option may be less obvious to consumers and worth including in ongoing marketing campaigns. Many consumers are still warming up to using a buy now and pay later at checkout, and many retailers have yet to offer it as a payment option. 
 
 As a retailer, including it in your marketing on social media, a feature on your website, paid advertising, or email marketing could help boost awareness of flexible payment options on your site. This could also result in customer acquisition of new customers that chose to shop on a site because it offers a BNPL option. And [data shows](https://afterpay-corporate.yourcreative.com.au/wp-content/uploads/2021/10/Economic-Impact-of-BNPL-in-the-US-vF.pdf) that customers who use BNPL are more likely to become repeat customers on sites that offer their preferred BNPL. 
 
