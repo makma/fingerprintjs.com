@@ -81,16 +81,8 @@ module.exports = {
           }
         }
         `,
-        resolvePages: ({ allSitePage: { edges: allPages } }) => allPages.map((page) => ({ ...page.node })),
-        excludes: [],
-        filterPages: (page) => {
-          if (
-            // Exclude pages marked with "noindex"
-            page.pageContext.noIndex
-          ) {
-            return true
-          }
-        },
+        resolvePages: ({ allSitePage: { edges: allPages } }) =>
+          allPages.map((page) => ({ ...page.node })).filter((page) => page.pageContext.noIndex !== true),
       },
     },
     {
