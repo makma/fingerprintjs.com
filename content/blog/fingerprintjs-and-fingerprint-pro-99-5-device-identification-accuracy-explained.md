@@ -4,10 +4,10 @@ metadata:
   title: "FingerprintJS and Fingerprint Pro: 99.5% Device Identification Accuracy
     Explained"
   url: fingerprint.com/blog/fingerprintjs-fingerprint-pro-device-identification-accuracy-explained
-  image: /img/uploads/accuracy-webinar-tbd-content-1.png
+  image: /img/uploads/accuracy-webinar-takeaway.gif
   imageAlt: device identification accuracy
   imageTitle: device identification accuracy
-  socialImage: /img/uploads/accuracy-webinar-tbd-content-1.png
+  socialImage: /img/uploads/accuracy-webinar-takeaway.gif
   description: "Accuracy really is everything when it comes to device
     identification. Fingerprint Pro maintains a 99.5% accuracy rate, which is
     the industry’s highest accuracy rate. We discussed how and why in a recent
@@ -25,7 +25,7 @@ tags:
 authors:
   - Courtney Rogin
 heroImage:
-  image: /img/uploads/accuracy-webinar-tbd-content-1.png
+  image: /img/uploads/accuracy-webinar-takeaway.gif
   imageAlt: device fingerprinting accuracy
   imageTitle: device fingerprinting accuracy
 customCTA:
