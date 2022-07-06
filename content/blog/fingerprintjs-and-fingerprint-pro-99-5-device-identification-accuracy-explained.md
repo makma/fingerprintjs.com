@@ -3,7 +3,7 @@ templateKey: long-form-content
 metadata:
   title: "FingerprintJS and Fingerprint Pro: 99.5% Device Identification Accuracy
     Explained"
-  url: /blog/fingerprintjs-fingerprint-pro-device-identification-accuracy-explained
+  url: fingerprint.com/blog/fingerprintjs-fingerprint-pro-device-identification-accuracy-explained
   image: /img/uploads/accuracy-webinar-tbd-content-1.png
   imageAlt: device identification accuracy
   imageTitle: device identification accuracy
