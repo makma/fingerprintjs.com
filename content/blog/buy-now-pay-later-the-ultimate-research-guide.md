@@ -32,6 +32,14 @@ customCTA:
   ctaText: Download Now
   ctaUrl: https://try.fingerprint.com/en-us/free-pdf-preventing-buy-now-pay-later-fraud-with-fingerprintjs
 ---
+> **July 2022 Update:** Since launching this guide earlier this year, Apple announced its buy now, pay later service called [Apple Pay Later](https://developer.apple.com/apple-pay/whats-new/). 
+>
+> \
+> In addition, Amazon launched [monthly installments](https://www.amazon.com/gp/help/customer/display.html?nodeId=202095050) and partnerships with some of the BNPL providers listed below (such as [Affirm](https://www.affirm.com/shopping/stores/amazon) and [Zip](https://zip.co/us/store/amazon)). 
+>
+> \
+> These two options are not currently included below but we wanted to make note we are aware of these two major global offerings. 
+
 ## Table of Contents
 
 ```toc
