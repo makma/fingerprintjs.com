@@ -56,7 +56,7 @@ In the webinar, we showed the chart below and explained its methodology. The mai
 
 We refer to this drop in accuracy as drift. Drift in accuracy is a big issue in device identification because drift has a compounding effect. Every time a visitor returns to your website, there is a percentage chance that they will be misidentified. If your baseline identification accuracy is low, the percentage of correctly identified devices will quickly decay over time as misidentifications compound.
 
-![](https://lh5.googleusercontent.com/OkV-g8VdyvcSMUxs2CsbGRzNeIVpmfr61auuyA3PD821kgf1Ot-kDw-9A7B0Gz4zFLM528FIEIJwXqL-hTY57POq9Wm4uDn3Q_v8eoBOzJqp8yWvtAwwWyg2tM7CDJJXax3MASVXFclSrElf1y8)
+![device identification accuracy drift - fingerprint pro ](https://lh5.googleusercontent.com/OkV-g8VdyvcSMUxs2CsbGRzNeIVpmfr61auuyA3PD821kgf1Ot-kDw-9A7B0Gz4zFLM528FIEIJwXqL-hTY57POq9Wm4uDn3Q_v8eoBOzJqp8yWvtAwwWyg2tM7CDJJXax3MASVXFclSrElf1y8 "device identification accuracy drift - fingerprint pro ")
 
 ### High accuracy saves businesses money when it comes to fraud detection, especially when it comes to online payment fraud.
 
