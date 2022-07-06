@@ -18,6 +18,10 @@
     position: relative;
     transform: translateY(-0.4px);
   }
+  img {
+    //to fix gif images ratio
+    aspect-ratio: 1.7;
+  }
 }
 
 .wide {
@@ -58,7 +62,7 @@
     }
 
     .title {
-      font-size: rem(36px);
+      font-size: rem(34px);
 
       @include media('<=desktop') {
         font-size: rem(20px);
@@ -67,6 +71,12 @@
 
     .description {
       font-size: rem(16px);
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
 
       @include media('<=desktop') {
         font-size: rem(14px);
