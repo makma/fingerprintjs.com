@@ -1,36 +1,28 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from '../common/Button'
-import Section from '../../components/common/Section'
+import Section from '../common/Section'
 import classNames from 'classnames'
-import { Link } from 'gatsby'
 
 import { FormState } from '../../types/FormState'
-import { trackLeadSubmit } from '../../helpers/gtm'
 import { Forms, useForm } from '../../hooks/useForm'
-import { createNewLead } from '../../helpers/api'
+import { contactSupport } from '../../helpers/api'
 import { ReactComponent as ConfirmSVG } from './confirmSVG.svg'
 import { ReactComponent as ErrorSVG } from './errorSVG.svg'
-import { URL, PATH } from '../../constants/content'
+import { URL, MAILTO } from '../../constants/content'
 import { useViewTracking } from '../../context/HistoryListener'
 import * as Turing from '@fpjs-incubator/turing'
 import { initTuring } from '../../helpers/turing'
-import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 
-import styles from './ContactSalesForm.module.scss'
+import styles from './ContactSupportForm.module.scss'
 import { BOTD_PUBLIC_KEY_TURING } from '../../constants/env'
 
-export default function ContactSalesForm() {
-  const [formName, setFormName] = useState('')
+export default function ContactSupportForm() {
   const [email, setEmail] = useState('')
-  const [url, setUrl] = useState('')
   const [description, setDescription] = useState('')
-  const [phone, setPhone] = useState('')
-  const [jobTitle, setJobTitle] = useState('')
 
-  const { formState, errorMessage, updateFormState, updateErrorMessage } = useForm(Forms.ContactSales)
-  const { landingPage, previousPage, utmParams } = useViewTracking()
-
+  const { formState, errorMessage, updateFormState, updateErrorMessage } = useForm(Forms.ContactSupport)
+  const { utmParams } = useViewTracking()
   async function handleSubmit(e) {
     e.preventDefault()
 
@@ -40,18 +32,7 @@ export default function ContactSalesForm() {
       if (!sessionId) {
         throw new Error()
       }
-      const response = await createNewLead(
-        formName,
-        email,
-        url,
-        phone,
-        jobTitle,
-        description,
-        landingPage,
-        previousPage,
-        utmParams,
-        sessionId
-      )
+      const response = await contactSupport(email, description, utmParams, sessionId)
       const status = response.status
       const { ok, error } = await response.json()
 
@@ -59,10 +40,6 @@ export default function ContactSalesForm() {
         onError(error)
       } else {
         updateFormState(FormState.Success)
-        trackLeadSubmit()
-        setTimeout(() => {
-          window.location.replace(URL.contactSalesCalendar)
-        }, 500)
       }
     } catch (error) {
       onError()
@@ -76,11 +53,9 @@ export default function ContactSalesForm() {
           updateErrorMessage(`Validation error for ${error?.data[0]?.instancePath.substring(1)}`)
         } else if (error?.param === 'Turing') {
           updateErrorMessage('The answer to the challenge question was incorrect.')
-          trackLeadSubmit(false)
           return
         } else if (error?.param === 'Email / Phone') {
           updateErrorMessage('The format of your email or phone is incorrect.')
-          trackLeadSubmit(false)
           return
         } else {
           updateErrorMessage(error?.message)
@@ -89,16 +64,9 @@ export default function ContactSalesForm() {
       setTimeout(() => {
         updateFormState(FormState.Default)
       }, 10000)
-      trackLeadSubmit(false)
     }
   }
 
-  const inputRef = useRef<HTMLInputElement | null>(null)
-
-  const handlePhoneChange = (phone: string) => {
-    setPhone(phone)
-    inputRef.current?.focus()
-  }
   useEffect(() => {
     initTuring()
   }, [])
@@ -107,32 +75,17 @@ export default function ContactSalesForm() {
     <>
       <Section
         className={classNames(
-          styles.contactSalesFormSection,
+          styles.contactSupportFormSection,
           { [styles.formSection]: formState === FormState.Default || formState === FormState.Loading },
           { [styles.stateSection]: formState === FormState.Failed || formState === FormState.Success }
         )}
       >
         {(formState === FormState.Default || formState === FormState.Loading) && (
           <>
-            <h1 className={styles.header}>Talk to an Expert</h1>
-            <h2 className={styles.subHeader}>Fill out the form below and we will reach out shortly.</h2>
-            <div className={styles.contactSalesForm} data-sitekey={BOTD_PUBLIC_KEY_TURING}>
+            <h1 className={styles.header}>Contact Fingerprint Support</h1>
+            <h2 className={styles.subHeader}>Report issues and ask any questions - we&apos;ll be happy to help!</h2>
+            <div className={styles.contactSupportForm} data-sitekey={BOTD_PUBLIC_KEY_TURING}>
               <div className={styles.form}>
-                <label className={styles.label} htmlFor='formName'>
-                  Your name
-                </label>
-                <input
-                  className={styles.input}
-                  id='formName'
-                  maxLength={40}
-                  name='formName'
-                  size={20}
-                  type='text'
-                  placeholder='John'
-                  onChange={(e) => setFormName(e.target.value)}
-                  disabled={formState === FormState.Loading}
-                  required
-                />
                 <label className={styles.label} htmlFor='email'>
                   Work email
                 </label>
@@ -148,56 +101,15 @@ export default function ContactSalesForm() {
                   disabled={formState === FormState.Loading}
                   required
                 />
-                <label className={styles.label} htmlFor='jobTitle'>
-                  Job title
-                </label>
-                <input
-                  className={styles.input}
-                  id='jobTitle'
-                  maxLength={40}
-                  name='jobTitle'
-                  size={20}
-                  type='text'
-                  placeholder='Developer'
-                  onChange={(e) => setJobTitle(e.target.value)}
-                  disabled={formState === FormState.Loading}
-                />
-                <label className={styles.label} htmlFor='url'>
-                  Company Website
-                </label>
-                <input
-                  className={styles.input}
-                  id='url'
-                  maxLength={80}
-                  name='url'
-                  size={20}
-                  type='text'
-                  placeholder='google.com'
-                  onChange={(e) => setUrl(e.target.value)}
-                  disabled={formState === FormState.Loading}
-                  required
-                />
-                <label className={styles.label} htmlFor='phone'>
-                  Phone number
-                </label>
-                <PhoneInput
-                  inputClass={styles.phoneInput}
-                  buttonClass={styles.phoneDropdown}
-                  country={'us'}
-                  value={phone}
-                  onChange={(phone) => handlePhoneChange(phone)}
-                  enableSearch
-                  inputProps={{ ref: inputRef, name: 'phoneInput' }}
-                />
                 <label className={styles.label} htmlFor='description'>
-                  Tell us about your project
+                  Please describe your request
                 </label>
                 <textarea
                   className={styles.textArea}
                   name='description'
                   id='description'
                   rows={3}
-                  placeholder='Tell us about your project, needs, or any questions you may have'
+                  placeholder='Give us as much detail as possible.'
                   onChange={(e) => setDescription(e.target.value)}
                   disabled={formState === FormState.Loading}
                 />
@@ -208,7 +120,7 @@ export default function ContactSalesForm() {
                   disabled={formState === FormState.Loading}
                   onClick={handleSubmit}
                 >
-                  Submit
+                  Send
                 </Button>
               </div>
             </div>
@@ -227,9 +139,9 @@ export default function ContactSalesForm() {
                 </>
               )}
               Please try again or contact{' '}
-              <Link to={PATH.support} className={styles.link}>
-                support.
-              </Link>
+              <a href={MAILTO.mailToUrl} className={styles.link}>
+                {URL.supportMail}.
+              </a>
             </span>
           </>
         )}

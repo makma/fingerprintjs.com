@@ -8,7 +8,7 @@ import Button from '../common/Button'
 import classNames from 'classnames'
 import styles from './MobileNavbar.module.scss'
 import { useCaseLinks, products } from '../../constants/content'
-import { URL, DOC_URL, PATH, MAILTO } from '../../constants/content'
+import { URL, DOC_URL, PATH } from '../../constants/content'
 import DropdownMenu from './DropdownMenu'
 
 export default function MobileNavbar() {
@@ -46,9 +46,9 @@ export default function MobileNavbar() {
             <a href={DOC_URL.documentationUrl} target='_blank' rel='noreferrer' className={styles.link}>
               Docs
             </a>
-            <a href={MAILTO.mailToUrl} className={styles.link}>
+            <Link to={PATH.support} className={styles.link}>
               Support
-            </a>
+            </Link>
             <a href={URL.dashboardLoginUrl} className={styles.link} target='_blank' rel='noreferrer'>
               Login
             </a>

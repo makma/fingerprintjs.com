@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from '../../common/Section'
 import Container from '../../common/Container'
-import { URL, DOC_URL, MAILTO } from '../../../constants/content'
+import { URL, DOC_URL, PATH } from '../../../constants/content'
 
 import { ReactComponent as PlaySVG } from './PlaySVG.svg'
 import { ReactComponent as ApiWebhooksSVG } from './ApiWebhooksSVG.svg'
@@ -47,7 +47,7 @@ export default function BuiltForEngineersSection() {
           title='Contact Support'
           description='Get in touch via chat and email and get technical help within 1 business day.'
           linkText='Contact Support →'
-          linkHref={MAILTO.mailToUrl}
+          linkHref={PATH.support}
         />
       </Container>
     </Section>

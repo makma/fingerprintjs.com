@@ -1,0 +1,17 @@
+.root {
+  padding: rem(69px) 0 rem(13px);
+
+  background-image: url('./stripes.png');
+  background-position: center;
+
+  @include media('<=phone') {
+    background-image: url('./stripesMobile.png');
+    background-position: bottom;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: rem(66px);
+}

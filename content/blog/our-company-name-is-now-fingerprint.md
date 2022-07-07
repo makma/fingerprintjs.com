@@ -43,4 +43,4 @@ You will notice that our logo is slightly changed, and we have a new domain (fin
 
 While the name change is largely cosmetic, we have many exciting product updates on the horizon. If you'd like to view, vote or add ideas to our product roadmap, [click here](https://portal.productboard.com/fingerprintjs/1-fingerprintjs-product-roadmap).
 
-**If you have any questions, please email us at [support@fingerprint.com](mailto:support@fingerprint.com).**
+**If you have any questions, please [contact support](/support/).**

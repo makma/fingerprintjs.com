@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from '../../common/Section'
 import Container from '../../common/Container'
-import { DEFAULT_TRIAL_DAYS, URL, DOC_URL, MAILTO } from '../../../constants/content'
+import { DEFAULT_TRIAL_DAYS, URL, DOC_URL, PATH } from '../../../constants/content'
 
 import styles from './NextStepsSection.module.scss'
 
@@ -19,8 +19,8 @@ export default function NextStepsSection() {
           <Step step='Read our docs' url={DOC_URL.documentationUrl} linkText='View docs >'>
             Learn how to implement Fingerprint Pro on your website and start collecting VisitorIDs.
           </Step>
-          <Step step='Reach out with questions' url={MAILTO.mailToUrl} linkText='Contact support >'>
-            We would love to help out! Reach out to support via email or chat anytime.
+          <Step step='Reach out with questions' url={PATH.support} linkText='Contact support >'>
+            We would love to help out! Reach out to support or chat anytime.
           </Step>
           <Step step='Join our Discord' url={URL.discordServerURL} linkText='Join for updates >'>
             Connect with other Fingerprint users, get notifications and updates, and send us your feedback.

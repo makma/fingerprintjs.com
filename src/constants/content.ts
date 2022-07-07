@@ -20,6 +20,7 @@ export const PATH = {
   bnpl: '/buy-now-pay-later/',
   careers: '/careers/',
   jobs: '/careers/jobs/',
+  support: '/support/',
 } as const
 
 export const URL = {

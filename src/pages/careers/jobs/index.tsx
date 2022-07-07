@@ -7,7 +7,7 @@ import Skeleton from '../../../components/Skeleton/Skeleton'
 
 import { GeneratedPageContext } from '../../../helpers/types'
 import { repeatElement } from '../../../helpers/repeatElement'
-import { MAILTO_WORK, MAILTO } from '../../../constants/content'
+import { MAILTO_WORK, PATH } from '../../../constants/content'
 
 import useSiteMetadata from '../../../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
@@ -285,9 +285,9 @@ export function ErrorMessage() {
     <div>
       <p className={styles.text}>
         An error has occurred,{' '}
-        <a className={styles.link} href={MAILTO.mailToUrl}>
+        <Link className={styles.link} to={PATH.support}>
           please contact our support
-        </a>{' '}
+        </Link>{' '}
         or{' '}
         <a className={styles.link} href={MAILTO_WORK.mailToUrl}>
           send your resume via email

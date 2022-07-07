@@ -28,11 +28,11 @@ customCTA:
   title: Have questions?
   description: Ask us anything about getting set up with our new features.
   ctaText: Contact support
-  ctaUrl: mailto:support@fingerprint.com
+  ctaUrl: /support/
 ---
 First and foremost, I’d like to share some amazing news: Fingerprint has raised [$32M Series B from Craft Ventures!](https://venturebeat.com/2021/11/03/fraud-prevention-platform-fingerprintjs-lands-32m-to-launch-premium-services/)
 
-From a product perspective, the past few months have been very busy and we have some exciting updates for you. You can find our general documentation [here](https://dev.fingerprint.com/docs) and if you have any questions, please feel free to reach out to [support@fingerprint.com](mailto:support@fingerprint.com).
+From a product perspective, the past few months have been very busy and we have some exciting updates for you. You can find our general documentation [here](https://dev.fingerprint.com/docs) and if you have any questions, please feel free to reach out to [support](/support/).
 
 - - -
 

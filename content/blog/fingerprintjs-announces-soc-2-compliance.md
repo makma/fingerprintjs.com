@@ -63,7 +63,7 @@ SOC 2 compliance is only one of many steps we plan to take to ensure best-in-cla
 
 ## Get in touch
 
-* Current customer with questions? Reach out to our [support team.](mailto:support@fingerprint.com) 
+* Current customer with questions? Reach out to our [support team.](/support/) 
 * Thinking about working with us? [Contact sales](/contact-sales/) and let us know you’re interested in seeing our SOC 2 report.
 * Want to read more about our privacy and security policies? See our full privacy policy in our documentation.
 

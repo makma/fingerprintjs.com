@@ -94,3 +94,21 @@ export async function getJobInfoFromGreenhouse(jobId: string) {
 
   return jobJson
 }
+
+export async function contactSupport(
+  email: string,
+  description: string,
+  utmParams: Record<string, string>,
+  sessionId: string
+) {
+  return fetch(`${FPJS_MGMT_API_HOST}/hubspot/support`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email,
+      description,
+      utm_info: utmParams,
+      sessionId,
+    }),
+  })
+}

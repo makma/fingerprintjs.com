@@ -46,7 +46,8 @@ const footerLinks: FooterLinkSection[] = [
       },
       {
         title: 'Support',
-        url: `${MAILTO.mailToUrl}`,
+        url: `${PATH.support}`,
+        isLocal: true,
       },
       {
         title: 'Terms of Use',

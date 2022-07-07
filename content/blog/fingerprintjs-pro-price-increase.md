@@ -49,5 +49,5 @@ Those new to Fingerprint Pro can [sign up for free](https://dashboard.fingerprin
 
 ### Get in touch
 
-* Questions? Email [support@fingerprint.com](mailto:support@fingerprint.com)
+* Questions? [Contact support](/support/)
 * **Need 1M+ API calls and a custom plan?** [Contact sales](/contact-sales/)
