@@ -8,11 +8,14 @@ import { Forms, useForm } from '../../hooks/useForm'
 import { contactSupport } from '../../helpers/api'
 import { ReactComponent as ConfirmSVG } from './confirmSVG.svg'
 import { ReactComponent as ErrorSVG } from './errorSVG.svg'
+import { ReactComponent as InfoSVG } from './info.svg'
+
 import { URL, MAILTO } from '../../constants/content'
 import { useViewTracking } from '../../context/HistoryListener'
 import * as Turing from '@fpjs-incubator/turing'
 import { initTuring } from '../../helpers/turing'
 import 'react-phone-input-2/lib/style.css'
+import Tippy from '@tippyjs/react'
 
 import styles from './ContactSupportForm.module.scss'
 import { BOTD_PUBLIC_KEY_TURING } from '../../constants/env'
@@ -20,12 +23,27 @@ import { BOTD_PUBLIC_KEY_TURING } from '../../constants/env'
 export default function ContactSupportForm() {
   const [email, setEmail] = useState('')
   const [description, setDescription] = useState('')
+  const [visibleMail, setVisibleMail] = useState(false)
+  const [visibleDescription, setVisibleDescription] = useState(false)
 
   const { formState, errorMessage, updateFormState, updateErrorMessage } = useForm(Forms.ContactSupport)
   const { utmParams } = useViewTracking()
   async function handleSubmit(e) {
     e.preventDefault()
-
+    if (email === '') {
+      setVisibleMail(true)
+      setTimeout(() => {
+        setVisibleMail(false)
+      }, 4000)
+      return
+    }
+    if (description === '') {
+      setVisibleDescription(true)
+      setTimeout(() => {
+        setVisibleDescription(false)
+      }, 4000)
+      return
+    }
     try {
       const sessionId = await Turing.execute()
       updateFormState(FormState.Loading)
@@ -89,30 +107,53 @@ export default function ContactSupportForm() {
                 <label className={styles.label} htmlFor='email'>
                   Work email
                 </label>
-                <input
-                  className={styles.input}
-                  id='email'
-                  maxLength={64}
-                  name='email'
-                  size={20}
-                  type='email'
-                  placeholder='john@gmail.com'
-                  onChange={(e) => setEmail(e.target.value)}
-                  disabled={formState === FormState.Loading}
-                  required
-                />
+                <Tippy
+                  maxWidth={270}
+                  content={
+                    <div className={styles.warningTooltip}>
+                      <InfoSVG />
+                      <span> Please fill out this field</span>
+                    </div>
+                  }
+                  visible={visibleMail}
+                >
+                  <input
+                    className={styles.input}
+                    id='email'
+                    maxLength={64}
+                    name='email'
+                    size={20}
+                    type='email'
+                    placeholder='john@gmail.com'
+                    onChange={(e) => setEmail(e.target.value)}
+                    disabled={formState === FormState.Loading}
+                    required
+                  />
+                </Tippy>
                 <label className={styles.label} htmlFor='description'>
                   Please describe your request
                 </label>
-                <textarea
-                  className={styles.textArea}
-                  name='description'
-                  id='description'
-                  rows={3}
-                  placeholder='Give us as much detail as possible.'
-                  onChange={(e) => setDescription(e.target.value)}
-                  disabled={formState === FormState.Loading}
-                />
+                <Tippy
+                  maxWidth={270}
+                  content={
+                    <div className={styles.warningTooltip}>
+                      <InfoSVG />
+                      <span> Please fill out this field</span>
+                    </div>
+                  }
+                  visible={visibleDescription}
+                >
+                  <textarea
+                    className={styles.textArea}
+                    name='description'
+                    id='description'
+                    rows={3}
+                    placeholder='Give us as much detail as possible.'
+                    onChange={(e) => setDescription(e.target.value)}
+                    disabled={formState === FormState.Loading}
+                    required
+                  />
+                </Tippy>
                 <Button
                   className={classNames(styles.button, { [styles.loadingButton]: formState === FormState.Loading })}
                   type='submit'

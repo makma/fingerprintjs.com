@@ -134,3 +134,11 @@ select:focus {
 .errorDescription {
   text-align: center;
 }
+
+.warningTooltip {
+  display: flex;
+  column-gap: rem(8px);
+  align-items: center;
+
+  color: #919194;
+}
