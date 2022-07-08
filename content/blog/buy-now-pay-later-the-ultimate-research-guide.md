@@ -18,6 +18,7 @@ isHidden: false
 tags:
   - ecommerce fraud
   - anti-fraud technology
+  - buy now pay later
 authors:
   - Frederik Bussler
 heroImage:
