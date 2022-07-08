@@ -17,6 +17,7 @@ isPublished: true
 isHidden: false
 tags:
   - ecommerce fraud
+  - buy now pay later
 authors:
   - Courtney Rogin
 heroImage:
