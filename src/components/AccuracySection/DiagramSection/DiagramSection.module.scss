@@ -84,7 +84,8 @@ $mobileBreakpoint: 740px;
     }
     .tabs {
       display: inline-block;
-
+      position: relative;
+      z-index: 99;
       @media screen and (max-width: $mobileBreakpoint) {
         display: none;
       }
@@ -111,6 +112,21 @@ $mobileBreakpoint: 740px;
         display: none;
       }
     }
+    .afterAccuracyDescription {
+      color: transparent;
+
+      @media screen and (max-width: $tabletBreakpoint) {
+        color: unset;
+      }
+      .accuracyTextAnimated {
+        position: relative;
+        bottom: 80px;
+
+        @media screen and (max-width: $tabletBreakpoint) {
+          display: none;
+        }
+      }
+    }
 
     .diagram {
       position: relative;
@@ -122,9 +138,9 @@ $mobileBreakpoint: 740px;
       background-position-y: rem(-46px);
       background-size: rem(1128px) rem(560px);
 
-      @include transition(background-image);
-      @include transition-duration(0.4s);
-      @include transition-timing-function(linear);
+      @include transition(background);
+      @include transition-duration(1s);
+      @include transition-timing-function(ease-out);
 
       @media screen and (max-width: $tabletBreakpoint) {
         background-image: url('/img/diagram-section/backgroundTabletBefore.svg');
@@ -141,9 +157,30 @@ $mobileBreakpoint: 740px;
 
         border-radius: rem(24px);
       }
+
+      .afterSvgAnimated {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 1s, opacity 1s linear;
+
+        width: rem(1128px);
+        height: rem(560px);
+        position: relative;
+        top: rem(-46px);
+        right: rem(4px);
+
+        &.isVisible {
+          visibility: visible;
+          opacity: 1;
+        }
+        @media screen and (max-width: $tabletBreakpoint) {
+          display: none;
+        }
+      }
     }
+
     .afterBackground {
-      background-image: url('/img/diagram-section/backgroundAfter.svg');
+      background-image: url('/img/diagram-section/blank.svg');
 
       @media screen and (max-width: $tabletBreakpoint) {
         background-image: url('/img/diagram-section/backgroundTabletAfter.png');
@@ -155,12 +192,14 @@ $mobileBreakpoint: 740px;
     }
 
     .incomingFlow {
-      position: absolute;
-      max-width: rem(197px);
-      left: rem(-10px);
-      bottom: rem(59px);
+      display: none;
 
       @media screen and (max-width: $tabletBreakpoint) {
+        display: block;
+
+        position: absolute;
+        max-width: rem(197px);
+
         bottom: rem(-10px);
 
         left: 50%;
@@ -190,11 +229,12 @@ $mobileBreakpoint: 740px;
       }
     }
     .fingerService {
-      position: absolute;
-      width: rem(221px);
-      left: rem(460px);
-      bottom: rem(180px);
+      display: none;
       @media screen and (max-width: $tabletBreakpoint) {
+        display: block;
+        position: absolute;
+        width: rem(221px);
+
         bottom: rem(50px);
         left: 50%;
         transform: translate(-50%);
@@ -215,10 +255,11 @@ $mobileBreakpoint: 740px;
       }
     }
     .visitor {
-      left: rem(330px);
-      top: rem(105px);
+      display: none;
 
       @media screen and (max-width: $tabletBreakpoint) {
+        display: block;
+
         top: rem(75px);
 
         left: 50%;
@@ -232,10 +273,10 @@ $mobileBreakpoint: 740px;
       }
     }
     .visitorId {
-      right: rem(275px);
-      top: rem(142px);
+      display: none;
 
       @media screen and (max-width: $tabletBreakpoint) {
+        display: block;
         top: rem(95px);
 
         right: 50%;
@@ -250,11 +291,15 @@ $mobileBreakpoint: 740px;
     }
     .trusted,
     .suspicious {
-      display: flex;
-      column-gap: rem(8px);
-      align-items: center;
+      display: none;
 
-      position: absolute;
+      @media screen and (max-width: $tabletBreakpoint) {
+        display: flex;
+        column-gap: rem(8px);
+        align-items: center;
+
+        position: absolute;
+      }
 
       @media screen and (max-width: $mobileBreakpoint) {
         display: none;
@@ -296,4 +341,7 @@ $mobileBreakpoint: 740px;
 .trusted,
 .suspicious {
   @include sans($size: 14px, $weight: 700, $lh: 150%);
+}
+mask {
+  mask-type: alpha;
 }

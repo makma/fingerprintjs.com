@@ -9,6 +9,8 @@ import { Helmet } from 'react-helmet'
 
 import { ReactComponent as TickSVG } from './img/TickSVG.svg'
 import { ReactComponent as CrossSVG } from './img/CrossSVG.svg'
+import After from '-!svg-react-loader!../../../../static/img/diagram-section/after.inline.svg'
+import AccuracyText from '-!svg-react-loader!../../../../static/img/diagram-section/accuracy.inline.svg'
 
 enum tabOptions {
   BeforePro,
@@ -34,11 +36,33 @@ export default function DiagramSection() {
     }
   }, [isActive, timeoutId])
 
+  useEffect(() => {
+    if (currentTab === tabOptions.AfterPro) {
+      /* eslint-disable  @typescript-eslint/no-explicit-any */
+      const background = document.getElementById('backgroundafter') as any
+      const text = document.getElementById('ebJ3ZqH7pWA1') as any
+      /* eslint-enable @typescript-eslint/no-explicit-any  */
+
+      const playerBack = background ? background.svgatorPlayer : {}
+      const playerText = text ? text.svgatorPlayer : {}
+      if (playerBack.play && playerText.play) {
+        playerBack.stop()
+        playerText.stop()
+
+        setTimeout(() => {
+          playerBack.play()
+          playerText.play()
+        }, 750)
+      }
+    }
+  }, [currentTab])
+
   return (
     <>
       <Helmet>
         <link rel='preload' as='image' href={withPrefix('/img/diagram-section/background.svg')} />
-        <link rel='preload' as='image' href={withPrefix('/img/diagram-section/backgroundAfter.svg')} />
+        <link rel='preload' as='image' href={withPrefix('/img/diagram-section/after.inline.svg')} />
+        <link rel='preload' as='image' href={withPrefix('/img/diagram-section/blank.svg')} />
         <link rel='preload' as='image' href={withPrefix('/img/diagram-section/backgroundTabletBefore.svg')} />
         <link rel='preload' as='image' href={withPrefix('/img/diagram-section/backgroundTabletAfter.png')} />
         <link rel='preload' as='image' href={withPrefix('/img/diagram-section/backgroundMobileBefore.svg')} />
@@ -50,16 +74,27 @@ export default function DiagramSection() {
           <Tabs currentTab={currentTab} setCurrentTab={handleSwitch} className={styles.mobileTabs} />
           <div className={styles.card}>
             <Tabs currentTab={currentTab} setCurrentTab={handleSwitch} className={styles.tabs} />
-            <span className={styles.accuracyDescription}>
+            <span
+              className={classNames(styles.accuracyDescription, {
+                [styles.afterAccuracyDescription]: currentTab === tabOptions.AfterPro,
+              })}
+            >
               {currentTab === tabOptions.BeforePro
                 ? 'Low accuracy identification makes it impossible to separate trusted from suspicious traffic.'
                 : 'With accurate visitorID history, you can challenge untrusted traffic while personalizing experiences for trusted visitors.'}
+              {currentTab === tabOptions.AfterPro && <AccuracyText className={styles.accuracyTextAnimated} />}
             </span>
             <div
               className={classNames(styles.diagram, {
                 [styles.afterBackground]: currentTab === tabOptions.AfterPro,
               })}
             >
+              <After
+                className={classNames(styles.afterSvgAnimated, {
+                  [styles.isVisible]: currentTab === tabOptions.AfterPro,
+                })}
+              />
+
               {currentTab === tabOptions.BeforePro && (
                 <span className={styles.otherServices}>
                   Other services <strong>can only accurately identify 60%</strong> of returning visitors

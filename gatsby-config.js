@@ -208,17 +208,20 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
+    {
       resolve: 'gatsby-plugin-svgr',
       options: {
         ref: true,
-        svgoConfig: {
-          plugins: [
-            {
-              name: 'cleanupIDs',
-              active: false,
-            },
-          ],
-        },
+        prettier: false,
+        svgo: false,
+        exclude: /\.inline\.svg$/,
       },
     },
     {
