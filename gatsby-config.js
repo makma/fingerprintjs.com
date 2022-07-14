@@ -219,9 +219,15 @@ module.exports = {
       resolve: 'gatsby-plugin-svgr',
       options: {
         ref: true,
-        prettier: false,
-        svgo: false,
         exclude: /\.inline\.svg$/,
+        svgoConfig: {
+          plugins: [
+            {
+              name: 'cleanupIDs',
+              active: false,
+            },
+          ],
+        },
       },
     },
     {

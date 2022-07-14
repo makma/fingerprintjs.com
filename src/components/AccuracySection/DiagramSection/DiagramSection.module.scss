@@ -176,6 +176,9 @@ $mobileBreakpoint: 740px;
         @media screen and (max-width: $tabletBreakpoint) {
           display: none;
         }
+        mask {
+          mask-type: alpha;
+        }
       }
     }
 
@@ -341,7 +344,4 @@ $mobileBreakpoint: 740px;
 .trusted,
 .suspicious {
   @include sans($size: 14px, $weight: 700, $lh: 150%);
-}
-mask {
-  mask-type: alpha;
 }
