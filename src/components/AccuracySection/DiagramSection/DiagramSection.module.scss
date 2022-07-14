@@ -167,7 +167,7 @@ $mobileBreakpoint: 740px;
         height: rem(560px);
         position: relative;
         top: rem(-46px);
-        right: rem(4px);
+        left: rem(-4px);
 
         &.isVisible {
           visibility: visible;
