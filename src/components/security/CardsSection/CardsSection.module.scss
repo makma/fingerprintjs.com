@@ -1,0 +1,77 @@
+.root {
+  padding: rem(40px) 0;
+
+  @include media('<=phoneLandscape') {
+    padding: rem(32px) 0;
+  }
+}
+.headerSection {
+  padding-bottom: rem(64px);
+  text-align: center;
+
+  @include media('<=phoneLandscape') {
+    padding-bottom: rem(32px);
+  }
+  .title {
+    @include sans($size: 32px, $weight: v('bold'), $lh: 130%);
+    letter-spacing: -0.01em;
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(24px);
+    }
+  }
+}
+
+.cardsContainer {
+  --contentWidth: 943px;
+  .cardsSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    column-gap: rem(32px);
+    row-gap: rem(40px);
+
+    @include media('<=tabletWide') {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: rem(40px);
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+
+      @include media('>phoneLandscape') {
+        padding: rem(32px);
+        box-shadow: 0px 20px 30px rgba(13, 16, 41, 0.1);
+        border-radius: 16px;
+      }
+      .iconWrapper {
+        height: rem(48px);
+        width: rem(48px);
+        margin-bottom: rem(16px);
+      }
+
+      .cardTitle {
+        @include sans($size: 20px, $weight: v('semi'), $lh: 150%);
+        letter-spacing: -0.01em;
+
+        margin-bottom: rem(8px);
+
+        @include media('<=phoneLandscape') {
+          font-size: rem(18px);
+        }
+      }
+
+      .cardDescription {
+        @include sans($size: 16px, $weight: 400, $lh: 150%);
+
+        @include media('<=phoneLandscape') {
+          font-size: rem(14px);
+        }
+        .link {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

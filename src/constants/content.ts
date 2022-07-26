@@ -21,6 +21,7 @@ export const PATH = {
   careers: '/careers/',
   jobs: '/careers/jobs/',
   support: '/support/',
+  security: '/security/',
 } as const
 
 export const URL = {

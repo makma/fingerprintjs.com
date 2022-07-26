@@ -1,0 +1,66 @@
+.root {
+  padding-top: rem(80px);
+  padding-bottom: rem(176px);
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(64px);
+    padding-bottom: rem(96px);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: rem(56px);
+
+    @include media('<=phoneLandscape') {
+      row-gap: rem(32px);
+    }
+
+    .descriptionSection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: rem(16px);
+      max-width: rem(608px);
+      text-align: center;
+
+      .title {
+        @include sans($size: 32px, $weight: 700, $lh: 150%);
+        letter-spacing: -0.01em;
+
+        @include media('<=phoneLandscape') {
+          font-size: rem(24px);
+        }
+      }
+
+      .description {
+        @include sans($size: 16px, $weight: 400, $lh: 150%);
+      }
+    }
+    .imageSection {
+      display: flex;
+      column-gap: rem(40px);
+
+      @include media('<=phoneLandscape') {
+        flex-direction: column;
+        row-gap: rem(40px);
+      }
+
+      .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: rem(16px);
+        min-width: rem(216px);
+
+        .logoIcon {
+          width: rem(80px);
+        }
+        .logoTitle {
+          @include sans($size: 16px, $weight: 600, $lh: 150%);
+        }
+      }
+    }
+  }
+}

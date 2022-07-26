@@ -318,3 +318,20 @@
     scroll-margin-top: var(--header-height);
   }
 }
+
+@mixin moveUp($duration: 0.8s) {
+  animation: moveUp #{$duration} ease;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-delay: 0.6s;
+  @keyframes moveUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}

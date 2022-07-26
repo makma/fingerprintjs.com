@@ -1,0 +1,46 @@
+.heroSection {
+  padding-bottom: rem(64px);
+}
+.ctaSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: rem(96px);
+  background: linear-gradient(95.53deg, #f25250 -1.57%, #fa7247 102.59%);
+
+  @include media('<=phoneLandscape') {
+    padding: rem(40px);
+  }
+
+  h1 {
+    @include sans($size: 32px, $weight: v('bold'), $lh: 130%);
+  }
+  p {
+    max-width: rem(512px);
+
+    @include media('<=phoneLandscape') {
+      font-weight: 400 !important;
+    }
+  }
+  a {
+    padding: 0 rem(32px);
+    background-color: v('white');
+    color: c('brand-fire');
+    height: rem(56px);
+    @include transition((color));
+
+    &:hover {
+      background-color: v('white');
+      color: adjust-color(c('brand-fire'), $lightness: -20%);
+    }
+
+    @include media('<=phoneLandscape') {
+      width: unset !important;
+    }
+  }
+
+  @include media('<=phoneLandscape') {
+    margin-bottom: rem(64px);
+  }
+}

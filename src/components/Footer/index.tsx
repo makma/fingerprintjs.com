@@ -108,6 +108,11 @@ const footerLinks: FooterLinkSection[] = [
         title: 'Legal',
         url: `${DOC_URL.legalUrl}`,
       },
+      {
+        title: 'Security',
+        url: `${PATH.security}`,
+        isLocal: true,
+      },
     ],
   },
 ]
