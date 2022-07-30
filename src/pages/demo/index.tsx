@@ -13,6 +13,8 @@ import CatchFraudstersSection from '../../components/demo/DemoSection/VisitsSect
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
 
+import styles from './Demo.module.scss'
+
 interface DemoPageProps {
   pageContext: GeneratedPageContext
 }
@@ -29,7 +31,12 @@ export default function DemoPage({ pageContext }: DemoPageProps) {
   return (
     <LayoutTemplate siteMetadata={siteMetadata}>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
-      <HeroSection title='Fingerprint Pro Demo' ctaText='Create Free Account' ctaHref={URL.signupUrl}>
+      <HeroSection
+        className={styles.heroSection}
+        title='Fingerprint Pro Demo'
+        ctaText='Create Free Account'
+        ctaHref={URL.signupUrl}
+      >
         Identify anonymous site visitors with 99.5% accuracy to prevent online fraud
       </HeroSection>
       <DemoSection />
