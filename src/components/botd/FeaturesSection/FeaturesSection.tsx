@@ -15,7 +15,7 @@ export default function FeaturesSection() {
       <Container className={styles.titleContainer}>
         <h2 className={styles.title}>Use BotD to detect:</h2>
       </Container>
-      <Container className={styles.cardsContainer}>
+      <Container size='large' className={styles.cardsContainer}>
         <Card
           icon={<BrowserSVG />}
           title='Browser spoofing'

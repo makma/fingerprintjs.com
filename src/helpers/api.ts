@@ -63,6 +63,18 @@ export async function generateBotDToken(customerEmail: string, tag: string, sess
   })
 }
 
+export async function requestBotdKeys(customerEmail: string, sessionId: string, utmParams: Record<string, string>) {
+  return fetch(`${FPJS_MGMT_API_HOST}/hubspot/request_botd_keys`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: customerEmail,
+      sessionId,
+      utm_info: utmParams,
+    }),
+  })
+}
+
 export async function getListingsFromGreenhouse() {
   const response = await fetch(`https://api.greenhouse.io/v1/boards/${GREENHOUSE_COMPANY_ID}/jobs?content=true`)
 

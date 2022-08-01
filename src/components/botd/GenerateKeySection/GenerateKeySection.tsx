@@ -3,10 +3,9 @@ import Container from '../../common/Container'
 import Button from '../../common/Button'
 import { useForm, Forms } from '../../../hooks/useForm'
 import { FormState } from '../../../types/FormState'
-import { generateBotDToken } from '../../../helpers/api'
+import { requestBotdKeys } from '../../../helpers/api'
 import classNames from 'classnames'
 import CodeWindowWithSelector from '../../common/CodeWindowWithSelector'
-import { copyToClipboard } from '../../../helpers/clipboard'
 import useLocalStorage from '../../../hooks/useLocalStorage'
 import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
 import { initTuring } from '../../../helpers/turing'
@@ -14,8 +13,8 @@ import * as Turing from '@fpjs-incubator/turing'
 import { BOTD_PUBLIC_KEY_TURING } from '../../../constants/env'
 import { PATH } from '../../../constants/content'
 import { ReactComponent as BotD } from '../../../img/BotdBowl.svg'
-import { ReactComponent as CopySVG } from '../../../img/CopySVG.svg'
 import { ReactComponent as DevSVG } from './DevSVG.svg'
+import { useViewTracking } from '../../../context/HistoryListener'
 
 import styles from './GenerateKeySection.module.scss'
 
@@ -27,19 +26,15 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
   const [email, setEmail] = useState('')
   const { formState, updateFormState, errorMessage, updateErrorMessage } = useForm(Forms.BotdGenerateToken)
 
-  const [botDToken, setBotDToken] = useState({ publicKey: '<your-public-key>', secretKey: '' })
-
   const { data } = useVisitorData()
-  const visitorId = data?.visitorId
+  const { utmParams } = useViewTracking()
 
   const disableButton = !(requestId && data && formState !== FormState.Loading)
 
-  interface MailKeys {
+  interface UsedMails {
     usedEmail: string
-    publicKey: string
-    secretKey: string
   }
-  const [usedEmails, setUsedEmails] = useLocalStorage('botd_keys', [] as MailKeys[])
+  const [usedEmails, setUsedEmails] = useLocalStorage('botd_request_keys', [] as UsedMails[])
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -56,10 +51,9 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
       }, 5000)
     }
 
-    const usedKeys = usedEmails.find(({ usedEmail }) => usedEmail === email)
+    const usedEmail = usedEmails.find(({ usedEmail }) => usedEmail === email)
 
-    if (usedKeys) {
-      setBotDToken({ publicKey: usedKeys.publicKey, secretKey: usedKeys.secretKey })
+    if (usedEmail) {
       updateFormState(FormState.Success)
     } else {
       try {
@@ -68,12 +62,8 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
         if (!sessionId) {
           throw new Error()
         }
-        const tag = {
-          ...(requestId && { requestId }),
-          ...(visitorId && { visitorId }),
-        }
 
-        const response = await generateBotDToken(email, JSON.stringify(tag), sessionId)
+        const response = await requestBotdKeys(email, sessionId, utmParams)
         const status = response.status
         if (status !== 200) {
           const error = await response.json()
@@ -81,17 +71,7 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
           onError(error)
         } else {
           updateFormState(FormState.Success)
-          const data = await response.json()
-
-          const publicKey = data?.publicKey
-          const secretKey = data?.secretKey
-
-          if (publicKey && secretKey) {
-            setBotDToken({ publicKey, secretKey })
-            setUsedEmails([...usedEmails, { usedEmail: email, publicKey, secretKey }])
-          } else {
-            onError()
-          }
+          setUsedEmails([...usedEmails, { usedEmail: email }])
         }
       } catch (error) {
         onError()
@@ -99,29 +79,19 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
     }
   }
 
-  // Check before the first render if the status is successful and in this case show the last key saved in local storage
   useEffect(() => {
-    if (formState === FormState.Success) {
-      const sessionKey = usedEmails[usedEmails.length - 1]
-      if (sessionKey) {
-        setBotDToken({ publicKey: sessionKey.publicKey, secretKey: sessionKey.secretKey })
-        return
-      }
-    }
     initTuring()
-    updateFormState(FormState.Default)
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
-    <Container className={styles.container}>
-      <section className={styles.keyGenSection}>
+    <Container size='large' className={styles.container}>
+      <section id='requestKeys' className={styles.keyGenSection}>
         <DevSVG className={styles.icon} id='generateKeySection' />
         {(formState === FormState.Default || formState === FormState.Loading) && (
           <>
-            <h1 className={styles.title}>Generate my API keys</h1>
+            <h1 className={styles.title}>Request API keys</h1>
             <p className={styles.description}>
-              Enter your email to generate your unique keys and code snippet. Install on your site to use our API for
-              free.
+              Enter your email below to send a request to our Support team to generate your API keys.
             </p>
             <div className={styles.generateKeyForm} data-sitekey={BOTD_PUBLIC_KEY_TURING}>
               <label className={styles.label} htmlFor='email'>
@@ -147,7 +117,7 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
                   disabled={disableButton}
                   onClick={handleSubmit}
                 >
-                  Generate keys
+                  Contact Support
                 </Button>
               </div>
             </div>
@@ -171,63 +141,45 @@ export default function GenerateKeySection({ requestId }: GenerateKeySectionProp
             <p className={styles.description}>Please try again.</p>
           </>
         )}
-        {formState === FormState.Success && (
-          <>
-            <h1 className={styles.title}>Your API keys were generated</h1>
-
-            <h2 className={styles.subTitle}>Public Key</h2>
-            <p className={styles.keyDescription}>Safe to use publicly on your web pages.</p>
-            <div className={styles.keySection}>
-              <p className={styles.key}>{botDToken.publicKey}</p>
-              <CopySVG className={styles.copyIcon} onClick={() => copyToClipboard(botDToken.publicKey)} />
-            </div>
-            <h2 className={styles.subTitle}>Secret Key</h2>
-            <p className={styles.keyDescription}>Keep this key secret, use it to verify bots server-side.</p>
-            <div className={styles.keySection}>
-              <p className={styles.key}>{botDToken.secretKey}</p>
-              <CopySVG className={styles.copyIcon} onClick={() => copyToClipboard(botDToken.secretKey)} />
-            </div>
-          </>
-        )}
+        {formState === FormState.Success && <h1 className={styles.title}>We will be in touch soon!</h1>}
       </section>
       <section className={styles.snippetSection}>
         <CodeWindowWithSelector
           codeBlocks={[
             {
               code: `<script>
-  // Initialize an agent at application startup.
-  const botdPromise = import(
-    "https://openfpcdn.io/botd/v0.1"
-  ).then( Botd =>
-    Botd.load({ publicKey: "${botDToken.publicKey}" })
-  );
-  // Get the bot detection result when you need it.
-  // Result will contain the requestId property,
-  // that you can securely verify on the server.
-  botdPromise
-    .then(botd => botd.detect())
-    .then(result => console.log(result))
-    .catch(error => console.error(error))
+// Initialize the agent at application startup.
+const fpPromise = import('https://fpcdn.io/v3/<api-key>')
+  .then(FingerprintJS => FingerprintJS.load())
+
+fpPromise
+  .then(fp => fp.get())
+  .then(result => {
+    // Result will contain the requestId property,
+    // that you can securely verify on the server.
+    const requestId = result.requestId
+    console.log(requestId)
+  })
 </script>`,
               language: 'html',
               type: 'CDN',
             },
             {
-              code: `import Botd from "@fpjs-incubator/botd-agent";
+              code: `import FingerprintJS from '@fingerprintjs/fingerprintjs-pro'
 
 // Initialize an agent at application startup.
-const botdPromise = Botd.load({
-  publicKey: "${botDToken.publicKey}",
-});
+const fpPromise = FingerprintJS.load({
+  apiKey: <api-key>
+})
 
-(async () => {
-  // Get the bot detection result when you need it.
+fpPromise
+  .then(fp => fp.get())
   // Result will contain the requestId property,
   // that you can securely verify on the server.
-  const botd = await botdPromise;
-  const result = await botd.detect();
-  console.log(result);
-})();`,
+  .then(result => console.log(result.requestId))
+  
+  `,
+
               language: 'javascript',
               type: 'NPM',
             },

@@ -1,20 +1,18 @@
 export interface SuccessResponse {
   requestId: string
-  ip: string
-  tag: string
-  bot: {
-    automationTool: DetectNote
-    searchEngine: DetectNote
-    browserSpoofing: DetectNote
+  products: {
+    botd: {
+      data: {
+        bot: { result: DetectStatus }
+        meta: { yourTag: number }
+        ip: string
+      }
+      error?: {
+        code: string
+        message: string
+      }
+    }
   }
-  vm: DetectNote
-  verifyCounter: number
 }
 
-interface DetectNote {
-  status: DetectStatus
-  probability: number
-  type?: string
-}
-
-type DetectStatus = 'processed' | 'notEnoughData' | 'error'
+type DetectStatus = 'good' | 'bad' | 'notDetected'

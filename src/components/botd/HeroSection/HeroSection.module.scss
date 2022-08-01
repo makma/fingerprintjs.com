@@ -2,7 +2,11 @@
   display: grid;
   grid-template-columns: 1fr 50%;
   column-gap: rem(32px);
-  --contentWidth: 1270px;
+
+  @include media('>desktop') {
+    padding-top: rem(78px);
+    padding-bottom: rem(144px);
+  }
 
   @include media('<=desktop') {
     display: flex;
@@ -12,8 +16,6 @@
 
 .descriptionSection,
 .botDSection {
-  padding-top: rem(72.5px);
-  padding-bottom: rem(145px);
   z-index: 0;
   @include media('<=desktop') {
     padding-top: rem(48px);
@@ -112,6 +114,11 @@
   }
 }
 .botDSection {
+  @include media('>desktop') {
+    display: flex;
+    align-items: center;
+  }
+
   .botTitle {
     @include sans($size: 14px, $weight: 600, $lh: 140%, $color: adjust-color(c('brand-water'), $alpha: -0.5));
     letter-spacing: 0.04em;

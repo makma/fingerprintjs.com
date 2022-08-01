@@ -1,5 +1,4 @@
 import React, { useEffect, useReducer } from 'react'
-import Section from '../../common/Section'
 import Container from '../../common/Container'
 import Button from '../../common/Button'
 import { URL } from '../../../constants/content'
@@ -15,12 +14,9 @@ import { ReactComponent as GithubIconSvg } from './svg/GithubSVG.svg'
 
 import { ReactComponent as automationDetectedSVG } from './svg/AutomationDetectedSVG.svg'
 import { ReactComponent as automationNotDetectedSVG } from './svg/AutomationNotDetectedSVG.svg'
-import { ReactComponent as browserNotDetectedSVG } from './svg/BrowserNotDetectedSVG.svg'
-import { ReactComponent as browserDetectedSVG } from './svg/BrowserDetectedSVG.svg'
 import { ReactComponent as searchEngineDetectedSVG } from './svg/SearchEngineDetectedSVG.svg'
 import { ReactComponent as searchEngineNotDetectedSVG } from './svg/SearchEngineNotDetectedSVG.svg'
-import { ReactComponent as virtualMDetectedSVG } from './svg/VirtualMDetectedSVG.svg'
-import { ReactComponent as virtualMNotDetectedSVG } from './svg/VirtualMNotDetectedSVG.svg'
+
 import { ReactComponent as InfoSvg } from './svg/InfoTipSVG.svg'
 import { ReactComponent as LoadingIconSvg } from './svg/LoadingIconSVG.svg'
 import { ReactComponent as RefreshIconSvg } from '../../../img/RefreshSVG.svg'
@@ -30,15 +26,11 @@ import styles from './HeroSection.module.scss'
 interface DetectedBots {
   isBot: boolean
   automationTool: boolean
-  browserSpoofing: boolean
   searchEngine: boolean
-  vm: boolean
 }
 enum BotType {
   AutomationTool,
-  BrowserSpoofing,
   SearchEngine,
-  Vm,
 }
 
 type Action = { detected: BotType }
@@ -49,12 +41,8 @@ function botReducer(detectedBots: DetectedBots, updateDetectedBot: Action) {
   switch (updateDetectedBot.detected) {
     case BotType.AutomationTool:
       return { ...detectedBots, automationTool: true }
-    case BotType.BrowserSpoofing:
-      return { ...detectedBots, browserSpoofing: true }
     case BotType.SearchEngine:
       return { ...detectedBots, searchEngine: true }
-    case BotType.Vm:
-      return { ...detectedBots, vm: true }
   }
 }
 
@@ -68,25 +56,17 @@ export default function HeroSection({ visitorData, isLoading, hasError, refresh 
   const initialState = {
     isBot: false,
     automationTool: false,
-    browserSpoofing: false,
     searchEngine: false,
-    vm: false,
   }
   const [botState, dispatch] = useReducer(botReducer, initialState)
 
   useEffect(() => {
     if (visitorData) {
-      if (visitorData.bot.automationTool.probability > 0) {
-        dispatch({ detected: BotType.AutomationTool })
-      }
-      if (visitorData.bot.browserSpoofing.probability > 0) {
-        dispatch({ detected: BotType.BrowserSpoofing })
-      }
-      if (visitorData.bot.searchEngine.probability > 0) {
+      if (visitorData.products.botd.data.bot.result === 'good') {
         dispatch({ detected: BotType.SearchEngine })
       }
-      if (visitorData.vm.probability > 0) {
-        dispatch({ detected: BotType.Vm })
+      if (visitorData.products.botd.data.bot.result === 'bad') {
+        dispatch({ detected: BotType.AutomationTool })
       }
     }
   }, [visitorData])
@@ -94,8 +74,8 @@ export default function HeroSection({ visitorData, isLoading, hasError, refresh 
   const { githubData } = useGithub('BotD')
 
   return (
-    <Container className={styles.container}>
-      <Section className={styles.descriptionSection}>
+    <Container size='large' className={styles.container}>
+      <section className={styles.descriptionSection}>
         <div className={styles.labels}>
           <span className={styles.title}>free open beta</span>
           <span className={styles.title}>{githubData?.stargazers_count} stars</span>
@@ -129,8 +109,8 @@ export default function HeroSection({ visitorData, isLoading, hasError, refresh 
             </div>
           </a>
         </div>
-      </Section>
-      <Section className={styles.botDSection}>
+      </section>
+      <section className={styles.botDSection}>
         <div className={styles.botD}>
           <h2 className={styles.botTitle}>Am I a bot?</h2>
           {isLoading ? (
@@ -150,7 +130,7 @@ export default function HeroSection({ visitorData, isLoading, hasError, refresh 
           </p>
           <CardsSection {...botState} hasError={hasError} isLoading={isLoading} />
         </div>
-      </Section>
+      </section>
     </Container>
   )
 }
@@ -159,11 +139,11 @@ interface CardsSectionProps extends DetectedBots {
   isLoading?: boolean
   hasError?: boolean
 }
-function CardsSection({ automationTool, browserSpoofing, searchEngine, vm, isLoading, hasError }: CardsSectionProps) {
+function CardsSection({ automationTool, searchEngine, isLoading, hasError }: CardsSectionProps) {
   if (isLoading || hasError) {
     return (
       <section className={styles.cards}>
-        {repeatElement(4, (i) => (
+        {repeatElement(2, (i) => (
           <LoadingCard key={i} error={hasError} />
         ))}
       </section>
@@ -193,31 +173,6 @@ function CardsSection({ automationTool, browserSpoofing, searchEngine, vm, isLoa
           <p>
             <strong>Search engine detection</strong> is important to know which bots should be ignored, because
             they&apos;re good and which should be protected against, because they&apos;re bad.
-          </p>
-        }
-      />
-      <Card
-        iconDetected={browserDetectedSVG}
-        iconNotDetected={browserNotDetectedSVG}
-        title='Browser Spoofing'
-        detected={browserSpoofing}
-        tipContent={
-          <p>
-            <strong>Browser spoofing detection</strong> is helpful to know when headless browsers used to abuse your
-            website pretend to be regular iPhones or Android devices.
-          </p>
-        }
-      />
-      <Card
-        iconDetected={virtualMDetectedSVG}
-        iconNotDetected={virtualMNotDetectedSVG}
-        title='Virtual Machine'
-        detected={vm}
-        tipContent={
-          <p>
-            <strong>Virtual machine detection</strong> is useful to detect click farms, automated review fraud and junk
-            content generation. It&apos;s a strong signal that improves the reliability and accuracy of the previous
-            three detectors.
           </p>
         }
       />

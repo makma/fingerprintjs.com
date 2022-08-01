@@ -1,7 +1,3 @@
-.container {
-  --contentWidth: 1270px;
-}
-
 .root {
   padding-bottom: rem(144px);
 
@@ -40,42 +36,28 @@
   .detailsTitle {
     @include sans($size: 24px, $weight: 600, $lh: 150%);
     letter-spacing: 0.01em;
+
+    margin-bottom: rem(8px);
   }
 
   .description {
     @include sans($size: 16px, $lh: 150%);
 
-    margin-bottom: rem(8px);
+    .strong {
+      font-weight: 500;
+    }
   }
 }
 
-.automationTool {
-  bottom: 452px;
-  left: 257px;
+.result {
+  bottom: 138px;
 }
-.browserSpoofing {
-  bottom: 368px;
-  left: 265px;
-}
-.searchEngine {
-  bottom: 284px;
-  left: 240px;
-}
-.vm {
-  bottom: 179px;
-  left: 123px;
-}
+
 .ip {
   bottom: 96px;
 }
 .requestId {
-  bottom: 75px;
-}
-.verifyCounter {
-  bottom: 54px;
-}
-.tag {
-  bottom: 32px;
+  top: 31px;
 }
 
 .link {

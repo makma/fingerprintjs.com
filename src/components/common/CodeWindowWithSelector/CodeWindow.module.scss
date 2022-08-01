@@ -112,11 +112,19 @@
 .content {
   margin: rem(24px);
 
+  pre {
+    margin: 0;
+    padding: rem(8px) 0;
+    font-size: rem(14px);
+  }
+  code {
+    line-height: 21px;
+  }
   code[class*='language-'],
   pre[class*='language-'] {
     font-size: rem(14px);
     color: #ffffff;
-    line-height: 150%;
+    line-height: rem(21px);
   }
 
   span[class='token punctuation'] {

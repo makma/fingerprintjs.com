@@ -10,7 +10,7 @@ import styles from './DocumentationSection.module.scss'
 
 export default function DocumentationSection() {
   return (
-    <Container className={styles.container}>
+    <Container size='large' className={styles.container}>
       <div className={styles.buttonSection}>
         <h1 className={styles.title}>Developer-friendly bot detection</h1>
         <Button href={DOC_URL.botDUrl} variant='primary' size='big' openNewTab>

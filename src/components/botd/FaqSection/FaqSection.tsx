@@ -6,7 +6,7 @@ import styles from './FaqSection.module.scss'
 
 export default function FaqSection() {
   return (
-    <Container className={styles.container}>
+    <Container size='large' className={styles.container}>
       <section className={styles.descriptionSection}>
         <h1 className={styles.title}>Protect your website from the harmful effects of bots</h1>
         <p className={styles.description}>

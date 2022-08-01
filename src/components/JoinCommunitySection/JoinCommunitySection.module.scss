@@ -1,6 +1,4 @@
 .container {
-  --contentWidth: 1270px;
-
   padding-bottom: rem(58px);
   @include media('<=phoneLandscape') {
     padding: 0;

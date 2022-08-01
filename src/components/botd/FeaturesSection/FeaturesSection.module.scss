@@ -30,7 +30,6 @@
   }
 }
 .cardsContainer {
-  --contentWidth: 1270px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   @include gap(rem(32px));

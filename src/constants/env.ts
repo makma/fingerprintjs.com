@@ -72,6 +72,12 @@ export const BOTD_VERIFY_ENDPOINT =
     [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_BOTD_VERIFY_ENDPOINT,
   }) ?? 'https://botd.fpapi.io/api/v1/verify'
 
+export const BOTD_VERIFY_AGENT_ENDPOINT =
+  getContextEnv<string>({
+    [NetlifyContext.Production]: process.env.GATSBY_BOTD_VERIFY_AGENT_ENDPOINT,
+    [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_BOTD_VERIFY_AGENT_ENDPOINT,
+  }) ?? 'https://api.fpjs.io'
+
 export const FPJS_TLS_ENDPOINT =
   getContextEnv<string>({
     [NetlifyContext.Production]: process.env.GATSBY_FPJS_TLS_ENDPOINT,

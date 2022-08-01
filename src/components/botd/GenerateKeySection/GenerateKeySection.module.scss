@@ -19,6 +19,8 @@
 }
 
 .keyGenSection {
+  @include scrollSection;
+
   @include media('<=desktop') {
     padding-right: 0;
   }
@@ -42,50 +44,6 @@
     }
   }
 
-  .subTitle {
-    @include sans($size: 20px, $lh: 150%, $weight: 600);
-    letter-spacing: 0.01em;
-
-    padding-top: rem(32px);
-  }
-  .keyDescription {
-    @include sans($size: 14px, $lh: 150%, $weight: 400);
-
-    padding-bottom: rem(16px);
-  }
-  .keySection {
-    display: inline-flex;
-    background: #f9f9fb;
-    border-radius: 4px;
-    padding: rem(13.5px) rem(12px);
-
-    .key {
-      font-family: v(ff-mono);
-      font-weight: v('bold');
-      font-size: rem(14px);
-      line-height: 150%;
-    }
-
-    .copyIcon {
-      cursor: pointer;
-      fill: black;
-      margin-left: rem(9px);
-      height: rem(22px);
-      width: rem(22px);
-
-      @include transition(opacity);
-      @include transition-duration(0.1s);
-      @include transition-timing-function(ease-out);
-
-      &:hover {
-        opacity: 0.5;
-      }
-      &:active {
-        opacity: 0.3;
-      }
-    }
-  }
-
   .description {
     @include sans($size: 16px, $lh: 150%);
 
@@ -93,10 +51,9 @@
     padding-right: rem(180px);
     min-height: rem(48px);
 
-    @include media('<=desktop') {
+    @media screen and (max-width: 1200px) {
       padding-right: 0;
     }
-
     @include media('<=tablet') {
       font-size: rem(14px);
     }
@@ -125,7 +82,7 @@
     padding-top: rem(8px);
     padding-right: rem(180px);
 
-    @include media('<=desktop') {
+    @media screen and (max-width: 1200px) {
       padding-right: 0;
     }
 

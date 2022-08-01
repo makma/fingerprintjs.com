@@ -8,6 +8,8 @@ import Tippy from '@tippyjs/react'
 import { ReactComponent as InfoSvg } from './InfoIconSVG.svg'
 import { isBrowser } from '../../../helpers/detector'
 
+import { AnimatePresence, motion } from 'framer-motion'
+
 interface CodeWindowProps {
   codeBlocks: { type: string; code: string; language: string }[]
   hasLineNumbers?: boolean
@@ -22,13 +24,14 @@ export default memo(function CodeWindowWithSelector({
   tooltips,
 }: CodeWindowProps) {
   const [activeTab, setActiveTab] = useState(codeBlocks[0])
+  const [activeTabHighlight, setActiveTabHighlight] = useState(codeBlocks[0].type)
   const [activeIndex, setActiveIndex] = useState(0)
 
   const showTabs = codeBlocks.length > 1
 
   useEffect(() => {
     Prism.highlightAll()
-  }, [activeTab, codeBlocks])
+  }, [codeBlocks, activeTabHighlight])
 
   const handleTab = (index: number) => {
     setActiveTab(codeBlocks[index])
@@ -65,22 +68,30 @@ export default memo(function CodeWindowWithSelector({
           </div>
         </div>
       )}
-      <div className={classNames(className, styles.content)}>
-        <pre className={styles.pre}>
-          <code
-            className={classNames(
-              styles.code,
-              {
-                'line-numbers': hasLineNumbers,
-              },
-              `language-${activeTab.language}`
-            )}
-          >
-            {codeBlocks[activeIndex].code}
-          </code>
-          {tooltips && tooltips.map((tooltip) => tooltip)}
-        </pre>
-      </div>
+      <AnimatePresence initial={false} exitBeforeEnter onExitComplete={() => setActiveTabHighlight(activeTab.type)}>
+        <motion.div
+          key={activeTab.type}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className={classNames(className, styles.content)}
+        >
+          <pre className={styles.pre}>
+            <code
+              className={classNames(
+                styles.code,
+                {
+                  'line-numbers': hasLineNumbers,
+                },
+                `language-${activeTab.language}`
+              )}
+            >
+              {codeBlocks[activeIndex].code}
+            </code>
+            {tooltips && tooltips.map((tooltip) => tooltip)}
+          </pre>
+        </motion.div>
+      </AnimatePresence>
     </div>
   )
 })

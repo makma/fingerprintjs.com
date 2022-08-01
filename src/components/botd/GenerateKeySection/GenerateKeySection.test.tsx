@@ -44,16 +44,11 @@ describe('BotD - Generate Key Section', () => {
     userEvent.type(screen.getByLabelText('Work email'), 'john@gmail.com')
     userEvent.click(screen.getByRole('button'))
 
-    await screen.findByText('Your API keys were generated')
-
-    const publicKeys = await screen.findAllByText(generatedKeys1set.publicKey, { exact: false })
-    expect(publicKeys).toHaveLength(2)
-
-    await screen.findByText(generatedKeys1set.secretKey)
+    await screen.findByText('We will be in touch soon!')
 
     expect(fetchMock).toHaveBeenCalledTimes(1)
   })
-  it('should show the same keys if the email is the same', async () => {
+  it('should not send the request again if the email is the same', async () => {
     fetchMock.mockResponseOnce(JSON.stringify(generatedKeys2set), {
       status: 200,
     })
@@ -69,37 +64,9 @@ describe('BotD - Generate Key Section', () => {
     userEvent.type(screen.getByLabelText('Work email'), 'john@gmail.com')
     userEvent.click(screen.getByRole('button'))
 
-    await screen.findByText('Your API keys were generated')
+    await screen.findByText('We will be in touch soon!')
 
-    const publicKeys = await screen.findAllByText(generatedKeys1set.publicKey, { exact: false })
-    expect(publicKeys).toHaveLength(2)
-
-    await screen.findByText(generatedKeys1set.secretKey)
     expect(fetchMock).toHaveBeenCalledTimes(0)
-  })
-  it('should show new keys if the email is not the same', async () => {
-    fetchMock.mockResponseOnce(JSON.stringify(generatedKeys2set), {
-      status: 200,
-    })
-
-    fpjsLoadMock.mockResolvedValue({
-      get: jest.fn().mockResolvedValue(fpResponse),
-    })
-
-    renderWithProviders(<GenerateKeySection requestId={visitorId} />)
-    await act(() => Promise.resolve())
-
-    expect(screen.getByLabelText('Work email')).not.toBeDisabled()
-    userEvent.type(screen.getByLabelText('Work email'), 'mike@gmail.com')
-    userEvent.click(screen.getByRole('button'))
-
-    await screen.findByText('Your API keys were generated')
-
-    const publicKeys = await screen.findAllByText(generatedKeys2set.publicKey, { exact: false })
-    expect(publicKeys).toHaveLength(2)
-
-    await screen.findByText(generatedKeys2set.secretKey)
-    expect(fetchMock).toHaveBeenCalledTimes(1)
   })
 
   it('should show the same keys during the session', async () => {
@@ -118,22 +85,15 @@ describe('BotD - Generate Key Section', () => {
     userEvent.type(screen.getByLabelText('Work email'), 'john3@gmail.com')
     userEvent.click(screen.getByRole('button'))
 
-    await screen.findByText('Your API keys were generated')
+    await screen.findByText('We will be in touch soon!')
 
-    const publicKeys = await screen.findAllByText(generatedKeys1set.publicKey, { exact: false })
-    expect(publicKeys).toHaveLength(2)
-
-    await screen.findByText(generatedKeys1set.secretKey)
     expect(fetchMock).toHaveBeenCalledTimes(1)
 
     rerender(<></>)
     rerender(<GenerateKeySection />)
 
-    await screen.findByText('Your API keys were generated')
-    const publicKeysRerender = await screen.findAllByText(generatedKeys1set.publicKey, { exact: false })
-    expect(publicKeysRerender).toHaveLength(2)
+    await screen.findByText('We will be in touch soon!')
 
-    await screen.findByText(generatedKeys1set.secretKey)
     expect(fetchMock).toHaveBeenCalledTimes(1)
   })
 

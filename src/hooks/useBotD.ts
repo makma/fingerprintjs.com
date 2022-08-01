@@ -1,10 +1,20 @@
 import { useEffect, useState } from 'react'
-import Botd from '@fpjs-incubator/botd-agent'
+import * as FingerprintJS from '@fingerprintjs/fingerprintjs-pro'
+
 import { SuccessResponse } from '../types/botResponse'
-import { BOTD_PUBLIC_TOKEN, BOTD_SECRET_TOKEN, BOTD_VERIFY_ENDPOINT } from '../constants/env'
+import {
+  BOTD_PUBLIC_TOKEN,
+  BOTD_SECRET_TOKEN,
+  BOTD_VERIFY_AGENT_ENDPOINT,
+  FPJS_REGION,
+  FPJS_SCRIPT_URL_PATTERN,
+} from '../constants/env'
 import { getErrorMessage } from '../helpers/error'
 
 export const useBotD = (publicToken?: string, secretToken?: string) => {
+  const region = FPJS_REGION as FingerprintJS.Region
+  const scriptUrlPattern = FPJS_SCRIPT_URL_PATTERN
+
   const [visitorData, setVisitorData] = useState<SuccessResponse>()
   const [hasError, setHasError] = useState(false)
   const [error, setError] = useState<string>()
@@ -13,31 +23,35 @@ export const useBotD = (publicToken?: string, secretToken?: string) => {
 
   const publicKey = publicToken ?? BOTD_PUBLIC_TOKEN
   const secretKey = secretToken ?? BOTD_SECRET_TOKEN
+
   useEffect(() => {
     async function getVisitorData() {
       setHasError(false)
       setIsLoading(true)
-      try {
-        const botD = await Botd.load({
-          publicKey,
-        })
-        const botdResp = await botD.detect()
-        if ('error' in botdResp) {
-          throw new Error(botdResp.error.message)
-        }
 
-        const verifyBody = JSON.stringify({
-          secretKey,
-          requestId: botdResp.requestId,
+      try {
+        const fpPromise = FingerprintJS.load({
+          apiKey: publicKey,
+          region,
+          scriptUrlPattern,
         })
-        const response = await fetch(BOTD_VERIFY_ENDPOINT, {
-          body: verifyBody,
-          method: 'POST',
+
+        const fp = await fpPromise
+        const fpResult = await fp.get()
+
+        const response = await fetch(`${BOTD_VERIFY_AGENT_ENDPOINT}/events/${fpResult.requestId}`, {
+          method: 'GET',
+          headers: {
+            'Auth-API-Key': secretKey,
+          },
         })
         if (!response.ok) {
           throw new Error()
         }
         const result: SuccessResponse = await response.json()
+        if (result.products.botd.error) {
+          throw new Error(result.products.botd.error.message)
+        }
         setVisitorData(result)
       } catch (error) {
         setHasError(true)
@@ -48,7 +62,7 @@ export const useBotD = (publicToken?: string, secretToken?: string) => {
     }
 
     getVisitorData()
-  }, [reload, publicKey, secretKey])
+  }, [reload, secretKey, publicKey, region, scriptUrlPattern])
 
   const refresh = () => {
     setReload(true)

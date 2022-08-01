@@ -16,7 +16,7 @@ export interface JoinCommunityProps {
 }
 export default function JoinCommunitySection({ title, children, discordLink, githubLink, labels }: JoinCommunityProps) {
   return (
-    <Container className={styles.container}>
+    <Container size='large' className={styles.container}>
       <section className={styles.joinCommunitySection}>
         {labels && (
           <div className={styles.labels}>
