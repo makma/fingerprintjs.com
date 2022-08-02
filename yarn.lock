@@ -7114,10 +7114,10 @@
   resolved "https://registry.yarnpkg.com/@turist/time/-/time-0.0.2.tgz#32fe0ce708ea0f4512776bd313409f1459976dda"
   integrity sha512-qLOvfmlG2vCVw5fo/oz8WAZYlpe5a5OurgTj3diIxJCdjRHpapC+vQCz3er9LV79Vcat+DifBjeAhOAdmndtDQ==
 
-"@types/amplitude-js@^8.16.1":
-  version "8.16.1"
-  resolved "https://registry.yarnpkg.com/@types/amplitude-js/-/amplitude-js-8.16.1.tgz#400c2ff0c506ec242b2b70a39c146f98c2c09c34"
-  integrity sha512-BYMq1yN8RdA8czpsW6dDz0Se9PSI5vS+ABhkxsERqCmCEzkgcM1KS+C+cxzkMedn6Bm1QRn6MB9LebleIo0FxQ==
+"@types/amplitude-js@8.16.2":
+  version "8.16.2"
+  resolved "https://registry.yarnpkg.com/@types/amplitude-js/-/amplitude-js-8.16.2.tgz#2cfb850a01a4171e632498821f92e45bef23c952"
+  integrity sha512-a+tb/CEQOlrHRvEvAuYNOcoUy1POERANnAhfKgiTmsy0eACj3eukGP0ucA9t115QOPzVUhbnUfZqtyHp99IZyA==
 
 "@types/aria-query@^4.2.0":
   version "4.2.2"

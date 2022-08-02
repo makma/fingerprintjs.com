@@ -44,7 +44,7 @@ export default function APIResponseDetailsSection({ visitorData }: APIResponseDe
               <CodeTooltip
                 key='requestId'
                 className={styles.requestId}
-                left={visitorData?.requestId ? 222 + visitorData.requestId.length * characterLength : 417}
+                left={visitorData?.requestId ? 222 + visitorData.requestId.length * characterLength : 390}
               >
                 <p>
                   <strong>Request ID</strong> is used to verify bot detection requests on the server.
@@ -71,7 +71,7 @@ export default function APIResponseDetailsSection({ visitorData }: APIResponseDe
                 left={
                   visitorData?.products.botd.data.ip
                     ? 260 + visitorData?.products.botd.data.ip.length * characterLength
-                    : 320
+                    : 384
                 }
               >
                 <p>
