@@ -1,7 +1,7 @@
 .root {
   overflow: hidden;
 
-  padding: rem(80px) 0 rem(50px) 0;
+  padding: rem(86px) 0 rem(50px) 0;
 
   @include media('<=phoneLandscape') {
     padding: rem(54px) 0 rem(42px) 0;
@@ -36,9 +36,6 @@
       font-size: rem(27px);
     }
   }
-  .description {
-    padding-bottom: rem(24px);
-  }
 
   .description,
   .link {
@@ -46,6 +43,7 @@
     font-size: rem(16px);
     color: adjust-color(c('brand-water'), $alpha: -0.3);
     line-height: 150%;
+    padding-bottom: rem(24px);
   }
 
   .link {
@@ -164,5 +162,26 @@
   @include media('<phone') {
     width: rem(240px);
     height: rem(36px);
+  }
+}
+
+.downloadMobile {
+  padding: rem(24px) 0 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.mobileTitle {
+  @include sans($size: 14px, $weight: 400, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+}
+.mobileSection {
+  padding-top: rem(8px);
+
+  display: flex;
+  column-gap: rem(8px);
+
+  .storeIcon {
+    height: rem(43px);
   }
 }

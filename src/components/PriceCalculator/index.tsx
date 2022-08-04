@@ -72,7 +72,7 @@ export default function PriceCalculator() {
           ctaText={Math.round(sliderValue) === sliderConfig.min ? 'Create Free Account' : 'Start Free Trial'}
           ctaHref={URL.signupUrl}
           featureList={Math.round(sliderValue) === sliderConfig.min ? freeTier : onDemand}
-          footNote='* Fingerprint is compliant as the data processor. You need to be compliant as the data controller and use identification for fraud under legitimate interest or ask for user consent.'
+          footNote='* Fingerprint is compliant as the data processor. You need to be compliant as the data controller and use identification for fraud prevention under legitimate interest or ask for user consent.'
           disabled={Math.round(sliderValue) === sliderConfig.max}
         />
         <PricingCard

@@ -113,7 +113,8 @@ export default function FeatureComparisonSection() {
           </p>
           <p className={styles.note}>
             3. Fingerprint Pro is GDPR and CCPA compliant as the data processor. You still need to be compliant as the
-            data controller and use the identification for fraud under legitimate interest or ask for consent.
+            data controller and use the identification for fraud prevention under legitimate interest or ask for
+            consent.
           </p>
         </footer>
       </Container>

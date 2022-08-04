@@ -5,8 +5,11 @@ import Skeleton from '../../../Skeleton/Skeleton'
 import classNames from 'classnames'
 
 import { DOC_URL } from '../../../../constants/content'
-
+import { APP_STORE_DEMO_URL, GOOGLE_PLAY_DEMO_URL } from '../../../../constants/env'
 import { VisitorResponse } from '../../../../types/visitorResponse'
+
+import { ReactComponent as GooglePlaySVG } from './GooglePlaySVG.svg'
+import { ReactComponent as AppStoreSVG } from './AppStoreSVG.svg'
 
 import styles from './VisitorSection.module.scss'
 
@@ -77,9 +80,27 @@ export default function VisitorSection({ isLoading, currentVisit, visitorId }: V
             A unique identifier associated with your specific browser and device. Websites can start collecting
             visitorIDs by installing our JavaScript agent.
           </p>
-          <a href={DOC_URL.documentationUrl} className={styles.link} target='_blank' rel='noreferrer'>
-            See documentation →
-          </a>
+          <p className={styles.link}>
+            <a href={DOC_URL.documentationUrl} target='_blank' rel='noreferrer'>
+              See documentation →
+            </a>
+          </p>
+
+          <div className={styles.downloadMobile}>
+            <p className={styles.mobileTitle}>Try a native device demo</p>
+            <div className={styles.mobileSection}>
+              {GOOGLE_PLAY_DEMO_URL && (
+                <a target='_blank' rel='noreferrer' href={GOOGLE_PLAY_DEMO_URL}>
+                  <GooglePlaySVG className={styles.storeIcon} />
+                </a>
+              )}
+              {APP_STORE_DEMO_URL && (
+                <a target='_blank' rel='noreferrer' href={APP_STORE_DEMO_URL}>
+                  <AppStoreSVG className={styles.storeIcon} />
+                </a>
+              )}
+            </div>
+          </div>
         </section>
         <section className={styles.idSection}>
           <div className={classNames(styles.card, { [styles.incognito]: incognito })}>
