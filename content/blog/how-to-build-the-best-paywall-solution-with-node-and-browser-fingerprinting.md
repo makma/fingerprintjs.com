@@ -4,8 +4,11 @@ metadata:
   title: How to Build the Best Paywall Solution with Node and Browser
     Fingerprinting - Fingerprint
   url: https://fingerprint.com/blog/paywall-solution
-  description: Tired of leaky paywalls? Build a custom paywall solution for your
-    website with our step-by-step guide.
+  description: Creating high-quality digital content is time-consuming and
+    expensive. Creating a paywall helps websites generate revenue through
+    subscriptions to consume articles. In this how-to, we’ll show you how to
+    create a content paywall to limit free articles utilizing Node and Browser
+    fingerprinting.
   image: /img/uploads/paywall-banner.png
   imageAlt: Paywall software solution
   imageTitle: Paywall software solution
@@ -25,12 +28,12 @@ heroImage:
   imageAlt: Paywall notification
   imageTitle: Paywall notification
 ---
-As online publications transition from monetization through digital advertising to charging consumers directly for their content, paywalls are becoming commonplace. And right on their heels are myriad innovations in circumventing them. For developers tasked with restricting site access to subscribers, it’s important to not only keep up with current paywall architecture, but also the latest tricks for getting around them. If you’re going to build a paywall that works, you have to know what you’re guarding against.
+Paywalls are becoming commonplace as online publications transition from monetization through digital advertising to charging consumers directly for high-quality premium content. And right on their heels are numerous innovations in circumventing them. For developers tasked with restricting site access to subscribers, keeping up with current paywall architecture and the latest tricks for getting around them is essential. Know what you’re guarding against before building your paywall.
 
-There are varying levels of restriction when it comes to paywalls. They can be grouped into two categories:
+There are varying levels of restriction when it comes to paywalls. However, content paywalls fall into two categories:
 
-* **Hard paywall:** Requires subscriptions for all content. Policies are enforced server-side.
-* **Soft paywall:** Limits the number of articles accessible before requiring subscription. Policies are enforced client-side.
+* **Hard paywall:** Requires a subscription-based membership plan to access high-quality content. Policies are enforced server-side.
+* **Soft paywall:** Limits the number of free articles accessible before requiring a subscription for premium content. Policies are enforced client-side.
 
 As you probably know, there are various measures a reader can take to circumvent or bypass a paywall:
 
@@ -38,18 +41,18 @@ As you probably know, there are various measures a reader can take to circumvent
 * Using an ad blocker extension
 * Blocking HTTP requests for popular paywall libraries
 * Switching to private browsing or incognito mode
-* Signing up for a free account
+* Signing up for a free account, sometimes with multiple email addresses
 * Resetting browser cookies
-* Hiding the user’s IP address
+* Hiding their IP address
 * Manually deleting the paywall source code
 
-A significant number of websites depend on third-party tools and libraries for their paywall implementations as opposed to developing in-house solutions. Vendors like [Fingerprint](/), for example, offer "paywall-as-a-service" products.
+Many websites depend on third-party tools and libraries for their paywall implementations instead of developing in-house solutions. Vendors like [Fingerprint](https://fingerprint.com/), for example, offer “paywall-as-a-service” products.
 
-## Creating a Sample Site with a Soft Paywall
+## Creating a Soft Paywall Sample Site
 
 In this post, you will create a news website using Node.js and implement a soft paywall using Fingerprint to track users and limit the number of articles they can read on your site. Each site visitor will have their unique ID from Fingerprint stored inside a database to track the number of unique articles they have read.
 
-The complete source code along with access to the [Pug templates](https://pugjs.org/api/getting-started.html) and the public static assets can be found in [this GitHub repository](https://github.com/LukeMwila/fingerprintjs-paywall). 
+The complete source code, along with access to the [Pug templates](https://pugjs.org/api/getting-started.html) and the public static assets, can be found in [this GitHub repository](https://github.com/LukeMwila/fingerprintjs-paywall).
 
 Prerequisites:
 
@@ -60,33 +63,34 @@ Prerequisites:
 
 ### Sign Up for Fingerprint
 
-First, create an account with Fingerprint. The sign-up process is quick, intuitive, and conventional, and you can try it without usage limits for 10 days.
+First, create an account with Fingerprint. The sign-up process is quick, intuitive, and conventional, and you can try it without usage limits for ten days.
 
-Once you’ve signed up, you’ll be presented with a quick start guide for both a CDN and an NPM implementation. The code snippet for each approach will include your generated public API key which you’ll use later in this tutorial, so keep this value close at hand. If need be, you can access the API Keys page from the left-side menu at any point to fetch and generate public and secret API keys.
+
+Once you sign up, there is a quick start guide for a CDN and an NPM implementation. The code snippet for each approach will include your generated public API key, which you’ll use later in this tutorial, so keep this value close at hand. You can access the API Keys page from the left-side menu at any point to fetch and generate public and secret API keys.
 
 ### Set Up the Web Application
 
-You can set up your application environment and create the relevant folder structure. Provided that you have all the prerequisites in place as outlined earlier, you can proceed to initialize your Node.js application.
+You can set up your application environment and create the relevant folder structure. Then, provided that you have all the prerequisites outlined earlier, you can proceed to initialize your Node.js application.
 
 ```
 npm init 
 ```
 
-You can then fill in the relevant details when prompted by the terminal. This will generate a `package.json` file. The next step will be to install the following application dependencies:
+You can then fill in the relevant details when prompted by the terminal, which generates a package.json file. The next step will be to install the following application dependencies:
 
 * [Express](https://expressjs.com/): A Node.js web framework
 * [Pug](https://pugjs.org/api/getting-started.html): A template engine for generating HTML
 * [Node Postgres](https://node-postgres.com/): A PostgreSQL client for Node.js
 
-To install these dependencies in your workspace, run the following command in the same directory that the `package.json` file was created in:
+To install these dependencies in your workspace, run the following command in the same directory of package.json file:
 
 ```
 npm i --save express pg pug
 ```
 
-The folder structure for the application will be based on the following paradigm:
+The folder structure for the application is based on the following paradigm:
 
-* Public: The location for all client-side static access, ie images, CSS, and JavaScript files
+* Public: The location for all client-side static access. i.e., images, CSS, and JavaScript files
 * Source: The location for the backend business logic
 * Views: The location for the frontend Pug templates
 
@@ -101,7 +105,7 @@ You can create these folders in your root directory to match the following struc
 └── package.json
 ```
 
-The last step for you to carry out in this section is to modify the `package.json` file. The application will require a script to start the server, so you can run the following node command against the main server file that you’ll create in the next section: 
+The last step for you to carry out in this section is to modify the `package.json` file. After that, the application will require a script to start the server, so you can run the following node command against the main server file that you’ll create in the next section:
 
 ```
  "scripts": {
@@ -113,7 +117,7 @@ The last step for you to carry out in this section is to modify the `package.jso
 
 Next, you’ll configure the PostgreSQL client to connect to the database server. The database will have a single table to track the articles read by a single site visitor.
 
-Inside the source directory (`src`), you can create a file called `index.js`. In this file, you will import the PostgreSQL client library and configure it with the relevant database user details in order to establish a connection, and create a table to keep a record of the unique articles read per visitor. 
+Inside the source directory (`src`), you can create a file called `index.js`. In this file, you will import the PostgreSQL client library and configure it with the relevant database user details to establish a connection and create a table to record the unique articles read per visitor.
 
 ```
 const { Pool } = require("pg");
@@ -147,7 +151,7 @@ pgClient
 
 ### Set Up the Template Engine with Express
 
-In this section you will provision the required settings to render the frontend templates. The following changes will be implemented in the `src/index.js` file. For starters, you can import the Express framework and then initialize an Express application. 
+This section will provide the required settings to render the frontend templates. First, implement the following changes in the `src/index.js` file. After that, you can import the Express framework and initialize an Express application.
 
 ```
 const express = require("express");
@@ -156,8 +160,8 @@ const app = express();
 
 After this, you can configure your application to render the Pug template files. To accomplish this, you can update the application settings with the following properties:
 
-* views: This will determine the directory where the template files are located.  
-* view engine: This determines the template engine the application should use. 
+* Views: This will determine the directory location of the template files.
+* View engine: This determines the template engine the application should use.
 
 In addition to this, you can serve static files from the public directory using the `express.static` built-in middleware function. 
 
@@ -177,7 +181,7 @@ app.get("/", (req, res) => {
 
 ### Create API Routes
 
-In the previous section, you configured the Express application to render Pug templates from the views directory. The next steps are for you to ensure that the application displays the relevant content based on the selected article, as well as to enable the paywall when a user surpasses the free content threshold. 
+In the previous section, you configured the Express application to render Pug templates from the views directory. The following steps are for you to ensure that the application displays the relevant premium content based on the selected article and enable the paywall when a user surpasses the free content threshold.
 
 To display content for a specific article, add the following code snippet to the `index.js` file:
 
@@ -188,7 +192,7 @@ app.get("/articles/:id", (req, res) => {
 });
 ```
 
-The route handling the logic for enabling the paywall will require some additional helper functions. These helper functions will be used to query the database to check if a visitor has reached their maximum number of articles, and to insert a new record in the database when they read a new article for the first time. 
+The route handling the logic for enabling the paywall will require additional helper functions. These helper functions query the database to check if a visitor has reached their maximum number of articles and to insert a new record in the database when they read a new article for the first time.
 
 ```
 app.get("/paywall", async (req, res) => {
@@ -228,7 +232,7 @@ let insertArticleReadRow = async (visitorId, articleId) => {
 
 ### Implement the Paywall
 
-Finally, implement the paywall for your news website. To ensure that the Fingerprint library is loaded and initialized across all pages of the website, you’ll add the scripts to the main layout template. 
+Finally, implement the paywall for your news website. You’ll add the scripts to the main layout template to ensure that the Fingerprint library is loaded and initialized across all website pages.
 
 ```
 doctype html
@@ -280,7 +284,7 @@ body
  )
 ```
 
-As shown in the previous code snippet, additional JavaScript functions are loaded to the site using the `main.js` file from the `public/js` directory. This file has two functions: one is responsible for initializing Fingerprint with your public API key once the library has finished downloading. The other makes use of the loaded and API key configured Fingerprint object to fetch the unique visitor ID. The visitor ID is then used to query the paywall API route to track the articles read. 
+The previous code snippet shows that additional JavaScript functions are loaded to the site using the `main.js` file from the `public/js` directory. This file has two parts: one is responsible for initializing Fingerprint with your public API key once the library has finished downloading. The other uses the loaded and API key configured Fingerprint object to fetch the unique visitor ID. Finally, query the paywall API route using the visitor ID to track the articles read.
 
 ```
 var fpLoaded = function (fp) {
@@ -309,20 +313,20 @@ function initFingerprintJS() {
 
 ### Test the Application
 
-Before you test the application, make sure that you have all the Pug templates stored inside of the views directory and have added the required static assets inside of the public directories for the CSS files and images. You can then run the main script command in the root directory of your application.
+Before you test the application, ensure that all the Pug templates are stored inside the views directory and add the required static assets inside the public directories for the CSS files and images. You can then run the main script command in the root directory of your application.
 
 ```
 npm start
 ```
 
-When the server is running, you can access your news website at `http://localhost:8080` and get started with reading articles as you would on other sites. As soon as you exceed the maximum number of articles read, the paywall modal will pop up and inform you of the need to subscribe in order to regain access to the site's content.
+When the server runs, you can access your news website at: `http://localhost:8080,` and get started reading articles as you would on other sites. However, as soon as you exceed the maximum number of articles read, the paywall modal will pop up and inform you of the need to subscribe to regain access to the site’s content.
 
-![An article on a home page](/img/uploads/paywall-article-on.png "An article on a home page")
+![An article on a home page with free articles and without a paywall displayed](/img/uploads/paywall-article-on.png "An article on a home page with free articles and without a paywall displayed")
 
-![Fingerprint’s test paywall modal](/img/uploads/paywall-test-modal.png "Fingerprint’s test paywall modal")
+![Fingerprint’s test paywall modal for subscription based premium content](/img/uploads/paywall-test-modal.png "Fingerprint’s test paywall modal for subscription based premium content")
 
 ## Conclusion
 
-Apart from restriction configurations, the example in this tutorial demonstrates how the usage of third-party paywall libraries typically requires minimal effort from a site integration point of view. The hard part is for companies to strategize *how* to restrict access to their content. These third-party libraries have dedicated teams to ensure that their services cater to various enforcement mechanisms, user identification, policies, and insights.
+Apart from restriction configurations, the example in this tutorial demonstrates how the usage of third-party paywall libraries typically requires minimal effort from a site integration point of view. The hard part is for companies to strategize *how* to restrict access to their content. These third-party libraries have dedicated teams to ensure that their services cater to various enforcement mechanisms, user identification, policies, and insights.
 
-JavaScript-based websites are continuing to increase in popularity, and this scenario, simple as it may be, lays enough groundwork for other Node-based solutions to build from. If you’re looking to implement a paywall, fingerprinting services like [Fingerprint](/) are a great option to help publications restrict content access and generate revenue.
+JavaScript-based websites continue to increase in popularity, and this scenario, simple as it may be, lays enough groundwork for building other Node-based solutions. For example, if you’re looking to implement a paywall, fingerprinting services like [Fingerprint](https://fingerprint.com/) are a great option to help publications restrict content access and generate revenue.
