@@ -3,18 +3,17 @@ import { Link } from 'gatsby'
 import { ReactComponent as LinkedInSvg } from '../../img/linkedin.svg'
 import { ReactComponent as TwitterSvg } from '../../img/twitter.svg'
 import GithubButton from '../GithubButton'
-import Container from '../common/Container'
 import Button from '../common/Button'
 import classNames from 'classnames'
 import styles from './MobileNavbar.module.scss'
-import { useCaseLinks, products } from '../../constants/content'
 import { URL, DOC_URL, PATH } from '../../constants/content'
 import DropdownMenu from './DropdownMenu'
+import SolutionsDropdown from '../SolutionsDropdown/SolutionsDropdown'
 
 export default function MobileNavbar() {
   return (
-    <div className={styles.nav}>
-      <Container size='large' className={styles.container}>
+    <nav className={styles.nav}>
+      <div className={styles.container}>
         <div className={classNames(styles.links, styles.top)}>
           <Button href={PATH.contactSales} variant='outline'>
             Contact Sales
@@ -22,9 +21,11 @@ export default function MobileNavbar() {
           <Button href={URL.signupUrl}>Get Started</Button>
         </div>
         <div className={classNames(styles.links, styles.main)}>
-          <Container size='large' className={styles.container}>
-            <DropdownMenu name='Products' list={products} />
-            <DropdownMenu name='Use Cases' list={useCaseLinks} />
+          <div className={styles.container}>
+            <DropdownMenu name='Solutions' className={styles.link}>
+              <SolutionsDropdown />
+            </DropdownMenu>
+
             <Link to={PATH.demoUrl} className={styles.link}>
               Technical Demo
             </Link>
@@ -55,13 +56,13 @@ export default function MobileNavbar() {
             <a href={URL.signupUrl} className={styles.link} target='_blank' rel='noreferrer'>
               Sign Up
             </a>
-          </Container>
+          </div>
         </div>
 
         <div className={styles.contact}>
           <GithubButton />
           <div className={styles.social}>
-            <small>Find us on social</small>
+            <p>Find us on social</p>
             <ul className={styles.links}>
               <li className={styles.link}>
                 <a href={URL.linkedinUrl} target='_blank' rel='noreferrer' aria-label='LinkedIn link'>
@@ -76,7 +77,7 @@ export default function MobileNavbar() {
             </ul>
           </div>
         </div>
-      </Container>
-    </div>
+      </div>
+    </nav>
   )
 }

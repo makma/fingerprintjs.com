@@ -3,15 +3,14 @@ import React from 'react'
 import { LayoutTemplate } from '../../components/Layout'
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 import { useLocation } from '@reach/router'
-import HeroSection from '../../components/solutions/HeroSection/HeroSection'
-import { mapToSolution } from '../../components/solutions/Solution/Solution'
-import SolutionsSection from '../../components/solutions/SolutionsSection/SolutionsSection'
+import { mapToUseCase } from '../../components/useCases/UseCase/UseCase'
+import UseCasesSection from '../../components/useCases/UseCasesSection/UseCasesSection'
 
-interface SolutionsProps {
-  data: GatsbyTypes.SolutionQuery
+interface UseCasesProps {
+  data: GatsbyTypes.UseCaseQuery
 }
-export default function Solutions({ data }: SolutionsProps) {
-  const { edges: solutions } = data.solutions
+export default function UseCases({ data }: UseCasesProps) {
+  const { edges: useCases } = data.useCases
   const funnelTags = data.funnel.group.map(({ tag }) => tag) as string[]
   const categoryTags = data.category.group.map(({ tag }) => tag) as string[]
   const industryTags = data.industry.group.map(({ tag }) => tag) as string[]
@@ -20,16 +19,15 @@ export default function Solutions({ data }: SolutionsProps) {
   let siteMetadata = useSiteMetadata()
   siteMetadata = {
     ...siteMetadata,
-    title: 'Solutions - Fingerprint Pro',
+    title: 'Use Cases - Fingerprint Pro',
     description:
-      'Solve any fraud problem with our user identification API. Explore our full code solutions for payment fraud, account takeover and more.',
+      'Solve any fraud problem with our user identification API. Explore our full code use cases for payment fraud, account takeover and more.',
     siteUrl: `${siteMetadata.siteUrl}${pathname}`,
   }
   return (
     <LayoutTemplate siteMetadata={siteMetadata}>
-      <HeroSection />
-      <SolutionsSection
-        solutions={solutions.map(({ node }) => node).map((node) => mapToSolution(node))}
+      <UseCasesSection
+        useCases={useCases.map(({ node }) => node).map((node) => mapToUseCase(node))}
         funnelTags={funnelTags}
         categoryTags={categoryTags}
         industryTags={industryTags}
@@ -39,15 +37,15 @@ export default function Solutions({ data }: SolutionsProps) {
 }
 
 export const pageQuery = graphql`
-  query Solution {
-    solutions: allMarkdownRemark(
+  query UseCase {
+    useCases: allMarkdownRemark(
       filter: {
-        fileAbsolutePath: {regex: "/(solutions)/(solutions).*\\.md$/"}
+        fileAbsolutePath: {regex: "/(use-cases)/(use-cases).*\\.md$/"}
         frontmatter: { isPublished: {ne: false} } 
       }        
       sort: { order: DESC, fields: frontmatter___publishDate }
     ) {
-      ...SolutionData
+      ...UseCaseData
     }
     funnel: allMarkdownRemark(filter: {frontmatter: {isPublished: {ne: false}}}) {
         group(field: frontmatter___funnel) {

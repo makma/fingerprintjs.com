@@ -5,10 +5,10 @@ import { getRelativeUrl } from '../../../helpers/url'
 import TagList from '../../TagList/TagList'
 import { graphql, Link } from 'gatsby'
 
-import styles from './Solution.module.scss'
+import styles from './UseCase.module.scss'
 import { dateFormatter, displayDateFormatter } from '../../../helpers/format'
 
-export interface SolutionProps {
+export interface UseCaseProps {
   title: string
   description: string
   publishDate: string
@@ -22,7 +22,7 @@ export interface SolutionProps {
   imageTitle?: string
   className?: string
 }
-export default function Solution({
+export default function UseCase({
   title,
   description,
   image,
@@ -33,11 +33,11 @@ export default function Solution({
   category,
   industry,
   className,
-}: SolutionProps) {
+}: UseCaseProps) {
   const imageFluid = image?.childImageSharp?.gatsbyImageData
   const tags = [...funnel, ...category, ...industry]
   return (
-    <Link to={getRelativeUrl(path)} className={classNames(className, styles.solution)}>
+    <Link to={getRelativeUrl(path)} className={classNames(className, styles.useCase)}>
       {imageFluid && (
         <div className={styles.wrapper}>
           <GatsbyImage
@@ -61,13 +61,13 @@ export default function Solution({
 
 // TODO [VL] Write a proper type for this. It's not as straight forward because it has to accept a lot of different generated gatsby types.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function mapToSolution(data: any, editing?: boolean): SolutionProps {
+export function mapToUseCase(data: any, editing?: boolean): UseCaseProps {
   if ((!data.frontmatter || !data.frontmatter.metadata) && !editing) {
-    throw new Error('Solutions should always have frontmatter and metadata.')
+    throw new Error('Use Cases should always have frontmatter and metadata.')
   }
 
   if (editing) {
-    const solution: SolutionProps = {
+    const useCase: UseCaseProps = {
       title: '',
       description: '',
       publishDate: dateFormatter.format(Date.now()),
@@ -87,22 +87,22 @@ export function mapToSolution(data: any, editing?: boolean): SolutionProps {
         category,
         industry,
       } = data.frontmatter
-      solution.publishDate = publishDate
-      solution.title = title
-      solution.funnel = funnel
-      solution.category = category
-      solution.industry = industry
-      solution.tags = [...funnel, ...category, ...industry]
+      useCase.publishDate = publishDate
+      useCase.title = title
+      useCase.funnel = funnel
+      useCase.category = category
+      useCase.industry = industry
+      useCase.tags = [...funnel, ...category, ...industry]
 
       if (metadata) {
         const { description = '', image, url } = metadata
-        solution.description = description
-        solution.image = image as GatsbyTypes.File
-        solution.path = url
+        useCase.description = description
+        useCase.image = image as GatsbyTypes.File
+        useCase.path = url
       }
     }
 
-    return solution
+    return useCase
   }
 
   const { publishDate = Date.now(), title = '', metadata, funnel, category, industry } = data.frontmatter
@@ -120,11 +120,11 @@ export function mapToSolution(data: any, editing?: boolean): SolutionProps {
     category,
     industry,
     tags: [...funnel, ...category, ...industry],
-  } as SolutionProps
+  } as UseCaseProps
 }
 
 export const query = graphql`
-  fragment SolutionData on MarkdownRemarkConnection {
+  fragment UseCaseData on MarkdownRemarkConnection {
     edges {
       node {
         id

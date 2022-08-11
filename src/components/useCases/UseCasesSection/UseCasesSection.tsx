@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import Solution, { SolutionProps } from '../Solution/Solution'
+import UseCase, { UseCaseProps } from '../UseCase/UseCase'
 import Grid from '../../Grid/Grid'
 import Container from '../../common/Container'
 import classNames from 'classnames'
 import { kebabToTitle, pluralize } from '../../../helpers/case'
-import styles from './SolutionsSection.module.scss'
+import styles from './UseCasesSection.module.scss'
 import { useLocation } from '@reach/router'
 
-export interface SolutionsSectionProps {
-  solutions: Array<SolutionProps>
+export interface UseCasesSectionProps {
+  useCases: Array<UseCaseProps>
   funnelTags: string[]
   categoryTags: string[]
   industryTags: string[]
@@ -17,18 +17,18 @@ interface selectedTag {
   selectedTag?: string
 }
 
-export default function SolutionsSection({ solutions, funnelTags, categoryTags, industryTags }: SolutionsSectionProps) {
+export default function UseCasesSection({ useCases, funnelTags, categoryTags, industryTags }: UseCasesSectionProps) {
   const locationState = useLocation().state as selectedTag
   const tagFromState = locationState?.selectedTag
-  const initialSolutions = tagFromState
-    ? solutions.filter((solution) => solution.tags?.some((tag) => tag === tagFromState))
-    : solutions
+  const initialUseCases = tagFromState
+    ? useCases.filter((useCase) => useCase.tags?.some((tag) => tag === tagFromState))
+    : useCases
 
   const [selectedTags, setSelectedTags] = useState(new Set(tagFromState ? [tagFromState] : []))
 
-  const [filteredSolutions, setFilteredSolutions] = useState(initialSolutions)
+  const [filteredUseCases, setFilteredUseCases] = useState(initialUseCases)
   const [fade, setFade] = useState(true)
-  const [numberOfSolutions, setNumberOfSolutions] = useState(initialSolutions.length)
+  const [numberOfUseCases, setNumberOfUseCases] = useState(initialUseCases.length)
 
   // Funnel has the value "Other" and we want to show it at the end of the list
   // Since it is the only value that matters its position in the list, we simply send it at the end
@@ -43,9 +43,9 @@ export default function SolutionsSection({ solutions, funnelTags, categoryTags, 
 
     if (!tag) {
       setSelectedTags(new Set())
-      setNumberOfSolutions(solutions.length)
+      setNumberOfUseCases(useCases.length)
       setTimeout(() => {
-        setFilteredSolutions(solutions)
+        setFilteredUseCases(useCases)
       }, timeout)
       return
     }
@@ -59,24 +59,25 @@ export default function SolutionsSection({ solutions, funnelTags, categoryTags, 
     }
 
     setSelectedTags(newSelectedTags)
-    const filteredSolutions =
+    const filteredUseCases =
       newSelectedTags.size === 0
-        ? solutions
-        : solutions.filter((solution) => solution.tags?.some((tag) => newSelectedTags.has(tag)))
+        ? useCases
+        : useCases.filter((useCase) => useCase.tags?.some((tag) => newSelectedTags.has(tag)))
 
-    setNumberOfSolutions(filteredSolutions.length)
+    setNumberOfUseCases(filteredUseCases.length)
     setTimeout(() => {
-      setFilteredSolutions(filteredSolutions)
+      setFilteredUseCases(filteredUseCases)
     }, timeout)
   }
 
   return (
     <Container size={'large'} className={styles.gridContainer}>
-      <div className={styles.solutionsRoot}>
+      <h1 className={styles.title}>Use Cases</h1>
+      <div className={styles.useCasesRoot}>
         <section>
           <div className={styles.filterSection}>
-            <span className={styles.showingSolutions}>
-              Showing {pluralize(numberOfSolutions, 'solution')}
+            <span className={styles.showingUseCases}>
+              Showing {pluralize(numberOfUseCases, 'use case')}
               {selectedTags.size > 0 && ` matching ${pluralize(selectedTags.size, 'filter')}`}
             </span>
             <span
@@ -88,11 +89,11 @@ export default function SolutionsSection({ solutions, funnelTags, categoryTags, 
           </div>
           <div onTransitionEnd={() => setFade(true)}>
             <Grid
-              items={filteredSolutions.map((solution) => {
-                return <Solution key={solution.path} {...solution} />
+              items={filteredUseCases.map((useCase) => {
+                return <UseCase key={useCase.path} {...useCase} />
               })}
               perRow={3}
-              className={classNames(styles.solutionsGrid, { [styles.fadeOut]: !fade, [styles.fadeIn]: fade })}
+              className={classNames(styles.useCasesGrid, { [styles.fadeOut]: !fade, [styles.fadeIn]: fade })}
             />
           </div>
         </section>

@@ -1,17 +1,17 @@
 import React from 'react'
-import Solution, { SolutionProps } from '../Solution/Solution'
+import UseCase, { UseCaseProps } from '../UseCase/UseCase'
 import classNames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper'
 import Grid from '../../Grid/Grid'
 
-import styles from './Solutions.module.scss'
+import styles from './UseCases.module.scss'
 
-export interface SolutionsProps {
-  solutions: Array<SolutionProps>
+export interface UseCasesProps {
+  useCases: Array<UseCaseProps>
   title?: string
 }
-export default function Solutions({ solutions, title }: SolutionsProps) {
+export default function UseCases({ useCases, title }: UseCasesProps) {
   return (
     <>
       <div className={styles.row}>
@@ -40,10 +40,10 @@ export default function Solutions({ solutions, title }: SolutionsProps) {
           }}
         >
           <div className='swiper-wrapper'>
-            {solutions.map((solution, index) => {
+            {useCases.map((useCase, index) => {
               return (
-                <SwiperSlide key={solution.path} className={`swiper-slide ${index === 0 ? styles.firstItem : ''}`}>
-                  <Solution className={styles.solution} {...solution} />
+                <SwiperSlide key={useCase.path} className={`swiper-slide ${index === 0 ? styles.firstItem : ''}`}>
+                  <UseCase className={styles.useCase} {...useCase} />
                 </SwiperSlide>
               )
             })}
@@ -52,8 +52,8 @@ export default function Solutions({ solutions, title }: SolutionsProps) {
         </Swiper>
       </div>
       <Grid
-        items={solutions.map((solution) => {
-          return <Solution key={solution.path} {...solution} />
+        items={useCases.map((useCase) => {
+          return <UseCase key={useCase.path} {...useCase} />
         })}
         perRow={4}
         className={styles.desktopOnly}

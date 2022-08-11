@@ -3,19 +3,20 @@ import Navbar from '../Navbar'
 import { Link } from 'gatsby'
 import Prism from 'prismjs'
 import GithubButton from '../GithubButton'
-import { ReactComponent as BurgerSvg } from './burger.svg'
 import MobileNavbar from '../MobileNavbar'
 import Button from '../common/Button'
 import Container from '../common/Container'
 import { isBrowser } from '../../helpers/detector'
 import HeaderBar from '../../components/HeaderBar/HeaderBar'
-import { useCaseLinks, products } from '../../constants/content'
 import classNames from 'classnames'
 import { URL, PATH } from '../../constants/content'
 import DropdownList from './DropdownList'
 import { ReactComponent as LogoSvg } from './fpjs.svg'
 import { scrollToElementById } from '../../helpers/scrollToElementByID'
 import { useLocation } from '@reach/router'
+import SolutionsDropdown from '../SolutionsDropdown/SolutionsDropdown'
+import { AnimatePresence, motion } from 'framer-motion'
+import ClickOutside from '../../helpers/ClickOutside'
 
 import styles from './Header.module.scss'
 
@@ -29,6 +30,8 @@ interface HeaderProps {
 }
 export default function Header({ notificationBar }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isSolutionsTabOpen, setIsSolutionsTabOpen] = useState(false)
+
   const { pathname } = useLocation()
 
   useEffect(() => {
@@ -47,6 +50,12 @@ export default function Header({ notificationBar }: HeaderProps) {
   const handleToggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
+  const handleSolutionsDropdown = () => {
+    setIsSolutionsTabOpen(!isSolutionsTabOpen)
+  }
+  const handleClick = () => {
+    setIsSolutionsTabOpen(false)
+  }
 
   return (
     <>
@@ -59,60 +68,77 @@ export default function Header({ notificationBar }: HeaderProps) {
           {<div dangerouslySetInnerHTML={{ __html: notificationBar.barBody ?? '' }} />}
         </HeaderBar>
       )}
-      <header className={styles.header}>
-        <Navbar />
-        <div className={styles.nav}>
-          <Container size='large' className={styles.root}>
-            <nav className={styles.navMain}>
-              <div className={styles.navLeft}>
-                <Link to='/' className={`${styles.link} ${styles.linkLogo}`} title='Logo'>
-                  <LogoSvg className={styles.logo} />
-                </Link>
-                <DropdownList name='Products' list={products} />
-                <DropdownList name='Use Cases' list={useCaseLinks} />
-                <Link className={classNames(styles.link, styles.desktopOnly)} to={PATH.demoUrl}>
-                  Demo
-                </Link>
-                <Link className={classNames(styles.link, styles.desktopOnly)} to={PATH.pricingUrl}>
-                  Pricing
-                </Link>
-                <Link className={classNames(styles.link, styles.desktopOnly)} to={PATH.careers}>
-                  Careers
-                </Link>
-              </div>
-              <div className={styles.navRight}>
-                <GithubButton className={styles.desktopOnly} />
-                <Button
-                  href={PATH.contactSales}
-                  variant='outline'
-                  className={classNames(styles.desktopOnly, styles.button)}
-                >
-                  Contact Sales
-                </Button>
-                {pathname === PATH.botD ? (
-                  <Button className={styles.signupButton} onClick={() => scrollToElementById('generateKeySection')}>
-                    Get Started
+      <ClickOutside handleClickOutside={() => setIsSolutionsTabOpen(false)}>
+        <header className={styles.header}>
+          <Navbar />
+          <div className={styles.nav}>
+            <Container size='large' className={styles.root}>
+              <nav className={styles.navMain}>
+                <div className={styles.navLeft}>
+                  <Link to='/' className={`${styles.link} ${styles.linkLogo}`} title='Logo'>
+                    <LogoSvg className={styles.logo} />
+                  </Link>
+                  <DropdownList name='Solutions' onClick={handleSolutionsDropdown} isOpen={isSolutionsTabOpen} />
+                  <Link className={classNames(styles.link, styles.desktopOnly)} to={PATH.demoUrl}>
+                    Demo
+                  </Link>
+                  <Link className={classNames(styles.link, styles.desktopOnly)} to={PATH.pricingUrl}>
+                    Pricing
+                  </Link>
+                  <Link className={classNames(styles.link, styles.desktopOnly)} to={PATH.careers}>
+                    Careers
+                  </Link>
+                </div>
+                <div className={styles.navRight}>
+                  <GithubButton className={styles.desktopOnly} />
+                  <Button
+                    href={PATH.contactSales}
+                    variant='outline'
+                    className={classNames(styles.desktopOnly, styles.button)}
+                  >
+                    Contact Sales
                   </Button>
-                ) : (
-                  <Button className={styles.signupButton} href={URL.signupUrl}>
-                    Get Started
-                  </Button>
-                )}
+                  {pathname === PATH.botD ? (
+                    <Button className={styles.signupButton} onClick={() => scrollToElementById('generateKeySection')}>
+                      Get Started
+                    </Button>
+                  ) : (
+                    <Button className={styles.signupButton} href={URL.signupUrl}>
+                      Get Started
+                    </Button>
+                  )}
 
-                <Button
-                  label='Mobile Menu'
-                  className={styles.mobileToggler}
-                  variant='clear'
-                  onClick={handleToggleMobileMenu}
+                  <button
+                    aria-label='Mobile Menu'
+                    className={classNames(styles.mobileToggler, { [styles.isOpen]: isMobileMenuOpen })}
+                    onClick={handleToggleMobileMenu}
+                  >
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                  </button>
+                </div>
+              </nav>
+            </Container>
+            <AnimatePresence initial={false}>
+              {isSolutionsTabOpen && (
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    translateY: -15,
+                  }}
+                  animate={{ opacity: 1, translateY: 0 }}
+                  exit={{ opacity: 0, translateY: -15, transition: { duration: 0.15 } }}
                 >
-                  <BurgerSvg className={styles.buttonIcon} />
-                </Button>
-              </div>
-            </nav>
-          </Container>
-        </div>
-        {isMobileMenuOpen && <MobileNavbar />}
-      </header>
+                  <SolutionsDropdown handleClick={handleClick} />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          {isMobileMenuOpen && <MobileNavbar />}
+        </header>
+      </ClickOutside>
     </>
   )
 }

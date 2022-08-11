@@ -5,50 +5,52 @@ import Container from '../components/common/Container'
 import { Link } from 'gatsby'
 import Button from '../components/common/Button'
 import { Content } from '../components/Content/Content'
-import { SolutionProps } from '../components/solutions/Solution/Solution'
+import { UseCaseProps } from '../components/useCases/UseCase/UseCase'
 import JoinCommunitySection from '../components/JoinCommunitySection/JoinCommunitySection'
-import RelatedSolutions from '../components/RelatedSolutions/RelatedSolutions'
+import RelatedUseCases from '../components/RelatedUseCases/RelatedUseCases'
 import { URL } from '../constants/content'
 import { useGithubFpjs } from '../context/GithubContext'
 
 import TagList from '../components/TagList/TagList'
 
-import styles from './solution-content.module.scss'
+import styles from './use-case-content.module.scss'
 
 export interface BottomLink {
   text: string
   url: string
 }
+
+export interface CodeBlock {
+  iframeUrl?: string
+  shareUrl?: string
+  docsUrl?: string
+}
 export interface TemplateProps {
   metadata: GatsbyTypes.SiteSiteMetadata
-  solution?: SolutionProps
+  useCase?: UseCaseProps
   funnel: string[]
   category: string[]
   industry: string[]
   title: string
   description: string
-  iframeUrl: string
-  shareUrl: string
-  docsUrl: string
+  codeBlock: CodeBlock
   body: string | React.ReactNode
   contentComponent?: React.FunctionComponent<{ content: string | React.ReactNode; className?: string }>
   bottomLinks?: BottomLink[]
 }
 
-export default function SolutionContentTemplate({
+export default function UseCaseContentTemplate({
   metadata,
-  solution,
+  useCase,
   funnel,
   category,
   industry,
   title,
   description,
-  iframeUrl,
-  shareUrl,
-  docsUrl,
+  codeBlock,
   body,
   contentComponent,
-  bottomLinks,
+  bottomLinks = [],
 }: TemplateProps) {
   const ContentComponent = contentComponent ?? Content
   const { githubData } = useGithubFpjs()
@@ -59,9 +61,9 @@ export default function SolutionContentTemplate({
   return (
     <LayoutTemplate siteMetadata={metadata}>
       <Section className={styles.root}>
-        <Container className={styles.container}>
-          <Link to='/solutions' className={styles.backLink}>
-            ← Back to solutions
+        <Container size='large' className={styles.container}>
+          <Link to='/use-cases' className={styles.backLink}>
+            ← Back to use cases
           </Link>
           <header className={styles.header}>
             <div className={styles.tags}>
@@ -74,18 +76,7 @@ export default function SolutionContentTemplate({
             <h1 className={styles.title}>{title}</h1>
             <h3 className={styles.description}>{description}</h3>
           </section>
-          <section className={styles.codeSection}>
-            <h3 className={styles.label}>Explore live technical demo</h3>
-            <iframe className={styles.iframe} src={iframeUrl} />
-            <div className={styles.buttons}>
-              <Button className={styles.button} href={shareUrl} size='big' openNewTab>
-                Run demo in your browser
-              </Button>
-              <Button className={styles.button} href={docsUrl} variant='outline' size='big' openNewTab>
-                Documentation
-              </Button>
-            </div>
-          </section>
+
           <section className={styles.bodySection}>
             <ContentComponent content={body} className={styles.content} />
             {bottomLinks && (
@@ -97,6 +88,24 @@ export default function SolutionContentTemplate({
                 ))}
               </div>
             )}
+            {codeBlock.iframeUrl && (
+              <section className={styles.codeSection}>
+                <h3 className={styles.label}>Explore live technical demo</h3>
+                <iframe className={styles.iframe} src={codeBlock.iframeUrl} />
+                <div className={styles.buttons}>
+                  {codeBlock.shareUrl && (
+                    <Button className={styles.button} href={codeBlock.shareUrl} size='big' openNewTab>
+                      Run demo in your browser
+                    </Button>
+                  )}
+                  {codeBlock.docsUrl && (
+                    <Button className={styles.button} href={codeBlock.docsUrl} variant='outline' size='big' openNewTab>
+                      Documentation
+                    </Button>
+                  )}
+                </div>
+              </section>
+            )}
           </section>
         </Container>
         <JoinCommunitySection
@@ -106,10 +115,11 @@ export default function SolutionContentTemplate({
           {...starsLabel}
         >
           Fingerprint’ open source technology is supported by contributing developers across the globe. Stay up to date
-          on our latest technical solutions, integrations and updates.
+          on our latest technical use cases, integrations and updates.
         </JoinCommunitySection>
-        <Container size='large' className={styles.relatedSolutions}>
-          {solution && <RelatedSolutions solution={solution} />}
+
+        <Container size='large' className={styles.relatedUseCases}>
+          {useCase && <RelatedUseCases useCase={useCase} />}
         </Container>
       </Section>
     </LayoutTemplate>
@@ -124,7 +134,7 @@ function TagGroup({ tags, label }: TagGroupProps) {
   return (
     <div className={styles.tag}>
       <span className={styles.tagLabel}>{label}</span>
-      <TagList link='/solutions' className={styles.tagList} tags={tags} format='title' />
+      <TagList link='/use-cases' className={styles.tagList} tags={tags} format='title' />
     </div>
   )
 }

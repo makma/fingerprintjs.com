@@ -159,9 +159,8 @@ exports.createPages = async ({ actions, graphql }) => {
   const caseStudies = await getFolderEdges('case-study', graphql)
   caseStudies.forEach((edge) => createPageFromEdge(edge, createPage))
 
-  // TODO Temporarily hiding until it is released in production
-  /*   const solutions = await getFolderEdges('solutions/solutions', graphql, 'frontmatter: { isPublished: { ne: false } }')
-  solutions.forEach((edge) => createPageFromEdge(edge, createPage)) */
+  const useCases = await getFolderEdges('use-cases/use-cases', graphql, 'frontmatter: { isPublished: { ne: false } }')
+  useCases.forEach((edge) => createPageFromEdge(edge, createPage))
 
   const postsPerPage = 12
 
@@ -389,6 +388,11 @@ exports.createSchemaCustomization = ({ actions }) => {
       cardSection: CardSection
       inlineCta: InlineCta
       bio: String @md
+      bottomLinks: [BottomLink]
+    }
+    type BottomLink{
+      url: String
+      text: String
     }
     type Header{
       content: String @md

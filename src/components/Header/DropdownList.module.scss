@@ -25,6 +25,13 @@
   margin-left: 0.5rem;
 }
 
+.iconIsOpen {
+  @include transition((transform));
+  @include transition-duration(0.2s);
+
+  transform: rotate(180deg);
+}
+
 .dropdown {
   position: relative;
   display: block;
@@ -39,19 +46,6 @@
 
   span {
     display: block;
-  }
-
-  &:hover {
-    .list {
-      display: block;
-    }
-
-    .icon {
-      @include transition((transform));
-      @include transition-duration(0.2s);
-
-      transform: rotate(180deg);
-    }
   }
 }
 

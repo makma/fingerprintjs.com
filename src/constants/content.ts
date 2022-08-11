@@ -22,6 +22,7 @@ export const PATH = {
   jobs: '/careers/jobs/',
   support: '/support/',
   security: '/security/',
+  useCases: '/use-cases/',
 } as const
 
 export const URL = {
@@ -93,3 +94,49 @@ export const defaultDataLayer = [{ branch: BRANCH }]
 export const DEFAULT_TRIAL_DAYS = 10
 
 export const THOUSAND_IDENTIFICATIONS_PRICE = 0.002
+
+export const solutionsDropdown = {
+  identify: [
+    {
+      title: 'Device Identification',
+      url: PATH.whyFpjs,
+      description: 'Identify web and mobile users with our high accuracy fingerprints.',
+    },
+    {
+      title: 'Bot Detection',
+      url: PATH.botD,
+      description: 'Detect automated threats and better understand your traffic.',
+    },
+  ],
+  protect: [
+    {
+      title: 'Payment Fraud',
+      url: PATH.paymentFraud,
+      description: 'Protect your revenue while keeping approval rates high.',
+    },
+    {
+      title: 'Account Takeover',
+      url: PATH.accountTakeover,
+      description: 'Prevent more attacks without hindering user experience. ',
+    },
+  ],
+  grow: [
+    {
+      title: 'Account Sharing Prevention',
+      url: PATH.accountSharing,
+      description: 'Increase revenue by converting users into paying customers.',
+    },
+    {
+      title: 'Paywall Enforcement',
+      url: PATH.paywall,
+      description: 'Monetize your content effectively by eliminating bypass techniques.',
+    },
+  ],
+}
+
+export const industryDropdown = [
+  { title: 'eCommerce', url: PATH.ecommerce },
+  { title: 'Buy Now Pay Later (BNPL)', url: PATH.bnpl },
+  { title: 'Online Gaming & Gambling', url: PATH.gaming },
+  { title: 'Cryptocurrency', url: PATH.cryptocurrency },
+]

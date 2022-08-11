@@ -5,31 +5,40 @@ import classNames from 'classnames'
 
 import styles from './DropdownList.module.scss'
 
+//To use react elements as children use the DropdownMenu component
 export interface DropdownListProps {
   name: string
-  list: Array<{ title: string; url: string; isLocal?: boolean }>
+  list?: Array<{ title: string; url: string; isLocal?: boolean }>
+  onClick?: () => void
+  isOpen?: boolean
 }
-export default function DropdownList({ name, list }: DropdownListProps) {
+export default function DropdownList({ name, list, onClick, isOpen }: DropdownListProps) {
   return (
-    <div className={classNames(styles.dropdown)}>
+    <button type='button' onClick={onClick} className={classNames(styles.dropdown)}>
       <span className={styles.link}>
         {name}
-        <ExpandMoreSvg className={styles.icon} />
+        <ExpandMoreSvg
+          className={classNames(styles.icon, {
+            [styles.iconIsOpen]: isOpen,
+            [styles.iconHover]: typeof isOpen === 'undefined',
+          })}
+        />
       </span>
-
-      <div className={styles.list}>
-        {list.map(({ title, url, isLocal = true }) =>
-          isLocal ? (
-            <Link to={url} key={title} className={classNames(styles.item, styles.link)}>
-              {title}
-            </Link>
-          ) : (
-            <a href={url} key={title} className={classNames(styles.item, styles.link)}>
-              {title}
-            </a>
-          )
-        )}
-      </div>
-    </div>
+      {list && (
+        <div className={styles.list}>
+          {list.map(({ title, url, isLocal = true }) =>
+            isLocal ? (
+              <Link to={url} key={title} className={classNames(styles.item, styles.link)}>
+                {title}
+              </Link>
+            ) : (
+              <a href={url} key={title} className={classNames(styles.item, styles.link)}>
+                {title}
+              </a>
+            )
+          )}
+        </div>
+      )}
+    </button>
   )
 }

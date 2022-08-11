@@ -1,8 +1,16 @@
 .gridContainer {
+  padding-top: rem(32px);
   padding-bottom: rem(100px);
 
   @include media('<=phoneLandscape') {
-    padding: 0 rem(16px) rem(50px) rem(16px);
+    padding: rem(32px) rem(16px) rem(50px) rem(16px);
+  }
+}
+.title {
+  @include sans($size: 48px, $weight: v('bold'), $lh: 130%);
+
+  @include media('<=phoneLandscape') {
+    font-size: rem(32px);
   }
 }
 
@@ -61,11 +69,11 @@
   }
 }
 
-.solutionsRoot {
+.useCasesRoot {
   display: grid;
   grid-template-columns: 3fr 1fr;
 
-  margin-top: rem(64px);
+  margin-top: rem(48px);
 
   @include media('<=desktop') {
     margin-top: 0;
@@ -83,7 +91,7 @@
     display: none;
   }
 
-  .showingSolutions,
+  .showingUseCases,
   .filter {
     @include sans($size: 16px, $weight: v('semi'), $lh: 130%);
   }
@@ -103,7 +111,7 @@
   }
 }
 
-.solutionsGrid {
+.useCasesGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: rem(32px);
