@@ -3,13 +3,11 @@
   opacity: 1;
 
   font-size: 1.75rem;
+  line-height: 150%;
+
+  padding: rem(6px) 0;
 
   cursor: pointer;
-
-  &:not(.item) {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
 
   &:not(.has-submenu) {
     &:hover {
