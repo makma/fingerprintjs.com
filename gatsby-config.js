@@ -138,6 +138,7 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-breakpoints',
     'gatsby-transformer-sharp',
     'gatsby-transformer-yaml',
     {
