@@ -24,6 +24,9 @@ category:
   - Authentication
 industry:
   - Payment Processing
+useCaseCode:
+  iframeUrl: https://stackblitz.com/edit/nextjs-dmv5c7?file=README.md
+  docsUrl: https://github.com/makma/use-cases-credential-stuffing
 ---
 ## What is Payment Fraud?
 
