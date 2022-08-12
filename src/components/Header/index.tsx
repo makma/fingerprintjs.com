@@ -17,7 +17,6 @@ import { useLocation } from '@reach/router'
 import SolutionsDropdown from '../SolutionsDropdown/SolutionsDropdown'
 import { AnimatePresence, motion } from 'framer-motion'
 import ClickOutside from '../../helpers/ClickOutside'
-import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 
 import styles from './Header.module.scss'
 
@@ -32,7 +31,6 @@ interface HeaderProps {
 export default function Header({ notificationBar }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isSolutionsTabOpen, setIsSolutionsTabOpen] = useState(false)
-  const breakpoints = useBreakpoint()
 
   const { pathname } = useLocation()
 
@@ -48,11 +46,6 @@ export default function Header({ notificationBar }: HeaderProps) {
   useEffect(() => {
     Prism.highlightAll()
   }, [])
-  useEffect(() => {
-    if (breakpoints.md) {
-      setIsSolutionsTabOpen(false)
-    }
-  }, [breakpoints])
 
   const handleToggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
