@@ -26,9 +26,9 @@ industry:
   - Financial
 bottomLinks: []
 useCaseCode:
-  iframeUrl: ""
+  iframeUrl: https://stackblitz.com/edit/nextjs-dmv5c7?file=README.md
   shareUrl: ""
-  docsUrl: ""
+  docsUrl: https://github.com/fingerprintjs/fingerprintjs-pro-use-cases
 isHidden: false
 ---
 ## **What is Credential Stuffing?**
