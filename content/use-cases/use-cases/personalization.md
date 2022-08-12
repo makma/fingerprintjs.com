@@ -24,8 +24,6 @@ useCaseCode:
   iframeUrl: https://stackblitz.com/edit/nextjs-dmv5c7?file=README.md
   docsUrl: https://github.com/fingerprintjs/fingerprintjs-pro-use-cases
 ---
-# **Most of your visitors are anonymous. Here’s how to tailor their experience without requiring sign-in.**
-
 ## **What is user personalization?**
 
 User personalization is the delivery of content and functionality that fits a user’s wants and needs, without any effort required by the user.
