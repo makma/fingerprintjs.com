@@ -37,7 +37,7 @@ describe('BotD - Generate Key Section', () => {
       get: jest.fn().mockResolvedValue(fpResponse),
     })
 
-    renderWithProviders(<GenerateKeySection requestId={visitorId} />)
+    renderWithProviders(<GenerateKeySection />)
     await act(() => Promise.resolve())
 
     expect(screen.getByLabelText('Work email')).not.toBeDisabled()
@@ -57,7 +57,7 @@ describe('BotD - Generate Key Section', () => {
       get: jest.fn().mockResolvedValue(fpResponse),
     })
 
-    renderWithProviders(<GenerateKeySection requestId={visitorId} />)
+    renderWithProviders(<GenerateKeySection />)
     await act(() => Promise.resolve())
 
     expect(screen.getByLabelText('Work email')).not.toBeDisabled()
@@ -78,7 +78,7 @@ describe('BotD - Generate Key Section', () => {
       get: jest.fn().mockResolvedValue(fpResponse),
     })
 
-    const { rerender } = renderWithProviders(<GenerateKeySection requestId={visitorId} />)
+    const { rerender } = renderWithProviders(<GenerateKeySection />)
     await act(() => Promise.resolve())
 
     expect(screen.getByLabelText('Work email')).not.toBeDisabled()
@@ -100,17 +100,6 @@ describe('BotD - Generate Key Section', () => {
   it('should have the button disabled if the visitorId is missing', async () => {
     fpjsLoadMock.mockRejectedValue(new Error())
 
-    renderWithProviders(<GenerateKeySection requestId={visitorId} />)
-    await act(() => Promise.resolve())
-
-    expect(screen.getByLabelText('Work email')).toBeDisabled()
-  })
-
-  it('should have the button disabled if the requestId is missing', async () => {
-    fpjsLoadMock.mockResolvedValue({
-      get: jest.fn().mockResolvedValue(fpResponse),
-    })
-
     renderWithProviders(<GenerateKeySection />)
     await act(() => Promise.resolve())
 
@@ -124,7 +113,7 @@ describe('BotD - Generate Key Section', () => {
       get: jest.fn().mockResolvedValue(fpResponse),
     })
 
-    renderWithProviders(<GenerateKeySection requestId={visitorId} />)
+    renderWithProviders(<GenerateKeySection />)
     await act(() => Promise.resolve())
 
     expect(screen.getByLabelText('Work email')).not.toBeDisabled()
@@ -148,7 +137,7 @@ describe('BotD - Generate Key Section', () => {
       get: jest.fn().mockResolvedValue(fpResponse),
     })
 
-    renderWithProviders(<GenerateKeySection requestId={visitorId} />)
+    renderWithProviders(<GenerateKeySection />)
     await act(() => Promise.resolve())
 
     expect(screen.getByLabelText('Work email')).not.toBeDisabled()

@@ -18,18 +18,14 @@ import { useViewTracking } from '../../../context/HistoryListener'
 
 import styles from './GenerateKeySection.module.scss'
 
-interface GenerateKeySectionProps {
-  requestId?: string
-}
-
-export default function GenerateKeySection({ requestId }: GenerateKeySectionProps) {
+export default function GenerateKeySection() {
   const [email, setEmail] = useState('')
   const { formState, updateFormState, errorMessage, updateErrorMessage } = useForm(Forms.BotdGenerateToken)
 
   const { data } = useVisitorData()
   const { utmParams } = useViewTracking()
 
-  const disableButton = !(requestId && data && formState !== FormState.Loading)
+  const disableButton = !(data && formState !== FormState.Loading)
 
   interface UsedMails {
     usedEmail: string

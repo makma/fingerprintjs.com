@@ -23,7 +23,6 @@ export default function APIResponseDetailsSection({ visitorData }: APIResponseDe
             codeBlocks={[
               {
                 code: `{
-    "requestId": "${visitorData?.requestId ?? '1659120428936.yCYJSI'}",
     "products": {
         "botd": {
             "data": {
@@ -41,15 +40,6 @@ export default function APIResponseDetailsSection({ visitorData }: APIResponseDe
             ]}
             className={styles.apiJson}
             tooltips={[
-              <CodeTooltip
-                key='requestId'
-                className={styles.requestId}
-                left={visitorData?.requestId ? 222 + visitorData.requestId.length * characterLength : 390}
-              >
-                <p>
-                  <strong>Request ID</strong> is used to verify bot detection requests on the server.
-                </p>
-              </CodeTooltip>,
               <CodeTooltip
                 key='result'
                 className={styles.result}

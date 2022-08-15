@@ -41,7 +41,7 @@ export default function Botd({ pageContext }: AccountSharingProps) {
     <LayoutTemplate siteMetadata={siteMetadata}>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
       <HeroSection visitorData={visitorData} isLoading={isLoading} hasError={hasError} refresh={refresh} />
-      <GenerateKeySection requestId={visitorData?.requestId} />
+      <GenerateKeySection />
       <APIResponseDetailsSection visitorData={visitorData} />
       <DocumentationSection />
       <IntegrationSection />
