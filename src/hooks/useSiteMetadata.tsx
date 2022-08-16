@@ -12,7 +12,6 @@ export const useSiteMetadata = () => {
             description
             siteUrl
             image
-            twitterUsername
           }
         }
       }

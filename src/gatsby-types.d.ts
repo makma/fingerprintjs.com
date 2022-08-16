@@ -6402,7 +6402,6 @@ type SiteFieldsEnum =
   | 'siteMetadata.image'
   | 'siteMetadata.siteUrl'
   | 'siteMetadata.title'
-  | 'siteMetadata.twitterUsername'
   | 'trailingSlash';
 
 type SiteFilterInput = {
@@ -7189,7 +7188,6 @@ type SiteSiteMetadata = {
   readonly image: Maybe<Scalars['String']>;
   readonly siteUrl: Maybe<Scalars['String']>;
   readonly title: Maybe<Scalars['String']>;
-  readonly twitterUsername: Maybe<Scalars['String']>;
 };
 
 type SiteSiteMetadataFilterInput = {
@@ -7197,7 +7195,6 @@ type SiteSiteMetadataFilterInput = {
   readonly image: InputMaybe<StringQueryOperatorInput>;
   readonly siteUrl: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
-  readonly twitterUsername: InputMaybe<StringQueryOperatorInput>;
 };
 
 type SiteSortInput = {
@@ -7547,7 +7544,7 @@ type RelatedUseCasesQuery = { readonly allMarkdownRemark: { readonly edges: Read
 type SITE_METADATA_QUERYQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type SITE_METADATA_QUERYQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly description: string | null, readonly siteUrl: string | null, readonly image: string | null, readonly twitterUsername: string | null } | null } | null };
+type SITE_METADATA_QUERYQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly description: string | null, readonly siteUrl: string | null, readonly image: string | null } | null } | null };
 
 type StaticPageContentQueryVariables = Exact<{
   id: Scalars['String'];

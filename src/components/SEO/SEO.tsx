@@ -10,19 +10,13 @@ type SeoProps = {
   children?: React.ReactNode
 }
 export function SEO({ title, description, pathname, image, children }: SeoProps) {
-  const {
-    title: defaultTitle,
-    description: defaultDescription,
-    image: defaultImage,
-    siteUrl,
-    twitterUsername,
-  } = useSiteMetadata()
+  const { title: defaultTitle, description: defaultDescription, image: defaultImage, siteUrl } = useSiteMetadata()
+  const imageUrl = image ? `${siteUrl}${image}` : defaultImage
   const seo = {
     title: title ?? defaultTitle,
     description: description ?? defaultDescription,
-    image: `${siteUrl}${image ?? defaultImage}`,
+    image: imageUrl,
     url: `${siteUrl}${pathname ?? ``}`,
-    twitterUsername,
   }
   return (
     <>
@@ -51,7 +45,6 @@ export function SEO({ title, description, pathname, image, children }: SeoProps)
       <meta name='twitter:url' content={seo.url} />
       <meta name='twitter:description' content={seo.description} />
       <meta name='twitter:image' content={seo.image} />
-      <meta name='twitter:creator' content={seo.twitterUsername} />
 
       <meta name='facebook-domain-verification' content='dz50t3zs49efpmvtb6nzog8xj3fes0' />
 

@@ -53,8 +53,7 @@ module.exports = {
     description:
       'Fingerprint Pro is the 99.5% accurate device fingerprinting solution. FingerprintJS is the top open-source browser fingerprinting library. Prevent fraud, spam, and account takeovers. Available for web, iOS, and Android.',
     siteUrl: baseUrl,
-    image: '/img/fpjs-preview.png',
-    twitterUsername: `@FingerprintJs`,
+    image: 'https://fingerprint.com/img/fpjs-preview.png',
   },
   graphqlTypegen: true,
   plugins: [
