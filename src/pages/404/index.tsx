@@ -25,3 +25,7 @@ const NotFoundPage = () => (
 )
 
 export default NotFoundPage
+
+export function Head() {
+  return <title>Fingerprint Pro - Not found</title>
+}

@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql, HeadProps } from 'gatsby'
 import React from 'react'
 import Section from '../components/common/Section'
 import { LayoutTemplate } from '../components/Layout'
@@ -6,15 +6,14 @@ import Container from '../components/common/Container'
 import Post, { mapToPost, PostProps } from '../components/Post/Post'
 import Posts from '../components/Posts/Posts'
 import PaginationNav from '../components/PaginationNav/PaginationNav'
-import useSiteMetadata from '../hooks/useSiteMetadata'
 import NewsletterBanner from '../components/NewsletterBanner/NewsletterBanner'
-import { useLocation } from '@reach/router'
 import { GeneratedPageContext } from '../helpers/types'
+import { SEO } from '../components/SEO/SEO'
 
 import styles from './blog.module.scss'
 
 interface BlogProps {
-  data: GatsbyTypes.BlogQuery
+  data: Queries.BlogQuery
   pageContext: BlogContext
 }
 export default function Blog({ data, pageContext }: BlogProps) {
@@ -23,21 +22,12 @@ export default function Blog({ data, pageContext }: BlogProps) {
   const featuredPosts: Array<PostProps> = featuredPostsEdges.map(({ node }) => mapToPost(node))
 
   const tags = data.tags.group.map(({ tag }) => tag) as string[]
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: 'Fingerprint Blog | Fingerprint',
-    description:
-      'We are an open source powered company working to prevent online fraud for websites of all sizes. Learn about our browser fingerprinting API and more on our blog.',
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
 
   const { currentPage, numPages } = pageContext
   const isFirst = currentPage === 1
 
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate>
       <Section className={styles.root}>
         <Container size='large'>
           <h2 className={styles.title}>Blog Articles</h2>
@@ -94,4 +84,14 @@ export const pageQuery = graphql`
 interface BlogContext extends GeneratedPageContext {
   currentPage: number
   numPages: number
+}
+
+export function Head(props: HeadProps) {
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title='Fingerprint Blog | Fingerprint'
+      description='We are an open source powered company working to prevent online fraud for websites of all sizes. Learn about our browser fingerprinting API and more on our blog.'
+    />
+  )
 }

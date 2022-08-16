@@ -11,8 +11,10 @@ import { Link } from 'gatsby'
 
 import BreadcrumbsSEO from '../../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../../helpers/types'
-import useSiteMetadata from '../../hooks/useSiteMetadata'
-import { useLocation } from '@reach/router'
+
+import { HeadProps } from 'gatsby'
+import { SEO } from '../../components/SEO/SEO'
+
 import { usePriceData } from '../../hooks/usePriceData'
 import styles from './Pricing.module.scss'
 
@@ -21,16 +23,9 @@ interface PricingPageProps {
 }
 export default function PricingPage({ pageContext }: PricingPageProps) {
   const breadcrumbs = pageContext.breadcrumb.crumbs
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: 'Pricing - Fingerprint Pro',
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
 
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
       <HeaderSection />
       <CalculatorSection />
@@ -242,4 +237,8 @@ function ContactSalesSection() {
       </Container>
     </Section>
   )
+}
+
+export function Head(props: HeadProps) {
+  return <SEO pathname={props.location.pathname} title='Pricing - Fingerprint Pro' />
 }

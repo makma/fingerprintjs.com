@@ -1,16 +1,12 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
+import { Script } from 'gatsby'
 import { BASE_URL } from '../../constants/content'
 import { Breadcrumb } from './Breadcrumbs'
 import { withTrailingSlash } from '../../helpers/url'
 import { kebabToStart } from '../../helpers/case'
 
 export default function BreadcrumbsSEO({ breadcrumbs }: { breadcrumbs: Array<Breadcrumb> }) {
-  return (
-    <Helmet>
-      <script type='application/ld+json'>{getStructuredData(breadcrumbs)}</script>
-    </Helmet>
-  )
+  return <Script type='application/ld+json'>{getStructuredData(breadcrumbs)}</Script>
 }
 
 function getStructuredData(breadcrumbs: Array<Breadcrumb>): string {

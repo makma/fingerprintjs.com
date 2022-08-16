@@ -6,8 +6,8 @@ import ContactSupportForm from '../../components/ContactSupportForm/ContactSuppo
 import Container from '../../components/common/Container'
 import Section from '../../components/common/Section'
 
-import useSiteMetadata from '../../hooks/useSiteMetadata'
-import { useLocation } from '@reach/router'
+import { HeadProps } from 'gatsby'
+import { SEO } from '../../components/SEO/SEO'
 
 import styles from './Support.module.scss'
 
@@ -16,16 +16,9 @@ interface SupportProps {
 }
 export default function Support({ pageContext }: SupportProps) {
   const breadcrumbs = pageContext.breadcrumb.crumbs
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: 'Contact Support - Fingerprint',
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
 
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
 
       <Section className={styles.root}>
@@ -35,4 +28,8 @@ export default function Support({ pageContext }: SupportProps) {
       </Section>
     </LayoutTemplate>
   )
+}
+
+export function Head(props: HeadProps) {
+  return <SEO pathname={props.location.pathname} title='Contact Support - Fingerprint' />
 }

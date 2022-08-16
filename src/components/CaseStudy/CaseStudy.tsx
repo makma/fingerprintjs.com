@@ -9,7 +9,7 @@ import styles from './CaseStudy.module.scss'
 export interface CaseStudyProps {
   title: string
   description: string
-  image?: GatsbyTypes.File
+  image?: Queries.File
   path: string
   className?: string
 }
@@ -69,7 +69,7 @@ export function mapToCaseStudy(data: any, editing?: boolean): CaseStudyProps {
     title,
     description,
     path: url,
-    image: socialCard as GatsbyTypes.File,
+    image: socialCard as Queries.File,
   } as CaseStudyProps
 }
 

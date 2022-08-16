@@ -14,8 +14,8 @@ import BuiltForEngineersSection from '../../../components/accountSharing/BuiltFo
 import ContactSalesSection from '../../../components/accountSharing/ContactSalesSection/ContactSalesSection'
 import RelatedArticles from '../../../components/RelatedArticles/RelatedArticles'
 
-import useSiteMetadata from '../../../hooks/useSiteMetadata'
-import { useLocation } from '@reach/router'
+import { HeadProps } from 'gatsby'
+import { SEO } from '../../../components/SEO/SEO'
 
 import styles from './account-sharing.module.scss'
 
@@ -24,18 +24,9 @@ interface AccountSharingProps {
 }
 export default function AccountSharingPage({ pageContext }: AccountSharingProps) {
   const breadcrumbs = pageContext.breadcrumb.crumbs
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: 'Account Sharing Prevention For SaaS - Fingerprint',
-    description:
-      'Accurately identify users sharing their account details with our browser fingerprinting API built for developer teams',
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
 
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
       <HeroSection />
       <HowMuchLosingSection />
@@ -57,5 +48,15 @@ export default function AccountSharingPage({ pageContext }: AccountSharingProps)
         />
       </Container>
     </LayoutTemplate>
+  )
+}
+
+export function Head(props: HeadProps) {
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title='Account Sharing Prevention For SaaS - Fingerprint'
+      description='Accurately identify users sharing their account details with our browser fingerprinting API built for developer teams.'
+    />
   )
 }

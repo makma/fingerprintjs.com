@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql, HeadProps } from 'gatsby'
 import React from 'react'
 import { LayoutTemplate } from '../components/Layout'
 import Container from '../components/common/Container'
@@ -7,15 +7,14 @@ import Posts from '../components/Posts/Posts'
 import { GeneratedPageContext } from '../helpers/types'
 import PaginationNav from '../components/PaginationNav/PaginationNav'
 import BreadcrumbsSEO from '../components/Breadcrumbs/BreadcrumbsSEO'
-import useSiteMetadata from '../hooks/useSiteMetadata'
-import { useLocation } from '@reach/router'
 import AuthorSummary from '../components/AuthorSummary/AuthorSummary'
 import { normalizeWord } from '../helpers/url'
+import { SEO } from '../components/SEO/SEO'
 
 import styles from './author.module.scss'
 
 interface AuthorProps {
-  data: GatsbyTypes.BlogAuthorQuery
+  data: Queries.BlogAuthorQuery
   pageContext: AuthorContext
 }
 export default function Author({ data, pageContext }: AuthorProps) {
@@ -27,17 +26,9 @@ export default function Author({ data, pageContext }: AuthorProps) {
 
   const { currentPage, numPages, author } = pageContext
   const breadcrumbs = pageContext.breadcrumb.crumbs.filter(({ pathname }) => pathname !== '/blog/author')
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: `${author}'s Articles - Fingerprint Blog | Fingerprint`,
-    description: `We are an open source powered company working to prevent online fraud for websites of all sizes. Read our articles written by ${author} on our blog.`,
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
 
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
 
       <Container size='large' className={styles.authorSection}>
@@ -91,4 +82,14 @@ interface AuthorContext extends GeneratedPageContext {
   currentPage: number
   numPages: number
   author: string
+}
+
+export function Head(props: HeadProps<Queries.BlogAuthorQuery, AuthorContext>) {
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title={`${props.pageContext.author}'s Articles - Fingerprint Blog | Fingerprint`}
+      description={`We are an open source powered company working to prevent online fraud for websites of all sizes. Read our articles written by ${props.pageContext.author} on our blog.`}
+    />
+  )
 }

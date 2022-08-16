@@ -18,9 +18,8 @@ import { PATH } from '../../constants/content'
 
 import { GeneratedPageContext } from '../../helpers/types'
 
-import useSiteMetadata from '../../hooks/useSiteMetadata'
-import { useLocation } from '@reach/router'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, HeadProps } from 'gatsby'
+import { SEO } from '../../components/SEO/SEO'
 
 import styles from './Careers.module.scss'
 
@@ -29,17 +28,8 @@ interface CareersPageProps {
 }
 export default function CareersPage({ pageContext }: CareersPageProps) {
   const breadcrumbs = pageContext.breadcrumb.crumbs
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: 'Fingerprint Careers - Join Our 100% Remote Team',
-    description:
-      "We're empowering developers to stop online fraud. Join us in building world-class APIs for identification and fraud detection.",
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
 
-  const data = useStaticQuery<GatsbyTypes.TeamMembersQueryQuery>(graphql`
+  const data = useStaticQuery(graphql`
     query TeamMembersQuery {
       teamMembers: teamMembersYaml {
         totalMembers
@@ -49,7 +39,7 @@ export default function CareersPage({ pageContext }: CareersPageProps) {
   const teamMembers = data?.teamMembers as TeamMembersSectionProps
 
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
       <HeroSection
         className={styles.heroSection}
@@ -80,5 +70,15 @@ export default function CareersPage({ pageContext }: CareersPageProps) {
       </Container>
       <InTheMediaSection />
     </LayoutTemplate>
+  )
+}
+
+export function Head(props: HeadProps) {
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title='Fingerprint Careers - Join Our 100% Remote Team'
+      description="We're empowering developers to stop online fraud. Join us in building world-class APIs for identification and fraud detection."
+    />
   )
 }

@@ -8,9 +8,8 @@ import Skeleton from '../../../components/Skeleton/Skeleton'
 import { GeneratedPageContext } from '../../../helpers/types'
 import { repeatElement } from '../../../helpers/repeatElement'
 import { MAILTO_WORK, PATH } from '../../../constants/content'
-
-import useSiteMetadata from '../../../hooks/useSiteMetadata'
-import { useLocation } from '@reach/router'
+import { SEO } from '../../../components/SEO/SEO'
+import { HeadProps } from 'gatsby'
 
 import styles from './Jobs.module.scss'
 
@@ -31,15 +30,6 @@ export interface Job {
 
 export default function JobsPage({ pageContext }: JobsPageProps) {
   const breadcrumbs = pageContext.breadcrumb.crumbs
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: 'Fingerprint Careers - Join Our 100% Remote Team',
-    description:
-      "We're empowering developers to stop online fraud. Join us in building world-class APIs for identification and fraud detection.",
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
 
   const defaultDepartment = 'All Departments'
 
@@ -101,7 +91,7 @@ export default function JobsPage({ pageContext }: JobsPageProps) {
   }, [])
 
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
       <Section className={styles.section}>
         <Container size='large'>
@@ -295,5 +285,14 @@ export function ErrorMessage() {
         .
       </p>
     </div>
+  )
+}
+export function Head(props: HeadProps) {
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title='Fingerprint Careers - Join Our 100% Remote Team'
+      description="We're empowering developers to stop online fraud. Join us in building world-class APIs for identification and fraud detection."
+    />
   )
 }

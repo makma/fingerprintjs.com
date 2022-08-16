@@ -1,13 +1,12 @@
-import { graphql } from 'gatsby'
+import { graphql, HeadProps } from 'gatsby'
 import React from 'react'
 import { LayoutTemplate } from '../../components/Layout'
-import useSiteMetadata from '../../hooks/useSiteMetadata'
-import { useLocation } from '@reach/router'
 import { mapToUseCase } from '../../components/useCases/UseCase/UseCase'
 import UseCasesSection from '../../components/useCases/UseCasesSection/UseCasesSection'
+import { SEO } from '../../components/SEO/SEO'
 
 interface UseCasesProps {
-  data: GatsbyTypes.UseCaseQuery
+  data: Queries.UseCaseQuery
 }
 export default function UseCases({ data }: UseCasesProps) {
   const { edges: useCases } = data.useCases
@@ -15,17 +14,8 @@ export default function UseCases({ data }: UseCasesProps) {
   const categoryTags = data.category.group.map(({ tag }) => tag) as string[]
   const industryTags = data.industry.group.map(({ tag }) => tag) as string[]
 
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: 'Use Cases - Fingerprint Pro',
-    description:
-      'Solve any fraud problem with our user identification API. Explore our full code use cases for payment fraud, account takeover and more.',
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate>
       <UseCasesSection
         useCases={useCases.map(({ node }) => node).map((node) => mapToUseCase(node))}
         funnelTags={funnelTags}
@@ -64,3 +54,12 @@ export const pageQuery = graphql`
     }   
   }
 `
+export function Head(props: HeadProps) {
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title='Use Cases - Fingerprint Pro'
+      description='Solve any fraud problem with our user identification API. Explore our full code use cases for payment fraud, account takeover and more.'
+    />
+  )
+}

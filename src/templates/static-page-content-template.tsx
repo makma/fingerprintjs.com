@@ -14,7 +14,6 @@ import { PostProps } from '../components/Post/Post'
 import styles from './static-page-content.module.scss'
 
 export interface StaticPageContentTemplateProps {
-  metadata: GatsbyTypes.SiteSiteMetadata
   invertContent: boolean
   inlineCta: InlineCtaProps
   cardSection: CardSectionProps
@@ -26,7 +25,6 @@ export interface StaticPageContentTemplateProps {
 }
 
 export default function StaticPageContentTemplate({
-  metadata,
   invertContent = false,
   inlineCta,
   cardSection,
@@ -37,7 +35,7 @@ export default function StaticPageContentTemplate({
   breadcrumbs,
 }: StaticPageContentTemplateProps) {
   return (
-    <LayoutTemplate siteMetadata={metadata}>
+    <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
       <Section className={styles.section}>
         <Hero {...hero} className={styles.widget} />

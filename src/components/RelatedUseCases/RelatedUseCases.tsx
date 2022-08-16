@@ -9,7 +9,7 @@ export interface RelatedUseCasesProps {
 }
 export default function RelatedUseCases({ useCase }: RelatedUseCasesProps) {
   return (
-    <StaticQuery<GatsbyTypes.RelatedUseCasesQuery>
+    <StaticQuery<Queries.RelatedUseCasesQuery>
       query={relatedUseCasesQuery}
       render={(data) => {
         const allUseCases = data.allMarkdownRemark.edges.map(({ node }) => node)
@@ -38,7 +38,7 @@ const relatedUseCasesQuery = graphql`
 `
 
 type UseCaseQuery = NonNullable<
-  ArrayElement<NonNullable<NonNullable<GatsbyTypes.RelatedUseCasesQuery['allMarkdownRemark']>['edges']>>['node']
+  ArrayElement<NonNullable<NonNullable<Queries.RelatedUseCasesQuery['allMarkdownRemark']>['edges']>>['node']
 >
 function getRelatedUseCases(referenceUseCase: UseCaseProps, allUseCases: UseCaseQuery[]): UseCaseProps[] {
   const relatedUseCases = allUseCases.map((useCase) => mapToUseCase(useCase))

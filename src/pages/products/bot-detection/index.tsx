@@ -15,8 +15,10 @@ import FaqSection from '../../../components/botd/FaqSection/FaqSection'
 import JoinCommunitySection from '../../../components/JoinCommunitySection/JoinCommunitySection'
 
 import { URL } from '../../../constants/content'
-import useSiteMetadata from '../../../hooks/useSiteMetadata'
-import { useLocation } from '@reach/router'
+
+import { HeadProps } from 'gatsby'
+import { SEO } from '../../../components/SEO/SEO'
+
 import { useBotD } from '../../../hooks/useBotD'
 
 import styles from './botd.module.scss'
@@ -26,19 +28,10 @@ interface AccountSharingProps {
 }
 export default function Botd({ pageContext }: AccountSharingProps) {
   const breadcrumbs = pageContext.breadcrumb.crumbs
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: 'Open Source JavaScript Bot Detection Library - BotD',
-    description:
-      'Identify bots in real time with our developer-friendly library. Detect automation tools, search bots, virtual machines and browser spoofing.',
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
 
   const { visitorData, isLoading, hasError, refresh } = useBotD()
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
       <HeroSection visitorData={visitorData} isLoading={isLoading} hasError={hasError} refresh={refresh} />
       <GenerateKeySection />
@@ -67,5 +60,15 @@ export default function Botd({ pageContext }: AccountSharingProps) {
         />
       </Container>
     </LayoutTemplate>
+  )
+}
+
+export function Head(props: HeadProps) {
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title='Open Source JavaScript Bot Detection Library - BotD'
+      description='Identify bots in real time with our developer-friendly library. Detect automation tools, search bots, virtual machines and browser spoofing.'
+    />
   )
 }

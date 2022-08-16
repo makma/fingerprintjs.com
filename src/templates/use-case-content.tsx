@@ -1,17 +1,16 @@
-import { graphql } from 'gatsby'
+import { graphql, HeadProps } from 'gatsby'
 import React from 'react'
 import { PreviewTemplateComponentProps } from 'netlify-cms-core'
-import { BASE_URL } from '../constants/content'
 import { GeneratedPageContext } from '../helpers/types'
-import { withTrailingSlash } from '../helpers/url'
 import PreviewProviders from '../cms/PreviewProviders'
 import { DangerouslyRenderHtmlContent } from '../components/Content/Content'
 import { mapToUseCase } from '../components/useCases/UseCase/UseCase'
 
+import { SEO } from '../components/SEO/SEO'
 import UseCaseContentTemplate, { BottomLink, CodeBlock } from './use-case-content-template'
 
 interface UseCaseContentProps {
-  data: GatsbyTypes.UseCaseContentQuery
+  data: Queries.UseCaseContentQuery
   pageContext: GeneratedPageContext
 }
 export default function UseCaseContent({ data }: UseCaseContentProps) {
@@ -28,9 +27,7 @@ export default function UseCaseContent({ data }: UseCaseContentProps) {
     return null
   }
 
-  const metadata = mapToMetadata(data.markdownRemark.frontmatter.metadata)
   const useCase = mapToUseCase(data.markdownRemark)
-
   const funnel = data.markdownRemark.frontmatter.funnel as string[]
   const category = data.markdownRemark.frontmatter.category as string[]
   const industry = data.markdownRemark.frontmatter.industry as string[]
@@ -42,7 +39,6 @@ export default function UseCaseContent({ data }: UseCaseContentProps) {
   return (
     <UseCaseContentTemplate
       contentComponent={DangerouslyRenderHtmlContent}
-      metadata={metadata}
       useCase={useCase}
       funnel={funnel}
       category={category}
@@ -99,7 +95,6 @@ export const pageQuery = graphql`
 // The following function needs to be exported for use in the CMS, added lint disable to avoid limited exports page warning
 // eslint-disable-next-line
 export function UseCaseContentPreview({ entry, widgetFor }: PreviewTemplateComponentProps) {
-  const metadata = entry.getIn(['data', 'metadata'])?.toObject() as QueryMetadata
   const funnel = entry.getIn(['data', 'funnel'])
   const category = entry.getIn(['data', 'category'])
   const industry = entry.getIn(['data', 'industry'])
@@ -111,7 +106,6 @@ export function UseCaseContentPreview({ entry, widgetFor }: PreviewTemplateCompo
   return (
     <PreviewProviders>
       <UseCaseContentTemplate
-        metadata={mapToMetadata(metadata)}
         funnel={funnel}
         category={category}
         industry={industry}
@@ -125,22 +119,8 @@ export function UseCaseContentPreview({ entry, widgetFor }: PreviewTemplateCompo
   )
 }
 
-type QueryMetadata = NonNullable<
-  NonNullable<GatsbyTypes.UseCaseContentQuery['markdownRemark']>['frontmatter']
->['metadata']
-function mapToMetadata(queryMetadata: QueryMetadata): GatsbyTypes.SiteSiteMetadata {
-  const imageUrl = queryMetadata?.socialImage?.publicURL ?? queryMetadata?.image?.publicURL
-
-  return {
-    title: queryMetadata?.title ?? '',
-    description: queryMetadata?.description ?? '',
-    siteUrl: withTrailingSlash(queryMetadata?.url ?? ''),
-    image: `${BASE_URL}${imageUrl}` ?? '',
-  } as GatsbyTypes.SiteSiteMetadata
-}
-
 type QueryCodeBlock = NonNullable<
-  NonNullable<GatsbyTypes.UseCaseContentQuery['markdownRemark']>['frontmatter']
+  NonNullable<Queries.UseCaseContentQuery['markdownRemark']>['frontmatter']
 >['useCaseCode']
 function mapToCodeblock(queryCodeBlock?: QueryCodeBlock): CodeBlock {
   return {
@@ -151,7 +131,7 @@ function mapToCodeblock(queryCodeBlock?: QueryCodeBlock): CodeBlock {
 }
 
 type QueryBottomLink = NonNullable<
-  NonNullable<GatsbyTypes.UseCaseContentQuery['markdownRemark']>['frontmatter']
+  NonNullable<Queries.UseCaseContentQuery['markdownRemark']>['frontmatter']
 >['bottomLinks']
 function mapToBottomLinks(queryBottomLink?: QueryBottomLink): BottomLink[] {
   return (
@@ -161,5 +141,20 @@ function mapToBottomLinks(queryBottomLink?: QueryBottomLink): BottomLink[] {
         text: bottomLink?.text ?? '',
       }
     }) ?? []
+  )
+}
+
+export function Head(props: HeadProps<Queries.UseCaseContentQuery>) {
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title={props.data.markdownRemark?.frontmatter?.metadata?.title ?? ''}
+      description={props.data.markdownRemark?.frontmatter?.metadata?.description ?? ''}
+      image={
+        props.data.markdownRemark?.frontmatter?.metadata?.socialImage?.publicURL ??
+        props.data.markdownRemark?.frontmatter?.metadata?.image?.publicURL ??
+        ''
+      }
+    />
   )
 }

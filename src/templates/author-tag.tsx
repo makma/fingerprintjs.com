@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql, HeadProps } from 'gatsby'
 import React from 'react'
 import { LayoutTemplate } from '../components/Layout'
 import Container from '../components/common/Container'
@@ -7,16 +7,16 @@ import Posts from '../components/Posts/Posts'
 import { GeneratedPageContext } from '../helpers/types'
 import PaginationNav from '../components/PaginationNav/PaginationNav'
 import BreadcrumbsSEO from '../components/Breadcrumbs/BreadcrumbsSEO'
-import useSiteMetadata from '../hooks/useSiteMetadata'
-import { useLocation } from '@reach/router'
 import AuthorSummary from '../components/AuthorSummary/AuthorSummary'
-import { Helmet } from 'react-helmet'
 import { withTrailingSlash, withoutTrailingSlash, normalizeWord } from '../helpers/url'
 
+import { useSiteMetadata } from '../hooks/useSiteMetadata'
+
+import { SEO } from '../components/SEO/SEO'
 import styles from './author.module.scss'
 
 interface AuthorTagProps {
-  data: GatsbyTypes.BlogAuthorTagQuery
+  data: Queries.BlogAuthorTagQuery
   pageContext: AuthorTagContext
 }
 export default function AuthorTag({ data, pageContext }: AuthorTagProps) {
@@ -28,46 +28,29 @@ export default function AuthorTag({ data, pageContext }: AuthorTagProps) {
 
   const { currentPage, numPages, author, tag } = pageContext
   const breadcrumbs = pageContext.breadcrumb.crumbs.filter(({ pathname }) => pathname !== '/blog/author')
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  const pageUrl = `${siteMetadata.siteUrl}${pathname}`
-
-  siteMetadata = {
-    ...siteMetadata,
-    title: `${author}'s Articles - Fingerprint Blog | Fingerprint`,
-    description: `We are an open source powered company working to prevent online fraud for websites of all sizes. Read our articles written by ${author} on our blog.`,
-    siteUrl: pageUrl,
-  }
-
-  const authorUrl = withoutTrailingSlash(pageUrl).slice(0, withoutTrailingSlash(pageUrl).lastIndexOf('/'))
 
   return (
-    <>
-      <Helmet>
-        <link rel='canonical' key={withTrailingSlash(authorUrl)} href={withTrailingSlash(authorUrl)} />
-      </Helmet>
-      <LayoutTemplate siteMetadata={siteMetadata}>
-        {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
+    <LayoutTemplate>
+      {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
 
-        <Container size='large' className={styles.authorSection}>
-          <AuthorSummary author={author} role={role} bio={bio} photo={photo} linkBack />
-          <Posts
-            name={`${author}'s Articles`}
-            posts={posts.map(({ node }) => mapToPost(node))}
-            tags={tags}
-            perRow={3}
-            activeTag={tag}
-            tagLink={`/blog/author/${normalizeWord(author)}/`}
-          />
+      <Container size='large' className={styles.authorSection}>
+        <AuthorSummary author={author} role={role} bio={bio} photo={photo} linkBack />
+        <Posts
+          name={`${author}'s Articles`}
+          posts={posts.map(({ node }) => mapToPost(node))}
+          tags={tags}
+          perRow={3}
+          activeTag={tag}
+          tagLink={`/blog/author/${normalizeWord(author)}/`}
+        />
 
-          <PaginationNav
-            currentPage={currentPage}
-            numPages={numPages}
-            basePath={`/blog/author/${normalizeWord(author)}/${normalizeWord(tag)}/`}
-          />
-        </Container>
-      </LayoutTemplate>
-    </>
+        <PaginationNav
+          currentPage={currentPage}
+          numPages={numPages}
+          basePath={`/blog/author/${normalizeWord(author)}/${normalizeWord(tag)}/`}
+        />
+      </Container>
+    </LayoutTemplate>
   )
 }
 
@@ -110,4 +93,19 @@ interface AuthorTagContext extends GeneratedPageContext {
   numPages: number
   author: string
   tag: string
+}
+
+export function Head(props: HeadProps<Queries.BlogAuthorTagQuery, AuthorTagContext>) {
+  const { siteUrl } = useSiteMetadata()
+  const pageUrl = `${siteUrl}${props.location.pathname}`
+  const authorUrl = withoutTrailingSlash(pageUrl).slice(0, withoutTrailingSlash(pageUrl).lastIndexOf('/'))
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title={`${props.pageContext.author}'s Articles - Fingerprint Blog | Fingerprint`}
+      description={`We are an open source powered company working to prevent online fraud for websites of all sizes. Read our articles written by ${props.pageContext.author} on our blog.`}
+    >
+      <link rel='canonical' key={withTrailingSlash(authorUrl)} href={withTrailingSlash(authorUrl)} />
+    </SEO>
+  )
 }

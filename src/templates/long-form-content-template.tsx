@@ -12,29 +12,26 @@ import CustomizableCTA, { CustomizableCTAProps } from '../components/Customizabl
 import HeroImageComponent, { HeroImageComponentProps } from '../components/HeroImage/HeroImage'
 import TagList from '../components/TagList/TagList'
 import classNames from 'classnames'
-import { Helmet } from 'react-helmet'
 
 import ActionBar, { ActionBarProps } from '../components/ActionBar/ActionBar'
 
 import styles from './long-form-content.module.scss'
 
 export interface TemplateProps {
-  metadata: GatsbyTypes.SiteSiteMetadata
   heroImage: HeroImageComponentProps
   post: PostProps
   body: string | React.ReactNode
   contentComponent?: React.FunctionComponent<{ content: string | React.ReactNode; className?: string }>
   breadcrumbs?: Array<Breadcrumb>
   authors?: Author[]
-  publishDate?: string
+  publishDate?: string | null
   actionBar: ActionBarProps
   customCTA: CustomizableCTAProps
   tags: string[]
-  isHidden?: boolean
+  isHidden?: boolean | null
 }
 
 export default function LongFormContentTemplate({
-  metadata,
   heroImage,
   post,
   body,
@@ -50,12 +47,7 @@ export default function LongFormContentTemplate({
 
   return (
     <>
-      {isHidden && (
-        <Helmet>
-          <meta name='robots' content='noindex' />
-        </Helmet>
-      )}
-      <LayoutTemplate siteMetadata={metadata}>
+      <LayoutTemplate>
         {breadcrumbs && (
           <>
             {!isHidden && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}

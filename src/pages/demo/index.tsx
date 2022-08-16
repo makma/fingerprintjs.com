@@ -10,8 +10,8 @@ import SolveAnyFraudSection from '../../components/demo/SolveAnyFraudSection/Sol
 import GetStartedSection from '../../components/demo/GetStartedSection/GetStartedSection'
 import CatchFraudstersSection from '../../components/demo/DemoSection/VisitsSection/CatchFraudstersSection'
 
-import useSiteMetadata from '../../hooks/useSiteMetadata'
-import { useLocation } from '@reach/router'
+import { HeadProps } from 'gatsby'
+import { SEO } from '../../components/SEO/SEO'
 
 import styles from './Demo.module.scss'
 
@@ -20,16 +20,9 @@ interface DemoPageProps {
 }
 export default function DemoPage({ pageContext }: DemoPageProps) {
   const breadcrumbs = pageContext.breadcrumb.crumbs
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: 'Technical Demo - Fingerprint Pro',
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
 
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
       <HeroSection
         className={styles.heroSection}
@@ -45,4 +38,8 @@ export default function DemoPage({ pageContext }: DemoPageProps) {
       <GetStartedSection />
     </LayoutTemplate>
   )
+}
+
+export function Head(props: HeadProps) {
+  return <SEO pathname={props.location.pathname} title='Technical Demo - Fingerprint Pro' />
 }

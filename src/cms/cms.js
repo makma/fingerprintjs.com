@@ -5,7 +5,7 @@ import { StaticPageContentPreview } from '../templates/static-page-content'
 import { CaseStudyContentPreview } from '../templates/case-study-content'
 import { UseCaseContentPreview } from '../templates/use-case-content'
 import { NotificationBarContentPreview } from '../templates/notification-bar-content'
-import { TeamMembersContentPreview } from '../templates/team-members-content.tsx'
+import { TeamMembersContentPreview } from '../templates/team-members-content'
 
 CMS.registerPreviewTemplate('blog', LongFormContentPreview)
 CMS.registerPreviewTemplate('index', StaticPageContentPreview)

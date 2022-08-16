@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql, HeadProps } from 'gatsby'
 import React from 'react'
 import { DangerouslyRenderHtmlContent, MarkdownContent } from '../components/Content/Content'
 import { PreviewTemplateComponentProps } from 'netlify-cms-core'
@@ -8,11 +8,11 @@ import { ArrayElement, GeneratedPageContext } from '../helpers/types'
 import { BlockWithImage } from '../components/widgets/AlternatingImagesText'
 import { CardSectionProps } from '../components/widgets/CardSection'
 import { Card } from '../components/widgets/CardGrid'
-import { BASE_URL } from '../constants/content'
-import { withTrailingSlash } from '../helpers/url'
+
 import { mapToPost } from '../components/Post/Post'
 import PreviewProviders from '../cms/PreviewProviders'
 import StaticPageContentTemplate from './static-page-content-template'
+import { SEO } from '../components/SEO/SEO'
 
 // Each widget has different styles and the MarkdownContent component is not aware of that, so we need to pass a widget class to MarkdownContent.
 // TODO [VL] When we have consistent typography, we can create variants for the markdown component instead of overriding styles for each widget.
@@ -21,7 +21,7 @@ import cardStyles from '../components/widgets/CardGrid/CardGrid.module.scss'
 import blockStyles from '../components/widgets/AlternatingImagesText/AlternatingImagesText.module.scss'
 
 interface StaticPageContentProps {
-  data: GatsbyTypes.StaticPageContentQuery
+  data: Queries.StaticPageContentQuery
   pageContext: GeneratedPageContext
 }
 export default function StaticPageContent({ data, pageContext }: StaticPageContentProps) {
@@ -38,7 +38,6 @@ export default function StaticPageContent({ data, pageContext }: StaticPageConte
     return null
   }
 
-  const metadata = mapToMetadata(data.markdownRemark.frontmatter.metadata)
   const invertContent = data.markdownRemark.frontmatter.invertContent
   const inlineCta = mapToInlineCta(data.markdownRemark.frontmatter.inlineCta)
   const cardSection = mapToCardSection(data.markdownRemark.frontmatter.cardSection)
@@ -49,7 +48,6 @@ export default function StaticPageContent({ data, pageContext }: StaticPageConte
 
   return (
     <StaticPageContentTemplate
-      metadata={metadata}
       invertContent={invertContent}
       inlineCta={inlineCta}
       cardSection={cardSection}
@@ -131,7 +129,6 @@ export const pageQuery = graphql`
 // The following function is necessary to export it to use it in the CMS, added lint disable to avoid limited exports page warning
 // eslint-disable-next-line
 export function StaticPageContentPreview({ entry }: PreviewTemplateComponentProps) {
-  const metadata = entry.getIn(['data', 'metadata'])?.toObject() as QueryMetadata
   const invertContent = entry.getIn(['data', 'invertContent'])
 
   let cardSection = entry.getIn(['data', 'cardSection'])?.toObject()
@@ -151,7 +148,6 @@ export function StaticPageContentPreview({ entry }: PreviewTemplateComponentProp
   return (
     <PreviewProviders>
       <StaticPageContentTemplate
-        metadata={mapToMetadata(metadata)}
         invertContent={invertContent}
         inlineCta={mapToInlineCta(inlineCta, true)}
         cardSection={mapToCardSection(cardSection, true)}
@@ -164,19 +160,7 @@ export function StaticPageContentPreview({ entry }: PreviewTemplateComponentProp
   )
 }
 
-type QueryMetadata = NonNullable<
-  NonNullable<GatsbyTypes.StaticPageContentQuery['markdownRemark']>['frontmatter']
->['metadata']
-function mapToMetadata(queryMetadata: QueryMetadata): GatsbyTypes.SiteSiteMetadata {
-  return {
-    title: queryMetadata?.title ?? '',
-    description: queryMetadata?.description ?? '',
-    siteUrl: withTrailingSlash(queryMetadata?.url ?? ''),
-    image: `${BASE_URL}${queryMetadata?.image?.publicURL}` ?? '',
-  } as GatsbyTypes.SiteSiteMetadata
-}
-
-type QueryHero = NonNullable<NonNullable<GatsbyTypes.StaticPageContentQuery['markdownRemark']>['frontmatter']>['hero']
+type QueryHero = NonNullable<NonNullable<Queries.StaticPageContentQuery['markdownRemark']>['frontmatter']>['hero']
 function mapToHero(queryHero: QueryHero): HeroProps {
   return {
     title: queryHero?.title ?? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -190,7 +174,7 @@ function mapToHero(queryHero: QueryHero): HeroProps {
 }
 
 type QueryCardSection = NonNullable<
-  NonNullable<GatsbyTypes.StaticPageContentQuery['markdownRemark']>['frontmatter']
+  NonNullable<Queries.StaticPageContentQuery['markdownRemark']>['frontmatter']
 >['cardSection']
 function mapToCardSection(queryCardSection: QueryCardSection, preview = false): CardSectionProps {
   return {
@@ -221,7 +205,7 @@ function mapToCardSection(queryCardSection: QueryCardSection, preview = false): 
 }
 
 type QueryBlock = ArrayElement<
-  NonNullable<NonNullable<GatsbyTypes.StaticPageContentQuery['markdownRemark']>['frontmatter']>['blocks']
+  NonNullable<NonNullable<Queries.StaticPageContentQuery['markdownRemark']>['frontmatter']>['blocks']
 >
 function mapToBlocks(queryBlocks: QueryBlock[], preview = false): BlockWithImage[] {
   return (
@@ -254,7 +238,7 @@ function mapToBlocks(queryBlocks: QueryBlock[], preview = false): BlockWithImage
 }
 
 type QueryInlineCta = NonNullable<
-  NonNullable<GatsbyTypes.StaticPageContentQuery['markdownRemark']>['frontmatter']
+  NonNullable<Queries.StaticPageContentQuery['markdownRemark']>['frontmatter']
 >['inlineCta']
 function mapToInlineCta(queryInlineCta: QueryInlineCta, preview = false): InlineCtaProps {
   return {
@@ -272,4 +256,15 @@ function mapToInlineCta(queryInlineCta: QueryInlineCta, preview = false): Inline
     ),
     primaryAction: { name: queryInlineCta?.buttonText ?? 'Lorem ipsum', action: queryInlineCta?.buttonHref ?? '/' },
   } as InlineCtaProps
+}
+
+export function Head(props: HeadProps<Queries.StaticPageContentQuery>) {
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title={props.data.markdownRemark?.frontmatter?.metadata?.title ?? ''}
+      description={props.data.markdownRemark?.frontmatter?.metadata?.description ?? ''}
+      image={props.data.markdownRemark?.frontmatter?.metadata?.image?.publicURL ?? ''}
+    />
+  )
 }

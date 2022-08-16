@@ -1,19 +1,17 @@
-import { graphql } from 'gatsby'
+import { graphql, HeadProps } from 'gatsby'
 import React from 'react'
 import Container from '../components/common/Container'
 import Section from '../components/common/Section'
 import { LayoutTemplate } from '../components/Layout'
 import { GeneratedPageContext } from '../helpers/types'
-import { useLocation } from '@reach/router'
-import useSiteMetadata from '../hooks/useSiteMetadata'
 import PaginationNav from '../components/PaginationNav/PaginationNav'
-
+import { SEO } from '../components/SEO/SEO'
 import BreadcrumbsSEO from '../components/Breadcrumbs/BreadcrumbsSEO'
 import Grid from '../components/Grid/Grid'
 import CaseStudy, { mapToCaseStudy } from '../components/CaseStudy/CaseStudy'
 
 interface CaseStudyProps {
-  data: GatsbyTypes.CaseStudiesQuery
+  data: Queries.CaseStudiesQuery
   pageContext: CaseStudiesContext
 }
 export default function CaseStudies({ data, pageContext }: CaseStudyProps) {
@@ -21,19 +19,10 @@ export default function CaseStudies({ data, pageContext }: CaseStudyProps) {
   const caseStudies = caseStudiesData.map(({ node }) => mapToCaseStudy(node))
   const breadcrumbs = pageContext.breadcrumb.crumbs
 
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: 'Fingerprint Case Studies | Fingerprint',
-    description: 'Success stories from our customers.',
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
-
   const { currentPage, numPages } = pageContext
 
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
 
       <Section>
@@ -68,4 +57,14 @@ export const pageQuery = graphql`
 interface CaseStudiesContext extends GeneratedPageContext {
   currentPage: number
   numPages: number
+}
+
+export function Head(props: HeadProps) {
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title='Fingerprint Case Studies | Fingerprint'
+      description='Success stories from our customers.'
+    />
+  )
 }

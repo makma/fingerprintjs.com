@@ -20,7 +20,7 @@ export default function RelatedArticles({
   limitPostLines,
 }: RelatedArticlesProps) {
   return (
-    <StaticQuery<GatsbyTypes.RelatedArticlesQuery>
+    <StaticQuery<Queries.RelatedArticlesQuery>
       query={relatedArticlesQuery}
       render={(data) => {
         const allArticles = data.allMarkdownRemark.edges.map(({ node }) => node)
@@ -56,7 +56,7 @@ const relatedArticlesQuery = graphql`
 `
 
 type PostQuery = NonNullable<
-  ArrayElement<NonNullable<NonNullable<GatsbyTypes.RelatedArticlesQuery['allMarkdownRemark']>['edges']>>['node']
+  ArrayElement<NonNullable<NonNullable<Queries.RelatedArticlesQuery['allMarkdownRemark']>['edges']>>['node']
 >
 function getRelatedArticles(
   referenceArticle: PartialWithRequired<PostProps, 'tags'>,

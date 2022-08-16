@@ -1,9 +1,7 @@
-import { graphql } from 'gatsby'
+import { graphql, HeadProps } from 'gatsby'
 import React from 'react'
 import { PreviewTemplateComponentProps } from 'netlify-cms-core'
-import { BASE_URL } from '../constants/content'
 import { GeneratedPageContext } from '../helpers/types'
-import { withTrailingSlash } from '../helpers/url'
 import { DangerouslyRenderHtmlContent } from '../components/Content/Content'
 import { mapToPost } from '../components/Post/Post'
 import PreviewProviders from '../cms/PreviewProviders'
@@ -15,8 +13,10 @@ import { ActionBarProps } from '../components/ActionBar/ActionBar'
 import { ImageInfo } from '../components/common/PreviewCompatibleImage/PreviewCompatibleImage'
 import LongFormContentTemplate from './long-form-content-template'
 
+import { SEO } from '../components/SEO/SEO'
+
 interface LongFormContentProps {
-  data: GatsbyTypes.LongFormContentQuery
+  data: Queries.LongFormContentQuery
   pageContext: GeneratedPageContext
 }
 export default function LongFormContent({ data, pageContext }: LongFormContentProps) {
@@ -31,7 +31,6 @@ export default function LongFormContent({ data, pageContext }: LongFormContentPr
     return null
   }
 
-  const metadata = mapToMetadata(data.markdownRemark.frontmatter.metadata)
   const post = mapToPost(data.markdownRemark)
   const heroImage = mapToHeroImage(data.markdownRemark.frontmatter.heroImage)
   const authors = mapToAuthors(data.markdownRemark.fields?.authors)
@@ -45,7 +44,6 @@ export default function LongFormContent({ data, pageContext }: LongFormContentPr
   return (
     <LongFormContentTemplate
       contentComponent={DangerouslyRenderHtmlContent}
-      metadata={metadata}
       heroImage={heroImage}
       post={post}
       body={body}
@@ -122,7 +120,6 @@ export const pageQuery = graphql`
 // The following function is necessary to export it to use it in the CMS, added lint disable to avoid limited exports page warning
 // eslint-disable-next-line
 export function LongFormContentPreview({ entry, widgetFor }: PreviewTemplateComponentProps) {
-  const metadata = entry.getIn(['data', 'metadata'])?.toObject() as QueryMetadata
   const heroImage = entry.getIn(['data', 'heroImage'])?.toJS() as QueryHeroImage
   const actionBar = entry.getIn(['data'])?.toJS() as QueryActionBar
   const customCTA = entry.getIn(['data', 'customCTA'])?.toJS() as QueryCustomCTA
@@ -131,7 +128,6 @@ export function LongFormContentPreview({ entry, widgetFor }: PreviewTemplateComp
   return (
     <PreviewProviders>
       <LongFormContentTemplate
-        metadata={mapToMetadata(metadata)}
         heroImage={mapToHeroImage(heroImage)}
         post={mapToPost({ frontmatter: entry.get('data').toObject() })}
         body={widgetFor('body') ?? <></>}
@@ -143,21 +139,7 @@ export function LongFormContentPreview({ entry, widgetFor }: PreviewTemplateComp
   )
 }
 
-type QueryMetadata = NonNullable<
-  NonNullable<GatsbyTypes.LongFormContentQuery['markdownRemark']>['frontmatter']
->['metadata']
-function mapToMetadata(queryMetadata: QueryMetadata): GatsbyTypes.SiteSiteMetadata {
-  const imageUrl = queryMetadata?.socialImage?.publicURL ?? queryMetadata?.image?.publicURL
-
-  return {
-    title: queryMetadata?.title ?? '',
-    description: queryMetadata?.description ?? '',
-    siteUrl: withTrailingSlash(queryMetadata?.url ?? ''),
-    image: `${BASE_URL}${imageUrl}` ?? '',
-  } as GatsbyTypes.SiteSiteMetadata
-}
-
-type QueryAuthors = NonNullable<NonNullable<GatsbyTypes.LongFormContentQuery['markdownRemark']>['fields']>['authors']
+type QueryAuthors = NonNullable<NonNullable<Queries.LongFormContentQuery['markdownRemark']>['fields']>['authors']
 function mapToAuthors(queryAuthors?: QueryAuthors): Author[] {
   return (
     queryAuthors?.map((author) => {
@@ -170,7 +152,7 @@ function mapToAuthors(queryAuthors?: QueryAuthors): Author[] {
   )
 }
 
-type QueryActionBar = NonNullable<NonNullable<GatsbyTypes.LongFormContentQuery['markdownRemark']>['frontmatter']>
+type QueryActionBar = NonNullable<NonNullable<Queries.LongFormContentQuery['markdownRemark']>['frontmatter']>
 function mapToAction(queryAction: QueryActionBar): ActionBarProps {
   return {
     siteUrl: queryAction?.metadata?.url ?? '',
@@ -181,7 +163,7 @@ function mapToAction(queryAction: QueryActionBar): ActionBarProps {
 }
 
 type QueryHeroImage = NonNullable<
-  NonNullable<GatsbyTypes.LongFormContentQuery['markdownRemark']>['frontmatter']
+  NonNullable<Queries.LongFormContentQuery['markdownRemark']>['frontmatter']
 >['heroImage']
 function mapToHeroImage(queryHeroImage: QueryHeroImage): HeroImageComponentProps {
   return {
@@ -192,7 +174,7 @@ function mapToHeroImage(queryHeroImage: QueryHeroImage): HeroImageComponentProps
 }
 
 type QueryCustomCTA = NonNullable<
-  NonNullable<GatsbyTypes.LongFormContentQuery['markdownRemark']>['frontmatter']
+  NonNullable<Queries.LongFormContentQuery['markdownRemark']>['frontmatter']
 >['customCTA']
 function mapToCustomCta(queryCustomCTA: QueryCustomCTA, preview = false): CustomizableCTAProps {
   return {
@@ -203,4 +185,21 @@ function mapToCustomCta(queryCustomCTA: QueryCustomCTA, preview = false): Custom
     hideWhenScroll: !preview,
     openCtaNewTab: queryCustomCTA?.openCtaNewTab,
   } as CustomizableCTAProps
+}
+
+export function Head(props: HeadProps<Queries.LongFormContentQuery>) {
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title={props.data.markdownRemark?.frontmatter?.metadata?.title ?? ''}
+      description={props.data.markdownRemark?.frontmatter?.metadata?.description ?? ''}
+      image={
+        props.data.markdownRemark?.frontmatter?.metadata?.socialImage?.publicURL ??
+        props.data.markdownRemark?.frontmatter?.metadata?.image?.publicURL ??
+        ''
+      }
+    >
+      {props.data.markdownRemark?.frontmatter?.isHidden && <meta name='robots' content='noindex' />}
+    </SEO>
+  )
 }

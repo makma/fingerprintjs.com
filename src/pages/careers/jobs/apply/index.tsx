@@ -8,10 +8,8 @@ import Button from '../../../../components/common/Button'
 import { GeneratedPageContext } from '../../../../helpers/types'
 import { getQueryStringParam } from '../../../../helpers/common'
 
-import { Link } from 'gatsby'
-import useSiteMetadata from '../../../../hooks/useSiteMetadata'
-import { useLocation } from '@reach/router'
-import { Helmet } from 'react-helmet'
+import { Link, HeadProps, Script } from 'gatsby'
+
 import { isBrowser } from '../../../../helpers/detector'
 import { PATH } from '../../../../constants/content'
 import styles from './Apply.module.scss'
@@ -22,6 +20,7 @@ import Skeleton from '../../../../components/Skeleton/Skeleton'
 import { decode } from 'html-entities'
 import { scrollToElementById } from '../../../../helpers/scrollToElementByID'
 import { DangerouslyRenderHtmlContent } from '../../../../components/Content/Content'
+import { SEO } from '../../../../components/SEO/SEO'
 
 interface ApplyPageProps {
   pageContext: GeneratedPageContext
@@ -29,15 +28,6 @@ interface ApplyPageProps {
 
 export default function ApplyPage({ pageContext }: ApplyPageProps) {
   const breadcrumbs = pageContext.breadcrumb.crumbs
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: 'Fingerprint Careers - Join Our 100% Remote Team',
-    description:
-      "We're empowering developers to stop online fraud. Join us in building world-class APIs for identification and fraud detection.",
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
 
   const [isLoading, setIsLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
@@ -80,18 +70,6 @@ export default function ApplyPage({ pageContext }: ApplyPageProps) {
     }
   }, [])
 
-  const scripts = [
-    {
-      src: `https://boards.greenhouse.io/embed/job_board/js?for=${GREENHOUSE_COMPANY_ID}`,
-      type: 'text/javascript',
-      async: true,
-    },
-    {
-      src: '/job-post.js',
-      type: 'text/javascript',
-      defer: true,
-    },
-  ]
   const stringBreakpoint = '>Gradle</a>).'
   const description = job?.description.split(stringBreakpoint, 1)[0].concat(stringBreakpoint)
   const questions =
@@ -102,8 +80,14 @@ export default function ApplyPage({ pageContext }: ApplyPageProps) {
   const formattedQuestions = questions && addTagTitle(questions, tagTitles)
   return (
     <>
-      <Helmet script={scripts} />
-      <LayoutTemplate siteMetadata={siteMetadata}>
+      <Script
+        src={`https://boards.greenhouse.io/embed/job_board/js?for=${GREENHOUSE_COMPANY_ID}`}
+        type='text/javascript'
+        async
+      />
+      <Script src='/job-post.js' type='text/javascript' defer />
+
+      <LayoutTemplate>
         {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
         <Section className={styles.section}>
           <Container size='large'>
@@ -167,4 +151,14 @@ function addTagTitle(content: string, titles: string[]) {
     content = content.replace(`<p><strong>${title}</strong>`, element(title))
   })
   return content
+}
+
+export function Head(props: HeadProps) {
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title='Fingerprint Careers - Join Our 100% Remote Team'
+      description="We're empowering developers to stop online fraud. Join us in building world-class APIs for identification and fraud detection."
+    />
+  )
 }

@@ -9,8 +9,9 @@ import SubscribeNewsletterForm from '../../components/SubscribeNewsletterForm/Su
 import { Forms } from '../../hooks/useForm'
 
 import { ReactComponent as LetterSVG } from '../../components/NewsletterBanner/LetterMobileSVG.svg'
-import useSiteMetadata from '../../hooks/useSiteMetadata'
-import { useLocation } from '@reach/router'
+
+import { HeadProps } from 'gatsby'
+import { SEO } from '../../components/SEO/SEO'
 
 import styles from './SubscribeNewsletter.module.scss'
 
@@ -19,16 +20,9 @@ interface SubscribeNewsletterProps {
 }
 export default function SubscribeNewsletter({ pageContext }: SubscribeNewsletterProps) {
   const breadcrumbs = pageContext.breadcrumb.crumbs
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: 'Subscribe to newsletter - Fingerprint',
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
 
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
 
       <Container size='large'>
@@ -45,4 +39,8 @@ export default function SubscribeNewsletter({ pageContext }: SubscribeNewsletter
       </Container>
     </LayoutTemplate>
   )
+}
+
+export function Head(props: HeadProps) {
+  return <SEO pathname={props.location.pathname} title='Subscribe to newsletter - Fingerprint' />
 }

@@ -7,9 +7,9 @@ import { normalizeWord } from '../../helpers/url'
 
 interface AuthorSummaryProps {
   author: string
-  role?: string
+  role?: string | null
   photo?: IGatsbyImageData
-  bio?: string
+  bio?: string | null
   linkBack?: boolean
 }
 export default function AuthorSummary({ author, photo, role, bio, linkBack }: AuthorSummaryProps) {

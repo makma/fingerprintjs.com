@@ -10,8 +10,9 @@ import BannerWithCTA from '../../components/BannerWithCTA/BannerWithCTA'
 
 import Container from '../../components/common/Container'
 import { PATH } from '../../constants/content'
-import useSiteMetadata from '../../hooks/useSiteMetadata'
-import { useLocation } from '@reach/router'
+
+import { HeadProps } from 'gatsby'
+import { SEO } from '../../components/SEO/SEO'
 
 import styles from './Security.module.scss'
 
@@ -20,18 +21,9 @@ interface SecurityProps {
 }
 export default function Security({ pageContext }: SecurityProps) {
   const breadcrumbs = pageContext.breadcrumb.crumbs
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: 'Security at Fingerprint',
-    description:
-      'Fingerprint upholds enterprise-grade certifications such as SOC2, global data centers, maintain a 99.9% uptime in addition to several other certifications and features as part of our ongoing Security program.',
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
 
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
       <HeroSection />
       <CardsSection />
@@ -48,5 +40,15 @@ export default function Security({ pageContext }: SecurityProps) {
         </BannerWithCTA>
       </Container>
     </LayoutTemplate>
+  )
+}
+
+export function Head(props: HeadProps) {
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title='Security at Fingerprint'
+      description='Fingerprint upholds enterprise-grade certifications such as SOC2, global data centers, maintain a 99.9% uptime in addition to several other certifications and features as part of our ongoing Security program.'
+    />
   )
 }

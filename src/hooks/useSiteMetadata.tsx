@@ -1,16 +1,9 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
-const defaultMeta = {
-  title: 'Default title',
-  description: 'Default Description',
-  siteUrl: 'default',
-  image: 'default',
-} as const
-
-const useSiteMetadata = () => {
+export const useSiteMetadata = () => {
   // It's an exception for CMS integration
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { site } = useStaticQuery<GatsbyTypes.SITE_METADATA_QUERYQuery>(
+  const data = useStaticQuery(
     graphql`
       query SITE_METADATA_QUERY {
         site {
@@ -19,13 +12,12 @@ const useSiteMetadata = () => {
             description
             siteUrl
             image
+            twitterUsername
           }
         }
       }
     `
   )
 
-  return site?.siteMetadata ?? defaultMeta
+  return data.site.siteMetadata
 }
-
-export default useSiteMetadata

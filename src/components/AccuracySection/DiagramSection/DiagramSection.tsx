@@ -4,8 +4,6 @@ import Container from '../../common/Container'
 import Button from '../../common/Button'
 import styles from './DiagramSection.module.scss'
 import classNames from 'classnames'
-import { withPrefix } from 'gatsby'
-import { Helmet } from 'react-helmet'
 
 import { ReactComponent as TickSVG } from './img/TickSVG.svg'
 import { ReactComponent as CrossSVG } from './img/CrossSVG.svg'
@@ -35,59 +33,48 @@ export default function DiagramSection() {
   }, [isActive, timeoutId])
 
   return (
-    <>
-      <Helmet>
-        <link rel='preload' as='image' href={withPrefix('/img/diagram-section/background.svg')} />
-        <link rel='preload' as='image' href={withPrefix('/img/diagram-section/backgroundAfter.svg')} />
-        <link rel='preload' as='image' href={withPrefix('/img/diagram-section/backgroundTabletBefore.svg')} />
-        <link rel='preload' as='image' href={withPrefix('/img/diagram-section/backgroundTabletAfter.png')} />
-        <link rel='preload' as='image' href={withPrefix('/img/diagram-section/backgroundMobileBefore.svg')} />
-        <link rel='preload' as='image' href={withPrefix('/img/diagram-section/backgroundMobileAfter.png')} />
-      </Helmet>
-
-      <Section className={styles.root}>
-        <Container size='large' className={styles.container}>
-          <Tabs currentTab={currentTab} setCurrentTab={handleSwitch} className={styles.mobileTabs} />
-          <div className={styles.card}>
-            <Tabs currentTab={currentTab} setCurrentTab={handleSwitch} className={styles.tabs} />
-            <span className={styles.accuracyDescription}>
-              {currentTab === tabOptions.BeforePro
-                ? 'Low accuracy identification makes it impossible to separate trusted from suspicious traffic.'
-                : 'With accurate visitorID history, you can challenge untrusted traffic while personalizing experiences for trusted visitors.'}
-            </span>
-            <div
-              className={classNames(styles.diagram, {
-                [styles.afterBackground]: currentTab === tabOptions.AfterPro,
-              })}
-            >
-              {currentTab === tabOptions.BeforePro && (
-                <span className={styles.otherServices}>
-                  Other services <strong>can only accurately identify 60%</strong> of returning visitors
+    <Section className={styles.root}>
+      <Container size='large' className={styles.container}>
+        <Tabs currentTab={currentTab} setCurrentTab={handleSwitch} className={styles.mobileTabs} />
+        <div className={styles.card}>
+          <Tabs currentTab={currentTab} setCurrentTab={handleSwitch} className={styles.tabs} />
+          <span className={styles.accuracyDescription}>
+            {currentTab === tabOptions.BeforePro
+              ? 'Low accuracy identification makes it impossible to separate trusted from suspicious traffic.'
+              : 'With accurate visitorID history, you can challenge untrusted traffic while personalizing experiences for trusted visitors.'}
+          </span>
+          <div
+            className={classNames(styles.diagram, {
+              [styles.afterBackground]: currentTab === tabOptions.AfterPro,
+            })}
+          >
+            {currentTab === tabOptions.BeforePro && (
+              <span className={styles.otherServices}>
+                Other services <strong>can only accurately identify 60%</strong> of returning visitors
+              </span>
+            )}
+            {currentTab === tabOptions.AfterPro && (
+              <>
+                <span className={styles.fingerService}>
+                  Fingerprint assigns a VisitorID, identifying returning visitors with <strong>99.5% accuracy</strong>
                 </span>
-              )}
-              {currentTab === tabOptions.AfterPro && (
-                <>
-                  <span className={styles.fingerService}>
-                    Fingerprint assigns a VisitorID, identifying returning visitors with <strong>99.5% accuracy</strong>
-                  </span>
-                  <span className={styles.visitor}>Visitor</span>
-                  <span className={styles.visitorId}>VisitorID </span>
-                  <span className={styles.trusted}>
-                    <TickSVG />
-                    Trusted
-                  </span>
-                  <span className={styles.suspicious}>
-                    <CrossSVG />
-                    Suspicious
-                  </span>
-                </>
-              )}
-              <span className={styles.incomingFlow}>Incoming flow of unidentified clients</span>
-            </div>
+                <span className={styles.visitor}>Visitor</span>
+                <span className={styles.visitorId}>VisitorID </span>
+                <span className={styles.trusted}>
+                  <TickSVG />
+                  Trusted
+                </span>
+                <span className={styles.suspicious}>
+                  <CrossSVG />
+                  Suspicious
+                </span>
+              </>
+            )}
+            <span className={styles.incomingFlow}>Incoming flow of unidentified clients</span>
           </div>
-        </Container>
-      </Section>
-    </>
+        </div>
+      </Container>
+    </Section>
   )
 }
 

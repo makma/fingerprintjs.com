@@ -10,24 +10,17 @@ import FeatureComparisonSection from '../../components/githubPage/FeatureCompari
 import PricingSection from '../../components/githubPage/PricingSection/PricingSection'
 import NextStepsSection from '../../components/githubPage/NextStepsSection/NextStepsSection'
 
-import useSiteMetadata from '../../hooks/useSiteMetadata'
-import { useLocation } from '@reach/router'
+import { HeadProps } from 'gatsby'
+import { SEO } from '../../components/SEO/SEO'
 
 interface GitHubProps {
   pageContext: GeneratedPageContext
 }
 export default function GitHubPage({ pageContext }: GitHubProps) {
   const breadcrumbs = pageContext.breadcrumb.crumbs
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: 'Pro vs Open Source - Visitor Identification API Comparison',
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
 
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
 
       <GetStartedSection />
@@ -38,4 +31,8 @@ export default function GitHubPage({ pageContext }: GitHubProps) {
       <NextStepsSection />
     </LayoutTemplate>
   )
+}
+
+export function Head(props: HeadProps) {
+  return <SEO pathname={props.location.pathname} title='Pro vs Open Source - Visitor Identification API Comparison' />
 }

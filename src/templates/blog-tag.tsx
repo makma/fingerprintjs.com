@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql, HeadProps } from 'gatsby'
 import React from 'react'
 import Section from '../components/common/Section'
 import { LayoutTemplate } from '../components/Layout'
@@ -10,31 +10,20 @@ import PaginationNav from '../components/PaginationNav/PaginationNav'
 import { kebabToTitle } from '../helpers/case'
 import BreadcrumbsSEO from '../components/Breadcrumbs/BreadcrumbsSEO'
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs'
-import useSiteMetadata from '../hooks/useSiteMetadata'
-import { useLocation } from '@reach/router'
+import { SEO } from '../components/SEO/SEO'
 import styles from './blog-tag.module.scss'
 
 interface BlogTagProps {
-  data: GatsbyTypes.BlogTagQuery
+  data: Queries.BlogTagQuery
   pageContext: BlogTagContext
 }
 export default function BlogTag({ data, pageContext }: BlogTagProps) {
   const { edges: posts } = data.allMarkdownRemark
   const { currentPage, numPages, tag } = pageContext
   const breadcrumbs = pageContext.breadcrumb.crumbs.filter(({ pathname }) => pathname !== '/blog/tag')
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: `${kebabToTitle(tag)} Articles - Fingerprint Blog | Fingerprint`,
-    description: `We are an open source powered company working to prevent online fraud for websites of all sizes. Read our articles on ${kebabToTitle(
-      tag
-    )} on our blog.`,
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
 
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate>
       {breadcrumbs && (
         <>
           <BreadcrumbsSEO breadcrumbs={breadcrumbs} />
@@ -86,4 +75,16 @@ interface BlogTagContext extends GeneratedPageContext {
   currentPage: number
   numPages: number
   tag: string
+}
+
+export function Head(props: HeadProps<Queries.BlogTagQuery, BlogTagContext>) {
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title={`${kebabToTitle(props.pageContext.tag)} Articles - Fingerprint Blog | Fingerprint`}
+      description={`We are an open source powered company working to prevent online fraud for websites of all sizes. Read our articles on ${kebabToTitle(
+        props.pageContext.tag
+      )} on our blog.`}
+    />
+  )
 }

@@ -389,6 +389,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       inlineCta: InlineCta
       bio: String @md
       bottomLinks: [BottomLink]
+      invertContent: Boolean!
+      relatedTitle: String!
     }
     type BottomLink{
       url: String

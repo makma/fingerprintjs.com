@@ -12,7 +12,7 @@ export interface PostProps {
   title: string
   description: string
   publishDate: string
-  image?: GatsbyTypes.File
+  image?: Queries.File
   imageAlt?: string
   imageTitle?: string
   path: string
@@ -40,6 +40,7 @@ export default function Post({
   className,
 }: PostProps) {
   const imageFluid = image?.childImageSharp?.gatsbyImageData
+  const imgSrc = image?.publicURL
   const gifImage = image?.extension === 'gif'
   return (
     <Link
@@ -61,7 +62,7 @@ export default function Post({
               title={imageTitle}
             />
           ) : (
-            <img className={styles.image} src={image.publicURL} alt={imageAlt ? imageAlt : title} title={imageTitle} />
+            imgSrc && <img className={styles.image} src={imgSrc} alt={imageAlt ? imageAlt : title} title={imageTitle} />
           )}
         </div>
       )}
@@ -109,7 +110,7 @@ export function mapToPost(data: any, editing?: boolean): PostProps {
       if (metadata) {
         const { description = '', image, url } = metadata
         post.description = description
-        post.image = image as GatsbyTypes.File
+        post.image = image as Queries.File
         post.path = url
       }
     }
@@ -124,7 +125,7 @@ export function mapToPost(data: any, editing?: boolean): PostProps {
     title,
     description,
     publishDate: displayDateFormatter.format(new Date(publishDate)),
-    image: image as GatsbyTypes.File,
+    image: image as Queries.File,
     imageAlt,
     imageTitle,
     path: url,

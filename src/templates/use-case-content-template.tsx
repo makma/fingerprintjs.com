@@ -26,7 +26,6 @@ export interface CodeBlock {
   docsUrl?: string
 }
 export interface TemplateProps {
-  metadata: GatsbyTypes.SiteSiteMetadata
   useCase?: UseCaseProps
   funnel: string[]
   category: string[]
@@ -39,8 +38,7 @@ export interface TemplateProps {
   bottomLinks?: BottomLink[]
 }
 
-export default function UseCaseContentTemplate({
-  metadata,
+export default function SolutionContentTemplate({
   useCase,
   funnel,
   category,
@@ -59,7 +57,7 @@ export default function UseCaseContentTemplate({
   }
 
   return (
-    <LayoutTemplate siteMetadata={metadata}>
+    <LayoutTemplate>
       <Section className={styles.root}>
         <Container size='large' className={styles.container}>
           <Link to='/use-cases' className={styles.backLink}>

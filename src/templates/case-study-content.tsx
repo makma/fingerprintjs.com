@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql, HeadProps } from 'gatsby'
 import React from 'react'
 import { PreviewTemplateComponentProps } from 'netlify-cms-core'
 import { Content, DangerouslyRenderHtmlContent, MarkdownContent } from '../components/Content/Content'
@@ -10,17 +10,16 @@ import { GeneratedPageContext } from '../helpers/types'
 import Section from '../components/common/Section'
 import Container from '../components/common/Container'
 import BreadcrumbsSEO from '../components/Breadcrumbs/BreadcrumbsSEO'
-import { withTrailingSlash } from '../helpers/url'
 import { Breadcrumb } from '../components/Breadcrumbs/Breadcrumbs'
 import PreviewProviders from '../cms/PreviewProviders'
-import { BASE_URL } from '../constants/content'
+import { SEO } from '../components/SEO/SEO'
 
 import styles from './case-study-content.module.scss'
 
 import headerStyles from '../components/widgets/StudyCase/Header/Header.module.scss'
 
 interface CaseStudyContentProps {
-  data: GatsbyTypes.CaseStudyContentQuery
+  data: Queries.CaseStudyContentQuery
   pageContext: GeneratedPageContext
 }
 
@@ -36,7 +35,6 @@ export default function CaseStudyContent({ data, pageContext }: CaseStudyContent
     return null
   }
 
-  const metadata = mapToMetadata(data.markdownRemark.frontmatter.metadata, data.markdownRemark.socialCard?.publicURL)
   const header = mapToHeader(data.markdownRemark.frontmatter.header)
   const summary = mapToSummary(data.markdownRemark.frontmatter.summary)
   const body = data.markdownRemark.html
@@ -44,7 +42,6 @@ export default function CaseStudyContent({ data, pageContext }: CaseStudyContent
 
   return (
     <CaseStudyContentTemplate
-      metadata={metadata}
       header={header}
       summary={summary}
       contentComponent={DangerouslyRenderHtmlContent}
@@ -109,7 +106,6 @@ export const pageQuery = graphql`
 `
 
 interface CaseStudyTemplateProps {
-  metadata: GatsbyTypes.SiteSiteMetadata
   header: HeaderProps
   summary: SummaryProps
   body: string | React.ReactNode
@@ -118,7 +114,6 @@ interface CaseStudyTemplateProps {
   breadcrumbs?: Array<Breadcrumb>
 }
 function CaseStudyContentTemplate({
-  metadata,
   header,
   summary,
   body,
@@ -129,7 +124,7 @@ function CaseStudyContentTemplate({
   const ContentComponent = contentComponent ?? Content
 
   return (
-    <LayoutTemplate siteMetadata={metadata}>
+    <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
       <Section className={styles.section}>
         <Header {...header} />
@@ -148,7 +143,6 @@ function CaseStudyContentTemplate({
 // The following function is necessary to export it to use it in the CMS, added lint disable to avoid limited exports page warning
 // eslint-disable-next-line
 export function CaseStudyContentPreview({ entry, widgetFor }: PreviewTemplateComponentProps) {
-  const metadata = entry.getIn(['data', 'metadata'])?.toObject() as QueryMetadata
   const header = entry.getIn(['data', 'header'])?.toObject() as QueryHeader
   const summary = entry.getIn(['data', 'summary'])?.toJS() as QuerySummary
   const footer = entry.getIn(['data', 'footer'])?.toObject() as QueryFooter
@@ -156,7 +150,6 @@ export function CaseStudyContentPreview({ entry, widgetFor }: PreviewTemplateCom
   return (
     <PreviewProviders>
       <CaseStudyContentTemplate
-        metadata={mapToMetadata(metadata)}
         header={mapToHeader(header, true)}
         summary={mapToSummary(summary, true)}
         body={widgetFor('body') ?? <></>}
@@ -166,21 +159,7 @@ export function CaseStudyContentPreview({ entry, widgetFor }: PreviewTemplateCom
   )
 }
 
-type QueryMetadata = NonNullable<
-  NonNullable<GatsbyTypes.CaseStudyContentQuery['markdownRemark']>['frontmatter']
->['metadata']
-function mapToMetadata(queryMetadata: QueryMetadata, imageUrl?: string): GatsbyTypes.SiteSiteMetadata {
-  return {
-    title: queryMetadata?.title ?? '',
-    description: queryMetadata?.description ?? '',
-    siteUrl: withTrailingSlash(queryMetadata?.url ?? ''),
-    image: `${BASE_URL}${imageUrl}` ?? '',
-  } as GatsbyTypes.SiteSiteMetadata
-}
-
-type QueryHeader = NonNullable<
-  NonNullable<GatsbyTypes.CaseStudyContentQuery['markdownRemark']>['frontmatter']
->['header']
+type QueryHeader = NonNullable<NonNullable<Queries.CaseStudyContentQuery['markdownRemark']>['frontmatter']>['header']
 function mapToHeader(queryHeader: QueryHeader, preview = false): HeaderProps {
   return {
     subLabel: queryHeader?.subLabel ?? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -202,9 +181,7 @@ function mapToHeader(queryHeader: QueryHeader, preview = false): HeaderProps {
   } as HeaderProps
 }
 
-type QuerySummary = NonNullable<
-  NonNullable<GatsbyTypes.CaseStudyContentQuery['markdownRemark']>['frontmatter']
->['summary']
+type QuerySummary = NonNullable<NonNullable<Queries.CaseStudyContentQuery['markdownRemark']>['frontmatter']>['summary']
 function mapToSummary(querySummary: QuerySummary, preview = false): SummaryProps {
   return {
     results:
@@ -240,12 +217,21 @@ function mapToSummary(querySummary: QuerySummary, preview = false): SummaryProps
   } as SummaryProps
 }
 
-type QueryFooter = NonNullable<
-  NonNullable<GatsbyTypes.CaseStudyContentQuery['markdownRemark']>['frontmatter']
->['footer']
+type QueryFooter = NonNullable<NonNullable<Queries.CaseStudyContentQuery['markdownRemark']>['frontmatter']>['footer']
 function mapToFooter(queryFooter: QueryFooter): FooterProps {
   return {
     ctaTitle: queryFooter?.ctaTitle ?? '',
     ctaSubtitle: queryFooter?.ctaSubtitle ?? '',
   } as FooterProps
+}
+
+export function Head(props: HeadProps<Queries.CaseStudyContentQuery>) {
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title={props.data.markdownRemark?.frontmatter?.metadata?.title ?? ''}
+      description={props.data.markdownRemark?.frontmatter?.metadata?.description ?? ''}
+      image={props.data.markdownRemark?.socialCard?.publicURL ?? ''}
+    />
+  )
 }

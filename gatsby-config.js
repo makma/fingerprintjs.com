@@ -53,8 +53,10 @@ module.exports = {
     description:
       'Fingerprint Pro is the 99.5% accurate device fingerprinting solution. FingerprintJS is the top open-source browser fingerprinting library. Prevent fraud, spam, and account takeovers. Available for web, iOS, and Android.',
     siteUrl: baseUrl,
-    image: 'https://fingerprint.com/img/fpjs-preview.png',
+    image: '/img/fpjs-preview.png',
+    twitterUsername: `@FingerprintJs`,
   },
+  graphqlTypegen: true,
   plugins: [
     {
       resolve: `gatsby-plugin-env-variables`,
@@ -92,7 +94,6 @@ module.exports = {
         useAutoGen: true,
       },
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-sass',
       options: {
@@ -237,12 +238,6 @@ module.exports = {
         stages: ['develop'],
         extensions: ['js', 'jsx', 'ts', 'tsx'],
         exclude: ['node_modules', 'bower_components', '.cache', 'public'],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-typegen',
-      options: {
-        outputPath: 'src/__generated__/gatsby-types.d.ts',
       },
     },
     'gatsby-plugin-typescript',

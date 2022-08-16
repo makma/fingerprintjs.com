@@ -1,10 +1,10 @@
 import React from 'react'
 import { getImage, GatsbyImage, GatsbyImageProps, IGatsbyImageData } from 'gatsby-plugin-image'
 export type ImageInfo = GatsbyImageProps & {
-  childImageSharp?: IGatsbyImageData
-  image?: string | { childImageSharp: IGatsbyImageData }
-  extension?: string
-  publicURL?: string
+  childImageSharp?: IGatsbyImageData | null
+  image?: string | { childImageSharp: IGatsbyImageData } | null
+  extension?: string | null
+  publicURL?: string | null
 }
 
 interface Props {
@@ -52,7 +52,7 @@ const PreviewCompatibleImage = ({ className, imageStyle, imageInfo, titleTag, al
     return <img className={className} style={style} src={image} alt={alt} title={title} />
   }
 
-  if (!childImageSharp && (extension === 'svg' || extension === 'gif')) {
+  if (!childImageSharp && (extension === 'svg' || extension === 'gif') && publicURL) {
     return <img className={className} src={publicURL} alt={alt} title={title} />
   }
 

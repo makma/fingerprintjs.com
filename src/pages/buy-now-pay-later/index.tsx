@@ -10,8 +10,8 @@ import BenefitsSection from '../../components/Bnpl/BenefitsSection/BenefitsSecti
 import BannerWithCTA from '../../components/BannerWithCTA/BannerWithCTA'
 import Container from '../../components/common/Container'
 
-import useSiteMetadata from '../../hooks/useSiteMetadata'
-import { useLocation } from '@reach/router'
+import { SEO } from '../../components/SEO/SEO'
+import { HeadProps } from 'gatsby'
 
 import styles from './Bnpl.module.scss'
 
@@ -20,18 +20,9 @@ interface BnplProps {
 }
 export default function Bnpl({ pageContext }: BnplProps) {
   const breadcrumbs = pageContext.breadcrumb.crumbs
-  const { pathname } = useLocation()
-  let siteMetadata = useSiteMetadata()
-  siteMetadata = {
-    ...siteMetadata,
-    title: 'Buy Now, Pay Later Fraud Prevention - Fingerprint',
-    description:
-      "Increase approval rates and minimize fraud losses with Fingerprint Pro's high accuracy device identification.",
-    siteUrl: `${siteMetadata.siteUrl}${pathname}`,
-  }
 
   return (
-    <LayoutTemplate siteMetadata={siteMetadata}>
+    <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
       <HeroSection
         className={styles.heroSection}
@@ -58,5 +49,15 @@ export default function Bnpl({ pageContext }: BnplProps) {
         </BannerWithCTA>
       </Container>
     </LayoutTemplate>
+  )
+}
+
+export function Head(props: HeadProps) {
+  return (
+    <SEO
+      pathname={props.location.pathname}
+      title='Buy Now, Pay Later Fraud Prevention - Fingerprint'
+      description="Increase approval rates and minimize fraud losses with Fingerprint Pro's high accuracy device identification."
+    />
   )
 }

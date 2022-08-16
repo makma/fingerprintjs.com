@@ -1,4 +1,4 @@
-/// <reference types="./__generated__/gatsby-types" />
+/// <reference types="./gatsby-types" />
 
 declare module '*.inline.svg' {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

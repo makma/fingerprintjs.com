@@ -17,7 +17,7 @@ export interface UseCaseProps {
   category: string[]
   industry: string[]
   tags?: string[]
-  image?: GatsbyTypes.File
+  image?: Queries.File
   imageAlt?: string
   imageTitle?: string
   className?: string
@@ -97,7 +97,7 @@ export function mapToUseCase(data: any, editing?: boolean): UseCaseProps {
       if (metadata) {
         const { description = '', image, url } = metadata
         useCase.description = description
-        useCase.image = image as GatsbyTypes.File
+        useCase.image = image as Queries.File
         useCase.path = url
       }
     }
@@ -112,7 +112,7 @@ export function mapToUseCase(data: any, editing?: boolean): UseCaseProps {
     title,
     description,
     publishDate: displayDateFormatter.format(new Date(publishDate)),
-    image: image as GatsbyTypes.File,
+    image: image as Queries.File,
     imageAlt,
     imageTitle,
     path: url,
