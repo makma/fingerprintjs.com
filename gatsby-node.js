@@ -391,6 +391,16 @@ exports.createSchemaCustomization = ({ actions }) => {
       bottomLinks: [BottomLink]
       invertContent: Boolean!
       relatedTitle: String!
+      useCaseCode: UseCaseCode
+    }
+    type UseCaseCode{
+      iframeUrl: String
+      button1: ButtonCode
+      button2: ButtonCode
+    }
+    type ButtonCode{
+      url: String
+      buttonText: String
     }
     type BottomLink{
       url: String

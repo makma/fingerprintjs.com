@@ -20,10 +20,14 @@ export interface BottomLink {
   url: string
 }
 
+interface ButtonCode {
+  url?: string
+  text?: string
+}
 export interface CodeBlock {
   iframeUrl?: string
-  shareUrl?: string
-  docsUrl?: string
+  button1?: ButtonCode
+  button2?: ButtonCode
 }
 export interface TemplateProps {
   useCase?: UseCaseProps
@@ -91,14 +95,20 @@ export default function SolutionContentTemplate({
                 <h3 className={styles.label}>Explore live technical demo</h3>
                 <iframe className={styles.iframe} src={codeBlock.iframeUrl} />
                 <div className={styles.buttons}>
-                  {codeBlock.shareUrl && (
-                    <Button className={styles.button} href={codeBlock.shareUrl} size='big' openNewTab>
-                      Run demo in your browser
+                  {codeBlock.button1?.url && (
+                    <Button className={styles.button} href={codeBlock.button1.url} size='big' openNewTab>
+                      {codeBlock.button1.text ?? 'Run demo in your browser'}
                     </Button>
                   )}
-                  {codeBlock.docsUrl && (
-                    <Button className={styles.button} href={codeBlock.docsUrl} variant='outline' size='big' openNewTab>
-                      Documentation
+                  {codeBlock.button2?.url && (
+                    <Button
+                      className={styles.button}
+                      href={codeBlock.button2.url}
+                      variant='outline'
+                      size='big'
+                      openNewTab
+                    >
+                      {codeBlock.button2.text ?? 'View demo source on GitHub'}
                     </Button>
                   )}
                 </div>

@@ -6,6 +6,7 @@ export interface SuccessResponse {
         bot: { result: DetectStatus }
         meta: { yourTag: number }
         ip: string
+        time: string
       }
       error?: {
         code: string

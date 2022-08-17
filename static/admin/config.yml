@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: fix/add-code-buttons
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
@@ -371,8 +371,32 @@ collections:
           fields:
             [
               { label: Embed URL, name: iframeUrl, widget: string, required: false },
-              { label: Share URL, name: shareUrl, widget: string, required: false },
-              { label: Documentation URL, name: docsUrl, widget: string, required: false },
+              {
+                label: Button 1,
+                name: button1,
+                widget: object,
+                fields:
+                  [
+                    { label: URL, name: url, widget: string, required: false },
+                    { label: Button text, name: buttonText, widget: string, required: false },
+                  ],
+              },
+              {
+                label: Button 2,
+                name: button2,
+                widget: object,
+                fields:
+                  [
+                    { label: URL, name: url, widget: string, required: false },
+                    {
+                      label: Button text,
+                      name: buttonText,
+                      widget: string,
+                      default: 'View demo source on GitHub',
+                      required: false,
+                    },
+                  ],
+              },
             ],
         }
   - name: 'funnel'

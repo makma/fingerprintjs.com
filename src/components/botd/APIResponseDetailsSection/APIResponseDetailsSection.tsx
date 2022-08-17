@@ -11,6 +11,7 @@ interface APIResponseDetailsSectionProps {
 
 export default function APIResponseDetailsSection({ visitorData }: APIResponseDetailsSectionProps) {
   const characterLength = 8.4
+  const currentTime = new Date().toISOString()
 
   return (
     <Container size='large' className={styles.container}>
@@ -29,7 +30,8 @@ export default function APIResponseDetailsSection({ visitorData }: APIResponseDe
                 "bot": {
                     "result": "${visitorData?.products.botd.data.bot.result ?? 'notDetected'}"
                 },
-                "ip": "${visitorData?.products.botd.data.ip ?? '186.XXX.XXX.XXX'}"
+                "ip": "${visitorData?.products.botd.data.ip ?? '186.XXX.XXX.XXX'}",
+                "time": "${visitorData?.products.botd.data.time ?? currentTime}"
             }
         }
     }
@@ -60,12 +62,25 @@ export default function APIResponseDetailsSection({ visitorData }: APIResponseDe
                 className={styles.ip}
                 left={
                   visitorData?.products.botd.data.ip
-                    ? 260 + visitorData?.products.botd.data.ip.length * characterLength
+                    ? 264 + visitorData?.products.botd.data.ip.length * characterLength
                     : 384
                 }
               >
                 <p>
                   <strong>Client IP address.</strong>
+                </p>
+              </CodeTooltip>,
+              <CodeTooltip
+                key='time'
+                className={styles.time}
+                left={
+                  visitorData?.products.botd.data.time
+                    ? 274 + visitorData?.products.botd.data.time.length * characterLength
+                    : 274 + currentTime.length * characterLength
+                }
+              >
+                <p>
+                  <strong>Time</strong> when bot detection checks were performed for the client.
                 </p>
               </CodeTooltip>,
             ]}

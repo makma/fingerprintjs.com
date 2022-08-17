@@ -80,8 +80,14 @@ export const pageQuery = graphql`
         industry
         useCaseCode {
           iframeUrl
-          shareUrl
-          docsUrl
+          button1 {
+            url
+            buttonText
+          }
+          button2 {
+            url
+            buttonText
+          }
         }
         bottomLinks {
           text
@@ -100,7 +106,7 @@ export function UseCaseContentPreview({ entry, widgetFor }: PreviewTemplateCompo
   const industry = entry.getIn(['data', 'industry'])
   const title = entry.getIn(['data', 'title'])
   const description = entry.getIn(['data', 'description'])
-  const codeSection = entry.getIn(['data', 'useCaseCode'])?.toObject()
+  const codeSection = entry.getIn(['data', 'useCaseCode'])?.toJS() as QueryCodeBlock
   const bottomLinks = entry.getIn(['data', 'bottomLinks'])?.toJS() as BottomLink[]
 
   return (
@@ -125,8 +131,15 @@ type QueryCodeBlock = NonNullable<
 function mapToCodeblock(queryCodeBlock?: QueryCodeBlock): CodeBlock {
   return {
     iframeUrl: queryCodeBlock?.iframeUrl ?? null,
-    shareUrl: queryCodeBlock?.shareUrl ?? null,
-    docsUrl: queryCodeBlock?.docsUrl ?? null,
+    button1: queryCodeBlock?.button1?.url
+      ? {
+          url: queryCodeBlock?.button1?.url,
+          text: queryCodeBlock?.button1?.buttonText ?? null,
+        }
+      : null,
+    button2: queryCodeBlock?.button2?.url
+      ? { url: queryCodeBlock?.button2?.url, text: queryCodeBlock?.button2?.buttonText ?? null }
+      : null,
   } as CodeBlock
 }
 

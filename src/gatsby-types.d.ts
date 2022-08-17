@@ -464,6 +464,16 @@ type BottomLinkFilterListInput = {
   readonly elemMatch: InputMaybe<BottomLinkFilterInput>;
 };
 
+type ButtonCode = {
+  readonly buttonText: Maybe<Scalars['String']>;
+  readonly url: Maybe<Scalars['String']>;
+};
+
+type ButtonCodeFilterInput = {
+  readonly buttonText: InputMaybe<StringQueryOperatorInput>;
+  readonly url: InputMaybe<StringQueryOperatorInput>;
+};
+
 type CardSection = {
   readonly blocks: Maybe<ReadonlyArray<Maybe<Blocks>>>;
   readonly cards: Maybe<ReadonlyArray<Maybe<Cards>>>;
@@ -1845,9 +1855,7 @@ type FileFieldsEnum =
   | 'childMarkdownRemark.frontmatter.tags'
   | 'childMarkdownRemark.frontmatter.templateKey'
   | 'childMarkdownRemark.frontmatter.title'
-  | 'childMarkdownRemark.frontmatter.useCaseCode.docsUrl'
   | 'childMarkdownRemark.frontmatter.useCaseCode.iframeUrl'
-  | 'childMarkdownRemark.frontmatter.useCaseCode.shareUrl'
   | 'childMarkdownRemark.headings'
   | 'childMarkdownRemark.headings.depth'
   | 'childMarkdownRemark.headings.id'
@@ -2270,9 +2278,7 @@ type FileFieldsEnum =
   | 'childrenMarkdownRemark.frontmatter.tags'
   | 'childrenMarkdownRemark.frontmatter.templateKey'
   | 'childrenMarkdownRemark.frontmatter.title'
-  | 'childrenMarkdownRemark.frontmatter.useCaseCode.docsUrl'
   | 'childrenMarkdownRemark.frontmatter.useCaseCode.iframeUrl'
-  | 'childrenMarkdownRemark.frontmatter.useCaseCode.shareUrl'
   | 'childrenMarkdownRemark.headings'
   | 'childrenMarkdownRemark.headings.depth'
   | 'childrenMarkdownRemark.headings.id'
@@ -3917,9 +3923,11 @@ type MarkdownRemarkFieldsEnum =
   | 'frontmatter.tags'
   | 'frontmatter.templateKey'
   | 'frontmatter.title'
-  | 'frontmatter.useCaseCode.docsUrl'
+  | 'frontmatter.useCaseCode.button1.buttonText'
+  | 'frontmatter.useCaseCode.button1.url'
+  | 'frontmatter.useCaseCode.button2.buttonText'
+  | 'frontmatter.useCaseCode.button2.url'
   | 'frontmatter.useCaseCode.iframeUrl'
-  | 'frontmatter.useCaseCode.shareUrl'
   | 'headings'
   | 'headings.depth'
   | 'headings.id'
@@ -4463,7 +4471,7 @@ type MarkdownRemarkFrontmatter = {
   readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly templateKey: Maybe<Scalars['String']>;
   readonly title: Maybe<Scalars['String']>;
-  readonly useCaseCode: Maybe<MarkdownRemarkFrontmatterUseCaseCode>;
+  readonly useCaseCode: Maybe<UseCaseCode>;
 };
 
 
@@ -4550,7 +4558,7 @@ type MarkdownRemarkFrontmatterFilterInput = {
   readonly tags: InputMaybe<StringQueryOperatorInput>;
   readonly templateKey: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
-  readonly useCaseCode: InputMaybe<MarkdownRemarkFrontmatterUseCaseCodeFilterInput>;
+  readonly useCaseCode: InputMaybe<UseCaseCodeFilterInput>;
 };
 
 type MarkdownRemarkFrontmatterFooter = {
@@ -4633,18 +4641,6 @@ type MarkdownRemarkFrontmatterSummaryOverviewSectionBulletsFilterListInput = {
 type MarkdownRemarkFrontmatterSummaryOverviewSectionFilterInput = {
   readonly bullets: InputMaybe<MarkdownRemarkFrontmatterSummaryOverviewSectionBulletsFilterListInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
-};
-
-type MarkdownRemarkFrontmatterUseCaseCode = {
-  readonly docsUrl: Maybe<Scalars['String']>;
-  readonly iframeUrl: Maybe<Scalars['String']>;
-  readonly shareUrl: Maybe<Scalars['String']>;
-};
-
-type MarkdownRemarkFrontmatterUseCaseCodeFilterInput = {
-  readonly docsUrl: InputMaybe<StringQueryOperatorInput>;
-  readonly iframeUrl: InputMaybe<StringQueryOperatorInput>;
-  readonly shareUrl: InputMaybe<StringQueryOperatorInput>;
 };
 
 type MarkdownRemarkGroupConnection = {
@@ -7434,6 +7430,18 @@ type TransformOptions = {
   readonly trim: InputMaybe<Scalars['Float']>;
 };
 
+type UseCaseCode = {
+  readonly button1: Maybe<ButtonCode>;
+  readonly button2: Maybe<ButtonCode>;
+  readonly iframeUrl: Maybe<Scalars['String']>;
+};
+
+type UseCaseCodeFilterInput = {
+  readonly button1: InputMaybe<ButtonCodeFilterInput>;
+  readonly button2: InputMaybe<ButtonCodeFilterInput>;
+  readonly iframeUrl: InputMaybe<StringQueryOperatorInput>;
+};
+
 type WebPOptions = {
   readonly quality: InputMaybe<Scalars['Int']>;
 };
@@ -7568,7 +7576,7 @@ type UseCaseContentQueryVariables = Exact<{
 }>;
 
 
-type UseCaseContentQuery = { readonly markdownRemark: { readonly id: string, readonly html: string | null, readonly fields: { readonly slug: string | null } | null, readonly frontmatter: { readonly title: string | null, readonly description: string | null, readonly publishDate: string | null, readonly funnel: ReadonlyArray<string | null> | null, readonly category: ReadonlyArray<string | null> | null, readonly industry: ReadonlyArray<string | null> | null, readonly metadata: { readonly title: string | null, readonly description: string | null, readonly url: string | null, readonly image: { readonly publicURL: string | null } | null, readonly socialImage: { readonly publicURL: string | null } | null } | null, readonly useCaseCode: { readonly iframeUrl: string | null, readonly shareUrl: string | null, readonly docsUrl: string | null } | null, readonly bottomLinks: ReadonlyArray<{ readonly text: string | null, readonly url: string | null } | null> | null } | null } | null };
+type UseCaseContentQuery = { readonly markdownRemark: { readonly id: string, readonly html: string | null, readonly fields: { readonly slug: string | null } | null, readonly frontmatter: { readonly title: string | null, readonly description: string | null, readonly publishDate: string | null, readonly funnel: ReadonlyArray<string | null> | null, readonly category: ReadonlyArray<string | null> | null, readonly industry: ReadonlyArray<string | null> | null, readonly metadata: { readonly title: string | null, readonly description: string | null, readonly url: string | null, readonly image: { readonly publicURL: string | null } | null, readonly socialImage: { readonly publicURL: string | null } | null } | null, readonly useCaseCode: { readonly iframeUrl: string | null, readonly button1: { readonly url: string | null, readonly buttonText: string | null } | null, readonly button2: { readonly url: string | null, readonly buttonText: string | null } | null } | null, readonly bottomLinks: ReadonlyArray<{ readonly text: string | null, readonly url: string | null } | null> | null } | null } | null };
 
 type UseCaseDataFragment = { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly fields: { readonly slug: string | null } | null, readonly frontmatter: { readonly title: string | null, readonly publishDate: string | null, readonly funnel: ReadonlyArray<string | null> | null, readonly category: ReadonlyArray<string | null> | null, readonly industry: ReadonlyArray<string | null> | null, readonly metadata: { readonly title: string | null, readonly description: string | null, readonly imageAlt: string | null, readonly imageTitle: string | null, readonly url: string | null, readonly image: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null } }> };
 

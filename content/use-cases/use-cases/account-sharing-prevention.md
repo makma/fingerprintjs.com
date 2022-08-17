@@ -25,6 +25,14 @@ industry:
   - Identity Management
   - Media
 bottomLinks: []
+useCaseCode:
+  iframeUrl: ""
+  button1:
+    url: ""
+    buttonText: ""
+  button2:
+    url: ""
+    buttonText: ""
 ---
 ## You have an account sharing problem, you just don’t know how big it is.
 

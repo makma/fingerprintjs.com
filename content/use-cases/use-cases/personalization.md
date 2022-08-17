@@ -22,7 +22,12 @@ industry:
   - Identity Management
 useCaseCode:
   iframeUrl: https://stackblitz.com/edit/nextjs-dmv5c7?file=README.md
-  docsUrl: https://github.com/fingerprintjs/fingerprintjs-pro-use-cases
+  button1:
+    url: ""
+    buttonText: ""
+  button2:
+    url: https://github.com/fingerprintjs/fingerprintjs-pro-use-cases
+    buttonText: View demo source on GitHub
 ---
 ## **What is user personalization?**
 
