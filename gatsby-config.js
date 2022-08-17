@@ -259,7 +259,6 @@ module.exports = {
           ],
           '/*.html': ['cache-control: public, max-age=0, must-revalidate'],
           '/page-data/app-data.json': ['cache-control: public, max-age=0, must-revalidate'],
-          '/page-data/*': ['cache-control: public, max-age=0, must-revalidate'],
           '/static/*': ['cache-control: public, max-age=31536000, immutable'],
           '/**/*.js': ['cache-control: public, max-age=31536000, immutable'],
           '/**/*.css': ['cache-control: public, max-age=31536000, immutable'],
