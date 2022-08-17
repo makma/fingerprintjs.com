@@ -3,7 +3,7 @@ templateKey: case-study-content
 publishDate: 2022-08-16T20:21:47.650Z
 title: Signup Protection for Online Contests
 metadata:
-  title: Signup Protection for Online Contests
+  title: Signup Protection for Online Contests - Fingerprint Pro Case Study
   description: "The company significantly reduced the instances of multiple
     entries to ensure the integrity of contests on their platform. "
   url: http://fingerprint.com/case-studies/contest-fraud
