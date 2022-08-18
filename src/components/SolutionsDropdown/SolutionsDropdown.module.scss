@@ -89,7 +89,7 @@
 }
 
 .linkDescription {
-  @include sans($size: 14px, $weight: 400, $lh: 171%);
+  @include sans($size: 14px, $weight: 400, $lh: 20px);
 }
 
 .row,
