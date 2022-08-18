@@ -209,9 +209,7 @@ const existingHistory = await UserSearchHistory.findOne({
 
 if (existingHistory) {
   existingHistory.timestamp = new Date().getTime();
-
   await existingHistory.save();
-
   return;
 }
 
