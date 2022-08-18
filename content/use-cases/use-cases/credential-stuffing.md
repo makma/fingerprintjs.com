@@ -91,27 +91,25 @@ The endpoint property is quite important and is used for the [Subdomain setup](h
 
 * Send the user’s credentials together with `visitorId` and `requestId` to your authentication API.
 
-````ags
-- Send the user’s credentials together with `visitorId` and `requestId` to your authentication API.
+```ags
+// Send the user’s credentials together with `visitorId` and `requestId` to your authentication API.
+const loginData = {
+  userName,
+  password,
+  visitorId: result.visitorId,
+  requestId: result.requestId,
+};
     
-    ```jsx
-    const loginData = {
-      userName,
-      password,
-      visitorId: result.visitorId,
-      requestId: result.requestId,
-    };
-    
-    const response = await fetch('/api/authenticate', {
-      method: 'POST',
-      body: JSON.stringify(loginData),
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    });
-    ```
-````
+const response = await fetch('/api/authenticate', {
+  method: 'POST',
+  body: JSON.stringify(loginData),
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+  },
+});
+
+```
 
 All next steps should be performed on the backend. If your backend logic is built on top of Node.js, you can use [FingerprintJS Server API Node.js SDK](https://dev.fingerprintjs.com/docs/fingerprintjs-pro-server-api-nodejs-sdk).
 
@@ -126,7 +124,7 @@ const isVisitorIdFormatValid = /^[a-zA-Z0-9]{20}$/.test(visitorId);
 
 if (!isRequestIdFormatValid || !isVisitorIdFormatValid) {
   reportSuspiciousActivity(req);
-	persistUnsuccessfulLoginAttempt();
+  persistUnsuccessfulLoginAttempt();
   return getForbiddenReponse();
 }
 ```
@@ -147,7 +145,7 @@ const visitorServerApiResponse = await fetch(
 // If there's something wrong with provided data, Server API might return non 200 response.
 // We consider these data unreliable.
 if (visitorServerApiResponse.status !== 200) {
-	persistUnsuccessfulLoginAttempt();
+  persistUnsuccessfulLoginAttempt();
   // Handle error internaly, refuse login.
 }
 
@@ -159,7 +157,7 @@ return visitorData;
 
 ```javascript
 if (visitorData.error || visitorData.visits.length !== 1) {
-	persistUnsuccessfulLoginAttempt();
+  persistUnsuccessfulLoginAttempt();
   reportSuspiciousActivity(req);
   return getForbiddenReponse();
 }
@@ -170,7 +168,7 @@ if (visitorData.error || visitorData.visits.length !== 1) {
 ```javascript
 if (new Date().getTime() - visitorData.visits[0].timestamp > 3000) {
   persistUnsuccessfulLoginAttempt();
-	reportSuspiciousActivity(req);
+  reportSuspiciousActivity(req);
   return getForbiddenReponse();
 }
 ```
@@ -180,7 +178,7 @@ if (new Date().getTime() - visitorData.visits[0].timestamp > 3000) {
 ```javascript
 if (visitorData.visits[0].confidence.score < 0.95) {
   persistUnsuccessfulLoginAttempt();
-	reportSuspiciousActivity(req);
+  reportSuspiciousActivity(req);
   return getForbiddenReponseAndChallenge();
 }
 ```
