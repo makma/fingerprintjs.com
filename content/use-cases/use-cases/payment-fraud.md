@@ -71,7 +71,8 @@ Here are the recommended logic rules for Payment Fraud prevention:
   .then(FingerprintJS => FingerprintJS.load({
     endpoint: 'https://metrics.yourdomain.com'
   }));
-  // Once you need a result, get and store it.
+
+// Once you need a result, get and store it.
 // Typically on page load or on button click.
 fpPromise
   .then(fp => fp.get())
@@ -134,7 +135,7 @@ const visitorServerApiResponse = await fetch(
 // If there's something wrong with provided data, Server API might return non 200 response.
 // We consider these data unreliable.
 if (visitorServerApiResponse.status !== 200) {
-	reportSuspiciousActivity(req);
+  reportSuspiciousActivity(req);
   // Handle error internaly, refuse the action.
 }
 
@@ -155,7 +156,7 @@ if (visitorData.error || visitorData.visits.length !== 1) {
 
 ```javascript
 if (new Date().getTime() - visitorData.visits[0].timestamp > 3000) {
-	reportSuspiciousActivity(req);
+  reportSuspiciousActivity(req);
   return getForbiddenReponse();
 }
 ```
@@ -164,8 +165,8 @@ if (new Date().getTime() - visitorData.visits[0].timestamp > 3000) {
 
 ```javascript
 if (visitorData.visits[0].confidence.score < 0.95) {
-	persistPaymentAttempt(req);
-	reportSuspiciousActivity(req);
+  persistPaymentAttempt(req);
+  reportSuspiciousActivity(req);
   return getForbiddenReponseAndChallenge();
 }
 ```
@@ -211,9 +212,9 @@ const countOfChargebacksForVisitorId = await db.query("SELECT COUNT(*) AS count 
 // If the visitorId performed more than 1 chargeback during the last 1 year we do not process the payment.
 // The count of chargebacks and time window might vary.
 if (countOfChargebacksForVisitorId.count > 1) {
-    persistPaymentAttempt();
-    reportSuspiciousActivity(req);
-    return getForbiddenReponse();
+  persistPaymentAttempt();
+  reportSuspiciousActivity(req);
+  return getForbiddenReponse();
 }
 ```
 
@@ -221,14 +222,14 @@ if (countOfChargebacksForVisitorId.count > 1) {
 
 ```javascript
 // Get all attempts with a stolen credit card for the given visitorId.
-  const stolenCardUsedCount = await db.query("SELECT COUNT(*) AS count FROM payment_attempts WHERE visitor_id = ? AND used_stolen_card = 1", [visitorId]);
+const stolenCardUsedCount = await db.query("SELECT COUNT(*) AS count FROM payment_attempts WHERE visitor_id = ? AND used_stolen_card = 1", [visitorId]);
 
-  // If the visitorId performed more than 1 payment with a stolen card during the last 1 year we do not process the payment.
-  // The time window duration might vary.
-  if (stolenCardUsedCount.count > 0) {
-    persistPaymentAttempt();
-    reportSuspiciousActivity(req);
-    return getForbiddenReponse();
+// If the visitorId performed more than 1 payment with a stolen card during the last 1 year we do not process the payment.
+// The time window duration might vary.
+if (stolenCardUsedCount.count > 0) {
+  persistPaymentAttempt();
+  reportSuspiciousActivity(req);
+  return getForbiddenReponse();
   }
 ```
 
