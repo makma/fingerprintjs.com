@@ -255,7 +255,7 @@ return res.status(200).json({
 
 ### Trusting the `visitorId` and `requestId` provided by the Client Side
 
-Since data such as `visitorId` and `requestId` provided by the client-side might be spoofed, it's a good practice to check and validate provided data with our [Server API](https://dev.fingerprint.com/docs/server-api) or [Webhooks](https://dev.fingerprint.com/docs/webhooks). If some validation fails, we recommend serving default content instead. Take a look at the [source code](https://github.com/fingerprintjs/fingerprintjs-pro-use-cases/blob/main/api/personalization/visitor-validations.js) for more advanced validations or check recommended approaches for the [Payment Fraud](https://link-to-payment-fraud.com/) use case.
+Since data such as `visitorId` and `requestId` provided by the client-side might be spoofed, it's a good practice to check and validate provided data with our [Server API](https://dev.fingerprint.com/docs/server-api) or [Webhooks](https://dev.fingerprint.com/docs/webhooks). If some validation fails, we recommend serving default content instead. Take a look at the [source code](https://github.com/fingerprintjs/fingerprintjs-pro-use-cases/blob/main/api/personalization/visitor-validations.js) for more advanced validations or check recommended approaches for the [Payment Fraud](https://github.com/fingerprintjs/fingerprintjs-pro-use-cases/blob/main/pages/api/payment-fraud/place-order.js) use case.
 
 ### Explore our Personalization demo
 
