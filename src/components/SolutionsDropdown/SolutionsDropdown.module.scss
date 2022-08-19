@@ -81,6 +81,7 @@
 }
 
 .linkTitle {
+  padding-bottom: rem(4px);
   @include sans($size: 16px, $weight: 500);
   letter-spacing: -0.01em;
   @include media('<=desktop') {
