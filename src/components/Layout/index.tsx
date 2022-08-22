@@ -11,6 +11,7 @@ import { useStaticQuery, graphql, Script } from 'gatsby'
 import { useLocation } from '@reach/router'
 import { defaultDataLayer } from '../../constants/content'
 import { GTM_TOKEN } from '../../constants/env'
+import { useBotD } from '../../hooks/useBotD'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -46,7 +47,9 @@ interface LayoutTemplateProps extends LayoutProps {
 
 // We need this to not use static GraphQL queries in order use it in CMS preview (it runs it in browser directly)
 export function LayoutTemplate({ children, notificationBar }: LayoutTemplateProps) {
-  const { isEuUser, userCountry } = useUserLocation()
+  const { isEuUser, userCountry, visitorId } = useUserLocation()
+  const { visitorData } = useBotD()
+
   const { pathname } = useLocation()
 
   useEffect(() => {
@@ -56,8 +59,14 @@ export function LayoutTemplate({ children, notificationBar }: LayoutTemplateProp
   }, [isEuUser, userCountry])
 
   useEffect(() => {
-    amplitudeLogEvent('view marketing page', { route: pathname })
-  }, [pathname])
+    if (visitorData && visitorId) {
+      amplitudeLogEvent(
+        'view marketing page',
+        { route: pathname, botDetected: visitorData.products.botd.data.bot.result },
+        visitorId
+      )
+    }
+  }, [pathname, visitorData, visitorId])
 
   useConsolePromotionMessage(`Like breaking things to see how they work? Join us: ${URL.careersConsoleLogUrl}`)
 

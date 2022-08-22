@@ -16,6 +16,7 @@ export const useBotD = (publicToken?: string, secretToken?: string) => {
   const scriptUrlPattern = FPJS_SCRIPT_URL_PATTERN
 
   const [visitorData, setVisitorData] = useState<SuccessResponse>()
+
   const [hasError, setHasError] = useState(false)
   const [error, setError] = useState<string>()
   const [isLoading, setIsLoading] = useState(true)

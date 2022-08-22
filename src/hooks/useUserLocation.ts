@@ -5,7 +5,8 @@ export const useUserLocation = () => {
   const { data } = useVisitorData(getConfig)
   const userRegion = data?.ipLocation?.continent?.code?.toUpperCase()
   const userCountry = data?.ipLocation?.country?.code?.toUpperCase()
+  const visitorId = data?.visitorId
 
   const isEuUser = userRegion === 'EU'
-  return { isEuUser, userRegion, userCountry }
+  return { isEuUser, userRegion, userCountry, visitorId }
 }
