@@ -36,10 +36,14 @@ The problem of bots reaches into all industries online. In 2021, most companies 
 
 In this guide, we'll explore what bots are, how they’re used, the challenges in detection and how businesses can protect against them through bot detection software.
 
+## Table of Contents
+
+```toc
 exclude: Table of Contents
 from-heading: 1
 to-heading: 3
 ordered: false
+```
 
 ## What are bots, and how are they used?
 
