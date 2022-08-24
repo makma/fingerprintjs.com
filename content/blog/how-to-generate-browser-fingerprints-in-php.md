@@ -1,16 +1,18 @@
 ---
 templateKey: long-form-content
 metadata:
-  title: Browser Fingerprinting in PHP - Fingerprint
-  description: Learn how to generate browser fingerprints for your PHP application
-    using a free browser fingerprinting service.
+  title: How to Generate A Browser Fingerprint in PHP (with code snippets) -
+    Fingerprint Pro
+  description: "In this technical tutorial with code samples, learn how to
+    generate browser fingerprints for your PHP application using a free browser
+    fingerprinting service. "
   url: https://fingerprint.com/blog/browser-fingerprint-php
   image: /img/uploads/browser-fingerprints-in-php-1-.png
   imageAlt: browser fingerprinting using PHP
   imageTitle: browser fingerprinting using PHP
 featured: true
 publishDate: 2021-06-25T02:30:08.525Z
-title: How to Generate Browser Fingerprints in PHP
+title: How to Generate A Browser Fingerprint in PHP (with code snippets)
 isPublished: true
 isHidden: false
 tags:
@@ -25,27 +27,27 @@ heroImage:
 ---
 Almost every web developer has to combat fraud at some point. Attacks might include malicious users trying to brute force passwords, place fraudulent orders, initiate bot attacks, or bypass your site’s paywall.
 
-Traditional methods of tracking users in PHP often fall short when trying to prevent fraud. This is where [browser fingerprinting comes in](/blog/what-is-browser-fingerprinting/). Fingerprinting is a technique that generates a highly accurate identifier that can uniquely identify someone based on their browser and device settings.
+Traditional methods of tracking users in PHP often fall short when preventing fraud. This is where [browser fingerprinting comes in](https://fingerprint.com/blog/what-is-browser-fingerprinting/). Browser fingerprinting is a technique that generates a highly accurate identifier that can uniquely identify someone based on their browser and device settings.
 
 ## Why Browser Fingerprinting?
 
-Browser fingerprinting has a number of useful applications — from helping block malicious users to fighting bank fraud:
+Browser fingerprinting has many practical applications — from helping block malicious users to fighting bank fraud:
 
-* **Combating Malicious Users** - Browser fingerprints can be used to identify when a user trying to register is a bot rather than a real person. Fingerprints can also help detect when a legitimate account is being used by a malicious user.
-* **Preventing Financial Fraud** - You can use fingerprints to detect and stop malicious users from testing stolen credit cards by making many small purchases on your site from different credit cards.
-* **Enforcing paywalls** - Sometimes, tech-savvy readers use incognito mode or delete their cookies to bypass paywalls and access restricted content. Using browser fingerprints, you can catch users bypassing your paywall to make sure your business isn’t losing revenue.
+* **Combating Malicious Users** - Browser fingerprints can help identify when a user trying to register is a bot rather than a real person. Fingerprints can also help detect when a malicious user is using a legitimate account.
+* **Preventing Financial Fraud** - You can use fingerprints to detect and stop malicious users from testing stolen credit cards by making many small purchases on your site from different credit cards.
+* **Enforcing paywalls** - Sometimes, tech-savvy readers use incognito mode or delete their cookies to bypass paywalls and access restricted content. Using browser fingerprints, you can catch users bypassing your paywall to ensure your business isn’t losing revenue.
 
 ## Browser Fingerprinting in PHP
 
-Suppose you are running a streaming site that offers a 14-day free trial to new users. This might be a nice way to let people try your service before they buy, but a malicious user can repeatedly register with different email addresses to take advantage of your trial offer.
+Suppose you are running a streaming site that offers a 14-day free trial to new users. However, a malicious user can repeatedly register with different email addresses to take advantage of your trial offer.
 
 Unfortunately, PHP is exclusively a server-side programming language, so you can’t implement browser fingerprinting in PHP alone. But, by implementing Fingerprint on your frontend, you can easily add fingerprinting to prevent the same user from registering in your application with multiple email addresses.
 
-In this tutorial, I’ll show you how to use [Fingerprint](/) to generate browser fingerprints for your PHP application. I’ll contrast fingerprinting with several traditional PHP-only ways to track users (session tracking, HTTP cookies, and IP address tracking) so you understand why fingerprinting is a more reliable solution in most use cases.
+In this tutorial, I’ll show you how to use [Fingerprint](https://fingerprint.com/) to generate browser fingerprints for your PHP application. I’llI’ll contrast fingerprinting with several traditional PHP-only ways to track users (session tracking, HTTP cookies, and IP address tracking) so you understand why fingerprinting is a more reliable solution in most cases.
 
 ### Project Setup
 
-To follow along with this tutorial, you will need to have [PHP](https://www.php.net/manual/en/install.php) and [SQLite3](https://www.sqlite.org/download.html) installed on your system. You can find the finished code for this tutorial on [Github](https://github.com/heraldofsolace/FingerprintJS-PHP) with the files for the initial project setup in the `./original` directory.
+Following this tutorial must have [PHP](https://www.php.net/manual/en/install.php) and [SQLite3](https://www.sqlite.org/download.html) installed on your system. You can find the finished code for this tutorial on [Github](https://github.com/heraldofsolace/FingerprintJS-PHP) with the files for the initial project setup in the `./original` directory.
 
 Once you have the dependencies ready, create a file called `register.php`:
 
@@ -127,7 +129,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </html>
 ```
 
-This simple registration form uses SQLite as its database and TailWind CSS so that it looks presentable.
+This simple registration form uses SQLite as its database and TailWind CSS to look presentable.
 
 Next, create a file called `dashboard.html` in the same folder:
 
@@ -148,7 +150,7 @@ Next, create a file called `dashboard.html` in the same folder:
 </html>
 ```
 
-This is a simple HTML page that will be shown after a successful registration.
+After successful registration, a simple HTML page appears.
 
 Finally, create the database using SQLite:
 
@@ -156,7 +158,7 @@ Finally, create the database using SQLite:
 sqlite3 data.db
 ```
 
-This will create a file called `data.db` and provide you with a `sqlite` prompt. Run the following query in the prompt to create a `users` table with an id, email, and password field:
+This action will create a file called `data.db` and provide you with a `sqlite` prompt. Next, run the following query in the prompt to create a `users` table with an id, email, and password field:
 
 ```sql
 CREATE TABLE users(
@@ -184,11 +186,11 @@ Try registering a user with some email and password. Once successfully registere
 
 Come back to the `register.php` page again and try registering again *with a different email*. You will see that the app allows you to re-register.
 
-In the next section, I’ll show you how to prevent re-registration using browser fingerprinting integrated with your PHP application. Before you continue, be sure to wipe your database clean to prevent any conflicts.
+In the next section, I’ll show you how to prevent re-registration using browser fingerprinting integrated with your PHP application. Before you continue, wipe your database clean to avoid any conflicts.
 
 ### Using Fingerprint
 
-[Fingerprint]() is a fingerprinting service that uses a combination of fingerprinting, cookies, server-side techniques, and machine learning to generate a browser fingerprint that is up to [99.5% accurate](https://dev.fingerprint.com/docs/understanding-our-995-accuracy). 
+[Fingerprint](<>) is a device identification and browser fingerprinting service that uses a combination of fingerprinting, cookies, server-side techniques, and machine learning to generate a browser fingerprint that is up to [99.5% accurate](https://dev.fingerprint.com/docs/understanding-our-995-accuracy). 
 
 To get started with Fingerprint, you will need a [Fingerprint Pro account](https://dashboard.fingerprint.com/signup). If you do not have an account, you can start a free account with no credit card required.
 
@@ -222,7 +224,7 @@ This snippet downloads the required JavaScript file and runs the `initFingerprin
 
 **Note that you need to replace `your-public-api-key` with the actual Public API key you copied from your dashboard.**
 
-This function calls the Fingerprint service to create a `visitorID` and prints it to the console. You can reload the registration page to see an alphanumeric hash in your JavaScript console.
+This function calls the Fingerprint service to create a `visitorID` and print it to the console. You can reload the registration page to see an alphanumeric hash in your JavaScript console.
 
 ![Screenshot showing the visitorID printed to the console](/img/uploads/php-print.png "Screenshot showing the visitorID printed to the console")
 
@@ -264,7 +266,7 @@ $insert_stmt -> bindValue(2, password_hash($_POST["password"], PASSWORD_BCRYPT),
 $insert_stmt -> bindValue(3, $_POST['visitorId'], SQLITE3_TEXT);
 ```
 
-Finally, you need to check if a user with the same `visitorId` already exists and show an error message accordingly:
+Finally, you need to check if a user with the same `visitorId` already exists and shows an error message accordingly:
 
 ```php
 ...
@@ -281,50 +283,48 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ```
 
-You can test Fingerprint by registering a user and trying to register another user. Using your Fingerprint fingerprint, you will see the error message even if you use incognito mode, restart your browser, or disable cookies.
+You can test Fingerprint by registering a user and trying to register another user. Using your Fingerprint Pro-provided fingerprint, you will see the error message even if you use incognito mode, restart your browser, or disable cookies.
 
 *You can find all the above code for using Fingerprint inside the `fingerprintjs` directory in [this GitHub repository](https://github.com/heraldofsolace/FingerprintJS-PHP).*
 
 ## Advantages of Fingerprint
 
-There are quite a few advantages of using Fingerprint over rolling out your own fingerprinting solution. First, Fingerprint is easy to use - you just need to include a JavaScript snippet, and the rest is handled by Fingerprint. This is much faster than writing your own fingerprinting function in PHP.
+Fingerprint Pro has many advantages over rolling out your fingerprinting solution. First, Fingerprint Pro is easy to use - you need to include a JavaScript snippet, and Fingerprint Pro handles the rest. This is much faster than writing your fingerprinting function in PHP.
 
-Fingerprint is also kept up-to-date with browser updates and modern fingerprinting best practices. This means you do not need to worry about your fingerprinting technique breaking when browsers are updated.
-
-Fingerprint is also much more accurate than any of the traditional methods of user tracking in PHP.
+Fingerprint Pro is also kept up-to-date with browser updates and modern fingerprinting best practices. This means you do not need to worry about your fingerprinting technique breaking when browsers are updated.
 
 ### Fingerprinting vs. Session Tracking
 
-One common tracking method in PHP is called [session tracking](https://docstore.mik.ua/orelly/webprog/pcook/ch08_06.htm). A session allows the server to store information about the current user and make it available across multiple pages in order to maintain state.
+One common tracking method in PHP is called [session tracking](https://docstore.mik.ua/orelly/webprog/pcook/ch08_06.htm). A session allows the server to store information about the current user and make it available across multiple pages to maintain the state.
 
-The problem with session tracking is that it’s tied to a session ID stored in the user’s browser (usually in a cookie). If you open an incognito window and try to register, you will not be stopped, even if you have a session in your other browser window. Users can open as many incognito windows as they want, and each of them will have a separate session in your application.
+The problem with session tracking is that they are tied to a session ID stored in the user’s browser (usually in a cookie). If you open an incognito window and try to register, it will be successful, even if you have a session in your other browser window. Users can open as many incognito windows as they want, and each will have a separate session in your application.
 
-Additionally, sessions are not permanent. Once the browser is closed, the session data is deleted. This means that users can just restart their browser and register again.
+Additionally, sessions are not permanent. The session data deletes once the browser closes. Users can now restart their browser and register again.
 
 *If you’d like to demonstrate this behavior and compare it to the fingerprint example above, see the code inside the `session` directory in [this GitHub repository](https://github.com/heraldofsolace/FingerprintJS-PHP).*
 
 ### Fingerprinting vs. HTTP Cookies
 
-An [HTTP Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a small piece of data that the server sends to the user's browsers. Cookies are stored on the client and are sent back when making requests to the same server later.
+An [HTTP Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) is a small piece of data the server sends to the user’s browsers. Cookies are stored on the client and returned when making requests to the same server later.\
+\
+Thus, a server can store information about the user in cookies - much like sessions - but the vital advantage of cookies over sessions is **they’re not cleared when the browser is closed.**
 
-Thus, a server can store information about the user in cookies - much like sessions - but the important advantage of cookies over sessions is that **they're not cleared when the browser is closed.**
+Like in session tracking, cookies will not work as intended in incognito mode since cookies are not saved in incognito mode. However, users can register as often as possible by opening new incognito windows.
 
-Just like in session tracking, cookies will not work as intended in incognito mode, since in incognito mode, cookies are not saved. This means that a user can register as many times as they want simply by opening new incognito windows.
-
-Also, cookies are not permanent and can be cleared by the user or by the browser. For example, most major browsers provide an option to clear cookies automatically when the browser is closed. Finally, cookies can be [blocked by the browser entirely](https://proprivacy.com/ruinmysearchhistory/how-to-block-cookies).
+Also, cookies are not permanent and can be cleared by the user or browser. For example, most popular browsers provide an option to clear cookies automatically when the browser is closed. Finally, cookies can be [blocked by the browser entirely](https://proprivacy.com/ruinmysearchhistory/how-to-block-cookies).
 
 *You can find a code sample using HTTP cookies inside the `cookie` directory in this [GitHub](https://github.com/heraldofsolace/FingerprintJS-PHP) repo.*
 
 ### Fingerprinting vs. IP Tracking
 
-An [IP or Internet Protocol address](https://en.wikipedia.org/wiki/IP_address) is similar to a street address for your computer: it is a numerical label that is assigned to a device whenever it connects to a network. By storing the IP address of a user when they register, you can tell when the same device tries to make another registration. This means that you can use IP tracking to block the same user accessing your site from incognito mode or different browsers.
+An [IP or Internet Protocol address](https://en.wikipedia.org/wiki/IP_address) is similar to a street address for your computer: it is a numerical label assigned to a device whenever it connects to a network. By storing the IP address of a user when they register, you can tell when the same device tries to make another registration. In addition, you can use IP tracking to block the same user accessing your site from incognito mode or different browsers.
 
-Unfortunately, an IP address can be easily spoofed. Users can set them manually when browsing, even if they're not using a proxy server. IP address tracking can also be inaccurate because different devices can have the same IP address when they share the same router. For example, in a university or organization network, multiple devices often share the same IP address.
+Unfortunately, IP addresses are easily spoofed. Users can set them manually when browsing, even if they’re not using a proxy server. IP address tracking can also be inaccurate because different devices can have the same IP address when they share the same router. For example, multiple devices often share the same IP address in a university or organization network.
 
 *You can find a code sample using IP tracking inside the directory `ip` in the [GitHub repository here](https://github.com/heraldofsolace/FingerprintJS-PHP).*
 
 ## Conclusion
 
-In this tutorial, you learned the utility of browser fingerprinting in PHP and how it can be used to prevent duplicate registrations. While you can increase the accuracy of your tracking in PHP by combining sessions, cookies, and IP tracking, it’s still relatively easy for users to bypass these fraud detection measures.
+In this tutorial, you learned how browser fingerprinting in PHP helps prevent duplicate registrations. While you can increase the accuracy of your tracking in PHP by combining sessions, cookies, and IP tracking, it’s still relatively easy for users to bypass these fraud detection measures.
 
-Using [Fingerprint](/) to quickly and accurately generate a browser fingerprint in PHP will help you combat fraud and save time. With an accuracy of 99.5% and a team keeping up with the latest changes, Fingerprint is a great solution for saving time and achieving greater accuracy. This allows you to focus on building a great web application and not learning every browser update that changes how you must implement fingerprinting.
+Using [Fingerprint](https://fingerprint.com/) to quickly and accurately generate a browser fingerprint in PHP will help you combat fraud and save time. With an accuracy of 99.5%, Fingerprint is an excellent solution for saving time, allowing you to focus on building a great web application and not learning every browser fingerprinting change.
