@@ -177,7 +177,7 @@ Our bot detection solution provides a singular response with three available par
 * "Bad" if the bot is an automated tool or virtual machine
 * "Not Detected" if the visitor is not considered a bot.
 
-BotD addresses two groups of “traffic” in its detection process, g**eneral invalid traffic (GIVT)** and **sophisticated invalid traffic (SIVT)**. 
+BotD addresses two groups of “traffic” in its detection process, **general invalid traffic (GIVT)** and **sophisticated invalid traffic (SIVT)**. 
 
 ### General Invalid Traffic (GIVT)
 
