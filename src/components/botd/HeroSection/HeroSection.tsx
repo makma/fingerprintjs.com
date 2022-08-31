@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from 'react'
+import React, { useEffect, useState, useReducer } from 'react'
 import Container from '../../common/Container'
 import Button from '../../common/Button'
 import { URL } from '../../../constants/content'
@@ -7,8 +7,8 @@ import Skeleton from '../../Skeleton/Skeleton'
 import { scrollToElementById } from '../../../helpers/scrollToElementByID'
 import { repeatElement } from '../../../helpers/repeatElement'
 import classNames from 'classnames'
-import { SuccessResponse } from '../../../types/botResponse'
 import { useGithub } from '../../../hooks/useGithub'
+import { useBotDContext } from '../../../context/BotdContext'
 
 import { ReactComponent as GithubIconSvg } from './svg/GithubSVG.svg'
 
@@ -19,6 +19,7 @@ import { ReactComponent as searchEngineNotDetectedSVG } from './svg/SearchEngine
 
 import { ReactComponent as InfoSvg } from './svg/InfoTipSVG.svg'
 import { ReactComponent as LoadingIconSvg } from './svg/LoadingIconSVG.svg'
+import { ReactComponent as ErrorIconSvg } from './svg/ErrorIconSVG.svg'
 import { ReactComponent as RefreshIconSvg } from '../../../img/RefreshSVG.svg'
 
 import styles from './HeroSection.module.scss'
@@ -46,19 +47,16 @@ function botReducer(detectedBots: DetectedBots, updateDetectedBot: Action) {
   }
 }
 
-interface HeroSectionProps {
-  visitorData?: SuccessResponse
-  isLoading?: boolean
-  hasError?: boolean
-  refresh: () => void
-}
-export default function HeroSection({ visitorData, isLoading, hasError, refresh }: HeroSectionProps) {
+export default function HeroSection() {
   const initialState = {
     isBot: false,
     automationTool: false,
     searchEngine: false,
   }
   const [botState, dispatch] = useReducer(botReducer, initialState)
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  const { visitorData, isLoading, hasError, refresh } = useBotDContext()
 
   useEffect(() => {
     if (visitorData) {
@@ -68,6 +66,7 @@ export default function HeroSection({ visitorData, isLoading, hasError, refresh 
       if (visitorData.products.botd.data.bot.result === 'bad') {
         dispatch({ detected: BotType.AutomationTool })
       }
+      setIsLoaded(true)
     }
   }, [visitorData])
 
@@ -113,22 +112,11 @@ export default function HeroSection({ visitorData, isLoading, hasError, refresh 
       <section className={styles.botDSection}>
         <div className={styles.botD}>
           <h2 className={styles.botTitle}>Am I a bot?</h2>
-          {isLoading ? (
-            <h2 className={styles.botSubTitle}>Bot detection in progress...</h2>
-          ) : hasError ? (
-            <h2 className={styles.botSubTitle}>
-              Bot detection failed
-              <RefreshIconSvg className={styles.tryAgainIcon} onClick={() => refresh()} />
-            </h2>
-          ) : botState.isBot ? (
-            <h2 className={styles.botSubTitle}>You are a bot</h2>
-          ) : (
-            <h2 className={styles.botSubTitle}>You are not a bot</h2>
-          )}
+          <CardHeader isLoaded={isLoaded} {...botState} isLoading={isLoading} hasError={hasError} refresh={refresh} />
           <p className={styles.seeDetails} onClick={() => scrollToElementById('ApiResponseDetails')}>
             See details →
           </p>
-          <CardsSection {...botState} hasError={hasError} isLoading={isLoading} />
+          <CardsSection isLoaded={isLoaded} {...botState} hasError={hasError} isLoading={isLoading} />
         </div>
       </section>
     </Container>
@@ -136,46 +124,48 @@ export default function HeroSection({ visitorData, isLoading, hasError, refresh 
 }
 
 interface CardsSectionProps extends DetectedBots {
+  isLoaded: boolean
   isLoading?: boolean
   hasError?: boolean
+  refresh?: () => void
 }
-function CardsSection({ automationTool, searchEngine, isLoading, hasError }: CardsSectionProps) {
-  if (isLoading || hasError) {
+function CardsSection({ isLoaded, automationTool, searchEngine, isLoading, hasError }: CardsSectionProps) {
+  if (isLoaded && !isLoading && !hasError) {
     return (
       <section className={styles.cards}>
-        {repeatElement(2, (i) => (
-          <LoadingCard key={i} error={hasError} />
-        ))}
+        <Card
+          iconDetected={automationDetectedSVG}
+          iconNotDetected={automationNotDetectedSVG}
+          title='Automation Tool'
+          detected={automationTool}
+          tipContent={
+            <p>
+              <strong>Automation tool detection</strong> is helpful when you need to know if your website is used by
+              things like Puppeteer, Playwright and Selenium. These tools are used to create fake reviews, scrape your
+              premium content and mass-register fake user accounts.
+            </p>
+          }
+        />
+        <Card
+          iconDetected={searchEngineDetectedSVG}
+          iconNotDetected={searchEngineNotDetectedSVG}
+          title='Search Engine'
+          detected={searchEngine}
+          tipContent={
+            <p>
+              <strong>Search engine detection</strong> is important to know which bots should be ignored, because
+              they&apos;re good and which should be protected against, because they&apos;re bad.
+            </p>
+          }
+        />
       </section>
     )
   }
   return (
     <section className={styles.cards}>
-      <Card
-        iconDetected={automationDetectedSVG}
-        iconNotDetected={automationNotDetectedSVG}
-        title='Automation Tool'
-        detected={automationTool}
-        tipContent={
-          <p>
-            <strong>Automation tool detection</strong> is helpful when you need to know if your website is used by
-            things like Puppeteer, Playwright and Selenium. These tools are used to create fake reviews, scrape your
-            premium content and mass-register fake user accounts.
-          </p>
-        }
-      />
-      <Card
-        iconDetected={searchEngineDetectedSVG}
-        iconNotDetected={searchEngineNotDetectedSVG}
-        title='Search Engine'
-        detected={searchEngine}
-        tipContent={
-          <p>
-            <strong>Search engine detection</strong> is important to know which bots should be ignored, because
-            they&apos;re good and which should be protected against, because they&apos;re bad.
-          </p>
-        }
-      />
+      {repeatElement(2, (i) => (
+        <LoadingCard key={i} error={hasError} />
+      ))}
     </section>
   )
 }
@@ -242,7 +232,7 @@ function LoadingCard({ error }: LoadingCarProps) {
   return (
     <div className={styles.card}>
       <div className={styles.iconContainer}>
-        <LoadingIconSvg className={classNames(styles.botIcon, { [styles.errorState]: error })} />
+        {error ? <ErrorIconSvg className={styles.botIcon} /> : <LoadingIconSvg className={styles.botIcon} />}
       </div>
       <div className={styles.info}>
         <div className={styles.botType}>
@@ -252,4 +242,23 @@ function LoadingCard({ error }: LoadingCarProps) {
       </div>
     </div>
   )
+}
+
+function CardHeader({ isLoaded, isBot, isLoading, hasError, refresh }: CardsSectionProps) {
+  if (isLoaded && !isLoading && !hasError) {
+    return isBot ? (
+      <h2 className={styles.botSubTitle}>You are a bot</h2>
+    ) : (
+      <h2 className={styles.botSubTitle}>You are not a bot</h2>
+    )
+  }
+  if (hasError && refresh) {
+    return (
+      <h2 className={styles.botSubTitle}>
+        Bot detection failed
+        <RefreshIconSvg className={styles.tryAgainIcon} onClick={() => refresh()} />
+      </h2>
+    )
+  }
+  return <h2 className={styles.botSubTitle}>Bot detection in progress...</h2>
 }

@@ -1,17 +1,14 @@
 import React from 'react'
 import Container from '../../common/Container'
 import CodeWindowWithSelector, { CodeTooltip } from '../../common/CodeWindowWithSelector'
-import { SuccessResponse } from '../../../types/botResponse'
+import { useBotDContext } from '../../../context/BotdContext'
 
 import styles from './APIResponseDetailsSection.module.scss'
 
-interface APIResponseDetailsSectionProps {
-  visitorData?: SuccessResponse
-}
-
-export default function APIResponseDetailsSection({ visitorData }: APIResponseDetailsSectionProps) {
+export default function APIResponseDetailsSection() {
   const characterLength = 8.4
   const currentTime = new Date().toISOString()
+  const { visitorData } = useBotDContext()
 
   return (
     <Container size='large' className={styles.container}>

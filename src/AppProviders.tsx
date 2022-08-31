@@ -3,6 +3,7 @@ import { FormProvider } from './hooks/useForm'
 import { FpjsProvider } from '@fingerprintjs/fingerprintjs-pro-react'
 import * as FingerprintJS from '@fingerprintjs/fingerprintjs-pro'
 import { GithubProvider } from './context/GithubContext'
+import { BotdProvider } from './context/BotdContext'
 import { HistoryListener } from './context/HistoryListener'
 import { FPJS_PUBLIC_TOKEN, FPJS_REGION, FPJS_SCRIPT_URL_PATTERN } from './constants/env'
 
@@ -13,13 +14,15 @@ export type Props = {
 export default function AppProviders({ children }: Props) {
   return (
     <AppLighthouseProvider>
-      <FormProvider>
-        <GithubProvider>
-          <HistoryListener>
-            <React.StrictMode>{children}</React.StrictMode>
-          </HistoryListener>
-        </GithubProvider>
-      </FormProvider>
+      <BotdProvider>
+        <FormProvider>
+          <GithubProvider>
+            <HistoryListener>
+              <React.StrictMode>{children}</React.StrictMode>
+            </HistoryListener>
+          </GithubProvider>
+        </FormProvider>
+      </BotdProvider>
     </AppLighthouseProvider>
   )
 }

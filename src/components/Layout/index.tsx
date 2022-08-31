@@ -11,7 +11,7 @@ import { useStaticQuery, graphql, Script } from 'gatsby'
 import { useLocation } from '@reach/router'
 import { defaultDataLayer } from '../../constants/content'
 import { GTM_TOKEN } from '../../constants/env'
-import { useBotD } from '../../hooks/useBotD'
+import { useBotDContext } from '../../context/BotdContext'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -48,7 +48,7 @@ interface LayoutTemplateProps extends LayoutProps {
 // We need this to not use static GraphQL queries in order use it in CMS preview (it runs it in browser directly)
 export function LayoutTemplate({ children, notificationBar }: LayoutTemplateProps) {
   const { isEuUser, userCountry, visitorId } = useUserLocation()
-  const { visitorData } = useBotD()
+  const { visitorData } = useBotDContext()
 
   const { pathname } = useLocation()
 

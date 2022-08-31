@@ -218,12 +218,6 @@
     .botIcon {
       width: rem(64px);
       height: rem(64px);
-
-      fill: #f2f2f7;
-
-      &.errorState {
-        fill: #ffe4ec;
-      }
     }
   }
 }

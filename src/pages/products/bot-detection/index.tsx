@@ -19,23 +19,20 @@ import { URL } from '../../../constants/content'
 import { HeadProps } from 'gatsby'
 import { SEO } from '../../../components/SEO/SEO'
 
-import { useBotD } from '../../../hooks/useBotD'
-
 import styles from './botd.module.scss'
 
-interface AccountSharingProps {
+interface BotdProps {
   pageContext: GeneratedPageContext
 }
-export default function Botd({ pageContext }: AccountSharingProps) {
+export default function Botd({ pageContext }: BotdProps) {
   const breadcrumbs = pageContext.breadcrumb.crumbs
 
-  const { visitorData, isLoading, hasError, refresh } = useBotD()
   return (
     <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
-      <HeroSection visitorData={visitorData} isLoading={isLoading} hasError={hasError} refresh={refresh} />
+      <HeroSection />
       <GenerateKeySection />
-      <APIResponseDetailsSection visitorData={visitorData} />
+      <APIResponseDetailsSection />
       <DocumentationSection />
       <IntegrationSection />
       <FeaturesSection />

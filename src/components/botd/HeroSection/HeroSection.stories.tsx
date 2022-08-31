@@ -6,4 +6,4 @@ export default {
   component: HeroSection,
 }
 
-export const Hero = () => <HeroSection refresh={() => null} />
+export const Hero = () => <HeroSection />

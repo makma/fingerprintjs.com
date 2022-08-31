@@ -1,24 +1,17 @@
-<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
     <rect width="64" height="64" rx="32" fill="#FFE4EC" />
-    <g clip-path="url(#clip0_2785_35925)">
-        <circle cx="29.6674" cy="24.9999" r="2.3334" fill="#621B16" />
-        <path d="M41.3346 44.6668L42.3341 13.666" stroke="#621B16" stroke-width="0.666686" />
-        <path d="M28.0701 46.0004L23.667 13.9995" stroke="#621B16" stroke-width="0.666686" />
-        <path d="M22.0001 30.6667L29.667 12.9995" stroke="#621B16" stroke-width="0.666686" />
-        <path d="M39.3344 32.6665L36.001 14.666" stroke="#621B16" stroke-width="0.666686" />
-        <path d="M34.0008 36L28.6162 39.8009C28.4392 39.9258 28.334 40.1289 28.334 40.3456V46.3336" stroke="#621B16"
-            stroke-width="2.00006" />
-        <path d="M34.5141 35.3165L36.6025 40.8299C36.6448 40.9416 36.7162 41.0398 36.8095 41.1144L41.6675 45.0005"
-            stroke="#621B16" stroke-width="2.00006" />
-        <path
-            d="M21.6668 29.6667L25.1107 30.9191C25.2548 30.9715 25.4126 30.9726 25.5575 30.9222L32.8644 28.3807C32.9541 28.3495 33.0493 28.3378 33.1438 28.3464L36.3429 28.6372C36.5475 28.6558 36.7322 28.7678 36.8433 28.9407L39.6673 33.3335"
-            stroke="#621B16" stroke-width="2.00006" />
-        <rect x="28.5039" y="29.1973" width="4.95832" height="8.98362" transform="rotate(-17.6436 28.5039 29.1973)"
-            fill="#621B16" />
-    </g>
+    <circle cx="29.7" cy="25" r="1.3" fill="#621B16" stroke="#621B16" stroke-width="2" />
+    <path d="m41.3 44.7 1-31M28 46l-4.3-32M22 30.7 29.7 13M39.3 32.7l-3.3-18" stroke="#621B16" stroke-width=".7" />
+    <path
+        d="m34 36-5.4 3.8c-.2.1-.3.3-.3.5v6M34.5 35.3l2.1 5.5.2.3 4.9 3.9M21.7 29.7l3.4 1.2h.5l7.3-2.5h.2l3.2.2c.2 0 .4.2.5.3l2.9 4.4"
+        stroke="#621B16" stroke-width="2" />
+    <path fill="#621B16" d="m28.5 29.2 4.8-1.5 2.7 8.6-4.8 1.5z" />
     <defs>
-        <clipPath id="clip0_2785_35925">
-            <rect width="32.0009" height="32.0009" fill="white" transform="translate(16 15.9995)" />
+        <clipPath id="a">
+            <path fill="#fff" transform="translate(16 16)" d="M0 0h32v32H0z" />
+        </clipPath>
+        <clipPath id="b">
+            <path fill="#fff" transform="translate(16 16)" d="M0 0h32v32H0z" />
         </clipPath>
     </defs>
 </svg>
