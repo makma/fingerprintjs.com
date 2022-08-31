@@ -132,11 +132,11 @@ Account takeover is a common form of fraud where malicious users try to log in t
 
 In each case, an accurate fingerprint allows your team to pinpoint users attempting fraudulent behavior while keeping your trusted users unhindered. In addition, you can incorporate the type of authentication needed into your website by using existing workflows without fundamentally changing your site's architecture.
 
-It is also important to note that users intending to commit fraud are much more likely to use techniques to conceal their identity, including using incognito mode, browsing via a VPN, and disabling cookies. That'sThat's also where fingerprinting shines, as it can associate these users without needing easily concealed identifiers like cookies and IP addresses.
+It is also important to note that users intending to commit fraud are much more likely to use techniques to conceal their identity, including using incognito mode, browsing via a VPN, and disabling cookies. That's also where fingerprinting shines, as it can associate these users without needing easily concealed identifiers like cookies and IP addresses.
 
 ## Browser Fingerprinting vs. Device Fingerprinting
 
-Intended for browser fingerprinting, our "core" [Fingerprint](https://github.com/fingerprintjs/fingerprintjs) library identifies visitors to a website using all modern mobile and desktop browsers. However, the signals available for mobile app developers are different from signals that can be retrieved in the browser and vary between iOS, Android, and other mobile operating systems.
+Intended for browser fingerprinting, our "core" [Fingerprint](https://github.com/fingerprintjs/fingerprintjs) library identifies visitors to a website using all modern mobile and desktop browsers. However, the signals available for mobile app developers differ from signals that can be retrieved in the browser and vary between iOS, Android, and other mobile operating systems.
 
 If you want to identify users of a native mobile app, we have a few options in our product suite:
 
