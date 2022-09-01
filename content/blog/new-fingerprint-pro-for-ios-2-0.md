@@ -16,7 +16,8 @@ title: "New: Fingerprint Pro for iOS 2.0"
 isPublished: true
 isHidden: false
 tags:
-  - fingerprinting
+  - ios
+  - product-updates
 authors:
   - Kevin Roy
 heroImage:
