@@ -18,7 +18,7 @@ import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 
 import styles from './ContactSalesForm.module.scss'
-import { BOTD_PUBLIC_KEY_TURING } from '../../constants/env'
+import { BOTD_PUBLIC_KEY_TURING, TURING_DEFAULT_SESSION_ID } from '../../constants/env'
 
 export default function ContactSalesForm() {
   const [formName, setFormName] = useState('')
@@ -35,8 +35,18 @@ export default function ContactSalesForm() {
     e.preventDefault()
 
     try {
-      const sessionId = await Turing.execute()
-      updateFormState(FormState.Loading)
+      let sessionId
+
+      try {
+        sessionId = await Turing.execute()
+      } catch (error) {
+        if (TURING_DEFAULT_SESSION_ID) {
+          sessionId = TURING_DEFAULT_SESSION_ID
+        } else {
+          throw new Error()
+        }
+      }
+
       if (!sessionId) {
         throw new Error()
       }

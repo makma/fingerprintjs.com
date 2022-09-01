@@ -18,7 +18,7 @@ import 'react-phone-input-2/lib/style.css'
 import Tippy from '@tippyjs/react'
 
 import styles from './ContactSupportForm.module.scss'
-import { BOTD_PUBLIC_KEY_TURING } from '../../constants/env'
+import { BOTD_PUBLIC_KEY_TURING, TURING_DEFAULT_SESSION_ID } from '../../constants/env'
 
 export default function ContactSupportForm() {
   const [email, setEmail] = useState('')
@@ -45,11 +45,22 @@ export default function ContactSupportForm() {
       return
     }
     try {
-      const sessionId = await Turing.execute()
-      updateFormState(FormState.Loading)
+      let sessionId
+
+      try {
+        sessionId = await Turing.execute()
+      } catch (error) {
+        if (TURING_DEFAULT_SESSION_ID) {
+          sessionId = TURING_DEFAULT_SESSION_ID
+        } else {
+          throw new Error()
+        }
+      }
+
       if (!sessionId) {
         throw new Error()
       }
+
       const response = await contactSupport(email, description, utmParams, sessionId)
       const status = response.status
       const { ok, error } = await response.json()

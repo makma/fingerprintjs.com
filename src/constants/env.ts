@@ -108,6 +108,11 @@ export const GREENHOUSE_COMPANY_ID =
     [NetlifyContext.DeployPreview]: process.env.GATSBY_PREVIEW_GREENHOUSE_COMPANY_ID,
   }) ?? 'fingerprinttest'
 
+export const TURING_DEFAULT_SESSION_ID = getContextEnv<string | undefined>({
+  [NetlifyContext.Production]: process.env.GATSBY_FPJS_TURING_DEFAULT_SESSION_ID,
+  [NetlifyContext.DeployPreview]: process.env.GATSBY_FPJS_TURING_DEFAULT_SESSION_ID,
+})
+
 export const APP_STORE_DEMO_URL = process.env.GATSBY_APP_STORE_DEMO_URL
 export const GOOGLE_PLAY_DEMO_URL = process.env.GATSBY_GOOGLE_PLAY_DEMO_URL
 

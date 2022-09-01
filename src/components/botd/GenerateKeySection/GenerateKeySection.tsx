@@ -10,7 +10,7 @@ import useLocalStorage from '../../../hooks/useLocalStorage'
 import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
 import { initTuring } from '../../../helpers/turing'
 import * as Turing from '@fpjs-incubator/turing'
-import { BOTD_PUBLIC_KEY_TURING } from '../../../constants/env'
+import { BOTD_PUBLIC_KEY_TURING, TURING_DEFAULT_SESSION_ID } from '../../../constants/env'
 import { PATH } from '../../../constants/content'
 import { ReactComponent as BotD } from '../../../img/BotdBowl.svg'
 import { ReactComponent as DevSVG } from './DevSVG.svg'
@@ -53,8 +53,19 @@ export default function GenerateKeySection() {
       updateFormState(FormState.Success)
     } else {
       try {
-        const sessionId = await Turing.execute()
         updateFormState(FormState.Loading)
+        let sessionId
+
+        try {
+          sessionId = await Turing.execute()
+        } catch (error) {
+          if (TURING_DEFAULT_SESSION_ID) {
+            sessionId = TURING_DEFAULT_SESSION_ID
+          } else {
+            throw new Error()
+          }
+        }
+
         if (!sessionId) {
           throw new Error()
         }
