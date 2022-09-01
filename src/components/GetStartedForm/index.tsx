@@ -32,7 +32,7 @@ export default function GetStartedForm({ className }: GetStartedFormProps) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     updateFormState(FormState.Loading)
-    const data = await getData(false)
+    const data = await getData()
     const visitorId = data?.visitorId
     const { ok, error } = await fetch(`${dashboardEndpoint}/signup`, {
       method: 'POST',

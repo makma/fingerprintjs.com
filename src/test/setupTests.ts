@@ -5,3 +5,4 @@ import { enableFetchMocks } from 'jest-fetch-mock'
 enableFetchMocks()
 
 jest.mock('@fingerprintjs/fingerprintjs-pro')
+jest.mock('@fingerprintjs/fingerprintjs-pro-spa')

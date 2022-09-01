@@ -3,30 +3,29 @@ import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
 import { SuccessResponse } from '../types/botResponse'
 import { FPJS_SECRET_TOKEN, BOTD_VERIFY_AGENT_ENDPOINT } from '../constants/env'
 import { getErrorMessage } from '../helpers/error'
+import { getConfig } from '../helpers/fpjs'
 
 export const useBotD = () => {
   const [visitorData, setVisitorData] = useState<SuccessResponse>()
-  const { getData } = useVisitorData({ tag: 'BotD' }, { immediate: false })
+  const { getData } = useVisitorData(getConfig, { immediate: false })
 
   const [hasError, setHasError] = useState(false)
   const [error, setError] = useState<string>()
   const [isLoading, setIsLoading] = useState(true)
   const [reload, setReload] = useState(false)
 
-  const secretKey = FPJS_SECRET_TOKEN
-
   useEffect(() => {
     async function getVisitorData() {
       setIsLoading(true)
       setHasError(false)
 
-      const data = await getData(true)
+      const data = await getData({ ignoreCache: true })
       if (data?.requestId) {
         try {
           const response = await fetch(`${BOTD_VERIFY_AGENT_ENDPOINT}/events/${data.requestId}`, {
             method: 'GET',
             headers: {
-              'Auth-API-Key': secretKey,
+              'Auth-API-Key': FPJS_SECRET_TOKEN,
             },
           })
           if (!response.ok) {
@@ -49,7 +48,9 @@ export const useBotD = () => {
     }
 
     getVisitorData()
-  }, [getData, reload, secretKey])
+    // Adding getData to deps make double call to coreApi no homepage and demopage
+    // eslint-disable-next-line
+  }, [reload])
 
   const refresh = () => {
     setReload(true)

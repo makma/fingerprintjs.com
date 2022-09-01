@@ -25,7 +25,7 @@ export default function DemoSection() {
 
     async function fetchVisits() {
       if (!visitorId) {
-        const data = await getData(true)
+        const data = await getData({ ignoreCache: true })
         setVisitorId(data?.visitorId)
         const visitsFpjs = [
           {

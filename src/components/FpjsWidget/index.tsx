@@ -42,7 +42,7 @@ export default memo(function FpjsWidget() {
 
     async function fetchVisits() {
       if (!visitorId) {
-        const data = await getData(true)
+        const data = await getData({ ignoreCache: true })
 
         setVisitorId(data?.visitorId)
         const visitsFpjs = [
@@ -91,7 +91,9 @@ export default memo(function FpjsWidget() {
     return () => {
       isCancelled = true
     }
-  }, [getData, visitorId, rollbar])
+    // we don't need to rerender when getData is called
+    // eslint-disable-next-line
+  }, [visitorId, rollbar])
 
   if (hasError) {
     return <LoadingState hasError />

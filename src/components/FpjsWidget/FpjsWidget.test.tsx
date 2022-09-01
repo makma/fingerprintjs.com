@@ -2,8 +2,7 @@ import React from 'react'
 import { renderWithProviders, screen, act } from '../../test/test-utils'
 import FpjsWidget from '.'
 import * as FPJS from '@fingerprintjs/fingerprintjs-pro'
-
-const fpjsLoadMock = FPJS.load as jest.Mock
+import * as fpjsReact from '@fingerprintjs/fingerprintjs-pro-react'
 
 beforeEach(() => {
   fetchMock.resetMocks()
@@ -103,9 +102,9 @@ describe('Fingerprint Demo Widget', () => {
       status: 200,
     })
 
-    fpjsLoadMock.mockResolvedValue({
-      get: jest.fn().mockResolvedValue(fpResponse),
-    })
+    jest.spyOn(fpjsReact, 'useVisitorData').mockImplementation(() => ({
+      getData: async () => fpResponse,
+    }))
 
     renderWithProviders(<FpjsWidget />)
     await act(() => Promise.resolve())
@@ -130,9 +129,9 @@ describe('Fingerprint Demo Widget', () => {
   it('Should display an error message if the visits endpoint fails or is blocked', async () => {
     fetchMock.mockReject(new Error('server error'))
 
-    fpjsLoadMock.mockResolvedValue({
-      get: jest.fn().mockResolvedValue(fpResponse),
-    })
+    jest.spyOn(fpjsReact, 'useVisitorData').mockImplementation(() => ({
+      getData: async () => fpResponse,
+    }))
 
     renderWithProviders(<FpjsWidget />)
     await act(() => Promise.resolve())
@@ -145,8 +144,11 @@ describe('Fingerprint Demo Widget', () => {
     fetchMock.mockResponseOnce(JSON.stringify(visitsHistory), {
       status: 200,
     })
-    fpjsLoadMock.mockRejectedValue(new Error())
-
+    jest.spyOn(fpjsReact, 'useVisitorData').mockImplementation(() => ({
+      getData: async () => undefined,
+      data: undefined,
+      error: new Error(),
+    }))
     renderWithProviders(<FpjsWidget />)
     await act(() => Promise.resolve())
 

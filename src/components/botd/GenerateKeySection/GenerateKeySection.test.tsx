@@ -3,9 +3,8 @@ import { renderWithProviders, screen, act } from '../../../test/test-utils'
 import userEvent from '@testing-library/user-event'
 import GenerateKeySection from './GenerateKeySection'
 import * as FPJS from '@fingerprintjs/fingerprintjs-pro'
+import * as fpjsReact from '@fingerprintjs/fingerprintjs-pro-react'
 import * as Turing from '@fpjs-incubator/turing'
-
-const fpjsLoadMock = FPJS.load as jest.Mock
 
 beforeAll(() => {
   jest.spyOn(Turing, 'ready').mockImplementation(async (fn) => fn())
@@ -29,13 +28,14 @@ describe('BotD - Generate Key Section', () => {
   }
 
   it('should show the generated keys if the form is submitted correctly', async () => {
-    fetchMock.mockResponseOnce(JSON.stringify(generatedKeys1set), {
+    fetchMock.mockResponse(JSON.stringify(generatedKeys1set), {
       status: 200,
     })
 
-    fpjsLoadMock.mockResolvedValue({
-      get: jest.fn().mockResolvedValue(fpResponse),
-    })
+    jest.spyOn(fpjsReact, 'useVisitorData').mockImplementation(() => ({
+      getData: async () => fpResponse,
+      data: fpResponse,
+    }))
 
     renderWithProviders(<GenerateKeySection />)
     await act(() => Promise.resolve())
@@ -53,9 +53,10 @@ describe('BotD - Generate Key Section', () => {
       status: 200,
     })
 
-    fpjsLoadMock.mockResolvedValue({
-      get: jest.fn().mockResolvedValue(fpResponse),
-    })
+    jest.spyOn(fpjsReact, 'useVisitorData').mockImplementation(() => ({
+      getData: async () => fpResponse,
+      data: fpResponse,
+    }))
 
     renderWithProviders(<GenerateKeySection />)
     await act(() => Promise.resolve())
@@ -74,9 +75,10 @@ describe('BotD - Generate Key Section', () => {
       status: 200,
     })
 
-    fpjsLoadMock.mockResolvedValue({
-      get: jest.fn().mockResolvedValue(fpResponse),
-    })
+    jest.spyOn(fpjsReact, 'useVisitorData').mockImplementation(() => ({
+      getData: async () => fpResponse,
+      data: fpResponse,
+    }))
 
     const { rerender } = renderWithProviders(<GenerateKeySection />)
     await act(() => Promise.resolve())
@@ -98,7 +100,10 @@ describe('BotD - Generate Key Section', () => {
   })
 
   it('should have the button disabled if the visitorId is missing', async () => {
-    fpjsLoadMock.mockRejectedValue(new Error())
+    jest.spyOn(fpjsReact, 'useVisitorData').mockImplementation(() => ({
+      getData: async () => undefined,
+      data: undefined,
+    }))
 
     renderWithProviders(<GenerateKeySection />)
     await act(() => Promise.resolve())
@@ -109,9 +114,10 @@ describe('BotD - Generate Key Section', () => {
   it('should show an error message if the endpoint fails', async () => {
     fetchMock.mockReject(new Error('server error'))
 
-    fpjsLoadMock.mockResolvedValue({
-      get: jest.fn().mockResolvedValue(fpResponse),
-    })
+    jest.spyOn(fpjsReact, 'useVisitorData').mockImplementation(() => ({
+      getData: async () => fpResponse,
+      data: fpResponse,
+    }))
 
     renderWithProviders(<GenerateKeySection />)
     await act(() => Promise.resolve())
@@ -133,9 +139,10 @@ describe('BotD - Generate Key Section', () => {
       { status: 400 }
     )
 
-    fpjsLoadMock.mockResolvedValue({
-      get: jest.fn().mockResolvedValue(fpResponse),
-    })
+    jest.spyOn(fpjsReact, 'useVisitorData').mockImplementation(() => ({
+      getData: async () => fpResponse,
+      data: fpResponse,
+    }))
 
     renderWithProviders(<GenerateKeySection />)
     await act(() => Promise.resolve())
