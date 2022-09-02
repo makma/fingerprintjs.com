@@ -1,7 +1,7 @@
 ---
 templateKey: long-form-content
 metadata:
-  title: What is loan fraud?
+  title: The basics of loan fraud and how to prevent it
   description: "In 2021, the National Mortgage Application Fraud Risk Index
     increased by 15% between the 2021 first quarter and the first quarter of
     2022. Credit card fraud also skyrocketed by the last quarter of 2021. Fraud
@@ -14,7 +14,7 @@ metadata:
   socialImage: /img/uploads/what-is-loan-protection-and-loan-protection-fraud_.png
 featured: true
 publishDate: 2022-09-02T17:20:50.100Z
-title: What is loan fraud?
+title: The basics of loan fraud and how to prevent it
 isPublished: true
 isHidden: false
 tags:
@@ -52,9 +52,9 @@ To take it a step further, some attackers use scripts to test credentials purcha
 
 Every online entity experiences bot traffic, but recent research [shows](https://www.imperva.com/resources/resource-library/reports/bad-bot-report/) that about 28% of bot activity on the internet is nefarious. Bots work faster than humans so that attackers can cover many more sites and target victims in a short amount of time. Specific factors signal that traffic is bot activity, such as unusual user agents, missing headers, and high-speed web activity. However, a good bot creator designs scripts to factor in human elements to bypass simple fraud detection.
 
-We recently published a guide to bot attacks and protecting against them: [Bots Are Taking Over The Web - Here’s How to Fight Back](https://fingerprint.com/blog/what-are-bots-how-to-detect-bots/). 
-
-Take a look at a popular account takeover tool called Sentry MBA. With software like Sentry MBA, scammers can test millions of usernames and passwords on a targeted site, and because of its availability and ease of use, it’s become incredibly popular.
+> *We recently published a guide to bot attacks and protecting against them: [Bots Are Taking Over The Web - Here’s How to Fight Back](https://fingerprint.com/blog/what-are-bots-how-to-detect-bots/).* 
+>
+> Take a look at a popular account takeover tool called Sentry MBA. With software like Sentry MBA, scammers can test millions of usernames and passwords on a targeted site, and because of its availability and ease of use, it’s become incredibly popular.
 
 ![Sentry MBA screenshot](/img/uploads/screen-shot-2022-09-02-at-10.21.56-am.png "Sentry MBA screenshot")
 
