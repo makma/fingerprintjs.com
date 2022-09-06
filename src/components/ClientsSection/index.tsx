@@ -2,6 +2,7 @@ import React from 'react'
 import Section from '../common/Section'
 import Container from '../common/Container'
 import styles from './ClientsSection.module.scss'
+import classNames from 'classnames'
 import { ReactComponent as EbaySVG } from '../../../static/img/company-logos/ebay.svg'
 import { ReactComponent as TargetSVG } from '../../../static/img/company-logos/target.svg'
 import { ReactComponent as UsBankSVG } from '../../../static/img/company-logos/us-bank.svg'
@@ -9,7 +10,7 @@ import { ReactComponent as BookingSVG } from '../../../static/img/company-logos/
 import { ReactComponent as AmeritradeSVG } from '../../../static/img/company-logos/ameritrade.svg'
 import { ReactComponent as HsnSVG } from '../../../static/img/company-logos/hsn.svg'
 import { ReactComponent as AgodaSVG } from '../../../static/img/company-logos/agoda.svg'
-import { ReactComponent as BAndHSVG } from '../../../static/img/company-logos/b_and_h.svg'
+import { ReactComponent as RealtorSVG } from '../../../static/img/company-logos/realtor.svg'
 import { ReactComponent as CoinBaseSVG } from '../../../static/img/company-logos/coinbase.svg'
 import { ReactComponent as HomeCreditSVG } from '../../../static/img/company-logos/home-credit.svg'
 import { ReactComponent as RockstarSVG } from '../../../static/img/company-logos/rockstar.svg'
@@ -28,20 +29,20 @@ export default function ClientsSection() {
           </h2>
         </header>
         <div className={styles.content}>
-          <CompanyLogo icon={EbaySVG} />
-          <CompanyLogo icon={TargetSVG} />
-          <CompanyLogo icon={UsBankSVG} />
-          <CompanyLogo icon={BookingSVG} />
-          <CompanyLogo icon={AmeritradeSVG} />
-          <CompanyLogo icon={HsnSVG} />
-          <CompanyLogo icon={AgodaSVG} />
-          <CompanyLogo icon={CoinBaseSVG} />
-          <CompanyLogo icon={BAndHSVG} />
-          <CompanyLogo icon={HomeCreditSVG} />
-          <CompanyLogo icon={RockstarSVG} />
-          <CompanyLogo icon={CheckoutSVG} />
-          <CompanyLogo icon={WesterUnionSVG} />
-          <CompanyLogo icon={YahooSVG} />
+          <CompanyLogo icon={EbaySVG} className={styles.EbaySVG} />
+          <CompanyLogo icon={TargetSVG} className={styles.TargetSVG} />
+          <CompanyLogo icon={UsBankSVG} className={styles.UsBankSVG} />
+          <CompanyLogo icon={BookingSVG} className={styles.BookingSVG} />
+          <CompanyLogo icon={AmeritradeSVG} className={styles.AmeritradeSVG} />
+          <CompanyLogo icon={HsnSVG} className={styles.HsnSVG} />
+          <CompanyLogo icon={AgodaSVG} className={styles.AgodaSVG} />
+          <CompanyLogo icon={RealtorSVG} className={styles.RealtorSVG} link='https://www.realtor.com/' />
+          <CompanyLogo icon={CoinBaseSVG} className={styles.CoinBaseSVG} />
+          <CompanyLogo icon={HomeCreditSVG} className={styles.HomeCreditSVG} />
+          <CompanyLogo icon={RockstarSVG} className={styles.RockstarSVG} />
+          <CompanyLogo icon={CheckoutSVG} className={styles.CheckoutSVG} />
+          <CompanyLogo icon={WesterUnionSVG} className={styles.WesterUnionSVG} />
+          <CompanyLogo icon={YahooSVG} className={styles.YahooSVG} />
         </div>
       </Container>
     </Section>
@@ -50,11 +51,17 @@ export default function ClientsSection() {
 
 interface CompanyLogoProps {
   icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
+  className: string
+  link?: string
 }
-function CompanyLogo({ icon: Icon }: CompanyLogoProps) {
-  return (
+function CompanyLogo({ icon: Icon, className, link }: CompanyLogoProps) {
+  return link ? (
+    <a className={styles.slide} href={link} target='_blank' rel='noreferrer'>
+      <Icon className={classNames(styles.logo, className)} />
+    </a>
+  ) : (
     <span className={styles.slide}>
-      <Icon className={styles.logo} />
+      <Icon className={classNames(styles.logo, className)} />
     </span>
   )
 }
