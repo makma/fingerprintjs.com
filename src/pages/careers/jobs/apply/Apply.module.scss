@@ -62,6 +62,14 @@
       list-style-type: disc;
       list-style-position: inside;
     }
+    a {
+      cursor: pointer;
+      color: v('brand-fire');
+
+      &:hover {
+        color: adjust-color(c('brand-fire'), $lightness: -20%);
+      }
+    }
     .questionTag {
       margin: rem(24px) 0;
     }
