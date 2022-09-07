@@ -1,21 +1,21 @@
 <svg viewBox="0 0 90 54" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path fill="#0D102B" d="M0 0h90v54H0z" />
-    <rect width="54" height="54" rx="27" fill="url(#a)" />
-    <rect x=".45" y=".45" width="53.1" height="53.1" rx="26.55" stroke="url(#b)" stroke-opacity=".1"
+    <rect width="54" height="54" rx="27" fill="url(#gradient1)" />
+    <rect x=".45" y=".45" width="53.1" height="53.1" rx="26.55" stroke="url(#gradient2)" stroke-opacity=".1"
         stroke-width=".9" />
     <rect x="36" width="54" height="54" rx="27" fill="#fff" fill-opacity=".1" />
-    <rect x="36.45" y=".45" width="53.1" height="53.1" rx="26.55" stroke="url(#c)" stroke-opacity=".2"
+    <rect x="36.45" y=".45" width="53.1" height="53.1" rx="26.55" stroke="url(#gradient3)" stroke-opacity=".2"
         stroke-width=".9" />
     <defs>
-        <linearGradient id="a" x1="6.457" y1="0" x2="46.37" y2="61.63" gradientUnits="userSpaceOnUse">
+        <linearGradient id="gradient1" x1="6.457" y1="0" x2="46.37" y2="61.63" gradientUnits="userSpaceOnUse">
             <stop stop-color="#fff" />
             <stop offset="1" stop-color="#fff" stop-opacity="0" />
         </linearGradient>
-        <linearGradient id="b" x1="17.609" y1="0" x2="44.022" y2="54" gradientUnits="userSpaceOnUse">
+        <linearGradient id="gradient2" x1="17.609" y1="0" x2="44.022" y2="54" gradientUnits="userSpaceOnUse">
             <stop stop-color="#fff" />
             <stop offset="1" stop-color="#fff" stop-opacity="0" />
         </linearGradient>
-        <linearGradient id="c" x1="84.566" y1="49.645" x2="43.2" y2="3.15" gradientUnits="userSpaceOnUse">
+        <linearGradient id="gradient3" x1="84.566" y1="49.645" x2="43.2" y2="3.15" gradientUnits="userSpaceOnUse">
             <stop stop-color="#fff" />
             <stop offset="1" stop-color="#fff" stop-opacity="0" />
             <stop offset="1" stop-color="#fff" stop-opacity="0" />
