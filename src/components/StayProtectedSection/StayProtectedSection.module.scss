@@ -1,4 +1,9 @@
 .stayProtected {
+  padding-top: rem(96px);
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(48px);
+  }
   .header {
     text-align: center;
   }

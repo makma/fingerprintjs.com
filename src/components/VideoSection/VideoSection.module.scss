@@ -1,0 +1,16 @@
+.root {
+  padding-bottom: 0;
+  padding-top: rem(96px);
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(64px);
+  }
+}
+.container {
+  display: flex;
+  justify-content: center;
+  .iframe {
+    aspect-ratio: 16 / 9;
+    border-radius: rem(8px);
+  }
+}

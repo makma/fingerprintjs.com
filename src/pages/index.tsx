@@ -10,7 +10,7 @@ import Billing from '../components/Billing'
 import SOCSection from '../components/SOCSection/SOCSection'
 import { SEO } from '../components/SEO/SEO'
 import { withPrefix } from 'gatsby'
-
+import VideoSection from '../components/VideoSection/VideoSection'
 import ProToolsSection from '../components/ProToolsSection'
 import StayProtectedSection from '../components/StayProtectedSection'
 
@@ -27,6 +27,7 @@ export default function IndexPage() {
         <Billing />
         <SOCSection />
         <ProToolsSection />
+        <VideoSection />
         <StayProtectedSection />
       </div>
     </Layout>

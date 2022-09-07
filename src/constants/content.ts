@@ -44,6 +44,7 @@ export const URL = {
   discordServerURL: 'https://discord.gg/ad6R2ttHVX',
   contactSalesCalendar: CONTACT_SALES_CALENDAR,
   docsUrl: 'https://dev.fingerprint.com',
+  promotionalVideo: 'https://www.youtube.com/embed/UEYBysyPTBs',
 } as const
 
 export const MAILTO = { mailToUrl: `mailto:${URL.supportMail}` } as const
