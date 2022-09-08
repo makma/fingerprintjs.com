@@ -2,10 +2,10 @@
 templateKey: long-form-content
 metadata:
   title: "[WEBINAR] The State of Payment Fraud & How to Prevent It "
-  socialImage: /img/uploads/emailimage.png
+  socialImage: /img/uploads/webinar2blog.png
   imageAlt: webinar invite payment fraud
   imageTitle: webinar invite payment fraud
-  image: /img/uploads/emailimage.png
+  image: /img/uploads/webinar2blog.png
   url: https://fingerprint.com/blog/webinar-payment-fraud-2022
   description: "We’re sitting down to walk through the types and impact of payment
     fraud in our upcoming webinar on September 28th: The State of Payment Fraud
@@ -21,7 +21,7 @@ tags:
 authors:
   - Courtney Rogin
 heroImage:
-  image: /img/uploads/emailimage.png
+  image: /img/uploads/webinar2blog.png
   imageAlt: webinar invite payment fraud
   imageTitle: webinar invite payment fraud
 customCTA:
