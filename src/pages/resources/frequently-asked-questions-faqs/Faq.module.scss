@@ -1,0 +1,90 @@
+.section {
+  padding: rem(96px) 0 rem(128px) 0;
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(40px);
+  }
+
+  .container {
+    text-align: center;
+
+    .header {
+      .title {
+        @include sans($size: 44px, $weight: 700, $lh: 120%);
+        letter-spacing: -0.02em;
+        text-align: left;
+
+        @include media('<=phoneLandscape') {
+          font-size: rem(32px);
+        }
+      }
+    }
+  }
+}
+.toc {
+  padding-top: rem(32px);
+
+  list-style-type: disc;
+  list-style-position: inside;
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(24px);
+  }
+  .item {
+    text-align: left;
+
+    .itemLink {
+      @include sans($size: 20px, $weight: 400, $lh: 32px, $color: v('brand-fire'));
+      text-decoration: underline;
+      cursor: pointer;
+
+      @include media('<=phoneLandscape') {
+        line-height: 24px;
+        letter-spacing: 0.001em;
+        font-size: rem(16px);
+      }
+    }
+
+    padding-bottom: rem(4px);
+    &::marker {
+      color: v('brand-fire');
+      content: '>\00a0\00a0'; /* added non-breaking spaces to prevent collapsing whitespace in Firefox due to https://bugzil.la/1696712  */
+    }
+    @include media('<=phoneLandscape') {
+      padding-bottom: rem(2px);
+    }
+  }
+}
+.faqSection {
+  padding-top: rem(76px);
+
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(56px);
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(44px);
+  }
+
+  .faq {
+    .faqTitle {
+      @include scrollSection;
+
+      text-align: left;
+      @include sans($size: 24px, $weight: 700, $lh: 36px);
+      letter-spacing: -0.01em;
+      padding-bottom: rem(32px);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(20px);
+      }
+    }
+    .faqContent {
+      max-width: rem(584px);
+      text-align: left;
+    }
+    .link {
+      text-decoration: underline;
+    }
+  }
+}

@@ -10,6 +10,8 @@
   display: flex;
   justify-content: center;
   .iframe {
+    @include scrollSection;
+
     aspect-ratio: 16 / 9;
     border-radius: rem(8px);
   }

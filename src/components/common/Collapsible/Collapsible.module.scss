@@ -29,9 +29,9 @@ $side-padding: 2rem;
     font-weight: bold;
 
     &.headerPlus {
-      font-weight: v('semi');
-      font-family: v(ff-sans);
-      font-size: rem(18px);
+      @include sans($size: 16px, $weight: 600, $lh: 22px);
+      text-align: left;
+      letter-spacing: -0.005em;
 
       padding: rem(20px) rem(24px);
 

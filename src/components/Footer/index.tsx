@@ -113,6 +113,11 @@ const footerLinks: FooterLinkSection[] = [
         url: `${PATH.security}`,
         isLocal: true,
       },
+      {
+        title: 'FAQ',
+        url: `${PATH.faq}`,
+        isLocal: true,
+      },
     ],
   },
 ]

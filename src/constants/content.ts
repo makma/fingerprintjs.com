@@ -23,6 +23,7 @@ export const PATH = {
   support: '/support/',
   security: '/security/',
   useCases: '/use-cases/',
+  faq: '/resources/frequently-asked-questions-faqs/',
 } as const
 
 export const URL = {
@@ -66,6 +67,7 @@ export const DOC_URL = {
   webhooksUrl: `${URL.docsUrl}/docs/webhooks`,
   botDUrl: 'https://github.com/fingerprintjs/BotD#botd-currently-in-beta',
   zeroTrustUrl: `${URL.docsUrl}/docs/zero-trust-mode`,
+  bestPracticesUrl: `${URL.docsUrl}/docs/best-practices`,
 } as const
 
 export const useCaseLinks = [
