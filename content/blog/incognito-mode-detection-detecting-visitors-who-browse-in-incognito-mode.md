@@ -24,13 +24,13 @@ heroImage:
   imageAlt: Incognito mode detection
   imageTitle: Incognito mode detection
 ---
-Browsers attempt to ensure a user’s privacy by offering Incognito mode, which allows the user to surf the internet without worrying about their history, cookies, or the information they enter being saved permanently. However, in a lot of business use cases, this can end up being harmful. Visitors may use Incognito mode to gain unlimited access to content, bypassing paywalls undetected. 
+Browsers attempt to ensure a user’s privacy by offering Incognito mode, which allows the user to surf the internet without worrying about their history, cookies, or information being saved permanently. However, in many business use cases, this can end up being harmful. For example, visitors may use Incognito mode to gain unlimited content access, bypassing undetected paywalls.
 
-We’ll go over four methods of detecting visitors using Incognito mode and discuss which browsers support these methods. In the end, we’ll compare these methods to using [Fingerprint](/), which makes it all easier.
+We’ll review four methods of detecting visitors using Incognito mode and discuss which browsers support these methods. Ultimately, we’ll compare these methods to [Fingerprint](https://fingerprint.com/), making it all easier.
 
 ## Method 1: Access Timings
 
-This method was discovered by [Jesse Li](https://blog.jse.li/posts/chrome-76-incognito-filesystem-timing/). When the browser is in Incognito mode, the [Filesystem API](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem) writes are faster in Chrome. This is due to the fact that Chrome uses a temporary filesystem with a limited storage quota of 120 MB.
+[Jesse Li](https://blog.jse.li/posts/chrome-76-incognito-filesystem-timing/) discovered this method. When the browser is in Incognito mode, the [Filesystem API](https://developer.mozilla.org/en-US/docs/Web/API/FileSystem) writes faster in Chrome because Chrome uses a temporary filesystem with a limited storage quota of 120 MB.
 
 To test this, first create an array of randomly generated large strings:
 
@@ -44,7 +44,7 @@ const strings = [
 ]
 ```
 
-They have been truncated here for simplicity. These strings are 5000 characters long and they’re generated using the following command:
+They have been truncated here for simplicity. These strings are 5000 characters long, and generated using the following command:
 
 ```
 base64 /dev/urandom -w 0 | head -c 5000
@@ -66,7 +66,7 @@ Next, use `window.webkitRequestFileSystem`, which lets you gain access to a sand
 window.webkitRequestFileSystem(window.TEMPORARY, SIZE, onInit)
 ```
 
-The first parameter this function takes is `type`, which can either be `window.TEMPORARY` or `window.PERSISTENT`. Since you’re testing the temporary filesystem storage, use `window.TEMPORARY`. The second parameter is the size of storage you need allocated, and the third is a callback function (which you’ll define in a bit) that will accept the filesystem instance.
+The first parameter this function takes is `type`, which can either be `window.TEMPORARY` or `window.PERSISTENT`. Since you’re testing the temporary filesystem storage, use `window.TEMPORARY`. The second parameter is the storage size you need to be allocated, and the third is a callback function (which you’ll define in a bit) that will accept the filesystem instance.
 
 Next, define the `onInit` function, which will loop for `NB_TIMINGS` (which you declared above) times and calls the function `writeFiles` (which you’ll define shortly). This passes it the `filesystem` instance that `window.webkitRequestFileSystem` passes to the callback, which in this case is `onInit`. Then push the time it takes into a timing array (which you’ll see once execution is done):
 
@@ -151,17 +151,17 @@ As Edge is now [using Chromium for its engine](https://www.computerworld.com/art
 
 ### Testing on Other Major Browsers
 
-Testing this method on other major browsers like Firefox, Safari, and Opera will not work, as the `requestFileSystem` function is not supported. 
+Testing this method on other major browsers like Firefox, Safari, and Opera will not work, as the requestFileSystem function is not supported.
 
-Furthermore, using this method even with Chrome and Edge is not very optimal. When used to compare a visitor in Incognito mode and one not, it will likely require a lot of estimation.
+Furthermore, this method, even with Chrome and Edge is not optimal. Compared to a visitor in Incognito mode and one not, it will likely require a lot of estimation.
 
-Also, after repeated testing on Chrome, the same behavior pertained but the result decreased significantly for both Incognito and non-Incognito modes. It was also recorded that the browser behaved oddly afterward. Subjecting your visitors to a similar method would not be a good idea.
+Also, the same behavior pertained after repeated testing on Chrome, but the result decreased significantly for both Incognito and non-Incognito modes, and the browser behaved oddly afterward. Therefore, subjecting your visitors to a similar method would not be a good idea.
 
 ## Method 2: Filesystem Quotas
 
-Another method to detect whether the user is in Incognito mode or not is the [StorageManager API](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager) method `estimate`. This method estimates how much storage the website is using and how much is available for it to use. 
+Another method to detect whether the user is in Incognito mode or not is the [StorageManager API](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager) method estimate. This method estimates how much storage the website uses and how much is available for it to use.
 
-The code for this method is simple. If the estimated storage available is less than 120 MB, then the user is in Incognito mode.
+The code for this method is simple. If the estimated storage is less than 120 MB, then the user is in Incognito mode.
 
 You can test this by adding the following code to a script:
 
@@ -178,7 +178,7 @@ Then, in the HTML, add the element with ID `answer` to see the result:
 <div id="answer"></div>
 ```
 
-If the user is in Incognito mode, the element answer should have the text `Yes`. Otherwise it should be `No`.
+If the user is in Incognito mode, the element answer should have the text `Yes`. Otherwise, it should be `No`.
 
 ### Testing on Chrome
 
@@ -206,15 +206,15 @@ Both show the answer `No`, which means this method cannot be used to detect Inco
 
 ### Testing on Other Browsers
 
-This method also did not work on Edge. On Safari, `navigator.storage.estimate` is not supported.
+This method also did not work on Edge. On Safari, `navigator.storage.estimate` it is not supported.
 
-This method is now outdated and should not be used, as it does not work on any current browser. It only works for users on Chrome versions 74–84.
+This method is outdated and should not be used, as it does not work on any current browser. It only works for users on Chrome versions 74–84.
 
 ## Method 3: IndexedDB API
 
-The [IndexedDB API](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) is used for storing large data like files and blobs. This method is simple. Basically, if IndexedDB is available, the browser is not in Incognito mode. [This was first detected on Firefox 60](https://bugzilla.mozilla.org/show_bug.cgi?id=1571016).
+The [IndexedDB API](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) is used for storing large data like files and blobs. This method is simple. If IndexedDB is available, the browser is not in Incognito mode. [This was first detected on Firefox 60](https://bugzilla.mozilla.org/show_bug.cgi?id=1571016).
 
-More specifically, if the method `indexedDB.open` does not throw an error, then the browser is not using Incognito mode. You can test this by creating a script with the following code:
+More specifically, if the method `indexedDB.open` does not throw an error, the browser is not using Incognito mode. You can test this by creating a script with the following code:
 
 ```js
 const answerElm = document.getElementById('answer'), 
@@ -237,7 +237,7 @@ Testing this script on Firefox 88, you can see the following result using Incogn
 
 ![Testing on Firefox without Incognito - Method 3](https://i.imgur.com/kdVhVCX.png)
 
-And the following result not in Incognito mode:
+And the following result is not in Incognito mode:
 
 ![Testing on Firefox with Incognito - Method 3](https://i.imgur.com/qS6mtTI.png)
 
@@ -253,7 +253,7 @@ And the same result when Incognito mode was used:
 
 ![Testing on Chrome with Incognito - Method 3](https://i.imgur.com/719Fr6N.png)
 
-This means that this method does not work on Chrome. There were no reported incidents that showcase that it ever worked on Chrome.
+This means that this method does not work on Chrome. There were no reported incidents that showcased that it ever worked on Chrome.
 
 ### Testing on Safari
 
@@ -261,7 +261,7 @@ When testing on Safari 14 on iOS, you get the same result when not in Incognito 
 
 ![Testing on Safari without Incognito - Method 3](https://i.imgur.com/SSHmbri.png)
 
-and with Incognito:
+And with Incognito:
 
 ![Testing on Safari with Incognito - Method 3](https://i.imgur.com/Lm4OPUL.png)
 
@@ -271,7 +271,7 @@ Although this method is simple, it’s not enough as it only detects Incognito m
 
 ## Method 4: Local Storage
 
-[This method was detected](https://stackoverflow.com/a/12821418) in Safari prior to version 11. In Incognito or Private mode, Safari disabled the local storage.
+[This method was detected](https://stackoverflow.com/a/12821418) in Safari before version 11. In Incognito or Private mode, Safari disabled the local storage.
 
 You can test this by creating a script with the following code:
 
@@ -293,7 +293,7 @@ try {
 }
 ```
 
-`localStorage.setItem` tests if the `localStorage` is working. If it is, then the user is not in Incognito mode. If an error is thrown and the type of error is `DOMException.QUOTA_EXCEEDED_ERR` and the length of local storage is 0, then the user is in Incognito mode. Otherwise, the error thrown could be for some other reason.
+`localStorage.setItem` tests if the `localStorage` is working. If it is, then the user is not in Incognito mode. If an error is thrown and the type of error is `DOMException.QUOTA_EXCEEDED_ERR,` and the length of local storage is 0, then the user is in Incognito mode. Otherwise, the error thrown could be for some other reason.
 
 Again, make sure to add the following element in the HTML document to see the result:
 
@@ -311,7 +311,7 @@ And the same result for Incognito mode:
 
 ![Testing on Safari with Incognito - Method 4](https://i.imgur.com/cpgygcq.png)
 
-This method does not work on Safari anymore, and it was not reported to work on any other major browser.
+This method does not work on Safari anymore and was not reported to work on any other major browser.
 
 ## Method 5: Fingerprint
 
@@ -319,25 +319,25 @@ After going through all the previous methods and experiencing their limitations,
 
 Fingerprint is helpful in many use cases, including:
 
-* Preventing account fraud or fake accounts by making sure all your visitors are real. 
+* Prevent account fraud or fake accounts by ensuring all your visitors are real. 
 * Making sure all payments are made securely, preventing fraudulent payments.
 * Protecting your content, making sure users don’t bypass your paywall.
 
 ### How It Works
 
-[Create a free account](https://dashboard.fingerprint.com/signup). Enter your email to begin the onboarding process, entering some information like your website name. Accept the terms and conditions, and finally you will be given a code snippet to add to your website.
+[Create a free account](https://dashboard.fingerprint.com/signup). Enter your email to begin the onboarding process, entering some information like your website name. Accept the terms and conditions, and finally, you will be given a code snippet to add to your website.
 
 ![Code Snippet from Fingerprint](https://i.imgur.com/mZhJ6x1.png)
 
 This snippet loads the Fingerprint script to your webpage from the CDN. Once it’s loaded, you can start using Fingerprint with the API key given to your account (it’s part of the code in the snippet). 
 
-Before adding this code to your website, make sure to check your email and verify your email address with Fingerprint first. This is necessary for the subscription to take effect.
+Before adding this code to your website, check your email and verify your email address with Fingerprint first. This is necessary for the subscription to take effect.
 
-Once you’ve verified your email, go ahead and add this script to any of your webpages. If everything is correct, the same page that showed you the code snippet should take you to the dashboard:
+Once you’ve verified your email, go ahead and add this script to any of your web pages. If everything is correct, the same page that showed you the code snippet should take you to the dashboard:
 
 ![Fingerprint dashboard](https://i.imgur.com/F3PtEHW.png)
 
-You can see that one user is already detected, and that user is you!
+You can see that one user is already detected and that user is you!
 
 We can pass the ["extendedResult"](https://dev.fingerprint.com/docs/js-agent#extendedresult) option in the "get" method to return details about the visitor, including whether they are using Incognito or not.
 
@@ -356,10 +356,10 @@ function initFingerprintJS() {
 }
 ```
 
-If everything is correct, the response should include multiple parameters including browser and device details. For our purposes we only need to focus on two parameters:
+The response should include multiple parameters, including browser and device details if everything is correct. For our purposes, we only need to focus on two parameters:
 
 1. **visitorID:** The ID of the visitor you just passed.
-2. **incognito**: A true or false value that shows whether a visitor is using incognito mode. If the user is in Incognito mode, its value will be `true`, otherwise `false`.
+2. **incognito**: A true or false value that shows whether a visitor uses incognito mode. If the user is in Incognito mode, its value will be `true`, otherwise `false`.
 
 Finally, to see the “answer,” add the following in the HTML:
 
@@ -417,22 +417,23 @@ Using Safari 14 on iOS, Fingerprint was able to detect when not using Incognito:
 
 ![Testing on Safari without Incognito - Method 5](https://i.imgur.com/V9EpIhT.png)
 
-and when using it:
+And when using it:
 
 ![Testing on Safari with Incognito - Method 5](https://i.imgur.com/pbuPqOx.png)
 
 ### Browser Support
 
-[Fingerprint](https://dev.fingerprint.com/docs/browser-support) supports the following browsers and their versions are supported:
+[Fingerprint](https://dev.fingerprint.com/docs/browser-support) supports the following browser versions:
 
 * Internet Explorer 11
-* Edge 18 and 85+
-* Chrome 42+
-* Firefox 48+
-* Desktop Safari 11.1+
-* Mobile Safari 9.3+
-* Samsung Internet 11.1+
-* Android Browser 4.1+
+* Edge 93+
+* Chrome 49+
+* Firefox 52+
+* Desktop Safari 12.1+
+* Mobile Safari 10.3+
+* Samsung Internet 14.1+
+* Android Browser 4.4+
+* Brave all versions
 
 For an up-to-date list of currently supported versions, visit [this link](https://dev.fingerprint.com/docs/browser-support).
 
@@ -440,14 +441,14 @@ Some old browsers like IE11 and Android Browser 4.1 will need a [Promise polyfil
 
 ### Comparing This Method to Previous Ones
 
-Using Fingerprint is definitely a better solution than previous methods. First, setting up Fingerprint and adding the code to your website is a five-minute process. It’s very easy and does not rely on “quirks” or different methods based on which browser the user might be using.
+Using Fingerprint is a better solution than previous methods. First, setting up Fingerprint and adding the code to your website is a five-minute process. It’s straightforward and does not rely on “quirks” or different methods based on which browser the user might be using.
 
-Second, Fingerprint is the only method that’s capable of detecting Incognito mode on *all* major browsers. All the other methods detect Incognito mode only on some browsers, and most are outdated and don’t work anymore.
+Second, Fingerprint is the only method capable of detecting Incognito mode on *all* major browsers. All the other techniques detect Incognito mode only on some browsers, and most are outdated and don’t work anymore.
 
-Not only is Fingerprint easy to integrate, but you can use it in different ways. There’s the CDN way that you used above, but you can also install it with [NPM](https://dev.fingerprint.com/docs/js-agent#ecmascript-module) or use it with [RequireJS](https://dev.fingerprint.com/docs/js-agent#umd). This makes it a flexible solution for whatever kind of architecture you have for your project.
+Not only is Fingerprint easy to integrate, but you can use it in different ways. For example, you used the CDN method above, but you can also install it with [NPM](https://dev.fingerprint.com/docs/js-agent#ecmascript-module) or use it with [RequireJS](https://dev.fingerprint.com/docs/js-agent#umd). This makes it a flexible solution for whatever kind of architecture you have for your project.
 
 ## Conclusion
 
-In recent years, browsers are making it harder to detect Incognito mode, making it a perpetual task to ensure your website’s detection methods are up to date and can still detect a visitor’s identity. It will only continue to become harder to find a method that accurately detects the visitor. 
+In recent years, browsers have been making it harder to detect Incognito mode, making it a perpetual task to ensure your website’s detection methods are up to date and can still detect a visitor’s identity. Unfortunately, it will only continue to become harder to find a method that accurately detects the visitor.
 
-[Fingerprint](/) is the optimal solution to keep businesses safe from visitors that take advantage of Incognito mode to access limited content.
+[Fingerprint](/) is the optimal solution to keep businesses safe from visitors using Incognito mode to access limited content.
