@@ -55,7 +55,9 @@ module.exports = {
     siteUrl: baseUrl,
     image: 'https://fingerprint.com/img/fpjs-preview.png',
   },
-  graphqlTypegen: true,
+  graphqlTypegen: {
+    generateOnBuild: true,
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-env-variables`,
@@ -246,25 +248,6 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-netlify', // make sure to keep it last in the array
-      options: {
-        mergeSecurityHeaders: false,
-        headers: {
-          '/*': [
-            `X-Frame-Options: DENY`,
-            `X-XSS-Protection: 1; mode=block`,
-            `X-Content-Type-Options: nosniff`,
-            `Referrer-Policy: no-referrer-when-downgrade`,
-          ],
-          '/*.html': ['cache-control: public, max-age=0, must-revalidate'],
-          '/page-data/*': ['cache-control: public, max-age=0, must-revalidate'],
-          '/static/*': ['cache-control: public, max-age=31536000, immutable'],
-          '/**/*.js': ['cache-control: public, max-age=31536000, immutable'],
-          '/**/*.css': ['cache-control: public, max-age=31536000, immutable'],
-        },
-      },
-    },
     'gatsby-plugin-catch-links',
     {
       resolve: `gatsby-plugin-feed`,
@@ -309,6 +292,25 @@ module.exports = {
             title: 'Fingerprint Blog RSS Feed',
           },
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-netlify', // make sure to keep it last in the array
+      options: {
+        mergeSecurityHeaders: false,
+        headers: {
+          '/*': [
+            `X-Frame-Options: DENY`,
+            `X-XSS-Protection: 1; mode=block`,
+            `X-Content-Type-Options: nosniff`,
+            `Referrer-Policy: no-referrer-when-downgrade`,
+          ],
+          '/*.html': ['cache-control: public, max-age=0, must-revalidate'],
+          '/page-data/*': ['cache-control: public, max-age=0, must-revalidate'],
+          '/static/*': ['cache-control: public, max-age=31536000, immutable'],
+          '/**/*.js': ['cache-control: public, max-age=31536000, immutable'],
+          '/**/*.css': ['cache-control: public, max-age=31536000, immutable'],
+        },
       },
     },
   ],

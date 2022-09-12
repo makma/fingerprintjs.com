@@ -122,7 +122,7 @@ export const FPJS_REGION = process.env.GATSBY_FPJS_REGION
 export const FPJS_DASHBOARD_ENDPOINT = process.env.GATSBY_FPJS_DASHBOARD_ENDPOINT
 export const GITHUB_API_TOKEN = process.env.GATSBY_GITHUB_API_TOKEN
 export const MAPBOX_ACCESS_TOKEN = process.env.GATSBY_MAPBOX_ACCESS_TOKEN
-export const ROLLBAR_ACCESS_TOKEN = process.env.GATSBY_ROLLBAR_ACCESS_TOKEN
+export const ROLLBAR_ACCESS_TOKEN = process.env.GATSBY_ROLLBAR_ACCESS_TOKEN ?? ''
 export const BRANCH = process.env.BRANCH
 
 export const HOST =
