@@ -1,7 +1,7 @@
 ---
 templateKey: long-form-content
 metadata:
-  title: The basics of loan fraud and how to prevent it
+  title: The Basics of Loan Fraud and How To Prevent It
   description: "In 2021, the National Mortgage Application Fraud Risk Index
     increased by 15% between the 2021 first quarter and the first quarter of
     2022. Credit card fraud also skyrocketed by the last quarter of 2021. Fraud
@@ -14,7 +14,7 @@ metadata:
   socialImage: /img/uploads/what-is-loan-protection-and-loan-protection-fraud_.png
 featured: true
 publishDate: 2022-09-02T17:20:50.100Z
-title: The basics of loan fraud and how to prevent it
+title: The Basics of Loan Fraud and How To Prevent It
 isPublished: true
 isHidden: false
 tags:
