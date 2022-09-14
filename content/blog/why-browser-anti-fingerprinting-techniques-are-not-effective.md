@@ -55,7 +55,7 @@ Under the hood, this flag controls what values are returned from various web API
 * The [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) CSS media feature will always match “light.” 
 * The [`navigator.hardwareConcurrency`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/hardwareConcurrency) read-only property is set to 2.
 * The [`navigator.maxTouchPoints`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/maxTouchPoints) read-only property is set to 0.
-* The[`screen.colorDepth`](https://developer.mozilla.org/en-US/docs/Web/API/Screen/colorDepth)read-only property is set to 24.
+* The [`screen.colorDepth`](https://developer.mozilla.org/en-US/docs/Web/API/Screen/colorDepth) read-only property is set to 24.
 * The default time zone obtained by calling [`window.Intl.DateTimeFormat()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) is always UTC.
 
 However, sometimes the spoofed, fixed values are platform-dependent. A comment in [Gecko’s source code](https://github.com/mozilla/gecko-dev/blob/master/toolkit/components/resistfingerprinting/nsRFPService.h) explains why this is the case:
