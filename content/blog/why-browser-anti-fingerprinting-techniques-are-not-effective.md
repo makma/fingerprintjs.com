@@ -40,7 +40,7 @@ There are two common approaches when it comes to preventing browser fingerprinti
 
 This is typically achieved by making functional changes to web APIs known to be good sources of entropy. As a result, some APIs are completely disabled because most websites don’t rely on them. Others are revised to return a dummy value regardless of the actual real value. As you can imagine, these practices dramatically change users’ web experience for the worse. 
 
-However, some implementations hide the original functionality behind permission prompts. So the user can choose to let a website use a specific API in its original form, even though it might be used for fingerprinting (for example, the `privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts`advanced preference option in Firefox, which prevents websites from reading canvas data). 
+However, some implementations hide the original functionality behind permission prompts. So the user can choose to let a website use a specific API in its original form, even though it might be used for fingerprinting (for example, the `privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts `advanced preference option in Firefox, which prevents websites from reading canvas data). 
 
 However, permission prompts are still not user-friendly, and most users do not understand the associated risks. Making a reasonable decision is, therefore, very hard. A good case in point is Chrome’s decision to [handle some permission requests automatically](https://web.dev/persistent-storage/#chrome-and-other-chromium-based-browsers) without even notifying the user.
 
@@ -62,13 +62,13 @@ However, sometimes the spoofed, fixed values are platform-dependent. A comment i
 
 ![gecko source code snippet](/img/uploads/screen-shot-2022-09-14-at-9.52.38-am.png "gecko source code snippet")
 
-As a result, calling `navigator.platform` will return either `Win32`, `MacIntel`, `Linux aarch64`, or `Linux x86_64`, still concealing the actual platform but placing users into different buckets nonetheless. Similarly `navigator.userAgent`, `navigator.appName`, `navigator.appVersion` and the Gecko-specific `navigator.oscpu` will return spoofed values
+As a result, calling `navigator.platform` will return either `Win32`, `MacIntel`, `Linux aarch64`, or `Linux x86_64`, still concealing the actual platform but placing users into different buckets nonetheless. Similarly `navigator.userAgent`, `navigator.appName`, `navigator.appVersion` and the Gecko-specific `navigator.oscpu` will return spoofed values.
 
-Another good example of the uniformity approach to minimize fingerprint-able browser surface is the recent changes made to the deprecated [`navigator.plugins`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/plugins)and [`navigator.mimeTypes`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mimeTypes) features. The [WHATWG HTML Standard](https://html.spec.whatwg.org/multipage/) was updated to reflect Flash deprecation and specified that browsers should always return a fixed list of supported plugins and mime types (depending on a new read-only `navigator.pdfViewerEnabled` property). Gecko and Chromium have already adopted the change
+Another good example of the uniformity approach to minimize fingerprint-able browser surface is the recent changes made to the deprecated [`navigator.plugins`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/plugins)and [`navigator.mimeTypes`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mimeTypes) features. The [WHATWG HTML Standard](https://html.spec.whatwg.org/multipage/) was updated to reflect Flash deprecation and specified that browsers should always return a fixed list of supported plugins and mime types (depending on a new read-only `navigator.pdfViewerEnabled` property). Gecko and Chromium have already adopted the change.
 
 ### Randomization
 
-One common technique used for browser fingerprinting is based on the internals of the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API). A developer needs to create a canvas, draw a specially crafted image on it, then extract the image data and hash it into a short identifier. Subtle differences in the video card, graphics driver versions, and system-level properties like installed fonts, usually result in the hash representing a simple, stable, high-entropy browser fingerprint
+One common technique used for browser fingerprinting is based on the internals of the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API). A developer needs to create a canvas, draw a specially crafted image on it, then extract the image data and hash it into a short identifier. Subtle differences in the video card, graphics driver versions, and system-level properties like installed fonts, usually result in the hash representing a simple, stable, high-entropy browser fingerprint.
 
 The code can look like this:
 
@@ -95,7 +95,7 @@ context.fill('evenodd')
 const result = canvas.toDataURL()
 ```
 
-Please see [this file](https://github.com/fingerprintjs/fingerprintjs/blob/846724bc368a562f5fb5fb2e6221e624329e55b6/src/sources/canvas.ts) from our open-source FingerprintJS library, for a production-ready example
+Please see [this file](https://github.com/fingerprintjs/fingerprintjs/blob/846724bc368a562f5fb5fb2e6221e624329e55b6/src/sources/canvas.ts) from our open-source FingerprintJS library, for a production-ready example.
 
 The last step, calling the `HTMLCanvasElement.toDataURL()` method, is when Brave’s anti-fingerprinting protections add randomization. The raw canvas data is passed through a method called PerturbPixels(). 
 
@@ -144,7 +144,7 @@ Generating reliable fingerprints depends on the kind of traffic a website has an
 
 For Firefox, [statscounter](https://gs.statcounter.com/browser-market-share) reports a market share of 3.15% as of August 2022. [Wikipedia](https://en.wikipedia.org/wiki/Usage_share_of_web_browsers) mentions claims from different sources as of October 2021, varying from 2.18% to 4.4%. Firefox’s [figures](https://data.firefox.com/dashboard/user-activity) show around 200 million monthly active users.
 
-Based on our internal information from August 2022, traffic originating from Brave on Desktop and Android accounts for 1.57% of all identification events. For Firefox, it’s 1.997%. Interestingly, Firefox traffic matches values spoofed by the `privacy.resistFingerprinting` preference accounts only for 0.48% of all Firefox traffic we see. The Tor Browser accounts for 0.017% across all events.
+Based on our internal information from August 2022, traffic originating from Brave on Desktop and Android accounts for 1.57% of all identification events. For Firefox, it’s 1.997%. Interestingly, Firefox traffic matches values spoofed by the `privacy.resistFingerprinting` preference accounts for only 0.48% of all Firefox traffic we see. The Tor Browser accounts for 0.017% across all events.
 
 Entropy sources are also not limited to just inherent browser characteristics. It’s important to acknowledge that system-level and network-level characteristics are just as effective. Additionally, fingerprinting can be supported via storing client-side identifiers too. 
 
@@ -154,7 +154,7 @@ You might have noticed that when exploring Brave’s implementation of the priva
 
 ## Preventing online fraud
 
-Spamming comment sections, fake product reviews or coupons, cashback fraud, and abusing password reset and registration forms are all examples of online fraud that every big or small online service has to deal with inevitably. Even though all of these are very common, effective and scalable solutions prove to be very difficult to implement
+Spamming comment sections, fake product reviews or coupons, cashback fraud, and abusing password reset and registration forms are all examples of online fraud that every big or small online service has to deal with inevitably. Even though all of these are very common, effective and scalable solutions prove to be very difficult to implement.
 
 A simple solution often comes to mind is to put the affected functionality behind authentication. This is a good strategy as long as the functionality wasn’t explicitly designed for unauthenticated visitors. Moreover, with authentication in place, you have to deal with a new problem; automated account creation and verification. At this point, many services think about using a CAPTCHA, whether it is to stop the automated account creation or the original form of abuse.
 
