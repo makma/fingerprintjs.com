@@ -40,7 +40,7 @@ There are two common approaches when it comes to preventing browser fingerprinti
 
 This is typically achieved by making functional changes to web APIs known to be good sources of entropy. As a result, some APIs are completely disabled because most websites don’t rely on them. Others are revised to return a dummy value regardless of the actual real value. As you can imagine, these practices dramatically change users’ web experience for the worse. 
 
-However, some implementations hide the original functionality behind permission prompts. So the user can choose to let a website use a specific API in its original form, even though it might be used for fingerprinting (for example, the `privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts `advanced preference option in Firefox, which prevents websites from reading canvas data). 
+However, some implementations hide the original functionality behind permission prompts. So the user can choose to let a website use a specific API in its original form, even though it might be used for fingerprinting (for example, the `privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts`advanced preference option in Firefox, which prevents websites from reading canvas data). 
 
 However, permission prompts are still not user-friendly, and most users do not understand the associated risks. Making a reasonable decision is, therefore, very hard. A good case in point is Chrome’s decision to [handle some permission requests automatically](https://web.dev/persistent-storage/#chrome-and-other-chromium-based-browsers) without even notifying the user.
 
@@ -64,7 +64,7 @@ However, sometimes the spoofed, fixed values are platform-dependent. A comment i
 
 As a result, calling `navigator.platform` will return either `Win32`, `MacIntel`, `Linux aarch64`, or `Linux x86_64`, still concealing the actual platform but placing users into different buckets nonetheless. Similarly `navigator.userAgent`, `navigator.appName`, `navigator.appVersion` and the Gecko-specific `navigator.oscpu` will return spoofed values.
 
-Another good example of the uniformity approach to minimize fingerprint-able browser surface is the recent changes made to the deprecated [`navigator.plugins`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/plugins)and [`navigator.mimeTypes`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mimeTypes) features. The [WHATWG HTML Standard](https://html.spec.whatwg.org/multipage/) was updated to reflect Flash deprecation and specified that browsers should always return a fixed list of supported plugins and mime types (depending on a new read-only `navigator.pdfViewerEnabled` property). Gecko and Chromium have already adopted the change.
+Another good example of the uniformity approach to minimize fingerprint-able browser surface is the recent changes made to the deprecated [`navigator.plugins`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/plugins) and [`navigator.mimeTypes`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mimeTypes) features. The [WHATWG HTML Standard](https://html.spec.whatwg.org/multipage/) was updated to reflect Flash deprecation and specified that browsers should always return a fixed list of supported plugins and mime types (depending on a new read-only `navigator.pdfViewerEnabled` property). Gecko and Chromium have already adopted the change.
 
 ### Randomization
 
@@ -144,7 +144,7 @@ Generating reliable fingerprints depends on the kind of traffic a website has an
 
 For Firefox, [statscounter](https://gs.statcounter.com/browser-market-share) reports a market share of 3.15% as of August 2022. [Wikipedia](https://en.wikipedia.org/wiki/Usage_share_of_web_browsers) mentions claims from different sources as of October 2021, varying from 2.18% to 4.4%. Firefox’s [figures](https://data.firefox.com/dashboard/user-activity) show around 200 million monthly active users.
 
-Based on our internal information from August 2022, traffic originating from Brave on Desktop and Android accounts for 1.57% of all identification events. For Firefox, it’s 1.997%. Interestingly, Firefox traffic matches values spoofed by the `privacy.resistFingerprinting` preference accounts for only 0.48% of all Firefox traffic we see. The Tor Browser accounts for 0.017% across all events.
+Based on our internal information from August 2022, traffic originating from Brave on Desktop and Android accounts for 1.57% of all identification events. For Firefox, it’s 1.997%. Interestingly, Firefox traffic matches the values spoofed by the `privacy.resistFingerprinting` preference accounts for only 0.48% of all Firefox traffic we see. The Tor Browser accounts for 0.017% across all events.
 
 Entropy sources are also not limited to just inherent browser characteristics. It’s important to acknowledge that system-level and network-level characteristics are just as effective. Additionally, fingerprinting can be supported via storing client-side identifiers too. 
 
