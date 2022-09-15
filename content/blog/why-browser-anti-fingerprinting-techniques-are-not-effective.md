@@ -40,7 +40,7 @@ There are two common approaches when it comes to preventing browser fingerprinti
 
 This is typically achieved by making functional changes to web APIs known to be good sources of entropy. As a result, some APIs are completely disabled because most websites don’t rely on them. Others are revised to return a dummy value regardless of the actual real value. As you can imagine, these practices dramatically change users’ web experience for the worse. 
 
-However, some implementations hide the original functionality behind permission prompts. So the user can choose to let a website use a specific API in its original form, even though it might be used for fingerprinting (for example, the `privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts`advanced preference option in Firefox, which prevents websites from reading canvas data). 
+However, some implementations hide the original functionality behind permission prompts. So the user can choose to let a website use a specific API in its original form, even though it might be used for fingerprinting (for example, the `privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts` advanced preference option in Firefox, which prevents websites from reading canvas data). 
 
 However, permission prompts are still not user-friendly, and most users do not understand the associated risks. Making a reasonable decision is, therefore, very hard. A good case in point is Chrome’s decision to [handle some permission requests automatically](https://web.dev/persistent-storage/#chrome-and-other-chromium-based-browsers) without even notifying the user.
 
