@@ -17,7 +17,7 @@ title: "[WEBINAR] The State of Payment Fraud & How to Prevent It "
 isPublished: true
 isHidden: false
 tags:
-  - announcements
+  - webinar
 authors:
   - Courtney Rogin
 heroImage:
