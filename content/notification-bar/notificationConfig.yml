@@ -1,4 +1,4 @@
-showNotBar: true
+showNotBar: false
 barBody: "ANNOUNCEMENT: We are now Fingerprint."
 arrowText: Here's why
 url: /blog/fingerprintjs-is-now-fingerprint
