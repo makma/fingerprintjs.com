@@ -15,8 +15,7 @@ title: "[WEBINAR] Why Accuracy is Everything in Device Identification"
 isPublished: true
 isHidden: false
 tags:
-  - fingerprinting
-  - announcements
+  - webinar
 authors:
   - Courtney Rogin
 heroImage:
