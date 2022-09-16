@@ -157,8 +157,8 @@ function FAQSection() {
           Yes - Fingerprint is GDPR compliant.
           <br />
           <br />
-          Our technology is intended to be used for fraud detection only - for this use case, no user consent is
-          required. Any use outside of fraud detection would need to comply with GDPR user consent rules.
+          When our technology is used for fraud detection purposes, no user consent is required. Any use outside of
+          fraud detection would need to comply with GDPR user consent rules.
           <br />
           <br />
           We never automatically track traffic - our customers can configure under what conditions visitors are tracked,
@@ -170,8 +170,8 @@ function FAQSection() {
       question: 'Where is Fingerprint Pro’s data stored?',
       answer: (
         <p className={styles.faqContent}>
-          When you create your account you can choose between Global/US data storage (Richmond, VA) and data EU storage
-          (Frankfurt Germany).
+          When you create your account you can choose between Global/US (Richmond, VA), EU (Frankfurt Germany), and
+          South Asia (Mumbai India).
           <br />
           <br />
           We can set up servers in additional locations for enterprise customers. To learn more, please{' '}
@@ -195,6 +195,40 @@ function FAQSection() {
           <Link to={PATH.contactSales} className={styles.link}>
             contact sales.
           </Link>
+        </p>
+      ),
+    },
+    {
+      question: 'Why is our accuracy so high?',
+      answer: (
+        <p className={styles.faqContent}>
+          Fingerprint Pro combines over 100 unique signals to create a unique and stable visitorId with 99.5% accuracy.
+          We are able to achieve such high accuracy through continuous testing and iteration of signals as browsers and
+          devices change, as well as machine learning algorithms that can identify when a visitor is trying to change
+          their identity via proxies or other techniques.
+        </p>
+      ),
+    },
+    {
+      question: 'Is Fingerprint more accurate than competitors?',
+      answer: (
+        <p className={styles.faqContent}>
+          In a{' '}
+          <a target='_blank' rel='noreferrer' href='https://hal.inria.fr/hal-01718234v2' className={styles.link}>
+            recent browser fingerprinting study
+          </a>{' '}
+          from KTH Royal Institute of Technology, only 33.6% of users were correctly identified.{' '}
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href='https://www.researchgate.net/publication/332873650_Browser_Fingerprinting_A_survey'
+            className={styles.link}
+          >
+            Other studies
+          </a>{' '}
+          from the Electronic Frontier Foundation and Inria saw fingerprint accuracy between 80-90%, but those studies
+          predate current web privacy policies and technologies. Fingerprint Pro’s 99.5% accuracy is higher than any
+          other service on the market.
         </p>
       ),
     },
