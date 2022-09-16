@@ -73,7 +73,7 @@ The following tutorial uses the CDN option for installation, but the library can
 
 To get started, create an `index.html` file with the following code between the head tags:
 
-```
+```html
 <script>
   function initFingerprintJS() {
     const fpPromise = FingerprintJS.load({ apiKey: 'your-public-api-key' });
