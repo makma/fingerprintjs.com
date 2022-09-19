@@ -3,7 +3,10 @@ export interface SuccessResponse {
   products: {
     botd: {
       data: {
-        bot: { result: DetectStatus }
+        bot: {
+          result: DetectStatus
+          type?: string
+        }
         meta: { yourTag: number }
         ip: string
         time: string

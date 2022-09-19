@@ -9,7 +9,7 @@ export default function APIResponseDetailsSection() {
   const characterLength = 8.4
   const currentTime = new Date().toISOString()
   const { visitorData } = useBotDContext()
-
+  const botData = visitorData?.products.botd.data
   return (
     <Container size='large' className={styles.container}>
       <h1 className={styles.title} id='ApiResponseDetails'>
@@ -25,10 +25,11 @@ export default function APIResponseDetailsSection() {
         "botd": {
             "data": {
                 "bot": {
-                    "result": "${visitorData?.products.botd.data.bot.result ?? 'notDetected'}"
+                    "result": "${botData?.bot.result ?? 'notDetected'}"
+                    "type": ${botData?.bot.type ? '"' + botData.bot.type + '"' : ''}
                 },
-                "ip": "${visitorData?.products.botd.data.ip ?? '186.XXX.XXX.XXX'}",
-                "time": "${visitorData?.products.botd.data.time ?? currentTime}"
+                "ip": "${botData?.ip ?? '186.XXX.XXX.XXX'}",
+                "time": "${botData?.time ?? currentTime}"
             }
         }
     }
@@ -42,11 +43,7 @@ export default function APIResponseDetailsSection() {
               <CodeTooltip
                 key='result'
                 className={styles.result}
-                left={
-                  visitorData?.requestId
-                    ? 326 + visitorData?.products.botd.data.bot.result.length * characterLength
-                    : 420
-                }
+                left={botData?.bot.result.length ? 326 + botData?.bot.result.length * characterLength : 420}
               >
                 <p>
                   There are three possible results: <strong>good</strong> when the bot is a search engine,{' '}
@@ -55,13 +52,24 @@ export default function APIResponseDetailsSection() {
                 </p>
               </CodeTooltip>,
               <CodeTooltip
+                key='type'
+                className={styles.type}
+                left={botData?.bot.type ? 309 + botData?.bot.type.length * characterLength : 284}
+              >
+                <p>
+                  Name of the <strong>automation tool</strong> which was used for the request.
+                  <br />
+                  <br />
+                  <i>
+                    This is an optional field only present if the <strong>bot result</strong> is <strong>good</strong>{' '}
+                    or <strong>bad</strong>.
+                  </i>
+                </p>
+              </CodeTooltip>,
+              <CodeTooltip
                 key='ip'
                 className={styles.ip}
-                left={
-                  visitorData?.products.botd.data.ip
-                    ? 264 + visitorData?.products.botd.data.ip.length * characterLength
-                    : 384
-                }
+                left={botData?.ip ? 264 + botData?.ip.length * characterLength : 384}
               >
                 <p>
                   <strong>Client IP address.</strong>
@@ -71,8 +79,8 @@ export default function APIResponseDetailsSection() {
                 key='time'
                 className={styles.time}
                 left={
-                  visitorData?.products.botd.data.time
-                    ? 274 + visitorData?.products.botd.data.time.length * characterLength
+                  botData?.time
+                    ? 274 + botData?.time.length * characterLength
                     : 274 + currentTime.length * characterLength
                 }
               >
