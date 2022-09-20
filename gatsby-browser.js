@@ -11,8 +11,8 @@ import { PAGES_RELOAD_CHATBOT } from './src/constants/content'
 
 export const wrapRootElement = ({ element }) => <AppProviders>{element}</AppProviders>
 export const onRouteUpdate = ({ location, prevLocation }) => {
-  const shouldResetWidget =
-    PAGES_RELOAD_CHATBOT.includes(location.pathname) || PAGES_RELOAD_CHATBOT.includes(prevLocation.pathname)
+  const prevPage = prevLocation ? PAGES_RELOAD_CHATBOT.includes(prevLocation.pathname) : false
+  const shouldResetWidget = PAGES_RELOAD_CHATBOT.includes(location.pathname) || prevPage
 
   if (shouldResetWidget && window.HubSpotConversations) {
     const status = window.HubSpotConversations.widget.status()
