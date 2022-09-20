@@ -7,4 +7,18 @@ import './src/styles/custom-properties.scss'
 
 import React from 'react'
 import AppProviders from './src/AppProviders'
+import { PAGES_RELOAD_CHATBOT } from './src/constants/content'
+
 export const wrapRootElement = ({ element }) => <AppProviders>{element}</AppProviders>
+export const onRouteUpdate = ({ location, prevLocation }) => {
+  const shouldResetWidget =
+    PAGES_RELOAD_CHATBOT.includes(location.pathname) || PAGES_RELOAD_CHATBOT.includes(prevLocation.pathname)
+
+  if (shouldResetWidget && window.HubSpotConversations) {
+    const status = window.HubSpotConversations.widget.status()
+
+    if (status.loaded) {
+      window.HubSpotConversations.clear({ resetWidget: true })
+    }
+  }
+}

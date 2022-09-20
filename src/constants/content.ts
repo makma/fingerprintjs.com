@@ -143,3 +143,18 @@ export const industryDropdown = [
   { title: 'Online Gaming & Gambling', url: PATH.gaming },
   { title: 'Cryptocurrency', url: PATH.cryptocurrency },
 ]
+
+// We need to reset the chatbot widget on the following pages
+export const PAGES_RELOAD_CHATBOT = [
+  `${PATH.useCases}personalization/`,
+  `${PATH.useCases}account-sharing-prevention/`,
+  `${PATH.useCases}payment-fraud/`,
+  `${PATH.useCases}credential-stuffing/`,
+  PATH.contactSales,
+  PATH.whyFpjs,
+  PATH.paymentFraud,
+  PATH.accountTakeover,
+  PATH.accountSharing,
+  PATH.paywall,
+  PATH.botD,
+]
