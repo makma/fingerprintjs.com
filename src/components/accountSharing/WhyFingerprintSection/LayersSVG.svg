@@ -1,5 +1,5 @@
 <svg width="104" height="104" viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0)">
+    <g clip-path="url(#clipAccountSharing)">
         <rect width="104" height="104" rx="16" fill="#050D52" />
         <g filter="url(#filter0_f)">
             <circle cx="113.5" cy="-17.5" r="121.5" fill="#434875" />
@@ -42,7 +42,7 @@
             <stop stop-color="#fff" stop-opacity=".6" />
             <stop offset="1" stop-color="#fff" stop-opacity="0" />
         </linearGradient>
-        <clipPath id="clip0">
+        <clipPath id="clipAccountSharing">
             <rect width="104" height="104" rx="16" fill="#fff" />
         </clipPath>
     </defs>

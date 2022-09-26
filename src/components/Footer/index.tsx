@@ -167,11 +167,9 @@ export default function Footer() {
                   <h3 className={styles.title}>{title}</h3>
                   {links.map(({ title, url, isLocal }) => {
                     return isLocal ? (
-                      <>
-                        <Link className={styles.link} key={url} to={url} target='_blank' rel='noreferrer'>
-                          {title}
-                        </Link>
-                      </>
+                      <Link className={styles.link} key={url} to={url} target='_blank' rel='noreferrer'>
+                        {title}
+                      </Link>
                     ) : (
                       <a className={styles.link} key={url} href={url} target='_blank' rel='noreferrer'>
                         {title}

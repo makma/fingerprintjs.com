@@ -69,7 +69,7 @@ export default function APIResponseDetailsSection() {
               <CodeTooltip
                 key='ip'
                 className={styles.ip}
-                left={botData?.ip ? 264 + botData?.ip.length * characterLength : 384}
+                left={botData?.ip ? 264 + botData?.ip.length * characterLength : 390}
               >
                 <p>
                   <strong>Client IP address.</strong>

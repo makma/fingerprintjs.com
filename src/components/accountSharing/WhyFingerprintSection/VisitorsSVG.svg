@@ -1,5 +1,5 @@
 <svg width="104" height="104" viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0)">
+    <g clip-path="url(#clipVisitors)">
         <rect width="104" height="104" rx="16" fill="#FD1E00" />
         <g filter="url(#filter0_f)">
             <ellipse cx="62.5" cy="15.5" rx="62.5" ry="63.5" fill="#FF782D" />
@@ -37,7 +37,7 @@
             <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur" />
             <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape" />
         </filter>
-        <clipPath id="clip0">
+        <clipPath id="clipVisitors">
             <rect width="104" height="104" rx="16" fill="white" />
         </clipPath>
     </defs>

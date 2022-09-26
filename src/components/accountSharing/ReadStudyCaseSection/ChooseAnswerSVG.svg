@@ -3,7 +3,7 @@
         <path
             d="M0 0v440M80 0v440M160 0v440M240 0v440M320 0v440M400 0v440M480 0v440M560 0v440M600 60H0M600 140H0M600 220H0M600 300H0M600 380H0" />
     </g>
-    <path fill="url(#a)" d="M0 0h608v440H0z" />
+    <path fill="url(#BlueFilter)" d="M0 0h608v440H0z" />
     <g>
         <rect x="40" y="40" width="444.091" height="364" rx="12" fill="#272A3F" />
         <path
@@ -32,7 +32,7 @@
         stroke-width="2" />
     <path d="M493 205.642v-7a9 9 0 0 0-9-9 9 9 0 0 0-9 9v7" stroke="#FAFAFA" stroke-width="2" />
     <defs>
-        <linearGradient id="a" x1="0" y1="220" x2="530" y2="220" gradientUnits="userSpaceOnUse">
+        <linearGradient id="BlueFilter" x1="0" y1="220" x2="530" y2="220" gradientUnits="userSpaceOnUse">
             <stop stop-color="#0D102B" stop-opacity="0" />
             <stop offset="1" stop-color="#0D102B" />
         </linearGradient>
