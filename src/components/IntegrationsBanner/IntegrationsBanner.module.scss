@@ -1,0 +1,33 @@
+.banner {
+  background: #f2f2f7;
+  padding: rem(96px) rem(20px);
+  text-align: center;
+  @include media('<=phoneLandscape') {
+    text-align: left;
+    padding: rem(64px) rem(20px);
+  }
+  .title {
+    padding-bottom: rem(8px);
+
+    @include sans($size: 32px, $weight: v('bold'), $lh: 48px);
+    letter-spacing: -0.01em;
+
+    @include media('<=phoneLandscape') {
+      padding-right: rem(15px);
+      line-height: rem(40px);
+    }
+  }
+
+  .description {
+    @include sans($size: 18px, $weight: 400, $lh: 150%);
+
+    padding-bottom: rem(40px);
+
+    @include media('<=phoneLandscape') {
+      line-height: rem(24px);
+
+      letter-spacing: 0.001em;
+      font-size: rem(16px);
+    }
+  }
+}
