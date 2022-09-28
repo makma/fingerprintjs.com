@@ -24,7 +24,7 @@ export default function IntegrationCard({ title, description, cardImage, githubL
       </article>
       <footer className={styles.cardFooter}>
         <a className={styles.button} href={githubLink} target='_blank' rel='noreferrer'>
-          <span>Github</span>
+          <span>GitHub</span>
           <GithubIconSvg className={styles.icon} />
         </a>
         <a className={styles.docsLink} href={docsLink} target='_blank' rel='noreferrer'>
