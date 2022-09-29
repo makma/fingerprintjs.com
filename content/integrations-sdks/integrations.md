@@ -14,5 +14,5 @@ cards:
       fingerprinting client-side logic as well as proxying identification
       requests and responses between your site and Fingerprint Pro's API.
     githubLink: https://github.com/fingerprintjs/fingerprintjs-pro-cloudflare-worker
-    docsLink: https://dev.fingerprint.com/docs/cloudflare-integration
+    docsLink: https://dev.fingerprint.com/docs/cloudflare-integration-new-accounts
 ---
