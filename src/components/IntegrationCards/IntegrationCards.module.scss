@@ -1,6 +1,7 @@
 .integrationCards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, rem(288px));
+  grid-template-columns: repeat(auto-fill, rem(284px));
+  justify-content: center;
   grid-template-rows: auto;
   column-gap: rem(32px);
   row-gap: rem(56px);
@@ -8,5 +9,6 @@
   @include media('<=phoneLandscape') {
     display: flex;
     flex-direction: column;
+    row-gap: rem(24px);
   }
 }

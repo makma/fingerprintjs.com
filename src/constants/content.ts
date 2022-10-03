@@ -25,6 +25,7 @@ export const PATH = {
   useCases: '/use-cases/',
   faq: '/resources/frequently-asked-questions-faqs/',
   integrations: '/integrations/',
+  sdks: '/sdks-libraries/',
 } as const
 
 export const URL = {

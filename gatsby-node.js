@@ -392,13 +392,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       invertContent: Boolean!
       relatedTitle: String!
       useCaseCode: UseCaseCode
-      cards: [Cards]
-    }
-    type Cards{
-      title: String
-      description: String
-      docsLink: String
-      githubLink: String
     }
     type UseCaseCode{
       iframeUrl: String
@@ -448,4 +441,35 @@ exports.createSchemaCustomization = ({ actions }) => {
       socialCard: File @link(from: "fields.socialCardId")
     }
 `)
+}
+exports.createResolvers = ({ createResolvers }) => {
+  const resolvers = {
+    MarkdownRemarkFrontmatter: {
+      integrationSdkCardsMobile: {
+        type: ['MarkdownRemarkFrontmatterIntegrationSdkCards'],
+        resolve: async (source) => {
+          return source.integrationSdkCards.filter((card) => {
+            return card.category === 'Mobile'
+          })
+        },
+      },
+      integrationSdkCardsBackend: {
+        type: ['MarkdownRemarkFrontmatterIntegrationSdkCards'],
+        resolve: async (source) => {
+          return source.integrationSdkCards.filter((card) => {
+            return card.category === 'Backend'
+          })
+        },
+      },
+      integrationSdkCardsFrontend: {
+        type: ['MarkdownRemarkFrontmatterIntegrationSdkCards'],
+        resolve: async (source) => {
+          return source.integrationSdkCards.filter((card) => {
+            return card.category === 'Frontend'
+          })
+        },
+      },
+    },
+  }
+  createResolvers(resolvers)
 }

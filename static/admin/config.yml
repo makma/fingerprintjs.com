@@ -462,7 +462,7 @@ collections:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'integration-sdk' }
       - {
           label: Cards,
-          name: cards,
+          name: integrationSdkCards,
           widget: list,
           fields:
             [
@@ -475,7 +475,14 @@ collections:
               },
               { label: Title, name: title, widget: string },
               { label: Description, name: description, widget: string },
-              { label: Github kink, name: githubLink, widget: string },
+              { label: Github kink, name: githubLink, widget: string, required: false },
               { label: Docs link, name: docsLink, widget: string },
+              {
+                label: Category (only for SDKs),
+                name: category,
+                widget: select,
+                options: ['Mobile', 'Frontend', 'Backend'],
+                required: false,
+              },
             ],
         }

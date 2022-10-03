@@ -1,0 +1,44 @@
+.container {
+  padding-top: rem(50px);
+  padding-bottom: rem(96px);
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(32px);
+    padding-bottom: rem(56px);
+  }
+
+  .filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: rem(28px);
+
+    padding-bottom: rem(40px);
+    .button {
+      padding: 0 rem(4px) rem(12px);
+      cursor: pointer;
+
+      @include sans($size: 20px, $weight: 400, $lh: 20px, $color: var(--brand-water));
+
+      @include transition((opacity));
+      opacity: 1;
+
+      &:not(.selectedButton) {
+        &:hover {
+          opacity: v('faded');
+        }
+      }
+      @include media('<=phoneLandscape') {
+        font-size: rem(16px);
+        padding: 0 rem(2px) rem(8px);
+      }
+    }
+    .selectedButton {
+      font-weight: v('semi');
+    }
+
+    @include media('<=phoneLandscape') {
+      column-gap: rem(14px);
+    }
+  }
+}

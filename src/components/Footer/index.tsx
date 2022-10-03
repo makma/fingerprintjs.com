@@ -123,6 +123,11 @@ const footerLinks: FooterLinkSection[] = [
         url: `${PATH.integrations}`,
         isLocal: true,
       },
+      {
+        title: 'SDKs and Libraries',
+        url: `${PATH.sdks}`,
+        isLocal: true,
+      },
     ],
   },
 ]

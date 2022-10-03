@@ -7,9 +7,10 @@ import styles from './IntegrationCard.module.scss'
 export interface IntegrationCardProps {
   title: string
   description: string
-  githubLink: string
   docsLink: string
   cardImage: Queries.File
+  githubLink?: string
+  category?: 'Mobile' | 'Frontend' | 'Backend'
 }
 export default function IntegrationCard({ title, description, cardImage, githubLink, docsLink }: IntegrationCardProps) {
   const imageFluid = cardImage?.childImageSharp?.gatsbyImageData
@@ -23,10 +24,12 @@ export default function IntegrationCard({ title, description, cardImage, githubL
         </div>
       </article>
       <footer className={styles.cardFooter}>
-        <a className={styles.button} href={githubLink} target='_blank' rel='noreferrer'>
-          <span>GitHub</span>
-          <GithubIconSvg className={styles.icon} />
-        </a>
+        {githubLink && (
+          <a className={styles.button} href={githubLink} target='_blank' rel='noreferrer'>
+            <span>GitHub</span>
+            <GithubIconSvg className={styles.icon} />
+          </a>
+        )}
         <a className={styles.docsLink} href={docsLink} target='_blank' rel='noreferrer'>
           Read our docs →
         </a>

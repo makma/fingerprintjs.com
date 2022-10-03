@@ -15,7 +15,7 @@ export default function CardsSection() {
       ) {
         nodes {
           frontmatter {
-            cards {
+            integrationSdkCards {
               cardImage {
                 childImageSharp {
                   gatsbyImageData(quality: 100, layout: CONSTRAINED, aspectRatio: 1.7)
@@ -31,7 +31,7 @@ export default function CardsSection() {
       }
     }
   `)
-  const cards = data.allMarkdownRemark.nodes[0].frontmatter.cards as IntegrationCardProps[]
+  const cards = data.allMarkdownRemark.nodes[0].frontmatter.integrationSdkCards as IntegrationCardProps[]
   return (
     <Container size='large' className={styles.container}>
       <IntegrationCards cards={cards} />

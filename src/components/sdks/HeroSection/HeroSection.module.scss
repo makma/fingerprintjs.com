@@ -1,0 +1,133 @@
+.root {
+  padding-top: rem(38px);
+  padding-bottom: rem(48px);
+
+  @include media('<=tabletWide') {
+    padding-top: rem(40px);
+
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    column-gap: rem(32px);
+
+    @include media('<=tabletWide') {
+      text-align: center;
+      flex-direction: column-reverse;
+      align-items: center;
+
+      row-gap: rem(48px);
+    }
+
+    .descriptionSection {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: rem(16px);
+
+      max-width: rem(575px);
+
+      .title {
+        @include sans($size: 48px, $weight: 700, $lh: 114%);
+        letter-spacing: -0.01em;
+
+        @include media('<=tabletWide') {
+          text-align: left;
+          font-size: rem(32px);
+        }
+      }
+
+      .description {
+        @include sans($size: 18px, $weight: 400, $lh: 150%);
+
+        @include media('<=tabletWide') {
+          text-align: left;
+          font-size: rem(16px);
+        }
+      }
+    }
+    .imageSection {
+      width: 100%;
+      max-width: rem(608px);
+
+      @include media('>tabletWide') {
+        min-width: rem(500px);
+      }
+      @include media('<=tabletWide') {
+        max-width: rem(600px);
+      }
+    }
+  }
+}
+.sdkLogos {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fcfcfc;
+  border-radius: rem(20px);
+  mask: linear-gradient(to top, transparent 10%, #fff 15% 85%, transparent 95%),
+    linear-gradient(to left, transparent 10%, #fff 15% 85%, transparent 95%);
+  mask-size: 110% 125%;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-composite: intersect;
+}
+
+.logosRow,
+.logosRowCenter {
+  animation: slide 70s linear infinite;
+  display: flex;
+  width: calc(112px * 14);
+  padding: rem(13px) 0;
+  @include media('<=phoneLandscape') {
+    width: calc(76px * 14);
+    padding: rem(8px) 0;
+  }
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+.logosRowCenter {
+  animation-direction: reverse;
+}
+.logoWrapper {
+  width: rem(112px);
+  display: flex;
+  justify-content: center;
+
+  @include media('<=phoneLandscape') {
+    width: rem(76px);
+  }
+
+  .logo {
+    border-radius: rem(16px);
+    box-shadow: 0px 8px 12px rgba(13, 16, 43, 0.09);
+    width: rem(77px);
+
+    @include media('<=phoneLandscape') {
+      width: rem(52px);
+    }
+  }
+}
+// multiplying by the number of logos per row (7)
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-112px * 7));
+  }
+}
+@include media('<=phoneLandscape') {
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-76px * 7));
+    }
+  }
+}

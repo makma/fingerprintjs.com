@@ -91,7 +91,7 @@ The endpoint property is quite important and is used for the [Subdomain setup](h
 
 * Send the user’s credentials together with `visitorId` and `requestId` to your authentication API.
 
-```ags
+```javascript
 // Send the user’s credentials together with `visitorId` and `requestId` to your authentication API.
 const loginData = {
   userName,

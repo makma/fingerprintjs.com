@@ -1,7 +1,7 @@
 ---
 title: integrations
 templateKey: integration-sdk
-cards:
+integrationSdkCards:
   - cardImage: /img/uploads/integrationsCards/gtm.png
     title: Google Tag Manager
     description: Fingerprint Pro GTM is an open-source tag that can be imported to
