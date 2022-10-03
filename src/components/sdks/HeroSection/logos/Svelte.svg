@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77 77" fill="none">
     <rect width="76.58" height="76.58" x="1.22" y=".81" fill="#fff" rx="16.6" />
-    <g clip-path="url(#a)">
+    <g clip-path="url(#s-a)">
         <path fill="#FF3E00"
             d="M50.69 27.75c-2.85-4.11-8.53-5.32-12.61-2.73l-7.2 4.6a8.18 8.18 0 0 0-3.71 5.53 8.56 8.56 0 0 0 .86 5.57 7.9 7.9 0 0 0-1.23 3.09 8.8 8.8 0 0 0 1.5 6.64c2.87 4.11 8.52 5.31 12.6 2.72l7.2-4.57a8.18 8.18 0 0 0 3.71-5.52 8.56 8.56 0 0 0-.86-5.58 8.62 8.62 0 0 0-.26-9.76Z" />
         <path fill="#fff"
@@ -8,7 +8,7 @@
     </g>
     <rect width="76.58" height="76.58" x="1.22" y=".81" stroke="#fff" stroke-width=".53" rx="16.6" />
     <defs>
-        <clipPath id="a">
+        <clipPath id="s-a">
             <path fill="#fff" d="M0 0h25.66v30.87H0z" transform="translate(26.67 23.66)" />
         </clipPath>
     </defs>

@@ -1,29 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77 77" fill="none">
     <rect width="76.58" height="76.58" x="1.02" y=".53" fill="#fff" rx="16.6" />
-    <g clip-path="url(#a)">
+    <g clip-path="url(#chrome-a)">
         <path fill="#fff" d="M39.3 46.63a7.78 7.78 0 1 0 0-15.57 7.78 7.78 0 0 0 0 15.57Z" />
-        <path fill="url(#b)"
+        <path fill="url(#chrome-b)"
             d="m32.55 42.74-6.74-11.68a15.56 15.56 0 0 0 13.48 23.35l6.74-11.67a7.78 7.78 0 0 1-13.48 0Z" />
-        <path fill="url(#c)"
+        <path fill="url(#chrome-c)"
             d="M46.03 42.74 39.3 54.4a15.56 15.56 0 0 0 13.48-23.35H39.3a7.78 7.78 0 0 1 6.74 11.68Z" />
         <path fill="#1A73E8" d="M39.3 45a6.16 6.16 0 1 0 0-12.32 6.16 6.16 0 0 0 0 12.33Z" />
-        <path fill="url(#d)" d="M39.3 31.06h13.47a15.56 15.56 0 0 0-26.96 0l6.74 11.68a7.78 7.78 0 0 1 6.74-11.68Z" />
+        <path fill="url(#chrome-d)" d="M39.3 31.06h13.47a15.56 15.56 0 0 0-26.96 0l6.74 11.68a7.78 7.78 0 0 1 6.74-11.68Z" />
     </g>
     <rect width="76.58" height="76.58" x="1.02" y=".53" stroke="#fff" stroke-width=".53" rx="16.6" />
     <defs>
-        <linearGradient id="b" x1="40.98" x2="27.5" y1="53.44" y2="30.09" gradientUnits="userSpaceOnUse">
+        <linearGradient id="chrome-b" x1="40.98" x2="27.5" y1="53.44" y2="30.09" gradientUnits="userSpaceOnUse">
             <stop stop-color="#1E8E3E" />
             <stop offset="1" stop-color="#34A853" />
         </linearGradient>
-        <linearGradient id="c" x1="37.02" x2="50.5" y1="54.45" y2="31.1" gradientUnits="userSpaceOnUse">
+        <linearGradient id="chrome-c" x1="37.02" x2="50.5" y1="54.45" y2="31.1" gradientUnits="userSpaceOnUse">
             <stop stop-color="#FCC934" />
             <stop offset="1" stop-color="#FBBC04" />
         </linearGradient>
-        <linearGradient id="d" x1="25.81" x2="52.77" y1="33.01" y2="33.01" gradientUnits="userSpaceOnUse">
+        <linearGradient id="chrome-d" x1="25.81" x2="52.77" y1="33.01" y2="33.01" gradientUnits="userSpaceOnUse">
             <stop stop-color="#D93025" />
             <stop offset="1" stop-color="#EA4335" />
         </linearGradient>
-        <clipPath id="a">
+        <clipPath id="chrome-a">
             <path fill="#fff" d="M0 0h31.31v31.31H0z" transform="translate(23.65 23.17)" />
         </clipPath>
     </defs>

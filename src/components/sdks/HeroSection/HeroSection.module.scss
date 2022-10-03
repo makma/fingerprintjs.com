@@ -78,7 +78,6 @@
 
 .logosRow,
 .logosRowCenter {
-  animation: slide 70s linear infinite;
   display: flex;
   width: calc(112px * 14);
   padding: rem(13px) 0;
@@ -90,8 +89,11 @@
     animation-play-state: paused;
   }
 }
+.logosRow {
+  animation: slide 70s linear infinite;
+}
 .logosRowCenter {
-  animation-direction: reverse;
+  animation: slideInverse 70s linear infinite;
 }
 .logoWrapper {
   width: rem(112px);
@@ -128,6 +130,25 @@
     }
     100% {
       transform: translateX(calc(-76px * 7));
+    }
+  }
+}
+
+@keyframes slideInverse {
+  0% {
+    transform: translateX(calc(-112px * 7));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@include media('<=phoneLandscape') {
+  @keyframes slide {
+    0% {
+      transform: translateX(calc(-76px * 7));
+    }
+    100% {
+      transform: translateX(0);
     }
   }
 }
