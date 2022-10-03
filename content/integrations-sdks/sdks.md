@@ -34,7 +34,7 @@ integrationSdkCards:
     title: iOS
     description: Fingerprint Pro's native iOS integration allows developers to
       integrate device identification logic into native iOS apps.
-    docsLink: https://dev.fingerprint.com/docs/native-ios-integration
+    docsLink: https://dev.fingerprint.com/docs/ios
     githubLink: https://github.com/fingerprintjs/fingerprintjs-pro-iOS
     category: Mobile
   - cardImage: /img/uploads/integrationsCards/js.png
@@ -42,12 +42,12 @@ integrationSdkCards:
     description: The client-side agent is a high-performance JavaScript agent that
       collects multiple device and browser signals and sends them to the
       FingerprintJS Pro API for processing and identification.
-    docsLink: https://dev.fingerprint.com/docs/js-agentxf
+    docsLink: https://dev.fingerprint.com/docs/js-agent
     category: Frontend
   - cardImage: /img/uploads/integrationsCards/Ts.png
     title: JavaScript agent with TypeScript support
-    description: The JS agent officially supports TypeScript version 4.0, but may work
-      with newer and older versions of TypeScript.
+    description: The JS agent officially supports TypeScript version 4.0, but may
+      work with newer and older versions of TypeScript.
     docsLink: https://dev.fingerprint.com/docs/js-agent#typescript-support
     category: Frontend
   - cardImage: /img/uploads/integrationsCards/Next.png
@@ -65,14 +65,15 @@ integrationSdkCards:
     category: Backend
   - cardImage: /img/uploads/integrationsCards/OpenApi.png
     title: OpenAPI for Server API and Webhooks
-    description: With the open-source OpenAPI specifications for the Fingerprint Pro server and Webhooks API, one can easily develop integrations.
+    description: With the open-source OpenAPI specifications for the Fingerprint Pro
+      server and Webhooks API, one can easily develop integrations.
     docsLink: https://dev.fingerprint.com/docs/openapi-for-server-api-and-webhooks
     githubLink: https://github.com/fingerprintjs/fingerprint-pro-server-api-openapi
     category: Backend
   - cardImage: /img/uploads/integrationsCards/Preact.png
     title: Preact
-    description: Fingerprint Pro React is an official open-source package for the React
-      ecosystem including support for Preact.
+    description: Fingerprint Pro React is an official open-source package for the
+      React ecosystem including support for Preact.
     docsLink: https://dev.fingerprint.com/docs/preact
     githubLink: https://github.com/fingerprintjs/fingerprintjs-pro-react
     category: Frontend
@@ -85,8 +86,8 @@ integrationSdkCards:
     category: Backend
   - cardImage: /img/uploads/integrationsCards/React.png
     title: React.js
-    description: This library provides developers with a native experience using React
-      components and hooks together with a built-in caching mechanism.
+    description: This library provides developers with a native experience using
+      React components and hooks together with a built-in caching mechanism.
     docsLink: https://dev.fingerprint.com/docs/fingerprintjs-pro-react
     githubLink: https://github.com/fingerprintjs/fingerprintjs-pro-react
     category: Frontend
