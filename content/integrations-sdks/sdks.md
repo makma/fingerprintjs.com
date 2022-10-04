@@ -37,7 +37,7 @@ integrationSdkCards:
     docsLink: https://dev.fingerprint.com/docs/ios
     githubLink: https://github.com/fingerprintjs/fingerprintjs-pro-iOS
     category: Mobile
-  - cardImage: /img/uploads/integrationsCards/js.png
+  - cardImage: /img/uploads/integrationsCards/Ts.png
     title: JavaScript agent
     description: The client-side agent is a high-performance JavaScript agent that
       collects multiple device and browser signals and sends them to the
