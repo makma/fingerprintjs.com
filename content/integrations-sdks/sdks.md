@@ -44,7 +44,7 @@ integrationSdkCards:
       FingerprintJS Pro API for processing and identification.
     docsLink: https://dev.fingerprint.com/docs/js-agent
     category: Frontend
-  - cardImage: /img/uploads/integrationsCards/Ts.png
+  - cardImage: /img/uploads/integrationsCards/js.png
     title: JavaScript agent with TypeScript support
     description: The JS agent officially supports TypeScript version 4.0, but may
       work with newer and older versions of TypeScript.
