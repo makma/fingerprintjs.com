@@ -317,7 +317,7 @@ Also, cookies are not permanent and can be cleared by the user or browser. For e
 
 ### Fingerprinting vs. IP Tracking
 
-An [IP or Internet Protocol address](https://en.wikipedia.org/wiki/IP_address) is similar to a street address for your computer: it is a numerical label assigned to a device whenever it connects to a network. By storing the IP address of a user when they register, you can tell when the same device tries to make another registration. In addition, you can use IP tracking to block the same user accessing your site from incognito mode or different browsers.
+An [IP or Internet Protocol address](https://en.wikipedia.org/wiki/IP_address) is similar to a street address for your computer: it is a numerical label assigned to a device whenever it connects to a network. By storing the IP address of a user when they register, you can tell when the same device tries to make another registration. In addition, you can use IP tracking to block the same user from accessing your site from incognito mode or different browsers.
 
 Unfortunately, IP addresses are easily spoofed. Users can set them manually when browsing, even if they’re not using a proxy server. IP address tracking can also be inaccurate because different devices can have the same IP address when they share the same router. For example, multiple devices often share the same IP address in a university or organization network.
 
@@ -328,3 +328,5 @@ Unfortunately, IP addresses are easily spoofed. Users can set them manually when
 In this tutorial, you learned how browser fingerprinting in PHP helps prevent duplicate registrations. While you can increase the accuracy of your tracking in PHP by combining sessions, cookies, and IP tracking, it’s still relatively easy for users to bypass these fraud detection measures.
 
 Using [Fingerprint](https://fingerprint.com/) to quickly and accurately generate a browser fingerprint in PHP will help you combat fraud and save time. With an accuracy of 99.5%, Fingerprint is an excellent solution for saving time, allowing you to focus on building a great web application and not learning every browser fingerprinting change.
+
+W﻿e also now have a PHP SDK for the Fingerprint Pro Server API, which you can access from [this GitHub Repository](https://github.com/fingerprintjs/fingerprint-pro-server-api-php-sdk).
