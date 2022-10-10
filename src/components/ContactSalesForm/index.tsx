@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from '../common/Button'
 import Section from '../../components/common/Section'
 import classNames from 'classnames'
@@ -10,12 +10,14 @@ import { Forms, useForm } from '../../hooks/useForm'
 import { createNewLead } from '../../helpers/api'
 import { ReactComponent as ConfirmSVG } from './confirmSVG.svg'
 import { ReactComponent as ErrorSVG } from './errorSVG.svg'
-import { URL, PATH } from '../../constants/content'
+import { ReactComponent as InfoSVG } from './info.svg'
+
+import { URL, PATH, MAILTO_SALES } from '../../constants/content'
 import { useViewTracking } from '../../context/HistoryListener'
 import * as Turing from '@fpjs-incubator/turing'
 import { initTuring } from '../../helpers/turing'
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
+import { ReactComponent as BotD } from '../../img/BotdBowl.svg'
+import Tippy from '@tippyjs/react'
 
 import styles from './ContactSalesForm.module.scss'
 import { BOTD_PUBLIC_KEY_TURING, TURING_DEFAULT_SESSION_ID } from '../../constants/env'
@@ -24,16 +26,37 @@ export default function ContactSalesForm() {
   const [formName, setFormName] = useState('')
   const [email, setEmail] = useState('')
   const [url, setUrl] = useState('')
-  const [description, setDescription] = useState('')
-  const [phone, setPhone] = useState('')
   const [jobTitle, setJobTitle] = useState('')
+  const [visibleName, setVisibleName] = useState(false)
+  const [visibleMail, setVisibleMail] = useState(false)
+  const [visibleWebsite, setVisibleWebsite] = useState(false)
 
   const { formState, errorMessage, updateFormState, updateErrorMessage } = useForm(Forms.ContactSales)
   const { landingPage, previousPage, utmParams } = useViewTracking()
 
   async function handleSubmit(e) {
     e.preventDefault()
-
+    if (formName === '') {
+      setVisibleName(true)
+      setTimeout(() => {
+        setVisibleName(false)
+      }, 4000)
+      return
+    }
+    if (email === '') {
+      setVisibleMail(true)
+      setTimeout(() => {
+        setVisibleMail(false)
+      }, 4000)
+      return
+    }
+    if (url === '') {
+      setVisibleWebsite(true)
+      setTimeout(() => {
+        setVisibleWebsite(false)
+      }, 4000)
+      return
+    }
     try {
       let sessionId
 
@@ -54,9 +77,7 @@ export default function ContactSalesForm() {
         formName,
         email,
         url,
-        phone,
         jobTitle,
-        description,
         landingPage,
         previousPage,
         utmParams,
@@ -103,12 +124,6 @@ export default function ContactSalesForm() {
     }
   }
 
-  const inputRef = useRef<HTMLInputElement | null>(null)
-
-  const handlePhoneChange = (phone: string) => {
-    setPhone(phone)
-    inputRef.current?.focus()
-  }
   useEffect(() => {
     initTuring()
   }, [])
@@ -124,40 +139,65 @@ export default function ContactSalesForm() {
       >
         {(formState === FormState.Default || formState === FormState.Loading) && (
           <>
-            <h1 className={styles.header}>Talk to an Expert</h1>
-            <h2 className={styles.subHeader}>Fill out the form below and we will reach out shortly.</h2>
+            <h1 className={styles.header}>
+              Complete the form, our expert team will reach out shortly to schedule a call.
+            </h1>
             <div className={styles.contactSalesForm} data-sitekey={BOTD_PUBLIC_KEY_TURING}>
               <div className={styles.form}>
                 <label className={styles.label} htmlFor='formName'>
                   Your name
                 </label>
-                <input
-                  className={styles.input}
-                  id='formName'
-                  maxLength={40}
-                  name='formName'
-                  size={20}
-                  type='text'
-                  placeholder='John'
-                  onChange={(e) => setFormName(e.target.value)}
-                  disabled={formState === FormState.Loading}
-                  required
-                />
+                <Tippy
+                  maxWidth={270}
+                  content={
+                    <div className={styles.warningTooltip}>
+                      <InfoSVG />
+                      <span> Please fill out this field</span>
+                    </div>
+                  }
+                  visible={visibleName}
+                >
+                  <input
+                    className={styles.input}
+                    id='formName'
+                    maxLength={40}
+                    name='formName'
+                    size={20}
+                    type='text'
+                    placeholder='John'
+                    onChange={(e) => setFormName(e.target.value)}
+                    disabled={formState === FormState.Loading}
+                    required
+                  />
+                </Tippy>
+
                 <label className={styles.label} htmlFor='email'>
                   Work email
                 </label>
-                <input
-                  className={styles.input}
-                  id='email'
-                  maxLength={64}
-                  name='email'
-                  size={20}
-                  type='email'
-                  placeholder='john@gmail.com'
-                  onChange={(e) => setEmail(e.target.value)}
-                  disabled={formState === FormState.Loading}
-                  required
-                />
+                <Tippy
+                  maxWidth={270}
+                  content={
+                    <div className={styles.warningTooltip}>
+                      <InfoSVG />
+                      <span> Please fill out this field</span>
+                    </div>
+                  }
+                  visible={visibleMail}
+                >
+                  <input
+                    className={styles.input}
+                    id='email'
+                    maxLength={64}
+                    name='email'
+                    size={20}
+                    type='email'
+                    placeholder='john@gmail.com'
+                    onChange={(e) => setEmail(e.target.value)}
+                    disabled={formState === FormState.Loading}
+                    required
+                  />
+                </Tippy>
+
                 <label className={styles.label} htmlFor='jobTitle'>
                   Job title
                 </label>
@@ -175,42 +215,30 @@ export default function ContactSalesForm() {
                 <label className={styles.label} htmlFor='url'>
                   Company Website
                 </label>
-                <input
-                  className={styles.input}
-                  id='url'
-                  maxLength={80}
-                  name='url'
-                  size={20}
-                  type='text'
-                  placeholder='google.com'
-                  onChange={(e) => setUrl(e.target.value)}
-                  disabled={formState === FormState.Loading}
-                  required
-                />
-                <label className={styles.label} htmlFor='phone'>
-                  Phone number
-                </label>
-                <PhoneInput
-                  inputClass={styles.phoneInput}
-                  buttonClass={styles.phoneDropdown}
-                  country={'us'}
-                  value={phone}
-                  onChange={(phone) => handlePhoneChange(phone)}
-                  enableSearch
-                  inputProps={{ ref: inputRef, name: 'phoneInput' }}
-                />
-                <label className={styles.label} htmlFor='description'>
-                  Tell us about your project
-                </label>
-                <textarea
-                  className={styles.textArea}
-                  name='description'
-                  id='description'
-                  rows={3}
-                  placeholder='Tell us about your project, needs, or any questions you may have'
-                  onChange={(e) => setDescription(e.target.value)}
-                  disabled={formState === FormState.Loading}
-                />
+                <Tippy
+                  maxWidth={270}
+                  content={
+                    <div className={styles.warningTooltip}>
+                      <InfoSVG />
+                      <span> Please fill out this field</span>
+                    </div>
+                  }
+                  visible={visibleWebsite}
+                >
+                  <input
+                    className={styles.input}
+                    id='url'
+                    maxLength={80}
+                    name='url'
+                    size={20}
+                    type='text'
+                    placeholder='google.com'
+                    onChange={(e) => setUrl(e.target.value)}
+                    disabled={formState === FormState.Loading}
+                    required
+                  />
+                </Tippy>
+
                 <Button
                   className={classNames(styles.button, { [styles.loadingButton]: formState === FormState.Loading })}
                   type='submit'
@@ -221,6 +249,7 @@ export default function ContactSalesForm() {
                   Submit
                 </Button>
               </div>
+              <PoweredByBotD className={styles.desktopOnly} />
             </div>
           </>
         )}
@@ -250,6 +279,35 @@ export default function ContactSalesForm() {
           </>
         )}
       </Section>
+      <PoweredByBotD className={styles.mobileOnly} />
     </>
+  )
+}
+export interface PoweredByBotDProps {
+  className: string
+}
+function PoweredByBotD({ className }: PoweredByBotDProps) {
+  return (
+    <div className={classNames(className, styles.poweredBy)}>
+      <p className={styles.botdDescription}>
+        <span>
+          <BotD className={styles.botD} />
+        </span>
+        <span>
+          Our form spam detection is powered by{' '}
+          <a className={styles.link} href={PATH.botD}>
+            BotD
+          </a>
+          .
+        </span>
+      </p>
+      <p className={styles.text}>
+        If you have problems with submission please{' '}
+        <a className={styles.link} href={MAILTO_SALES.mailToUrl}>
+          contact us via email
+        </a>
+        .
+      </p>
+    </div>
   )
 }

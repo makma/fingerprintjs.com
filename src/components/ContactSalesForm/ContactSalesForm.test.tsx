@@ -28,8 +28,6 @@ describe('Contact Sales Form', () => {
     await user.type(screen.getByLabelText('Your name'), 'John')
     await user.type(screen.getByLabelText('Work email'), 'john@gmail.com')
     await user.type(screen.getByLabelText('Company Website'), 'www.test.com')
-    await user.type(screen.getByPlaceholderText('1 (702) 123-4567'), '+1 2124567890')
-    await user.type(screen.getByLabelText('Tell us about your project'), 'test description')
 
     await user.click(screen.getByText('Submit'))
 
@@ -45,8 +43,6 @@ describe('Contact Sales Form', () => {
     await user.type(screen.getByLabelText('Your name'), 'John')
     await user.type(screen.getByLabelText('Work email'), 'john@gmail.com')
     await user.type(screen.getByLabelText('Company Website'), 'www.test.com')
-    await user.type(screen.getByPlaceholderText('1 (702) 123-4567'), '+1 2124567890')
-    await user.type(screen.getByLabelText('Tell us about your project'), 'test description')
 
     await user.click(screen.getByText('Submit'))
 
@@ -69,8 +65,6 @@ describe('Contact Sales Form', () => {
     await user.type(screen.getByLabelText('Your name'), 'John')
     await user.type(screen.getByLabelText('Work email'), 'john@gmail.com')
     await user.type(screen.getByLabelText('Company Website'), 'www.test.com')
-    await user.type(screen.getByPlaceholderText('1 (702) 123-4567'), '+1 2124567890')
-    await user.type(screen.getByLabelText('Tell us about your project'), 'test description')
 
     await user.click(screen.getByText('Submit'))
 

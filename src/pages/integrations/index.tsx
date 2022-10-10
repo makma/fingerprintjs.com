@@ -21,7 +21,13 @@ export default function Integrations({ pageContext }: IntegrationsProps) {
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
       <HeroSection />
       <CardsSection />
-      <IntegrationsBanner title='Don’t Have An Account Yet?' ctaHref={URL.signupUrl} ctaText='Sign Up' openNewTab>
+      <IntegrationsBanner
+        title='Don’t Have An Account Yet?'
+        ctaHref={URL.signupUrl}
+        ctaText='Sign Up'
+        openNewTab
+        variant='blue'
+      >
         Developers can start building with Fingerprint for free forever - no credit card required.
       </IntegrationsBanner>
     </LayoutTemplate>

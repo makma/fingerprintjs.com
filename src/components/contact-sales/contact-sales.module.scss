@@ -3,126 +3,111 @@
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: rem(170px);
-  padding-bottom: rem(66px);
+  display: flex;
+  justify-content: space-between;
 
-  background-image: url('../../img/EllipseBG.png');
-  background-position: calc(50%) 100%;
-  background-repeat: no-repeat;
+  column-gap: rem(32px);
+  padding-bottom: rem(96px);
 
   @include media('<=desktop') {
-    column-gap: rem(75px);
+    padding-bottom: 0;
 
-    background-position: 50% 100%;
-  }
-
-  @include media('<=tabletWide') {
-    column-gap: rem(30px);
-  }
-
-  @include media('<=tablet') {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
-
-    background-image: url('../../img/EllipseMobile.png');
-
-    background-position: 100% 54%;
-    background-size: contain;
   }
 
-  @include media('<=phoneLandscape') {
+  .title,
+  .titleMobile {
+    @include sans($size: 48px, $weight: 700, $lh: 64px);
+    letter-spacing: -0.01em;
+
+    padding-bottom: rem(32px);
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(32px);
+    }
+  }
+  .title {
+    @include media('<=desktop') {
+      display: none;
+    }
+  }
+  .titleMobile {
+    padding-bottom: rem(16px);
+
+    @include media('>desktop') {
+      display: none;
+    }
   }
 }
 
 .clients {
-  padding-top: rem(85px);
-  max-width: rem(400px);
   z-index: unset;
 
-  @include media('<=tablet') {
-    padding-top: rem(72px);
-  }
+  .benefits {
+    @include sans($size: 16px, $weight: 400, $lh: 24px);
+    padding-bottom: rem(36px);
 
-  .title {
-    text-align: center;
-    font-family: v(ff-sans);
-    font-size: rem(14px);
-    line-height: 140%;
-    color: adjust-color(c('brand-water'), $alpha: -0.3);
+    @include media('<=desktop') {
+      padding-bottom: 0;
+    }
+
+    li {
+      display: flex;
+
+      padding-bottom: rem(16px);
+
+      svg {
+        padding-right: rem(15px);
+        height: rem(24px);
+        flex-shrink: 0;
+      }
+    }
+  }
+  .logosSection {
+    @include media('<=desktop') {
+      padding: rem(24px) rem(16px) 0 rem(16px);
+    }
+  }
+  .logos {
+    display: flex;
+    column-gap: rem(40px);
+
+    @include media('<=desktop') {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 0;
+      row-gap: rem(32px);
+    }
+  }
+  .logosTitle {
+    padding-bottom: rem(32px);
+
+    @include sans($size: 14px, $weight: 600, $lh: 140%, $color: adjust-color(c('brand-water'), $alpha: -0.5));
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
-    font-weight: 500;
+    padding-top: rem(48px);
+    border-top: 1px solid #f2f2f7;
 
-    padding-bottom: rem(60px);
+    @include media('<=desktop') {
+      text-align: center;
+      padding-top: rem(40px);
+    }
   }
-
-  .content {
-    display: grid;
-    row-gap: rem(60px);
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .logo {
-    height: rem(48px);
-    max-width: rem(110px);
+    height: rem(22px);
     width: 100%;
     object-fit: contain;
+    max-width: rem(138px);
   }
   .slide {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-}
 
-.contactSalesSection {
-  display: flex;
-  flex-direction: column;
-
-  .poweredBy {
-    @include media('>tablet') {
-      padding-left: rem(32px);
-    }
-    padding-top: rem(24px);
-
-    display: flex;
-    flex-direction: column;
-    row-gap: rem(4px);
-  }
-  .botdDescription {
-    display: flex;
-    column-gap: rem(6px);
-    align-items: center;
-  }
-  .botdDescription,
-  .text {
-    min-height: rem(20px);
-
-    @include sans($size: 14px, $weight: 500, $lh: 125%);
-    letter-spacing: 0.004em;
-    color: v('off-white');
-
-    @include media('<=phoneLandscape') {
-      min-height: rem(17px);
-      font-size: rem(12px);
-    }
-
-    .link {
-      cursor: pointer;
-      text-decoration: underline;
-    }
-
-    .botD {
-      fill: white;
-
-      width: rem(20px);
-
-      @include media('<=phoneLandscape') {
-        width: rem(16px);
-      }
-    }
+  @include media('<=desktop') {
+    padding-bottom: rem(64px);
   }
 }

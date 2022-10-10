@@ -1,5 +1,7 @@
 .contactSalesFormSection {
-  min-height: rem(765px);
+  grid-area: form;
+
+  min-height: rem(595px);
   z-index: unset;
   flex: 1;
 }
@@ -83,27 +85,27 @@ select:focus {
 
 .formSection {
   padding: rem(32px);
-  max-width: rem(560px);
-  background-color: v('white');
+  max-width: rem(606px);
+  min-width: rem(540px);
+  border-radius: 16px;
+
   box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
   border-radius: 16px;
 
   .header {
-    font-size: rem(32px);
+    @include sans($size: 14px, $weight: 500, $lh: 150%);
   }
-  .subHeader {
-    padding-top: rem(16px);
-    padding-bottom: rem(8px);
 
-    font-family: v(ff-sans);
-    font-size: rem(16px);
-    font-weight: v('normal');
-    line-height: 150%;
+  @include media('<=desktop') {
+    padding: rem(20px);
+
+    min-width: auto;
   }
 }
 .stateSection {
   padding: rem(40px);
-  max-width: rem(560px);
+  max-width: rem(606px);
+  min-width: rem(540px);
   background-color: v('white');
   box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
   border-radius: 16px;
@@ -115,6 +117,7 @@ select:focus {
   row-gap: rem(24px);
 
   @include media('<=tablet') {
+    min-width: auto;
     width: 100%;
     padding: rem(250px) rem(10px);
   }
@@ -138,19 +141,65 @@ select:focus {
   }
 }
 
-.phoneInput {
-  border-radius: rem(8px) !important;
-  width: 100% !important;
-  height: rem(50px) !important;
+.errorDescription {
+  text-align: center;
 }
 
-.phoneDropdown {
-  border-radius: rem(8px) 0 0 rem(8px) !important;
-  > div {
-    border-radius: rem(8px) 0 0 rem(8px) !important;
+.poweredBy {
+  padding-top: rem(32px);
+
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(4px);
+}
+.botdDescription {
+  display: flex;
+  column-gap: rem(6px);
+  align-items: center;
+}
+.botdDescription,
+.text {
+  min-height: rem(20px);
+
+  @include sans($size: 14px, $weight: 400, $lh: 125%);
+  letter-spacing: 0.004em;
+
+  @include media('<=phoneLandscape') {
+    min-height: rem(17px);
+    font-size: rem(12px);
+  }
+
+  .link {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .botD {
+    fill: black;
+    padding-bottom: rem(2px);
+    width: rem(20px);
+
+    @include media('<=phoneLandscape') {
+      width: rem(16px);
+    }
+  }
+}
+.desktopOnly {
+  @include media('<=tablet') {
+    display: none;
   }
 }
 
-.errorDescription {
-  text-align: center;
+.mobileOnly {
+  @include media('>tablet') {
+    display: none;
+  }
+}
+
+.warningTooltip {
+  display: flex;
+  column-gap: rem(8px);
+  align-items: center;
+
+  color: #919194;
 }

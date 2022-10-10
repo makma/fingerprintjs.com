@@ -1,36 +1,5 @@
-.visitSection {
-  padding: rem(80px) 0 0 0;
-
-  @include media('<=tablet') {
-    padding: rem(80px) 0 0 0;
-  }
-}
-
-.catchFraudstersSection {
-  padding: 0 0 rem(96px) 0;
-
-  @include media('<=tablet') {
-    padding: 0 0 rem(70px) 0;
-  }
-}
-
-.containerVisits,
-.containerFraudsters {
-  display: grid;
-
-  @include media('<=tablet') {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding: 0 rem(20px);
-  }
-
-  @include media('<=phoneLandscape') {
-    align-items: flex-start;
-  }
-}
 .containerVisits {
+  display: grid;
   grid-template-columns: rem(640px) 1fr;
 
   @include media('<=desktop') {
@@ -44,18 +13,16 @@
       padding-bottom: rem(48px);
     }
   }
-  padding-bottom: rem(192px);
+  @include media('<=tablet') {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0 rem(20px);
+  }
 
   @include media('<=phoneLandscape') {
-    padding-bottom: rem(120px);
-  }
-}
-
-.containerFraudsters {
-  grid-template-columns: rem(517px) 1fr;
-
-  @include media('<=tablet') {
-    row-gap: rem(64px);
+    align-items: flex-start;
   }
 }
 
@@ -94,11 +61,119 @@
   }
 }
 
+.visitsSection {
+  @include media('<=phoneLandscape') {
+    width: 100%;
+  }
+}
+.visitsCard {
+  max-width: rem(507px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: rem(16px);
+  box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
+  border-radius: rem(16px);
+
+  margin-bottom: rem(32px);
+
+  @include media('<=phoneLandscape') {
+    padding: rem(8px);
+  }
+
+  .visitsTable {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+      @include sans($size: 14px, $weight: 500, $lh: 140%);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-align: left;
+    }
+    td {
+      @include sans($size: 16px, $weight: 400, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(14px);
+      }
+    }
+
+    td,
+    th {
+      padding: rem(16px);
+    }
+    .selected {
+      td {
+        background-color: var(--off-white);
+      }
+
+      td:first-child {
+        border-top-left-radius: rem(6px);
+        border-bottom-left-radius: rem(6px);
+      }
+      td:last-child {
+        border-top-right-radius: rem(6px);
+        border-bottom-right-radius: rem(6px);
+      }
+    }
+    .incognito {
+      color: #63cb7b;
+    }
+  }
+
+  &.incognitoCard {
+    background-color: v('brand-water');
+
+    .selected {
+      td {
+        background-color: adjust-color(c('brand-water'), $saturation: -5%, $lightness: 13%);
+      }
+    }
+
+    td,
+    th {
+      color: v('white');
+
+      .incognito {
+        color: #63cb7b;
+      }
+    }
+  }
+}
+
+.incognito {
+  display: flex;
+  flex-direction: row;
+  column-gap: rem(24px);
+
+  .icon {
+    width: rem(48px);
+    height: rem(48px);
+  }
+
+  .rows {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    .title {
+      @include sans($size: 14px, $weight: 500, $lh: 140%);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .description {
+      @include sans($size: 16px, $weight: 400, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+    }
+  }
+}
 .chartSection {
   position: relative;
   margin: auto;
 
   .dotsImage {
+    margin-left: rem(184px);
     width: rem(400px);
     height: rem(400px);
 
@@ -157,37 +232,33 @@
 
   .card:nth-of-type(1) {
     top: -12%;
-    right: -15%;
+    right: 3%;
 
-    @include media('<=desktop') {
-      right: 0%;
-    }
     @include media('<=tablet') {
-      top: -10%;
+      top: -5%;
+      right: 0%;
     }
   }
   .card:nth-of-type(2) {
     top: 10%;
-    left: -38%;
+    left: 3%;
 
     @include media('<=desktop') {
       top: 20%;
-      left: -5%;
     }
 
     @include media('<=tablet') {
-      top: 20%;
+      top: 35%;
+      left: 0%;
     }
   }
   .card:nth-of-type(3) {
     bottom: -4%;
-    right: -30%;
+    right: -2%;
 
-    @include media('<=desktop') {
-      right: 5%;
-    }
     @include media('<=tablet') {
-      bottom: -2%;
+      bottom: 0%;
+      right: 10%;
     }
   }
   .isIncognito {

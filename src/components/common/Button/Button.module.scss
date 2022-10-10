@@ -137,6 +137,14 @@
     opacity: 0.7;
   }
 }
+.orangeGradient {
+  background: linear-gradient(94.48deg, #f5614b 0%, #f5614b 0.01%, #fa7545 100%);
+  @include transition((opacity));
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
 
 .blue {
   background: linear-gradient(94.48deg, #0d102b 0%, #202659 100%);

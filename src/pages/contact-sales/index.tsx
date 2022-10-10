@@ -5,7 +5,9 @@ import { GeneratedPageContext } from '../../helpers/types'
 import BreadcrumbsSEO from '../../components/Breadcrumbs/BreadcrumbsSEO'
 
 import PageContent from '../../components/contact-sales/PageContent'
-
+import IntegrationsBanner from '../../components/IntegrationsBanner/IntegrationsBanner'
+import { PATH } from '../../constants/content'
+import DemoSection from '../../components/contactSales/DemoSection/DemoSection'
 import { HeadProps } from 'gatsby'
 import { SEO } from '../../components/SEO/SEO'
 
@@ -19,6 +21,15 @@ export default function ContactSalesPage({ pageContext }: ContactSalesPageProps)
     <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
       <PageContent />
+      <DemoSection />
+      <IntegrationsBanner
+        title='Prevent fraud with Fingerprint Pro'
+        ctaHref={PATH.demoUrl}
+        ctaText='Learn More'
+        openNewTab
+      >
+        Learn how Fingerprint Pro can help your business build a custom solution to detect and prevent fraud attempts.
+      </IntegrationsBanner>
     </LayoutTemplate>
   )
 }

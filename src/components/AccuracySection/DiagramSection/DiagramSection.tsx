@@ -12,8 +12,10 @@ enum tabOptions {
   BeforePro,
   AfterPro,
 }
-
-export default function DiagramSection() {
+interface DiagramSectionProps {
+  className?: string
+}
+export default function DiagramSection({ className }: DiagramSectionProps) {
   const [currentTab, setCurrentTab] = useState(tabOptions.BeforePro)
   const [isActive, setIsActive] = useState(false)
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout>()
@@ -33,7 +35,7 @@ export default function DiagramSection() {
   }, [isActive, timeoutId])
 
   return (
-    <Section className={styles.root}>
+    <Section className={classNames(className, styles.root)}>
       <Container size='large' className={styles.container}>
         <Tabs currentTab={currentTab} setCurrentTab={handleSwitch} className={styles.mobileTabs} />
         <div className={styles.card}>
