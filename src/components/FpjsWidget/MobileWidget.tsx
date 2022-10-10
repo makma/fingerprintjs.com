@@ -14,6 +14,7 @@ import styles from './MobileWidget.module.scss'
 import { MAPBOX_ACCESS_TOKEN } from '../../constants/env'
 import Skeleton from '../Skeleton/Skeleton'
 import { repeatElement } from '../../helpers/repeatElement'
+import { StaticImage } from 'gatsby-plugin-image'
 
 interface MobileWidgetProps extends CurrentVisitProps {
   isLoaded: boolean
@@ -43,6 +44,8 @@ export default function MobileWidget({ className, isLoaded, visits, visitorId }:
     >
       {visits &&
         visits.map((visit) => {
+          const isLocationAvailable = visit?.ipLocation?.latitude && visit?.ipLocation?.longitude
+
           return (
             <SwiperSlide
               key={visit.timestamp}
@@ -104,10 +107,10 @@ export default function MobileWidget({ className, isLoaded, visits, visitorId }:
                   <div className={styles.label}>Location</div>
                   <div
                     className={classNames(styles.value, {
-                      [styles.unavailable]: visit?.ipLocation?.latitude && visit?.ipLocation?.longitude,
+                      [styles.unavailable]: !isLocationAvailable,
                     })}
                   >
-                    {visit && (
+                    {isLocationAvailable ? (
                       <>
                         <Skeleton square className='swiper-lazy-preloader' />
                         <img
@@ -118,6 +121,15 @@ export default function MobileWidget({ className, isLoaded, visits, visitorId }:
                             visit?.ipLocation?.latitude
                           },7.00,0/512x512?access_token=${MAPBOX_ACCESS_TOKEN}`}
                           className='swiper-lazy'
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <StaticImage
+                          placeholder='blurred'
+                          layout='fullWidth'
+                          src='./locationUnknown.png'
+                          alt='Location Unknown'
                         />
                       </>
                     )}

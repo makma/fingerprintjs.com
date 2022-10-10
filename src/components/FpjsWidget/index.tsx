@@ -14,6 +14,7 @@ import styles from './FpjsWidget.module.scss'
 import Skeleton from '../Skeleton/Skeleton'
 import { repeatElement } from '../../helpers/repeatElement'
 import { getConfig } from '../../helpers/fpjs'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const secretToken = FPJS_SECRET_TOKEN
 const endpoint = FPJS_VISITORS_ENDPOINT
@@ -258,6 +259,8 @@ interface VisitDetailsProps extends VisitHistoryProps {
 }
 
 function VisitDetails({ isLoading, visits, visitorId, currentVisit }: VisitDetailsProps) {
+  const isLocationAvailable = currentVisit?.ipLocation?.latitude && currentVisit?.ipLocation?.longitude
+
   if (isLoading) {
     return (
       <div className={styles.currentVisit}>
@@ -342,10 +345,10 @@ function VisitDetails({ isLoading, visits, visitorId, currentVisit }: VisitDetai
           </span>
           <div
             className={classNames(styles.value, {
-              [styles.unavailable]: currentVisit?.ipLocation?.latitude && currentVisit?.ipLocation?.longitude,
+              [styles.unavailable]: !isLocationAvailable,
             })}
           >
-            {currentVisit && (
+            {isLocationAvailable ? (
               <img
                 alt='Location map'
                 src={`https://api.mapbox.com/styles/v1/mapbox/${
@@ -353,6 +356,15 @@ function VisitDetails({ isLoading, visits, visitorId, currentVisit }: VisitDetai
                 }/static/${currentVisit?.ipLocation?.longitude},${
                   currentVisit?.ipLocation?.latitude
                 },7.00,0/512x512?access_token=${mapboxToken}`}
+              />
+            ) : (
+              <StaticImage
+                placeholder='blurred'
+                layout='fixed'
+                width={190}
+                height={190}
+                src='./locationUnknown.png'
+                alt='Location Unknown'
               />
             )}
           </div>

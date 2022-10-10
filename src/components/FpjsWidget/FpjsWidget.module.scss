@@ -311,24 +311,8 @@
             }
           }
 
-          &.unvailable {
-            padding-top: 100%;
-
-            > img {
-              display: none;
-            }
-
-            &::before {
-              content: 'Not available';
-              position: absolute;
-              left: 50%;
-              top: 50%;
-              transform: translate(-50%, -50%) scale(1);
-              text-align: center;
-              padding-top: 0;
-              opacity: 0.5;
-            }
-
+          &.unavailable {
+            background-color: unset;
             &::after {
               display: none;
             }
