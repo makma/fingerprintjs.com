@@ -17,7 +17,9 @@
 
   @include media('<=phoneLandscape') {
     padding-top: rem(64px);
+  }
 
+  @include media('<=tablet') {
     text-align: left;
   }
   .title {
@@ -47,6 +49,7 @@
   @include media('<=tablet') {
     flex-direction: column;
     align-items: center;
+    text-align: left;
   }
 
   .title {
@@ -63,11 +66,11 @@
     @include media('<=tablet') {
       padding-bottom: rem(32px);
       max-width: unset;
+      align-self: start;
     }
     @include media('<=phoneLandscape') {
       font-size: rem(26px);
       line-height: 32px;
-      align-self: start;
     }
   }
 }
