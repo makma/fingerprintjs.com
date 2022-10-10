@@ -8,7 +8,7 @@ import PageContent from '../../components/contact-sales/PageContent'
 import IntegrationsBanner from '../../components/IntegrationsBanner/IntegrationsBanner'
 import { PATH } from '../../constants/content'
 import DemoSection from '../../components/contactSales/DemoSection/DemoSection'
-import { HeadProps } from 'gatsby'
+import { HeadProps, withPrefix } from 'gatsby'
 import { SEO } from '../../components/SEO/SEO'
 
 interface ContactSalesPageProps {
@@ -35,5 +35,9 @@ export default function ContactSalesPage({ pageContext }: ContactSalesPageProps)
 }
 
 export function Head(props: HeadProps) {
-  return <SEO pathname={props.location.pathname} title='Contact Sales - Fingerprint Pro' />
+  return (
+    <SEO pathname={props.location.pathname} title='Contact Sales - Fingerprint Pro'>
+      <link rel='preload' as='image' href={withPrefix('/img/diagram-section/backgroundAfter.svg')} />
+    </SEO>
+  )
 }
