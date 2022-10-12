@@ -57,6 +57,9 @@
   }
 
   .worldSection {
+    // When moving the sliders of swiper.js they generate a glitch in this section
+    z-index: 1;
+
     display: flex;
     flex-direction: column;
     align-items: center;

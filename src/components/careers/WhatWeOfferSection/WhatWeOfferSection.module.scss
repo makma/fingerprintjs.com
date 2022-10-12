@@ -17,6 +17,9 @@
 }
 .cardsContainer {
   .cardsSection {
+    // When moving the sliders of swiper.js they generate a glitch in this section
+    z-index: 1;
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-content: space-between;
