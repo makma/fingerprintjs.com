@@ -9,7 +9,10 @@ import { Link } from 'gatsby'
 import { isBrowser } from '../../helpers/detector'
 import styles from './LiveDemoSection.module.scss'
 
-export default function LiveDemoSection() {
+interface LiveDemoSectionProps {
+  advertisingVariant?: boolean
+}
+export default function LiveDemoSection({ advertisingVariant = false }: LiveDemoSectionProps) {
   return (
     <Section className={styles.liveSection}>
       <Container size='large' className={styles.container}>
@@ -39,7 +42,7 @@ export default function LiveDemoSection() {
             </em>
             device fingerprinting as a service.
           </p>
-          <GetStartedForm className={styles.form} />
+          <GetStartedForm advertisingVariant={advertisingVariant} />
         </header>
         <div className={styles.content}>
           <FpjsWidget />

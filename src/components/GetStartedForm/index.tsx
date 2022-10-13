@@ -15,13 +15,14 @@ import { useViewTracking } from '../../context/HistoryListener'
 import { getConfig } from '../../helpers/fpjs'
 
 import styles from './GetStartedForm.module.scss'
-import { DEFAULT_TRIAL_DAYS } from '../../constants/content'
+import { DEFAULT_TRIAL_DAYS, PATH } from '../../constants/content'
 
 interface GetStartedFormProps {
   className?: string | string[]
+  advertisingVariant?: boolean
 }
 
-export default function GetStartedForm({ className }: GetStartedFormProps) {
+export default function GetStartedForm({ className, advertisingVariant = false }: GetStartedFormProps) {
   const { getData } = useVisitorData(getConfig, { immediate: false })
   const dashboardEndpoint = FPJS_DASHBOARD_ENDPOINT
   const [email, setEmail] = useState('')
@@ -58,7 +59,24 @@ export default function GetStartedForm({ className }: GetStartedFormProps) {
     }
   }
 
-  return (
+  return advertisingVariant ? (
+    <div className={classNames(className, styles.form, styles.getStarted, styles.advertising)}>
+      <Button href={PATH.contactSales} className={styles.ctaButton}>
+        Contact Sales
+      </Button>
+      <ul className={classNames(styles.description, styles.advertisingDescription)}>
+        <li>
+          <CheckSvg className={styles.check} />
+          Incognito Mode Detection
+        </li>
+        <li className={styles.threeColumns}>
+          <CheckSvg className={styles.check} />
+          GDPR/CCPA Compliant
+          <CompliantTooltip />
+        </li>
+      </ul>
+    </div>
+  ) : (
     <form
       className={classNames(
         className,
@@ -117,36 +135,42 @@ export default function GetStartedForm({ className }: GetStartedFormProps) {
         <li className={styles.threeColumns}>
           <CheckSvg className={styles.check} />
           GDPR/CCPA Compliant
-          <Tippy
-            placement='bottom'
-            theme='checkmark'
-            offset={[0, 40]}
-            arrow={false}
-            popperOptions={{
-              modifiers: [
-                {
-                  name: 'flip',
-                  options: {
-                    fallbackPlacements: ['right'],
-                  },
-                },
-              ],
-            }}
-            content={
-              <div>
-                Fingerprint is GDPR/CCPA compliant. Our technology is intended to be used for fraud detection only - for
-                this use case, no user consent is required.
-                <br />
-                <br />
-                Any use outside of fraud detection would need to comply with GDPR/CCPA user consent rules. We never
-                automatically track traffic, and never do cross-domain tracking.
-              </div>
-            }
-          >
-            <InfoSvg tabIndex={0} className={styles.infoIcon} />
-          </Tippy>
+          <CompliantTooltip />
         </li>
       </ul>
     </form>
   )
+
+  function CompliantTooltip() {
+    return (
+      <Tippy
+        placement='bottom'
+        theme='checkmark'
+        offset={[0, 40]}
+        arrow={false}
+        popperOptions={{
+          modifiers: [
+            {
+              name: 'flip',
+              options: {
+                fallbackPlacements: ['right'],
+              },
+            },
+          ],
+        }}
+        content={
+          <div>
+            Fingerprint is GDPR/CCPA compliant. Our technology is intended to be used for fraud detection only - for
+            this use case, no user consent is required.
+            <br />
+            <br />
+            Any use outside of fraud detection would need to comply with GDPR/CCPA user consent rules. We never
+            automatically track traffic, and never do cross-domain tracking.
+          </div>
+        }
+      >
+        <InfoSvg tabIndex={0} className={styles.infoIcon} />
+      </Tippy>
+    )
+  }
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './GetStartedSection.module.scss'
 import Section from '../../common/Section'
 import Container from '../../common/Container'
-import { URL } from '../../../constants/content'
+import { URL, PATH } from '../../../constants/content'
 
 import { ReactComponent as EbaySVG } from '../../../../static/img/company-logos/ebay.svg'
 import { ReactComponent as TargetSVG } from '../../../../static/img/company-logos/target.svg'
@@ -15,15 +15,27 @@ import { ReactComponent as YahooSVG } from '../../../../static/img/company-logos
 
 import Button from '../../common/Button'
 
-export default function GetStartedSection() {
+interface GetStartedSectionProps {
+  advertisingVariant?: boolean
+}
+
+export default function GetStartedSection({ advertisingVariant }: GetStartedSectionProps) {
   return (
     <Section className={styles.root}>
       <Container className={styles.heroContainer}>
         <h1 className={styles.title}>12% of the largest 500 websites use Fingerprint</h1>
-        <h2 className={styles.subTitle}>Get Started For Free Today</h2>
-        <Button size='big' href={URL.signupUrl} className={styles.button}>
-          Create Free Account
-        </Button>
+        {advertisingVariant ? (
+          <Button size='big' href={PATH.contactSales} className={styles.advertisingButton}>
+            Contact Sales
+          </Button>
+        ) : (
+          <>
+            <h2 className={styles.subTitle}>Get Started For Free Today</h2>
+            <Button size='big' href={URL.signupUrl} className={styles.button}>
+              Create Free Account
+            </Button>
+          </>
+        )}
       </Container>
       <Container size='large' className={styles.clientsContainer}>
         <div className={styles.content}>

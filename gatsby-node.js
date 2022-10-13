@@ -223,6 +223,23 @@ exports.createPages = async ({ actions, graphql }) => {
   await Promise.all(createAuthorTagPages)
 }
 
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions
+
+  // Check if noIndex was already set and bail early as otherwise an infinite loop could occur
+  if (page.path.includes('/ads/') && page.context.noIndex !== true) {
+    const newPage = {
+      ...page,
+      context: {
+        ...page.context,
+        noIndex: true,
+      },
+    }
+    deletePage(page)
+    createPage(newPage)
+  }
+}
+
 function createNodePath({ node, getNode }) {
   const directory = getNode(node.parent).relativeDirectory
   const filename = path.basename(node.fileAbsolutePath, path.extname(node.fileAbsolutePath))

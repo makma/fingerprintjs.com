@@ -41,6 +41,9 @@
   &.getStarted {
     position: relative;
 
+    @include media('<=desktop') {
+      margin: auto;
+    }
     @include media('<=tablet') {
       width: 100%;
     }
@@ -66,10 +69,10 @@
 
       li {
         display: grid;
-        grid-template-columns: 0.1fr 0.9fr;
+        grid-template-columns: rem(18px) 1fr;
 
         &.threeColumns {
-          grid-template-columns: 0.1fr 0.45fr 0.45fr;
+          grid-template-columns: rem(18px) rem(80px) 1fr;
         }
 
         @include media('<tablet') {
@@ -86,6 +89,9 @@
         margin-right: 0.75rem;
         margin-top: 0.75rem;
       }
+    }
+    .advertisingDescription {
+      grid-template-columns: repeat(2, 1fr);
     }
 
     &.failed,
@@ -211,4 +217,12 @@
   width: 1.5rem;
   height: auto;
   fill: darkgreen;
+}
+
+.advertising {
+  max-width: rem(307px);
+
+  .ctaButton {
+    width: 100%;
+  }
 }
