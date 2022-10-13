@@ -35,8 +35,6 @@ In September 2022, Uber's private network was [breached by a teenage attacker](h
 
 The attacker scanned the network for sensitive information and found PowerShell scripts with hardcoded administrator credentials. From there, the attacker had access to various data-driven storage that held Uber's intellectual property. This recent story is just one example of how social engineering can successfully trick tech-savvy individuals.   
 
-
-
 ## The Four Phases in Social Engineering
 
 Attempts seem to choose targets indiscriminately, but social engineering is performed using four distinct phases. Arguably, the most crucial phase is the last one – closure – to avoid letting the victim sense that they've been tricked. Leaving the victim unaware gives the attacker more time to exfiltrate data.
@@ -59,8 +57,6 @@ With stolen credentials, it's now time to compromise the targeted organization. 
 
 Again, this is arguably the most crucial phase. After contacting the target, the attacker must drop the conversation without allowing the target to realize what just happened. At this point, victims must recognize what happened to minimize damage and alert the right people to remediate the issue.
 
-
-
 ## Social Engineering Targets the Human Element
 
 The weakest link in your organization is the human element. Sometimes, the weakest link is employees who think they are invulnerable to social engineering and phishing attacks. These employees are always targets based on their high-privilege access to sensitive data. They have access to code repositories, administrative controls, trade secrets, databases, and possibly customer data. 
@@ -81,4 +77,4 @@ Finally, organizations should work with technology to detect and stop credential
 
 With Fingerprint, developers can code failsafe systems into their applications to detect and block authentication attempts. Credential theft still creates a security incident that should be investigated. Integrating Fingerprint into an application will stop brute-force attacks and account takeover botted scans against the web application. It also adds a layer of protection to stop the next exploit phase in social engineering.
 
-To get started with credential stuffing prevention and phishing attacks, check out Fingerprint's [attacker detection solution](https://fingerprint.com/account-takeover/) or try out our [demo application](https://fingerprint.com/demo/).
+To get started with credential stuffing prevention and phishing attacks, check out Fingerprint's [account takeover solution](https://fingerprint.com/account-takeover/) or try out our [demo application](https://fingerprint.com/demo/).
