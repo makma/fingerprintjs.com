@@ -10,6 +10,8 @@ export interface SuccessResponse {
         meta: { yourTag: number }
         ip: string
         time: string
+        url: string
+        userAgent: string
       }
       error?: {
         code: string

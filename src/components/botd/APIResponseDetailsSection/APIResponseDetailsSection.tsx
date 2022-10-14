@@ -29,7 +29,9 @@ export default function APIResponseDetailsSection() {
                     "type": ${botData?.bot.type ? '"' + botData.bot.type + '"' : ''}
                 },
                 "ip": "${botData?.ip ?? '186.XXX.XXX.XXX'}",
-                "time": "${botData?.time ?? currentTime}"
+                "time": "${botData?.time ?? currentTime}",
+                "url": "${botData?.url ?? 'https://fingerprint.com/products/bot-detection/'}",
+                "userAgent": "${botData?.userAgent ?? 'Mozilla/5.0'}"
             }
         }
     }
@@ -80,12 +82,30 @@ export default function APIResponseDetailsSection() {
                 className={styles.time}
                 left={
                   botData?.time
-                    ? 274 + botData?.time.length * characterLength
-                    : 274 + currentTime.length * characterLength
+                    ? 279 + botData?.time.length * characterLength
+                    : 279 + currentTime.length * characterLength
                 }
               >
                 <p>
                   <strong>Time</strong> when bot detection checks were performed for the client.
+                </p>
+              </CodeTooltip>,
+              <CodeTooltip
+                key='url'
+                className={styles.url}
+                left={botData?.url ? 270 + botData?.url.length * characterLength : 665}
+              >
+                <p>
+                  <strong>Url</strong> of the page where BotD was executed.
+                </p>
+              </CodeTooltip>,
+              <CodeTooltip
+                key='userAgent'
+                className={styles.userAgent}
+                left={botData?.userAgent ? 316 + botData?.userAgent.length * characterLength : 409}
+              >
+                <p>
+                  <strong>Client User Agent.</strong>
                 </p>
               </CodeTooltip>,
             ]}

@@ -50,19 +50,25 @@
 }
 
 .result {
-  bottom: 180px;
+  bottom: 223px;
 }
 
 .type {
-  bottom: 159px;
+  bottom: 202px;
 }
 
 .ip {
-  bottom: 117px;
+  bottom: 160px;
 }
 
 .time {
-  bottom: 97px;
+  bottom: 138px;
+}
+.url {
+  bottom: 118px;
+}
+.userAgent {
+  bottom: 98px;
 }
 
 .link {
@@ -72,4 +78,8 @@
   &:hover {
     color: adjust-color(c('brand-fire'), $lightness: -20%);
   }
+}
+
+.snippetSection {
+  max-width: rem(584.5px);
 }
