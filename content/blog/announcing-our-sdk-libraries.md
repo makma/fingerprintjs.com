@@ -5,8 +5,8 @@ metadata:
   url: www.fingerprint.com/blog/announcing-fingerprint-sdk-libraries
   socialImage: /img/uploads/check-out-our-sdks.jpg
   image: /img/uploads/check-out-our-sdks.jpg
-  imageAlt: "Hexagons with Brand Logos "
-  imageTitle: "Hexagons with Brand Logos "
+  imageAlt: SDK Libraries Hexagon Image
+  imageTitle: SDK Libraries Hexagon Image
   description: "We know how vital SDKs and libraries are to our Pro customers and
     our open-source users. We have launched a new webpage that highlights all of
     the SDKs and libraries we currently support. "
@@ -21,8 +21,8 @@ authors:
   - Kevin Roy
 heroImage:
   image: /img/uploads/check-out-our-sdks.jpg
-  imageAlt: "Hexagons with Brand Logos "
-  imageTitle: "Hexagons with Brand Logos "
+  imageAlt: SDK Libraries Hexagon Image
+  imageTitle: SDK Libraries Hexagon Image
 customCTA:
   openCtaNewTab: false
 ---
