@@ -6,7 +6,7 @@ metadata:
   socialImage: /img/uploads/what-is-the-cookieless-future-and-what-does-it-mean-for-developers_.jpg
   imageAlt: Cookieless Future Trash Can
   imageTitle: Cookieless Future Trash Can
-  url: www.fingerprint.com/blogs/cookieless-future-for-developers
+  url: www.fingerprint.com/blog/cookieless-future-for-developers
   description: For decades, cookies have been an essential component of the online
     experience for users. With browsers intending to phase out third-party
     cookies in the near future, learn how this will change the internet
