@@ -798,6 +798,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blogs/cookieless-future-for-developers/"
+  to = "/blog/cookieless-future-for-developers/"
+  status = 301
+  force = true
+
 [context.branch-deploy]
   command = "yarn noIndexBuild"
 
