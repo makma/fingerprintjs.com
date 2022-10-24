@@ -101,7 +101,7 @@ export default function HeroSection() {
           <a className={styles.buttonOutlined} href={URL.botDRepoUrl} target='_blank' rel='noreferrer'>
             <div className={styles.label}>
               <GithubIconSvg className={styles.icon} />
-              <span>Github</span>
+              <span>GitHub</span>
             </div>
           </a>
         </div>

@@ -37,7 +37,7 @@ export default function JoinCommunitySection({ title, children, discordLink, git
           <Button className={styles.label} href={githubLink} variant='white' size='big' openNewTab>
             <div className={styles.button}>
               <GithubIconSvg className={styles.icon} />
-              <span>Github</span>
+              <span>GitHub</span>
             </div>
           </Button>
         </div>
