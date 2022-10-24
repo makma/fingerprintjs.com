@@ -75,10 +75,7 @@ export default function HeroSection() {
   return (
     <Container size='large' className={styles.container}>
       <section className={styles.descriptionSection}>
-        <div className={styles.labels}>
-          <span className={styles.title}>free open beta</span>
-          <span className={styles.title}>{githubData?.stargazers_count} stars</span>
-        </div>
+        <span className={styles.title}>{githubData?.stargazers_count} stars</span>
         <h2 className={styles.subTitle}>
           Introducing BotD:
           <br />

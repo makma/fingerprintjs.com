@@ -67,7 +67,7 @@ export const DOC_URL = {
   privacyPolicyUrl: `${URL.docsUrl}/docs/privacy-policy`,
   browserSupportUrl: `${URL.docsUrl}/docs/browser-support`,
   webhooksUrl: `${URL.docsUrl}/docs/webhooks`,
-  botDUrl: 'https://github.com/fingerprintjs/BotD#botd-currently-in-beta',
+  botDUrl: 'https://github.com/fingerprintjs/BotD#botd',
   zeroTrustUrl: `${URL.docsUrl}/docs/zero-trust-mode`,
   bestPracticesUrl: `${URL.docsUrl}/docs/best-practices`,
 } as const
