@@ -87,7 +87,7 @@ fpPromise
   .then(fpResult => {result = fpResult})
 ```
 
-The endpoint property is quite important and is used for the [Subdomain setup](https://dev.fingerprintjs.com/docs/subdomain-integration). Using a subdomain is required for correct identification while using Fingerprint Pro.
+The endpoint property is quite important and is used for the [Custom subdomain setup](https://dev.fingerprintjs.com/docs/subdomain-integration). Using a subdomain is required for correct identification while using Fingerprint Pro.
 
 * Send the user’s credentials together with `visitorId` and `requestId` to your authentication API.
 
