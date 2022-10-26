@@ -7,12 +7,12 @@ import { ReactComponent as EbaySVG } from '../../../static/img/company-logos/eba
 import { ReactComponent as TargetSVG } from '../../../static/img/company-logos/target.svg'
 import { ReactComponent as UsBankSVG } from '../../../static/img/company-logos/us-bank.svg'
 import { ReactComponent as BookingSVG } from '../../../static/img/company-logos/booking.svg'
+import { ReactComponent as DropboxSVG } from '../../../static/img/company-logos/dropbox.svg'
 import { ReactComponent as AmeritradeSVG } from '../../../static/img/company-logos/ameritrade.svg'
-import { ReactComponent as HsnSVG } from '../../../static/img/company-logos/hsn.svg'
 import { ReactComponent as AgodaSVG } from '../../../static/img/company-logos/agoda.svg'
 import { ReactComponent as RealtorSVG } from '../../../static/img/company-logos/realtor.svg'
 import { ReactComponent as CoinBaseSVG } from '../../../static/img/company-logos/coinbase.svg'
-import { ReactComponent as HomeCreditSVG } from '../../../static/img/company-logos/home-credit.svg'
+import { ReactComponent as UpstarSVG } from '../../../static/img/company-logos/upstar.svg'
 import { ReactComponent as RockstarSVG } from '../../../static/img/company-logos/rockstar.svg'
 import { ReactComponent as CheckoutSVG } from '../../../static/img/company-logos/checkout.svg'
 import { ReactComponent as WesterUnionSVG } from '../../../static/img/company-logos/western-union.svg'
@@ -32,13 +32,13 @@ export default function ClientsSection() {
           <CompanyLogo icon={EbaySVG} className={styles.EbaySVG} />
           <CompanyLogo icon={TargetSVG} className={styles.TargetSVG} />
           <CompanyLogo icon={UsBankSVG} className={styles.UsBankSVG} />
-          <CompanyLogo icon={BookingSVG} className={styles.BookingSVG} />
+          <CompanyLogo icon={DropboxSVG} className={styles.DropboxSVG} />
           <CompanyLogo icon={AmeritradeSVG} className={styles.AmeritradeSVG} />
-          <CompanyLogo icon={HsnSVG} className={styles.HsnSVG} />
+          <CompanyLogo icon={BookingSVG} className={styles.BookingSVG} />
           <CompanyLogo icon={AgodaSVG} className={styles.AgodaSVG} />
           <CompanyLogo icon={RealtorSVG} className={styles.RealtorSVG} link='https://www.realtor.com/' />
           <CompanyLogo icon={CoinBaseSVG} className={styles.CoinBaseSVG} />
-          <CompanyLogo icon={HomeCreditSVG} className={styles.HomeCreditSVG} />
+          <CompanyLogo icon={UpstarSVG} className={styles.UpstarSVG} />
           <CompanyLogo icon={RockstarSVG} className={styles.RockstarSVG} />
           <CompanyLogo icon={CheckoutSVG} className={styles.CheckoutSVG} />
           <CompanyLogo icon={WesterUnionSVG} className={styles.WesterUnionSVG} />
