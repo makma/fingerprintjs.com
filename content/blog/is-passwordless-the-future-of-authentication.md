@@ -3,7 +3,7 @@ templateKey: long-form-content
 metadata:
   title: Is Passwordless the Future of Authentication?
   image: /img/uploads/is-passwordless-the-future-of-authentication_.jpg
-  url: www.fingerprint.com/blog/passwordless-future
+  url: fingerprint.com/blog/passwordless-future
   description: Passwordless login is being touted as the future of authentication.
     Advocates point to both greater security and an improved user experience —
     but is it enough? Here’s what you need to know about the shortcomings and
