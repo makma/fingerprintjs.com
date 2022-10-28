@@ -7,10 +7,10 @@ metadata:
     authentication and encryption strategies for security-critical applications,
     minimizing attack surfaces by locking down the environment. Here's how to
     prepare for the next generation of cybersecurity.
-  image: /img/uploads/how-zero-trust-will-lead-to-the-next-generation-of-cyber-defense.jpg
+  image: /img/uploads/3-1.jpg
   imageAlt: Zero Trust Lock Image
   imageTitle: Zero Trust Lock Image
-  socialImage: /img/uploads/how-zero-trust-will-lead-to-the-next-generation-of-cyber-defense.jpg
+  socialImage: /img/uploads/3-1.jpg
 featured: true
 publishDate: 2022-10-28T18:58:48.609Z
 title: How Zero Trust Will Lead to the Next Generation of Cyber Defense
@@ -21,7 +21,7 @@ tags:
 authors:
   - Omkar Naidu
 heroImage:
-  image: /img/uploads/how-zero-trust-will-lead-to-the-next-generation-of-cyber-defense.jpg
+  image: /img/uploads/3-1.jpg
   imageAlt: Zero Trust Lock Image
   imageTitle: Zero Trust Lock Image
 customCTA:
