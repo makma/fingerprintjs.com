@@ -77,7 +77,7 @@ If you are on an older version, we will highlight this - showing you your curren
 We have added an Integration Status check-list that highlights the key steps to get the most from Fingerprint. We break this down to 4 main steps:
 
 1. [API Calls](https://dev.fingerprint.com/docs/quick-start-guide): First and foremost, we want to ensure you are successfully making requests with our JS Agent. When you make your first identification, this step will mark itself as complete, and you’ll start seeing usage data on the overview page.
-2. [Subdomain Integration](https://dev.fingerprint.com/docs/subdomain-integration): We highly recommend utilizing our subdomain integration which has a few benefits:
+2. [Custom Subdomain](https://dev.fingerprint.com/docs/subdomain-integration): We highly recommend utilizing the custom subdomain which has a few benefits:
 
 * Significant increase to accuracy on Safari
 * Cookies are now recognized as “first-party” which means they can live longer in the browser and extend the lifetime of visitorIds
@@ -115,6 +115,6 @@ The request filtering section of the customer dashboard now allows you to use a 
 
 ## Additional Updates
 
-We have a ton of exciting updates in store for the coming months, including improvements to our JS Agent upgrade process, adding SSO, adding additional signals, improving identifications and updating our subdomain integration (just to name a few).
+We have a ton of exciting updates in store for the coming months, including improvements to our JS Agent upgrade process, adding SSO, adding additional signals, improving identifications and updating the custom subdomain (just to name a few).
 
 Our team is looking forward to the coming improvements that will benefit your experience with utilizing Fingerprint. Thank you for being a part of our journey - we truly appreciate our partnership!

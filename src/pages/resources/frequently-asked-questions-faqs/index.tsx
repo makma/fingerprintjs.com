@@ -151,10 +151,10 @@ export const faqs = [
         ),
       },
       {
-        question: 'What are the advantages of using a subdomain integration?',
+        question: 'What are the advantages of using the custom subdomain?',
         answer: (
           <p className={styles.faqContent}>
-            Subdomain integration allows API calls through ad blockers and specific security policies.
+            The custom subdomain allows API calls through ad blockers and specific security policies.
           </p>
         ),
       },
