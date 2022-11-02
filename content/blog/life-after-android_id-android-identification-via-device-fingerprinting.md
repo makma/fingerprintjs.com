@@ -25,6 +25,12 @@ heroImage:
   image: /img/uploads/4.png
   imageAlt: Device Fingerprinting For Android
   imageTitle: Device Fingerprinting For Android
+customCTA:
+  title: Stop fraud, spam, and account takeover with 99.5% accurate device
+    fingerprinting-as-a-service.
+  description: "Get unlimited API calls for free 10 days, no credit card required. "
+  ctaText: Get Started
+  ctaUrl: https://dashboard.fingerprint.com/signup
 ---
 **Last week, our team launched [Fingerprint Android](https://github.com/fingerprintjs/fingerprintjs-android), an open-source library for accurately identifying Android devices using all available signals.** 
 
