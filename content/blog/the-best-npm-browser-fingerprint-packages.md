@@ -25,6 +25,11 @@ heroImage:
   imageTitle: Best NPM browser fingerprinting packages
 customCTA:
   openCtaNewTab: false
+  ctaUrl: https://dashboard.fingerprint.com/signup
+  ctaText: Get Started
+  description: "Get unlimited API calls for free 10 days, no credit card required. "
+  title: " Stop fraud, spam, and account takeover with 99.5% accurate device
+    fingerprinting-as-a-service."
 ---
 Browser fingerprints are generated using information gathered from a website visitor’s hardware and software to form a unique identifier for that browser and device. With browser fingerprints, you can provide your website’s users with a more targeted experience while also keeping your business protected from fraud.
 
