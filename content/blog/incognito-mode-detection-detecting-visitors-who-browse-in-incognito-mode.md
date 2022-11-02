@@ -23,6 +23,12 @@ heroImage:
   image: /img/uploads/incognito-mode.png
   imageAlt: Incognito mode detection
   imageTitle: Incognito mode detection
+customCTA:
+  title: Stop fraud, spam, and account takeover with 99.5% accurate device
+    fingerprinting-as-a-service.
+  description: "Get unlimited API calls for free 10 days, no credit card required. "
+  ctaText: " Get Started"
+  ctaUrl: https://dashboard.fingerprint.com/signup
 ---
 Browsers attempt to ensure a user’s privacy by offering Incognito mode, which allows the user to surf the internet without worrying about their history, cookies, or information being saved permanently. However, in many business use cases, this can end up being harmful. For example, visitors may use Incognito mode to gain unlimited content access, bypassing undetected paywalls.
 
