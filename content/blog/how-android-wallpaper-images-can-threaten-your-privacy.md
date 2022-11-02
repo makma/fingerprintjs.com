@@ -27,6 +27,11 @@ heroImage:
   imageTitle: Android Wallpaper Identifcation
 customCTA:
   openCtaNewTab: false
+  title: " Stop fraud, spam, and account takeover with 99.5% accurate device
+    fingerprinting-as-a-service."
+  description: "Get unlimited API calls for free 10 days, no credit card required. "
+  ctaText: Get Started
+  ctaUrl: https://dashboard.fingerprint.com/signup
 ---
 Android 12’s highly anticipated Material You design system features wallpaper-based color theming and advanced customizations powered by color extraction. These UI enhancements allow users to select a wallpaper (i.e., a personal background image) that automatically generates an optimal palette of colors that applies to the device’s look and feel global.
 
