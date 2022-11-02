@@ -25,6 +25,12 @@ heroImage:
   image: /img/uploads/canvas-fingerprinting.png
   imageAlt: Canvas fingerprinting
   imageTitle: Canvas fingerprinting
+customCTA:
+  title: " Stop fraud, spam, and account takeover with 99.5% accurate device
+    fingerprinting-as-a-service."
+  description: "Get unlimited API calls for free 10 days, no credit card required. "
+  ctaText: Get Started
+  ctaUrl: https://dashboard.fingerprint.com/signup
 ---
 Identifying users on your website has many uses. From tracking engagement to preventing fraud, knowing how users interact with your application is a powerful tool for developers and businesses.
 
