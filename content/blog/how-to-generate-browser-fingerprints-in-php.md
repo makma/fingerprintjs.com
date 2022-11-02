@@ -24,6 +24,12 @@ heroImage:
   image: /img/uploads/browser-fingerprints-in-php-1-.png
   imageAlt: Browser fingerprinting in PHP
   imageTitle: Browser fingerprinting in PHP
+customCTA:
+  title: Stop fraud, spam, and account takeover with 99.5% accurate device
+    fingerprinting-as-a-service.
+  description: Get unlimited API calls for free 10 days, no credit card required.
+  ctaText: Get Started
+  ctaUrl: https://dashboard.fingerprint.com/signup
 ---
 Almost every web developer has to combat fraud at some point. Attacks might include malicious users trying to brute force passwords, place fraudulent orders, initiate bot attacks, or bypass your site’s paywall.
 
