@@ -7,7 +7,7 @@ metadata:
   imageAlt: Synthetic ID Image
   imageTitle: Synthetic ID Image
   image: /img/uploads/synthetic-id-fraud.jpg
-  url: www.fingerprint.com/blog/synthetic-identity-fraud
+  url: fingerprint.com/blog/synthetic-identity-fraud
   description: "Attackers are using Synthetic Identities to scam and steal from
     businesses and consumers. Learn about Synthetic Identity Fraud and how you
     can prevent it. "
