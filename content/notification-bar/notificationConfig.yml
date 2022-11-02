@@ -1,6 +1,6 @@
-showNotBar: false
-barBody: "ANNOUNCEMENT: We are now Fingerprint."
-arrowText: Here's why
-url: /blog/fingerprintjs-is-now-fingerprint
+showNotBar: true
+barBody: "PRODUCT LAUNCH: Detect sophisticated bots with BotD (Nov 2nd - 1pm EST)"
+arrowText: ""
+url: blog/botd-webinar-announcement/
 openUrlNewTab: false
 backgroundColor: "#f04405"
