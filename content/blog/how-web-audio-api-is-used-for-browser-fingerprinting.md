@@ -21,6 +21,12 @@ tags:
   - web
 authors:
   - Savannah Copland
+customCTA:
+  title: Stop fraud, spam, and account takeover with 99.5% accurate device
+    fingerprinting-as-a-service.
+  description: Get unlimited API calls for free 10 days, no credit card required.
+  ctaUrl: https://dashboard.fingerprint.com/signup
+  ctaText: Get Started
 ---
 Did you know you can identify web browsers without cookies or asking for permissions?
 
