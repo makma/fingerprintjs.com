@@ -26,11 +26,12 @@ heroImage:
   imageAlt: Permanently ban users from your website with Fingerprint
   imageTitle: Permanently ban users from your website with Fingerprint
 customCTA:
-  title: Start identifying anonymous traffic with 99.5% accuracy
-  description: Try Fingerprint Pro for free today!
-  ctaText: Start Now
+  title: Stop fraud, spam, and account takeover with 99.5% accurate device
+    fingerprinting-as-a-service.
+  description: Get unlimited API calls for free 10 days, no credit card required.
+  ctaText: Get Started
   ctaUrl: https://dashboard.fingerprint.com/signup
-  openCtaNewTab: true
+  openCtaNewTab: false
   isPublished: true
 ---
 While having user-generated content is a great way to add interactivity and community to your website, it, unfortunately, leaves you open to abuse from malicious users. Nudity, harassment, spam, advertising, or even malware and viruses are some unwanted content you may have to deal with. Sometimes, content moderation and warnings can help keep your users in line. But in many cases, these offenders are aggressive and cunning with their approach, and you’ll have to take the extreme step of permanently banning them.
