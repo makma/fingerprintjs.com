@@ -96,9 +96,10 @@ export default function GenerateKeySection() {
         <DevSVG className={styles.icon} id='generateKeySection' />
         {(formState === FormState.Default || formState === FormState.Loading) && (
           <>
-            <h1 className={styles.title}>Request API keys</h1>
+            <h1 className={styles.title}>Get started with BotD</h1>
             <p className={styles.description}>
-              Enter your email below to send a request to our Support team to generate your API keys.
+              Fingerprint Pro customers on an annual contract can get started with BotD right away - enter your email to
+              get in contact with our team. Otherwise we will add you to our waitlist.
             </p>
             <div className={styles.generateKeyForm} data-sitekey={BOTD_PUBLIC_KEY_TURING}>
               <label className={styles.label} htmlFor='email'>
@@ -124,7 +125,7 @@ export default function GenerateKeySection() {
                   disabled={disableButton}
                   onClick={handleSubmit}
                 >
-                  Contact Support
+                  Join Waitlist
                 </Button>
               </div>
             </div>

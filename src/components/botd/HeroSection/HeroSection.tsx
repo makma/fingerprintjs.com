@@ -76,18 +76,14 @@ export default function HeroSection() {
     <Container size='large' className={styles.container}>
       <section className={styles.descriptionSection}>
         <span className={styles.title}>{githubData?.stargazers_count} stars</span>
-        <h2 className={styles.subTitle}>
-          Introducing BotD:
-          <br />
-          an open source JavaScript bot detection library
-        </h2>
+        <h2 className={styles.subTitle}>Detect sophisticated bots with BotD</h2>
         <p className={styles.description}>
-          The BotD library accurately identifies{' '}
+          BotD identifies automation tools, search{' '}
           <a className={styles.botsWord} onClick={() => scrollToElementById('ApiResponseDetails')}>
             bots
           </a>{' '}
-          in real time, all while providing full transparency into what data is collected. Add to your website with a
-          few lines of JavaScript, no complicated integrations required.
+          and other sophisticated threats that go undetected by traditional means of detection. Add to your website with
+          only a few lines of JavaScript.
         </p>
         <div className={styles.buttons}>
           <Button
@@ -96,7 +92,7 @@ export default function HeroSection() {
             size='big'
             className={styles.button}
           >
-            Get started for free
+            Get Started
           </Button>
           <a className={styles.buttonOutlined} href={URL.botDRepoUrl} target='_blank' rel='noreferrer'>
             <div className={styles.label}>
