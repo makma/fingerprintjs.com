@@ -3,7 +3,7 @@ import Section from '../common/Section'
 import Container from '../common/Container'
 import styles from './ClientsSection.module.scss'
 import classNames from 'classnames'
-import { ReactComponent as EbaySVG } from '../../../static/img/company-logos/ebay.svg'
+import { ReactComponent as HomeCreditSVG } from '../../../static/img/company-logos/home-credit.svg'
 import { ReactComponent as TargetSVG } from '../../../static/img/company-logos/target.svg'
 import { ReactComponent as UsBankSVG } from '../../../static/img/company-logos/us-bank.svg'
 import { ReactComponent as BookingSVG } from '../../../static/img/company-logos/booking.svg'
@@ -29,7 +29,7 @@ export default function ClientsSection() {
           </h2>
         </header>
         <div className={styles.content}>
-          <CompanyLogo icon={EbaySVG} className={styles.EbaySVG} />
+          <CompanyLogo icon={HomeCreditSVG} className={styles.HomeCreditSVG} />
           <CompanyLogo icon={TargetSVG} className={styles.TargetSVG} />
           <CompanyLogo icon={UsBankSVG} className={styles.UsBankSVG} />
           <CompanyLogo icon={DropboxSVG} className={styles.DropboxSVG} />

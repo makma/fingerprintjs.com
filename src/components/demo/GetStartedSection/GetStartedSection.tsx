@@ -4,7 +4,7 @@ import Section from '../../common/Section'
 import Container from '../../common/Container'
 import { URL, PATH } from '../../../constants/content'
 
-import { ReactComponent as EbaySVG } from '../../../../static/img/company-logos/ebay.svg'
+import { ReactComponent as HomeCreditSVG } from '../../../../static/img/company-logos/home-credit.svg'
 import { ReactComponent as TargetSVG } from '../../../../static/img/company-logos/target.svg'
 import { ReactComponent as UsBankSVG } from '../../../../static/img/company-logos/us-bank.svg'
 import { ReactComponent as BookingSVG } from '../../../../static/img/company-logos/booking.svg'
@@ -41,7 +41,7 @@ export default function GetStartedSection({ advertisingVariant }: GetStartedSect
         <div className={styles.content}>
           <CheckoutSVG className={styles.checkout} />
           <YahooSVG className={styles.yahoo} />
-          <EbaySVG className={styles.ebay} />
+          <HomeCreditSVG className={styles.homeCredit} />
           <CoinBaseSVG className={styles.coinbase} />
           <AgodaSVG className={styles.agoda} />
           <UsBankSVG className={styles.usBank} />

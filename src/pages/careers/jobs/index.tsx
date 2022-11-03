@@ -102,7 +102,7 @@ export default function JobsPage({ pageContext }: JobsPageProps) {
               <p className={styles.text}>
                 We work on turning radical new ideas in the fraud detection space into reality. Our products are
                 developer-focused and our clients range from solo developers to publicly traded companies. Some of our
-                customers include: Target, checkout.com, coinbase and eBay just to name a few.
+                customers include: Target, checkout.com, coinbase and Dropbox just to name a few.
               </p>
             </div>
             <div>

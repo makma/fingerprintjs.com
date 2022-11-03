@@ -84,14 +84,9 @@
       height: 23px;
     }
   }
-  .ebay {
-    width: 98.2px;
-    height: 37.47px;
-
-    @include media('<=phoneLandscape') {
-      width: 77px;
-      height: 30px;
-    }
+  .homeCredit {
+    width: 75.05px;
+    height: 50.04px;
   }
 
   .coinbase {
