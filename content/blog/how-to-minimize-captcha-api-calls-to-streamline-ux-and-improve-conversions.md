@@ -23,6 +23,12 @@ heroImage:
   image: /img/uploads/crosswalks.png
   imageAlt: Captcha with crosswalks
   imageTitle: Captcha with crosswalks
+customCTA:
+  title: " Stop fraud, spam, and account takeover with 99.5% accurate device
+    fingerprinting-as-a-service."
+  description: "Get unlimited API calls for free 10 days, no credit card required. "
+  ctaText: Get Started
+  ctaUrl: https://dashboard.fingerprint.com/signup
 ---
 CAPTCHAs make it more difficult for bots to submit fraudulent information via online forms, but they can also get in the way of humans interacting with your website.
 
