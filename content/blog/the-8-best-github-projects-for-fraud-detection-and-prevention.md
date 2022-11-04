@@ -22,6 +22,12 @@ heroImage:
   image: /img/uploads/8-best-github-projects.png
   imageAlt: Best Github Projects For Fraud Detection
   imageTitle: Best Github Projects For Fraud Detection
+customCTA:
+  title: Stop fraud, spam, and account takeover with 99.5% accurate device
+    fingerprinting-as-a-service.
+  description: "Get unlimited API calls for free 10 days, no credit card required. "
+  ctaUrl: https://dashboard.fingerprint.com/signup
+  ctaText: Get started
 ---
 No matter what field you’re working in as a developer, protecting your application from malicious users is a critical part of your job. The frequency of fraud is increasing across all industries and locations around the world.
 
