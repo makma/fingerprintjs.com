@@ -28,10 +28,6 @@ useCaseCode:
     url: https://github.com/fingerprintjs/fingerprintjs-pro-use-cases
   iframeUrl: https://fingerprinthub.com/coupon-fraud
 ---
-### **What is coupon & promo abuse?**
-
-Coupon abuse occurs when a customer or fraudster takes advantage of a business’s promotions for monetary gain—for example, a single fraudster redeeming the same promo code multiple times at checkout.
-
 ### **Why is coupon & promo abuse prevention important?**
 
 While increased sales are good for your business, customers acting in bad faith can dry up available promotional campaign dollars by repeatedly using coupon codes. Preventing customers, either signed-in or guests, from abusing your coupons and promotions can help:
@@ -248,6 +244,6 @@ await claimCoupon(visitorId, couponCode);
 return getOkReponse(res, `Coupon claimed you get a 119 USD discount!`, 'success');
 ```
 
-### Explore our Coupon Abuse Prevention Demo 
+### Explore our Coupon Abuse Prevention Demo
 
 We have built a fully open-sourced [coupon abuse prevention demo](https://fingerprinthub.com/coupon-fraud) to demonstrate the concepts above. Feel free to view the live demo on StackBlitz or jump into the GitHub repo for code. If you have any questions, please reach out to us at support@fingerprint.com.
