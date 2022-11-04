@@ -26,6 +26,12 @@ heroImage:
   image: /img/uploads/modern-browser.png
   imageAlt: Browser fingerprinting privacy
   imageTitle: Browser fingerprinting privacy
+customCTA:
+  title: Stop fraud, spam, and account takeover with 99.5% accurate device
+    fingerprinting-as-a-service.
+  description: "Get unlimited API calls for free 10 days, no credit card required. "
+  ctaText: Get Started
+  ctaUrl: https://dashboard.fingerprint.com/signup
 ---
 The trend in web browsers over the past few years has generally favored more privacy for users. Almost all mainstream browsers ([Safari](https://www.infoq.com/news/2020/04/safari-third-party-cookies-block/), [Firefox](https://blog.mozilla.org/blog/2021/02/23/latest-firefox-release-includes-multiple-picture-in-picture-and-total-cookie-protection/), [Brave](https://support.brave.com/hc/en-us/articles/360050634931-How-Do-I-Manage-Cookies-In-Brave-), and [Chrome](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)) now block third-party cookies, which enable tracking across multiple sites, and Chrome uses encrypted traffic (via HTTPS) by default.
 
