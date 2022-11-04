@@ -27,6 +27,11 @@ heroImage:
   imageTitle: Preventing Browser Fingerprinting
 customCTA:
   openCtaNewTab: false
+  title: Stop fraud, spam, and account takeover with 99.5% accurate device
+    fingerprinting-as-a-service.
+  description: "Get unlimited API calls for free 10 days, no credit card required. "
+  ctaText: Get Started
+  ctaUrl: https://dashboard.fingerprint.com/signup
 ---
 Browser fingerprinting is a method of identifying and tracking website visitors that don’t rely on cookies or login sessions. Instead, visitors are determined by collecting a series of browser parameters, from browser version to screen dimensions and installed fonts. Each parameter is of limited utility on its own, but when combined with others can be used to create a unique identifier for each website visitor.
 
