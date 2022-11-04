@@ -29,12 +29,12 @@ heroImage:
   imageAlt: device fingerprinting accuracy
   imageTitle: device fingerprinting accuracy
 customCTA:
-  openCtaNewTab: true
-  title: FingerprintJS vs Fingerprint Pro?
-  description: "Get the full breakdown of differences including accuracy,
-    stability and how Fingerprint Pro builds off our open-source offering. "
-  ctaText: Download Now
-  ctaUrl: https://try.fingerprint.com/en-us/oss-vs-pro-comparison-pdf
+  openCtaNewTab: false
+  title: Stop fraud, spam, and account takeover with 99.5% accurate device
+    fingerprinting-as-a-service.
+  description: "Get unlimited API calls for free 10 days, no credit card required. "
+  ctaText: Get Started
+  ctaUrl: https://dashboard.fingerprint.com/signup
 ---
 Last month, we hosted a webinar on the importance and critical nature of device fingerprinting accuracy, Why Accuracy is Everything in Device Identification. Hosted by our co-founder/CTO Valentin Vasilyev and our Head of Product Jack Spirou, they sat down to have a candid conversation about device fingerprinting accuracy, how Fingerprint Pro can boast a 99.5% accuracy rate on returning devices, and what it differs from our FingerprintJS open-source browser fingerprinting library. 
 
