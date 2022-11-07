@@ -6,10 +6,10 @@ metadata:
     a business’s promotions for monetary gain—for example, a single fraudster
     redeeming the same promo code multiple times at checkout.
   url: fingerprint.com/use-cases/coupon-promo-abuse
-  image: /img/uploads/promo-abuse.png
+  image: /img/uploads/promo-abuse-min.png
   imageAlt: coupon promo fraud
   imageTitle: coupon promo fraud
-  socialImage: /img/uploads/promo-abuse.png
+  socialImage: /img/uploads/promo-abuse-min.png
 publishDate: 2022-11-04T19:09:14.598Z
 isPublished: true
 title: Coupon & Promo Abuse
