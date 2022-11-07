@@ -2,13 +2,13 @@
 templateKey: use-case-content
 metadata:
   title: Credential Stuffing Prevention - Technical Use Case - Fingerprint Pro
-  image: /img/uploads/credentialstuffing.png
+  image: /img/uploads/credentialstuffing-min.png
   imageAlt: Credential stuffing illustration
   imageTitle: Credential stuffing illustration
   description: Explore our full code use case for credential stuffing prevention.
     Stop automated attacks on your login page with our user identification API.
   url: https://fingerprint.com/use-cases/credential-stuffing
-  socialImage: /img/uploads/credentialstuffing.png
+  socialImage: /img/uploads/credentialstuffing-min.png
 publishDate: 2021-11-12T15:48:01.198Z
 isPublished: true
 title: Credential Stuffing
