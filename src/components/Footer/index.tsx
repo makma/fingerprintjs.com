@@ -7,6 +7,10 @@ import { ReactComponent as SOC2_SVG } from '../../img/SocSVG.svg'
 import { ReactComponent as CCPA_SVG } from '../../img/CcpaSVG.svg'
 import { ReactComponent as GDPR_SVG } from '../../img/GdprSVG.svg'
 
+import { ReactComponent as SOC2_DARK_SVG } from '../../img/SocDarkSVG.svg'
+import { ReactComponent as CCPA_DARK_SVG } from '../../img/CcpaDarkSVG.svg'
+import { ReactComponent as GDPR_DARK_SVG } from '../../img/GdprDarkSVG.svg'
+
 import { ReactComponent as FpjsSVG } from '../../../static/img/company-logos/fpjs-white.svg'
 
 import SubscribeNewsletterForm from '../SubscribeNewsletterForm/SubscribeNewsletterForm'
@@ -16,6 +20,7 @@ import Container from '../common/Container'
 import styles from './Footer.module.scss'
 import { products, useCaseLinks } from '../../constants/content'
 import { PATH, URL, DOC_URL, MAILTO } from '../../constants/content'
+import classNames from 'classnames'
 
 interface FooterLinkSection {
   title: string
@@ -132,9 +137,12 @@ const footerLinks: FooterLinkSection[] = [
   },
 ]
 
-export default function Footer() {
+interface FooterProps {
+  darkVariant?: boolean
+}
+export default function Footer({ darkVariant }: FooterProps) {
   return (
-    <footer className={styles.footer}>
+    <footer className={classNames(styles.footer, { [styles.dark]: darkVariant })}>
       <Container size='large'>
         <nav className={styles.nav}>
           <section className={styles.contact}>
@@ -192,9 +200,19 @@ export default function Footer() {
           </section>
           <section className={styles.logos}>
             <div className={styles.soc2Logo}>
-              <SOC2_SVG />
-              <CCPA_SVG />
-              <GDPR_SVG />
+              {darkVariant ? (
+                <>
+                  <SOC2_DARK_SVG />
+                  <CCPA_DARK_SVG />
+                  <GDPR_DARK_SVG />
+                </>
+              ) : (
+                <>
+                  <SOC2_SVG />
+                  <CCPA_SVG />
+                  <GDPR_SVG />
+                </>
+              )}
             </div>
             <div className={styles.copyrights}>&copy; 2022 FingerprintJS, Inc</div>
           </section>

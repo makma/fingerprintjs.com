@@ -3,6 +3,11 @@ $fontDir: '../fonts/';
 @include fontface('#{$fontDir}fira-mono', 'Fira Mono', '-v9-latin-500', 500);
 @include fontface('#{$fontDir}fira-mono', 'Fira Mono', '-v9-latin-700', 700);
 
+@include fontface('#{$fontDir}JetBrainsMono', 'JetBrains Mono', '-Regular', 400);
+@include fontface('#{$fontDir}JetBrainsMono', 'JetBrains Mono', '-Medium', 500);
+@include fontface('#{$fontDir}JetBrainsMono', 'JetBrains Mono', '-Bold', 700);
+@include fontface('#{$fontDir}JetBrainsMono', 'JetBrains Mono', '-ExtraBold', 800);
+
 @include fontface('#{$fontDir}work-sans', 'Work Sans', '-v11-latin-200', 200);
 @include fontface('#{$fontDir}work-sans', 'Work Sans', '-v11-latin-regular', 400);
 @include fontface('#{$fontDir}work-sans', 'Work Sans', '-v11-latin-500', 500);

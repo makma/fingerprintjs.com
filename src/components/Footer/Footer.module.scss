@@ -174,3 +174,12 @@
     }
   }
 }
+
+.dark {
+  background: v('gray');
+
+  .hiring {
+    color: v('github-orange-gradient');
+    background: linear-gradient(94.48deg, rgba(240, 80, 80, 0.1) 0%, rgba(250, 117, 69, 0.1) 100%);
+  }
+}

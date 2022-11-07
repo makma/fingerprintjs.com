@@ -28,7 +28,7 @@ export default function Sdks({ pageContext }: SdksProps) {
         openNewTab
         variant='blue'
       >
-        Developers can start building with Fingerprint for free forever - no credit card required.
+        Developers can start building with Fingerprint for free - no credit card required.
       </IntegrationsBanner>
     </LayoutTemplate>
   )

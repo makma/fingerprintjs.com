@@ -28,6 +28,13 @@ export const PATH = {
   sdks: '/sdk-libraries/',
 } as const
 
+export const USE_CASE_PATH = {
+  personalization: `${PATH.useCases}personalization/`,
+  accountSharing: `${PATH.useCases}account-sharing-prevention/`,
+  paymentFraud: `${PATH.useCases}payment-fraud/`,
+  credentialStuffing: `${PATH.useCases}credential-stuffing/`,
+} as const
+
 export const URL = {
   githubRepoUrl: 'https://github.com/fingerprintjs/fingerprintjs/',
   githubApiUrl: 'https://api.github.com/repos/fingerprintjs',
@@ -70,6 +77,29 @@ export const DOC_URL = {
   botDUrl: 'https://github.com/fingerprintjs/BotD#botd',
   zeroTrustUrl: `${URL.docsUrl}/docs/zero-trust-mode`,
   bestPracticesUrl: `${URL.docsUrl}/docs/best-practices`,
+  migrateUrl: `${URL.docsUrl}/docs/migrating-from-open-source-v3`,
+} as const
+
+export const INTEGRATIONS_URL = {
+  android: `${URL.docsUrl}/docs/native-android-integration`,
+  angular: `${URL.docsUrl}/docs/angular`,
+  flutter: `${URL.docsUrl}/docs/flutter`,
+  go: `${URL.docsUrl}/docs/fingerprint-pro-server-api-go-sdk`,
+  ios: `${URL.docsUrl}/docs/ios`,
+  js: `${URL.docsUrl}/docs/js-agent`,
+  ts: `${URL.docsUrl}/docs/js-agent#typescript-support`,
+  next: `${URL.docsUrl}/docs/fingerprintjs-pro-nextjs`,
+  node: `${URL.docsUrl}/docs/fingerprintjs-pro-server-api-nodejs-sdk`,
+  openApi: `${URL.docsUrl}/docs/openapi-for-server-api-and-webhooks`,
+  preact: `${URL.docsUrl}/docs/preact`,
+  python: `${URL.docsUrl}/docs/python-server-api-sdk`,
+  react: `${URL.docsUrl}/docs/fingerprintjs-pro-react`,
+  reactNative: `${URL.docsUrl}/docs/fingerprintjs-pro-react-native`,
+  svelte: `${URL.docsUrl}/docs/svelte`,
+  vue: `${URL.docsUrl}/docs/vuejs`,
+  gtm: `${URL.docsUrl}/docs/fingerprintjs-pro-google-tag-manager`,
+  cloudflare: `${URL.docsUrl}/docs/cloudflare-integration-new-accounts`,
+  chrome: `${URL.docsUrl}/docs/fingerprintjs-pro-and-chrome-extension`,
 } as const
 
 export const useCaseLinks = [

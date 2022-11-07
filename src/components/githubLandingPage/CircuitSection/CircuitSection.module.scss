@@ -1,0 +1,56 @@
+.root {
+  background: v('dark');
+  color: v('github-white');
+  padding-top: rem(55px);
+  padding-bottom: rem(95px);
+
+  @include media('<=phoneLandscape') {
+    display: none;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include media('<=phoneLandscape') {
+      align-items: flex-start;
+    }
+
+    .imageSection {
+      background-image: url('/img/circuitSection/Circuit1.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: rem(395px) rem(328px);
+      height: rem(328px);
+      width: 100%;
+
+      @include transition(background-image);
+      @include transition-duration(0.2s);
+      @include transition-timing-function(ease-out);
+    }
+    .image2 {
+      background-image: url('/img/circuitSection/Circuit2.png');
+    }
+    .image3 {
+      background-image: url('/img/circuitSection/Circuit3.png');
+    }
+    .image4 {
+      background-image: url('/img/circuitSection/Circuit4.png');
+    }
+    .image5 {
+      background-image: url('/img/circuitSection/Circuit5.png');
+    }
+    .image6 {
+      background-image: url('/img/circuitSection/Circuit6.png');
+    }
+    .image7 {
+      background-image: url('/img/circuitSection/Circuit7.png');
+    }
+    .image8 {
+      background-image: url('/img/circuitSection/Circuit8.png');
+    }
+    .image9 {
+      background-image: url('/img/circuitSection/Circuit9.png');
+    }
+  }
+}

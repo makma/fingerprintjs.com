@@ -66,7 +66,7 @@ export default function PriceCalculator() {
           price={monthlyPaymentLabel}
           billingDescription={
             Math.round(sliderValue) === sliderConfig.min
-              ? 'Free forever for developers and small sites up to 20K identifications per month.'
+              ? 'Free for developers and small sites up to 20K identifications per month.'
               : 'On-demand pricing based on monthly usage.'
           }
           ctaText={Math.round(sliderValue) === sliderConfig.min ? 'Create Free Account' : 'Start Free Trial'}

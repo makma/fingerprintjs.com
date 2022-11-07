@@ -68,8 +68,8 @@ function FAQSection() {
           additional requests will be charged at a rate of ${(overagePrice * 1000) / 100} per 1,000 requests.
           <br />
           <br />
-          Developers and small sites can access Fingerprint Pro for free forever for a maximum of{' '}
-          {flatAmount.toLocaleString()} API requests per month.
+          Developers and small sites can access Fingerprint Pro for free for a maximum of {flatAmount.toLocaleString()}{' '}
+          API requests per month.
         </p>
       ),
     },
@@ -89,8 +89,8 @@ function FAQSection() {
       question: 'I am a developer. Can I use Fingerprint Pro for free?',
       answer: (
         <p className={styles.faqContent}>
-          Yes - developers and small sites can use Fingerprint Pro for free forever, with up to{' '}
-          {flatAmount.toLocaleString()} API requests per month.
+          Yes - developers and small sites can use Fingerprint Pro for free, with up to {flatAmount.toLocaleString()}{' '}
+          API requests per month.
         </p>
       ),
     },

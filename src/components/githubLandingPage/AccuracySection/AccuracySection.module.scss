@@ -1,0 +1,321 @@
+.root {
+  background: v('dark');
+  color: v('github-white');
+  padding-top: rem(96px);
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(64px);
+    padding-bottom: rem(96px);
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    @include media('<=phoneLandscape') {
+      align-items: flex-start;
+    }
+
+    .title {
+      @include sans($size: 48px, $weight: 600, $lh: 120%);
+      text-align: center;
+
+      padding-bottom: rem(40px);
+
+      @include media('<=phoneLandscape') {
+        text-align: left;
+
+        font-size: rem(28px);
+        letter-spacing: -0.01em;
+      }
+    }
+    .cardsSection {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: rem(32px);
+      max-width: rem(928px);
+
+      @include media('<=desktop') {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(40px);
+        width: 100%;
+      }
+      .card {
+        cursor: pointer;
+
+        .cardLabel {
+          font-family: v(jb-mono);
+          font-weight: 700;
+          font-size: rem(14px);
+          line-height: 120%;
+          text-transform: uppercase;
+          border-radius: rem(4px);
+          padding: rem(4px) rem(8px);
+
+          @include transition(background);
+
+          background: linear-gradient(
+            94.48deg,
+            rgba(245, 97, 75, 0.2) 0%,
+            rgba(245, 97, 75, 0.2) 0.01%,
+            rgba(250, 117, 69, 0.2) 100%
+          );
+          .cardLabelText {
+            background: linear-gradient(94.48deg, #f5614b 0%, #f5614b 0.01%, #fa7545 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+
+          @include media('<=phoneLandscape') {
+            font-size: rem(12px);
+            letter-spacing: 0.04em;
+            line-height: rem(16px);
+          }
+        }
+
+        @include media('<=desktop') {
+          cursor: unset;
+        }
+      }
+      .selectedCard {
+        cursor: unset;
+        @include media('>desktop') {
+          .cardLabel {
+            background: linear-gradient(94.48deg, #f5614b 0%, #f5614b 0.01%, #fa7545 100%);
+
+            .cardLabelText {
+              background: unset;
+              -webkit-background-clip: unset;
+              -webkit-text-fill-color: unset;
+              background-clip: unset;
+              color: v('github-white');
+            }
+          }
+        }
+      }
+
+      .cardTitle {
+        @include sans($size: 24px, $weight: 600, $lh: 120%);
+        margin-top: rem(32px);
+
+        margin-bottom: rem(8px);
+
+        @include media('<=desktop') {
+          margin-top: rem(16px);
+        }
+
+        @include media('<=phoneLandscape') {
+          font-size: rem(20px);
+        }
+      }
+      .cardDescription {
+        @include sans($size: 16px, $weight: 400, $lh: 150%, $color: #d0d0d0);
+      }
+    }
+  }
+}
+.chart {
+  position: relative;
+  margin-right: 0;
+
+  cursor: default;
+
+  @include media('<=desktop') {
+    display: none;
+  }
+  .chartY {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: rem(430px);
+    left: -52px;
+    top: -20px;
+    @include sans($size: 16px, $weight: 500, $lh: 120%, $color: #d0d0d0);
+  }
+}
+.chartLine {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.dataPointPro,
+.dataPointOss {
+  background-color: v('github-orange-gradient');
+  border: 5px solid #141415;
+  border-radius: 50%;
+  height: rem(22.5px);
+  width: rem(22.5px);
+
+  position: absolute;
+
+  bottom: calc(var(--yLine));
+  left: calc(var(--x) - 9.1px);
+  z-index: 1;
+  @include transition((border));
+}
+.dataPointProHover {
+  border: rem(5px) solid #2a1c16;
+}
+
+.dataPointOss {
+  background-color: #e8e8e8;
+}
+
+.dataPointOssHover {
+  border: rem(5px) solid #29292a;
+}
+.lineSegmentPro,
+.lineSegmentOss {
+  background-color: v('github-orange-gradient');
+  bottom: calc(var(--y) + 10px);
+  height: rem(1.9px);
+  left: var(--xLine);
+  position: absolute;
+  transform: rotate(calc(var(--angle) * 1deg));
+  transform-origin: left bottom;
+  width: calc(var(--hypotenuse) * 1px);
+}
+
+.lineSegmentOss {
+  background-color: #e8e8e8;
+}
+
+.chartTitle {
+  @include sans($size: 16px, $weight: 500, $lh: 120%, $color: #d0d0d0);
+
+  padding-top: rem(64px);
+  padding-bottom: rem(20px);
+
+  width: 100%;
+  max-width: rem(928px);
+  display: flex;
+  justify-content: space-between;
+
+  .chartLinesTitle {
+    display: flex;
+    column-gap: rem(16px);
+    .lineTitle {
+      display: flex;
+      column-gap: rem(13.5px);
+    }
+    .ossLine,
+    .proLine {
+      width: rem(40px);
+    }
+    .proLine {
+      path {
+        stroke: v('github-orange-gradient');
+        stroke-opacity: 1;
+        stroke-width: 1.9;
+      }
+    }
+  }
+
+  @include media('<=desktop') {
+    display: none;
+  }
+}
+
+.chartX {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.xPoint {
+  position: absolute;
+  white-space: nowrap;
+  left: calc(var(--x) - 40px);
+  bottom: rem(-45px);
+
+  border-radius: rem(40px);
+  padding: rem(9px) rem(13px);
+  @include sans($size: 15px, $weight: 500, $lh: 120%, $color: v('github-white'));
+  @include transition(background);
+}
+.xPointHover {
+  background: linear-gradient(94.48deg, #f5614b 0%, #f5614b 0.01%, rgba(250, 117, 69, 0.99) 100%);
+}
+
+.labelPro,
+.labelOss {
+  position: absolute;
+  white-space: nowrap;
+  left: calc(var(--x) - 30.9px);
+  bottom: calc(var(--yLine) - 37px);
+
+  border-radius: rem(40px);
+  padding: rem(6px) rem(8px);
+  @include sans($size: 15px, $weight: 500, $lh: 120%, $color: v('github-orange-gradient'));
+  background: #141415;
+  border: rem(1px) solid #141415;
+
+  border-radius: rem(6px);
+  z-index: 1;
+
+  @include transition((background, border));
+}
+.labelProHover {
+  background: #201918;
+  border: rem(1px) solid v('github-orange-gradient');
+}
+.labelProStability {
+  background: #201918;
+}
+.labelOss {
+  color: #e8e8e8;
+  border: rem(1px) solid #141415;
+  background: #141415;
+}
+
+.labelOssHover {
+  border: rem(1px) solid #e8e8e8;
+  background: #29292a;
+}
+.labelOssStability {
+  background: #29292a;
+}
+.xLine {
+  border: rem(1.5px) dashed #636363;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  position: absolute;
+  width: rem(875px);
+  left: rem(46px);
+  transform: translateY(-10.4px);
+}
+.yLine {
+  position: absolute;
+  left: calc(var(--x) + 3.47px);
+  bottom: 0;
+
+  border: rem(1.5px) dashed #636363;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  transform: rotate(-90deg);
+
+  transform-origin: left bottom;
+  width: rem(440px);
+  z-index: 0;
+  @include transition((border));
+}
+.yLineHover {
+  border: rem(1.5px) dashed adjust-color(c('github-orange-gradient'), $alpha: -0.5);
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+}
+.yLineArea {
+  transform: rotate(-90deg);
+  left: calc(var(--x) + 130px);
+  bottom: rem(-40px);
+  position: absolute;
+  transform-origin: left bottom;
+  width: rem(480px);
+  padding: rem(130px);
+}

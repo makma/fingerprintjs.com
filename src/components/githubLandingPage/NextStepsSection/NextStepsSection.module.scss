@@ -1,0 +1,175 @@
+.root {
+  background: v('github-white');
+  color: v('dark');
+  padding-top: rem(152px);
+  padding-bottom: rem(152px);
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(96px);
+    padding-bottom: rem(100px);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    --contentWidth: 960px;
+
+    @include media('<=phoneLandscape') {
+      align-items: flex-start;
+    }
+
+    .title {
+      @include sans($size: 48px, $weight: 600, $lh: 64px);
+      letter-spacing: -0.01em;
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(28px);
+        line-height: rem(34px);
+      }
+    }
+  }
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: rem(32px);
+
+  padding-top: rem(56px);
+  padding-bottom: rem(64px);
+
+  @include media('<=tablet') {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(40px);
+
+    width: 100%;
+    padding-top: rem(32px);
+    padding-bottom: 0;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+
+    .cardNumber {
+      padding: rem(8px) rem(24px);
+      background: rgba(232, 232, 232, 0.4);
+      border-radius: 8px;
+      margin-bottom: rem(24px);
+
+      @include sans($size: 24px, $weight: 600, $lh: 24px, $color: #434344);
+
+      @include media('<=phoneLandscape') {
+        padding: rem(6px) rem(19px);
+        font-size: rem(19px);
+
+        margin-bottom: rem(16px);
+      }
+    }
+    .cardTitle {
+      @include sans($size: 20px, $weight: 600, $lh: 150%, $color: #434344);
+      letter-spacing: 0.01em;
+
+      padding-bottom: rem(16px);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(20px);
+        line-height: rem(24px);
+        padding-bottom: rem(8px);
+      }
+    }
+    .cardDescription {
+      @include sans($size: 16px, $weight: 400, $lh: 150%, $color: #5b5b5b);
+      padding-bottom: rem(16px);
+
+      @include media('>tablet') {
+        max-width: rem(288px);
+      }
+      @include media('<=phoneLandscape') {
+        letter-spacing: 0.001em;
+      }
+    }
+
+    .cardLink {
+      margin-top: auto;
+
+      @include jb-mono($size: 14px, $weight: 400, $lh: 24px, $color: #fa7545);
+
+      display: flex;
+      align-items: center;
+      column-gap: rem(6px);
+
+      @include transition((color, fill));
+
+      .arrow {
+        margin-top: rem(2px);
+        fill: #fa7545;
+      }
+
+      &:hover {
+        .arrow {
+          fill: #b45331;
+        }
+        color: #b45331;
+      }
+    }
+  }
+}
+
+.progressBar {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  @include media('>tablet') {
+    grid-template-columns: 1fr 10px 1fr 10px 1fr;
+    column-gap: rem(4px);
+  }
+  .barBackground {
+    position: relative;
+
+    @include media('>tablet') {
+      height: rem(2px);
+      width: 100%;
+    }
+    @include media('<=tablet') {
+      width: rem(2px);
+      height: 100%;
+    }
+    background: #e8e8e8;
+
+    .barProgress {
+      position: absolute;
+      background-color: v('github-orange-gradient');
+
+      @include media('>tablet') {
+        height: rem(2px);
+      }
+      @include media('<=tablet') {
+        width: rem(2px);
+      }
+    }
+  }
+
+  @include media('<=tablet') {
+    grid-template-rows: 1fr 10px 1fr 10px 1fr;
+    row-gap: rem(4px);
+    max-width: 18px;
+
+    padding-top: rem(32px);
+  }
+}
+.wrapper {
+  @include media('<=tablet') {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: rem(16px);
+  }
+}

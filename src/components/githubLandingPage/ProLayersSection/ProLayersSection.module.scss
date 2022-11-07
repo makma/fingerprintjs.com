@@ -1,0 +1,447 @@
+.root {
+  background: v('dark');
+  color: v('github-white');
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .container {
+    @include media('<=phoneLandscape') {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  .cardContainer {
+    padding-top: rem(95px);
+    padding-bottom: rem(130px);
+
+    border-radius: rem(32px);
+    background: linear-gradient(#181818 0 0) padding-box,
+      linear-gradient(96.86deg, rgba(255, 255, 255, 0.2) 2.64%, rgba(255, 255, 255, 0) 109.37%) border-box;
+    border: 0.8px solid transparent;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+
+    @include media('<=tabletWide') {
+      padding: rem(48px) rem(40px) rem(100px);
+    }
+
+    @include media('<=phoneLandscape') {
+      align-items: flex-start;
+      text-align: left;
+
+      padding-right: rem(20px);
+      padding-left: rem(20px);
+      padding-bottom: rem(10px);
+    }
+
+    .label {
+      text-transform: uppercase;
+
+      padding: rem(4px) rem(8px);
+      background: linear-gradient(
+        94.48deg,
+        rgba(245, 97, 75, 0.2) 0%,
+        rgba(245, 97, 75, 0.2) 0.01%,
+        rgba(250, 117, 69, 0.2) 100%
+      );
+      border-radius: rem(4px);
+
+      .labelText {
+        @include jb-mono($size: 14px, $weight: 700, $lh: 16px);
+
+        background: linear-gradient(94.48deg, #f5614b 0%, #f5614b 0.01%, #fa7545 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(12px);
+        letter-spacing: 0.04em;
+      }
+    }
+
+    .title {
+      @include sans($size: 48px, $weight: 600, $lh: 64px);
+      letter-spacing: -0.01em;
+
+      padding-top: rem(16px);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(28px);
+        line-height: rem(34px);
+        padding-right: rem(140px);
+      }
+
+      @media screen and (max-width: 400px) {
+        padding-right: rem(110px);
+      }
+      @media screen and (max-width: 365px) {
+        padding-right: rem(100px);
+      }
+    }
+    .description {
+      @include sans($size: 18px, $weight: 400, $lh: 150%, $color: #d0d0d0);
+      text-align: center;
+
+      padding-top: rem(16px);
+      max-width: rem(680px);
+
+      @include media('<=phoneLandscape') {
+        text-align: left;
+
+        font-size: rem(16px);
+        line-height: 150%;
+        letter-spacing: 0.001em;
+      }
+    }
+  }
+}
+.cards {
+  display: flex;
+  column-gap: rem(4px);
+
+  padding-top: rem(40px);
+  text-align: left;
+
+  @include media('<=tabletWide') {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(20px);
+  }
+  .cardsSection {
+    position: relative;
+    max-width: rem(335px);
+
+    @include media('<=tabletWide') {
+      width: 100%;
+      max-width: unset;
+      min-height: rem(160px);
+    }
+  }
+  .cardLabel {
+    display: block;
+
+    @include jb-mono($size: 12px, $weight: 500, $lh: 18px);
+    text-transform: uppercase;
+    letter-spacing: 0.23em;
+    margin-bottom: rem(8px);
+    margin-left: rem(16px);
+
+    @include media('<=phoneLandscape') {
+      color: #d0d0d0;
+      line-height: 120%;
+
+      margin-left: 0;
+      margin-bottom: rem(12px);
+      display: none;
+    }
+  }
+  .onlyMobile {
+    @include media('<=phoneLandscape') {
+      display: block !important;
+    }
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(8px);
+    padding: rem(16px);
+    border-radius: rem(16px);
+
+    @include transition((background));
+
+    @include media('<=phoneLandscape') {
+      row-gap: rem(4px);
+      padding: 0;
+      display: none;
+    }
+  }
+
+  .cardTitle {
+    @include sans($size: 16px, $weight: 600, $lh: 150%, $color: #d0d0d0);
+    @include transition((color));
+  }
+  .cardDescription {
+    @include sans($size: 16px, $weight: 400, $lh: 150%, $color: #d0d0d0);
+    @include transition((color));
+  }
+  .cardSubtitle {
+    @include sans($size: 12px, $weight: 500, $lh: 16px, $color: #d0d0d0);
+    letter-spacing: 0.04em;
+    margin-bottom: rem(2px);
+
+    @include transition((color));
+    @include media('<=phoneLandscape') {
+      display: none;
+    }
+  }
+
+  .orangeTitle {
+    color: v('github-orange-gradient');
+
+    margin-top: rem(24px);
+    @include media('<=phoneLandscape') {
+      margin-top: 0;
+
+      &:after {
+        content: ' - OPEN SOURCE';
+      }
+    }
+  }
+}
+
+.cardOrange {
+  @include media('>phoneLandscape') {
+    .cardTitle,
+    .cardDescription,
+    .cardSubtitle {
+      color: v('github-orange-gradient');
+    }
+  }
+  @include media('<=phoneLandscape') {
+    .cardTitle {
+      padding-bottom: rem(4px);
+      color: v('github-white');
+    }
+  }
+}
+.hoverElement {
+  .cardTitle {
+    color: v('github-white');
+  }
+  @include media('>phoneLandscape') {
+    box-shadow: 0px 5.12786px 20.5114px rgba(13, 16, 43, 0.1);
+    background: linear-gradient(
+      128.85deg,
+      rgba(33, 33, 34, 0.2) 1.03%,
+      rgba(67, 67, 68, 0.2) 49.05%,
+      rgba(32, 32, 33, 0.2) 99.12%
+    );
+
+    .cardDescription {
+      color: v('github-white');
+    }
+  }
+
+  @include media('<=phoneLandscape') {
+    display: flex !important;
+  }
+}
+
+.hoverElementOrange {
+  @include media('>phoneLandscape') {
+    background: linear-gradient(
+      94.48deg,
+      rgba(245, 97, 75, 0.05) 0%,
+      rgba(245, 97, 75, 0.05) 0.01%,
+      rgba(250, 117, 69, 0.05) 100%
+    );
+
+    .cardTitle,
+    .cardDescription,
+    .cardSubtitle {
+      color: #ffded2;
+    }
+  }
+
+  @include media('<=phoneLandscape') {
+    display: flex !important;
+  }
+}
+.hoverArea1,
+.hoverArea2,
+.hoverArea3,
+.hoverArea4 {
+  position: absolute;
+  left: rem(-405px);
+  padding-right: rem(740px);
+
+  @include media('<=tabletWide') {
+    display: none;
+  }
+}
+.hoverArea1 {
+  top: 0;
+
+  padding-bottom: rem(200px);
+}
+.hoverArea2 {
+  padding-bottom: rem(125px);
+  top: rem(200px);
+}
+.hoverArea3 {
+  padding-bottom: rem(150px);
+}
+.hoverArea4 {
+  top: rem(466px);
+
+  padding-bottom: rem(190px);
+}
+
+.cardImage {
+  position: relative;
+  width: rem(421px);
+  height: rem(663px);
+  background-image: url('/img/diagram-section/Cards.png');
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  @include transition(background);
+
+  @include media('<=phoneLandscape') {
+    width: rem(270px);
+    height: rem(407px);
+  }
+  .imageArrow {
+    display: none;
+    position: absolute;
+    width: rem(42px);
+    height: rem(89px);
+    bottom: rem(10px);
+    left: rem(-17px);
+    background-image: url('./Arrow4.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    @include transition(background);
+    @include transition-duration(0.5s);
+  }
+}
+.cardImage1 {
+  background-image: url('/img/diagram-section/CardHover1.png');
+
+  .imageArrow {
+    width: rem(42px);
+    height: rem(304px);
+    background-image: url('./Arrow1.png');
+  }
+}
+.cardImage2 {
+  background-image: url('/img/diagram-section/CardHover2.png');
+  .imageArrow {
+    width: rem(42px);
+    height: rem(233px);
+    background-image: url('./Arrow2.png');
+  }
+}
+.cardImage3 {
+  background-image: url('/img/diagram-section/CardHover3.png');
+  .imageArrow {
+    width: rem(42px);
+    height: rem(164px);
+    background-image: url('./Arrow3.png');
+  }
+}
+.cardImage4 {
+  background-image: url('/img/diagram-section/CardHover4.png');
+}
+
+.tap {
+  z-index: 1;
+  position: absolute;
+  right: 50%;
+  top: rem(20px);
+  white-space: nowrap;
+
+  @include sans($size: 10px, $weight: 500, $lh: 120%, $color: #d0d0d0);
+  letter-spacing: 0.04em;
+
+  padding: rem(8px);
+
+  background: #434344;
+  box-shadow: 0px 5.20827px 20.8331px rgba(13, 16, 43, 0.1);
+  border-radius: rem(8px);
+
+  @include media('>phoneLandscape') {
+    display: none;
+  }
+  @include transition((opacity, transform));
+  @include transition-duration(0.75s);
+
+  opacity: 0;
+  transform: translateY(-15px);
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobileHoverAreas {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  @include media('>tabletWide') {
+    display: none;
+  }
+}
+.hoverAreaMobile1,
+.hoverAreaMobile2,
+.hoverAreaMobile3,
+.hoverAreaMobile4 {
+  position: absolute;
+  width: 100%;
+  padding-bottom: rem(110px);
+}
+.hoverAreaMobile1 {
+  padding-bottom: rem(200px);
+
+  top: rem(60px);
+
+  @include media('<=phoneLandscape') {
+    top: rem(20px);
+    padding-bottom: rem(137px);
+  }
+}
+.hoverAreaMobile2 {
+  padding-bottom: rem(120px);
+  top: rem(260px);
+
+  @include media('<=phoneLandscape') {
+    top: rem(150px);
+    padding-bottom: rem(80px);
+  }
+}
+.hoverAreaMobile3 {
+  padding-bottom: rem(120px);
+  top: rem(380px);
+
+  @include media('<=phoneLandscape') {
+    top: rem(230px);
+    padding-bottom: rem(75px);
+  }
+}
+.hoverAreaMobile4 {
+  padding-bottom: rem(150px);
+  top: rem(500px);
+
+  @include media('<=phoneLandscape') {
+    top: rem(300px);
+    padding-bottom: rem(90px);
+  }
+}
+.backgroundLayer {
+  position: absolute;
+  background-color: #202021;
+  width: 100%;
+  height: rem(116px);
+  transform: translateY(-116px);
+
+  @include media('<=phoneLandscape') {
+    height: rem(32px);
+    transform: translateY(-32px);
+  }
+}

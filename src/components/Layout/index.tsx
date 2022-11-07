@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Footer from '../Footer'
 import Header from '../Header'
+import HeaderDark from '../Header/HeaderDark'
 
 import { useConsolePromotionMessage } from '../../hooks/useConsolePromotionMessage'
 import { URL } from '../../constants/content'
@@ -15,8 +16,9 @@ import { useBotDContext } from '../../context/BotdContext'
 
 interface LayoutProps {
   children: React.ReactNode
+  darkVariant?: boolean
 }
-export function Layout({ children }: LayoutProps) {
+export function Layout({ children, darkVariant }: LayoutProps) {
   const data = useStaticQuery(graphql`
     query NotificationQuery {
       notificationBarYaml {
@@ -30,9 +32,11 @@ export function Layout({ children }: LayoutProps) {
   `)
 
   return data.notificationBarYaml?.showNotBar ? (
-    <LayoutTemplate notificationBar={data.notificationBarYaml}>{children}</LayoutTemplate>
+    <LayoutTemplate darkVariant={darkVariant} notificationBar={data.notificationBarYaml}>
+      {children}
+    </LayoutTemplate>
   ) : (
-    <LayoutTemplate>{children}</LayoutTemplate>
+    <LayoutTemplate darkVariant={darkVariant}>{children}</LayoutTemplate>
   )
 }
 
@@ -46,7 +50,7 @@ interface LayoutTemplateProps extends LayoutProps {
 }
 
 // We need this to not use static GraphQL queries in order use it in CMS preview (it runs it in browser directly)
-export function LayoutTemplate({ children, notificationBar }: LayoutTemplateProps) {
+export function LayoutTemplate({ children, notificationBar, darkVariant }: LayoutTemplateProps) {
   const { isEuUser, userCountry, visitorId } = useUserLocation()
   const { visitorData } = useBotDContext()
 
@@ -77,9 +81,10 @@ export function LayoutTemplate({ children, notificationBar }: LayoutTemplateProp
       <Script id='gtm-init'>
         {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','${GTM_TOKEN}');`}
       </Script>
-      <Header notificationBar={notificationBar} />
+      {darkVariant ? <HeaderDark /> : <Header notificationBar={notificationBar} />}
+
       {children}
-      <Footer />
+      <Footer darkVariant={darkVariant} />
     </>
   )
 }

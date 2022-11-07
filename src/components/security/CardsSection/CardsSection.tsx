@@ -25,7 +25,7 @@ export default function CardsSection() {
             title='99.9% Uptime'
             description={
               <>
-                Fingerprint Pro maintains a 99.9% uptime SLA, and have a{' '}
+                Fingerprint Pro maintains a 99.9% uptime SLA, and has a{' '}
                 <a className={styles.link} target='_blank' rel='noreferrer' href={URL.statusUrl}>
                   publicly available Status page
                 </a>{' '}

@@ -1,0 +1,170 @@
+import React from 'react'
+import Section from '../../common/Section'
+import Container from '../../common/Container'
+import Button from '../../common/Button'
+import { URL, DOC_URL } from '../../../constants/content'
+import classNames from 'classnames'
+
+import styles from './FeatureComparisonSection.module.scss'
+
+export default function FeatureComparisonSection() {
+  return (
+    <div className={styles.background}>
+      <Section className={styles.root}>
+        <Container className={styles.container}>
+          <h1 className={styles.title}>Feature Comparison</h1>
+          <table className={styles.table}>
+            <tbody>
+              <tr className={styles.optionColumns}>
+                <th />
+                <th />
+                <th className={styles.ossRow}>
+                  <h3 className={styles.version}>Open Source</h3>
+                </th>
+                <th />
+                <th className={styles.proRow}>
+                  <h3 className={styles.version}>Fingerprint Pro</h3>
+                </th>
+              </tr>
+              <FeatureTitle title='Core Features' />
+              <Feature
+                feature='100% Open-source'
+                oss='yes'
+                pro={
+                  <span>
+                    no<sup>1</sup>
+                  </span>
+                }
+              />
+              <Feature feature='Standard fingerprint signals' oss='✓' pro='✓' isSymbol>
+                screen, os, device name
+              </Feature>
+              <Feature feature='Advanced fingerprint signals' oss='✓' pro='✓' isSymbol>
+                canvas, audio, fonts
+              </Feature>
+              <Feature
+                feature='ID type'
+                oss='fingerprint'
+                pro={
+                  <span>
+                    visitor identifier<sup>2</sup>
+                  </span>
+                }
+              />
+              <Feature feature='ID lifetime' oss='several weeks' pro='months/years' />
+              <Feature feature='ID origin' oss='client' pro='server' />
+              <Feature feature='ID collisions' oss='common' pro='rare' />
+              <FeatureTitle title='Additional features' />
+              <Feature feature='Incognito mode detection' oss='⨉' pro='✓' isSymbol>
+                works in all modern browsers - see our full list of{' '}
+                <a href={DOC_URL.browserSupportUrl} target='_blank' rel='noreferrer' className={styles.link}>
+                  browsers supported
+                </a>
+              </Feature>
+              <Feature feature='Server-side accuracy increase' oss='⨉' pro='✓' isSymbol>
+                based on additional server-side signals, such as TLS crypto support, ipv4/v6 data and others
+              </Feature>
+              <Feature feature='Query API & realtime Webhooks' oss='⨉' pro='✓' isSymbol>
+                build flexible workflows
+              </Feature>
+              <Feature feature='Geolocation' oss='⨉' pro='✓' isSymbol>
+                based on IP address
+              </Feature>
+              <FeatureTitle title='Operations' />
+              <Feature feature='Data security' oss='Your infrastructure' pro='Encrypted at rest' />
+              <Feature feature='Storage' oss='Your infrastructure' pro='Unlimited' />
+              <Feature feature='Regions' oss='Your infrastructure' pro='Hosting in US, EU and APAC' />
+              <Feature
+                feature='Compliance'
+                oss='Your infrastructure'
+                pro={
+                  <span>
+                    GDPR, CCPA compliant<sup>3</sup>
+                  </span>
+                }
+              />
+              <Feature feature='SLA' oss='No SLA' pro='99.9% Uptime' />
+              <Feature
+                feature='Support'
+                oss='GitHub community'
+                pro='Support team via email, chat, and call-back within 1 business day'
+              />
+              <tr className={styles.buttonsColumns}>
+                <th />
+                <th />
+                <th className={styles.ButtonRowOss}>
+                  <Button size='big' href={URL.githubRepoUrl} variant='whiteOutline' className={styles.button}>
+                    Access on GitHub
+                  </Button>
+                </th>
+                <th />
+                <th className={styles.ButtonRow}>
+                  <Button size='big' href={URL.signupUrl} variant='orangeGradient' className={styles.button}>
+                    Create Account
+                  </Button>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+          <footer className={styles.footer}>
+            <p className={styles.note}>
+              1. Pro uses the open source fingerprinting library as well as proprietary technology for increased
+              accuracy and identifier stability.
+            </p>
+            <p className={styles.note}>
+              2. Visitor identifiers, in comparison to fingerprints, include server side techniques, are deduplicated
+              and utilize fuzzy matching to result in a more accurate and stable identifier. Fingerprint hashes rely on
+              an exact match across all browser attributes, making them less stable across &gt; 4 week time intervals.
+            </p>
+            <p className={styles.note}>
+              3. Fingerprint Pro is GDPR and CCPA compliant as the data processor. You still need to be compliant as the
+              data controller and use the identification for fraud prevention under legitimate interest or ask for
+              consent.
+            </p>
+          </footer>
+        </Container>
+      </Section>
+    </div>
+  )
+}
+
+interface FeatureTitleProps {
+  title: string
+}
+function FeatureTitle({ title }: FeatureTitleProps) {
+  return (
+    <>
+      <tr>
+        <td className={styles.featureTitleColumn}>{title}</td>
+        <td />
+        <td />
+        <td />
+        <td />
+      </tr>
+    </>
+  )
+}
+
+interface FeatureProps {
+  feature: string
+  children?: React.ReactNode
+  oss: string
+  pro: React.ReactNode
+  isSymbol?: boolean
+}
+function Feature({ feature, children, oss, pro, isSymbol }: FeatureProps) {
+  return (
+    <>
+      <tr>
+        <td className={styles.featureColumn}>
+          <span className={styles.featureTitle}>{feature}</span>
+          {children && <div className={styles.description}>{children}</div>}
+        </td>
+        <td />
+        <td className={classNames(styles.versionColumn, { [styles.versionColumnStrong]: isSymbol })}>{oss}</td>
+        <td />
+        <td className={classNames(styles.versionColumn, { [styles.versionColumnStrong]: isSymbol })}>{pro}</td>
+      </tr>
+    </>
+  )
+}

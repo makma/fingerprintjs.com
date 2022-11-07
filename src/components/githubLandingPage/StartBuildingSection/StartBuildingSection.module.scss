@@ -1,0 +1,193 @@
+.root {
+  background: v('dark');
+  color: v('github-white');
+  padding-top: rem(91px);
+  padding-bottom: rem(150px);
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(64px);
+    padding-bottom: rem(66px);
+  }
+
+  .container {
+    --contentWidth: 1026px;
+
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      column-gap: rem(32px);
+      padding: rem(61px) rem(50px);
+
+      background-image: url('./rectangle.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
+
+      @include media('<=tablet') {
+        flex-direction: column;
+        row-gap: rem(40px);
+      }
+
+      @include media('<=phoneLandscape') {
+        background-image: url('./rectangleMobile.png');
+        padding: rem(32px) rem(18px) rem(40px);
+      }
+
+      @include transition((opacity, transform));
+      @include transition-duration(0.7s);
+
+      opacity: 0;
+      transform: translateY(15px);
+
+      .cta {
+        max-width: rem(488px);
+        .title {
+          @include jb-mono($size: 48px, $weight: 800, $lh: 60px);
+          letter-spacing: -0.01em;
+
+          @include media('<=phoneLandscape') {
+            font-size: rem(28px);
+            line-height: 130%;
+          }
+        }
+
+        .description {
+          @include sans($size: 16px, $lh: 24px, $weight: 400);
+          padding-top: rem(16px);
+          padding-bottom: rem(32px);
+
+          max-width: rem(380px);
+
+          @include media('<=phoneLandscape') {
+            line-height: 150%;
+            letter-spacing: 0.001em;
+          }
+
+          .link {
+            text-decoration: underline;
+          }
+        }
+        .buttonSection {
+          display: flex;
+          flex-direction: column;
+          max-width: rem(223px);
+          .button {
+            padding: rem(16px) rem(32px);
+            @include sans($size: 16px, $lh: 150%, $weight: 600);
+
+            @include media('<=phoneLandscape') {
+              padding: rem(16px) rem(13.5px);
+            }
+          }
+          .noCreditCard {
+            @include sans($size: 12px, $weight: 400, $lh: 24px);
+            padding-top: rem(4px);
+          }
+          @include media('>phoneLandscape') {
+            align-items: center;
+          }
+
+          @include media('<=phoneLandscape') {
+            max-width: rem(184px);
+          }
+        }
+        @include transition((opacity, transform));
+        @include transition-duration(0.7s);
+
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      .cards {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(16px);
+        justify-content: center;
+
+        @include media('<=phoneLandscape') {
+          padding-left: rem(16px);
+          padding-right: rem(8px);
+        }
+        .card {
+          display: flex;
+          align-items: center;
+          padding: rem(12px) rem(32px);
+          column-gap: rem(16px);
+          border-radius: rem(16px);
+          border: 0.5px solid #666667;
+          @include transition((opacity, transform));
+          @include transition-duration(0.7s);
+
+          opacity: 0;
+          transform: translateY(15px);
+
+          .icon {
+            height: rem(40px);
+            width: rem(40px);
+
+            svg {
+              height: 100%;
+              width: 100%;
+            }
+
+            @include media('<=phoneLandscape') {
+              height: rem(28px);
+              width: rem(28px);
+            }
+          }
+
+          .cardDescription {
+            @include sans($size: 16px, $lh: 32px, $weight: 500, $color: #d6d6e1);
+            @include media('<=phoneLandscape') {
+              font-size: rem(14px);
+              line-height: rem(22px);
+              letter-spacing: 0.001em;
+            }
+
+            @include media('>phoneLandscape') {
+              white-space: nowrap;
+            }
+          }
+
+          @include media('<=phoneLandscape') {
+            column-gap: rem(12px);
+
+            padding: rem(12px) rem(16px);
+            border-radius: rem(8px);
+          }
+        }
+      }
+    }
+    .visible {
+      transition-delay: 0.25s;
+      opacity: 1;
+      transform: translateY(0);
+
+      .cta {
+        transition-delay: 0.75s;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .cards {
+        .card {
+          transition-delay: 1.25s;
+          opacity: 1;
+          transform: translateY(0);
+
+          &:nth-child(2) {
+            transition-delay: 1.45s;
+          }
+          &:nth-child(3) {
+            transition-delay: 1.65s;
+          }
+          &:nth-child(4) {
+            transition-delay: 1.85s;
+          }
+
+          @include media('<=phoneLandscape') {
+            min-height: rem(56px);
+          }
+        }
+      }
+    }
+  }
+}

@@ -100,15 +100,18 @@ export interface CodeTooltipProps {
   children: React.ReactNode
   className: string
   left?: number
+  maxWidth?: number
+  theme?: string
 }
-export function CodeTooltip({ children, className, left }: CodeTooltipProps) {
+export function CodeTooltip({ children, className, left, maxWidth, theme }: CodeTooltipProps) {
   return (
     <Tippy
       interactive
       appendTo={isBrowser() ? document.body : undefined} // to prevent the tooltip from taking space from the description
       placement='right'
-      theme='checkmark'
-      maxWidth={460}
+      theme={theme ?? 'checkmark'}
+      maxWidth={maxWidth ?? 460}
+      hideOnClick={false}
       popperOptions={{
         modifiers: [
           {

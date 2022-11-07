@@ -98,3 +98,8 @@
 .tippy-box[data-theme~='checkmark'] .tippy-content {
   padding: 3rem;
 }
+
+// GitHub page tooltip style
+.tippy-box[data-theme~='github'] .tippy-content {
+  padding: rem(8px) rem(10px);
+}

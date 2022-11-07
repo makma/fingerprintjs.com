@@ -1,0 +1,322 @@
+$background-color: #202021;
+
+.background {
+  background: v('dark');
+}
+.root {
+  background: $background-color;
+
+  color: v('github-white');
+  padding-top: rem(152px);
+  padding-bottom: rem(152px);
+
+  position: relative;
+
+  @include media('<=phoneLandscape') {
+    align-items: flex-start;
+    padding-top: rem(96px);
+    padding-bottom: rem(40px);
+  }
+  border-radius: 0 0 rem(56px) rem(56px);
+
+  @include media('<=phoneLandscape') {
+    border-radius: 0 0 rem(32px) rem(32px);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  --contentWidth: 926px;
+
+  @include media('<=phoneLandscape') {
+    align-items: flex-start;
+  }
+}
+
+.title {
+  @include sans($size: 48px, $weight: 600, $lh: 120%);
+  letter-spacing: -0.01em;
+
+  margin-bottom: rem(64px);
+
+  @include media('<=phoneLandscape') {
+    font-size: rem(28px);
+    text-align: left;
+
+    margin-bottom: rem(40px);
+  }
+}
+
+.table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0;
+  position: relative;
+
+  @include media('<=phoneLandscape') {
+    border-spacing: 0;
+  }
+
+  .optionColumns,
+  .buttonsColumns {
+    border-bottom: none;
+  }
+
+  .buttonsColumns {
+    @include media('<=phoneLandscape') {
+      height: rem(16px);
+    }
+  }
+
+  td {
+    background: linear-gradient(rgba(250, 250, 250, 0.1), rgba(250, 250, 250, 0.1)) 0 0 / 100% 1px no-repeat, #202021;
+  }
+
+  tr {
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(10),
+    &:nth-child(11),
+    &:nth-child(15),
+    &:nth-child(16),
+    &:nth-child(22),
+    &:nth-child(23) {
+      td {
+        background: unset;
+      }
+    }
+
+    &:nth-child(1),
+    &:nth-child(22) {
+      position: sticky;
+      top: 0;
+      background: $background-color;
+      z-index: 2;
+    }
+
+    &:nth-child(10),
+    &:nth-child(15) {
+      td {
+        padding-top: rem(24px);
+      }
+    }
+  }
+
+  th:nth-child(1) {
+    width: 30%;
+  }
+  th:nth-child(2),
+  th:nth-child(4) {
+    width: 4%;
+
+    @include media('<=phoneLandscape') {
+      width: 1%;
+    }
+  }
+  th:nth-child(3),
+  th:nth-child(5) {
+    width: 31%;
+
+    @include media('<=phoneLandscape') {
+      width: 34%;
+    }
+  }
+
+  td:nth-child(3),
+  th:nth-child(3) {
+    border-left: 1px solid v('github-white');
+    border-right: 1px solid v('github-white');
+  }
+  td:nth-child(5),
+  th:nth-child(5) {
+    border-left: 1px solid v('github-orange-gradient');
+    border-right: 1px solid v('github-orange-gradient');
+  }
+
+  .ossRow,
+  .proRow {
+    border-top-left-radius: rem(8px);
+    border-top-right-radius: rem(8px);
+  }
+  .ossRow {
+    border-top: 8px solid v('github-white');
+    position: relative;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      bottom: 0;
+      left: -1px;
+      width: 8px;
+      height: 7px;
+      background-image: linear-gradient(to bottom, transparent 8px, v('github-white') 0),
+        radial-gradient(circle at 8px 8px, v('github-white') 8px, #202021 0);
+      background-position: top left;
+      background-size: 8px 100%, 16px 8px;
+      background-repeat: no-repeat;
+    }
+
+    &:after {
+      left: auto;
+      right: -1px;
+      background-position: top right;
+    }
+  }
+  .proRow {
+    border-top: 8px solid v('github-orange-gradient');
+    position: relative;
+
+    .version {
+      color: v('github-orange-gradient');
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      bottom: 0;
+      left: -1px;
+      width: 8px;
+      height: 7px;
+      background-image: linear-gradient(to bottom, transparent 8px, v('github-orange-gradient') 0),
+        radial-gradient(circle at 8px 8px, v('github-orange-gradient') 8px, #202021 0);
+      background-position: top left;
+      background-size: 8px 100%, 16px 8px;
+      background-repeat: no-repeat;
+    }
+
+    &:after {
+      left: auto;
+      right: -1px;
+      background-position: top right;
+    }
+  }
+
+  .ButtonRowOss,
+  .ButtonRow {
+    border-bottom-left-radius: rem(8px);
+    border-bottom-right-radius: rem(8px);
+  }
+  .ButtonRowOss {
+    border-bottom: 1px solid v('github-white');
+  }
+  .ButtonRow {
+    border-bottom: 1px solid v('github-orange-gradient');
+  }
+
+  .featureTitleColumn {
+    @include sans($size: 24px, $weight: 700, $lh: 130%);
+    letter-spacing: -0.01em;
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(16px);
+      line-height: rem(26px);
+    }
+  }
+
+  .description {
+    @include sans($size: 14px, $weight: 400, $lh: 150%, $color: #d0d0d0);
+    opacity: 0.9;
+
+    .link {
+      text-decoration: underline;
+    }
+
+    @include media('<=phoneLandscape') {
+      display: none;
+    }
+  }
+  .featureTitle {
+    @include sans($size: 16px, $weight: 600, $lh: 22px, $color: #ffffff);
+    letter-spacing: -0.005em;
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(14px);
+    }
+  }
+  .description,
+  .featureColumn,
+  .versionColumn {
+    @include sans($size: 16px, $weight: 400, $lh: 24px);
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(14px);
+      line-height: rem(22px);
+      letter-spacing: 0.001em;
+    }
+  }
+  .featureColumn {
+    padding: rem(16px) 0;
+
+    @include media('<=phoneLandscape') {
+      padding: rem(8px) 0;
+    }
+  }
+  .optionColumns,
+  .versionColumn {
+    text-align: center;
+  }
+
+  .versionColumn {
+    @include media('<=phoneLandscape') {
+      font-size: rem(13px);
+      line-height: 130%;
+
+      padding: rem(6px);
+    }
+  }
+
+  .versionColumnStrong {
+    font-size: rem(22px);
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(16px);
+    }
+  }
+
+  .version {
+    @include sans($size: 24px, $weight: 700, $lh: 36px);
+    letter-spacing: -0.01em;
+    margin-top: rem(16px);
+    padding-bottom: rem(8px);
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(18px);
+      padding: 0 rem(5px);
+      line-height: 110%;
+    }
+  }
+
+  .button {
+    margin: rem(48px) 0;
+
+    @include media('<=phoneLandscape') {
+      white-space: normal;
+
+      width: 90%;
+      margin: rem(31px) 0;
+      padding: 0;
+    }
+
+    @include media('<=phoneLandscape') {
+      display: none;
+    }
+  }
+}
+
+.footer {
+  margin-top: rem(64px);
+
+  .note {
+    @include sans($size: 14px, $weight: 400, $lh: 24px, $color: #d0d0d0);
+    margin-bottom: rem(8px);
+  }
+}

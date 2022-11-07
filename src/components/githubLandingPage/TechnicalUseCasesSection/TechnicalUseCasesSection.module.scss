@@ -1,0 +1,199 @@
+.root {
+  background: v('dark');
+  color: v('github-white');
+
+  padding-top: rem(195px);
+  padding-bottom: rem(155px);
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(120px);
+    padding-bottom: rem(65px);
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .ctaSection {
+      max-width: rem(543px);
+
+      .title {
+        @include sans($size: 48px, $weight: 600, $lh: 64px);
+        letter-spacing: -0.01em;
+
+        @include media('<=phoneLandscape') {
+          font-size: rem(28px);
+          line-height: rem(34px);
+        }
+      }
+
+      .description {
+        @include sans($size: 18px, $weight: 400, $lh: 150%, $color: #b9b9b9);
+
+        padding-top: rem(16px);
+        padding-bottom: rem(32px);
+
+        @include media('<=phoneLandscape') {
+          font-size: rem(16px);
+          letter-spacing: 0.001em;
+        }
+      }
+
+      @include media('<=desktop') {
+        text-align: center;
+      }
+
+      @include media('<=phoneLandscape') {
+        text-align: left;
+      }
+    }
+
+    @include media('<=desktop') {
+      flex-direction: column-reverse;
+      row-gap: rem(100px);
+    }
+
+    @include media('<=phoneLandscape') {
+      row-gap: rem(62px);
+    }
+  }
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(64px);
+
+  position: relative;
+  width: 100%;
+  padding-right: rem(115px);
+
+  @include media('<=desktop') {
+    padding-right: 0;
+    max-width: rem(800px);
+  }
+
+  @include media('<=phoneLandscape') {
+    row-gap: rem(30px);
+    max-width: rem(400px);
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: rem(40px) rem(32px);
+
+  border: 0.8px solid #575758;
+  border-radius: rem(16px);
+
+  background: linear-gradient(
+    128.85deg,
+    rgba(33, 33, 34, 0.2) 1.03%,
+    rgba(67, 67, 68, 0.2) 49.05%,
+    rgba(32, 32, 33, 0.2) 99.12%
+  );
+  box-shadow: 0px 5.12786px 20.5114px rgba(13, 16, 43, 0.1);
+
+  max-width: rem(416px);
+  position: relative;
+  animation: float-translate 10s ease-in-out infinite;
+
+  @include media('<=phoneLandscape') {
+    padding: rem(22px) rem(17px);
+
+    max-width: rem(230px);
+  }
+
+  &:nth-child(2) {
+    align-self: flex-end;
+    animation-delay: -6s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: -2s;
+  }
+  .icon {
+    position: absolute;
+    right: rem(-32px);
+    top: rem(-32px);
+
+    height: rem(64px);
+    svg {
+      height: 100%;
+    }
+
+    animation: float-translate-2 10s ease-in-out infinite;
+
+    @include media('<=phoneLandscape') {
+      height: rem(42.28px);
+
+      right: rem(-21px);
+      top: rem(-21px);
+    }
+  }
+  .cardTitle {
+    @include sans($size: 24px, $weight: 600, $lh: 32px);
+    letter-spacing: -0.01em;
+
+    padding-bottom: rem(8px);
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(20px);
+      line-height: rem(24px);
+    }
+  }
+  .cardDescription {
+    @include sans($size: 16px, $lh: 150%, $weight: 400);
+
+    padding-bottom: rem(16px);
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(14px);
+      line-height: rem(22px);
+      letter-spacing: 0.001em;
+      color: #d0d0d0;
+    }
+  }
+  .link,
+  .linkMobile {
+    display: flex;
+    align-items: center;
+    column-gap: rem(4px);
+
+    @include jb-mono($size: 14px, $weight: 500, $lh: 24px, $color: #ff7340);
+
+    @include transition((opacity));
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    .arrow {
+      margin-top: rem(1px);
+    }
+  }
+
+  .link {
+    @include media('<=phoneLandscape') {
+      display: none;
+    }
+  }
+
+  .linkMobile {
+    @include media('>phoneLandscape') {
+      display: none;
+    }
+  }
+}
+
+@keyframes float-translate {
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes float-translate-2 {
+  50% {
+    transform: translateY(7px);
+  }
+}

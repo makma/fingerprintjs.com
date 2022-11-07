@@ -255,6 +255,23 @@
   }
 }
 
+@mixin jb-mono($size: false, $color: false, $weight: false, $lh: false) {
+  font-family: v(jb-mono);
+
+  @if $size {
+    font-size: rem($size);
+  }
+  @if $color {
+    color: $color;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+}
+
 @mixin fade-in($waitTime, $translate: false) {
   animation: wait #{$waitTime}, fade-in 0.7s #{$waitTime};
 
@@ -305,6 +322,16 @@
   @font-face {
     font-family: $family;
     src: local(''), url('#{$path}#{$type}.woff2') format('woff2'), url('#{$path}#{$type}.woff') format('woff');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@mixin fontfaceWoff2($path, $family, $type: '', $weight, $style: normal) {
+  @font-face {
+    font-family: $family;
+    src: local(''), url('#{$path}#{$type}.woff2') format('woff2');
     font-weight: $weight;
     font-style: $style;
     font-display: swap;

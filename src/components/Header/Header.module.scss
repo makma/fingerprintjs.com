@@ -217,3 +217,16 @@
     border-radius: rem(6px);
   }
 }
+
+.headerDark {
+  background: v('dark');
+  .darkRoot {
+    padding-top: rem(32px);
+    padding-bottom: rem(37px);
+
+    @include media('<=phoneLandscape') {
+      padding-top: rem(20px);
+      padding-bottom: rem(20px);
+    }
+  }
+}

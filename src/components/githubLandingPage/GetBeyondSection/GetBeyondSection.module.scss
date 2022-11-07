@@ -1,0 +1,322 @@
+.root {
+  background: v('dark');
+  color: v('github-white');
+  padding-top: 0;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .title {
+      @include sans($size: 56px, $weight: 700, $lh: 64px);
+      letter-spacing: -0.01em;
+      padding-top: rem(31px);
+      text-align: center;
+
+      @include media('<=phoneLandscape') {
+        text-align: left;
+
+        font-size: rem(32px);
+        line-height: rem(40px);
+
+        padding-top: rem(24px);
+      }
+    }
+
+    .description {
+      @include sans($size: 20px, $weight: 400, $lh: 32px, $color: #d0d0d0);
+      letter-spacing: -0.01em;
+      text-align: center;
+
+      padding-top: rem(16px);
+      max-width: rem(620px);
+
+      @include media('<=phoneLandscape') {
+        text-align: left;
+
+        font-size: rem(16px);
+        line-height: 150%;
+        letter-spacing: 0.001em;
+      }
+    }
+    .tabSection {
+      display: flex;
+      align-items: center;
+      column-gap: rem(16px);
+
+      padding: rem(40px) 0;
+
+      @include media('<=phoneLandscape') {
+        column-gap: rem(14px);
+        padding-bottom: rem(24px);
+      }
+
+      .tab {
+        @include sans($size: 20px, $weight: 600, $lh: 28px);
+        letter-spacing: -0.01em;
+        @include transition((color));
+
+        @include media('<=phoneLandscape') {
+          font-size: rem(16px);
+          line-height: rem(25px);
+        }
+      }
+      .tabProOn {
+        color: v('github-orange');
+      }
+      .switch {
+        width: rem(52px);
+        height: rem(31px);
+        background-color: rgba(255, 255, 255, 0.4);
+        display: flex;
+        justify-content: flex-start;
+        border-radius: rem(16px);
+        padding: rem(2px);
+        cursor: pointer;
+
+        @include media('<=phoneLandscape') {
+          width: rem(46px);
+          height: rem(27.5px);
+
+          padding: rem(1.77px);
+        }
+      }
+
+      .proOn {
+        justify-content: flex-end;
+      }
+      .handle {
+        width: rem(27px);
+        height: rem(27px);
+        background-color: v('github-white');
+        border-radius: rem(16px);
+
+        box-shadow: 0px 0px 11px rgba(250, 250, 250, 0.4);
+
+        @include media('<=phoneLandscape') {
+          width: rem(24.4px);
+          height: rem(23.5px);
+          border-radius: rem(14.2px);
+        }
+      }
+    }
+  }
+  .button {
+    margin-top: rem(40px);
+    background: linear-gradient(94.48deg, #f5614b 0%, #f5614b 0.01%, rgba(250, 117, 69, 0.99) 100%);
+    font-weight: 600;
+    @include transition((opacity));
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+.content {
+  position: relative;
+  padding: rem(20px) rem(32px);
+  background: linear-gradient(#1a1b1d 0 0) padding-box,
+    linear-gradient(238.52deg, #434344 18.03%, #727273 44.95%, rgba(32, 32, 33, 0) 70.55%) border-box;
+  box-shadow: 0px -8px 202px rgba(161, 161, 161, 0.4);
+  border: 0.5px solid transparent;
+  border-radius: rem(16px);
+
+  width: rem(580px);
+  min-height: rem(312px);
+
+  @include media('<=phoneLandscape') {
+    width: 100%;
+    padding: rem(8px) rem(16px);
+  }
+  pre {
+    margin: 0;
+    padding: 0 0 0 rem(49px);
+    font-size: rem(14px);
+
+    @include media('<=phoneLandscape') {
+      padding-left: rem(25px);
+    }
+  }
+  code {
+    line-height: rem(27px);
+  }
+  code[class*='language-'],
+  pre[class*='language-'] {
+    font-size: rem(14px);
+    color: #ffffff;
+    line-height: rem(27px);
+  }
+  pre[class*='line-numbers'] {
+    padding: 0 0 0 rem(49px);
+    overflow-y: hidden;
+
+    @include media('<=phoneLandscape') {
+      padding-left: rem(25px);
+    }
+  }
+
+  span[class='token attr-name'],
+  span[class='token string'] {
+    color: #89bffa;
+  }
+  pre[class*='line-numbers'] > code {
+    display: block;
+  }
+  span[class='line-numbers-rows'] {
+    border-right: 0 !important;
+
+    @include media('<=phoneLandscape') {
+      width: rem(25px) !important;
+      left: -25px;
+    }
+  }
+}
+.tooltipTitle,
+.tooltipTitleOss {
+  @include sans($size: 12px, $weight: 600, $lh: 12px, $color: #727273);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  padding-bottom: rem(6px);
+
+  @include media('<=phoneLandscape') {
+    font-size: rem(14px);
+  }
+}
+.tooltipTitle {
+  color: v('github-orange');
+}
+.tooltipText {
+  @include sans($size: 14px, $weight: 400, $lh: 130%, $color: #434344);
+  letter-spacing: 0.01em;
+
+  @include media('<=phoneLandscape') {
+    font-size: rem(16px);
+  }
+}
+.visitorIdPro {
+  top: 33px;
+}
+.confidencePro {
+  top: 58px;
+}
+.botInformationPro {
+  top: 85px;
+  left: 287px;
+}
+.ipLocationPro {
+  bottom: 89px;
+  left: 253px;
+}
+.lastSeenAtPro {
+  bottom: 34px;
+  left: 248px;
+}
+
+.visitorIdOss {
+  top: 58px;
+}
+.scoreOss {
+  top: 113px;
+}
+.visitorIdOss,
+.scoreOss,
+.visitorIdPro,
+.confidencePro,
+.botInformationPro,
+.ipLocationPro,
+.lastSeenAtPro,
+.visitorIdOss,
+.scoreOss {
+  @include media('<=phoneLandscape') {
+    transform: translateX(-24px);
+  }
+}
+
+.card {
+  position: absolute;
+  padding: rem(16px);
+
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(8px);
+
+  @include sans($size: 12px, $weight: 600, $lh: 16px);
+  letter-spacing: 0.04em;
+
+  background: linear-gradient(#212122 0 0) padding-box,
+    linear-gradient(
+        130.65deg,
+        rgba(252, 251, 250, 0.3) -4.79%,
+        rgba(114, 114, 115, 0.3) 51.04%,
+        rgba(252, 251, 250, 0.3) 103.11%
+      )
+      border-box;
+  border: 0.5px solid transparent;
+  border-radius: 8px;
+
+  box-shadow: 0px 5.20827px 20.8331px rgba(13, 16, 43, 0.1);
+
+  color: v('github-white');
+  text-transform: uppercase;
+
+  @include media('<=tabletWide') {
+    display: none;
+  }
+}
+
+.integrations {
+  text-align: center;
+  left: -95px;
+  top: -50px;
+
+  padding-top: rem(8px);
+  padding-bottom: rem(12px);
+
+  @include fade-in($waitTime: 0.5s, $translate: 15px);
+  .number {
+    font-weight: 700;
+    font-size: rem(48px);
+    background: linear-gradient(94.48deg, #f5614b 0%, #f5614b 0.01%, rgba(250, 117, 69, 0.99) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: rem(48px);
+    letter-spacing: -0.01em;
+  }
+}
+.accuracyPro {
+  right: -64px;
+  bottom: -64px;
+
+  @include fade-in($waitTime: 1s, $translate: 15px);
+  .percent {
+    font-weight: 700;
+    font-size: rem(48px);
+    background: linear-gradient(94.48deg, #f5614b 0%, #f5614b 0.01%, rgba(250, 117, 69, 0.99) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: rem(48px);
+    letter-spacing: -0.01em;
+  }
+}
+.noIntegrations {
+  left: -191px;
+  top: -15px;
+
+  @include fade-in($waitTime: 0.5s, $translate: 15px);
+}
+.accuracyOss {
+  right: -64px;
+  bottom: -64px;
+
+  @include fade-in($waitTime: 1s, $translate: 15px);
+  .percent {
+    font-weight: 700;
+    font-size: rem(48px);
+    line-height: rem(48px);
+    letter-spacing: -0.01em;
+  }
+}

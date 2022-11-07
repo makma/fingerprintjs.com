@@ -67,6 +67,20 @@
   }
 }
 
+.whiteOutline {
+  --bgColor: var(--transparent);
+  --color: var(--github-white);
+  box-shadow: inset 0 0 0 2px v('github-white');
+  @include transition((box-shadow, color));
+
+  &:focus,
+  &:hover {
+    background-color: v(bgColor);
+    color: adjust-color(c('github-white'), $lightness: -20%);
+    box-shadow: inset 0 0 0 2px adjust-color(c('github-white'), $lightness: -20%);
+  }
+}
+
 .small {
   height: rem(32px);
   padding: 0 1.5rem;
