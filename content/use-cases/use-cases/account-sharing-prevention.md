@@ -3,7 +3,7 @@ templateKey: use-case-content
 metadata:
   title: Account Sharing Prevention - Technical Use Case - Fingerprint Pro
   url: http://fingerprint.com/use-cases/account-sharing-prevention
-  image: /img/uploads/accountsharingprevention.png
+  image: /img/uploads/accountsharingprevention-min.png
   description: By leveraging Fingerprint’s Account Sharing capability, customers
     can access a prebuilt Account Sharing Solution that utilizes many signals
     and multiple techniques including fingerprinting.
