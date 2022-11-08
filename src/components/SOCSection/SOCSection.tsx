@@ -30,7 +30,7 @@ export default function SOCSection({ advertisingVariant }: SOCSectionProps) {
       </Container>
       <Container className={styles.cardsContainer}>
         <Card icon={<StarsSVG />} title='GDPR and CCPA Compliant' />
-        <Card icon={<AICPASVG />} title='SOC 2 Type 1 Compliant' />
+        <Card icon={<AICPASVG />} title='SOC 2 Type II Compliant' />
         <Card icon={<ClockSVG />} title='99.9% Uptime SLA' />
       </Container>
     </Section>

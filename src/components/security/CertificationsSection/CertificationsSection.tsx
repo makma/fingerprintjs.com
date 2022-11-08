@@ -16,13 +16,13 @@ export default function CertificationsSection() {
           <h1 className={styles.title}>Compliance & Certifications</h1>
           <p className={styles.description}>
             We continuously monitor and are up-to-date on all enterprise-grade certifications such as GDPR, CCPA, and
-            SOC2 Type 1.
+            SOC2 Type II.
           </p>
         </section>
         <section className={styles.imageSection}>
           <Logo icon={<GdprSVG />} title='GDPR Compliant' />
           <Logo icon={<CcpaSVG />} title='CCPA Compliant' />
-          <Logo icon={<AicpaSVG />} title='SOC 2 Type 1 Certified' />
+          <Logo icon={<AicpaSVG />} title='SOC 2 Type II Certified' />
         </section>
       </Container>
     </Section>

@@ -191,7 +191,7 @@ function FAQSection() {
           </Link>
           <br />
           <br />
-          If you would like to see our SOC 2 Type 1 report, please{' '}
+          If you would like to see our SOC 2 Type II report, please{' '}
           <Link to={PATH.contactSales} className={styles.link}>
             contact sales.
           </Link>
