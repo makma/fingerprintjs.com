@@ -29,7 +29,7 @@ customCTA:
   title: Want to learn more about our SOC 2 Type II report?
   description: "Contact our sales team. "
   ctaText: Contact sales
-  ctaUrl: https://fingerprint.com/contact-sales/
+  ctaUrl: https://fingerprint.com/contact-sales/?utm_medium=blog
 ---
 We are excited to announce the latest in furthering our commitment to keeping our customers and company safe at the highest possible level. We received our company's SOC 2 Type II report, once again validating our best-in-class security and privacy commitment.
 
