@@ -1,25 +1,27 @@
 ---
 templateKey: long-form-content
 metadata:
-  title: SOC 2 Compliance - Fingerprint
+  title: SOC 2 Type I Compliance - Fingerprint
   description: "We take privacy and security seriously, which is why we are proud
     to receive our SOC 2 Type 1 report. The report is available on request to
     current and future customers. "
   url: https://fingerprint.com/blog/soc-2-type-1
   image: /img/uploads/soc2_1.png
-  imageAlt: SOC 2 Compliance
-  imageTitle: SOC 2 Compliance
+  imageAlt: SOC 2 Type I Compliance
+  imageTitle: SOC 2 Type I Compliance
 featured: true
 publishDate: 2021-08-24T17:58:45.588Z
-title: Fingerprint Announces SOC 2 Compliance
+title: Fingerprint Announces SOC 2 Type I Compliance
+isPublished: true
+isHidden: false
 tags:
   - announcements
 authors:
   - Savannah Copland
 heroImage:
   image: /img/uploads/soc2_1.png
-  imageAlt: SOC 2 Compliance
-  imageTitle: SOC 2 Compliance
+  imageAlt: SOC 2 Type I Compliance
+  imageTitle: SOC 2 Type I Compliance
 customCTA:
   openCtaNewTab: false
   title: Thinking about working with us?
@@ -27,9 +29,9 @@ customCTA:
     seeing our SOC 2 report.
   ctaText: Contact Sales
   ctaUrl: https://fingerprint.com/contact-sales/
-isPublished: true
-isHidden: false
 ---
+> November 2022 Update: We're now SOC Type II certified. You can read more [here](/blog/soc-2-type-2/). 
+
 Fingerprint is committed to keeping our customer and company data safe to the highest possible standards.
 
 That’s why today we are excited to share that we received our SOC 2 Type 1 report for our company and our Pro offering, which validates our commitment to best-in-class data security and privacy.
