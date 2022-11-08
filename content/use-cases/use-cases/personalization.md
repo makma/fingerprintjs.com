@@ -5,10 +5,10 @@ metadata:
   description: Most of your visitors are anonymous. Here’s how to tailor their
     experience without requiring sign-in.
   url: http://www.fingerprint.com/use-cases/personalization
-  image: /img/uploads/account-takeover.png
+  image: /img/uploads/personalization-min.png
   imageAlt: login screen
   imageTitle: login screen
-  socialImage: /img/uploads/account-takeover.png
+  socialImage: /img/uploads/personalization-min.png
 publishDate: 2022-08-12T17:17:34.973Z
 isPublished: true
 title: Personalization
