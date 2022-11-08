@@ -1,6 +1,7 @@
-showNotBar: false
-barBody: "PRODUCT LAUNCH: Detect sophisticated bots with BotD (Nov 2nd - 1pm EST)"
-arrowText: ""
-url: blog/botd-webinar-announcement/
+showNotBar: true
+barBody: "ANNOUNCEMENT: We're now SOC 2 Type II
+  certified.[](https://fingerprint.com/blog/soc-2-type-2/)"
+arrowText: Read more
+url: /blog/soc-2-type-2/
 openUrlNewTab: false
 backgroundColor: "#f04405"
