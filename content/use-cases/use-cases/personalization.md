@@ -8,7 +8,7 @@ metadata:
   image: /img/uploads/personalization-min.png
   imageAlt: login screen
   imageTitle: login screen
-  socialImage: /img/uploads/personalization-min.png
+  socialImage: /img/uploads/personalization.png
 publishDate: 2022-08-12T17:17:34.973Z
 isPublished: true
 title: Personalization
