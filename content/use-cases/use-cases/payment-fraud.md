@@ -7,7 +7,7 @@ metadata:
     goods or services. We provide a reliable identification signal that
     significantly allows our customers to improve their credit card anti-fraud
     workflows.
-  image: /img/uploads/payment-fraud-min.png
+  image: /img/uploads/payment-fraud.png
   imageAlt: mobile checkout screen
   imageTitle: mobile checkout screen
   socialImage: /img/uploads/payment-fraud.png
