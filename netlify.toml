@@ -804,6 +804,11 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/signup/"
+  to = "https://dashboard.fingerprint.com/signup/"
+  force = true
+
 [context.branch-deploy]
   command = "yarn noIndexBuild"
 
