@@ -806,7 +806,7 @@
 
 [[redirects]]
   from = "/signup/"
-  to = "https://dashboard.fingerprint.com/signup/"
+  to = "https://dashboard.fingerprint.com/signup"
   force = true
 
 [context.branch-deploy]
