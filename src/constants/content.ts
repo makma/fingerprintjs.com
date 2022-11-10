@@ -131,23 +131,12 @@ export const DEFAULT_TRIAL_DAYS = 10
 export const THOUSAND_IDENTIFICATIONS_PRICE = 0.002
 
 export const solutionsDropdown = {
-  identify: [
-    {
-      title: 'Device Identification',
-      url: PATH.whyFpjs,
-      description: 'Identify web and mobile users with our high accuracy fingerprints.',
-    },
-    {
-      title: 'Bot Detection',
-      url: PATH.botD,
-      description: 'Detect automated threats and better understand your traffic.',
-    },
-  ],
   protect: [
     {
       title: 'Payment Fraud',
       url: PATH.paymentFraud,
       description: 'Protect your revenue while keeping approval rates high.',
+      useCasesLink: USE_CASE_PATH.paymentFraud,
     },
     {
       title: 'Account Takeover',
@@ -160,6 +149,7 @@ export const solutionsDropdown = {
       title: 'Account Sharing Prevention',
       url: PATH.accountSharing,
       description: 'Increase revenue by converting users into paying customers.',
+      useCasesLink: USE_CASE_PATH.accountSharing,
     },
     {
       title: 'Paywall Enforcement',
@@ -176,6 +166,48 @@ export const industryDropdown = [
   { title: 'Cryptocurrency', url: PATH.cryptocurrency },
 ]
 
+export const devResourcesDropdown = [
+  { title: 'Documentation', url: URL.docsUrl },
+  { title: 'API Status', url: URL.statusUrl },
+  { title: 'SDKs and Libraries', url: PATH.sdks },
+]
+
+export const communityDropdown = [
+  { title: 'Discord', url: URL.discordServerURL },
+  { title: 'Open Source', url: URL.githubCommunityRepoUrl },
+]
+
+export const platformDropdown = {
+  capabilities: [
+    {
+      title: 'Pro - Visitor Identification',
+      url: PATH.whyFpjs,
+      description: 'Identify web and mobile users with our high accuracy fingerprints.',
+    },
+    {
+      title: 'BotD - Bot Detection',
+      url: PATH.botD,
+      description: 'Detect automated threats and better understand your traffic.',
+    },
+  ],
+  integrations: [
+    {
+      title: 'Integrations',
+      url: PATH.integrations,
+    },
+    {
+      title: 'Security & Privacy',
+      url: PATH.security,
+    },
+  ],
+}
+
+export const resourcesDropdown = [
+  { title: 'Blog', url: PATH.blog },
+  { title: 'FAQ', url: PATH.faq },
+  { title: 'Webinars', url: `${PATH.blog}tag/webinar/` },
+  { title: 'Case Studies', url: PATH.caseStudies },
+]
 // We need to reset the chatbot widget on the following pages
 export const PAGES_RELOAD_CHATBOT = [
   `${PATH.useCases}personalization/`,

@@ -1,5 +1,5 @@
 .header {
-  @include media('>desktop') {
+  @include media('>desktopHeader') {
     position: sticky;
     top: 0;
     z-index: v('z-header');
@@ -7,18 +7,17 @@
 }
 
 .nav {
-  @include media('>desktop') {
+  @include media('>desktopHeader') {
     background: c('white');
   }
 }
 
 .root {
-  padding-top: rem(26px);
-  padding-bottom: rem(26px);
-  border-bottom: 1px solid #f2f2f7;
+  padding-top: rem(18px);
+  padding-bottom: rem(18px);
 
-  @include media('<=phone') {
-    padding: rem(16px) rem(20px);
+  @include media('<=desktopHeader') {
+    padding: rem(20px) rem(20px);
   }
 }
 
@@ -37,52 +36,19 @@
 
 .navSecondary {
   justify-content: flex-end;
-
   > * + * {
     margin-left: 4rem;
   }
 }
 
 .navLeft {
-  .link {
-    &:not(.item) {
-      padding: rem(6px) 0;
-    }
-  }
-
-  > * {
-    &:not(.linkLogo) {
-      @include media('>tablet', '<=desktop') {
-        display: none;
-      }
-    }
-
-    + * {
-      margin-left: 3.75rem;
-    }
-  }
+  display: flex;
+  column-gap: rem(32px);
 }
 
 .navRight {
-  @include media('>desktop') {
-    a {
-      height: rem(42px);
-    }
-  }
-
-  > * + * {
-    @include media('>desktop') {
-      margin-left: 1.5rem;
-    }
-  }
-
-  > span {
-    height: 28px;
-
-    @include media('>tablet', '<=desktop') {
-      display: none;
-    }
-  }
+  display: flex;
+  column-gap: rem(12px);
 }
 
 :global(.isMobileMenuOpen) {
@@ -95,6 +61,7 @@
 
 .logo {
   object-fit: contain;
+  margin-right: rem(16px);
 
   @include media('>phone') {
     height: auto;
@@ -106,7 +73,7 @@
 }
 
 .desktopOnly {
-  @include media('<=desktop') {
+  @include media('<=desktopHeader') {
     display: none;
   }
 }
@@ -123,7 +90,7 @@
   transition: 0.5s ease-in-out;
   cursor: pointer;
 
-  @include media('>desktop') {
+  @include media('>desktopHeader') {
     display: none;
   }
   span {
@@ -174,47 +141,28 @@
 }
 
 .signupButton {
-  @include media('>desktop') {
+  @include media('>desktopHeader') {
     padding: 0 rem(20px);
-  }
-
-  @include media('<=phone') {
-    padding: 0 rem(12px);
-    border-radius: 4px;
-    height: rem(32px);
-
-    font-size: rem(12px);
-    line-height: 150%;
   }
 }
 
 .link {
+  @include inter($size: 14px, $weight: v('normal'), $lh: 150%);
+
   @include transition((opacity));
   opacity: 1;
 
-  font-size: 1.75rem;
-  line-height: 150%;
-
   cursor: pointer;
 
-  &:not(.item) {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
-
-  &:not(.has-submenu) {
-    &:hover {
-      opacity: v('faded');
-    }
+  &:hover {
+    opacity: v('faded');
   }
 }
 
 .signupButton,
 .button {
-  @include media('>desktop') {
-    padding: 0 rem(20px) rem(1px) rem(20px);
-
-    border-radius: rem(6px);
+  @include media('<=tablet') {
+    display: none;
   }
 }
 
@@ -228,5 +176,15 @@
       padding-top: rem(20px);
       padding-bottom: rem(20px);
     }
+  }
+}
+
+.loginLink {
+  @include inter($size: 14px, $weight: 600, $lh: 150%, $color: v('github-orange-gradient'));
+  padding-right: rem(10px);
+  @include transition((color));
+
+  &:hover {
+    color: adjust-color(c('github-orange-gradient'), $lightness: -20%);
   }
 }

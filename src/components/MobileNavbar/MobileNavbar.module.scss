@@ -2,8 +2,8 @@
   position: sticky;
   left: 0;
   width: 100%;
-  padding: 3rem 0;
-  height: calc(100vh - (96px + 2rem));
+  padding: rem(8px) 0;
+  height: calc(100vh - (96px));
   z-index: v(z-mobile-menu);
   display: flex;
   flex-direction: column;
@@ -20,18 +20,17 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-
-    > * {
-      padding: rem(16px) 0;
-    }
   }
 
   .links {
+    @include inter($size: 16px, $weight: v('normal'), $lh: 24px);
+    letter-spacing: 0.001em;
+
     &.top {
       display: flex;
       justify-content: space-between;
       flex: none;
-      padding: 0 rem(20px);
+      padding: 0 rem(20px) rem(16px) rem(20px);
 
       > * {
         flex: 1;
@@ -70,8 +69,9 @@
 
         cursor: pointer;
 
-        border-bottom: 1px solid #f2f2f7;
+        border-bottom: 1px solid #d0d0d0;
         margin: 0 rem(20px);
+        padding: rem(16px) 0;
 
         &:hover {
           opacity: v('faded');
@@ -96,6 +96,9 @@
     }
 
     .social {
+      @include inter($size: 16px, $weight: v('normal'), $lh: 24px, $color: #89898a);
+      letter-spacing: 0.001em;
+
       .links {
         display: flex;
         align-items: center;
@@ -112,7 +115,7 @@
 
           &:hover {
             svg {
-              opacity: 1;
+              opacity: v('muted');
             }
           }
         }
@@ -120,8 +123,8 @@
         svg {
           width: 4rem;
           height: 4rem;
-          fill: v('brand-water');
-          opacity: v('muted');
+          opacity: 1;
+
           @include transition((opacity));
         }
       }

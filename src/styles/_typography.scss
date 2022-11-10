@@ -20,6 +20,12 @@ $fontDir: '../fonts/';
 @include fontface('#{$fontDir}work-sans', 'Work Sans', '-v11-latin-600italic', 600, italic);
 @include fontface('#{$fontDir}work-sans', 'Work Sans', '-v11-latin-700italic', 700, italic);
 
+@include fontface('#{$fontDir}inter', 'Inter', '-v12-latin-200', 200);
+@include fontface('#{$fontDir}inter', 'Inter', '-v12-latin-regular', 400);
+@include fontface('#{$fontDir}inter', 'Inter', '-v12-latin-500', 500);
+@include fontface('#{$fontDir}inter', 'Inter', '-v12-latin-600', 600);
+@include fontface('#{$fontDir}inter', 'Inter', '-v12-latin-700', 700);
+
 strong {
   font-weight: 700 !important;
 }

@@ -6,50 +6,66 @@ import GithubButton from '../GithubButton'
 import Button from '../common/Button'
 import classNames from 'classnames'
 import styles from './MobileNavbar.module.scss'
-import { URL, DOC_URL, PATH } from '../../constants/content'
-import DropdownMenu from './DropdownMenu'
-import SolutionsDropdown from '../SolutionsDropdown/SolutionsDropdown'
+import {
+  URL,
+  PATH,
+  solutionsDropdown,
+  industryDropdown,
+  devResourcesDropdown,
+  communityDropdown,
+  platformDropdown,
+  resourcesDropdown,
+} from '../../constants/content'
+import DropdownMenu from '../DropdownMenu/DropdownMenu'
+import Dropdown from '../Dropdown/Dropdown'
 
 export default function MobileNavbar() {
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
         <div className={classNames(styles.links, styles.top)}>
-          <Button href={PATH.contactSales} variant='outline'>
+          <Button href={PATH.contactSales} variant='orangeGradientOutline' size='medium'>
             Contact Sales
           </Button>
-          <Button href={URL.signupUrl}>Get Started</Button>
+          <Button variant='orangeGradient' size='medium' href={URL.signupUrl}>
+            Get Started
+          </Button>
         </div>
         <div className={classNames(styles.links, styles.main)}>
           <div className={styles.container}>
-            <DropdownMenu name='Solutions' className={styles.link}>
-              <SolutionsDropdown />
+            <DropdownMenu name='Platform'>
+              <Dropdown
+                leftColumns={[{ title: 'Capabilities', list: platformDropdown.capabilities, cardBackground: true }]}
+                rightColumn={{ list: platformDropdown.integrations }}
+              />
             </DropdownMenu>
-
-            <Link to={PATH.demoUrl} className={styles.link}>
-              Technical Demo
-            </Link>
-            <Link to={PATH.blog} className={styles.link}>
-              Blog
-            </Link>
-            <Link to={PATH.caseStudies} className={styles.link}>
-              Case Studies
-            </Link>
-            <a href={URL.githubRepoUrl} target='_blank' rel='noreferrer' className={styles.link}>
-              Open Source
-            </a>
+            <DropdownMenu name='Solutions'>
+              <Dropdown
+                leftColumns={[
+                  { title: 'Protect', list: solutionsDropdown.protect },
+                  { title: 'Grow', list: solutionsDropdown.grow },
+                ]}
+                rightColumn={{ title: 'By Industry', list: industryDropdown }}
+                bottomLinkText='All Use Cases'
+                bottomLinkUrl={PATH.useCases}
+              />
+            </DropdownMenu>
+            <DropdownMenu name='Developers'>
+              <Dropdown
+                leftColumns={[{ title: 'Dev Resources', list: devResourcesDropdown, cardBackground: true }]}
+                rightColumn={{ title: 'Community', list: communityDropdown }}
+              />
+            </DropdownMenu>
+            <DropdownMenu name='Resources'>
+              <Dropdown leftColumns={[{ list: resourcesDropdown, cardBackground: true }]} />
+            </DropdownMenu>
             <Link to={PATH.pricingUrl} className={styles.link}>
               Pricing
             </Link>
-            <Link to={PATH.careers} className={styles.link}>
-              Careers
+            <Link to={PATH.demoUrl} className={styles.link}>
+              Demo
             </Link>
-            <a href={DOC_URL.documentationUrl} target='_blank' rel='noreferrer' className={styles.link}>
-              Docs
-            </a>
-            <Link to={PATH.support} className={styles.link}>
-              Support
-            </Link>
+
             <a href={URL.dashboardLoginUrl} className={styles.link} target='_blank' rel='noreferrer'>
               Login
             </a>
