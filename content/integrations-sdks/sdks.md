@@ -113,4 +113,11 @@ integrationSdkCards:
     docsLink: https://dev.fingerprint.com/docs/vuejs
     githubLink: https://github.com/fingerprintjs/fingerprintjs-pro-vue/tree/main/packages
     category: Frontend
+  - githubLink: https://github.com/fingerprintjs/fingerprint-pro-server-api-php-sdk
+    docsLink: https://dev.fingerprint.com/docs/fingerprint-pro-server-api-php-sdk
+    category: Backend
+    description: This open-source library improves the experience for projects
+      utilizing PHP environment.
+    title: PHP Server API SDK
+    cardImage: /img/uploads/integrationsCards/php.png
 ---
