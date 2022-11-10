@@ -66,8 +66,8 @@ Here are the recommended logic rules for Payment Fraud prevention:
 * First, you need to add the Fingerprint Pro [JavaScript agent](https://dev.fingerprintjs.com/docs/js-agent) to your webpage. Alternatively, if your frontend uses modern frameworks such as [React.js](https://dev.fingerprintjs.com/docs/fingerprintjs-pro-react) or [Angular](https://dev.fingerprintjs.com/docs/angular), one can use one of [our libraries](https://github.com/orgs/fingerprintjs/repositories) instead.
 
 ```javascript
- Initialize the agent
- const fpPromise = import('https://fpcdn.io/v3/your-public-api-key')
+// Initialize the agent
+const fpPromise = import('https://fpjscdn.net/v3/your-public-api-key')
   .then(FingerprintJS => FingerprintJS.load({
     endpoint: 'https://metrics.yourdomain.com'
   }));

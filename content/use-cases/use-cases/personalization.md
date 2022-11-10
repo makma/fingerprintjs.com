@@ -101,7 +101,7 @@ To start, you need to add the Fingerprint Pro [JavaScript agent](https://dev.fin
 
 ```javascript
 // Initialize the agent
-const fpPromise = import('https://fpcdn.io/v3/your-public-api-key')
+const fpPromise = import('https://fpjscdn.net/v3/your-public-api-key')
   .then(FingerprintJS => FingerprintJS.load({
     endpoint: 'https://metrics.yourdomain.com'
   }));

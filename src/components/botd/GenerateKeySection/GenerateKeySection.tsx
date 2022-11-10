@@ -157,7 +157,7 @@ export default function GenerateKeySection() {
             {
               code: `<script>
 // Initialize the agent at application startup.
-const fpPromise = import('https://fpcdn.io/v3/<api-key>')
+const fpPromise = import('https://fpjscdn.net/v3/<api-key>')
   .then(FingerprintJS => FingerprintJS.load())
 
 fpPromise
@@ -185,7 +185,7 @@ fpPromise
   // Result will contain the requestId property,
   // that you can securely verify on the server.
   .then(result => console.log(result.requestId))
-  
+
   `,
 
               language: 'javascript',
