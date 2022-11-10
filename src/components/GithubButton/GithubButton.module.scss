@@ -24,7 +24,7 @@
   --color: #{adjust-color(c('brand-water'), $alpha: -0.5%)};
   @include inter($size: 12px, $weight: 400, $lh: 19px, $color: #89898a);
   letter-spacing: 0.001em;
-  width: 119px;
+  width: 135px;
   display: flex;
   align-items: stretch;
   justify-content: space-between;

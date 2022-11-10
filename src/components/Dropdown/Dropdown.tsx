@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import { ReactComponent as ArrowSVG } from './ArrowSVG.svg'
 import classNames from 'classnames'
 import styles from './Dropdown.module.scss'
+import { isLocalLink } from '../../helpers/url'
 
 export interface DropdownProps {
   leftColumns?: ColumnProps[]
@@ -25,6 +26,17 @@ export default function Dropdown({ leftColumns, rightColumn, bottomLinkText, bot
         )}
         {bottomLinkText && bottomLinkUrl && (
           <div className={styles.bottomRow}>
+            {isLocalLink(bottomLinkUrl) ? (
+              <Link to={bottomLinkUrl} className={styles.bottomLink}>
+                <span>{bottomLinkText}</span>
+                <ArrowSVG className={styles.arrow} />
+              </Link>
+            ) : (
+              <a href={bottomLinkUrl} className={styles.bottomLink} target='_blank' rel='noreferrer'>
+                <span>{bottomLinkText}</span>
+                <ArrowSVG className={styles.arrow} />
+              </a>
+            )}
             <Link to={bottomLinkUrl} className={styles.bottomLink}>
               <span>{bottomLinkText}</span>
               <ArrowSVG className={styles.arrow} />
@@ -61,18 +73,33 @@ function Column({ title, list, cardBackground }: ColumnProps) {
         <div className={styles.rows}>
           {list.map(({ title, url, description, useCasesLink }) => (
             <div key={title}>
-              <Link to={url} className={styles.columnLink}>
-                <li className={classNames(styles.row, { [styles.background]: cardBackground })}>
-                  <h3 className={styles.linkTitle}>{title}</h3>
-                  <p className={styles.linkDescription}>{description}</p>
-                </li>
-                {useCasesLink && (
-                  <Link to={useCasesLink} className={styles.useCasesLink}>
-                    <span>See Use Case</span>
-                    <ArrowSVG className={styles.arrowBottomLink} />
-                  </Link>
-                )}
-              </Link>
+              {isLocalLink(url) ? (
+                <Link to={url} className={styles.columnLink}>
+                  <li className={classNames(styles.row, { [styles.background]: cardBackground })}>
+                    <h3 className={styles.linkTitle}>{title}</h3>
+                    <p className={styles.linkDescription}>{description}</p>
+                  </li>
+                  {useCasesLink && (
+                    <Link to={useCasesLink} className={styles.useCasesLink}>
+                      <span>See Use Case</span>
+                      <ArrowSVG className={styles.arrowBottomLink} />
+                    </Link>
+                  )}
+                </Link>
+              ) : (
+                <a href={url} className={styles.columnLink} target='_blank' rel='noreferrer'>
+                  <li className={classNames(styles.row, { [styles.background]: cardBackground })}>
+                    <h3 className={styles.linkTitle}>{title}</h3>
+                    <p className={styles.linkDescription}>{description}</p>
+                  </li>
+                  {useCasesLink && (
+                    <Link to={useCasesLink} className={styles.useCasesLink}>
+                      <span>See Use Case</span>
+                      <ArrowSVG className={styles.arrowBottomLink} />
+                    </Link>
+                  )}
+                </a>
+              )}
             </div>
           ))}
         </div>
