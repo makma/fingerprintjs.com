@@ -48,11 +48,17 @@ export default function Dropdown({ leftColumns, rightColumn, bottomLinkText, bot
           <aside className={styles.rightSection}>
             {rightColumn.title && <p className={styles.rightSectionLabel}>{rightColumn.title}</p>}
             <div className={styles.rightColumns}>
-              {rightColumn.list.map(({ title, url }) => (
-                <Link key={title} to={url} className={styles.link}>
-                  <li className={styles.rightSectionRow}>{title}</li>
-                </Link>
-              ))}
+              {rightColumn.list.map(({ title, url }) =>
+                isLocalLink(url) ? (
+                  <Link key={title} to={url} className={styles.link}>
+                    <li className={styles.rightSectionRow}>{title}</li>
+                  </Link>
+                ) : (
+                  <a key={title} href={url} className={styles.link} target='_blank' rel='noreferrer'>
+                    <li className={styles.rightSectionRow}>{title}</li>
+                  </a>
+                )
+              )}
             </div>
           </aside>
         )}
