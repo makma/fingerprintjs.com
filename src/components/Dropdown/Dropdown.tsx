@@ -37,10 +37,6 @@ export default function Dropdown({ leftColumns, rightColumn, bottomLinkText, bot
                 <ArrowSVG className={styles.arrow} />
               </a>
             )}
-            <Link to={bottomLinkUrl} className={styles.bottomLink}>
-              <span>{bottomLinkText}</span>
-              <ArrowSVG className={styles.arrow} />
-            </Link>
           </div>
         )}
 
