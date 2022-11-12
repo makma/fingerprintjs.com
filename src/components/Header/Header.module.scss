@@ -185,6 +185,6 @@
   @include transition((color));
 
   &:hover {
-    color: adjust-color(c('github-orange-gradient'), $lightness: -20%);
+    color: adjust-color(c('github-orange-gradient'), $saturation: -19%, $lightness: -6%);
   }
 }

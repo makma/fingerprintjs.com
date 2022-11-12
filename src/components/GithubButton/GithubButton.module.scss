@@ -1,13 +1,12 @@
 .counter {
+  @include inter($size: 12px, $weight: 400, $lh: 19px, $color: #89898a);
   flex: 2;
   height: 100%;
   background-color: v('white');
-  color: adjust-color(c('brand-water'), $alpha: -0.4%);
   padding: 0 rem(10px);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: v('bold');
 
   &.white {
     color: black;
@@ -17,18 +16,18 @@
 }
 
 .button {
-  --height: 31px;
+  --height: 32px;
   --radius: 5px;
   --padding: 0;
-  --bgColor: var(--off-white);
-  --color: #{adjust-color(c('brand-water'), $alpha: -0.5%)};
+  --bgColor: #eaeaea;
+  --color: #727273;
   @include inter($size: 12px, $weight: 400, $lh: 19px, $color: #89898a);
   letter-spacing: 0.001em;
   width: 135px;
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  border: 1px solid adjust-color(c('off-white'), $lightness: -5%);
+  border: 1.2px solid #d0d0d0;
   overflow: hidden;
   text-decoration: none;
   color: v(color);

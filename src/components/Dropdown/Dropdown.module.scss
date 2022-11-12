@@ -248,8 +248,10 @@
 
     .arrow {
       fill: #141415;
-      width: 13.67px;
-      height: 13.66px;
+      width: 9.16px;
+      height: 9.16px;
+      align-self: center;
+      margin-top: rem(2px);
     }
 
     @include media('<=desktopHeader') {
@@ -272,9 +274,10 @@
     @include transition(opacity);
     fill: #5b5b5b;
     opacity: 0;
-
-    width: 12.21px;
-    height: 12.21px;
+    align-self: center;
+    width: 8.5px;
+    height: 8.5px;
+    margin-top: rem(1px);
 
     @include media('<=desktopHeader') {
       display: none;

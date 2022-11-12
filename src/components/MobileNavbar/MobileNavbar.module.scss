@@ -96,7 +96,7 @@
     }
 
     .social {
-      @include inter($size: 16px, $weight: v('normal'), $lh: 24px, $color: #89898a);
+      @include inter($size: 16px, $weight: 500, $lh: 24px, $color: #89898a);
       letter-spacing: 0.001em;
 
       .links {
