@@ -75,6 +75,6 @@ Email spoofing is common in social engineering and phishing, so organizations sh
 
 Finally, organizations should work with technology to detect and stop credential theft. No amount of education and training eliminates the risk of credential theft. Organizations need failover to take precautions in case of credential theft from a successful social engineering attack. After an attacker steals credentials, the next step is to attempt authentication across various resources. 
 
-With Fingerprint, developers can code failsafe systems into their applications to detect and block authentication attempts. Credential theft still creates a security incident that should be investigated. Integrating Fingerprint into an application will stop brute-force attacks and account takeover botted scans against the web application. It also adds a layer of protection to stop the next exploit phase in social engineering.
+With Fingerprint, developers can code fail-safe systems into their applications to detect and block authentication attempts. Credential theft still creates a security incident that should be investigated. Integrating Fingerprint into an application will stop brute-force attacks and account takeover botted scans against the web application. It also adds a layer of protection to stop the next exploit phase in social engineering.
 
 To get started with credential stuffing prevention and phishing attacks, check out Fingerprint's [account takeover solution](https://fingerprint.com/account-takeover/) or try out our [demo application](https://fingerprint.com/demo/).
