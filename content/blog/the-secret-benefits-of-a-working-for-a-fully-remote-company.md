@@ -49,9 +49,9 @@ Some may see the ability to work remotely as an opportunity for urban employees 
 
 ### Increased Ownership of Calendar and Time
 
-The most common thread through all the conversations around what it’s like working remotely touched on a core fact of an effective work/life balance the freedom and ownership team members had around how they spent their time. 
+The most common thread through all the conversations around what it’s like working remotely touched on a core aspect of an effective work/life balance: the freedom and ownership team members had around how they spent their time. 
 
-What does this look like daily? Let’s first look at the life of “work/life balance” and how things shift with no commute. It ranges from the ability to spend more time with their young children to running errands midday to being more active and joining an extramural league, all of which previously spent commuting. 
+What does this look like on a daily basis? Let’s first look at the life of “work/life balance” and how things shift with no commute. It ranges from the ability to spend more time with their young children to running errands midday to being more active and joining an extramural league, all of which previously spent commuting. 
 
 > “I get to spend much more time with my wife and 10-month-old son than if I were commuting to an office. I’m also healthier in terms of eating and exercising, and we save a lot of money! Working remotely has allowed me to enjoy life more instead of sitting in traffic while commuting or stressing about all of the chores/errands I need to complete after leaving the office.”
 
