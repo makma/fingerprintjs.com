@@ -299,12 +299,12 @@ Before persisting the data in the storage layer, we recommend running some addit
 
 In the example below, we check if the identification request has been recently performed by the provided `requestId`. Additionally, we also check the [confidence score](https://dev.fingerprint.com/docs/understanding-your-confidence-score) that represents the system's degree of certainty that the visitor identifier is correct. 
 
-In the following snippet, we use the these variables and constants:
+In the following snippet, we use these variables and constants:
 
 * `$fpjs_api_secret` is Fingerprint Pro Secret API Key,
 * `$request_body` is the content of the request’s body,
 * `$max_request_lifespan` represents a number of how long should a request be valid,
-* `$minimum_confidence_score` is a threshold for confidence score.
+* `$minimum_confidence_score` is a threshold for the confidence score.
 
 ```php
 $config = Configuration::getDefaultConfiguration($fpjs_api_secret);
@@ -340,7 +340,7 @@ if ($confidence <= $minimum_confidence_score) {
 // All checks passed, the request and the visitorId are trustworthy
 ```
 
-You can learn more about Fingerprint Pro PHP Server API SDK in the [documentation](https://dev.fingerprint.com/docs/fingerprint-pro-server-api-php-sdk) or at [GitHub](https://github.com/fingerprintjs/fingerprint-pro-server-api-php-sdk).
+You can learn more about Fingerprint Pro PHP Server API SDK in the [documentation](https://dev.fingerprint.com/docs/fingerprint-pro-server-api-php-sdk) or on [GitHub](https://github.com/fingerprintjs/fingerprint-pro-server-api-php-sdk).
 
 ## Advantages of Fingerprint
 
