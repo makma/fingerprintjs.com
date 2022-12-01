@@ -98,9 +98,6 @@ export default function ContactSalesForm() {
         trackLeadSubmit()
         let calendarUrl: string
         switch (countryRegion) {
-          case Region.AMER:
-            calendarUrl = URL_CALENDAR.contactSalesCalendarAmer
-            break
           case Region.LATAM:
             calendarUrl = URL_CALENDAR.contactSalesCalendarLatam
             break
@@ -108,6 +105,9 @@ export default function ContactSalesForm() {
             calendarUrl = URL_CALENDAR.contactSalesCalendarApac
             break
           case Region.EMEA:
+            calendarUrl = URL_CALENDAR.contactSalesCalendarEmea
+            break
+          case Region.AMER:
           default:
             calendarUrl = URL_CALENDAR.contactSalesCalendarAmer
         }
