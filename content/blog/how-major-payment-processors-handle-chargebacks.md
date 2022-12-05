@@ -52,8 +52,10 @@ To add insult to injury, [81%](https://citcon.com/chargeback-statistics-merchant
 Unfortunately, chargebacks are often misused. And they can be very costly for merchants, to the tune of billions of dollars yearly.
 
 
-##Table of Contents
-```exclude: Table of Contents
+## Table of Contents
+
+```toc
+exclude: Table of Contents
 from-heading: 1
 to-heading: 3
 ordered: false
