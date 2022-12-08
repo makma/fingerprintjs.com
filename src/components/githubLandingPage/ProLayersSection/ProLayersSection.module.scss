@@ -40,26 +40,8 @@
       padding-bottom: rem(10px);
     }
 
-    .label {
-      text-transform: uppercase;
-
-      padding: rem(4px) rem(8px);
-      background: linear-gradient(
-        94.48deg,
-        rgba(245, 97, 75, 0.2) 0%,
-        rgba(245, 97, 75, 0.2) 0.01%,
-        rgba(250, 117, 69, 0.2) 100%
-      );
-      border-radius: rem(4px);
-
-      .labelText {
-        @include jb-mono($size: 14px, $weight: 700, $lh: 16px);
-
-        background: linear-gradient(94.48deg, #f5614b 0%, #f5614b 0.01%, #fa7545 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
+    .labelWrapper {
+      @include labelOrange;
 
       @include media('<=phoneLandscape') {
         font-size: rem(12px);
@@ -68,7 +50,7 @@
     }
 
     .title {
-      @include sans($size: 48px, $weight: 600, $lh: 64px);
+      @include inter($size: 48px, $weight: 600, $lh: 64px);
       letter-spacing: -0.01em;
 
       padding-top: rem(16px);
@@ -87,7 +69,7 @@
       }
     }
     .description {
-      @include sans($size: 18px, $weight: 400, $lh: 150%, $color: #d0d0d0);
+      @include inter($size: 18px, $weight: 400, $lh: 150%, $color: #d0d0d0);
       text-align: center;
 
       padding-top: rem(16px);
@@ -170,15 +152,15 @@
   }
 
   .cardTitle {
-    @include sans($size: 16px, $weight: 600, $lh: 150%, $color: #d0d0d0);
+    @include inter($size: 16px, $weight: 600, $lh: 150%, $color: #d0d0d0);
     @include transition((color));
   }
   .cardDescription {
-    @include sans($size: 16px, $weight: 400, $lh: 150%, $color: #d0d0d0);
+    @include inter($size: 16px, $weight: 400, $lh: 150%, $color: #d0d0d0);
     @include transition((color));
   }
   .cardSubtitle {
-    @include sans($size: 12px, $weight: 500, $lh: 16px, $color: #d0d0d0);
+    @include inter($size: 12px, $weight: 500, $lh: 16px, $color: #d0d0d0);
     letter-spacing: 0.04em;
     margin-bottom: rem(2px);
 
@@ -355,7 +337,7 @@
   top: rem(20px);
   white-space: nowrap;
 
-  @include sans($size: 10px, $weight: 500, $lh: 120%, $color: #d0d0d0);
+  @include inter($size: 10px, $weight: 500, $lh: 120%, $color: #d0d0d0);
   letter-spacing: 0.04em;
 
   padding: rem(8px);

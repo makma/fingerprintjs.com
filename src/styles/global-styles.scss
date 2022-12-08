@@ -26,7 +26,7 @@ html {
 }
 
 body {
-  font: 400 2rem/1.5 var(--ff-sans);
+  font: 400 2rem/1.5 var(--ff-inter);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: v('brand-water');
@@ -79,6 +79,9 @@ button {
 
 .swiper-pagination-bullet-active {
   background-color: v('brand-water');
+}
+.swiper-lazy:not(.swiper-lazy-loaded) {
+  display: none;
 }
 
 /*
