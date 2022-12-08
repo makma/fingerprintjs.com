@@ -10,7 +10,6 @@ import Skeleton from '../../Skeleton/Skeleton'
 import { StaticImage } from 'gatsby-plugin-image'
 import Container from '../../common/Container'
 import useRollbar from '../../../hooks/useRollbar'
-import { BASE_URL } from '../../../constants/content'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Lazy } from 'swiper'
 import { Swiper as SwiperCore } from 'swiper/types'
@@ -59,15 +58,14 @@ export default function DemoSection() {
         const { visits } = await loadFpjsHistory(visitorId)
 
         if (!isCancelled) {
-          const homepageVisits = visits.filter((visit) => visit.url.startsWith(BASE_URL))
-          const homepageIncognito = homepageVisits.filter((visit) => visit.incognito === true)
-          const homepageIps = Array.from(new Set(homepageVisits.map((visit) => visit.ip)))
-          const homepageLocations = Array.from(new Set(homepageVisits.map((visit) => visit.ipLocation.postalCode)))
+          const homepageIncognito = visits.filter((visit) => visit.incognito === true)
+          const homepageIps = Array.from(new Set(visits.map((visit) => visit.ip)))
+          const homepageLocations = Array.from(new Set(visits.map((visit) => visit.ipLocation.postalCode)))
 
-          const reversedVisits = homepageVisits.slice().reverse() // to reverse the slider
+          const reversedVisits = visits.slice().reverse() // to reverse the slider
 
           setVisits(reversedVisits)
-          setVisitedTimes(homepageVisits.length)
+          setVisitedTimes(visits.length)
           setIncognitoSessions(homepageIncognito.length)
           setIps(homepageIps.length)
           setLocations(homepageLocations.length)
