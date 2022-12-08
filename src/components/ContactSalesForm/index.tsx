@@ -21,6 +21,8 @@ import Tippy from '@tippyjs/react'
 import { useUserLocation } from '../../hooks/useUserLocation'
 import { Region } from '../../helpers/region'
 
+import { amplitudeLogEvent } from '../../helpers/amplitude'
+
 import styles from './ContactSalesForm.module.scss'
 import { BOTD_PUBLIC_KEY_TURING, TURING_DEFAULT_SESSION_ID } from '../../constants/env'
 
@@ -96,6 +98,8 @@ export default function ContactSalesForm() {
       } else {
         updateFormState(FormState.Success)
         trackLeadSubmit()
+        amplitudeLogEvent('Sales Contacted')
+
         let calendarUrl: string
         switch (countryRegion) {
           case Region.LATAM:
