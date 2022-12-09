@@ -88,6 +88,7 @@
       }
     }
     .animationText {
+      display: none;
       position: absolute;
       top: 40%;
       left: 8%;
@@ -126,6 +127,7 @@
         }
       }
       &.startVisitorId {
+        display: block;
         animation: jump 0.22s ease 1.1s 1;
 
         .animationLabel {

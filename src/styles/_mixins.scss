@@ -410,6 +410,8 @@
 =======================================*/
 
 @mixin labelOrange() {
+  display: flex;
+
   background: linear-gradient(
     94.48deg,
     rgba(245, 97, 75, 0.2) 0%,
@@ -418,7 +420,7 @@
   );
   border-radius: rem(4px);
   text-transform: uppercase;
-  padding: 0 rem(8px);
+  padding: rem(4px) rem(8px);
 
   .label {
     @include jb-mono($size: 14px, $weight: 700, $lh: 16px);

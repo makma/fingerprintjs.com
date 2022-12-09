@@ -15,6 +15,7 @@ import { ReactComponent as Upstar } from '../../../../static/img/company-logos/u
 import { ReactComponent as CheckoutSVG } from '../../../../static/img/company-logos/checkout.svg'
 import { ReactComponent as TripleWhaleSVG } from '../../../../static/img/company-logos/triple-whale.svg'
 import { ReactComponent as RealtorSVG } from '../../../../static/img/company-logos/realtor.svg'
+import { ReactComponent as DropboxSVG } from '../../../../static/img/company-logos/dropbox.svg'
 
 import styles from './ClientsSection.module.scss'
 import { repeatElement } from '../../../helpers/repeatElement'
@@ -44,6 +45,7 @@ function LogosRow({ keyString }: LogosRowProps) {
           <WesternUnionSVG className={classNames(styles.logo, styles.western)} />
           <BookingSVG className={classNames(styles.logo, styles.booking)} />
           <AgodaSVG className={classNames(styles.logo, styles.agoda)} />
+          <DropboxSVG className={classNames(styles.logo, styles.dropbox)} />
           <a href='https://www.realtor.com/' target='_blank' rel='noreferrer' aria-label='Check Realtor website'>
             <RealtorSVG className={classNames(styles.logo, styles.realtor)} />
           </a>
