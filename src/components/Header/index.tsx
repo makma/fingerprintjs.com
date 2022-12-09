@@ -130,11 +130,18 @@ export default function Header({ notificationBar }: HeaderProps) {
                     size='medium'
                     className={styles.signupButton}
                     onClick={() => scrollToElementById('generateKeySection')}
+                    openNewTab
                   >
                     Get Started
                   </Button>
                 ) : (
-                  <Button variant='orangeGradient' size='medium' className={styles.signupButton} href={URL.signupUrl}>
+                  <Button
+                    variant='orangeGradient'
+                    size='medium'
+                    className={styles.signupButton}
+                    href={URL.signupUrl}
+                    openNewTab
+                  >
                     Get Started
                   </Button>
                 )}
