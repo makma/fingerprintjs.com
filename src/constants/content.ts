@@ -33,6 +33,7 @@ export const PATH = {
   faq: '/resources/frequently-asked-questions-faqs/',
   integrations: '/integrations/',
   sdks: '/sdk-libraries/',
+  github: '/github/',
 } as const
 
 export const USE_CASE_PATH = {
@@ -143,6 +144,7 @@ export const solutions = [
 export const developers = [
   { title: 'Documentation', url: URL.docsUrl, isLocal: false },
   { title: 'Technical Tutorials', url: PATH.useCases, isLocal: true },
+  { title: 'Open Source vs. Pro', url: PATH.github, isLocal: true },
   { title: 'API Status', url: URL.statusUrl, isLocal: false },
   { title: 'SDKs and Libraries', url: PATH.sdks, isLocal: true },
   { title: 'Discord Channel', url: URL.discordServerURL, isLocal: false },
@@ -196,11 +198,12 @@ export const devResourcesDropdown = [
   { title: 'Documentation', url: URL.docsUrl },
   { title: 'API Status', url: URL.statusUrl },
   { title: 'SDKs and Libraries', url: PATH.sdks },
+  { title: 'Open Source vs Pro', url: PATH.github },
 ]
 
 export const communityDropdown = [
   { title: 'Discord', url: URL.discordServerURL },
-  { title: 'Open Source', url: URL.githubCommunityRepoUrl },
+  { title: 'GitHub', url: URL.githubCommunityRepoUrl },
 ]
 
 export const platformDropdown = {

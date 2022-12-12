@@ -66,12 +66,20 @@ export default function HeroSection({ advertisingVariant = false }: HeroSectionP
               Contact Sales
             </Button>
           ) : (
-            <Button href={URL.signupUrl} variant='orangeGradient' className={styles.button} openNewTab>
+            <Button
+              href={`${URL.signupUrl}?&utm_source=homepage&utm_medium=website&utm_campaign=account-signup`}
+              variant='orangeGradient'
+              className={styles.button}
+              openNewTab
+            >
               Create Free Account
             </Button>
           )}
 
-          <Button href={PATH.demoUrl} variant='orangeGradientOutline'>
+          <Button
+            href={`${PATH.demoUrl}?&utm_source=homepage&utm_medium=website&utm_campaign=demo`}
+            variant='orangeGradientOutline'
+          >
             View Live Demo
           </Button>
         </div>
