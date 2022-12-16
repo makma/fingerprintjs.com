@@ -44,8 +44,6 @@ to-heading: 3
 ordered: false
 ```
 
-
-
 ## The Top Browser Fingerprinting Techniques Explained
 
 ![](https://lh5.googleusercontent.com/lfI_8VWeWk1EilMb6qnOZLmJ95GAiP9a51tVGYSi1DM0_fKy0c-E9rT_jwcVZEriRQRdK4KhZ-uQhXk_H0Qx6DrWmD_wg23ZNwpy8YLh4vq3RaLqJU3sJtYbe79ByLYV_LB4DwvAHNqWwSIvqw9CyRw43XymOXWfTssNzvDXe5DxrgOQqMAMtutx7UChgg)What is browser fingerprint and how does it work? In [The Beginner’s Guide to Browser Fingerprinting for Fraud Detection](https://fingerprint.com/blog/what-is-browser-fingerprinting/?&utm_source=blog&utm_medium=website&utm_campaign=blog), we discuss the basics of browser fingerprinting, why accuracy matters for accurately identifying website visitors, and how browser fingerprinting helps detect and prevent fraud. 
