@@ -37,7 +37,7 @@ function AppLighthouseProvider({ children }: { children: React.ReactNode }) {
     return (
       <FpjsProvider
         loadOptions={{
-          apiKey: publicApiKey,
+          apiKey: publicApiKey ?? '',
           region,
           scriptUrlPattern,
         }}

@@ -1,6 +1,6 @@
 const path = require('path')
 
-const baseUrl = process.env.CONTEXT === 'deploy-preview' ? process.env.DEPLOY_PRIME_URL : 'https://fingerprint.com'
+const baseUrl = process.env.VERCEL_ENV === 'preview' ? `https://${process.env.VERCEL_URL}/` : 'https://fingerprint.com'
 
 const resolvePath = (directoryName, pathName) => {
   const result = path.join(directoryName, pathName)
@@ -246,6 +246,9 @@ module.exports = {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
+        enableIdentityWidget: false,
+        publicPath: `admin`,
+        htmlTitle: `Fingerprint Content Manager`,
       },
     },
     'gatsby-plugin-catch-links',
@@ -292,25 +295,6 @@ module.exports = {
             title: 'Fingerprint Blog RSS Feed',
           },
         ],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-netlify', // make sure to keep it last in the array
-      options: {
-        mergeSecurityHeaders: false,
-        headers: {
-          '/*': [
-            `X-Frame-Options: DENY`,
-            `X-XSS-Protection: 1; mode=block`,
-            `X-Content-Type-Options: nosniff`,
-            `Referrer-Policy: no-referrer-when-downgrade`,
-          ],
-          '/*.html': ['cache-control: public, max-age=0, must-revalidate'],
-          '/page-data/*': ['cache-control: public, max-age=0, must-revalidate'],
-          '/static/*': ['cache-control: public, max-age=31536000, immutable'],
-          '/**/*.js': ['cache-control: public, max-age=31536000, immutable'],
-          '/**/*.css': ['cache-control: public, max-age=31536000, immutable'],
-        },
       },
     },
   ],
