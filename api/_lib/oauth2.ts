@@ -15,7 +15,7 @@ export const create = () =>
 
 type RenderBody = {
   (status: 'success', content: { token: string; provider: 'github' }): string
-  (status: 'error', content: Object): string
+  (status: 'error', content: Record<string, unknown>): string
 }
 // This renders a simple page with javascript that allows the pop-up page
 // to communicate with its opener

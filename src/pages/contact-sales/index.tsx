@@ -37,7 +37,7 @@ export default function ContactSalesPage({ pageContext }: ContactSalesPageProps)
 export function Head(props: HeadProps) {
   return (
     <SEO pathname={props.location.pathname} title='Contact Sales - Fingerprint Pro'>
-      <link rel='preload' as='image' href={withPrefix('/img/diagram-section/backgroundAfter.svg')} />
+      <link rel='preload' as='image' href={withPrefix('/img/diagram-section/backgroundafter.svg')} />
     </SEO>
   )
 }

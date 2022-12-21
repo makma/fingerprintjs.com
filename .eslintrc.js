@@ -12,7 +12,7 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
-  ignorePatterns: ['public/*', '.cache/*', 'api/*'],
+  ignorePatterns: ['public/*', '.cache/*'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,

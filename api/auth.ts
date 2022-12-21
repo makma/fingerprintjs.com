@@ -4,7 +4,7 @@ import { create } from './_lib/oauth2'
 
 export const randomString = () => crypto.randomBytes(4).toString(`hex`)
 
-export default (req: NowRequest, res: NowResponse) => {
+const auth = (req: NowRequest, res: NowResponse) => {
   const { host } = req.headers
 
   const oauth2 = create()
@@ -21,3 +21,4 @@ export default (req: NowRequest, res: NowResponse) => {
   res.writeHead(301, { Location: url })
   res.end()
 }
+export default auth
