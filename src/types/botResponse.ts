@@ -12,6 +12,7 @@ export interface SuccessResponse {
         time: string
         url: string
         userAgent: string
+        requestId: string
       }
       error?: {
         code: string

@@ -31,7 +31,8 @@ export default function APIResponseDetailsSection() {
                 "ip": "${botData?.ip ?? '186.XXX.XXX.XXX'}",
                 "time": "${botData?.time ?? currentTime}",
                 "url": "${botData?.url ?? 'https://fingerprint.com/products/bot-detection/'}",
-                "userAgent": "${botData?.userAgent ?? 'Mozilla/5.0'}"
+                "userAgent": "${botData?.userAgent ?? 'Mozilla/5.0'}",
+                "requestId": "${botData?.requestId ?? '1672692443036.aCJ3kO'}"
             }
         }
     }
@@ -82,8 +83,8 @@ export default function APIResponseDetailsSection() {
                 className={styles.time}
                 left={
                   botData?.time
-                    ? 279 + botData?.time.length * characterLength
-                    : 279 + currentTime.length * characterLength
+                    ? 280 + botData?.time.length * characterLength
+                    : 280 + currentTime.length * characterLength
                 }
               >
                 <p>
@@ -93,7 +94,7 @@ export default function APIResponseDetailsSection() {
               <CodeTooltip
                 key='url'
                 className={styles.url}
-                left={botData?.url ? 270 + botData?.url.length * characterLength : 665}
+                left={botData?.url ? 271 + botData?.url.length * characterLength : 665}
               >
                 <p>
                   <strong>Url</strong> of the page where BotD was executed.
@@ -102,10 +103,19 @@ export default function APIResponseDetailsSection() {
               <CodeTooltip
                 key='userAgent'
                 className={styles.userAgent}
-                left={botData?.userAgent ? 316 + botData?.userAgent.length * characterLength : 409}
+                left={botData?.userAgent ? 321 + botData?.userAgent.length * characterLength : 409}
               >
                 <p>
                   <strong>Client User Agent.</strong>
+                </p>
+              </CodeTooltip>,
+              <CodeTooltip
+                key='requestId'
+                className={styles.requestId}
+                left={botData?.requestId ? 318 + botData?.requestId.length * characterLength : 485}
+              >
+                <p>
+                  A <strong>request identifier</strong> that changes with every request.
                 </p>
               </CodeTooltip>,
             ]}
