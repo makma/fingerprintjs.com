@@ -15,6 +15,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 import FingerprintJS, { GetResult } from '@fingerprintjs/fingerprintjs'
 
+import { ReactComponent as TickSVG } from './TickSVG.svg'
+
 export default function GetBeyondSection() {
   const characterLength = 8.41
 
@@ -258,7 +260,24 @@ export default function GetBeyondSection() {
         <Button size='big' href={URL.signupUrl} className={styles.button}>
           Create Free Account
         </Button>
+        <div className={styles.tips}>
+          <BottomTip>Free for developers</BottomTip>
+          <BottomTip>GDPR/CCPA Compliant</BottomTip>
+          <BottomTip>Get Started in 10 minutes</BottomTip>
+        </div>
       </Container>
     </Section>
+  )
+}
+
+interface BottomTipProps {
+  children: string
+}
+function BottomTip({ children }: BottomTipProps) {
+  return (
+    <span className={styles.bottomTip}>
+      <TickSVG />
+      {children}
+    </span>
   )
 }

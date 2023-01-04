@@ -2,7 +2,7 @@
   background: v('dark');
   color: v('github-white');
   padding-top: rem(140px);
-  padding-bottom: rem(88px);
+  padding-bottom: rem(48px);
 
   @include media('<=phoneLandscape') {
     background: #202021;
@@ -20,39 +20,51 @@
       align-items: flex-start;
     }
 
-    .label {
-      @include jb-mono($size: 14px, $weight: 700, $lh: 16px);
-      text-transform: uppercase;
-
-      padding: rem(4px) rem(8px);
-      background: #434344;
-      border-radius: rem(4px);
-
+    .labelWrapper {
+      @include labelOrange;
+      margin-bottom: rem(60px);
       @include media('<=phoneLandscape') {
         font-size: rem(12px);
         letter-spacing: 0.04em;
       }
     }
+  }
+}
+.cardsWrapper {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(106.73deg, #202021 -8.11%, #19191a 21.02%, #141415 119.42%);
+  align-items: center;
 
-    .title {
-      @include inter($size: 48px, $weight: 600, $lh: 64px);
-      letter-spacing: -0.01em;
+  border: rem(0.8px) solid rgba(208, 208, 208, 0.1);
+  border-radius: rem(8px);
+  padding: rem(56px) rem(56px) rem(64px);
 
-      padding-top: rem(15px);
+  @include media('<=desktop') {
+    padding: rem(40px) rem(20px);
+    align-items: flex-start;
+  }
 
-      @include media('<=phoneLandscape') {
-        font-size: rem(28px);
-        line-height: rem(34px);
-      }
+  .title {
+    @include inter($size: 48px, $weight: 600, $lh: 64px);
+    letter-spacing: -0.01em;
+    text-align: center;
+
+    @include media('<=phoneLandscape') {
+      font-size: rem(28px);
+      line-height: rem(34px);
     }
   }
+}
+.cardsWrapper:nth-child(3) {
+  margin-top: rem(32px);
 }
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: rem(32px);
+  column-gap: rem(20px);
 
-  padding-top: rem(56px);
+  padding-top: rem(40px);
   @include media('<=desktop') {
     display: flex;
     flex-direction: column;
@@ -64,20 +76,15 @@
   @include media('<=phoneLandscape') {
     padding-top: rem(32px);
   }
-  .card {
+  .card,
+  .cardStep {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: rem(40px);
-
-    background: linear-gradient(
-      128.85deg,
-      rgba(33, 33, 34, 0.2) 1.03%,
-      rgba(67, 67, 68, 0.2) 49.05%,
-      rgba(32, 32, 33, 0.2) 99.12%
-    );
-    box-shadow: 0px 5.12786px 20.5114px rgba(13, 16, 43, 0.1);
-    border-radius: rem(16px);
+    padding: 0 rem(32px);
+    @include media('<=desktop') {
+      padding: 0;
+    }
     .icon {
       margin-bottom: rem(32px);
       height: rem(56px);
@@ -90,9 +97,8 @@
       }
     }
     .cardTitle {
-      @include inter($size: 24px, $weight: 600, $lh: 32px);
+      @include inter($size: 24px, $weight: 600, $lh: 130%);
       letter-spacing: -0.01em;
-
       padding-bottom: rem(8px);
 
       @include media('<=phoneLandscape') {
@@ -101,7 +107,7 @@
       }
     }
     .cardDescription {
-      @include inter($size: 16px, $lh: 150%, $weight: 400);
+      @include inter($size: 16px, $lh: 150%, $weight: 400, $color: #d0d0d0);
 
       @include media('<=phoneLandscape') {
         font-size: rem(16px);
@@ -114,9 +120,43 @@
     opacity: 0;
     transform: translateY(15px);
   }
+  .cardStep {
+    flex-direction: row;
+    column-gap: rem(32px);
+    @include media('<=desktop') {
+      column-gap: rem(24px);
+    }
+    .stepCard {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      background: linear-gradient(106.73deg, #202021 -8.11%, #19191a 21.02%, #141415 119.42%);
+      border: 0.8px solid rgba(208, 208, 208, 0.1);
+      border-radius: 2px;
+      padding: rem(8px) rem(12px);
+      .step {
+        @include inter($size: 16px, $weight: 600, $lh: 145%);
+
+        padding-bottom: rem(4px);
+      }
+      .stepNumber {
+        @include inter($size: 48px, $weight: 600, $lh: 40px);
+        background: linear-gradient(94.48deg, #f5614b 0%, #f5614b 0.01%, #fa7545 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+    }
+    &:nth-child(3) {
+      padding-right: 0;
+    }
+  }
 }
 .visible {
-  .card {
+  .card,
+  .cardStep {
     transition-delay: 0.25s;
     opacity: 1;
     transform: translateY(0);
@@ -131,4 +171,26 @@
       transition-delay: 0.85s;
     }
   }
+}
+
+.button {
+  margin-top: rem(40px);
+  padding: rem(16px) rem(64px);
+  box-shadow: inset 0 0 0 1px v('github-white');
+  font-weight: 600;
+
+  @include media('<=desktop') {
+    width: 100%;
+  }
+
+  @include transition((opacity, transform));
+  @include transition-duration(0.7s);
+
+  opacity: 0;
+  transform: translateY(15px);
+}
+.visibleButton {
+  transition-delay: 1s;
+  opacity: 1;
+  transform: translateY(0);
 }
