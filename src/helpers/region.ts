@@ -1,4 +1,5 @@
 import countriesRegionJson from '../constants/countriesRegion.json'
+import { IpRegion } from './api'
 
 export enum Region {
   APAC = 'APAC',
@@ -12,4 +13,13 @@ export function getCountryRegion(countryCode: string) {
   ) as Region
 
   return region || Region.AMER
+}
+
+// for HubSpot forms (AMER/LATAM = Americas)
+export function getIpRegion(countryRegion: Region) {
+  if (countryRegion === Region.AMER || countryRegion === Region.LATAM) {
+    return IpRegion.AMERICAS
+  }
+
+  return countryRegion
 }

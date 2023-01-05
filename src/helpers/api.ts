@@ -1,10 +1,4 @@
-import {
-  FPJS_SECRET_TOKEN,
-  FPJS_VISITORS_ENDPOINT,
-  FPJS_MGMT_API_HOST,
-  BOTD_TOKEN_ENDPOINT,
-  GREENHOUSE_COMPANY_ID,
-} from '../constants/env'
+import { FPJS_SECRET_TOKEN, FPJS_VISITORS_ENDPOINT, FPJS_MGMT_API_HOST, GREENHOUSE_COMPANY_ID } from '../constants/env'
 
 export async function loadFpjsHistory(visitorId: string) {
   // 21 to show >20 on homepage
@@ -12,17 +6,40 @@ export async function loadFpjsHistory(visitorId: string) {
   return await response.json()
 }
 
-export async function createNewLead(
-  formName: string,
-  email: string,
-  url: string,
-  jobTitle: string,
-  description: string,
-  landingPage: string,
-  previousPage: string,
-  utmParams: Record<string, string>,
+export enum IpRegion {
+  APAC = 'APAC',
+  EMEA = 'EMEA',
+  AMERICAS = 'Americas',
+}
+interface TrackParams {
+  visitorId?: string
+  ipRegion?: 'APAC' | 'EMEA' | 'Americas'
+}
+interface CreateNewLeadParams extends TrackParams {
+  formName: string
+  email: string
+  url: string
+  jobTitle: string
+  description: string
+  landingPage: string
+  previousPage: string
+  utmParams: Record<string, string>
   sessionId: string
-) {
+}
+
+export async function createNewLead({
+  formName,
+  email,
+  url,
+  jobTitle,
+  description,
+  landingPage,
+  previousPage,
+  utmParams,
+  sessionId,
+  visitorId,
+  ipRegion,
+}: CreateNewLeadParams) {
   return fetch(`${FPJS_MGMT_API_HOST}/hubspot/leads`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -36,40 +53,45 @@ export async function createNewLead(
       landingPage,
       previousPage,
       sessionId,
+      visitorId,
+      ipRegion,
     }),
   })
 }
 
-export async function subscribeToNewsletter(email: string, utmParams: Record<string, string>) {
+interface SubscribeToNewsletterParams extends TrackParams {
+  email: string
+  utmParams: Record<string, string>
+}
+export async function subscribeToNewsletter({ email, utmParams, visitorId, ipRegion }: SubscribeToNewsletterParams) {
   return fetch(`${FPJS_MGMT_API_HOST}/hubspot/newsletter`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       email,
       utm_info: utmParams,
+      visitorId,
+      ipRegion,
     }),
   })
 }
 
-export async function generateBotDToken(customerEmail: string, tag: string, sessionId: string) {
-  return fetch(BOTD_TOKEN_ENDPOINT, {
-    method: 'POST',
-    body: JSON.stringify({
-      customer: customerEmail,
-      tag,
-      sessionId,
-    }),
-  })
+interface RequestBotdKeysParams extends TrackParams {
+  email: string
+  sessionId: string
+  utmParams: Record<string, string>
 }
 
-export async function requestBotdKeys(customerEmail: string, sessionId: string, utmParams: Record<string, string>) {
+export async function requestBotdKeys({ email, sessionId, utmParams, visitorId, ipRegion }: RequestBotdKeysParams) {
   return fetch(`${FPJS_MGMT_API_HOST}/hubspot/request_botd_keys`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      email: customerEmail,
+      email,
       sessionId,
       utm_info: utmParams,
+      visitorId,
+      ipRegion,
     }),
   })
 }
@@ -106,12 +128,21 @@ export async function getJobInfoFromGreenhouse(jobId: string) {
   return jobJson
 }
 
-export async function contactSupport(
-  email: string,
-  description: string,
-  utmParams: Record<string, string>,
+interface ContactSupportParams extends TrackParams {
+  email: string
+  description: string
+  utmParams: Record<string, string>
   sessionId: string
-) {
+}
+
+export async function contactSupport({
+  email,
+  description,
+  utmParams,
+  sessionId,
+  visitorId,
+  ipRegion,
+}: ContactSupportParams) {
   return fetch(`${FPJS_MGMT_API_HOST}/hubspot/support`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -120,6 +151,8 @@ export async function contactSupport(
       description,
       utm_info: utmParams,
       sessionId,
+      visitorId,
+      ipRegion,
     }),
   })
 }

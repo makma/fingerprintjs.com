@@ -20,6 +20,9 @@ import Tippy from '@tippyjs/react'
 import styles from './ContactSupportForm.module.scss'
 import { BOTD_PUBLIC_KEY_TURING, TURING_DEFAULT_SESSION_ID } from '../../constants/env'
 
+import { useUserLocation } from '../../hooks/useUserLocation'
+import { getIpRegion } from '../../helpers/region'
+
 export default function ContactSupportForm() {
   const [email, setEmail] = useState('')
   const [description, setDescription] = useState('')
@@ -28,6 +31,8 @@ export default function ContactSupportForm() {
 
   const { formState, errorMessage, updateFormState, updateErrorMessage } = useForm(Forms.ContactSupport)
   const { utmParams } = useViewTracking()
+  const { countryRegion, visitorId } = useUserLocation()
+
   async function handleSubmit(e) {
     e.preventDefault()
     if (email === '') {
@@ -61,7 +66,8 @@ export default function ContactSupportForm() {
         throw new Error()
       }
 
-      const response = await contactSupport(email, description, utmParams, sessionId)
+      const ipRegion = getIpRegion(countryRegion)
+      const response = await contactSupport({ email, description, utmParams, sessionId, visitorId, ipRegion })
       const status = response.status
       const { ok, error } = await response.json()
 

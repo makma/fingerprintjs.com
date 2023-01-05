@@ -16,6 +16,8 @@ import { ReactComponent as BotD } from '../../../img/BotdBowl.svg'
 import { ReactComponent as DevSVG } from './DevSVG.svg'
 import { useViewTracking } from '../../../context/HistoryListener'
 import { getConfig } from '../../../helpers/fpjs'
+import { useUserLocation } from '../../../hooks/useUserLocation'
+import { getIpRegion } from '../../../helpers/region'
 
 import styles from './GenerateKeySection.module.scss'
 
@@ -25,6 +27,7 @@ export default function GenerateKeySection() {
 
   const { data } = useVisitorData(getConfig)
   const { utmParams } = useViewTracking()
+  const { countryRegion, visitorId } = useUserLocation()
 
   const disableButton = !(data && formState !== FormState.Loading)
 
@@ -70,8 +73,8 @@ export default function GenerateKeySection() {
         if (!sessionId) {
           throw new Error()
         }
-
-        const response = await requestBotdKeys(email, sessionId, utmParams)
+        const ipRegion = getIpRegion(countryRegion)
+        const response = await requestBotdKeys({ email, sessionId, utmParams, visitorId, ipRegion })
         const status = response.status
         if (status !== 200) {
           const error = await response.json()

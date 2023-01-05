@@ -19,7 +19,7 @@ import { initTuring } from '../../helpers/turing'
 import { ReactComponent as BotD } from '../../img/BotdBowl.svg'
 import Tippy from '@tippyjs/react'
 import { useUserLocation } from '../../hooks/useUserLocation'
-import { Region } from '../../helpers/region'
+import { Region, getIpRegion } from '../../helpers/region'
 
 import { amplitudeLogEvent } from '../../helpers/amplitude'
 
@@ -38,7 +38,7 @@ export default function ContactSalesForm() {
 
   const { formState, errorMessage, updateFormState, updateErrorMessage } = useForm(Forms.ContactSales)
   const { landingPage, previousPage, utmParams } = useViewTracking()
-  const { countryRegion } = useUserLocation()
+  const { countryRegion, visitorId } = useUserLocation()
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -79,7 +79,8 @@ export default function ContactSalesForm() {
       if (!sessionId) {
         throw new Error()
       }
-      const response = await createNewLead(
+      const ipRegion = getIpRegion(countryRegion)
+      const response = await createNewLead({
         formName,
         email,
         url,
@@ -88,8 +89,10 @@ export default function ContactSalesForm() {
         landingPage,
         previousPage,
         utmParams,
-        sessionId
-      )
+        sessionId,
+        visitorId,
+        ipRegion,
+      })
       const status = response.status
       const { ok, error } = await response.json()
 

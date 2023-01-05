@@ -5,6 +5,8 @@ import { FormState } from '../../types/FormState'
 import { Forms, useForm } from '../../hooks/useForm'
 import { subscribeToNewsletter } from '../../helpers/api'
 import { useViewTracking } from '../../context/HistoryListener'
+import { useUserLocation } from '../../hooks/useUserLocation'
+import { getIpRegion } from '../../helpers/region'
 
 import styles from './SubscribeNewsletterForm.module.scss'
 
@@ -26,13 +28,16 @@ export default function SubscribeNewsletterForm({
   const [email, setEmail] = useState('')
   const { formState, errorMessage, updateFormState, updateErrorMessage } = useForm(origin)
   const { utmParams } = useViewTracking()
+  const { countryRegion, visitorId } = useUserLocation()
 
   async function handleSubmit(e) {
     e.preventDefault()
 
     try {
       updateFormState(FormState.Loading)
-      const response = await subscribeToNewsletter(email, utmParams)
+      const ipRegion = getIpRegion(countryRegion)
+
+      const response = await subscribeToNewsletter({ email, utmParams, visitorId, ipRegion })
       const status = response.status
       const { ok, error } = await response.json()
 

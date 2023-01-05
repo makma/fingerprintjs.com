@@ -5,8 +5,6 @@ export const GTM_TOKEN = process.env.GATSBY_GTM_TOKEN ?? 'test_gtm_token'
 
 export const FPJS_SECRET_TOKEN = process.env.GATSBY_FPJS_SECRET_TOKEN ?? 'test_fpjs_secret_token'
 
-export const BOTD_TOKEN_ENDPOINT = process.env.GATSBY_BOTD_TOKEN_ENDPOINT ?? 'test_botd_token_endpoint'
-
 export const FPJS_VISITORS_ENDPOINT =
   process.env.GATSBY_FPJS_VISITORS_ENDPOINT ?? 'https://h1.fingerprintjs.com/pamplemousse/'
 
