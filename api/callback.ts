@@ -1,7 +1,7 @@
-import { NowRequest, NowResponse } from '@now/node'
+import type { VercelRequest, VercelResponse } from '@vercel/node'
 import { create, renderBody } from './_lib/oauth2'
 
-const callback = async (req: NowRequest, res: NowResponse) => {
+const callback = async (req: VercelRequest, res: VercelResponse) => {
   const code = req.query.code as string
   const { host } = req.headers
 
