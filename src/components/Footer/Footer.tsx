@@ -147,7 +147,7 @@ export default function Footer({ darkVariant }: FooterProps) {
           </address>
         </section>
         <section className={styles.social}>
-          <div className={styles.copyrights}>&copy; 2022 FingerprintJS, Inc</div>
+          <div className={styles.copyrights}>&copy; 2023 FingerprintJS, Inc</div>
 
           <ul className={styles.links}>
             <li className={styles.link}>
