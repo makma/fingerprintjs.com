@@ -41,6 +41,6 @@ Our name change will not affect service or implementation in any way - no action
 
 You will notice that our logo is slightly changed, and we have a new domain (fingerprint.com). Emails from our service will now be from the fingerprint.com domain as well. You may also have to re-enter your password to log in for the first time.
 
-While the name change is largely cosmetic, we have many exciting product updates on the horizon. If you'd like to view, vote or add ideas to our product roadmap, [click here](https://portal.productboard.com/fingerprintjs/1-fingerprintjs-product-roadmap).
+While the name change is largely cosmetic, we have many exciting product updates on the horizon.
 
 **If you have any questions, please [contact support](/support/).**
