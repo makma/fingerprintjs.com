@@ -6,7 +6,7 @@ metadata:
     happened in 2022. From Cryptocurrecy to the Los Angeles school system, no
     one is safe from fraudulent activity. Learn about what you can do to protect
     your online business.
-  url: fingerprint.com/blog/2022-Fraud-in-the-News
+  url: fingerprint.com/blog/2022-fraud-in-the-news
   image: /img/uploads/2022-fraud-in-the-news-wip.jpg
   imageAlt: Fraud in the News Image
   imageTitle: Fraud in the News Image

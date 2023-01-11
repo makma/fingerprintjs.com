@@ -32,6 +32,10 @@
     {
       "source": "/signup/",
       "destination": "https://dashboard.fingerprint.com/signup"
+    },
+    {
+      "source": "/blog/2022-Fraud-in-the-News/",
+      "destination": "/blog/2022-fraud-in-the-news/"
     }
   ],
   "headers": [
