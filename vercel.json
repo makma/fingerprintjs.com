@@ -15,7 +15,11 @@
     },
     {
       "source": "/products/browser-fingerprinting/",
-      "destination": "/products/device-identification/"
+      "destination": "/products/fingerprint-pro/"
+    },
+    {
+      "source": "/products/device-identification/",
+      "destination": "/products/fingerprint-pro/"
     },
     {
       "source": "/botd/",

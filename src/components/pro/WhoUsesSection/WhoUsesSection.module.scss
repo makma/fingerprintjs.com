@@ -1,0 +1,90 @@
+.root {
+  background: v('dark');
+  color: v('github-white');
+  padding-top: rem(160px);
+  padding-bottom: rem(168px);
+
+  @include media('<=phoneLandscape') {
+    padding-top: 0;
+    padding-bottom: rem(64px);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    @include media('<=phoneLandscape') {
+      align-items: flex-start;
+    }
+
+    .title {
+      @include inter($size: 48px, $weight: 600, $lh: 130%);
+      @include media('<=phoneLandscape') {
+        font-size: rem(24px);
+      }
+    }
+  }
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: rem(32px);
+
+  padding-top: rem(64px);
+  @include media('<=desktop') {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(16px);
+
+    width: 100%;
+  }
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(16px);
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: rem(32px);
+
+    background: #202021;
+    border: 1px solid rgba(208, 208, 208, 0.1);
+    border-radius: rem(8px);
+
+    @include media('<=phoneLandscape') {
+      padding: rem(24px) rem(16px);
+    }
+
+    .cardTitle {
+      @include inter($size: 20px, $weight: 600, $lh: 140%);
+
+      padding-bottom: rem(16px);
+
+      @include media('<=phoneLandscape') {
+        line-height: rem(30px);
+        padding-bottom: rem(8px);
+      }
+    }
+    .cardDescription {
+      @include inter($size: 16px, $lh: 160%, $weight: 400, $color: #e8e8e8);
+      padding-bottom: rem(40px);
+
+      @include media('<=phoneLandscape') {
+        letter-spacing: 0.01em;
+        font-size: rem(14px);
+        color: #d0d0d0;
+        padding-bottom: rem(24px);
+      }
+    }
+    .logo {
+      height: rem(21px);
+      svg {
+        height: 100%;
+      }
+    }
+  }
+}

@@ -4,6 +4,11 @@
 .visitsDiagramRoot {
   background: #f9f9fb;
 }
+.diagramRoot,
+.diagramSection {
+  background: v('dark');
+  color: #fafafa;
+}
 .diagramSection {
   @include media('<=phoneLandscape') {
     padding-bottom: rem(80px);
@@ -64,6 +69,7 @@
     }
 
     @include media('<=tablet') {
+      padding-top: rem(32px);
       padding-bottom: rem(32px);
       max-width: unset;
       align-self: start;

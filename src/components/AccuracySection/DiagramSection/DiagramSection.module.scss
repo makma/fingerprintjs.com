@@ -8,6 +8,7 @@ $mobileBreakpoint: 740px;
 
 .container {
   text-align: center;
+  position: relative;
 
   .mobileTabs {
     @media screen and (max-width: $mobileBreakpoint) {
@@ -16,13 +17,16 @@ $mobileBreakpoint: 740px;
     }
     display: none;
 
-    padding: rem(8px);
+    padding: rem(4px);
 
-    background: rgba(13, 16, 43, 0.08);
-    border-radius: rem(16px);
+    background: #202021;
+    border: 1px solid rgba(208, 208, 208, 0.1);
+    border-radius: rem(8px);
   }
   .selectButton {
-    background-color: rgba(255, 255, 255, 0);
+    background: #202021;
+    border: 1px solid transparent;
+
     color: #ffffff;
 
     mix-blend-mode: normal;
@@ -35,7 +39,7 @@ $mobileBreakpoint: 740px;
     backface-visibility: hidden;
     -webkit-tap-highlight-color: transparent;
     & + .selectButton {
-      margin-left: rem(8px);
+      margin-left: rem(4px);
     }
 
     @media screen and (max-width: $tabletBreakpoint) {
@@ -48,12 +52,15 @@ $mobileBreakpoint: 740px;
       padding: 0 rem(20px);
       height: rem(49px);
       font-size: rem(14px);
-      color: var(--brand-water);
+      background: #202021;
+      border: 1px solid transparent;
+      border-radius: rem(8px);
     }
   }
   .showButton {
-    background-color: #ffffff;
-    color: var(--brand-water);
+    background: #434344;
+    border: 1px solid rgba(67, 67, 68, 0.1);
+    border-radius: rem(8px);
     pointer-events: none;
 
     &:focus,
@@ -64,8 +71,9 @@ $mobileBreakpoint: 740px;
   .card {
     position: relative;
 
-    border-radius: rem(24px);
-    background: linear-gradient(116.61deg, #2d357a -27.65%, #0d102b 77.94%);
+    background: linear-gradient(106.73deg, #202021 -8.11%, #19191a 21.02%, #141415 119.42%);
+    border: 1px solid rgba(208, 208, 208, 0.1);
+    border-radius: rem(8px);
     color: v('white');
     text-align: center;
     min-height: rem(654px);
@@ -89,10 +97,11 @@ $mobileBreakpoint: 740px;
         display: none;
       }
 
-      padding: rem(8px);
+      padding: rem(4px);
 
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: rem(16px);
+      background: #202021;
+      border: 1px solid rgba(208, 208, 208, 0.1);
+      border-radius: rem(8px);
     }
     .accuracyDescription {
       position: absolute;
@@ -114,13 +123,13 @@ $mobileBreakpoint: 740px;
 
     .diagram {
       position: relative;
-      height: rem(560px);
+      height: rem(613px);
       justify-items: center;
 
       background-image: url('/img/diagram-section/background.svg');
       background-repeat: no-repeat;
-      background-position-y: rem(-46px);
-      background-size: rem(1128px) rem(560px);
+      background-position-y: rem(-80px);
+      background-size: rem(1164px) rem(613px);
 
       @include transition(background-image);
       @include transition-duration(0.4s);
@@ -139,7 +148,7 @@ $mobileBreakpoint: 740px;
         background-image: url('/img/diagram-section/backgroundMobileBefore.svg');
         background-size: rem(360px) rem(550px);
 
-        border-radius: rem(24px);
+        border-radius: rem(8px);
       }
     }
     .afterBackground {
@@ -156,9 +165,9 @@ $mobileBreakpoint: 740px;
 
     .incomingFlow {
       position: absolute;
-      max-width: rem(197px);
-      left: rem(-10px);
-      bottom: rem(59px);
+      max-width: rem(128px);
+      left: rem(50px);
+      bottom: rem(140px);
 
       @media screen and (max-width: $tabletBreakpoint) {
         bottom: rem(-10px);
@@ -173,8 +182,9 @@ $mobileBreakpoint: 740px;
     .otherServices {
       position: absolute;
       max-width: rem(259px);
-      left: rem(450px);
-      bottom: rem(201px);
+      left: rem(495px);
+
+      bottom: rem(215px);
 
       @media screen and (max-width: $tabletBreakpoint) {
         width: rem(166px);
@@ -193,7 +203,7 @@ $mobileBreakpoint: 740px;
       position: absolute;
       width: rem(221px);
       left: rem(460px);
-      bottom: rem(180px);
+      bottom: rem(215px);
       @media screen and (max-width: $tabletBreakpoint) {
         bottom: rem(50px);
         left: 50%;
@@ -216,7 +226,7 @@ $mobileBreakpoint: 740px;
     }
     .visitor {
       left: rem(330px);
-      top: rem(105px);
+      top: rem(125px);
 
       @media screen and (max-width: $tabletBreakpoint) {
         top: rem(75px);
@@ -232,8 +242,8 @@ $mobileBreakpoint: 740px;
       }
     }
     .visitorId {
-      right: rem(275px);
-      top: rem(142px);
+      right: rem(240px);
+      top: rem(162px);
 
       @media screen and (max-width: $tabletBreakpoint) {
         top: rem(95px);
@@ -261,8 +271,8 @@ $mobileBreakpoint: 740px;
       }
     }
     .trusted {
-      right: rem(220px);
-      top: rem(60px);
+      right: rem(280px);
+      top: rem(110px);
 
       @media screen and (max-width: $tabletBreakpoint) {
         top: rem(50px);
@@ -272,8 +282,8 @@ $mobileBreakpoint: 740px;
       }
     }
     .suspicious {
-      right: rem(100px);
-      bottom: rem(100px);
+      right: rem(225px);
+      bottom: rem(240px);
 
       @media screen and (max-width: $tabletBreakpoint) {
         bottom: rem(20px);
@@ -283,17 +293,33 @@ $mobileBreakpoint: 740px;
       }
     }
   }
+  .externalBox {
+    position: absolute;
+    padding: rem(32px);
+    @include inter($size: 16px, $weight: 400, $lh: 160%, $color: #ffffff);
+    background: linear-gradient(106.73deg, #202021 -8.11%, #19191a 21.02%, #141415 119.42%);
+    border: rem(1px) solid rgba(208, 208, 208, 0.1);
+    border-radius: 8px;
+    bottom: rem(-76px);
+    left: 50%;
+    transform: translate(-50%, 0);
+    max-width: rem(760px);
+
+    @media screen and (max-width: $tabletBreakpoint) {
+      display: none;
+    }
+  }
 }
 .fingerService,
 .otherServices,
 .accuracyDescription,
 .incomingFlow {
-  @include inter($size: 14px, $weight: 500, $lh: 150%);
+  @include inter($size: 14px, $weight: 500, $lh: 160%);
 }
 
 .visitor,
 .visitorId,
 .trusted,
 .suspicious {
-  @include inter($size: 14px, $weight: 700, $lh: 150%);
+  @include inter($size: 14px, $weight: 700, $lh: 160%);
 }

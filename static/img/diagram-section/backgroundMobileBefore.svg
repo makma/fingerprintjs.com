@@ -78,8 +78,8 @@
     <circle opacity=".3" cx="277" cy="416.558780094482" r="12" transform="rotate(90 277 418.383)" fill="#999" />
     <defs>
         <linearGradient id="c" x1="176" y1="-86.617" x2="176" y2="154.883" gradientUnits="userSpaceOnUse">
-            <stop offset=".307" stop-color="#323869" stop-opacity="0" />
-            <stop offset="1" stop-color="#323869" />
+            <stop offset=".307" stop-color="#727273" stop-opacity="0" />
+            <stop offset="1" stop-color="#89898A" />
         </linearGradient>
         <linearGradient id="f" x1="177" y1="603.383" x2="177" y2="361.883" gradientUnits="userSpaceOnUse">
             <stop stop-color="#323869" stop-opacity="0" />

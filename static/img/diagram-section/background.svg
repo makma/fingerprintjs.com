@@ -1,399 +1,198 @@
-<svg id="eSrPW5e78hZ1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-    viewBox="0 0 1128 560" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
-    <defs>
-        <linearGradient id="eSrPW5e78hZ4-fill" x1="267.001" y1="286" x2="508.501" y2="286" spreadMethod="pad"
-            gradientUnits="userSpaceOnUse" gradientTransform="translate(0 0)">
-            <stop id="eSrPW5e78hZ4-fill-0" offset="0%" stop-color="rgba(50,56,105,0)" />
-            <stop id="eSrPW5e78hZ4-fill-1" offset="100%" stop-color="#323869" />
-        </linearGradient>
-        <linearGradient id="eSrPW5e78hZ91-fill" x1="881" y1="286" x2="639.5" y2="286" spreadMethod="pad"
-            gradientUnits="userSpaceOnUse" gradientTransform="translate(0 0)">
-            <stop id="eSrPW5e78hZ91-fill-0" offset="0%" stop-color="rgba(50,56,105,0)" />
-            <stop id="eSrPW5e78hZ91-fill-1" offset="100%" stop-color="#63cb7b" />
-        </linearGradient>
-        <linearGradient id="eSrPW5e78hZ177-fill" x1="881" y1="280" x2="639.5" y2="280" spreadMethod="pad"
-            gradientUnits="userSpaceOnUse" gradientTransform="translate(0 0)">
-            <stop id="eSrPW5e78hZ177-fill-0" offset="0%" stop-color="rgba(50,56,105,0)" />
-            <stop id="eSrPW5e78hZ177-fill-1" offset="100%" stop-color="#f44336" />
-        </linearGradient>
-        <linearGradient id="eSrPW5e78hZ297-fill" x1="48" y1="0" x2="48" y2="96" spreadMethod="pad"
-            gradientUnits="userSpaceOnUse" gradientTransform="translate(0 0)">
-            <stop id="eSrPW5e78hZ297-fill-0" offset="0%" stop-color="rgba(255,255,255,0.1)" />
-            <stop id="eSrPW5e78hZ297-fill-1" offset="100%" stop-color="rgba(255,255,255,0.2)" />
-        </linearGradient>
-    </defs>
-    <g mask="url(#eSrPW5e78hZ5)">
-        <g>
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1164 613">
+    <mask id="mask0_8_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="24" y="53" width="550" height="556">
+        <g clip-path="url(#clip0_8_2)" stroke="#000" stroke-width="2">
             <path
-                d="M267.001,161.652c0-15.827,17.513-25.383,30.823-16.818L488.5,267.53c5.299,3.409,8.501,9.278,8.501,15.579c0,6.181-3.083,11.955-8.219,15.394L298.128,426.158c-13.288,8.898-31.127-.626-31.127-16.619v-247.887Z"
-                fill="url(#eSrPW5e78hZ4-fill)" />
+                d="M230.578 53 24 410.804M234.043 55 27.464 412.804M237.507 57 30.928 414.804M240.971 59 34.393 416.804M244.435 61 37.857 418.804M247.899 63 41.321 420.804M251.363 65 44.785 422.804M254.827 67 48.249 424.804M258.291 69 51.713 426.804M261.755 71 55.177 428.804M265.219 73 58.641 430.804M268.684 75 62.105 432.804M272.148 77 65.57 434.804M275.612 79 69.034 436.804M279.076 81 72.498 438.804M282.54 83 75.962 440.804M286.004 85 79.426 442.804M289.468 87 82.89 444.804M292.932 89 86.354 446.804M296.396 91 89.818 448.804M299.86 93 93.282 450.804M303.325 95 96.747 452.804M306.789 97 100.211 454.804M310.253 99 103.675 456.804M313.717 101 107.139 458.804M317.181 103 110.603 460.804M320.645 105 114.067 462.804M324.109 107 117.531 464.804M327.573 109 120.995 466.804M331.037 111 124.459 468.804M334.501 113 127.923 470.804M337.966 115 131.387 472.804M341.43 117 134.852 474.804M344.894 119 138.316 476.804M348.358 121 141.78 478.804M351.822 123 145.244 480.804M355.286 125 148.708 482.804M358.75 127 152.172 484.804M362.214 129 155.636 486.804M365.678 131 159.1 488.804M369.143 133 162.564 490.804M372.607 135 166.028 492.804M376.071 137 169.493 494.804M379.535 139 172.957 496.804M382.999 141 176.421 498.804M386.463 143 179.885 500.804M389.927 145 183.349 502.804M393.391 147 186.813 504.804M396.855 149 190.277 506.804M400.319 151 193.741 508.804M403.784 153 197.205 510.804M407.248 155 200.67 512.804M410.712 157 204.134 514.804M414.176 159 207.598 516.804M417.64 161 211.062 518.804M421.104 163 214.526 520.804M424.568 165 217.99 522.804M428.032 167 221.454 524.804M431.496 169 224.918 526.804M434.96 171 228.382 528.804M438.425 173 231.846 530.804M441.889 175 235.311 532.804M445.353 177 238.775 534.804M448.817 179 242.239 536.804M452.281 181 245.703 538.804M455.745 183 249.167 540.804M459.209 185 252.631 542.804M462.673 187 256.095 544.804M466.137 189 259.559 546.804M469.601 191 263.023 548.804M473.066 193 266.487 550.804M476.53 195 269.952 552.804M479.994 197 273.416 554.804M483.458 199 276.88 556.804M486.922 201 280.344 558.804M490.386 203 283.808 560.804M493.85 205 287.272 562.804M497.314 207 290.736 564.804M500.778 209 294.2 566.804M504.242 211 297.664 568.804M507.707 213 301.128 570.804M511.171 215 304.593 572.804M514.635 217 308.057 574.804M518.099 219 311.521 576.804M521.563 221 314.985 578.804M525.027 223 318.449 580.804M528.491 225 321.913 582.804M531.955 227 325.377 584.804M535.419 229 328.841 586.804M538.883 231 332.305 588.804M542.348 233 335.769 590.804M545.812 235 339.234 592.804M549.276 237 342.698 594.804M552.74 239 346.162 596.804M556.204 241 349.626 598.804M559.668 243 353.09 600.804M563.132 245 356.554 602.804M566.596 247 360.018 604.804M570.06 249 363.482 606.804M573.525 251 366.946 608.804" />
         </g>
-        <mask id="eSrPW5e78hZ5" mask-type="alpha">
-            <g clip-path="url(#eSrPW5e78hZ86)">
-                <g transform="translate(6.282359 4.267974)">
-                    <path d="M326.578,0L120,357.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M330.042,2L123.464,359.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M333.506,4L126.928,361.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M336.971,6L130.393,363.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M340.435,8L133.856,365.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M343.898,10L137.32,367.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M347.362,12L140.784,369.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M350.827,14L144.249,371.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M354.291,16L147.713,373.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M357.755,18L151.177,375.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M361.219,20L154.641,377.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M364.684,22L158.105,379.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M368.147,24L161.569,381.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M371.611,26L165.033,383.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M375.075,28L168.497,385.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M378.54,30L171.962,387.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M382.004,32L175.426,389.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M385.468,34L178.89,391.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M388.932,36L182.354,393.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M392.396,38L185.818,395.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M395.86,40L189.282,397.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M399.324,42L192.746,399.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M402.788,44L196.21,401.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M406.253,46L199.675,403.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M409.717,48L203.139,405.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M413.181,50L206.603,407.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M416.645,52L210.066,409.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M420.108,54L213.53,411.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M423.573,56L216.995,413.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M427.037,58L220.459,415.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M430.501,60L223.923,417.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M433.965,62L227.387,419.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M437.43,64L230.852,421.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M440.894,66L234.315,423.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M444.357,68L237.779,425.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M447.821,70L241.243,427.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M451.286,72L244.708,429.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M454.75,74L248.172,431.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M458.214,76L251.636,433.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M461.678,78L255.1,435.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M465.143,80L258.564,437.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M468.606,82L262.028,439.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M472.07,84L265.492,441.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M475.534,86L268.956,443.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M478.999,88L272.421,445.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M482.463,90L275.885,447.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M485.927,92L279.349,449.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M489.391,94L282.813,451.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M492.855,96L286.277,453.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M496.319,98L289.741,455.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M499.783,100L293.205,457.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M503.247,102L296.669,459.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M506.711,104L300.133,461.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M510.176,106L303.598,463.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M513.64,108L307.062,465.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M517.104,110L310.525,467.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M520.567,112L313.989,469.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M524.032,114L317.454,471.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M527.496,116L320.918,473.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M530.96,118L324.382,475.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M534.424,120L327.846,477.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M537.889,122L331.311,479.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M541.353,124L334.774,481.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M544.816,126L338.238,483.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M548.28,128L341.702,485.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M551.745,130L345.167,487.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M555.209,132L348.631,489.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M558.673,134L352.095,491.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M562.137,136L355.559,493.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M565.602,138L359.023,495.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M569.065,140L362.487,497.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M572.529,142L365.951,499.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M575.993,144L369.415,501.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M579.458,146L372.88,503.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M582.922,148L376.344,505.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M586.386,150L379.808,507.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M589.85,152L383.272,509.804" fill="none" stroke="#000" stroke-width="2" />
-                    <path d="M593.313,154L386.735,511.804" fill="none" stroke="#000" stroke-width="2" />
-                </g>
-                <clipPath id="eSrPW5e78hZ86">
-                    <rect width="308" height="413.156" rx="0" ry="0"
-                        transform="matrix(.866025 0.5-.5 0.866025 326.578 0)" fill="#fff" />
-                </clipPath>
+    </mask>
+    <g mask="url(#mask0_8_2)">
+        <path
+            d="M153 182.046c0-15.031 15.96-24.69 29.276-17.719l298.032 156.032a19.94 19.94 0 0 1 .291 35.177L182.568 517.893C169.24 525.153 153 515.506 153 500.33V182.046Z"
+            fill="url(#paint0_linear_8_2)" />
+    </g>
+    <g opacity=".3">
+        <mask id="mask1_8_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="598" y="0" width="566" height="612">
+            <g clip-path="url(#clip1_8_2)" stroke="#000" stroke-width="2">
+                <path
+                    d="M844.72 0 598.047 427.249M848.184 2 601.511 429.249M851.648 4 604.975 431.249M855.112 6 608.44 433.249M858.576 8 611.904 435.249M862.04 10 615.368 437.249M865.504 12 618.832 439.249M868.968 14 622.296 441.249M872.432 16 625.76 443.249M875.896 18 629.224 445.249M879.361 20 632.688 447.249M882.825 22 636.152 449.249M886.289 24 639.616 451.249M889.753 26 643.081 453.249M893.217 28 646.545 455.249M896.681 30 650.009 457.249M900.145 32 653.473 459.249M903.609 34 656.937 461.249M907.073 36 660.401 463.249M910.537 38 663.865 465.249M914.002 40 667.329 467.249M917.466 42 670.793 469.249M920.93 44 674.257 471.249M924.394 46 677.722 473.249M927.858 48 681.186 475.249M931.322 50 684.65 477.249M934.786 52 688.114 479.249M938.25 54 691.578 481.249M941.714 56 695.042 483.249M945.178 58 698.506 485.249M948.643 60 701.97 487.249M952.107 62 705.434 489.249M955.571 64 708.898 491.249M959.035 66 712.363 493.249M962.499 68 715.827 495.249M965.963 70 719.291 497.249M969.427 72 722.755 499.249M972.891 74 726.219 501.249M976.355 76 729.683 503.249M979.82 78 733.147 505.249M983.284 80 736.611 507.249M986.748 82 740.075 509.249M990.212 84 743.539 511.249M993.676 86 747.004 513.249M997.14 88 750.468 515.249M1000.6 90 753.932 517.249M1004.07 92 757.396 519.249M1007.53 94 760.86 521.249M1011 96 764.324 523.249M1014.46 98 767.788 525.249M1017.92 100 771.252 527.249M1021.39 102 774.716 529.249M1024.85 104 778.181 531.249M1028.32 106 781.645 533.249M1031.78 108 785.109 535.249M1035.25 110 788.573 537.249M1038.71 112 792.037 539.249M1042.17 114 795.501 541.249M1045.64 116 798.965 543.249M1049.1 118 802.429 545.249M1052.57 120 805.893 547.249M1056.03 122 809.357 549.249M1059.49 124 812.821 551.249M1062.96 126 816.286 553.249M1066.42 128 819.75 555.249M1069.89 130 823.214 557.249M1073.35 132 826.678 559.249M1076.81 134 830.142 561.249M1080.28 136 833.606 563.249M1083.74 138 837.07 565.249M1087.21 140 840.534 567.249M1090.67 142 843.998 569.249M1094.13 144 847.462 571.249M1097.6 146 850.927 573.249M1101.06 148 854.391 575.249M1104.53 150 857.855 577.249M1107.99 152 861.319 579.249M1111.46 154 864.783 581.249M1114.92 156 868.247 583.249M1118.38 158 871.711 585.249M1121.85 160 875.175 587.249M1125.31 162 878.639 589.249M1128.78 164 882.104 591.249M1132.24 166 885.568 593.249M1135.7 168 889.032 595.249M1139.17 170 892.496 597.249M1142.63 172 895.96 599.249M1146.1 174 899.424 601.249M1149.56 176 902.888 603.249M1153.02 178 906.352 605.249M1156.49 180 909.816 607.249M1159.95 182 913.28 609.249M1163.42 184 916.745 611.249M1166.88 186 920.209 613.249M1170.35 188 923.673 615.249M1173.81 190 927.137 617.249M1177.27 192 930.601 619.249M1180.74 194 934.065 621.249M1184.2 196 937.529 623.249M1187.67 198 940.993 625.249M1191.13 200 944.457 627.249" />
             </g>
         </mask>
-    </g>
-    <g opacity="0.3">
-        <g mask="url(#eSrPW5e78hZ92)">
-            <g>
-                <path
-                    d="M881,161.652c0-15.827-17.513-25.383-30.823-16.818L659.409,267.589C654.168,270.962,651,276.767,651,283h210c11.046,0,20-8.954,20-20v-101.348Z"
-                    fill="url(#eSrPW5e78hZ91-fill)" />
-            </g>
-            <mask id="eSrPW5e78hZ92" mask-type="alpha">
-                <g clip-path="url(#eSrPW5e78hZ173)">
-                    <g transform="translate(11.910545 4.267974)">
-                        <path d="M765.578,0L559,357.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M769.042,2L562.464,359.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M772.506,4L565.928,361.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M775.971,6L569.393,363.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M779.435,8L572.856,365.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M782.898,10L576.32,367.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M786.362,12L579.784,369.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M789.827,14L583.249,371.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M793.291,16L586.713,373.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M796.755,18L590.177,375.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M800.219,20L593.641,377.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M803.684,22L597.105,379.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M807.147,24L600.569,381.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M810.611,26L604.033,383.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M814.075,28L607.497,385.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M817.54,30L610.962,387.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M821.004,32L614.426,389.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M824.468,34L617.89,391.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M827.932,36L621.354,393.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M831.396,38L624.818,395.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M834.86,40L628.282,397.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M838.324,42L631.746,399.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M841.788,44L635.21,401.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M845.253,46L638.675,403.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M848.717,48L642.139,405.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M852.181,50L645.603,407.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M855.645,52L649.066,409.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M859.108,54L652.53,411.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M862.573,56L655.995,413.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M866.037,58L659.459,415.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M869.501,60L662.923,417.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M872.965,62L666.387,419.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M876.43,64L669.852,421.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M879.894,66L673.315,423.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M883.357,68L676.779,425.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M886.821,70L680.243,427.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M890.286,72L683.708,429.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M893.75,74L687.172,431.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M897.214,76L690.636,433.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M900.678,78L694.1,435.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M904.143,80L697.564,437.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M907.606,82L701.028,439.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M911.07,84L704.492,441.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M914.534,86L707.956,443.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M917.999,88L711.421,445.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M921.463,90L714.885,447.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M924.927,92L718.349,449.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M928.391,94L721.813,451.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M931.855,96L725.277,453.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M935.319,98L728.741,455.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M938.783,100L732.205,457.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M942.247,102L735.669,459.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M945.711,104L739.133,461.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M949.176,106L742.598,463.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M952.64,108L746.062,465.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M956.104,110L749.525,467.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M959.567,112L752.989,469.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M963.032,114L756.454,471.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M966.496,116L759.918,473.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M969.96,118L763.382,475.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M973.424,120L766.846,477.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M976.889,122L770.311,479.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M980.353,124L773.774,481.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M983.816,126L777.238,483.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M987.28,128L780.702,485.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M990.745,130L784.167,487.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M994.209,132L787.631,489.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M997.673,134L791.095,491.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1001.14,136L794.559,493.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1004.6,138L798.023,495.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1008.07,140L801.487,497.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1011.53,142L804.951,499.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1014.99,144L808.415,501.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1018.46,146L811.88,503.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1021.92,148L815.344,505.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1025.39,150L818.808,507.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1028.85,152L822.272,509.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1032.31,154L825.735,511.804" fill="none" stroke="#000" stroke-width="2" />
-                    </g>
-                    <clipPath id="eSrPW5e78hZ173">
-                        <rect width="308" height="413.156" rx="0" ry="0"
-                            transform="matrix(.866025 0.5-.5 0.866025 765.578 0)" fill="#fff" />
-                    </clipPath>
-                </g>
-            </mask>
+        <g mask="url(#mask1_8_2)">
+            <path
+                d="M990 182.571c0-15.154-16.196-24.802-29.522-17.588l-287 155.382C667.022 323.86 663 330.659 663 338h307c11.046 0 20-8.954 20-20V182.571Z"
+                fill="url(#paint1_linear_8_2)" />
         </g>
-        <g mask="url(#eSrPW5e78hZ178)">
-            <g>
+        <mask id="mask2_8_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="574" y="101" width="565"
+            height="512">
+            <g clip-path="url(#clip2_8_2)" stroke="#000" stroke-width="2">
                 <path
-                    d="M881,404.348c0,15.827-17.513,25.383-30.823,16.818L659.409,298.411C654.168,295.038,651,289.233,651,283h210c11.046,0,20,8.954,20,20v101.348Z"
-                    fill="url(#eSrPW5e78hZ177-fill)" />
+                    d="M820.827 101 574.999 458.804M824.426 102.746 578.598 460.55M828.025 104.492 582.197 462.296M831.623 106.238 585.796 464.042M835.222 107.984 589.395 465.788M838.821 109.73 592.994 467.534M842.42 111.476 596.592 469.28M846.019 113.222 600.191 471.026M849.617 114.968 603.79 472.772M853.216 116.714 607.389 474.518M856.815 118.46 610.988 476.264M860.414 120.206 614.586 478.01M864.013 121.952 618.185 479.756M867.611 123.698 621.784 481.502M871.21 125.444 625.383 483.248M874.809 127.19 628.982 484.994M878.408 128.936 632.58 486.74M882.007 130.682 636.179 488.486M885.605 132.428 639.778 490.232M889.204 134.175 643.377 491.978M892.803 135.921 646.976 493.724M896.402 137.667 650.574 495.47M900.001 139.413 654.173 497.216M903.599 141.159 657.772 498.962M907.198 142.905 661.371 500.708M910.797 144.651 664.97 502.455M914.396 146.397 668.568 504.2M917.995 148.143 672.167 505.946M921.594 149.889 675.766 507.693M925.192 151.635 679.365 509.439M928.791 153.381 682.964 511.185M932.39 155.127 686.562 512.931M935.989 156.873 690.161 514.677M939.588 158.619 693.76 516.423M943.186 160.365 697.359 518.169M946.785 162.111 700.958 519.915M950.384 163.857 704.556 521.661M953.983 165.603 708.155 523.407M957.582 167.349 711.754 525.153M961.18 169.095 715.353 526.899M964.779 170.841 718.952 528.645M968.378 172.587 722.55 530.391M971.977 174.333 726.149 532.137M975.576 176.079 729.748 533.883M979.174 177.825 733.347 535.629M982.773 179.571 736.946 537.375M986.372 181.317 740.544 539.121M989.971 183.063 744.143 540.867M993.57 184.809 747.742 542.613M997.168 186.555 751.341 544.359M1000.77 188.301 754.94 546.105M1004.37 190.047 758.538 547.851M1007.96 191.793 762.137 549.597M1011.56 193.54 765.736 551.343M1015.16 195.286 769.335 553.089M1018.76 197.031 772.934 554.835M1022.36 198.778 776.532 556.581M1025.96 200.524 780.131 558.327M1029.56 202.27 783.73 560.073M1033.16 204.016 787.329 561.819M1036.76 205.762 790.928 563.565M1040.35 207.508 794.526 565.311M1043.95 209.254 798.125 567.058M1047.55 211 801.724 568.804M1051.15 212.746 805.323 570.55M1054.75 214.492 808.922 572.296M1058.35 216.238 812.52 574.042M1061.95 217.984 816.119 575.788M1065.55 219.73 819.718 577.534M1069.14 221.476 823.317 579.28M1072.74 223.222 826.916 581.026M1076.34 224.968 830.514 582.772M1079.94 226.714 834.113 584.518M1083.54 228.46 837.712 586.264M1087.14 230.206 841.311 588.01M1090.74 231.952 844.91 589.756M1094.34 233.698 848.509 591.502M1097.93 235.444 852.107 593.248" />
             </g>
-            <mask id="eSrPW5e78hZ178" mask-type="alpha">
-                <g clip-path="url(#eSrPW5e78hZ259)">
-                    <g transform="translate(11.910545 4.883359)">
-                        <path d="M765.578,48L559,405.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M769.042,50L562.464,407.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M772.506,52L565.928,409.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M775.971,54L569.393,411.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M779.435,56L572.856,413.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M782.898,58L576.32,415.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M786.362,60L579.784,417.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M789.827,62L583.249,419.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M793.291,64L586.713,421.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M796.755,66L590.177,423.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M800.219,68L593.641,425.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M803.684,70L597.105,427.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M807.147,72L600.569,429.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M810.611,74L604.033,431.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M814.075,76L607.497,433.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M817.54,78L610.962,435.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M821.004,80L614.426,437.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M824.468,82L617.89,439.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M827.932,84L621.354,441.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M831.396,86L624.818,443.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M834.86,88L628.282,445.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M838.324,90L631.746,447.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M841.788,92L635.21,449.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M845.253,94L638.675,451.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M848.717,96L642.139,453.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M852.181,98L645.603,455.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M855.645,100L649.066,457.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M859.108,102L652.53,459.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M862.573,104L655.995,461.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M866.037,106L659.459,463.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M869.501,108L662.923,465.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M872.965,110L666.387,467.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M876.43,112L669.852,469.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M879.894,114L673.315,471.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M883.357,116L676.779,473.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M886.821,118L680.243,475.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M890.286,120L683.708,477.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M893.75,122L687.172,479.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M897.214,124L690.636,481.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M900.678,126L694.1,483.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M904.143,128L697.564,485.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M907.606,130L701.028,487.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M911.07,132L704.492,489.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M914.534,134L707.956,491.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M917.999,136L711.421,493.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M921.463,138L714.885,495.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M924.927,140L718.349,497.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M928.391,142L721.813,499.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M931.855,144L725.277,501.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M935.319,146L728.741,503.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M938.783,148L732.205,505.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M942.247,150L735.669,507.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M945.711,152L739.133,509.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M949.176,154L742.598,511.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M952.64,156L746.062,513.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M956.104,158L749.525,515.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M959.567,160L752.989,517.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M963.032,162L756.454,519.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M966.496,164L759.918,521.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M969.96,166L763.382,523.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M973.424,168L766.846,525.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M976.889,170L770.311,527.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M980.353,172L773.774,529.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M983.816,174L777.238,531.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M987.28,176L780.702,533.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M990.745,178L784.167,535.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M994.209,180L787.631,537.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M997.673,182L791.095,539.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1001.14,184L794.559,541.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1004.6,186L798.023,543.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1008.07,188L801.487,545.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1011.53,190L804.951,547.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1014.99,192L808.415,549.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1018.46,194L811.88,551.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1021.92,196L815.344,553.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1025.39,198L818.808,555.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1028.85,200L822.272,557.804" fill="none" stroke="#000" stroke-width="2" />
-                        <path d="M1032.31,202L825.735,559.804" fill="none" stroke="#000" stroke-width="2" />
-                    </g>
-                    <clipPath id="eSrPW5e78hZ259">
-                        <rect width="308" height="413.156" rx="0" ry="0"
-                            transform="matrix(.866025 0.5-.5 0.866025 765.578 48)" fill="#fff" />
-                    </clipPath>
-                </g>
-            </mask>
+        </mask>
+        <g mask="url(#mask2_8_2)">
+            <path
+                d="M990 493.429c0 15.154-16.196 24.802-29.522 17.588l-287-155.382C667.022 352.14 663 345.341 663 338h307c11.046 0 20 8.954 20 20v135.429Z"
+                fill="url(#paint2_linear_8_2)" />
         </g>
     </g>
-    <circle r="8" transform="translate(169 346)" fill="#63cb7b" />
-    <circle r="12" transform="translate(169 346)" opacity="0.3" fill="#63cb7b" />
-    <circle r="8" transform="translate(167 214)" fill="#63cb7b" />
-    <circle r="12" transform="translate(167 214)" opacity="0.3" fill="#63cb7b" />
-    <circle r="8" transform="translate(335 289)" fill="#63cb7b" />
-    <circle r="12" transform="translate(335 289)" opacity="0.3" fill="#63cb7b" />
-    <circle r="8" transform="translate(88 227)" fill="#63cb7b" />
-    <circle r="12" transform="translate(88 227)" opacity="0.3" fill="#63cb7b" />
-    <circle r="8" transform="translate(127 193)" fill="#63cb7b" />
-    <circle r="12" transform="translate(127 193)" opacity="0.3" fill="#63cb7b" />
-    <circle r="8" transform="translate(29 128)" fill="#63cb7b" />
-    <circle r="12" transform="translate(29 128)" opacity="0.3" fill="#63cb7b" />
-    <circle r="8" transform="translate(431 309)" fill="#63cb7b" />
-    <circle r="12" transform="translate(431 309)" opacity="0.3" fill="#63cb7b" />
-    <circle r="8" transform="translate(431 271)" fill="#63cb7b" />
-    <circle r="12" transform="translate(431 271)" opacity="0.3" fill="#63cb7b" />
-    <circle r="8" transform="translate(330 194)" fill="#63cb7b" />
-    <circle r="12" transform="translate(330 194)" opacity="0.3" fill="#63cb7b" />
-    <circle r="8" transform="translate(259 406)" fill="#63cb7b" />
-    <circle r="12" transform="translate(259 406)" opacity="0.3" fill="#63cb7b" />
-    <circle r="8" transform="translate(198 321)" fill="#ee6359" />
-    <circle r="12" transform="translate(198 321)" opacity="0.3" fill="#ee6359" />
-    <circle r="8" transform="translate(221 253)" fill="#ee6359" />
-    <circle r="12" transform="translate(221 253)" opacity="0.3" fill="#ee6359" />
-    <circle r="8" transform="translate(308 316)" fill="#ee6359" />
-    <circle r="12" transform="translate(308 316)" opacity="0.3" fill="#ee6359" />
-    <circle r="8" transform="translate(278 220)" fill="#ee6359" />
-    <circle r="12" transform="translate(278 220)" opacity="0.3" fill="#ee6359" />
-    <circle r="8" transform="translate(470 283)" fill="#ee6359" />
-    <circle r="12" transform="translate(470 283)" opacity="0.3" fill="#ee6359" />
-    <circle r="8" transform="translate(383 331)" fill="#ee6359" />
-    <circle r="12" transform="translate(383 331)" opacity="0.3" fill="#ee6359" />
-    <circle r="8" transform="translate(12 273)" fill="#ee6359" />
-    <circle r="12" transform="translate(12 273)" opacity="0.3" fill="#ee6359" />
-    <circle r="8" transform="translate(165 258)" fill="#63cb7b" />
-    <circle r="12" transform="translate(165 258)" opacity="0.3" fill="#63cb7b" />
-    <rect width="96" height="96" rx="24" ry="24" transform="translate(528 235)" fill="url(#eSrPW5e78hZ297-fill)" />
+    <circle cx="169" cy="399" r="8" fill="#63CB7B" />
+    <circle opacity=".3" cx="169" cy="399" r="12" fill="#63CB7B" />
+    <circle cx="167" cy="267" r="8" fill="#63CB7B" />
+    <circle opacity=".3" cx="167" cy="267" r="12" fill="#63CB7B" />
+    <circle cx="335" cy="342" r="8" fill="#63CB7B" />
+    <circle opacity=".3" cx="335" cy="342" r="12" fill="#63CB7B" />
+    <circle cx="88" cy="280" r="8" fill="#63CB7B" />
+    <circle opacity=".3" cx="88" cy="280" r="12" fill="#63CB7B" />
+    <circle cx="127" cy="246" r="8" fill="#63CB7B" />
+    <circle opacity=".3" cx="127" cy="246" r="12" fill="#63CB7B" />
+    <circle cx="29" cy="181" r="8" fill="#63CB7B" />
+    <circle opacity=".3" cx="29" cy="181" r="12" fill="#63CB7B" />
+    <circle cx="431" cy="362" r="8" fill="#63CB7B" />
+    <circle opacity=".3" cx="431" cy="362" r="12" fill="#63CB7B" />
+    <circle cx="431" cy="324" r="8" fill="#63CB7B" />
+    <circle opacity=".3" cx="431" cy="324" r="12" fill="#63CB7B" />
+    <circle cx="330" cy="247" r="8" fill="#63CB7B" />
+    <circle opacity=".3" cx="330" cy="247" r="12" fill="#63CB7B" />
+    <circle cx="259" cy="459" r="8" fill="#63CB7B" />
+    <circle opacity=".3" cx="259" cy="459" r="12" fill="#63CB7B" />
+    <circle cx="198" cy="374" r="8" fill="#EE6359" />
+    <circle opacity=".3" cx="198" cy="374" r="12" fill="#EE6359" />
+    <circle cx="221" cy="306" r="8" fill="#EE6359" />
+    <circle opacity=".3" cx="221" cy="306" r="12" fill="#EE6359" />
+    <circle cx="308" cy="369" r="8" fill="#EE6359" />
+    <circle opacity=".3" cx="308" cy="369" r="12" fill="#EE6359" />
+    <circle cx="278" cy="273" r="8" fill="#EE6359" />
+    <circle opacity=".3" cx="278" cy="273" r="12" fill="#EE6359" />
+    <circle cx="470" cy="336" r="8" fill="#EE6359" />
+    <circle opacity=".3" cx="470" cy="336" r="12" fill="#EE6359" />
+    <circle cx="383" cy="384" r="8" fill="#EE6359" />
+    <circle opacity=".3" cx="383" cy="384" r="12" fill="#EE6359" />
+    <circle cx="12" cy="326" r="8" fill="#EE6359" />
+    <circle opacity=".3" cx="12" cy="326" r="12" fill="#EE6359" />
+    <circle cx="165" cy="311" r="8" fill="#63CB7B" />
+    <circle opacity=".3" cx="165" cy="311" r="12" fill="#63CB7B" />
+    <g filter="url(#filter0_ddddddd_8_2)">
+        <rect x="528" y="290" width="96" height="96" rx="8" fill="#202021" />
+        <path
+            d="M576.984 344.287v-5.521l4.567-2.043c5.898-2.639 5.857-10.839-1.504-13.292-4.294-1.432-9.202.677-11.656 6.747"
+            stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <circle cx="576.98" cy="349.809" r="1.34" fill="#fff" stroke="#fff" />
+        <rect x="528.5" y="290.5" width="95" height="95" rx="7.5" stroke="#E8E8E8" stroke-opacity=".3" />
+    </g>
+    <circle cx="921" cy="203" r="8" fill="#63CB7B" />
+    <circle opacity=".3" cx="921" cy="203" r="12" fill="#63CB7B" />
+    <circle cx="969" cy="250" r="8" fill="#B9B9B9" />
+    <circle opacity=".3" cx="969" cy="250" r="12" fill="#B9B9B9" />
+    <circle cx="999" cy="466" r="8" fill="#B9B9B9" />
+    <circle opacity=".3" cx="999" cy="466" r="12" fill="#B9B9B9" />
+    <circle cx="968" cy="501" r="8" fill="#B9B9B9" />
+    <circle opacity=".3" cx="968" cy="501" r="12" fill="#B9B9B9" />
+    <circle cx="960" cy="409" r="8" fill="#B9B9B9" />
+    <circle opacity=".3" cx="960" cy="409" r="12" fill="#B9B9B9" />
+    <circle cx="926" cy="257" r="8" fill="#63CB7B" />
+    <circle opacity=".3" cx="926" cy="257" r="12" fill="#63CB7B" />
+    <circle cx="949" cy="226" r="8" fill="#63CB7B" />
+    <circle opacity=".3" cx="949" cy="226" r="12" fill="#63CB7B" />
+    <circle cx="969" cy="191" r="8" fill="#63CB7B" />
+    <circle opacity=".3" cx="969" cy="191" r="12" fill="#63CB7B" />
+    <circle cx="957" cy="450" r="8" fill="#EE6359" />
+    <circle opacity=".3" cx="957" cy="450" r="12" fill="#EE6359" />
+    <circle cx="925" cy="406" r="8" fill="#EE6359" />
+    <circle opacity=".3" cx="925" cy="406" r="12" fill="#EE6359" />
+    <circle cx="1011" cy="264" r="8" fill="#B9B9B9" />
+    <circle opacity=".3" cx="1011" cy="264" r="12" fill="#B9B9B9" />
+    <circle cx="928" cy="489" r="8" fill="#B9B9B9" />
+    <circle opacity=".3" cx="928" cy="489" r="12" fill="#B9B9B9" />
+    <circle cx="1015" cy="435" r="8" fill="#B9B9B9" />
+    <circle opacity=".3" cx="1015" cy="435" r="12" fill="#B9B9B9" />
+    <circle cx="1019" cy="511" r="8" fill="#EE6359" />
+    <circle opacity=".3" cx="1019" cy="511" r="12" fill="#EE6359" />
+    <circle cx="982" cy="373" r="8" fill="#EE6359" />
+    <circle opacity=".3" cx="982" cy="373" r="12" fill="#EE6359" />
+    <circle cx="962" cy="289" r="8" fill="#B9B9B9" />
+    <circle opacity=".3" cx="962" cy="289" r="12" fill="#B9B9B9" />
+    <circle cx="893" cy="242" r="8" fill="#B9B9B9" />
+    <circle opacity=".3" cx="893" cy="242" r="12" fill="#B9B9B9" />
+    <circle cx="997" cy="222" r="8" fill="#B9B9B9" />
+    <circle opacity=".3" cx="997" cy="222" r="12" fill="#B9B9B9" />
     <path
-        d="M576.984,289.287v-5.521l4.567-2.043c5.898-2.639,5.857-10.839-1.504-13.292-4.294-1.432-9.202.677-11.655,6.747"
-        fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-    <circle r="1.34032" transform="translate(576.98 294.809)" fill="#fff" stroke="#fff" />
-    <rect width="97" height="97" rx="24.5" ry="24.5" transform="translate(527.5 234.5)" fill="none" stroke="#fff"
-        stroke-opacity="0.2" />
-    <path d="M83.2184,489.5c-3.0003-39,25.5006-83.5,48.9996-95" fill="none" stroke="#e3e3ed" stroke-width="2"
-        stroke-linecap="round" />
-    <path d="M117.719,396l13.993-1.749c.822-.103,1.405.781.988,1.496L126.719,406" fill="none" stroke="#e3e3ed"
-        stroke-width="2" stroke-linecap="round" />
-    <path d="M582.659,465.857l-5.482-12.993c-.322-.763-1.379-.826-1.79-.107l-5.889,10.306" fill="none" stroke="#e3e3ed"
-        stroke-width="2" stroke-linecap="round" />
-    <path d="M478.5,478.857c34,24.5,98,36.5,98-23.5" fill="none" stroke="#e3e3ed" stroke-width="2"
-        stroke-linecap="round" />
-    <circle r="8" transform="translate(881 150)" fill="#63cb7b" />
-    <circle r="12" transform="translate(881 150)" opacity="0.3" fill="#63cb7b" />
-    <circle r="8" transform="translate(929 197)" fill="#999" />
-    <circle r="12" transform="translate(929 197)" opacity="0.3" fill="#999" />
-    <circle r="8" transform="translate(959 413)" fill="#999" />
-    <circle r="12" transform="translate(959 413)" opacity="0.3" fill="#999" />
-    <circle r="8" transform="translate(928 448)" fill="#999" />
-    <circle r="12" transform="translate(928 448)" opacity="0.3" fill="#999" />
-    <circle r="8" transform="translate(920 356)" fill="#999" />
-    <circle r="12" transform="translate(920 356)" opacity="0.3" fill="#999" />
-    <circle r="8" transform="translate(886 204)" fill="#63cb7b" />
-    <circle r="12" transform="translate(886 204)" opacity="0.3" fill="#63cb7b" />
-    <circle r="8" transform="translate(909 173)" fill="#63cb7b" />
-    <circle r="12" transform="translate(909 173)" opacity="0.3" fill="#63cb7b" />
-    <circle r="8" transform="translate(929 138)" fill="#63cb7b" />
-    <circle r="12" transform="translate(929 138)" opacity="0.3" fill="#63cb7b" />
-    <circle r="8" transform="translate(917 397)" fill="#ee6359" />
-    <circle r="12" transform="translate(917 397)" opacity="0.3" fill="#ee6359" />
-    <circle r="8" transform="translate(885 353)" fill="#ee6359" />
-    <circle r="12" transform="translate(885 353)" opacity="0.3" fill="#ee6359" />
-    <circle r="8" transform="translate(971 211)" fill="#999" />
-    <circle r="12" transform="translate(971 211)" opacity="0.3" fill="#999" />
-    <circle r="8" transform="translate(888 436)" fill="#999" />
-    <circle r="12" transform="translate(888 436)" opacity="0.3" fill="#999" />
-    <circle r="8" transform="translate(975 382)" fill="#999" />
-    <circle r="12" transform="translate(975 382)" opacity="0.3" fill="#999" />
-    <circle r="8" transform="translate(979 458)" fill="#ee6359" />
-    <circle r="12" transform="translate(979 458)" opacity="0.3" fill="#ee6359" />
-    <circle r="8" transform="translate(942 320)" fill="#ee6359" />
-    <circle r="12" transform="translate(942 320)" opacity="0.3" fill="#ee6359" />
-    <circle r="8" transform="translate(922 236)" fill="#999" />
-    <circle r="12" transform="translate(922 236)" opacity="0.3" fill="#999" />
-    <circle r="8" transform="translate(853 189)" fill="#999" />
-    <circle r="12" transform="translate(853 189)" opacity="0.3" fill="#999" />
-    <circle r="8" transform="translate(957 169)" fill="#999" />
-    <circle r="12" transform="translate(957 169)" opacity="0.3" fill="#999" />
+        d="M436.878 524.056a.5.5 0 0 0 0 1v-1Zm132.358-7.5h.5-.5Zm.5 0-.001-18.089h-1l.001 18.089h1Zm-132.858 8.5h66.179v-1h-66.179v1Zm66.179 0h58.179v-1h-58.179v1Zm65.679-8.5a7.5 7.5 0 0 1-7.5 7.5v1a8.5 8.5 0 0 0 8.5-8.5h-1Z"
+        fill="#E3E3ED" />
+    <path d="m574.442 503.068-5.175-5.175-5.035 5.035" stroke="#E3E3ED" stroke-linecap="round" />
+    <path
+        d="M114.859 501.225a.5.5 0 0 1-1 0h1Zm7.5-50.739v.5-.5Zm0-.5h40.301v1h-40.301v-1Zm-8.5 51.239v-25.37h1v25.37h-1Zm0-25.37v-17.369h1v17.369h-1Zm8.5-24.869a7.5 7.5 0 0 0-7.5 7.5h-1a8.5 8.5 0 0 1 8.5-8.5v1Z"
+        fill="#FAFAFA" />
+    <path d="m158.059 445.279 5.175 5.175-5.035 5.035" stroke="#FAFAFA" stroke-linecap="round" />
+    <defs>
+        <linearGradient id="paint0_linear_8_2" x1="197.76" y1="337.054" x2="503.377" y2="340.94"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#727273" stop-opacity="0" />
+            <stop offset="1" stop-color="#89898A" />
+        </linearGradient>
+        <linearGradient id="paint1_linear_8_2" x1="990" y1="341.589" x2="646.65" y2="341.589"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#323869" stop-opacity="0" />
+            <stop offset="1" stop-color="#63CB7B" />
+        </linearGradient>
+        <linearGradient id="paint2_linear_8_2" x1="990" y1="334.411" x2="646.65" y2="334.411"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#323869" stop-opacity="0" />
+            <stop offset="1" stop-color="#EE6359" />
+        </linearGradient>
+        <clipPath id="clip0_8_2">
+            <path fill="#fff" d="m230.578 53 342.946 198-206.578 357.804L24 410.804z" />
+        </clipPath>
+        <clipPath id="clip1_8_2">
+            <path fill="#fff" d="m844.72 0 318.506 183.89-246.673 427.249-318.505-183.89z" />
+        </clipPath>
+        <clipPath id="clip2_8_2">
+            <path fill="#fff" d="m820.827 101 317.415 154-245.827 357.804-317.416-154z" />
+        </clipPath>
+        <filter id="filter0_ddddddd_8_2" x="448" y="289" width="256" height="277" filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+            <feOffset dy="100" />
+            <feGaussianBlur stdDeviation="40" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix values="0 0 0 0 0.0784314 0 0 0 0 0.0784314 0 0 0 0 0.0823529 0 0 0 0.02 0" />
+            <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_8_2" />
+            <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+            <feOffset dy="42" />
+            <feGaussianBlur stdDeviation="16.5" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix values="0 0 0 0 0.0784314 0 0 0 0 0.0784314 0 0 0 0 0.0823529 0 0 0 0.02 0" />
+            <feBlend in2="effect1_dropShadow_8_2" result="effect2_dropShadow_8_2" />
+            <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+            <feOffset dy="22" />
+            <feGaussianBlur stdDeviation="9" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix values="0 0 0 0 0.0784314 0 0 0 0 0.0784314 0 0 0 0 0.0823529 0 0 0 0.03 0" />
+            <feBlend in2="effect2_dropShadow_8_2" result="effect3_dropShadow_8_2" />
+            <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+            <feOffset dy="12" />
+            <feGaussianBlur stdDeviation="5" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix values="0 0 0 0 0.0784314 0 0 0 0 0.0784314 0 0 0 0 0.0823529 0 0 0 0.03 0" />
+            <feBlend in2="effect3_dropShadow_8_2" result="effect4_dropShadow_8_2" />
+            <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+            <feOffset dy="7" />
+            <feGaussianBlur stdDeviation="3" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix values="0 0 0 0 0.0784314 0 0 0 0 0.0784314 0 0 0 0 0.0823529 0 0 0 0.04 0" />
+            <feBlend in2="effect4_dropShadow_8_2" result="effect5_dropShadow_8_2" />
+            <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+            <feOffset />
+            <feGaussianBlur stdDeviation=".5" />
+            <feComposite in2="hardAlpha" operator="out" />
+            <feColorMatrix values="0 0 0 0 0.447059 0 0 0 0 0.447059 0 0 0 0 0.45098 0 0 0 0.15 0" />
+            <feBlend in2="effect5_dropShadow_8_2" result="effect6_dropShadow_8_2" />
+            <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+            <feOffset dy="3" />
+            <feGaussianBlur stdDeviation="1" />
+            <feColorMatrix values="0 0 0 0 0.0784314 0 0 0 0 0.0784314 0 0 0 0 0.0823529 0 0 0 0.02 0" />
+            <feBlend in2="effect6_dropShadow_8_2" result="effect7_dropShadow_8_2" />
+            <feBlend in="SourceGraphic" in2="effect7_dropShadow_8_2" result="shape" />
+        </filter>
+    </defs>
 </svg>

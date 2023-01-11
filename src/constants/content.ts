@@ -21,7 +21,7 @@ export const PATH = {
   paywall: '/paywall/',
   caseStudies: '/case-studies/',
   contactSales: '/contact-sales/',
-  whyFpjs: '/products/device-identification/',
+  whyFpjs: '/products/fingerprint-pro/',
   accountSharing: '/products/account-sharing-prevention/',
   botD: '/products/bot-detection/',
   bnpl: '/buy-now-pay-later/',
@@ -129,7 +129,7 @@ export const useCaseLinks = [
 ]
 
 export const platform = [
-  { title: 'Pro - Visitor Identification', url: PATH.whyFpjs, isLocal: true },
+  { title: 'Fingerprint Pro', url: PATH.whyFpjs, isLocal: true },
   { title: 'BotD - Bot Detection', url: PATH.botD, isLocal: true },
   { title: 'Integrations', url: PATH.integrations, isLocal: true },
   { title: 'Security & Privacy', url: PATH.security, isLocal: true },
@@ -209,9 +209,9 @@ export const communityDropdown = [
 export const platformDropdown = {
   capabilities: [
     {
-      title: 'Pro - Visitor Identification',
+      title: 'Fingerprint Pro',
       url: PATH.whyFpjs,
-      description: 'Identify web and mobile users with our high accuracy fingerprints.',
+      description: 'Identify anonymous website visitors with our best-in-class identifier.',
     },
     {
       title: 'BotD - Bot Detection',

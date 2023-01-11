@@ -1,0 +1,65 @@
+.heroContainer {
+  padding-top: rem(96px);
+  padding-bottom: rem(180px);
+
+  display: flex;
+  justify-content: space-between;
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(24px);
+    padding-bottom: rem(66px);
+  }
+
+  @include media('<=desktop') {
+    flex-direction: column-reverse;
+    row-gap: rem(16px);
+  }
+  .heroSection {
+    position: relative;
+    max-width: rem(720px);
+    .title {
+      @include inter($size: 64px, $weight: 600, $lh: 130%);
+      margin-bottom: rem(24px);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(34px);
+        margin-bottom: rem(16px);
+      }
+    }
+
+    .description {
+      @include inter($size: 20px, $weight: 400, $lh: 160%, $color: v('light-gray'));
+
+      margin-bottom: rem(56px);
+
+      @include media('>desktop') {
+        max-width: rem(690px);
+      }
+      @include media('<=phoneLandscape') {
+        font-size: rem(16px);
+        margin-bottom: rem(32px);
+      }
+    }
+
+    @include media('<=phoneLandscape') {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .animationSection {
+    width: 100%;
+    max-width: rem(320px);
+    margin-right: rem(75px);
+
+    @include media('<=desktop') {
+      align-self: center;
+    }
+
+    @include media('<=phoneLandscape') {
+      margin-right: 0;
+    }
+    svg {
+      width: 100%;
+    }
+  }
+}

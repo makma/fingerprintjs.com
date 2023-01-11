@@ -1,0 +1,106 @@
+.root {
+  background: v('dark');
+  color: v('github-white');
+  padding-top: rem(168px);
+  padding-bottom: rem(96px);
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(64px);
+    padding-bottom: rem(64px);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    @include media('<=phoneLandscape') {
+      align-items: flex-start;
+    }
+
+    .title {
+      @include inter($size: 48px, $weight: 600, $lh: 130%);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(24px);
+      }
+    }
+    .description {
+      @include inter($size: 20px, $weight: 400, $lh: 160%);
+      padding-top: rem(16px);
+      padding-bottom: rem(64px);
+
+      max-width: rem(800px);
+      text-align: center;
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(14px);
+        padding-top: rem(8px);
+        padding-bottom: rem(32px);
+        text-align: left;
+      }
+    }
+  }
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: rem(32px);
+
+  @include media('<=desktop') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media('<=phoneLandscape') {
+    grid-template-columns: 1fr;
+    row-gap: rem(40px);
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .iconWrapper {
+      margin-bottom: rem(24px);
+      padding: rem(12px) rem(16px);
+      background: #202021;
+      border: 1px solid rgba(208, 208, 208, 0.05);
+      border-radius: rem(4px);
+
+      svg {
+        height: rem(48px);
+      }
+
+      @include media('<=phoneLandscape') {
+        padding: rem(9px);
+
+        margin-bottom: rem(16px);
+        svg {
+          height: rem(36px);
+        }
+      }
+    }
+    .cardTitle {
+      @include inter($size: 20px, $weight: 500, $lh: 140%);
+      padding-bottom: rem(8px);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(16px);
+        line-height: 155%;
+      }
+    }
+    .cardDescription {
+      @include inter($size: 16px, $lh: 160%, $weight: 400, $color: #d0d0d0);
+      letter-spacing: 0.01em;
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(14px);
+      }
+    }
+    @include transition((opacity, transform));
+    @include transition-duration(0.7s);
+
+    transform: translateY(15px);
+  }
+}

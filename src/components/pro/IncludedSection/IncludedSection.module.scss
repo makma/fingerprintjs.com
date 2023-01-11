@@ -1,0 +1,103 @@
+.root {
+  padding-top: 0;
+  padding-bottom: rem(184px);
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(64px);
+    padding-bottom: rem(96px);
+    background: #fafafa;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+
+    .title {
+      @include inter($size: 48px, $weight: 600, $lh: 130%);
+      max-width: rem(576px);
+      @include media('<=phoneLandscape') {
+        font-size: rem(24px);
+      }
+    }
+  }
+  .mobileContainer {
+    padding-top: rem(32px);
+    height: 100%;
+    @include media('>phoneLandscape') {
+      display: none;
+    }
+  }
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: rem(32px);
+
+  padding-top: rem(80px);
+  @include media('<=desktop') {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(16px);
+
+    width: 100%;
+  }
+
+  @include media('<=phoneLandscape') {
+    display: none;
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: rem(32px);
+
+  background: linear-gradient(0.98deg, #ffffff 0.95%, #ffffff 99.28%);
+  border: 1px solid #e8e8e8;
+  box-shadow: 0px 2px 4px rgba(208, 208, 208, 0.15);
+  border-radius: rem(8px);
+
+  @include transition((box-shadow, border));
+
+  &:hover {
+    border: 1px solid transparent;
+    box-shadow: 0px 4px 15px rgba(161, 161, 161, 0.15), 0px 0px 1px rgba(232, 232, 232, 0.35);
+  }
+
+  @include media('<=phoneLandscape') {
+    padding: rem(24px) rem(16px);
+    height: 100%;
+  }
+  .cardIcon {
+    width: rem(64px);
+    padding-bottom: rem(16px);
+
+    @include media('<=phoneLandscape') {
+      width: rem(42px);
+    }
+  }
+  .cardTitle {
+    @include inter($size: 20px, $weight: 500, $lh: 140%);
+
+    padding-bottom: rem(8px);
+
+    @include media('<=phoneLandscape') {
+      line-height: 150%;
+      font-weight: 600;
+    }
+  }
+  .cardDescription {
+    @include inter($size: 16px, $lh: 160%, $weight: 400, $color: #434344);
+
+    @include media('<=phoneLandscape') {
+      letter-spacing: 0.01em;
+      font-size: rem(14px);
+    }
+  }
+}
+.slide {
+  height: auto;
+}

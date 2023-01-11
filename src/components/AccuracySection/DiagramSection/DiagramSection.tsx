@@ -14,8 +14,9 @@ enum tabOptions {
 }
 interface DiagramSectionProps {
   className?: string
+  box?: boolean
 }
-export default function DiagramSection({ className }: DiagramSectionProps) {
+export default function DiagramSection({ className, box }: DiagramSectionProps) {
   const [currentTab, setCurrentTab] = useState(tabOptions.BeforePro)
   const [isActive, setIsActive] = useState(false)
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout>()
@@ -52,7 +53,11 @@ export default function DiagramSection({ className }: DiagramSectionProps) {
           >
             {currentTab === tabOptions.BeforePro && (
               <span className={styles.otherServices}>
-                Other services <strong>can only accurately identify 60%</strong> of returning visitors
+                Other services{' '}
+                <strong>
+                  can only <br /> accurately identify 60% <br />
+                </strong>
+                of returning visitors
               </span>
             )}
             {currentTab === tabOptions.AfterPro && (
@@ -75,6 +80,12 @@ export default function DiagramSection({ className }: DiagramSectionProps) {
             <span className={styles.incomingFlow}>Incoming flow of unidentified clients</span>
           </div>
         </div>
+        {box && (
+          <span className={styles.externalBox}>
+            Fingerprint uses an innovative combination of browser fingerprinting, IP/URL analysis, device analysis, and
+            machine learning to accurately identify up to 99.5% of unique visitors.
+          </span>
+        )}
       </Container>
     </Section>
   )
