@@ -68,6 +68,4 @@ With a low accuracy identifier, repeat offenders appear as new visitors over tim
 
 ### Wrap-Up
 
-If you’re interested in watching the entire conversation, you can do so [here](https://try.fingerprint.com/webinar-recording-device-identification-accuracy). As a little bonus, at the end of the webinar, we shared our [brand new public product roadmap](https://portal.productboard.com/fingerprintjs/1-fingerprintjs-product-roadmap/tabs/1-under-consideration) where you can add, vote, and participate in ideas for future features and improvements.
-
-You can also utilize our [open-source FingerprintJS browser fingerprinting library](https://github.com/fingerprintjs/fingerprintjs/) to get an introduction to what we offer.
+If you’re interested in watching the entire conversation, you can do so [here](https://try.fingerprint.com/webinar-recording-device-identification-accuracy). You can also utilize our [open-source FingerprintJS browser fingerprinting library](https://github.com/fingerprintjs/fingerprintjs/) to get an introduction to what we offer.
