@@ -67,17 +67,11 @@ export default function TeamMembersSection({ totalMembers }: TeamMembersSectionP
             <div className={styles.photo14}>
               <StaticImage placeholder='none' src='./photos/Photo14.png' alt='Team Member Photo' />
             </div>
-            <div className={styles.photo15}>
-              <StaticImage placeholder='none' src='./photos/Photo15.png' alt='Team Member Photo' />
-            </div>
             <div className={styles.photo3}>
               <StaticImage placeholder='none' src='./photos/Photo3.png' alt='Team Member Photo' />
             </div>
             <div className={styles.photo16}>
               <StaticImage placeholder='none' src='./photos/Photo16.png' alt='Team Member Photo' />
-            </div>
-            <div className={styles.photo2}>
-              <StaticImage placeholder='none' src='./photos/Photo2.png' alt='Team Member Photo' />
             </div>
             <div className={styles.photo18}>
               <StaticImage placeholder='none' src='./photos/Photo18.png' alt='Team Member Photo' />
