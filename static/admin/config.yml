@@ -489,3 +489,32 @@ collections:
               },
             ],
         }
+  - name: 'faq'
+    label: 'FAQ page'
+    folder: content/faq
+    create: false
+    delete: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'faq-page' }
+      - {
+          label: Faq Blocks,
+          name: faqBlocks,
+          widget: list,
+          fields:
+            [
+              { label: Title, name: title, widget: string },
+              { label: Id, name: id, widget: string },
+              {
+                label: Faq,
+                name: faq,
+                widget: list,
+                fields:
+                  [
+                    { label: Question, name: question, widget: string },
+                    { label: Answer, name: answer, widget: markdown },
+                  ],
+                default: [{ question: '', answer: '' }],
+              },
+            ],
+        }

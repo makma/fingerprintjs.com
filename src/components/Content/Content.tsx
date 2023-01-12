@@ -29,7 +29,7 @@ export function Content({ content, className }: { content: string | React.ReactN
   return <div className={classNames(styles.root, className)}>{content}</div>
 }
 
-export function MarkdownContent({ markdown, className }: { markdown: string; className?: string }) {
+export function MarkdownContent({ markdown, className, useBlogStyles=true }: { markdown: string; className?: string ,useBlogStyles?:boolean}) {
   const [htmlString, setHtmlString] = useState('')
 
   useEffect(() => {
@@ -43,5 +43,5 @@ export function MarkdownContent({ markdown, className }: { markdown: string; cla
     parseMarkdown(markdown)
   }, [markdown])
 
-  return <DangerouslyRenderHtmlContent content={htmlString} className={className} />
+  return <DangerouslyRenderHtmlContent content={htmlString} className={className} useBlogStyles={useBlogStyles} />
 }

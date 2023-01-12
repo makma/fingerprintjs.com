@@ -430,6 +430,16 @@ exports.createSchemaCustomization = ({ actions }) => {
       invertContent: Boolean!
       relatedTitle: String!
       useCaseCode: UseCaseCode
+      faqBlocks: [FaqBlocks!]!
+    }
+    type FaqBlocks{
+      id: String!
+      title: String!
+      faq: [Faq!]!
+    }
+    type Faq{
+      question: String! 
+      answer: String! @md
     }
     type UseCaseCode{
       iframeUrl: String
