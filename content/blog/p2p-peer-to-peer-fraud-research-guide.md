@@ -48,15 +48,13 @@ That's why we have created this guide. We want to provide you with the informati
 ```toc
 exclude: Table of Contents
 from-heading: 1
-to-heading: 3
+to-heading: 4
 ordered: false
 ```
 
 In addition, you'll learn how Fingerprint can help you protect your business from P2P fraud. Our product offers a comprehensive suite of tools to identify and address fraudulent activity. For more information, [get a free demo](https://fingerprint.com/contact-sales/?&utm_source=blog&utm_medium=website&utm_campaign=blog) of our product. 
 
-
-
-## What Are Peer-to-Peer Payments? 
+### What Are Peer-to-Peer Payments? 
 
 Peer-to-peer payments are digital payments that allow users to send and receive money directly from one person to another without needing a bank or other traditional financial institution. The most popular P2P payment apps include Venmo, PayPal, Cash App, Zelle, and Google Pay. 
 
@@ -76,7 +74,7 @@ Cross-border payments add further complexity as international transactions invol
 
 Compliance checks and other regulatory requirements can further prolong the process. Not to mention, low data processing speeds can cause delays. By comparison, P2P payment services can save users time and money. With the help of high-speed networks, P2P payments are usually settled within minutes.
 
-## How Do P2P Payment Services Work?
+### How Do P2P Payment Services Work?
 
 Most P2P payment services don't use their payment infrastructure. Instead, they rely on large, established networks to handle the money transfers. For example, Zelle and Venmo both [use Visa Direct](https://www.forbes.com/sites/tomgroenfeldt/2019/03/15/visa-direct-is-the-engine-behind-zelle-and-venmo/?sh=2979dab28739). Visa Direct allows financial institutions to connect to Visa, access information, and push payments directly to Visa card accounts.
 
@@ -96,13 +94,11 @@ The batch processing system ACH uses can be slow, which is why P2P payment apps 
 
 By leveraging existing payment networks, P2P companies can accelerate time to market and provide more reliable services than if they had built their infrastructure. 
 
-## Popular P2P Payment Companies and Services
+### Popular P2P Payment Companies and Services
 
 The most popular P2P payment services are Venmo, PayPal, Cash App, Zelle, Google Pay, and Apple Pay.
 
- 
-
-### Venmo
+#### Venmo
 
 [Venmo](https://venmo.com/) was founded in 2009 and acquired by PayPal in 2013. While PayPal focuses more on business-to-business payments, Venmo focuses on peer-to-peer transactions. It's available on iOS and Android devices and can transfer money to friends, family, and businesses.
 
@@ -116,7 +112,7 @@ In another example, a consumer sold a mirror for $30, and the buyer '[accidental
 
 Another common fraud type involves analyzing the victim's social media accounts. Scammers can use the information to set up a fake account with a name and profile picture matching one of the victim's friends or family members. They then send a transaction to the victim, asking for help with an emergency. 
 
-### PayPal
+#### PayPal
 
 Established in 1998, [PayPal](https://www.paypal.com/) has [over 400 million users](https://www.statista.com/statistics/218493/paypals-total-active-registered-accounts-from-2010/), making it the most widely used P2P payment service. Similar to Venmo, it's available on iOS and Android devices and can transfer money to friends, family, and businesses. 
 
@@ -134,9 +130,7 @@ While PayPal has measures to protect users from fraud, its security is far from 
 
 The U.K. market represents a [small fraction](https://www.statista.com/statistics/1342071/bnpl-paypal-use-on-websites-in-the-world/) of PayPal's global user base. It's difficult to estimate the total cost of PayPal fraud worldwide, but it's likely in millions of dollars.
 
-
-
-### Cash App
+#### Cash App
 
 Block Inc., formerly Square, launched [Cash App](https://cash.app/) in 2013 to compete with the previous two platforms. It differs from Venmo and PayPal in that it's more of a one-stop-shop fintech app that offers debit cards, investing in fractional shares of stocks and cryptocurrency, and the ability to file taxes at no cost.
 
@@ -150,7 +144,7 @@ Many of these Cash App scams share a common thread of romantic or emotional stor
 
 Any request for a large transaction over Cash App is suspect, as the application doesn't offer meaningful buyer protection for large purchases or investments like Venmo and PayPal do. While an individual user may feel like they're helping out a friend in need, they're more likely to reward an automated bot for the hard work of a sophisticated fraudster.
 
-### Zelle 
+#### Zelle 
 
 [Zelle](https://www.zellepay.com/) was [founded](https://www.zellepay.com/press-releases/early-warning-announces-zelle-network) by Early Warning Services in 2016 to make digital payments more accessible and more secure for individuals. The founding members of the network included the likes of Bank of America, Capital One, Citi Bank, JP Morgan Chase, Morgan Stanley, and Wells Fargo. 
 
@@ -169,7 +163,7 @@ Common Zelle scams include: 
 
 In one case, a Florida woman was [defrauded $2,500](https://www.wftv.com/news/action9/consumers-lose-millions-scammers-using-zelle-highway-steal/DWUVZXJ3YJHXZBAT3LS6NPRSYU/) by a scammer claiming to have a rental available. She was not refunded and turned to the media to tell her story. Calling Zelle "a highway to steal," the publication isn't wrong. Research estimates that Americans will [lose $255 million](https://www.cnet.com/personal-finance/banking/dont-get-fooled-by-zelle-scams-how-they-work-and-how-to-protect-yourself/) this year to Zelle scams.
 
-### Google Pay 
+#### Google Pay 
 
 Google has long attempted to break into the payments space, with its first offering, Google Wallet, launching in 2011. However, in 2017, the company finally succeeded with its current P2P payment service, [Google Pay](https://pay.google.com/), which is part of Google Wallet.
 
@@ -179,7 +173,7 @@ The ubiquitous nature of Google Wallet means it's a popular target of scams. A c
 
 These emails and text messaging are often compelling, containing Google logos and other official-looking details. Upon clicking the link in the email, victims are taken to a malicious application that looks incredibly similar to Google Wallet's legitimate app. Then, any transaction or other information the victim enters into the malicious application is immediately stolen and sent to the fraudsters.
 
-### Apple Pay
+#### Apple Pay
 
 Neither Apple nor Google are payment companies, but their payment platforms have become popular enough to deserve mention.
 
