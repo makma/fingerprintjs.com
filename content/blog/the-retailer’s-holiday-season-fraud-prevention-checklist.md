@@ -26,13 +26,11 @@ heroImage:
   imageTitle: retailer checklist
 customCTA:
   openCtaNewTab: true
-  title: Fingerprint is a highly accurate browser fingerprinting service used to
-    uniquely identify fraudsters on your eCommerce website
-  description: Use our accurate visitor identification to stop fraudulent
-    purchases, reduce coupon and promo abuse, and keep your customers' accounts
-    safe.
-  ctaText: Learn More
-  ctaUrl: https://fingerprint.com/ecommerce/?utm_medium=blog
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 With the busy holiday season just weeks away, retailers are prepping for one of the spendiest and longest shopping seasons. In addition to ensuring enough inventory to meet demand and successful campaigns to acquire new customers, retailers must also protect themselves from fraudulent activity that can occur anywhere from login to delivery. We compiled a list of eight things to know about potential threats to help retailers best tackle fraud prevention. 
 
