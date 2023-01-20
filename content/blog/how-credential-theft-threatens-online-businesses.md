@@ -30,10 +30,11 @@ heroImage:
   imageTitle: Credential Theft Image
 customCTA:
   openCtaNewTab: true
-  title: Sign Up for our Newsletter
-  ctaUrl: https://try.fingerprint.com/newsletter-signup
-  description: Stay up to date on our product releases, blogs, webinars, and free resources!
-  ctaText: Sign Up
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 When you decide to put your personal or financial information online, many risks are involved. Fraudsters are constantly looking for vulnerabilities within sites that store private information. Once they have your information, they make money by purchasing goods with your financial data or selling your credentials on the dark web. These online attacks are not only financial threats to consumers but also to online businesses. Businesses can experience loss by customers disputing unknown charges to their accounts and public distrust from a significant data breach. Public distrust could lead consumers to avoid your platform for buying products and lead investors to pull their investment in your company.
 

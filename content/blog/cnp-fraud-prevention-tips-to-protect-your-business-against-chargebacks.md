@@ -26,6 +26,13 @@ heroImage:
   image: /img/uploads/cnp-fraud-prevention_.png
   imageAlt: CNP fraud prevention
   imageTitle: CNP fraud prevention
+customCTA:
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 The continuing rise of online shopping brings a whole new level of convenience to people’s lives, but it has a down side. Credit card fraud is a multi-billion dollar problem, and can be incredibly hard for online businesses to detect in real time.
 

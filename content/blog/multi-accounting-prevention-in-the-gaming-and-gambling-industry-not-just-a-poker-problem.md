@@ -23,6 +23,13 @@ tags:
   - gaming fraud
 authors:
   - Savannah Copland
+customCTA:
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Multi-accounting has historically been a huge problem for online gambling services and in particular poker websites. A quick Google search turns up both articles discouraging the practice, as well as forum posts asking for tips on how to successfully multi-account without getting caught. While poker websites have improved at catching multi-accounting users in recent years, the practice still regularly occurs at the highest levels of play. 
 

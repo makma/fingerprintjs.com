@@ -23,12 +23,12 @@ heroImage:
   imageAlt: SOC 2 Type I Compliance
   imageTitle: SOC 2 Type I Compliance
 customCTA:
-  openCtaNewTab: false
-  title: Thinking about working with us?
-  description: Contact our sales team and let them know you're interested in
-    seeing our SOC 2 report.
-  ctaText: Contact Sales
-  ctaUrl: https://fingerprint.com/contact-sales/
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 > November 2022 Update: We're now SOC Type II certified. You can read more [here](/blog/soc-2-type-2/). 
 

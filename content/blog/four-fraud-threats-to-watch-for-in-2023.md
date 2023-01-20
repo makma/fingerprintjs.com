@@ -27,7 +27,12 @@ heroImage:
   imageAlt: 2023 fraud trends and threats
   imageTitle: 2023 fraud trends and threats
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 As we say goodbye to 2022 and look toward the future, we must be aware of the fraud trends shaping the next few years. This past year, we saw the rise of phishing attempts, [NFT fraud](https://fingerprint.com/blog/nft-non-fungible-token-scams/), and large-scale [social engineering attacks](https://fingerprint.com/blog/why-social-engineering-attacks-are-successful-with-technical-staff/), to name a few. For example, [over 255 million phishing attacks](https://www.securitymagazine.com/articles/98536-over-255m-phishing-attacks-in-2022-so-far#:~:text=SlashNext%20analyzed%20billions%20of%20link,phishing%20attacks%20compared%20to%202021.) during the first half of this year alone. 
 

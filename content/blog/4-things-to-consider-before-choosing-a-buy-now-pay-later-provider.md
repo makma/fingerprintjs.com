@@ -25,7 +25,12 @@ heroImage:
   imageAlt: Illustrated shopping bag with arrows on a dark blue background
   imageTitle: eCommerce decision making
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Flexible payment options are booming. More and more customers are taking advantage of buy now, pay later options at the digital checkout, with the industry currently worth **[more than $100 billion](https://fintechmagazine.com/financial-services-finserv/why-buy-now-pay-later-bnpl-growing-popularity).** There are plenty of good reasons for online retailers to implement. So how should retailers consider and choose a buy now, pay later solution within an increasingly growing and competitive market? This post explains retailer benefits and the critical considerations retailers should take before selecting a BNPL provider. 
 

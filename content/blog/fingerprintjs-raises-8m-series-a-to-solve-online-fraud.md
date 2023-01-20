@@ -22,6 +22,13 @@ heroImage:
   imageTitle: Fingerprint cover
 isPublished: true
 isHidden: false
+customCTA:
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Only 4 months ago we announced our $4M seed raise. Since then we have been busy investing in our [open source](https://github.com/fingerprintjs/fingerprintjs) community (with 10M+ downloads and 12.7K Github stars) as well as continuing development of Fingerprint Pro, our 99.5% accurate user identification API.
 

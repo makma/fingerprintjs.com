@@ -29,10 +29,11 @@ heroImage:
   imageTitle: Fraud in the News Image
 customCTA:
   openCtaNewTab: true
-  title: Sign Up for our Newsletter
-  description: Stay up to date on our product releases, blogs, webinars, and free resources!
-  ctaText: Sign Up
-  ctaUrl: https://try.fingerprint.com/newsletter-signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 More and more organizations suffer from large data breaches each year, resulting in brand-damaging news coverage. Although the news coverage is short-lived, the effects for organizations and consumers are long-lasting. Dealing with legal issues and investigations is expensive and time-consuming for organizations, and consumers have faced challenges with identity theft for years. Here are a few notable data breaches and fraud incidents for 2022.
 

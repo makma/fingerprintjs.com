@@ -24,10 +24,10 @@ heroImage:
 customCTA:
   openCtaNewTab: true
   title: Sign Up for Fingerprint
-  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
-  ctaText: Create Free Account
   description: Start identifying anonymous site visitors with 99.5% accuracy to
     prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Website owners can provide users with an optimized, custom-tailored user experience by remembering their unique preferences and configurations. This traditionally involves using cookies and/or requiring users to log in to retrieve saved preferences, but Fingerprint offers a more effective solution that’s 99.5 percent accurate — no user actions required.
 

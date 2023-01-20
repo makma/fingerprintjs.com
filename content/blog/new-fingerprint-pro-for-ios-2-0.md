@@ -25,7 +25,12 @@ heroImage:
   imageAlt: mobile phone illustration
   imageTitle: mobile phone illustration
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 One of the key elements of Fingerprint’s device identification power is its ability to accurately identify unique visitors on both web and mobile devices. With mobile web traffic accounting for approximately half of all web traffic worldwide, it’s imperative developers can easily integrate device identification into native mobile apps. 
 

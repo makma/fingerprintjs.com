@@ -28,7 +28,12 @@ heroImage:
   imageAlt: user identification
   imageTitle: user identification
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 In this article, we will discuss why the existence of privacy-focused browsers doesn’t necessarily affect the effectiveness of fingerprint-based browser identification to prevent online fraud. 
 

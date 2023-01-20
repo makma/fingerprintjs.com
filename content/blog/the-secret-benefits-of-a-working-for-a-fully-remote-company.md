@@ -27,7 +27,12 @@ heroImage:
   imageAlt: remote work map
   imageTitle: remote work map
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 In 2022, it’s estimated that [16% of companies](https://findstack.com/resources/remote-work-statistics/) globally are remote. Fingerprint is part of that 16%, proudly employing over 100 team members from across the globe, with team members signing on from over 20 countries. While working remotely is often [comically characterized](https://thinkremote.com/work-from-home-jokes/) by working pajamas, midday naps, and taking meetings from airports, it has many other life-changing benefits that hold much more value than working in slippers and sweatpants. 
 

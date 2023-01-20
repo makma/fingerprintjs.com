@@ -27,7 +27,12 @@ heroImage:
   imageAlt: application illustration
   imageTitle: application illustration
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 The balance between consumer convenience and security is a delicate process, especially in a competitive, high-value market. For example, when banks and credit card companies provide online loan applications, they make it convenient for potential customers to get a loan. Still, they also make it convenient for identity thieves and hackers. 
 

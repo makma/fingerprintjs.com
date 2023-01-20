@@ -24,12 +24,12 @@ heroImage:
   image: /img/uploads/tls-fingerprinting_.png
   imageAlt: illustration of a padlock on an orange background
 customCTA:
-  openCtaNewTab: false
-  title: Stop fraud, spam, and account takeover with 99.5% accurate device
-    fingerprinting-as-a-service.
-  description: "Get unlimited API calls for free 10 days, no credit card required. "
-  ctaUrl: https://dashboard.fingerprint.com/signup
-  ctaText: Get Started
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 At its most basic level, Transport Layer Security (TLS) is an algorithm that encrypts all your internet traffic and helps you stay secure online. To be more precise, it is a protocol used to encrypt web-based communications between a client and a server using suites of cryptographic algorithms. Before TLS can be used in communication, the client and server go through a process known as the *TLS handshake*. 
 

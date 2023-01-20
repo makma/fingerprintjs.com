@@ -25,7 +25,12 @@ heroImage:
   imageAlt: Cybersecurity Trends 2022
   imageTitle: Cybersecurity Trends 2022
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Businesses and individuals face a new challenge — the rising urgency of cybersecurity as reports of cyberattacks continue to increase and target those who are vulnerable.  
 

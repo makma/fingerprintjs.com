@@ -26,7 +26,12 @@ heroImage:
   imageAlt: bot detection webinar
   imageTitle: bot detection webinar
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Over 50% of all web traffic is automated and, while not all automated traffic is bad, malicious bots are costly, can emulate human behavior, and can go easily undetected by firewalls and server-side tools.  
 

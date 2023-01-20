@@ -28,7 +28,12 @@ heroImage:
   imageAlt: Gaming Controllers and Poker Cards
   imageTitle: Gaming Controllers and Poker Cards
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Many gaming and gambling websites attract new customers and retain their current user base by promoting cash offers. A few ways to do this are using promotional codes, affiliate marketing, and reload incentives to add a balance to a customer account or provide them with bonus money to attract new customers to their platform. Promotional cash-back incentives are a valuable marketing tool. Still, it’s also an excellent way for malicious users to steal money or get products for free by fraudulently signing up with multiple accounts. 
 

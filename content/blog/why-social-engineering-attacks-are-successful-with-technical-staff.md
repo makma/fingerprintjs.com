@@ -24,8 +24,12 @@ heroImage:
   image: /img/uploads/the-basics-of-social-engineering-examples-and-prevention.jpg
   imageTitle: Why Social Engineering Attacks Are Successful with Technical Staff
 customCTA:
-  openCtaNewTab: false
-  title: ""
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Many organizations focus on data protection from outside attacks but fail to realize that many threats happen from within. Insider threats can be malicious or innocent mistakes; however, social engineering is a common factor among both types. You'd expect untrained employees unfamiliar with cyber-attacks to fall victim to social engineering. 
 

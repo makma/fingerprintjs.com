@@ -24,6 +24,13 @@ heroImage:
   image: /img/uploads/how-to-cut-your-twilio-sms-cost-1-.png
   imageAlt: Twilio 2FA
   imageTitle: Twilio 2FA
+customCTA:
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Single-factor authentication—typically, username and password—is the most common way to authenticate users online. But, the proliferation of data breaches has led many more companies to rethink this standard. Without a second form of authentication, anyone with your username and password can access your account, leaving you vulnerable to brute force attacks and data leaks.
 

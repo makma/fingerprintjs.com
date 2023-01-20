@@ -25,11 +25,11 @@ heroImage:
   imageTitle: money 20/20 las vegas postcard promo
 customCTA:
   openCtaNewTab: true
-  title: Book a meeting with us!
-  ctaText: Save Your Spot
-  description: Book a meeting with us at Money 20/20 in Las Vegas to speak with
-    one of our experts on-site.
-  ctaUrl: https://try.fingerprint.com/en-us/book-a-meeting-for-money-2020-2022-las-vegas
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Meet Fingerprint at Booth #3504 at Money 20/20 in Las Vegas to hear how Fingerprint can increase approval rates and prevent financial fraud with high-accuracy device identification.
 

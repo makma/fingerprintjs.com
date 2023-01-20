@@ -26,10 +26,11 @@ heroImage:
   imageTitle: BotD Image
 customCTA:
   openCtaNewTab: true
-  title: Join the waitlist for BotD
-  description: "Be one of the first to get access to our newest product BotD. "
-  ctaText: Sign Up Now
-  ctaUrl: https://try.fingerprint.com/post-webinar-botd-interest-form
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Last week, we hosted a webinar highlighting our new product BotD. Hosted by our Co-Founder/CTO Valentin Vasilyev and Head of Product Jack Spirou, both sat down to discuss the landscape surrounding sophisticated bots, their negative impacts, and what Fingerprint is doing to remedy the problem. Let’s walk through some of the biggest takeaways from the webinar and how you can get started using BotD. 
 

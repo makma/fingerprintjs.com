@@ -26,11 +26,12 @@ heroImage:
   imageAlt: Screenshot of Fingerprint visitorID data
   imageTitle: Screenshot of Fingerprint visitorID data
 customCTA:
-  title: Stop fraud, spam, and account takeover with 99.5% accurate device
-    fingerprinting-as-a-service.
-  description: "Get unlimited API calls for free 10 days, no credit card required. "
-  ctaText: Get Started
-  ctaUrl: https://dashboard.fingerprint.com/signup
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 <b>**Many techniques are used when generating a highly accurate browser fingerprint, which gathers information about the user to distinguish them from millions of others online. This article reviews some of the most common methods used in a browser fingerprinting script.**</b>
 

@@ -26,7 +26,12 @@ heroImage:
   imageAlt: robots of the internet illustration
   imageTitle: robots of the internet illustration
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 In 2020, over one-third of all Internet users were bots, according to a [study by Imperva](https://www.imperva.com/resources/reports/Imperva_BadBot_Report_V2.0.pdf).
 

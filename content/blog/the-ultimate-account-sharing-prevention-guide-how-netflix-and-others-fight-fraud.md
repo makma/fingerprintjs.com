@@ -28,7 +28,12 @@ heroImage:
   imageAlt: account sharing log in screen
   imageTitle: account sharing log in screen
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Everyone knows someone who gives their friend the password to their HBOMax account. Who gives it to their other friend, who passes it along to their cousin. And so on. That password ends up accidentally somewhere online, and the original user loses complete access to their account and personal information, including payment details, exposed to a bad actor online. A [study](https://www.cnbc.com/2018/10/04/3-out-of-4-americans-share-netflix-amazon-and-uber-accounts.html) by Country Financial found that 74 percent of Americans share passwords for at least one online account, such as Hulu, Uber, Spotify, and Amazon Prime. With each hand-off, the likelihood of login credentials falling into the wrong hands increases drastically.
 

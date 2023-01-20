@@ -24,7 +24,12 @@ heroImage:
   imageAlt: Bank account takeover
   imageTitle: Bank account takeover
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Account takeover occurs anytime someone gains access to a victim’s online account and uses it without the owner’s knowledge. Also known as an ATO, or ATO attack, it’s a common type of online fraud that is often used to steal either money or personal data, and it’s becoming more and more frequent. 
 

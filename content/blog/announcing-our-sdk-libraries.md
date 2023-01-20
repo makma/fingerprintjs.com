@@ -24,7 +24,12 @@ heroImage:
   imageAlt: SDK Libraries Hexagon Image
   imageTitle: SDK Libraries Hexagon Image
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Fingerprint is constantly adding more SDKs and developer libraries to ensure embedding our code is a seamless experience regardless of your tech stack. 
 

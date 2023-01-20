@@ -27,6 +27,13 @@ heroImage:
   image: /img/uploads/paywall-banner.png
   imageAlt: Paywall notification
   imageTitle: Paywall notification
+customCTA:
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Paywalls are becoming commonplace as online publications transition from monetization through digital advertising to charging consumers directly for high-quality premium content. And right on their heels are numerous innovations in circumventing them. For developers tasked with restricting site access to subscribers, keeping up with current paywall architecture and the latest tricks for getting around them is essential. Know what you’re guarding against before building your paywall.
 

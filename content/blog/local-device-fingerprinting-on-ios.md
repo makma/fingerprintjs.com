@@ -26,9 +26,12 @@ heroImage:
   image: /img/uploads/local-device-fingerprinting-on-ios.png
   imageAlt: illustration of a phone on an orange background
 customCTA:
-  openCtaNewTab: false
-  description: ""
-  title: ""
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 The iOS ecosystem is often regarded as the safer platform among its competitors. Though iOS devices are less likely to be used to perform fraudulent actions, there are still malicious actors from which businesses need to protect themselves.
 

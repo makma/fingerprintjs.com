@@ -27,7 +27,12 @@ heroImage:
   imageAlt: cost savings in software development
   imageTitle: cost savings in software development
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 As we enter the year’s final weeks, tensions within the tech industry are exceptionally high. With news of layoffs amongst the largest technology companies, other companies may be looking for ways to build efficiencies into their everyday processes to save their teams time and protect their bottom lines. There’s generally a greater focus on core products and product expansions while putting less emphasis on infrastructure.
 

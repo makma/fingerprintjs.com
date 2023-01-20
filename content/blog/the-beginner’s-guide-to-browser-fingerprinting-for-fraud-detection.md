@@ -27,11 +27,12 @@ heroImage:
   imageAlt: Fingerprint icon on map background
   imageTitle: Fingerprint icon on map background
 customCTA:
-  title: Comparing OSS vs. Pro?
-  description: Download our PDF guide with a full comparison.
-  ctaText: Get the PDF
-  ctaUrl: https://try.fingerprint.com/en-us/oss-vs-pro-comparison-pdf
   openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 **Fraud looms on the minds of development teams for any website, but fraud prevention doesn't have to be all-consuming or expensive.** With a highly accurate identifier, it becomes much easier for developers to triage suspicious traffic and restrict access to users attempting to hack into accounts, make fraudulent purchases or spam your website. The key to identifying those most likely to commit fraud is either by past activity or by associating specific use patterns with a higher likelihood of fraudulence.
 

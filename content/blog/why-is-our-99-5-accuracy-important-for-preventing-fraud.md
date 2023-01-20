@@ -26,7 +26,12 @@ heroImage:
   imageAlt: device fingerprinting accuracy
   imageTitle: device fingerprinting accuracy
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Device identification is an essential weapon in the fight against fraud. The majority of fraud is committed by a small percentage of users, often visiting a targeted website multiple times in order to commit fraud using different login credentials, credit cards and names. By accurately identifying devices even when the user is attempting to conceal their identity, you can better spot patterns of fraud and block fraudsters from taking advantage of your business.  
 

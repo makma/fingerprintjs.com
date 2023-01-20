@@ -27,7 +27,12 @@ heroImage:
   imageAlt: Synthetic ID Image
   imageTitle: Synthetic ID Image
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 In the past few years, synthetic identity fraud has skyrocketed. The [IRS recently posted a warning to taxpayers](https://www.irs.gov/newsroom/irs-warning-scammers-work-year-round-stay-vigilant) telling them that the IRS has seen a surge in unemployment and government benefits fraud, making it more important than ever for businesses to protect their customer data. What makes synthetic identity fraud difficult is that consumers are often unaware of their stolen data until they file for a mortgage or other loans and receive a rejection letter for previous defaults on loans opened with their stolen identities. 
 

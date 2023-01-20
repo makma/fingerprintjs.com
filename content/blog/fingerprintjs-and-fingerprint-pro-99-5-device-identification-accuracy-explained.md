@@ -29,12 +29,12 @@ heroImage:
   imageAlt: device fingerprinting accuracy
   imageTitle: device fingerprinting accuracy
 customCTA:
-  openCtaNewTab: false
-  title: Stop fraud, spam, and account takeover with 99.5% accurate device
-    fingerprinting-as-a-service.
-  description: "Get unlimited API calls for free 10 days, no credit card required. "
-  ctaText: Get Started
-  ctaUrl: https://dashboard.fingerprint.com/signup
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Last month, we hosted a webinar on the importance and critical nature of device fingerprinting accuracy, Why Accuracy is Everything in Device Identification. Hosted by our co-founder/CTO Valentin Vasilyev and our Head of Product Jack Spirou, they sat down to have a candid conversation about device fingerprinting accuracy, how Fingerprint Pro can boast a 99.5% accuracy rate on returning devices, and what it differs from our FingerprintJS open-source browser fingerprinting library. 
 

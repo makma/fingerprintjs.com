@@ -28,7 +28,12 @@ heroImage:
   imageTitle: Pishing emails
   image: /img/uploads/how-to-outsmart-fraudsters-recognise-phishing-emails-1-.png
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Phishing emails have become increasingly common and difficult to detect in recent years; in fact, they were the [most common online fraud type](https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf) in 2020, with nearly a quarter of a million phishing emails sent out to unwitting victims.
 

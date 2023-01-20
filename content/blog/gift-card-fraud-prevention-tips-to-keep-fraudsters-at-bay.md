@@ -25,6 +25,13 @@ heroImage:
   image: /img/uploads/gift-card-fraud-prevention_.png
   imageAlt: Gift card fraud prevention
   imageTitle: Gift card fraud prevention
+customCTA:
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Gift cards are an easy, flexible option for gift-givers all over the world, but what makes them so useful also makes them easily exploited by scammers. 
 

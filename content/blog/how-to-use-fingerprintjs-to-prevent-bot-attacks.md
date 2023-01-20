@@ -26,7 +26,12 @@ heroImage:
   imageAlt: Prevent bot attacks
   imageTitle: Prevent bot attacks
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 The purpose of this tutorial is to demonstrate how easy it is to detect and mitigate bad bot account signups with Fingerprint Pro. Users will first create a sample registration website with basic security controls to prevent multiple signups, then simulate a bot attack to defeat those controls using open source tools. Lastly, they will integrate Fingerprint Pro into the website’s security workflow to detect/stop advanced bots, even when other security methods have failed.
 

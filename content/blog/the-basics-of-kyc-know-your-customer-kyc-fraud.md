@@ -27,12 +27,11 @@ heroImage:
   imageTitle: Know Your Customer KYC Fraud
 customCTA:
   openCtaNewTab: true
-  ctaUrl: https://fingerprint.com/account-takeover/
-  description: Keep your customers' accounts safe by accurately identifying
-    threats before they cause damage with Fingerprint Pro's 99.5% accurate
-    visitor identification.
-  title: Account Takeover Protection for Financial Institutions
-  ctaText: Learn more
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 While being untraceable may seem ideal, anonymity online can create a liability for businesses and consumers in everyday online transactions. As a result, financial institutions inadvertently [facilitate undetected fraud](https://www.proquest.com/openview/dee609c3455a845edb44cb3df5433de3/1?pq-origsite=gscholar&cbl=41798) without proper processes and requirements and enable money laundering and other criminal activities. As a result, governments worldwide have instituted regulations called KYC or Know Your Customer, to protect consumers and businesses from the risks of fraud and other criminal activities.
 

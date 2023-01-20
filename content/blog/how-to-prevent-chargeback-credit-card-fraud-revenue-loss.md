@@ -26,7 +26,12 @@ heroImage:
   imageAlt: line illustration of credit card and currency on an orange background
   imageTitle: Credit Card Chargebacks
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 [Did you know that someone who successfully completes a chargeback with a business is nine times more likely to do it again?](https://www.getbankcard.com/blog/chargeback-stats-merchants-must-know/) 
 

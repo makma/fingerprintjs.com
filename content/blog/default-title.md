@@ -24,7 +24,12 @@ heroImage:
   imageAlt: Online gambling fraud prevention
   imageTitle: Online gambling fraud prevention
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Online gambling was [more popular than ever](https://www.acuant.com/blog/online-gambling-being-gamed-by-fraudsters/) in 2020. Pandemic lockdowns drove people towards at-home activities, and gambling sites were one of many beneficiaries.
 

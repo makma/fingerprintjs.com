@@ -27,10 +27,11 @@ heroImage:
   imageTitle: Work from home desk image
 customCTA:
   openCtaNewTab: true
-  title: Sign Up for our Newsletter
-  description: Stay up to date on our product releases, blogs, webinars, and free resources!
-  ctaText: Sign Up
-  ctaUrl: https://try.fingerprint.com/newsletter-signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Look around your desk; what do you see on your desk, table, or side table? With a fully remote team worldwide, I don’t get to see what’s on my coworkers’ desks while on my way to a meeting or the kitchen in a traditional office. It’s one way to spark a conversation while in-office with someone you may not commonly work with. However, when remote, you may never get a glimpse of someone’s desk, even with a video call. 
 

@@ -28,12 +28,12 @@ heroImage:
   imageAlt: Credential stuffing prevention
   imageTitle: Credential stuffing prevention
 customCTA:
+  openCtaNewTab: true
   title: Sign Up for Fingerprint
   description: Start identifying anonymous site visitors with 99.5% accuracy to
     prevent online fraud
   ctaText: Create Free Account
   ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
-  openCtaNewTab: true
 ---
 Credential stuffing prevention is one of the most effective cybersecurity defenses a website or organization can implement today. Securing and protecting your users' data with account takeover prevention methods can go a long way toward stopping costly and embarrassing breaches.
 

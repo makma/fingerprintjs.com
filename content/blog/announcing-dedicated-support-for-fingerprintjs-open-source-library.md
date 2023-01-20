@@ -22,7 +22,12 @@ heroImage:
   imageAlt: Fingerprint launches open source support
   imageTitle: Fingerprint launches open source support
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Last year was an incredible milestone-filled year for Fingerprint. We announced [our Series B funding](https://fingerprint.com/blog/series-b/), our SOC2 compliance, and saw a 750% increase in signups with the launch of a “free forever” tier of Fingerprint Pro. As we grow, we want to be accessible to developers at companies of all sizes looking for a device identification solution. We’re excited to announce that we are expanding our support offerings to now include dedicated support for our open source Fingerprint library. 
 

@@ -22,6 +22,13 @@ heroImage:
   image: /img/uploads/fingerprintjs.png
   imageAlt: State of Identity Podcast - Fingerprint
   imageTitle: State of Identity Podcast - Fingerprint
+customCTA:
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 We are excited to announce our featured episode on OWI's State of Identity podcast.
 

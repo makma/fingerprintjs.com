@@ -25,7 +25,12 @@ heroImage:
   imageAlt: webinar invite payment fraud
   imageTitle: webinar invite payment fraud
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Payment fraud is a global threat for businesses that conduct transactions entirely or partially online. Fraudulent payments can take many forms, such as card cracking, credit card fraud, friendly fraud, and mobile payment fraud. We’ve written about several types of payment fraud previously, but we’re sitting down to walk through them in our upcoming webinar on September 28th: **[The State of Payment Fraud & How To Prevent It.](https://try.fingerprint.com/webinar-state-of-payment-fraud)**
 

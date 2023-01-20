@@ -27,11 +27,12 @@ heroImage:
   imageAlt: Bot detection radar
   imageTitle: Bot detection radar
 customCTA:
-  title: " Stop fraud, spam, and account takeover with 99.5% accurate device
-    fingerprinting-as-a-service."
-  description: "Get unlimited API calls for free 10 days, no credit card required. "
-  ctaText: Get Started
-  ctaUrl: https://dashboard.fingerprint.com/signup
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 In 2020, **[more than one-third](https://ppcprotect.com/how-many-of-the-internets-users-are-robots/) of internet traffic was bot traffic**. Some of these bots serve a practical purpose as search engine crawlers, uptime monitors, and podcast feed fetchers. Others attempt to impersonate real users, steal data, or fill your website's comments with spam.
 

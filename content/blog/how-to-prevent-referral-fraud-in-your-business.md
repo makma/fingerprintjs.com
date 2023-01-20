@@ -26,7 +26,12 @@ heroImage:
   imageAlt: referral fraud image
   imageTitle: referral fraud image
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Referrals are insanely powerful. Studies show [that 92% of consumers trust referrals](https://financesonline.com/referral-marketing-statistics/) or recommendations from people they know personally, making referral marketing one of the most influential types of advertising. And what's more, [approximately 50% of customers will refer their friends or family](https://financesonline.com/referral-marketing-statistics/) members if there is a direct referral incentive. 
 

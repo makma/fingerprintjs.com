@@ -25,7 +25,12 @@ heroImage:
   imageAlt: cloudflare integration wizard
   imageTitle: cloudflare integration wizard
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 We recently released an integration with Cloudflare and have an exciting new update that makes it incredibly easy to set up and implement the integration. But before we go into detail about our new Cloudflare Integration Wizard, we want to highlight what’s possible with Fingerprint’s Cloudflare integration. 
 

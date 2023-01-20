@@ -21,6 +21,13 @@ tags:
   - gaming fraud
 authors:
   - Savannah Copland
+customCTA:
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Imagine your online business is suddenly getting tons of new small purchases. As soon as you check each activity, you notice many of these purchases are being declined by the payment processor, and disputes for unauthorized purchases start rolling in. Investigating further, you realize it’s all a sham.
 

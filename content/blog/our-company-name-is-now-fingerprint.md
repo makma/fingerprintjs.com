@@ -23,7 +23,12 @@ heroImage:
   imageAlt: We are now Fingerprint
   imageTitle: We are now Fingerprint
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 <i>Note: We have changed our company name, but we have not made any changes to our product names or Github libraries. Our very popular Github project is still called <a href="https://github.com/fingerprintjs/fingerprintjs" target= "_blank" rel="noopener noreferrer">FingerprintJS</a>.</i>
 

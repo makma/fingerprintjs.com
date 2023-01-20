@@ -25,13 +25,11 @@ heroImage:
     phishing email
 customCTA:
   openCtaNewTab: true
-  ctaUrl: https://fingerprint.com/account-takeover/
-  description: "Keep your customers' accounts safe by accurately identifying
-    threats before they cause damage with Fingerprint Pro's 99.5% accurate
-    visitor identification. "
-  title: Fingerprint helps to prevent account takeover identity theft, including
-    phishing
-  ctaText: Learn more
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Over the past five years, phishing has been the [number one strategy used by online fraudsters](https://cofense.com/knowledge-center/signs-of-a-phishing-email/). Email phishing is exceedingly common, and while they have low success rates, those who fall victim can lose significant amounts of money and valuable data. 
 

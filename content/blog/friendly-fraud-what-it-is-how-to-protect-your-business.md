@@ -27,7 +27,12 @@ heroImage:
   imageAlt: credit card chargeback
   imageTitle: credit card chargeback
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Friendly fraud may not sound all that threatening, but it accounts for 70% of all credit card fraud and costs the eCommerce industry billions annually.
 

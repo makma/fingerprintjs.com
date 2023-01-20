@@ -24,8 +24,12 @@ heroImage:
   imageAlt: Coronavirus items and a shield for anti-fraud
   imageTitle: Coronavirus items and a shield for anti-fraud
 customCTA:
-  openCtaNewTab: false
-  title: ""
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 The ongoing pandemic has changed the world forever. As a result, how people think and behave is different in many ways, not just about their health. 
 

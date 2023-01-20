@@ -28,12 +28,11 @@ heroImage:
   imageTitle: pixel art of nft scams
 customCTA:
   openCtaNewTab: true
-  title: "Want to solve cryptocurrency fraud and protect your users' anonymity? "
-  description: With Fingerprint Pro's 99.5% accuracy, it's easy to identify
-    fraudsters aiming to steal account credentials and transfer coins into their
-    own wallets.
-  ctaText: Learn More
-  ctaUrl: https://fingerprint.com/cryptocurrency/
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 NFTs (non-fungible tokens) seem to be everywhere these days. Even Gamestop [entered the NFT marketplace](https://nft.gamestop.com/), allowing gamers to buy and sell these digital tokens. Some even get a [celebrity endorsement](https://www.cnn.com/2022/05/19/entertainment/celebrity-nft-fans-endorsement-cryptoverse-cec/index.html), like Brie Larson. So let's first discuss the basics of NFTs. 
 

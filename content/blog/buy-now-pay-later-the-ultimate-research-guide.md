@@ -27,11 +27,11 @@ heroImage:
   imageTitle: BNPLs in 2022
 customCTA:
   openCtaNewTab: true
-  title: "Free PDF: Preventing BNPL fraud with Fingerprint"
-  description: Solve costly fraud in Buy Now, Pay Later transactions with device
-    identification. Learn more in our new guide.
-  ctaText: Download Now
-  ctaUrl: https://try.fingerprint.com/en-us/free-pdf-preventing-buy-now-pay-later-fraud-with-fingerprintjs
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 > **July 2022 Update:** Since launching this guide earlier this year, Apple announced its buy now, pay later service called [Apple Pay Later](https://developer.apple.com/apple-pay/whats-new/). 
 >

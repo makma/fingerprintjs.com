@@ -22,10 +22,11 @@ heroImage:
   image: /img/uploads/blog.png
 customCTA:
   openCtaNewTab: true
-  title: ""
-  ctaUrl: ""
-  ctaText: ""
-  description: ""
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Whether you are catching fraudsters or personalizing web experiences, the accuracy of your device identifier may be holding your solution back. Accuracy matters in everyday life - baking a cake, solving math equations, and piloting an airplane all require precise accuracy to be successful. If accuracy is so crucial, you need to ensure you’re as accurate as possible when personalizing online experiences for your website visitors or detecting fraudulent online activity.   
 

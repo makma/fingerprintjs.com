@@ -26,8 +26,12 @@ heroImage:
   imageAlt: subscription sharing illustration
   imageTitle: subscription sharing illustration
 customCTA:
-  openCtaNewTab: false
-  title: ""
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Device identification and fraud detection can mean different things to those across industries. For example, those in eCommerce may focus on reducing payment fraud, and those in subscription-based software might focus more on preventing account sharing. 
 

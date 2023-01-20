@@ -32,10 +32,11 @@ heroImage:
   imageTitle: Romance Scams Image
 customCTA:
   openCtaNewTab: true
-  title: Sign Up for our Newsletter
-  description: Stay up to date on our product releases, blogs, webinars, and free resources!
-  ctaText: Sign Up
-  ctaUrl: https://try.fingerprint.com/newsletter-signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Love is patient, and love is kind… But not always on the internet.
 

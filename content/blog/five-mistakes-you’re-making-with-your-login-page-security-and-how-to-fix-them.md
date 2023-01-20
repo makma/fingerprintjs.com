@@ -26,7 +26,12 @@ heroImage:
   imageAlt: login screen illustration
   imageTitle: login screen illustration
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Your login page is a perfect target for hackers because it serves as the primary defense between the internet and sensitive data. Most web applications allow users to log into accounts and view sensitive information. As a result, your login page is the gateway defense between the user’s personally identifiable information (PII) and the open internet. If your login page isn’t secure, you’re likely making these five mistakes.
 

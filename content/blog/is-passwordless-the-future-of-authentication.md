@@ -25,7 +25,12 @@ heroImage:
   imageAlt: Passwordless Authentication Image
   imageTitle: Passwordless Authentication Image
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Passwordless login is touted as the future of authentication. Advocates point to greater security and an improved user experience as reasons why you should adopt it today.
 

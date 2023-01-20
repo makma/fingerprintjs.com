@@ -28,7 +28,12 @@ heroImage:
   imageAlt: 6 Types of Ecommerce Fraud
   imageTitle: Ecommerce Fraud
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 [Ecommerce fraud](/ecommerce/) isn’t just some low-level scammer using a stolen credit card anymore. With online sales on the rise, cyber criminals are incentivized to develop increasingly novel ways to steal from consumers and businesses alike.
 

@@ -28,10 +28,11 @@ heroImage:
   imageTitle: Super App Image
 customCTA:
   openCtaNewTab: true
-  title: Sign Up for our Newsletter
-  description: Stay up to date on our product releases, blogs, webinars, and free resources!
-  ctaText: Sign Up
-  ctaUrl: https://try.fingerprint.com/newsletter-signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Users have numerous search engines to find anything they need. Instead of having separate applications competing for attention, businesses have turned to super apps where customers can get countless services under one corporate umbrella. This strategy keeps customers on your application and gives them multiple reasons to return. A bonus is that users will think of the super app for future services, recommend it to others, and attribute the super app for various services
 

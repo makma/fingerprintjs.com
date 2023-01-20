@@ -25,11 +25,11 @@ heroImage:
   imageTitle: Fingerprint Series B
 customCTA:
   openCtaNewTab: true
-  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
-  ctaText: Create Free Account
+  title: Sign Up for Fingerprint
   description: Start identifying anonymous site visitors with 99.5% accuracy to
     prevent online fraud
-  title: Sign Up for Fingerprint
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 On behalf of the whole team at Fingerprint, we are excited to announce that we have raised a $32M series B, led by <a href="https://www.craftventures.com/" target="_blank" rel="noopener">Craft Ventures</a>, with participation from <a href="https://nexusvp.com/" target="_blank" rel="noopener">Nexus Venture Partners</a> and <a href="https://uncorrelated.com/" target="_blank" rel="noopener">Uncorrelated Ventures</a>.
 

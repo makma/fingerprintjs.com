@@ -25,10 +25,11 @@ heroImage:
   imageTitle: November 2021 product update
 customCTA:
   openCtaNewTab: true
-  title: Have questions?
-  description: Ask us anything about getting set up with our new features.
-  ctaText: Contact support
-  ctaUrl: /support/
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 First and foremost, I’d like to share some amazing news: Fingerprint has raised [$32M Series B from Craft Ventures!](https://venturebeat.com/2021/11/03/fraud-prevention-platform-fingerprintjs-lands-32m-to-launch-premium-services/)
 

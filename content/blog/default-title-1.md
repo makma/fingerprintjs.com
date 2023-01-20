@@ -24,7 +24,12 @@ heroImage:
   imageTitle: Review fraud prevention
   image: /img/uploads/refund-fraud_-how-to-identify-chargeback-fraud.png
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 <i>Note: This is a guest post by Josip Miskovic, a full-stack <a href="https://josipmisko.com/" target="_blank" rel="noopener">software developer</a> who specializes in ecommerce. Throughout his career, he helped prevent fraud for ecommerce stores with more than 10,000 daily customers.</i>
 

@@ -24,11 +24,12 @@ heroImage:
   imageAlt: What is coupon glittering?
   imageTitle: What is coupon glittering?
 customCTA:
-  openCtaNewTab: false
-  title: Protect your e-commerce site
-  description: Learn how Fingerprint Protects sites against coupon and promo fraud.
-  ctaText: Learn more
-  ctaUrl: https://fingerprint.com/ecommerce/
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 <i>*Author’s Note: Coupon glittering typically refers to the exploitation of glitches associated with coupons used at brick-and-mortar stores. However, online retailers should take note of the techniques used by online glittering communities. Online fraudsters can similarly take advantage of loopholes in discount and promo codes offered and share exploits within these online forums.*
 

@@ -25,7 +25,12 @@ heroImage:
   imageAlt: illustrations of a credit card on a blue and grey background
   imageTitle: Card Cracking Definition and Prevention
 customCTA:
-  openCtaNewTab: false
+  openCtaNewTab: true
+  title: Sign Up for Fingerprint
+  description: Start identifying anonymous site visitors with 99.5% accuracy to
+    prevent online fraud
+  ctaText: Create Free Account
+  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
 Credit card cracking is [one of the fastest-growing types of fraud](https://www.chargebackgurus.com/blog/effective-tools-strategies-to-prevent-card-testing-aka-card-cracking) globally and accounts for around 16 percent of e-commerce fraud.
 
