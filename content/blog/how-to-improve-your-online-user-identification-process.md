@@ -4,7 +4,7 @@ metadata:
   title: How to Improve Your Online User Identification Process
   socialImage: /img/uploads/tbd_-why-identification-matters.jpg
   image: /img/uploads/tbd_-why-identification-matters.jpg
-  url: fingerprint.com/blog/improve-online-user-identificiation
+  url: fingerprint.com/blog/improve-online-user-identification
   description: Learn how to improve your online user identification process. We'll
     discuss the importance of user identification, methods for verifying
     accounts, and strategies for crafting a secure and private system. Plus,
