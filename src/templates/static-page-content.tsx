@@ -155,6 +155,7 @@ export function StaticPageContentPreview({ entry }: PreviewTemplateComponentProp
         hero={mapToHero(hero)}
         content={mapToPost({ frontmatter: entry.get('data').toObject() })}
         relatedArticlesTitle={relatedArticlesTitle}
+        isEditing
       />
     </PreviewProviders>
   )

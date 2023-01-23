@@ -71,8 +71,9 @@ function SwiperPosts({ name, nameIsCentered, perRow, limitPostLines, posts }: Sw
       <div className={classNames(styles.swiperSection, styles.mobileOnly)}>
         <Swiper
           modules={[Pagination]}
+          slidesPerView='auto'
           breakpoints={{
-            320: {
+            100: {
               slidesPerView: 1.3,
               spaceBetween: 16,
               pagination: {
@@ -151,7 +152,7 @@ function PostGrid({
       {tags && (
         <aside className={styles.tags}>
           <div className={styles.sticky}>
-            <caption>Tags</caption>
+            <span className={styles.tagTitle}>Tags</span>
             <TagList
               tagLink={tagLink ?? '/blog/tag/'}
               tags={tags}

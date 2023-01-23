@@ -43,12 +43,10 @@ export default function Post({
   const imgSrc = image?.publicURL
   const gifImage = image?.extension === 'gif'
   return (
-    <Link
-      to={getRelativeUrl(path)}
-      className={classNames(className, styles.post, { [styles.wide]: variant === 'wide' })}
-    >
+    <div className={classNames(className, styles.post, { [styles.wide]: variant === 'wide' })}>
       {(imageFluid || gifImage) && (
-        <div
+        <Link
+          to={getRelativeUrl(path)}
           className={classNames(styles.wrapper, {
             [styles.threePerRow]: perRow === 3,
             [styles.wideWrapper]: variant === 'wide',
@@ -64,21 +62,21 @@ export default function Post({
           ) : (
             imgSrc && <img className={styles.image} src={imgSrc} alt={imageAlt ? imageAlt : title} title={imageTitle} />
           )}
-        </div>
+        </Link>
       )}
 
-      <article className={styles.content}>
-        <div>
+      <div className={styles.content}>
+        <Link to={getRelativeUrl(path)}>
           <span className={styles.publishDate}>{publishDate}</span>
           <h1 className={classNames(styles.title, { [styles.titleLimit]: limitTextLines })}>{title}</h1>
           <p className={classNames(styles.description, { [styles.descriptionLimit]: limitTextLines })}>{description}</p>
-        </div>
+        </Link>
 
         {tags && (
           <TagList className={styles.tagList} tagLink='/blog/tag/' tags={tags} activeTag={activeTag} format='title' />
         )}
-      </article>
-    </Link>
+      </div>
+    </div>
   )
 }
 

@@ -181,7 +181,7 @@ export default function DemoSection() {
           <Swiper
             modules={[Lazy]}
             spaceBetween={8}
-            slidesPerView={1.1}
+            slidesPerView='auto'
             watchSlidesProgress
             centeredSlides
             lazy
@@ -193,6 +193,9 @@ export default function DemoSection() {
             initialSlide={21}
             onSlideChange={(swiper) => setActiveIndexSlide(swiper.activeIndex)}
             breakpoints={{
+              100: {
+                slidesPerView: 1.1,
+              },
               645: {
                 spaceBetween: 32,
                 slidesPerView: 'auto',

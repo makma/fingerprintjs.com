@@ -22,6 +22,7 @@ export interface StaticPageContentTemplateProps {
   content: PostProps
   relatedArticlesTitle: string
   breadcrumbs?: Array<Breadcrumb>
+  isEditing?: boolean | null
 }
 
 export default function StaticPageContentTemplate({
@@ -33,6 +34,7 @@ export default function StaticPageContentTemplate({
   content,
   relatedArticlesTitle,
   breadcrumbs,
+  isEditing = false,
 }: StaticPageContentTemplateProps) {
   return (
     <LayoutTemplate>
@@ -51,15 +53,17 @@ export default function StaticPageContentTemplate({
           </>
         )}
         <InlineCta {...inlineCta} />
-        <Container size='large'>
-          <RelatedArticles
-            article={content}
-            count={4}
-            title={relatedArticlesTitle}
-            titleIsCentered={true}
-            limitPostLines={true}
-          />
-        </Container>
+        {!isEditing && (
+          <Container size='large'>
+            <RelatedArticles
+              article={content}
+              count={4}
+              title={relatedArticlesTitle}
+              titleIsCentered={true}
+              limitPostLines={true}
+            />
+          </Container>
+        )}
       </Section>
     </LayoutTemplate>
   )

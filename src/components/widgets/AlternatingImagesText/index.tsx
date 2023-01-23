@@ -5,6 +5,7 @@ import Section from '../../common/Section'
 import classNames from 'classnames'
 import styles from './AlternatingImagesText.module.scss'
 import Button from '../../common/Button'
+import { isLocalLink } from '../../../helpers/url'
 import { Link } from 'gatsby'
 
 export interface BlockWithImage {
@@ -63,11 +64,19 @@ interface CtaComponentProps {
 }
 
 function CtaComponent({ ctaUrl, ctaText, isCtaButton }: CtaComponentProps) {
-  return isCtaButton ? (
-    <Button href={ctaUrl}>{ctaText}</Button>
-  ) : (
-    <Link className={styles.link} to={ctaUrl}>
-      {ctaText}
-    </Link>
-  )
+  if (isCtaButton) {
+    return <Button href={ctaUrl}>{ctaText}</Button>
+  } else if (isLocalLink(ctaUrl)) {
+    return (
+      <Link className={styles.link} to={ctaUrl}>
+        {ctaText}
+      </Link>
+    )
+  } else {
+    return (
+      <a href={ctaUrl} className={styles.link}>
+        {ctaText}
+      </a>
+    )
+  }
 }

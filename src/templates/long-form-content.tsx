@@ -134,6 +134,7 @@ export function LongFormContentPreview({ entry, widgetFor }: PreviewTemplateComp
         actionBar={mapToAction(actionBar)}
         customCTA={mapToCustomCta(customCTA, true)}
         tags={tags}
+        isEditing
       />
     </PreviewProviders>
   )

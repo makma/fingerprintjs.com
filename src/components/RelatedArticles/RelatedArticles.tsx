@@ -1,4 +1,4 @@
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { ArrayElement } from '../../helpers/types'
 import { mapToPost, PostProps } from '../Post/Post'
@@ -19,28 +19,7 @@ export default function RelatedArticles({
   titleIsCentered,
   limitPostLines,
 }: RelatedArticlesProps) {
-  return (
-    <StaticQuery<Queries.RelatedArticlesQuery>
-      query={relatedArticlesQuery}
-      render={(data) => {
-        const allArticles = data.allMarkdownRemark.edges.map(({ node }) => node)
-        const relatedArticles = getRelatedArticles(article, allArticles, count)
-        return relatedArticles.length > 0 ? (
-          <Posts
-            posts={relatedArticles}
-            name={title ? title : 'Related Articles'}
-            perRow={4}
-            nameIsCentered={titleIsCentered}
-            limitPostLines={limitPostLines}
-            useSwiper
-          />
-        ) : null
-      }}
-    />
-  )
-}
-
-const relatedArticlesQuery = graphql`
+  const data = useStaticQuery(graphql`
   query RelatedArticles {
     allMarkdownRemark(
       filter: {
@@ -53,7 +32,20 @@ const relatedArticlesQuery = graphql`
       ...PostData
     }
   }
-`
+`)
+  const allArticles = data.allMarkdownRemark.edges.map(({ node }) => node)
+  const relatedArticles = getRelatedArticles(article, allArticles, count)
+  return relatedArticles.length > 0 ? (
+    <Posts
+      posts={relatedArticles}
+      name={title ? title : 'Related Articles'}
+      perRow={4}
+      nameIsCentered={titleIsCentered}
+      limitPostLines={limitPostLines}
+      useSwiper
+    />
+  ) : null
+}
 
 type PostQuery = NonNullable<
   ArrayElement<NonNullable<NonNullable<Queries.RelatedArticlesQuery['allMarkdownRemark']>['edges']>>['node']

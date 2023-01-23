@@ -29,14 +29,15 @@ export default function LifeAtFingerSection() {
             speed={1000}
             effect={'coverflow'}
             centeredSlides={true}
-            slidesPerView={2.9}
+            slidesPerView='auto'
             loop
             loopAdditionalSlides={1}
             pagination={{
               clickable: true,
             }}
             breakpoints={{
-              320: {
+              100: {
+                slidesPerView: 2.9,
                 autoplay: false,
                 coverflowEffect: { rotate: 0, stretch: 16, depth: 100, modifier: 3, slideShadows: false },
               },

@@ -81,11 +81,12 @@ export default function ApplyPage({ pageContext }: ApplyPageProps) {
   return (
     <>
       <Script
+        id='greenHouseJobBoard'
         src={`https://boards.greenhouse.io/embed/job_board/js?for=${GREENHOUSE_COMPANY_ID}`}
         type='text/javascript'
         async
       />
-      <Script src='/job-post.js' type='text/javascript' defer />
+      <Script id='JobPostScript' src='/job-post.js' type='text/javascript' defer />
 
       <LayoutTemplate>
         {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}

@@ -33,6 +33,7 @@ export default function DiagramSection({ className, box }: DiagramSectionProps) 
     } else if (isActive && timeoutId) {
       clearTimeout(timeoutId)
     }
+    return () => clearTimeout(timeoutId)
   }, [isActive, timeoutId])
 
   return (

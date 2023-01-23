@@ -9,8 +9,8 @@ export interface IntegrationCardsProps {
 export default function IntegrationCards({ cards }: IntegrationCardsProps) {
   return (
     <div className={styles.integrationCards}>
-      {cards.map((props) => (
-        <IntegrationCard {...props} key={props.title} />
+      {cards.map((card) => (
+        <IntegrationCard {...card} key={card.title} />
       ))}
     </div>
   )

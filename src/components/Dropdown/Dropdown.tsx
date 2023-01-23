@@ -19,8 +19,8 @@ export default function Dropdown({ leftColumns, rightColumn, bottomLinkText, bot
       <section className={styles.dropdown}>
         {leftColumns && (
           <div className={classNames(styles.columns, { [styles.onlyLeft]: onlyLeftColumn })}>
-            {leftColumns.map(({ title, list, cardBackground }) => (
-              <Column key={title} title={title} list={list} cardBackground={cardBackground} />
+            {leftColumns.map(({ title, list, cardBackground }, index) => (
+              <Column key={title ?? index} title={title} list={list} cardBackground={cardBackground} />
             ))}
           </div>
         )}
@@ -76,18 +76,20 @@ function Column({ title, list, cardBackground }: ColumnProps) {
           {list.map(({ title, url, description, useCasesLink }) => (
             <div key={title}>
               {isLocalLink(url) ? (
-                <Link to={url} className={styles.columnLink}>
-                  <li className={classNames(styles.row, { [styles.background]: cardBackground })}>
-                    <h3 className={styles.linkTitle}>{title}</h3>
-                    <p className={styles.linkDescription}>{description}</p>
-                  </li>
+                <div className={styles.columnLink}>
+                  <Link to={url}>
+                    <li className={classNames(styles.row, { [styles.background]: cardBackground })}>
+                      <h3 className={styles.linkTitle}>{title}</h3>
+                      <p className={styles.linkDescription}>{description}</p>
+                    </li>
+                  </Link>
                   {useCasesLink && (
                     <Link to={useCasesLink} className={styles.useCasesLink}>
                       <span>See Use Case</span>
                       <ArrowSVG className={styles.arrowBottomLink} />
                     </Link>
                   )}
-                </Link>
+                </div>
               ) : (
                 <a href={url} className={styles.columnLink} target='_blank' rel='noreferrer'>
                   <li className={classNames(styles.row, { [styles.background]: cardBackground })}>

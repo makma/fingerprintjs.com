@@ -29,6 +29,7 @@ export interface TemplateProps {
   customCTA: CustomizableCTAProps
   tags: string[]
   isHidden?: boolean | null
+  isEditing?: boolean | null
 }
 
 export default function LongFormContentTemplate({
@@ -42,6 +43,7 @@ export default function LongFormContentTemplate({
   customCTA,
   tags,
   isHidden = false,
+  isEditing = false,
 }: TemplateProps) {
   const ContentComponent = contentComponent ?? Content
 
@@ -93,9 +95,11 @@ export default function LongFormContentTemplate({
             )}
           </Container>
 
-          <Container size='large' className={styles.relatedArticles}>
-            <RelatedArticles article={post} count={4} limitPostLines={true} />
-          </Container>
+          {!isEditing && (
+            <Container size='large' className={styles.relatedArticles}>
+              <RelatedArticles article={post} count={4} limitPostLines={true} />
+            </Container>
+          )}
         </Section>
       </LayoutTemplate>
     </>

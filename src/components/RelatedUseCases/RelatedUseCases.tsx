@@ -1,4 +1,4 @@
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { ArrayElement } from '../../helpers/types'
 import { mapToUseCase, UseCaseProps } from '../useCases/UseCase/UseCase'
@@ -8,22 +8,7 @@ export interface RelatedUseCasesProps {
   useCase: UseCaseProps
 }
 export default function RelatedUseCases({ useCase }: RelatedUseCasesProps) {
-  return (
-    <StaticQuery<Queries.RelatedUseCasesQuery>
-      query={relatedUseCasesQuery}
-      render={(data) => {
-        const allUseCases = data.allMarkdownRemark.edges.map(({ node }) => node)
-        const relatedUseCases = getRelatedUseCases(useCase, allUseCases)
-        return relatedUseCases.length > 0 ? (
-          <UseCases useCases={relatedUseCases} title={'Explore more technical use cases'} />
-        ) : null
-      }}
-    />
-  )
-}
-
-const relatedUseCasesQuery = graphql`
-  query RelatedUseCases {
+  const data = useStaticQuery(graphql`query RelatedUseCases {
     allMarkdownRemark(
       filter: {
         fileAbsolutePath: {regex: "/(use-cases)/(use-cases).*\\.md$/"}
@@ -35,7 +20,14 @@ const relatedUseCasesQuery = graphql`
       ...UseCaseData
     }
   }
-`
+`)
+  const allUseCases = data.allMarkdownRemark.edges.map(({ node }) => node)
+  const relatedUseCases = getRelatedUseCases(useCase, allUseCases)
+
+  return relatedUseCases.length > 0 ? (
+    <UseCases useCases={relatedUseCases} title={'Explore more technical use cases'} />
+  ) : null
+}
 
 type UseCaseQuery = NonNullable<
   ArrayElement<NonNullable<NonNullable<Queries.RelatedUseCasesQuery['allMarkdownRemark']>['edges']>>['node']

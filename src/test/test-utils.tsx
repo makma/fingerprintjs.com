@@ -1,9 +1,9 @@
-import React, { FC, ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 import { render, RenderOptions } from '@testing-library/react'
 import { FormProvider } from '../hooks/useForm'
 import { FpjsProvider } from '@fingerprintjs/fingerprintjs-pro-react'
 
-const AllTheProviders: FC = ({ children }) => {
+const AllTheProviders = ({ children }: React.PropsWithChildren<Record<string, unknown>>) => {
   return (
     <FpjsProvider
       loadOptions={{

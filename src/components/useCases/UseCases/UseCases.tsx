@@ -20,8 +20,9 @@ export default function UseCases({ useCases, title }: UseCasesProps) {
       <div className={classNames(styles.swiperSection, styles.mobileOnly)}>
         <Swiper
           modules={[Pagination]}
+          slidesPerView='auto'
           breakpoints={{
-            320: {
+            100: {
               slidesPerView: 1.3,
               spaceBetween: 16,
               pagination: {

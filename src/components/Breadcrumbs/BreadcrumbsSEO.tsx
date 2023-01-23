@@ -6,7 +6,11 @@ import { withTrailingSlash } from '../../helpers/url'
 import { kebabToStart } from '../../helpers/case'
 
 export default function BreadcrumbsSEO({ breadcrumbs }: { breadcrumbs: Array<Breadcrumb> }) {
-  return <Script type='application/ld+json'>{getStructuredData(breadcrumbs)}</Script>
+  return (
+    <Script id='breadcrumbsSeo' type='application/ld+json'>
+      {getStructuredData(breadcrumbs)}
+    </Script>
+  )
 }
 
 function getStructuredData(breadcrumbs: Array<Breadcrumb>): string {

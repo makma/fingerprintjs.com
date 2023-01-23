@@ -73,7 +73,7 @@
   .icon {
     width: rem(20px);
     height: rem(20px);
-    fill: adjust-color(c('brand-water'), $alpha: -0.5%);
+    fill: adjust-color(c('brand-water'), $alpha: -0.5);
     margin-right: rem(6px);
 
     &.white {
