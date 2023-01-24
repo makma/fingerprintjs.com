@@ -189,7 +189,7 @@ If the user is in Incognito mode, the element answer should have the text `Yes`.
 
 ### Testing on Chrome
 
-[It was reported](https://mishravikas.com/articles/2019-07/bypassing-anti-incognito-detection-google-chrome.html) that this method worked beginning with Chrome 74. However, it no longer works after Chrome 84. 
+[It was reported](https://www.joyk.com/dig/detail/1563494449885365) that this method worked beginning with Chrome 74. However, it no longer works after Chrome 84. 
 
 Testing this script on Chrome 89, without Incognito mode it gave the following result:
 
