@@ -64,35 +64,25 @@ It’s a delicate balance between stopping bots and making it easy for users to 
 
 Here are a few ways developers can mitigate bot activity:
 
+### CAPTCHAs 
 
-
-### [CAPTCHAs](https://www.cloudflare.com/learning/bots/how-captchas-work/) 
-
-* During authentication or signup of new accounts, add a word or picture puzzle that requires human interaction to continue. CAPTCHAs are also used when too many failed authentication attempts are sent for a specific username.
-
-
+* During authentication or signup of new accounts, add a word or picture puzzle that requires human interaction to continue. [CAPTCHAs](https://www.cloudflare.com/learning/bots/how-captchas-work/) are also used when too many failed authentication attempts are sent for a specific username.
 
 ### IP blacklists: 
 
 * Bot authors use IPs commonly used in blackhat activity, and applications can use blacklists to block them automatically. This strategy could also block legitimate users, so a better method is blacklisting IPs for a short amount of time when they make too many requests in a short period.
 
+### Device fingerprinting 
 
+* Some bots emulate smartphone traffic, and users performing malicious activity can be identified using [device fingerprinting](https://fingerprint.com/blog/local-device-fingerprint-ios/?&utm_source=blog&utm_medium=website&utm_campaign=blog). The application assigns an ID to a user on a specific device and can associate any suspicious activity to the ID. Once marked as malicious, the application blocks further requests from the fingerprinted device.
 
-### [Device fingerprinting](https://fingerprint.com/blog/local-device-fingerprint-ios/?&utm_source=blog&utm_medium=website&utm_campaign=blog) 
+### Incorporate a Web Application Firewall (WAF)
 
-* Some bots emulate smartphone traffic, and users performing malicious activity can be identified using device fingerprinting. The application assigns an ID to a user on a specific device and can associate any suspicious activity to the ID. Once marked as malicious, the application blocks further requests from the fingerprinted device.
+* [WAF](https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf/) integration stops malicious input such as [cross-site scripting (XSS)](https://portswigger.net/web-security/cross-site-scripting) or [SQL injection (SQLi)](https://portswigger.net/web-security/sql-injection), which is common in botted exploits and scanning for vulnerabilities. Using a WAF, any bot sending malicious code in POST requests will be rejected automatically.
 
+### User-agent header analysis
 
-
-### Incorporate a [Web Application Firewall (WAF)](https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf/)
-
-* WAF integration stops malicious input such as [cross-site scripting (XSS)](https://portswigger.net/web-security/cross-site-scripting) or [SQL injection (SQLi)](https://portswigger.net/web-security/sql-injection), which is common in botted exploits and scanning for vulnerabilities. Using a WAF, any bot sending malicious code in POST requests will be rejected automatically.
-
-
-
-### [User-agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) header analysis
-
-* Poorly written bots use no user-agent, and it’s a good starting point for bot detection. Note that rejecting traffic with no user-agent header should not be the only method for bot mitigation because user-agent headers can be spoofed. Usually, user-agent analysis is combined with device fingerprinting for more accurate bot detection.
+* Poorly written bots use no user-agent, and it’s a good starting point for bot detection. Note that rejecting traffic with no user-agent header should not be the only method for bot mitigation because user-agent headers can be spoofed. Usually, [user-agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) analysis is combined with device fingerprinting for more accurate bot detection.
 
 ## Choosing a bot mitigation strategy
 
