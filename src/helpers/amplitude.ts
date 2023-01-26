@@ -8,10 +8,12 @@ const amplitudeInit = () => {
 export const amplitudeLogEvent = (eventName: string, properties?: Record<string, string>, visitorId?: string) => {
   if (process.env.NODE_ENV !== 'development') {
     amplitudeInit()
+    const ampClient = amplitude.getInstance()
     if (visitorId) {
-      amplitude.getInstance().setUserProperties({ visitorId })
+      ampClient.setGroup('fingerprint-device-id', visitorId)
+      ampClient.setUserProperties({ visitorId })
     }
-    amplitude.getInstance().logEvent(eventName, properties)
+    ampClient.logEvent(eventName, properties)
   } else {
     // eslint-disable-next-line no-console
     console.log(`Amplitude event ${eventName}, visitorId: ${visitorId}, triggered with props:`, properties)
