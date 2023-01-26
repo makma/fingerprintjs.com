@@ -53,7 +53,7 @@ integrationSdkCards:
   - cardImage: /img/uploads/integrationsCards/Next.png
     title: Next.js
     description: This library provides developers with a native experience using
-      React components and hooks together with a built-in caching mechanism
+      React components and hooks together with a built-in caching mechanism.
     docsLink: https://dev.fingerprint.com/docs/fingerprintjs-pro-nextjs
     githubLink: https://github.com/fingerprintjs/fingerprintjs-pro-react
     category: Frontend
@@ -119,5 +119,12 @@ integrationSdkCards:
     githubLink: https://github.com/fingerprintjs/fingerprint-pro-server-api-php-sdk
     title: PHP Server API SDK
     docsLink: https://dev.fingerprint.com/docs/fingerprint-pro-server-api-php-sdk
+    category: Backend
+  - cardImage: /img/uploads/integrationsCards/netsdk.png
+    title: C#/.NET Server API SDK
+    description: This open-source library improves the experience for projects using
+      C#/.NET.
+    githubLink: https://github.com/fingerprintjs/fingerprint-pro-server-api-dotnet-sdk
+    docsLink: https://dev.fingerprint.com/docs/fingerprint-pro-server-api-dotnet-sdk
     category: Backend
 ---
