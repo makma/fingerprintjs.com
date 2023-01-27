@@ -172,7 +172,23 @@ function FeatureList({ title, features }: FeatureListProps) {
     </div>
   )
 }
-
+const featuresFreeTier: Feature[] = [
+  {
+    description: '99.5% accurate identification',
+  },
+  {
+    description: 'Incognito mode detection',
+  },
+  {
+    description: 'Geolocation',
+  },
+  {
+    description: 'Query API & real-time webhooks',
+  },
+  {
+    description: '3 requests per second (RPS)',
+  },
+]
 const features: Feature[] = [
   {
     description: '99.5% accurate identification',
@@ -186,14 +202,14 @@ const features: Feature[] = [
   {
     description: 'Query API & real-time webhooks',
   },
+  {
+    description: '5 requests per second (RPS)',
+  },
 ]
 
 const operationsFreeTier: Feature[] = [
   {
     description: 'GDPR, CCPA compliant*',
-  },
-  {
-    description: '99.9% availability',
   },
   {
     description: 'Documentation',
@@ -206,9 +222,6 @@ const operationsFreeTier: Feature[] = [
 const operations: Feature[] = [
   {
     description: 'GDPR, CCPA compliant*',
-  },
-  {
-    description: '99.9% availability',
   },
   {
     description: 'Documentation',
@@ -227,10 +240,7 @@ const enterpriseFeatures: Feature[] = [
     link: DOC_URL.zeroTrustUrl,
   },
   {
-    description: '99.9% SLA standard',
-  },
-  {
-    description: 'Additional SLA options available',
+    description: '99.95% and 99.99% SLA available',
   },
   {
     description: 'Premium support',
@@ -250,10 +260,19 @@ const enterpriseFeatures: Feature[] = [
   {
     description: 'Additional deployment options',
   },
+  {
+    description: '10 requests per second (RPS) standard, increased RPS available',
+  },
+  {
+    description: '90-day data retention, increased retention available',
+  },
+  {
+    description: 'Compliance certifications',
+  },
 ]
 
 const freeTier: FeatureListProps[] = [
-  { title: 'Features', features: features },
+  { title: 'Features', features: featuresFreeTier },
   { title: 'Operations', features: operationsFreeTier },
 ]
 

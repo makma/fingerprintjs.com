@@ -107,9 +107,10 @@ function FAQSection() {
       question: 'How does the $0 free plan differ from a paid Pro plan?',
       answer: (
         <p className={styles.faqContent}>
-          The only difference between our free plan and paid Pro plan is that customers can only use up to{' '}
-          {flatAmount.toLocaleString()} API requests per month on the free plan. There are no differences in features,
-          functionality or accuracy between the free and paid plan.
+          The two differences between our free plan and paid Pro plan is that Free plan customers can only use up to{' '}
+          {flatAmount.toLocaleString()} requests per month, and RPS is limited to 3 requests per second as opposed to 5
+          on the paid plan. There are no differences in features, functionality or accuracy between the Free and Paid
+          plans.
         </p>
       ),
     },
