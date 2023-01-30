@@ -32,11 +32,11 @@ heroImage:
   imageTitle: Romance Scams Image
 customCTA:
   openCtaNewTab: true
-  title: Sign Up for Fingerprint
-  description: Start identifying anonymous site visitors with 99.5% accuracy to
-    prevent online fraud
-  ctaText: Create Free Account
-  ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
+  title: "You're Invited! "
+  description: Join us on Feb. 14 for a webinar on Romance Fraud trends and how to
+    protect your customers.
+  ctaText: Register now
+  ctaUrl: https://go.unit21.ai/register-romance-fraud-webinar-fingerprint
 ---
 Love is patient, and love is kind… But not always on the internet.
 
