@@ -1,6 +1,7 @@
-showNotBar: false
-barBody: "ANNOUNCEMENT: We're now SOC 2 Type II certified."
-arrowText: Read more
-url: /blog/soc-2-type-2/
+showNotBar: true
+barBody: You're Invited! Join us on Feb. 14 for a webinar on Romance Fraud
+  trends and how to protect your customers.
+arrowText: Register Now
+url: https://go.unit21.ai/register-romance-fraud-webinar-fingerprint
 openUrlNewTab: false
 backgroundColor: "#f04405"
