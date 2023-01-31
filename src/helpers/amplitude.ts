@@ -10,6 +10,7 @@ export const amplitudeLogEvent = (eventName: string, properties?: Record<string,
     amplitudeInit()
     const ampClient = amplitude.getInstance()
     if (visitorId) {
+      ampClient.setDeviceId(visitorId)
       ampClient.setGroup('fingerprint-device-id', visitorId)
       ampClient.setUserProperties({ visitorId })
     }
