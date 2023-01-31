@@ -1,0 +1,210 @@
+.root {
+  padding-top: rem(168px);
+  padding-bottom: rem(168px);
+
+  background-color: v('dark');
+  @include media('<=desktop') {
+    padding-top: rem(64px);
+    padding-bottom: rem(64px);
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: rem(64px);
+
+    @include media('<=desktop') {
+      flex-direction: column;
+      row-gap: rem(64px);
+      align-items: start;
+      padding: 0 rem(70px);
+    }
+
+    @include media('<=phoneLandscape') {
+      padding: 0 rem(20px);
+    }
+  }
+
+  .descriptionSection {
+    color: #e8e8e8;
+
+    @include media('>desktop') {
+      max-width: rem(600px);
+    }
+    .title {
+      @include inter-h2;
+      padding-bottom: rem(32px);
+      color: #fafafa;
+
+      @include media('<=phoneLandscape') {
+        padding-bottom: rem(16px);
+      }
+    }
+
+    .description {
+      @include inter($size: 20px, $weight: 400, $lh: 160%);
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(16px);
+      }
+      a {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+    .description:nth-child(2) {
+      padding-bottom: rem(32px);
+
+      @include media('<=phoneLandscape') {
+        padding-bottom: rem(24px);
+      }
+    }
+  }
+  .logosSection {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(8px);
+    padding-top: rem(40px);
+
+    @include media('<=phoneLandscape') {
+      padding-top: rem(24px);
+    }
+
+    .logos {
+      display: flex;
+      align-items: center;
+      height: rem(48px);
+      column-gap: rem(40px);
+      @include media('<=phoneLandscape') {
+        column-gap: unset;
+        justify-content: space-between;
+
+        height: rem(32px);
+      }
+    }
+  }
+  .strong {
+    font-size: rem(20px);
+    font-weight: 600;
+    line-height: 160%;
+    @include media('<=phoneLandscape') {
+      font-size: rem(16px);
+    }
+  }
+  .timelineSection {
+    @include inter($size: 16px, $weight: 600, $lh: 24px, $color: #e8e8e8);
+
+    min-height: rem(370px);
+
+    @include media('>desktop') {
+      min-width: rem(450px);
+      max-width: rem(510px);
+    }
+    @include media('<=phoneLandscape') {
+      line-height: 155%;
+    }
+
+    display: grid;
+    grid-template-columns: rem(48px) rem(14px) 1fr;
+    grid-template-rows: auto;
+    align-content: stretch;
+    align-items: flex-start;
+    column-gap: rem(16px);
+    grid-template-areas:
+      'y1 b1 m1'
+      'y2 b2 m2'
+      'y3 b3 m3'
+      'y4 b4 m4'
+      'y5 b5 m5'
+      'y6 b6 m6';
+    .years,
+    .milestones {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @for $i from 1 through 6 {
+      .year#{$i} {
+        grid-area: y#{$i};
+      }
+      .milestone#{$i} {
+        grid-area: m#{$i};
+        margin-bottom: rem(24px);
+      }
+
+      .border {
+        height: 100%;
+        .dot#{$i} {
+          grid-area: b#{$i};
+          align-self: flex-start;
+          z-index: 2;
+          margin-top: rem(4px);
+        }
+        .borderWrapper {
+          height: 100%;
+          .borderLine#{$i} {
+            position: absolute;
+            width: 1px;
+            background: rgba(208, 208, 208, 0.1);
+            left: rem(6px);
+            height: 100%;
+            z-index: 1;
+            margin-top: rem(4px);
+          }
+        }
+      }
+    }
+    .border {
+      display: flex;
+      align-items: stretch;
+      position: relative;
+      .borderWrapper {
+        .borderLine1 {
+          margin-top: rem(4px);
+        }
+        .borderLine6 {
+          background: linear-gradient(to bottom, rgba(208, 208, 208, 0.1), transparent);
+          height: 75%;
+
+          @include media('<=phoneLandscape') {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.coinbase {
+  width: rem(99px);
+  height: rem(23px);
+
+  @include media('<=phoneLandscape') {
+    width: rem(66px);
+    height: rem(15px);
+  }
+}
+.dropbox {
+  width: rem(131px);
+  height: rem(27px);
+  @include media('<=phoneLandscape') {
+    width: rem(87px);
+    height: rem(17px);
+  }
+}
+.target {
+  width: rem(38px);
+  height: rem(48px);
+  @include media('<=phoneLandscape') {
+    width: rem(25px);
+    height: rem(32px);
+  }
+}
+.yahoo {
+  width: rem(92px);
+  height: rem(26px);
+  @include media('<=phoneLandscape') {
+    width: rem(60px);
+    height: rem(17px);
+  }
+}

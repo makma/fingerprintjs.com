@@ -1,0 +1,217 @@
+$backgroundColor: #e8e8e8;
+
+.root {
+  padding-top: rem(56px);
+  padding-bottom: 0;
+  @include media('<=phoneLandscape') {
+    padding-top: 0;
+  }
+  .heroContainer {
+    @include media('<=desktop') {
+      padding: 0 rem(70px);
+    }
+    @include media('<=phoneLandscape') {
+      padding: 0 rem(20px);
+    }
+    .titleBox {
+      display: flex;
+      justify-content: center;
+      background: #ffffff;
+
+      @include media('>phoneLandscape') {
+        padding: 0 rem(20px);
+        border: 1px solid $backgroundColor;
+
+        box-shadow: 0px 4px 15px rgba(161, 161, 161, 0.15), 0px 0px 1px rgba(232, 232, 232, 0.35);
+        border-radius: rem(8px);
+      }
+      .title {
+        @include inter-h1;
+        padding: rem(128px) 0;
+        text-align: center;
+
+        @include media('<=phoneLandscape') {
+          padding-top: rem(40px);
+          padding-bottom: rem(48px);
+        }
+      }
+    }
+  }
+
+  .backgroundLayer {
+    position: absolute;
+    background-color: $backgroundColor;
+    width: 100%;
+    height: rem(56px);
+    transform: translateY(-56px);
+    z-index: -1;
+
+    @include media('<=phoneLandscape') {
+      display: none;
+    }
+  }
+
+  .pressContainer {
+    background-color: $backgroundColor;
+    padding-top: rem(168px);
+    padding-bottom: rem(168px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      'title-a title-a title-b'
+      'a a b';
+
+    @include media('<=desktop') {
+      padding: rem(64px) rem(70px);
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'title-a'
+        'a'
+        'title-b'
+        'b';
+    }
+    @include media('<=phoneLandscape') {
+      padding: rem(40px) 0 0;
+    }
+
+    .pressTitle,
+    .newsTitle {
+      @include inter-h2;
+      padding-bottom: rem(32px);
+
+      @include media('<=desktop') {
+        padding-bottom: rem(16px);
+
+        font-size: rem(24px);
+        line-height: 130%;
+      }
+    }
+    .pressTitle {
+      grid-area: title-a;
+    }
+    .newsTitle {
+      grid-area: title-b;
+    }
+    .pressCards {
+      grid-area: a;
+      display: grid;
+      height: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: rem(20px);
+      row-gap: rem(32px);
+
+      @include media('<=desktop') {
+        column-gap: rem(16px);
+        row-gap: rem(16px);
+        padding-bottom: rem(64px);
+      }
+      @include media('<=phoneLandscape') {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: rem(64px);
+      }
+    }
+
+    .newsCards {
+      grid-area: b;
+
+      display: flex;
+      flex-direction: column;
+
+      @include media('<=phoneLandscape') {
+        padding-bottom: rem(64px);
+      }
+    }
+    .newsTitle,
+    .newsCards {
+      width: 100%;
+      padding-left: rem(56px);
+
+      @include media('<=desktop') {
+        padding-left: 0;
+      }
+    }
+    .pressTitle,
+    .newsTitle,
+    .newsCards,
+    .pressCards {
+      @include media('<=phoneLandscape') {
+        padding-right: rem(20px);
+        padding-left: rem(20px);
+      }
+    }
+    .newsTitle,
+    .newsCards {
+      @include media('<=phoneLandscape') {
+        background: #ffffff;
+      }
+    }
+    .newsTitle {
+      @include media('<=phoneLandscape') {
+        padding-top: rem(64px);
+      }
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &.box {
+        padding: rem(32px);
+        background: linear-gradient(0.98deg, #ffffff 0.95%, #ffffff 99.28%);
+
+        border: rem(1px) solid #e8e8e8;
+        box-shadow: 0px 2px 4px rgba(208, 208, 208, 0.15);
+        border-radius: rem(8px);
+
+        @include media('<=desktop') {
+          padding: rem(16px);
+
+          row-gap: rem(32px);
+        }
+      }
+      &:not(.box) {
+        row-gap: rem(24px);
+      }
+      &:not(.box):nth-child(1) {
+        padding-bottom: rem(24px);
+      }
+      &:not(.box):nth-child(2) {
+        padding: rem(24px) 0;
+        border-bottom: 1px solid #d0d0d0;
+        border-top: 1px solid #d0d0d0;
+      }
+      &:not(.box):nth-child(3) {
+        padding-top: rem(24px);
+      }
+      .cardTitle {
+        @include inter($size: 16px, $weight: 600, $lh: 145%);
+        margin: 0;
+        padding-bottom: rem(8px);
+      }
+      .company {
+        @include inter($size: 14px, $weight: 500, $lh: 160%, $color: v('gray'));
+        letter-spacing: 0.01em;
+      }
+      .link {
+        display: flex;
+        column-gap: rem(5px);
+        @include jb-mono($size: 14px, $weight: 500, $lh: 100%, $color: v('github-orange-gradient'));
+        letter-spacing: -0.01em;
+        text-align: left;
+        @include transition(color);
+
+        .arrow {
+          margin-top: rem(2px);
+          @include transition(transform);
+        }
+        &:hover {
+          color: #e6541f;
+          .arrow {
+            transform: translateX(2px);
+          }
+        }
+      }
+    }
+  }
+}

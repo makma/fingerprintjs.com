@@ -1,0 +1,88 @@
+.root {
+  padding-top: 0;
+  padding-bottom: rem(200px);
+  @include media('<=desktop') {
+    padding-bottom: rem(64px);
+  }
+  @include media('<=phoneLandscape') {
+    padding-bottom: 0;
+  }
+  .container {
+    @include media('<=desktop') {
+      padding: 0 rem(70px);
+    }
+    @include media('<=phoneLandscape') {
+      background-color: #202021;
+      padding: rem(64px) rem(20px) rem(80px);
+    }
+    .box {
+      color: v('github-white');
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      column-gap: rem(20px);
+
+      background-color: #202021;
+
+      @include media('>phoneLandscape') {
+        border: 1px solid rgba(208, 208, 208, 0.1);
+        box-shadow: 0px 4px 15px rgba(161, 161, 161, 0.15), 0px 0px 1px rgba(232, 232, 232, 0.35);
+        border-radius: rem(8px);
+        padding: rem(56px);
+      }
+      @include media('<=desktop') {
+        justify-content: center;
+      }
+      .formSection {
+        .title {
+          @include inter-h2();
+          padding-bottom: rem(8px);
+        }
+        .subTitle {
+          @include inter($size: 20px, $weight: 400, $lh: 160%, $color: #d0d0d0);
+
+          padding-bottom: rem(24px);
+
+          @include media('<=phoneLandscape') {
+            font-size: rem(16px);
+            padding-bottom: rem(16px);
+          }
+        }
+        @include media('<=desktop') {
+          width: 100%;
+        }
+      }
+      .imageSection {
+        @include media('<=desktop') {
+          display: none;
+        }
+        svg {
+          width: rem(432px);
+          margin-right: rem(32px);
+        }
+      }
+    }
+  }
+}
+
+.poweredBy {
+  display: flex;
+  column-gap: rem(6px);
+  padding-top: rem(24px);
+  @include inter($size: 14px, $weight: 400, $lh: 160%, $color: #ffffff);
+  letter-spacing: 0.01em;
+
+  .link {
+    cursor: pointer;
+  }
+
+  .botD {
+    fill: #ffffff;
+    width: rem(20px);
+    margin-bottom: rem(3px);
+    @include media('<=phoneLandscape') {
+      width: rem(16px);
+    }
+  }
+}

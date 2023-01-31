@@ -1,0 +1,132 @@
+.contactPressFormSection {
+  z-index: unset;
+  flex: 1;
+}
+
+.contactPressForm,
+.formSection {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+
+  //to avoid color change on autofill
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+  input[data-autocompleted] {
+    background-color: transparent !important;
+  }
+}
+
+.label {
+  margin-top: rem(16px);
+  margin-bottom: rem(8px);
+
+  @include inter($size: 16px, $weight: 600, $color: #fafafa);
+}
+
+.input,
+.textArea {
+  resize: none;
+  align-self: stretch;
+  border: 1px solid rgba(232, 232, 232, 0.3);
+  border-radius: rem(6px);
+
+  -webkit-appearance: none;
+  background-color: transparent;
+  @include inter($size: 16px, $lh: 160%, $weight: 400, $color: #fafafa);
+
+  line-height: rem(21px);
+
+  width: 100%;
+  height: rem(50px);
+  padding: rem(14px);
+
+  flex: 1;
+
+  @media screen and (max-width: 640px) {
+    min-width: 200px;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 1px adjust-color(c('github-white'), $lightness: -30%);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: #d0d0d0;
+    max-width: rem(287px);
+  }
+}
+
+.button {
+  align-self: start;
+  margin-top: rem(32px);
+  width: 100%;
+  background-color: #fa7545;
+  &.loadingButton {
+    background-color: adjust-color(c('brand-fire'), $lightness: -20%);
+    cursor: wait;
+  }
+}
+
+.input,
+.textArea,
+select:focus {
+  @include media('<=phoneLandscape') {
+    font-size: 16px;
+  }
+}
+.stateSection {
+  width: 100%;
+  height: rem(327px);
+  background: rgba(255, 228, 236, 0.1);
+  border-radius: rem(8px);
+  @include media('>desktop') {
+    max-width: rem(556px);
+  }
+}
+
+.stateSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  svg {
+    width: rem(48px);
+    height: rem(48px);
+  }
+  .message {
+    padding-top: rem(8px);
+    @include inter($size: 24px, $weight: 500, $lh: 130%);
+
+    text-align: center;
+  }
+  .errorMessage {
+    @include inter($size: 24px, $weight: 500, $lh: 130%, $color: #f42060);
+  }
+
+  .link {
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.errorDescription {
+  text-align: center;
+  color: #d0d0d0;
+}
+
+.warningTooltip {
+  display: flex;
+  column-gap: rem(8px);
+  align-items: center;
+
+  color: #919194;
+}

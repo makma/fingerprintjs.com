@@ -1,0 +1,102 @@
+.root {
+  padding-top: rem(168px);
+  padding-bottom: rem(168px);
+
+  @include media('<=desktop') {
+    padding-top: rem(64px);
+    padding-bottom: rem(64px);
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    @include media('<=desktop') {
+      flex-direction: column;
+      row-gap: rem(32px);
+      align-items: start;
+      padding: 0 rem(70px);
+    }
+
+    @include media('<=phoneLandscape') {
+      padding: 0 rem(20px);
+    }
+  }
+
+  .titleSection {
+    .title {
+      @include inter-h2;
+      @include media('<=desktop') {
+        font-size: rem(24px);
+      }
+    }
+  }
+  .cardsSection {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: rem(20px);
+
+    @include media('<=phoneLandscape') {
+      display: flex;
+
+      flex-direction: column;
+      row-gap: rem(24px);
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      border: 1px solid #e8e8e8;
+      box-shadow: 0px 2px 4px rgba(208, 208, 208, 0.15);
+      border-radius: rem(6px);
+      max-width: rem(296px);
+
+      .image {
+        width: 100%;
+        border-radius: rem(6px) rem(6px) 0 0;
+      }
+      .descriptionSection {
+        padding: rem(24px) rem(16px) rem(32px);
+        .title {
+          @include inter($size: 20px, $weight: 600, $lh: 140%);
+          padding-bottom: rem(8px);
+          margin: 0;
+          @include media('<=desktop') {
+            font-size: rem(16px);
+            line-height: 155%;
+          }
+        }
+        .description {
+          @include inter($size: 16px, $weight: 400, $lh: 160%, $color: v('gray'));
+          letter-spacing: 0.01em;
+
+          @include media('<=desktop') {
+            font-size: rem(14px);
+          }
+        }
+      }
+      .link {
+        display: flex;
+        column-gap: rem(5px);
+        @include jb-mono($size: 14px, $weight: 500, $lh: 100%, $color: v('github-orange-gradient'));
+        letter-spacing: -0.01em;
+        text-align: left;
+        @include transition(color);
+        padding: 0 rem(16px) rem(16px);
+        .arrow {
+          margin-top: rem(2px);
+          @include transition(transform);
+        }
+        &:hover {
+          color: #e6541f;
+          .arrow {
+            transform: translateY(2px);
+          }
+        }
+      }
+      @include media('<=phoneLandscape') {
+        max-width: unset;
+      }
+    }
+  }
+}

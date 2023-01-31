@@ -156,3 +156,25 @@ export async function contactSupport({
     }),
   })
 }
+
+interface ContactPressParams extends TrackParams {
+  email: string
+  message: string
+  utmParams: Record<string, string>
+  sessionId: string
+}
+
+export async function contactPress({ email, message, utmParams, sessionId, visitorId, ipRegion }: ContactPressParams) {
+  return fetch(`${FPJS_MGMT_API_HOST}/hubspot/press`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email,
+      message,
+      utm_info: utmParams,
+      sessionId,
+      visitorId,
+      ipRegion,
+    }),
+  })
+}

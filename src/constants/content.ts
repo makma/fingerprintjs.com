@@ -31,6 +31,7 @@ export const PATH = {
   security: '/security/',
   useCases: '/use-cases/',
   faq: '/resources/frequently-asked-questions-faqs/',
+  press: '/resources/press/',
   integrations: '/integrations/',
   sdks: '/sdk-libraries/',
   github: '/github/',
@@ -59,6 +60,7 @@ export const URL = {
   supportMail: 'support@fingerprint.com',
   salesMail: 'sales@fingerprint.com',
   worKMail: 'work@fingerprint.com',
+  pressMail: 'press@fingerprint.com',
   discordServerURL: 'https://discord.gg/ad6R2ttHVX',
 
   docsUrl: 'https://dev.fingerprint.com',
@@ -236,6 +238,7 @@ export const resourcesDropdown = [
   { title: 'FAQ', url: PATH.faq, isLocal: true },
   { title: 'Webinars', url: `${PATH.blog}tag/webinar/`, isLocal: true },
   { title: 'Case Studies', url: PATH.caseStudies, isLocal: true },
+  { title: 'Press', url: PATH.press, isLocal: true },
 ]
 // We need to reset the chatbot widget on the following pages
 export const PAGES_RELOAD_CHATBOT = [

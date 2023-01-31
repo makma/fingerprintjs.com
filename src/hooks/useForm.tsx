@@ -30,6 +30,7 @@ export enum Forms {
   BotdGenerateToken,
   NewsletterBanner,
   NewsletterFooter,
+  ContactPress,
 }
 
 interface GetStartedFormData {
