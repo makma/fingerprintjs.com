@@ -30,7 +30,7 @@ customCTA:
   ctaText: Create Free Account
   ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
-> November 2022 Update: We're now SOC Type II certified. You can read more [here](/blog/soc-2-type-2/). 
+> November 2022 Update: We're now SOC Type II compliant. You can read more [here](/blog/soc-2-type-2/). 
 
 Fingerprint is committed to keeping our customer and company data safe to the highest possible standards.
 

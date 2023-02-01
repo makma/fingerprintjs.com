@@ -94,7 +94,7 @@ export default function TimelineSection() {
             <span className={styles.milestone6}>
               FingerprintJS becomes Fingerprint.
               <br />
-              Fingerprint Pro becomes SOC 2 Type II certified.
+              Fingerprint achieves its SOC 2 Type II compliance attestation.
             </span>
           </div>
         </div>

@@ -22,7 +22,7 @@ export default function SOCSection() {
         <div className={styles.cardsContainer}>
           <Card icon={<StarsSVG />} title='GDPR and CCPA Compliant' />
           <Card icon={<ClockSVG />} title='99.9% Uptime SLA' />
-          <Card icon={<AICPASVG />} title='SOC 2 Type II Certified' />
+          <Card icon={<AICPASVG />} title='SOC 2 Type II' />
         </div>
       </Container>
     </Section>

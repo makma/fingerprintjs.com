@@ -22,7 +22,7 @@ export default function CertificationsSection() {
         <section className={styles.imageSection}>
           <Logo icon={<GdprSVG />} title='GDPR Compliant' />
           <Logo icon={<CcpaSVG />} title='CCPA Compliant' />
-          <Logo icon={<AicpaSVG />} title='SOC 2 Type II Certified' />
+          <Logo icon={<AicpaSVG />} title='SOC 2 Type II' />
         </section>
       </Container>
     </Section>
