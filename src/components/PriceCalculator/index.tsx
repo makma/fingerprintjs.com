@@ -77,7 +77,7 @@ export default function PriceCalculator() {
         />
         <PricingCard
           enterprise
-          label='Enterprise'
+          label='Fingerprint Enterprise'
           price='Contact Us'
           billingDescription='Get hands-on support and a custom contract for your large scale organization.'
           ctaText='Contact Us'
