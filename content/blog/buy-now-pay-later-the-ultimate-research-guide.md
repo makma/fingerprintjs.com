@@ -364,6 +364,8 @@ These metrics perfectly illustrate why merchants choose to partner with BNPL pla
 
 ### Openpay
 
+> ***Update February 2023:** OpenPay has closed and is no longer available to customers for new purchases.*
+
 Australian BNPL contender Openpay offers smarter payment plans for bigger purchases, with limits up to $20,000. And now, with a new <a href="https://www.reuters.com/markets/deals/australias-openpay-strikes-bnpl-partnership-deal-with-american-express-2021-12-01/" target="_blank" rel="noopener noreferrer">partnership deal</a> in place with American Express, Openpay is set to take on the global market
 
 However, with the <a href="https://fst.net.au/financial-services-news/openpay-ceo-to-depart-with-the-bnpl-to-back-away-from-uk-expansion/" target="_blank" rel="noopener noreferrer">departure of CEO Michael Eidel</a>, some industry insiders are wondering whether Openpay's ambitious plans will still go ahead. Only time will tell whether this Australian startup can make it big in the global BNPL market.
