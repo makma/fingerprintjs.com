@@ -40,8 +40,6 @@ Studies show that chargeback costs are rising and projecting to reach [$117 bill
 
 Let's take a closer look at the problem of chargebacks before delving into how the major payment processors handle them.
 
-
-
 # What is a chargeback, and why are they so costly?
 
 A chargeback is when a customer contacts their bank or credit card issuer to dispute a charge on their statement. The card issuer then investigates, during which time the funds are frozen. If the investigation ends in favor of the customer, the card issuer will reverse the charge, and the customer will get their money back. 
@@ -51,7 +49,6 @@ The merchant, on the other hand, may not be so lucky. If the chargeback is valid
 To add insult to injury, [81%](https://citcon.com/chargeback-statistics-merchants-need-to-know/) of chargebacks have no valid reason. Customers may simply be taking advantage of the system, knowing there's a good chance they'll get their money back even if they don't have a legitimate case. 
 
 Unfortunately, chargebacks are often misused. And they can be very costly for merchants, to the tune of billions of dollars yearly.
-
 
 ## Table of Contents
 
@@ -77,8 +74,6 @@ Let's look at how these major processors handle chargebacks:
 * Adyen
 * Helcim
 
-
-
 ## PayPal
 
 For a good reason, PayPal has a longstanding reputation as a secure payment processor. Their annual payment [volume exceeds $1 trillion](<https://www.globaldata.com/data-insights/fnnilsrie/total-payment-volume-on-paypal-global/#:~:text=PayPal%3A%20Total%20Payment%20Volume%20(Q3,%E2%80%93%20Q1%202022%2C%20%24%20billion)&text=Whereas%20for%20FY2021%20PayPal's,TPV)%20of%20USD%201.25%20trillion.>) across nearly 20 billion transactions. 
@@ -103,8 +98,6 @@ The PayPal gift scam is another common one. This is where a buyer purchases an i
 
 To avoid being scammed, it's essential to be aware of these and other scams. And if you're ever unsure about a transaction, you can contact PayPal's customer support for help.
 
-
-
 ## Stripe
 
 When a cardholder [disputes a charge](https://stripe.com/docs/disputes#:~:text=To%20process%20a%20chargeback%2C%20the,payment%20amount%20and%20dispute%20fee.) with their card issuer, the issuer will immediately reverse the charge, and Stripe will debit the corresponding amount (as well as network dispute fees) from the merchant's Stripe account.
@@ -120,8 +113,6 @@ Stripe also offers a product called [Radar](https://stripe.com/radar), which use
 Radar includes features like rich analytics on fraud performance and dispute rates, the ability to make custom rules for certain transactions, and a pipeline to consolidate your fraud data with Radars in your data warehouse.
 
 Merchants will need to analyze if the extra fees are worth it, as Radar for fraud teams costs an [additional 7 cents](https://stripe.com/radar/pricing) per screened transaction on top of Stripe's regular fees.
-
-
 
 ## Shopify
 
@@ -144,8 +135,6 @@ Shopify chargeback protection is offered by [Shopify Protect](https://www.shopif
 
 This only works, of course, if the merchant can prove that the chargeback was fraudulent.
 
-
-
 ## WooCommerce
 
 A tremendous [43%](https://blog.hubspot.com/website/wordpress-stats#:~:text=(W3Techs%2C%202022),every%20five%20websites%20use%20WordPress.) of websites today are built on WordPress, and many use WooCommerce to power their online stores.
@@ -155,8 +144,6 @@ WooCommerce is a popular eCommerce plugin for WordPress and works with major pay
 WooCommerce features a ["Disputes" page](https://woocommerce.com/document/payments/managing-disputes-with-woocommerce-payments/#section-28), which includes a form to challenge disputes. The merchant can provide evidence like weblogs, email communications, delivery communications, proof of prior refunds, etc. WooCommerce recommends directly speaking with the customer, which is in line with best practices for chargebacks. 
 
 Because setting up WooCommerce can be complex, it's essential to ensure you have everything set up correctly - including your integrations with platforms like Stripe if anything in the process breaks, like if a WooCommerce Stripe payment fails. If the customer makes two transactions, the customer may quickly file a chargeback.
-
-
 
 ## Square
 
@@ -170,8 +157,6 @@ Square merchants can receive three types of chargebacks: EMV payment disputes, A
 * **ACH Payment Disputes:** ACH payment disputes are final, and there's no formal process for challenging them. These are typically due to unauthorized transactions, so it's crucial to ensure your customers know they're authorizing a payment when they provide their bank account information.
 * **Cash App Disputes:** These are similar to any other payment dispute - you can provide evidence to dispute the chargeback. Still, if you don't have any proof or choose not to provide it, the chargeback is valid, and the funds will not be returned to you. 
 
-
-
 ## Clover
 
 Clover is a popular choice for small businesses. Since 2012, Clover was initially part of First Data, which merged with Fiserv in 2019.
@@ -179,8 +164,6 @@ Clover is a popular choice for small businesses. Since 2012, Clover was initiall
 Clover does not have a built-in system for managing chargebacks but offers guidance on how to do so. Their merchant services team offers extensive [fraud monitoring tools](https://blog.clover.com/minimize-security-risks-with-fraud-management-tools/) like a velocity filter, on-hold functionality, CVV filter, geo IP tracking, and more.
 
 When handling a chargeback, Clover doesn't offer much in the way of dispute resolution. So, the merchant would need to follow the [best practices](https://uk.clover.com/content/dam/firstdata/clover-uk/en/pdf/legal/Ops-Guide-FINAL_2021.pdf) the company lays out, including reaching out to the customer to try and resolve the dispute, providing evidence to the credit card company within the timeframe given, consistently delivering products and services as described, using a clear merchant descriptor, and so on.
-
-
 
 ## Adyen
 
@@ -192,8 +175,6 @@ Adyen's [stance on chargebacks](https://docs.adyen.com/risk-management/understan
 
 The chargeback is reversed, but if the card issuer finds it in favor of the customer, the "2nd chargeback" is filed, and the merchant is responsible for the total chargeback amount.
 
-
-
 ## Helcim
 
 [Helcim](https://www.helcim.com/) is another processor that's popular among small businesses. Based in Canada, Helcim has been around since 2006 and offers features like POS systems, eCommerce platforms, virtual terminals, and more.
@@ -201,8 +182,6 @@ The chargeback is reversed, but if the card issuer finds it in favor of the cust
 Helcim will email merchants that receive a chargeback, at which point the merchant can accept or dispute the chargeback. You'll be asked to provide evidence if you dispute the chargeback. If the verdict is in favor of the merchant, the chargeback and the $15 fee will be reversed. If the chargeback is valid, the merchant can enter arbitration for a [fee of $400 to $500](https://learn.helcim.com/docs/chargebacks). This fee will be refunded if the verdict is in favor of the merchant. Alternatively, the merchant can choose to do nothing, which means the chargeback will stand.
 
 Chargebacks are costly and can be devastating for small businesses. Understanding how chargebacks work and your options for prevention and protection are essential. By understanding the policies of the major payment processors, you can be better prepared to handle chargebacks should they occur.
-
-
 
 # The challenges of preventing chargebacks and fraud
 
@@ -225,8 +204,6 @@ Other heuristic-based chargeback prevention methods include blocking transaction
 A fraudster can spoof even something like GPS location data. They can use a VPN or proxy server to make it appear like they're in a different location than they are.
 
 Sophisticated fraudsters use a combination of techniques to beat chargeback prevention measures. They might use multiple IP addresses, spoof their location and phone number, and make small transactions.
-
-
 
 # Ten chargeback prevention strategies
 
@@ -324,7 +301,7 @@ Finally, consider using a "pre-notification" service to send customers a reminde
 
 Friendly fraud is when a customer knowingly files a false chargeback to get a refund for a product or service they received and used. While this may seem a victimless crime, it's quite costly for businesses.
 
-There are a few things you can do to combat [friendly fraud](https://fingerprint.com/blog/what-is-friendly-fraud-prevention-tips/?utm_campaign=Fingerprint%20Blog&utm_source=Blog%20-%20How%20Major%20Payment%20Processors%20Handle%20Chargebacks&utm_medium=Blog&utm_content=Friendly%20Fraud%20Blog). For one, have a clear and concise refund policy, and make sure that your customers know it. This way, there will be clarity about what is and is not covered by a refund.
+There are a few things you can do to combat [friendly fraud](https://fingerprint.com/blog/what-is-friendly-fraud-prevention-tips/?&utm_source=blog&utm_medium=website&utm_campaign=blog). For one, have a clear and concise refund policy, and make sure that your customers know it. This way, there will be clarity about what is and is not covered by a refund.
 
 Also, keep good records of all customer communications, including order confirmations, shipping information, and refund policy correspondence. This can help prove that a customer received and used the product or service.
 
@@ -336,8 +313,6 @@ These companies can help you develop a chargeback prevention plan, Identify and 
 
 Chargebacks are costly and time-consuming, but there are things you can do to prevent them. Using these chargeback prevention strategies can reduce the risk of chargebacks and save your business time and money.
 
-
-
 # Preventing chargeback fraud with Fingerprint Pro
 
 Traditional approaches to spotting bots rely on IP addresses and other heuristics, but these can be easily spoofed. Fingerprint Pro is a new approach that uses machine learning to analyze hundreds of characteristics and uniquely identify each user's device. 
@@ -346,4 +321,4 @@ Before the advent of machine learning, businesses had to rely on rule-based syst
 
 Just as self-driving cars could never operate in the highly-complex world with a rule-based approach, the same is accurate for fraud detection. Machine learning offers the ability to learn and adapt as new fraud patterns emerge.
 
-Leading companies already use Fingerprint Pro to prevent chargeback fraud and other types of abuse by identifying returning visitors with 99.5% accuracy. To learn more about how Fingerprint Pro can help your business, [create a free account](https://fingerprint.com/?utm_campaign=Fingerprint%20Blog&utm_source=Blog%20-%20How%20Major%20Payment%20Processors%20Handle%20Chargebacks&utm_medium=Blog&utm_content=Fingerprint%20Home%20Page) or [contact us](https://fingerprint.com/contact-sales/?utm_campaign=Fingerprint%20Blog&utm_source=Blog%20-%20How%20Major%20Payment%20Processors%20Handle%20Chargebacks&utm_medium=Blog&utm_content=Contact%20Sales%20Page) for a free demo.
+Leading companies already use Fingerprint Pro to prevent chargeback fraud and other types of abuse by identifying returning visitors with 99.5% accuracy. To learn more about how Fingerprint Pro can help your business, [create a free account](https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog) or [contact us](https://fingerprint.com/contact-sales/?&utm_source=blog&utm_medium=website&utm_campaign=blog) for a free demo.
