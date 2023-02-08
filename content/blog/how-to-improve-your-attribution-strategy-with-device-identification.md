@@ -14,7 +14,7 @@ metadata:
   socialImage: /img/uploads/attribution-product-post.jpg
 featured: true
 publishDate: 2023-02-01T15:00:39.974Z
-title: How to improve your attribution strategy with device identification
+title: How to improve your marketing attribution strategy with device identification
 isPublished: true
 isHidden: false
 tags:
