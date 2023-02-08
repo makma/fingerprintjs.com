@@ -84,7 +84,7 @@ They usually stick the shipping label to an envelope which they ship back as a r
 
 Wardrobing is a type of return fraud where customers buy products intending to return them after wearing or using them.
 
-Michael Reitblat from Forter <a href="https://www.forter.com/reports/the-hidden-cost-of-returns-abuse/" target="_blank" rel="noreferrer noopener">reports</a> that wardrobing is a reason for 32% of returns abuse.
+A study revealed that [46% of adults believe that wardrobing should be considered an illegal offense](https://news.yahoo.com/forty-six-percent-americans-think-132451314.html?guccounter=1).
 
 ## Price switching
 
