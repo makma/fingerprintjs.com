@@ -13,6 +13,14 @@ const resolvePath = (directoryName, pathName) => {
 
 const gatsbyRequiredRules = path.join(process.cwd(), 'node_modules', 'gatsby', 'dist', 'utils', 'eslint-rules')
 
+const withTrailingSlash = (path) => {
+  return path.endsWith('/') ? path : `${path}/`
+}
+const getRelativeUrl = (url) => {
+  const relativeUrl = url.match(/fingerprint.com(\/.*)$/)
+  return relativeUrl ? withTrailingSlash(relativeUrl[1]) : '/'
+}
+
 const rssPostQuery = `
 {
   allMarkdownRemark(
@@ -271,11 +279,12 @@ module.exports = {
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map((edge) => {
+                const blogUrl = getRelativeUrl(edge.node.frontmatter.metadata.url.replace(/\s+/g, '-'))
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.metadata.description,
                   date: edge.node.frontmatter.publishDate,
-                  url: edge.node.frontmatter.metadata.url,
-                  guid: edge.node.frontmatter.metadata.url,
+                  url: blogUrl,
+                  guid: blogUrl,
                   enclosure: edge.node.frontmatter.metadata.socialImage
                     ? {
                         url: site.siteMetadata.siteUrl + edge.node.frontmatter.metadata.socialImage.publicURL,
