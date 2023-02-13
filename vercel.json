@@ -36,6 +36,10 @@
     {
       "source": "/blog/2022-Fraud-in-the-News/",
       "destination": "/blog/2022-fraud-in-the-news/"
+    },
+    {
+      "source": "/blog/KYC-know-your-customer-financial-fraud/",
+      "destination": "/blog/kyc-know-your-customer-financial-fraud/"
     }
   ],
   "headers": [
