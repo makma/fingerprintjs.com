@@ -1,21 +1,19 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { config, renderBody } from './_lib/oauth2'
-import { AuthorizationCode } from 'simple-oauth2'
+import { create, renderBody } from './_lib/oauth2'
 
 const callback = async (req: VercelRequest, res: VercelResponse) => {
   const code = req.query.code as string
   const { host } = req.headers
 
-  const client = new AuthorizationCode(config)
-
+  const oauth2 = create()
   try {
     // we recreate the client we used to make the request
-    const accessToken = await client.getToken({
+    const accessToken = await oauth2.authorizationCode.getToken({
       code,
       redirect_uri: `https://${host}/api/callback`,
     })
     // create our token object
-    const { token } = client.createToken(accessToken)
+    const { token } = oauth2.accessToken.create(accessToken)
     res.status(200).send(
       renderBody('success', {
         token: token.access_token,
