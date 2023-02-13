@@ -6,7 +6,7 @@ metadata:
     are applied, why KYC is important, what are some of the core requirements of
     Know Your Customer, and what technology exists to help affected businesses
     stay compliant.
-  url: https://www.fingerprint.com/blog/KYC-know-your-customer-financial-fraud
+  url: https://www.fingerprint.com/blog/kyc-know-your-customer-financial-fraud
   image: /img/uploads/kyc-financial-fraud.png
   imageAlt: Know Your Customer KYC Fraud
   imageTitle: Know Your Customer KYC Fraud
