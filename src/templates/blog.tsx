@@ -48,38 +48,28 @@ export default function Blog({ data, pageContext }: BlogProps) {
   )
 }
 
-export const pageQuery = graphql`
-  query Blog($skip: Int!, $limit: Int!) {
-    posts: allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/(blog)/.*\\.md$/" }
-        frontmatter: { isPublished: {ne: false}, isHidden: {ne: true} } 
-      }        
-      sort: { order: DESC, fields: frontmatter___publishDate }
-      limit: $limit
-      skip: $skip
-    ) {
-      ...PostData
-    }
-
-    featuredPosts: allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/(blog)/.*\\.md$/" }
-        frontmatter: { featured: { eq: true }, isPublished: {ne: false}, isHidden: {ne: true} }
-      }
-      sort: { order: DESC, fields: frontmatter___publishDate }
-      limit: 5
-    ) {
-      ...PostData
-    }
-
-    tags: allMarkdownRemark {
-        group(field: frontmatter___tags) {
-          tag: fieldValue
-        }
-      }
+export const pageQuery = graphql`query Blog($skip: Int!, $limit: Int!) {
+  posts: allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}, frontmatter: {isPublished: {ne: false}, isHidden: {ne: true}}}
+    sort: {frontmatter: {publishDate: DESC}}
+    limit: $limit
+    skip: $skip
+  ) {
+    ...PostData
   }
-`
+  featuredPosts: allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}, frontmatter: {featured: {eq: true}, isPublished: {ne: false}, isHidden: {ne: true}}}
+    sort: {frontmatter: {publishDate: DESC}}
+    limit: 5
+  ) {
+    ...PostData
+  }
+  tags: allMarkdownRemark {
+    group(field: {frontmatter: {tags: SELECT}}) {
+      tag: fieldValue
+    }
+  }
+}`
 
 interface BlogContext extends GeneratedPageContext {
   currentPage: number

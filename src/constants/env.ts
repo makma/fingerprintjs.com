@@ -22,7 +22,7 @@ export const BOTD_VERIFY_AGENT_ENDPOINT = process.env.GATSBY_BOTD_VERIFY_AGENT_E
 
 export const FPJS_TLS_ENDPOINT = process.env.GATSBY_FPJS_TLS_ENDPOINT ?? 'https://demo.fpxau.net/'
 
-export const FPJS_INGRESS_ENDPOINT = process.env.GATSBY_FPJS_ENDPOINT ?? 'https://g.fingerprintjs.com/'
+export const FPJS_INGRESS_ENDPOINT = process.env.GATSBY_FPJS_ENDPOINT ?? 'https://fpa.fingerprint.com/'
 
 export const AMPLITUDE_API_KEY = process.env.GATSBY_AMPLITUDE_API_KEY ?? ''
 

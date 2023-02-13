@@ -207,7 +207,7 @@ export default function DemoSection() {
             }}
           >
             {visits
-              ? visits.map((visit) => {
+              ? visits.map((visit, index) => {
                   const isLocationAvailable =
                     visit?.ipLocation?.latitude && visit?.ipLocation?.longitude && visit?.ipLocation?.country?.code
 
@@ -217,7 +217,7 @@ export default function DemoSection() {
                         [styles.activeSlide]:
                           visit.requestId === (visits[activeIndexSlide] && visits[activeIndexSlide].requestId),
                       })}
-                      key={visit.timestamp}
+                      key={`${visit.timestamp}-${index}`}
                     >
                       <div className={classNames(styles.visit, { [styles.incognito]: visit.incognito })}>
                         <div className={styles.leftColumn}>
@@ -300,7 +300,7 @@ export default function DemoSection() {
                   )
                 })
               : repeatElement(21, (i: number) => (
-                  <SwiperSlide key={i} className={styles.swiperSlideSkeleton}>
+                  <SwiperSlide key={`demo-slide-${i}`} className={styles.swiperSlideSkeleton}>
                     <div
                       className={classNames(styles.skeletonWrapper, {
                         [styles.swiperNotActive]: !swiperInit,

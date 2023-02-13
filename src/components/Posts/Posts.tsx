@@ -94,7 +94,10 @@ function SwiperPosts({ name, nameIsCentered, perRow, limitPostLines, posts }: Sw
           <div className='swiper-wrapper'>
             {posts.map((post, index) => {
               return (
-                <SwiperSlide key={post.path} className={`swiper-slide ${index === 0 ? styles.firstItem : ''}`}>
+                <SwiperSlide
+                  key={`${post.path}-${index}`}
+                  className={`swiper-slide ${index === 0 ? styles.firstItem : ''}`}
+                >
                   <Post className={styles.post} perRow={perRow} limitTextLines={limitPostLines} {...post} />
                 </SwiperSlide>
               )

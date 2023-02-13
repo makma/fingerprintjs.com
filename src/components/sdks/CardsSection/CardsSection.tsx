@@ -117,7 +117,7 @@ export default function CardsSection() {
           handleSelectedCategory={handleSelectedCategory}
         />
       </div>
-      <AnimatePresence initial={false} exitBeforeEnter>
+      <AnimatePresence initial={false} mode='wait'>
         <motion.div key={selectedCategory} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
           <IntegrationCards cards={filteredSdks} />
         </motion.div>

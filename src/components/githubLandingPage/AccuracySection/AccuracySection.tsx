@@ -168,7 +168,7 @@ export default function AccuracySection() {
             </div>
           </div>
         </div>
-        <AnimatePresence initial={false} exitBeforeEnter>
+        <AnimatePresence initial={false} mode='wait'>
           <figure className={styles.chart}>
             <ul className={styles.chartY}>
               {yScale.map((point) => (

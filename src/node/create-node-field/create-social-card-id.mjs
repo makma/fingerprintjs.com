@@ -1,4 +1,4 @@
-exports.createSocialCardId = (node, socialCardNode, { createNodeField }) => {
+export const createSocialCardId = (node, socialCardNode, { createNodeField }) => {
   if (socialCardNode != null) {
     createNodeField({
       node,

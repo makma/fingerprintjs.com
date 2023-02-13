@@ -65,7 +65,7 @@ export default function LifeAtFingerSection() {
             {repeatElement(6, (i: number) => (
               <SwiperSlide className={classNames('swiper-slide', styles.item)}>
                 <img
-                  key={i}
+                  key={`slide-${i}`}
                   alt={'Fingerprint team'}
                   className={styles.photo}
                   src={`/img/members-photos/Team${i + 1}.png`}

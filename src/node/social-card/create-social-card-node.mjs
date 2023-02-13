@@ -1,7 +1,7 @@
-const { createFileNodeFromBuffer } = require('gatsby-source-filesystem')
-const { generateImage } = require('./generate-image')
+import { createFileNodeFromBuffer } from 'gatsby-source-filesystem'
+import { generateImage } from './generate-image.mjs'
 
-exports.createSocialCardNode = async (node, { createNode }, getCache, createNodeId) => {
+export const createSocialCardNode = async (node, { createNode }, getCache, createNodeId) => {
   if (node.internal.type === 'MarkdownRemark') {
     const buffer = await generateImage(node.frontmatter.title)
     return await createFileNodeFromBuffer({

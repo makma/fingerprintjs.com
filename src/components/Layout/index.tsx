@@ -3,8 +3,6 @@ import Footer from '../Footer/Footer'
 import Header from '../Header'
 import HeaderDark from '../Header/HeaderDark'
 
-import { useConsolePromotionMessage } from '../../hooks/useConsolePromotionMessage'
-import { URL } from '../../constants/content'
 import { enableAnalytics } from '../../helpers/gtm'
 import { useUserLocation } from '../../hooks/useUserLocation'
 import { amplitudeLogEvent } from '../../helpers/amplitude'
@@ -71,8 +69,6 @@ export function LayoutTemplate({ children, notificationBar, darkVariant }: Layou
       )
     }
   }, [pathname, visitorData, visitorId])
-
-  useConsolePromotionMessage(`Like breaking things to see how they work? Join us: ${URL.careersConsoleLogUrl}`)
 
   return (
     // add rel=preconnect resources to gatsby-ssr.js

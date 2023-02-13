@@ -199,7 +199,7 @@ function Card({
           </Link>
         )}
       </div>
-      <AnimatePresence initial={false} exitBeforeEnter>
+      <AnimatePresence initial={false} mode='wait'>
         {isSelected && (
           <motion.div
             key={title}

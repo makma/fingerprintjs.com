@@ -8,6 +8,8 @@ import './src/styles/custom-properties.scss'
 import React from 'react'
 import AppProviders from './src/AppProviders'
 import { PAGES_RELOAD_CHATBOT } from './src/constants/content'
+import { consolePromotionMessage } from './src/helpers/consolePromotionMessage'
+import { URL } from './src/constants/content'
 
 export const wrapRootElement = ({ element }) => <AppProviders>{element}</AppProviders>
 export const onRouteUpdate = ({ location, prevLocation }) => {
@@ -21,4 +23,8 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
       window.HubSpotConversations.clear({ resetWidget: true })
     }
   }
+}
+
+export const onInitialClientRender = () => {
+  consolePromotionMessage(`Like breaking things to see how they work? Join us: ${URL.careersConsoleLogUrl}`)
 }

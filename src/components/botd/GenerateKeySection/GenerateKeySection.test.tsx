@@ -106,7 +106,7 @@ describe('BotD - Generate Key Section', () => {
 
   it('should have the button disabled if the visitorId is missing', async () => {
     jest.spyOn(fpjsReact, 'useVisitorData').mockImplementation(() => ({
-      getData: async () => undefined,
+      getData: async () => fpResponse,
       data: undefined,
     }))
 

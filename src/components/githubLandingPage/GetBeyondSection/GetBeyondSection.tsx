@@ -197,7 +197,7 @@ export default function GetBeyondSection() {
           <span className={classNames(styles.tab, { [styles.tabProOn]: isProSelected })}>Fingerprint Pro</span>
         </div>
         <div className={styles.content}>
-          <AnimatePresence initial={true} exitBeforeEnter onExitComplete={() => setActiveTabHighlight(isProSelected)}>
+          <AnimatePresence initial={true} mode='wait' onExitComplete={() => setActiveTabHighlight(isProSelected)}>
             <motion.div
               key={isProSelected ? 'pro' : 'oss'}
               initial='hidden'

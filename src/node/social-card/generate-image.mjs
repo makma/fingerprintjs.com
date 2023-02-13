@@ -1,7 +1,7 @@
-const { createCanvas, loadImage } = require('canvas')
-const { join } = require('path')
+import { createCanvas, loadImage } from 'canvas'
+import { join } from 'path'
 
-exports.generateImage = async (title) => {
+export const generateImage = async (title) => {
   const canvas = createCanvas(1200, 600)
   const context = canvas.getContext('2d')
   context.fillStyle = '#0C102B'

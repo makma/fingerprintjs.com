@@ -45,7 +45,7 @@ export default function IncludedSection() {
         className={styles.mobileContainer}
       >
         {cards.map((card, index) => (
-          <SwiperSlide className={styles.slide} key={index}>
+          <SwiperSlide className={styles.slide} key={`life-slide-${index}`}>
             {card}
           </SwiperSlide>
         ))}
