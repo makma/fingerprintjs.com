@@ -32,17 +32,13 @@ customCTA:
   ctaText: Create Free Account
   ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
-Neobanks are entirely online and have no physical presence. They offer several benefits for banking businesses and consumers, particularly those who don't live near a physical bank, to perform transactions. However, neobanks must also face the challenge of fighting fraud and complying with [Know Your Customer (KYC)](https://fingerprint.com/blog/kyc-know-your-customer-financial-fraud/?&utm_source=blog&utm_medium=website&utm_campaign=blog) laws. 
-
-
+Neobanks are entirely online and have no physical presence. They offer several benefits for banking businesses and consumers, particularly those who don't live near a physical bank, to perform transactions. However, neobanks must also face the challenge of fighting fraud and complying with [Know Your Customer (KYC) laws](https://fingerprint.com/blog/kyc-know-your-customer-financial-fraud/?&utm_source=blog&utm_medium=website&utm_campaign=blog). 
 
 ## What is a neobank?
 
 A neobank is a digital-only banking service that exists solely online — taking the form of an app, website, or both. It usually has no physical presence or associated infrastructure. Neobanks typically offer all the services and features one would expect from a traditional bank: secure savings accounts, current accounts, budgeting tools, money transfer, foreign exchange, etc. Additionally, neobanks also employ the [latest technologies](https://vocal.media/trader/what-s-the-next-big-thing-in-neo-banking) (AI/AR/VR) to provide superior experiences compared to traditional banking solutions. 
 
 Digital banks differ from online banking, so the two terms should be distinct. Online banking is a feature offered by many physical banks, but digital banks have no brick-and-mortar presence and offer all their services online to their customers. Neobanks are similar, but they are small businesses with banking licenses set up to promise much more customer service, transparency, and a better customer experience than larger traditional banks. Both digital banks and neobanks are quickly becoming a favorite for many consumers due to their commitment to more transparency and customer satisfaction.
-
-
 
 ## What is a challenge bank?
 
@@ -52,25 +48,17 @@ A challenge bank is another form of digital banking, but the one difference is a
 
 For customers with no interest in physical banking locations, neobanks offer several benefits they can't get from traditional banking. You might be wondering why you would work with a neobank rather than a conventional bank, but neobanks have several benefits you can't get with large institutions. 
 
-
-
 ### Lower fees and account access
 
 One of the primary attractions for neobank customers is lower fees and access to an account, even if they have a poor credit history. This can help individuals who struggle to open traditional banking accounts due to a lack of resources or a lower credit score. With neobanking, they can start fresh with an account tailored to fit their needs and help them reach their financial goals.
-
-
 
 ### Customer support
 
 According to [FinTech News](https://www.fintechnews.org/digital-banking-and-neobanks/), "neobanks build on elements of AI to maintain the personal touch in-branch service offers and offer a more sophisticated virtual personal assistant experience." Better customer satisfaction has been missing from most large banks, where customers often struggle to manage their money and get better support. Neobanks bring this personal touch to customers frustrated with traditional banking.
 
- 
-
 ### Available 24/7
 
 As you know, customer support during banking holidays is nonexistent with traditional banks. Because neobanks are online, transfers are much easier, and customers can perform most of their banking without needing a physical location. Virtual cards give customers access to their money, similar to having cash, and transfers often take much less time than traditional banking transfers.
-
-
 
 ## The biggest obstacle for neobanks
 
@@ -87,19 +75,13 @@ A few common challenges for neobanks:
 
 Another common challenge for virtual banks is peer-to-peer fraud. [P2P fraud detection](https://fingerprint.com/blog/peer-to-peer-fraud-research-guide/?&utm_source=blog&utm_medium=website&utm_campaign=blog) is much more difficult to detect because it often involves legitimate transactions from targeted consumers scammed into transferring money to a cyber-criminal. P2P platforms such as Venmo and CashApp offer the convenience of easy transactions, but they are primary targets for scammers and fraudulent activity.
 
-
-
 ## Preventing neobank fraud
 
 As the future of the banking experience shifts more and more to a virtual-first or virtual-only, identifying users accurately every time becomes a top priority for neobanks. This not only allows the bank to provide a hyper personalized user experience, it sets the standard for digital identification while also complying with KYC laws and regulations globally. There are a few suggested ways to accomplish this while not compromising on user experience.  
 
-
-
 ### Personalized user experience
 
 By leveraging digital identification solutions, neobanks can provide clients personalized banking services that accurately meet their needs. Customers can benefit from faster onboarding processes and more customized product and service offerings tailored to their needs. This helps anticipate potential customer issues before they even occur – taking the digital banking experience to the next level.
-
-
 
 ### Prevent fraud 
 
