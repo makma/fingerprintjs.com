@@ -73,6 +73,13 @@ export default function DemoSection() {
           swiperRef.current?.updateProgress()
           swiperRef.current?.lazy.load()
         }
+        // sometimes the image of the first visit does not load automatically
+        if (visits) {
+          setTimeout(() => {
+            swiperRef.current?.updateProgress()
+            swiperRef.current?.lazy.load()
+          }, 1000)
+        }
       } catch (e) {
         setHistoryLoadError(true)
         rollbar.error('Unable to load visits', getErrorMessage(e))
