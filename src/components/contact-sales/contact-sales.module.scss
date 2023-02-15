@@ -26,7 +26,7 @@
 
     @include media('<=phoneLandscape') {
       font-size: rem(34px);
-      align-self: left;
+      align-self: flex-start;
     }
   }
   .title {
