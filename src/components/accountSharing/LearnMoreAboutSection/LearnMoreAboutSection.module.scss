@@ -106,7 +106,7 @@
   }
 
   .description {
-    @include inter($size: 16px, $color: adjust-color(c('brand-water'), $alpha: -0.3), $lh: 150%);
+    @include inter($size: 16px, $color: #141415, $lh: 150%);
 
     padding-bottom: rem(48px);
 

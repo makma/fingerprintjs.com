@@ -81,7 +81,7 @@ $side-padding: 2rem;
     transition-timing-function: ease-in-out;
 
     &.contentPlus {
-      @include inter($size: 16px, $weight: v('normal'), $color: adjust-color(c('brand-water'), $alpha: -0.3));
+      @include inter($size: 16px, $weight: v('normal'), $color: #141415);
 
       padding: 0 rem(24px) 0 rem(24px);
 

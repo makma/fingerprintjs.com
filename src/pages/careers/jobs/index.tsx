@@ -10,9 +10,7 @@ import { repeatElement } from '../../../helpers/repeatElement'
 import { MAILTO_WORK, PATH } from '../../../constants/content'
 import { SEO } from '../../../components/SEO/SEO'
 import { HeadProps } from 'gatsby'
-
 import styles from './Jobs.module.scss'
-
 import { Link } from 'gatsby'
 import Select from 'react-select'
 import { getListingsFromGreenhouse } from '../../../helpers/api'
@@ -43,6 +41,7 @@ export default function JobsPage({ pageContext }: JobsPageProps) {
   const [filteredJobs, setFilteredJobs] = useState<Job[]>()
   const [isLoading, setIsLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
+  const [isRendered, setIsRendered] = useState(false)
 
   const handleSelectedCategory = (option) => {
     const department = option.value
@@ -57,6 +56,7 @@ export default function JobsPage({ pageContext }: JobsPageProps) {
   }
 
   useEffect(() => {
+    setIsRendered(true)
     setIsLoading(true)
 
     async function getListings() {
@@ -175,43 +175,45 @@ export default function JobsPage({ pageContext }: JobsPageProps) {
             <>
               <div className={styles.selectSection}>
                 <label className={styles.selectLabel}>Department</label>
-                <Select
-                  styles={{
-                    control: (base, { isFocused }) => ({
-                      ...base,
-                      borderRadius: '8px',
-                      borderColor: isFocused ? '#f04405' : undefined,
-                      boxShadow: isFocused ? '#f04405' : undefined,
-                      '&:hover': {
-                        borderColor: '#f04405',
-                        boxShadow: '0 0 0 1px #f04405 ',
-                      },
-                    }),
-                    input: (base) => ({
-                      ...base,
-                      marginTop: '12px',
-                      marginBottom: '12px',
-                    }),
-                    singleValue: (base) => ({
-                      ...base,
-                      fontFamily: 'Inter',
-                      fontSize: '16px',
-                      color: '#0D102B',
-                      fontWeight: '500',
-                      lineHeight: '150%',
-                    }),
-                    option: (base, { isFocused }) => ({
-                      ...base,
-                      color: isFocused ? 'white' : undefined,
-                      backgroundColor: isFocused ? '#f04405' : undefined,
-                    }),
-                  }}
-                  className={styles.select}
-                  defaultValue={departmentsOptions[0]}
-                  options={departmentsOptions}
-                  onChange={handleSelectedCategory}
-                  isLoading={isLoading}
-                />
+                {isRendered && (
+                  <Select
+                    styles={{
+                      control: (base, { isFocused }) => ({
+                        ...base,
+                        borderRadius: '8px',
+                        borderColor: isFocused ? '#f04405' : undefined,
+                        boxShadow: isFocused ? '#f04405' : undefined,
+                        '&:hover': {
+                          borderColor: '#f04405',
+                          boxShadow: '0 0 0 1px #f04405 ',
+                        },
+                      }),
+                      input: (base) => ({
+                        ...base,
+                        marginTop: '12px',
+                        marginBottom: '12px',
+                      }),
+                      singleValue: (base) => ({
+                        ...base,
+                        fontFamily: 'Inter',
+                        fontSize: '16px',
+                        color: '#0D102B',
+                        fontWeight: '500',
+                        lineHeight: '150%',
+                      }),
+                      option: (base, { isFocused }) => ({
+                        ...base,
+                        color: isFocused ? 'white' : undefined,
+                        backgroundColor: isFocused ? '#f04405' : undefined,
+                      }),
+                    }}
+                    className={styles.select}
+                    defaultValue={departmentsOptions[0]}
+                    options={departmentsOptions}
+                    onChange={handleSelectedCategory}
+                    isLoading={isLoading}
+                  />
+                )}
               </div>
               {isLoading ? (
                 <div>

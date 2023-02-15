@@ -52,7 +52,7 @@
     }
 
     .cardDescription {
-      @include inter($size: 16px, $color: adjust-color(c('brand-water'), $alpha: -0.3), $lh: 150%);
+      @include inter($size: 16px, $color: #141415, $lh: 150%);
 
       @include media('>phoneLandscape') {
         max-width: rem(288px);
@@ -67,19 +67,26 @@
   }
 }
 .visitsCard {
-  max-width: rem(507px);
+  max-width: rem(430px);
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: rem(16px);
-  box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
-  border-radius: rem(16px);
+  box-shadow: 0px 3px 2px rgba(20, 20, 21, 0.02), 0px 0px 1px rgba(114, 114, 115, 0.15),
+    0px 7px 6px rgba(20, 20, 21, 0.04), 0px 12px 10px rgba(20, 20, 21, 0.03), 0px 22px 18px rgba(20, 20, 21, 0.03),
+    0px 42px 33px rgba(20, 20, 21, 0.02), 0px 100px 80px rgba(20, 20, 21, 0.02);
+  border-radius: rem(8px);
 
   margin-bottom: rem(32px);
 
   @include media('<=phoneLandscape') {
+    margin-bottom: rem(24px);
+
     padding: rem(8px);
+  }
+  @include media('<=tablet') {
+    max-width: unset;
   }
 
   .visitsTable {
@@ -87,17 +94,13 @@
     border-collapse: collapse;
 
     th {
-      @include inter($size: 14px, $weight: 500, $lh: 140%);
+      @include jb-mono($size: 12px, $weight: 700, $lh: 16px);
       letter-spacing: 0.04em;
       text-transform: uppercase;
       text-align: left;
     }
     td {
-      @include inter($size: 16px, $weight: 400, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
-
-      @include media('<=phoneLandscape') {
-        font-size: rem(14px);
-      }
+      @include inter($size: 14px, $weight: 400, $lh: 160%, $color: #141415);
     }
 
     td,
@@ -159,12 +162,12 @@
     align-self: center;
 
     .title {
-      @include inter($size: 14px, $weight: 500, $lh: 140%);
-      letter-spacing: 0.04em;
+      @include inter($size: 12px, $weight: 600, $lh: 100%);
+      letter-spacing: 0.01em;
       text-transform: uppercase;
     }
     .description {
-      @include inter($size: 16px, $weight: 400, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+      @include inter($size: 14px, $weight: 400, $lh: 160%);
     }
   }
 }
@@ -211,7 +214,7 @@
       padding-bottom: rem(12px);
       margin-bottom: rem(12px);
 
-      border-bottom: 1px solid rgba(13, 16, 43, 0.48);
+      border-bottom: 1px solid #d0d0d0;
     }
     .incognitoSection {
       display: grid;
@@ -262,7 +265,7 @@
     }
   }
   .isIncognito {
-    @include inter($size: 14px, $weight: 400, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+    @include inter($size: 14px, $weight: 400, $lh: 150%, $color: #141415);
   }
 }
 

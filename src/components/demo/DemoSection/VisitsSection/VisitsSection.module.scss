@@ -85,7 +85,7 @@
     }
 
     .cardDescription {
-      @include inter($size: 16px, $color: adjust-color(c('brand-water'), $alpha: -0.3), $lh: 150%);
+      @include inter($size: 16px, $color: #141415, $lh: 150%);
 
       @include media('>phoneLandscape') {
         max-width: rem(288px);
@@ -120,8 +120,7 @@
     padding: 16px;
     max-width: rem(200px);
 
-    box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
-    border-radius: 16px;
+    @include boxWithShadow;
     background: v('white');
 
     @include transition((opacity, transform));
@@ -131,12 +130,12 @@
     transition-delay: 2s;
 
     .visitorId {
-      @include inter($size: 12px, $weight: 500, $lh: 140%);
+      @include jb-mono($size: 12px, $weight: 500, $lh: 140%);
       letter-spacing: 0.04em;
       padding-bottom: rem(12px);
       margin-bottom: rem(12px);
 
-      border-bottom: 1px solid rgba(13, 16, 43, 0.48);
+      border-bottom: 1px solid #d0d0d0;
     }
     .incognitoSection {
       display: grid;
@@ -191,10 +190,48 @@
     }
   }
   .isIncognito {
-    @include inter($size: 14px, $weight: 400, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+    @include inter($size: 14px, $weight: 400, $lh: 150%, $color: #141415);
   }
 }
+.thin {
+  margin: unset;
 
+  .card:nth-of-type(1) {
+    top: -12%;
+    right: -16%;
+
+    @include media('<=desktop') {
+      right: 0%;
+    }
+    @include media('<=tablet') {
+      top: -10%;
+    }
+  }
+  .card:nth-of-type(2) {
+    top: 20%;
+    left: -5%;
+
+    @include media('<=desktop') {
+      top: 20%;
+      left: -5%;
+    }
+
+    @include media('<=tablet') {
+      top: 20%;
+    }
+  }
+  .card:nth-of-type(3) {
+    bottom: -4%;
+    right: -10%;
+
+    @include media('<=desktop') {
+      right: 5%;
+    }
+    @include media('<=tablet') {
+      bottom: -2%;
+    }
+  }
+}
 .visitSkeleton {
   background-color: #dcdce3;
   height: rem(24px);

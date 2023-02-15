@@ -37,7 +37,7 @@
       }
     }
     .description {
-      @include inter($size: 24px, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+      @include inter($size: 24px, $color: #141415);
       margin: 0 rem(40px) rem(40px) rem(40px);
       letter-spacing: -0.1px;
 

@@ -9,7 +9,10 @@ import { ReactComponent as IncognitoIconSVG } from '../IncognitoIconSVG.svg'
 
 import styles from '../VisitsSection.module.scss'
 
-export default function VisitsDiagram() {
+export interface VisitsDiagramProps {
+  thinVersion?: boolean
+}
+export default function VisitsDiagram({ thinVersion }: VisitsDiagramProps) {
   interface SVGElement extends Element {
     beginElement(): SVGElement
   }
@@ -26,7 +29,7 @@ export default function VisitsDiagram() {
   }, [isVisible])
 
   return (
-    <section className={styles.chartSection}>
+    <section className={classNames(styles.chartSection, { [styles.thin]: thinVersion })}>
       <DotsSVG ref={ref} className={styles.dotsImage} />
       <VisitCard isVisible={isVisible} incognito mail='fraud@yourmail.com' />
       <VisitCard isVisible={isVisible} incognito mail='8fraud@yourmail.com' />

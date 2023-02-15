@@ -4,11 +4,6 @@
 .visitsDiagramRoot {
   background: #f9f9fb;
 }
-.diagramRoot,
-.diagramSection {
-  background: v('dark');
-  color: #fafafa;
-}
 .diagramSection {
   @include media('<=phoneLandscape') {
     padding-bottom: rem(80px);
@@ -28,8 +23,7 @@
     text-align: left;
   }
   .title {
-    @include inter($size: 32px, $weight: 700, $lh: 48px);
-    letter-spacing: -0.01em;
+    @include inter($size: 28px, $weight: 600, $lh: 130%);
     padding-bottom: rem(8px);
 
     @include media('<=phoneLandscape') {
@@ -38,7 +32,7 @@
     }
   }
   .description {
-    @include inter($size: 20px, $weight: 400, $lh: 160%);
+    @include inter($size: 20px, $weight: 400, $lh: 160%, $color: v('gray'));
 
     @include media('<=phoneLandscape') {
       font-size: rem(16px);
@@ -50,6 +44,7 @@
 .visitsDiagramRoot {
   display: flex;
   justify-content: space-between;
+  --contentWidth: 1036px;
 
   @include media('<=tablet') {
     flex-direction: column;
@@ -58,8 +53,9 @@
   }
 
   .title {
-    max-width: rem(448px);
+    @include inter($size: 28px, $weight: 600, $lh: 130%);
     align-self: center;
+    max-width: rem(400px);
 
     @include inter($size: 32px, $weight: 700, $lh: 48px);
     letter-spacing: -0.01em;
@@ -69,44 +65,57 @@
     }
 
     @include media('<=tablet') {
-      padding-top: rem(32px);
-      padding-bottom: rem(32px);
+      padding-top: 0;
+      padding-bottom: rem(24px);
       max-width: unset;
       align-self: start;
     }
     @include media('<=phoneLandscape') {
-      font-size: rem(26px);
-      line-height: 32px;
+      font-size: rem(24px);
     }
   }
 }
 .visitsDiagramRoot {
+  @include media('<=tablet') {
+    flex-direction: column-reverse;
+  }
+
   .title {
+    @include inter($size: 28px, $weight: 600, $lh: 130%);
+
     @include media('<=tablet') {
       padding-bottom: rem(70px);
+    }
+    @include media('<=phoneLandscape') {
+      font-size: rem(24px);
     }
   }
 }
 .visitsRoot {
-  column-gap: rem(64px);
-  padding-top: rem(96px);
+  column-gap: rem(126px);
+  padding-top: rem(182px);
   padding-bottom: rem(160px);
-
+  @include media('<=desktop') {
+    column-gap: rem(64px);
+  }
   @include media('<=tablet') {
-    flex-direction: column-reverse;
-    padding-bottom: rem(83px);
+    flex-direction: column;
+    padding-bottom: rem(64px);
     padding-top: 0;
   }
   .title {
-    margin-right: rem(128px);
+    @include inter($size: 28px, $weight: 600, $lh: 130%);
 
     @include media('<=desktop') {
       margin-right: 0;
     }
+    @include media('<=phoneLandscape') {
+      font-size: rem(24px);
+    }
   }
 
   .visitsSection {
-    min-width: rem(506px);
+    min-width: rem(430px);
 
     @include media('<=desktop') {
       min-width: rem(360px);

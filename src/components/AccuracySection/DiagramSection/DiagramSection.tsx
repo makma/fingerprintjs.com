@@ -15,8 +15,9 @@ enum tabOptions {
 interface DiagramSectionProps {
   className?: string
   box?: boolean
+  whiteBackground?: boolean
 }
-export default function DiagramSection({ className, box }: DiagramSectionProps) {
+export default function DiagramSection({ className, box, whiteBackground }: DiagramSectionProps) {
   const [currentTab, setCurrentTab] = useState(tabOptions.BeforePro)
   const [isActive, setIsActive] = useState(false)
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout>()
@@ -37,7 +38,7 @@ export default function DiagramSection({ className, box }: DiagramSectionProps) 
   }, [isActive, timeoutId])
 
   return (
-    <Section className={classNames(className, styles.root)}>
+    <Section className={classNames(className, styles.root, { [styles.whiteButton]: whiteBackground })}>
       <Container size='large' className={styles.container}>
         <Tabs currentTab={currentTab} setCurrentTab={handleSwitch} className={styles.mobileTabs} />
         <div className={styles.card}>
@@ -115,7 +116,7 @@ function Tabs({ currentTab, setCurrentTab, className }: TabsProps) {
         variant='white'
         size='big'
         className={classNames(styles.selectButton, {
-          [styles.showButton]: currentTab === tabOptions.AfterPro,
+          [styles.showButtonPro]: currentTab === tabOptions.AfterPro,
         })}
         onClick={() => setCurrentTab(tabOptions.AfterPro)}
       >

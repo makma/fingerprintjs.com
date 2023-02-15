@@ -55,7 +55,7 @@
       }
 
       &::placeholder {
-        color: adjust-color(c('brand-water'), $alpha: -0.5);
+        color: #5b5b5b;
         max-width: rem(287px);
       }
     }

@@ -32,7 +32,7 @@ $breakpoint: 1218px;
     }
 
     .description {
-      @include inter($size: 16px, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+      @include inter($size: 16px, $lh: 150%, $color: #141415);
       margin: 0 rem(40px) rem(64px) rem(40px);
 
       @media screen and (max-width: $breakpoint) {
@@ -199,7 +199,7 @@ $breakpoint: 1218px;
     margin-bottom: rem(8px);
 
     text-transform: uppercase;
-    @include inter($size: 14px, $lh: 140%, $weight: 500, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+    @include inter($size: 14px, $lh: 140%, $weight: 500, $color: #141415);
     letter-spacing: 0.04em;
 
     @media screen and (max-width: $breakpoint) {
@@ -349,7 +349,7 @@ $breakpoint: 1218px;
       display: flex;
       align-items: center;
 
-      @include inter($size: 14px, $weight: 500, $lh: 140%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+      @include inter($size: 14px, $weight: 500, $lh: 140%, $color: #141415);
       text-transform: uppercase;
 
       @media screen and (max-width: $breakpoint) {

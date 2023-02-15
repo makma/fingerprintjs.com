@@ -98,13 +98,13 @@
   }
 
   .period {
-    @include inter($size: 16px, $color: adjust-color(c('brand-water'), $alpha: -0.3), $lh: 150%);
+    @include inter($size: 16px, $color: #141415, $lh: 150%);
 
     vertical-align: super;
   }
 
   .billed {
-    @include inter($size: 16px, $color: adjust-color(c('brand-water'), $alpha: -0.3), $lh: 150%);
+    @include inter($size: 16px, $color: #141415, $lh: 150%);
     min-height: rem(48px);
 
     margin-bottom: rem(40px);
@@ -187,5 +187,5 @@
 }
 
 .footNote {
-  @include inter($size: 14px, $color: adjust-color(c('brand-water'), $alpha: -0.3), $weight: v('normal'), $lh: 150%);
+  @include inter($size: 14px, $color: #141415, $weight: v('normal'), $lh: 150%);
 }

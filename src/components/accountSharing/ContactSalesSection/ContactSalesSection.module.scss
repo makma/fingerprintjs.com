@@ -27,7 +27,7 @@
     }
 
     @include media('<=tablet') {
-      color: adjust-color(c('brand-water'), $alpha: -0.3);
+      color: #141415;
       font-size: rem(16px);
     }
   }

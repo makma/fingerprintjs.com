@@ -1,9 +1,18 @@
 .contactSalesFormSection {
   grid-area: form;
 
-  min-height: rem(595px);
+  min-height: rem(827px);
   z-index: unset;
   flex: 1;
+  @include media('<=desktop') {
+    min-height: rem(803px);
+  }
+  @include media('<=tablet') {
+    min-height: rem(698px);
+  }
+  @include media('<=phoneLandscape') {
+    min-height: rem(695px);
+  }
 }
 
 .contactSalesForm {
@@ -17,10 +26,10 @@
 }
 
 .label {
-  margin-top: rem(24px);
-  margin-bottom: rem(4px);
+  margin-top: rem(16px);
+  margin-bottom: rem(8px);
 
-  @include inter($size: 16px, $weight: v('semi'));
+  @include inter($size: 16px, $lh: 145%, $weight: v('semi'));
 }
 
 .input,
@@ -28,19 +37,19 @@
   resize: none;
   align-self: stretch;
   border: 0;
-  box-shadow: 0 0 0 1px #c4cdd5;
 
   -webkit-appearance: none;
   background-color: c('white');
-  @include inter($size: 14px, $lh: 21px);
+  @include inter($size: 16px, $lh: 160%);
 
   width: 100%;
   height: rem(50px);
   padding: rem(14px);
 
   flex: 1;
-  border-radius: 1rem;
 
+  border: 1px solid #e8e8e8;
+  border-radius: rem(6px);
   @media screen and (max-width: 640px) {
     min-width: 200px;
   }
@@ -52,14 +61,13 @@
   }
 
   &::placeholder {
-    color: adjust-color(c('brand-water'), $alpha: -0.5);
-    max-width: rem(287px);
+    color: #5b5b5b;
   }
 }
 
 .button {
   align-self: start;
-  margin-top: rem(40px);
+  margin-top: rem(32px);
 
   &.loadingButton {
     background-color: adjust-color(c('brand-fire'), $lightness: -20%);
@@ -67,6 +75,7 @@
   }
 
   @include media('<=tablet') {
+    margin-top: rem(24px);
     width: 100%;
   }
 }
@@ -82,29 +91,36 @@ select:focus {
 .formSection {
   padding: rem(32px);
   max-width: rem(606px);
-  min-width: rem(540px);
-  border-radius: 16px;
-
-  box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
-  border-radius: 16px;
+  background: linear-gradient(0.98deg, #ffffff 0.95%, #ffffff 99.28%);
+  border: 1px solid #e8e8e8;
+  box-shadow: 0px 4px 15px rgba(161, 161, 161, 0.15), 0px 0px 1px rgba(232, 232, 232, 0.35);
+  border-radius: rem(8px);
 
   .header {
-    @include inter($size: 14px, $weight: 500, $lh: 150%);
+    @include inter($size: 16px, $weight: 400, $lh: 160%);
+    padding-bottom: rem(8px);
+
+    @include media('<=phoneLandscape') {
+      font-size: 14px;
+    }
   }
 
+  @include media('<=tablet') {
+    width: 100%;
+    max-width: unset;
+  }
   @include media('<=desktop') {
     padding: rem(20px);
-
-    min-width: auto;
   }
 }
 .stateSection {
   padding: rem(40px);
   max-width: rem(606px);
-  min-width: rem(540px);
-  background-color: v('white');
-  box-shadow: 0px 8px 32px rgba(13, 16, 43, 0.1);
-  border-radius: 16px;
+  min-width: rem(606px);
+  background: linear-gradient(0.98deg, #ffffff 0.95%, #ffffff 99.28%);
+  border: 1px solid #e8e8e8;
+  box-shadow: 0px 4px 15px rgba(161, 161, 161, 0.15), 0px 0px 1px rgba(232, 232, 232, 0.35);
+  border-radius: rem(8px);
 
   display: flex;
   flex-direction: column;
@@ -113,9 +129,14 @@ select:focus {
   row-gap: rem(24px);
 
   @include media('<=tablet') {
-    min-width: auto;
-    width: 100%;
     padding: rem(250px) rem(10px);
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+  }
+
+  @include media('<=phoneLandscape') {
+    font-size: 14px;
   }
 
   .message {
@@ -139,11 +160,16 @@ select:focus {
 }
 
 .poweredBy {
-  padding-top: rem(32px);
+  padding-top: rem(24px);
 
   display: flex;
   flex-direction: column;
-  row-gap: rem(4px);
+  align-self: baseline;
+  row-gap: rem(8px);
+
+  @include media('<=phoneLandscape') {
+    padding-top: rem(16px);
+  }
 }
 .botdDescription {
   display: flex;
@@ -154,7 +180,7 @@ select:focus {
 .text {
   min-height: rem(20px);
 
-  @include inter($size: 14px, $weight: 400, $lh: 125%);
+  @include inter($size: 14px, $weight: 400, $lh: 125%, $color: #5b5b5b);
   letter-spacing: 0.004em;
 
   @include media('<=phoneLandscape') {
@@ -168,13 +194,18 @@ select:focus {
   }
 
   .botD {
-    fill: black;
+    fill: #5b5b5b;
     padding-bottom: rem(2px);
     width: rem(20px);
 
     @include media('<=phoneLandscape') {
       width: rem(16px);
     }
+  }
+}
+.text {
+  @include media('<=phoneLandscape') {
+    padding-right: rem(60px);
   }
 }
 .desktopOnly {

@@ -25,7 +25,7 @@
 
 .descriptionSection {
   .title {
-    @include inter($size: 14px, $weight: 600, $lh: 140%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+    @include inter($size: 14px, $weight: 600, $lh: 140%, $color: #141415);
     letter-spacing: 0.04em;
     text-transform: uppercase;
 
@@ -115,7 +115,7 @@
   }
 
   .botTitle {
-    @include inter($size: 14px, $weight: 600, $lh: 140%, $color: adjust-color(c('brand-water'), $alpha: -0.5));
+    @include inter($size: 14px, $weight: 600, $lh: 140%, $color: #5b5b5b);
     letter-spacing: 0.04em;
     text-transform: uppercase;
 
@@ -195,7 +195,7 @@
     align-items: center;
 
     .cardTitle {
-      @include inter($size: 14px, $weight: 500, $lh: 150%, $color: adjust-color(c('brand-water'), $alpha: -0.3));
+      @include inter($size: 14px, $weight: 500, $lh: 150%, $color: #141415);
       margin-right: rem(8px);
     }
     .infoIcon {

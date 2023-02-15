@@ -8,31 +8,29 @@
   @include media('<=phoneLandscape') {
     align-items: flex-start;
     text-align: left;
-    padding: rem(64px) rem(20px);
+    padding: rem(64px) rem(20px) rem(80px);
   }
   .title {
     padding-bottom: rem(8px);
 
-    @include inter($size: 32px, $weight: v('bold'), $lh: 48px);
-    letter-spacing: -0.01em;
+    @include inter($size: 28px, $weight: 600, $lh: 130%);
 
     @include media('<=phoneLandscape') {
+      font-size: rem(24px);
       padding-right: rem(15px);
-      line-height: rem(40px);
     }
   }
 
   .description {
-    @include inter($size: 18px, $weight: 400, $lh: 150%);
-
+    @include inter($size: 16px, $weight: 400, $lh: 160%, $color: v('gray'));
+    letter-spacing: 0.01em;
     padding-bottom: rem(40px);
     max-width: rem(612px);
 
     @include media('<=phoneLandscape') {
       line-height: rem(24px);
 
-      letter-spacing: 0.001em;
-      font-size: rem(16px);
+      font-size: rem(14px);
     }
   }
 }

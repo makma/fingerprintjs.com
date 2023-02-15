@@ -309,7 +309,4 @@ export default {
       },
     },
   ],
-  mapping: {
-    'MarkdownRemark.fields.author': 'MarkdownRemark[]',
-  },
 }

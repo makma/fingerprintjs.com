@@ -76,18 +76,18 @@ export default function DemoSection() {
         <h1 className={styles.title}>Identify More Visitors With Accuracy</h1>
         <p className={styles.description}>99.5% accuracy in browser identification</p>
       </Container>
-      <DiagramSection className={styles.diagramSection} />
-      <Container className={styles.visitsRoot} size='large'>
-        <Visits className={styles.visitsSection} isLoading={isLoading} visits={visits} currentVisit={currentVisit} />
+      <DiagramSection className={styles.diagramSection} whiteBackground box />
+      <Container className={styles.visitsRoot}>
         <h3 className={styles.title}>Recognize returning visitors, even in incognito mode</h3>
+        <Visits className={styles.visitsSection} isLoading={isLoading} visits={visits} currentVisit={currentVisit} />
       </Container>
-      <Container className={styles.visitsDiagramRoot} size='large'>
+      <Container className={styles.visitsDiagramRoot}>
+        <VisitsDiagram thinVersion />
         <h3 className={styles.title}>
           Permanent ID stability,
           <br />
           even with browser upgrades
         </h3>
-        <VisitsDiagram />
       </Container>
     </>
   )

@@ -147,7 +147,7 @@ export default function ContactSalesForm() {
       }
       setTimeout(() => {
         updateFormState(FormState.Default)
-      }, 10000)
+      }, 1000000)
       trackLeadSubmit(false)
     }
   }
@@ -283,6 +283,7 @@ export default function ContactSalesForm() {
                   className={classNames(styles.button, { [styles.loadingButton]: formState === FormState.Loading })}
                   type='submit'
                   size='big'
+                  variant='orangeGradient'
                   disabled={formState === FormState.Loading}
                   onClick={handleSubmit}
                 >
