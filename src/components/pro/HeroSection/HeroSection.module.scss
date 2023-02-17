@@ -28,7 +28,7 @@
     }
 
     .description {
-      @include inter($size: 20px, $weight: 400, $lh: 160%, $color: v('light-gray'));
+      @include inter($size: 20px, $weight: 400, $lh: 160%, $color: v('dark-gray'));
 
       margin-bottom: rem(56px);
 

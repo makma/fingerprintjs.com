@@ -83,7 +83,7 @@
   }
 
   .label {
-    @include inter($size: 14px, $lh: 140%, $color: #5b5b5b, $weight: 500);
+    @include inter($size: 14px, $lh: 140%, $color: v('gray'), $weight: 500);
 
     letter-spacing: 0.04em;
     text-transform: uppercase;

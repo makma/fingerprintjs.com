@@ -55,7 +55,7 @@
       }
 
       &::placeholder {
-        color: #5b5b5b;
+        color: v('gray');
         max-width: rem(287px);
       }
     }
@@ -160,7 +160,7 @@
       }
 
       &::placeholder {
-        color: adjust-color(c('light-gray'), $alpha: -0.5);
+        color: adjust-color(c('dark-gray'), $alpha: -0.5);
       }
     }
     .arrowButton {
@@ -169,7 +169,7 @@
         path {
           @include transition((fill));
 
-          fill: #5b5b5b;
+          fill: v('gray');
         }
       }
     }
@@ -201,7 +201,7 @@
   }
   &.dark {
     .form {
-      background-color: v('gray');
+      background-color: v('dark-gray');
       .input {
         color: c('white');
         &::placeholder {

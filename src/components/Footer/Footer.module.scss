@@ -1,6 +1,6 @@
 .footer {
   background-color: v('white');
-  color: v('gray');
+  color: v('dark-gray');
   padding: rem(64px) 0 rem(40px) 0;
   border-top: rem(1px) solid #e8e8e8;
 
@@ -247,7 +247,7 @@
 }
 
 .dark {
-  background: v('gray');
+  background: v('dark-gray');
 
   .hiring {
     color: v('github-orange-gradient');

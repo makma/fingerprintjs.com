@@ -63,7 +63,7 @@
     border-radius: rem(16px);
 
     .label {
-      @include inter($size: 14px, $color: #5b5b5b, $lh: 140%, $weight: v('normal'));
+      @include inter($size: 14px, $color: v('gray'), $lh: 140%, $weight: v('normal'));
       text-transform: uppercase;
 
       margin-top: rem(38px);

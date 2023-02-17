@@ -51,7 +51,7 @@
   }
 
   &::placeholder {
-    color: #5b5b5b;
+    color: v('gray');
     max-width: rem(287px);
   }
 }

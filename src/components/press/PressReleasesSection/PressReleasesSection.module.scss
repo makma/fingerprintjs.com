@@ -190,7 +190,7 @@ $backgroundColor: #e8e8e8;
         padding-bottom: rem(8px);
       }
       .company {
-        @include inter($size: 14px, $weight: 500, $lh: 160%, $color: v('gray'));
+        @include inter($size: 14px, $weight: 500, $lh: 160%, $color: v('dark-gray'));
         letter-spacing: 0.01em;
       }
       .link {

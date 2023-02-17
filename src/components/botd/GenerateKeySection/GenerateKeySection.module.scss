@@ -45,7 +45,7 @@
   }
 
   .description {
-    @include inter($size: 16px, $lh: 150%, $color: v('gray'));
+    @include inter($size: 16px, $lh: 150%, $color: v('dark-gray'));
 
     margin-bottom: 2rem;
     padding-right: rem(180px);
@@ -117,7 +117,7 @@
       }
 
       &::placeholder {
-        color: #5b5b5b;
+        color: v('gray');
         max-width: rem(287px);
       }
 

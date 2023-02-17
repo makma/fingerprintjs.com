@@ -61,7 +61,7 @@ $layoutBreakpoint: '<=1250px';
     }
 
     .tagLabel {
-      @include inter($size: 14px, $weight: 600, $lh: 140%, $color: #5b5b5b);
+      @include inter($size: 14px, $weight: 600, $lh: 140%, $color: v('gray'));
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
@@ -102,7 +102,7 @@ $layoutBreakpoint: '<=1250px';
   padding-top: rem(80px);
 
   .label {
-    @include inter($size: 14px, $weight: 600, $lh: 140%, $color: #5b5b5b);
+    @include inter($size: 14px, $weight: 600, $lh: 140%, $color: v('gray'));
     letter-spacing: 0.04em;
     text-transform: uppercase;
 

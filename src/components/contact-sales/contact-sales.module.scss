@@ -114,7 +114,7 @@
     padding-bottom: rem(32px);
     padding-top: rem(28px);
 
-    @include inter($size: 14px, $weight: 600, $lh: 140%, $color: #5b5b5b);
+    @include inter($size: 14px, $weight: 600, $lh: 140%, $color: v('gray'));
     letter-spacing: 0.05em;
     text-transform: uppercase;
 
@@ -204,9 +204,9 @@
 .yahoo,
 .usBank,
 .booking {
-  fill: #434344;
+  fill: v('gray');
   path {
-    fill: #434344;
+    fill: v('gray');
   }
 }
 

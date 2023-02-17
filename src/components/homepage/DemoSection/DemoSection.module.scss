@@ -216,7 +216,7 @@
         column-gap: rem(8px);
         align-items: center;
         .times {
-          @include inter($size: 14px, $weight: 500, $lh: 140%, $color: v('light-gray'));
+          @include inter($size: 14px, $weight: 500, $lh: 140%, $color: v('dark-gray'));
           letter-spacing: 0.04em;
           @include media('<=phoneLandscape') {
             font-weight: 400;
@@ -248,7 +248,7 @@
           row-gap: rem(7.5px);
           justify-content: space-between;
           .value {
-            @include inter($size: 16px, $weight: 400, $lh: 100%, $color: v('light-gray'));
+            @include inter($size: 16px, $weight: 400, $lh: 100%, $color: v('dark-gray'));
             @include media('<=phoneLandscape') {
               font-size: rem(14px);
             }
@@ -563,7 +563,7 @@
     }
   }
   .navigationTitle {
-    @include inter($size: 12px, $weight: 600, $lh: 100%, $color: v('light-gray'));
+    @include inter($size: 12px, $weight: 600, $lh: 100%, $color: v('dark-gray'));
     letter-spacing: 0.01em;
     text-transform: uppercase;
   }

@@ -25,7 +25,7 @@
     }
 
     .description {
-      @include inter($size: 20px, $weight: 400, $lh: 160%, $color: v('light-gray'));
+      @include inter($size: 20px, $weight: 400, $lh: 160%, $color: v('dark-gray'));
 
       margin-bottom: rem(56px);
 
@@ -54,7 +54,7 @@
       column-gap: rem(16px);
 
       .bottomTip {
-        @include inter($size: 14px, $weight: 400, $lh: 160%, $color: v('light-gray'));
+        @include inter($size: 14px, $weight: 400, $lh: 160%, $color: v('dark-gray'));
         letter-spacing: 0.01em;
 
         display: flex;
@@ -111,7 +111,7 @@
 
       .animationLabel {
         text-transform: uppercase;
-        @include jb-mono($size: 14px, $weight: 400, $lh: 140%, $color: v('light-gray'));
+        @include jb-mono($size: 14px, $weight: 400, $lh: 140%, $color: v('dark-gray'));
 
         white-space: nowrap;
 
@@ -120,7 +120,7 @@
         }
       }
       .animationVisitorId {
-        @include jb-mono($size: 18px, $weight: 600, $lh: 130%, $color: v('light-gray'));
+        @include jb-mono($size: 18px, $weight: 600, $lh: 130%, $color: v('dark-gray'));
 
         @include media('<=525px') {
           font-size: 3.25vw;
