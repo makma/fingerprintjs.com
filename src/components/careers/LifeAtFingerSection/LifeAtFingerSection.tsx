@@ -62,7 +62,7 @@ export default function LifeAtFingerSection() {
             }}
             autoplay
           >
-            {repeatElement(6, (i: number) => (
+            {repeatElement(10, (i: number) => (
               <SwiperSlide className={classNames('swiper-slide', styles.item)}>
                 <img
                   key={`slide-${i}`}
