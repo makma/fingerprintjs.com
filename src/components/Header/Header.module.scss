@@ -4,9 +4,13 @@
     top: 0;
     z-index: v('z-header');
   }
+  overflow: clip;
 }
 
 .nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   @include media('>desktopHeader') {
     background: c('white');
   }

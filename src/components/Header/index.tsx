@@ -160,8 +160,8 @@ export default function Header({ notificationBar }: HeaderProps) {
               </div>
             </nav>
           </Container>
+          <MobileNavbar visible={isMobileMenuOpen} />
         </div>
-        {isMobileMenuOpen && <MobileNavbar />}
       </header>
     </>
   )

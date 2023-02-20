@@ -1,24 +1,25 @@
 .nav {
-  position: sticky;
-  left: 0;
-  width: 100%;
-  padding: rem(8px) 0;
-  height: calc(100vh - (96px));
-  z-index: v(z-mobile-menu);
+  position: fixed;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  transform: translateX(100%);
-  @include transition((opacity, transform));
-  transform: translateX(0);
-  pointer-events: auto;
+  height: 100%;
+  width: 100%;
+  z-index: v(z-mobile-menu);
+  pointer-events: none;
+  opacity: 0;
+  padding-top: rem(64px);
+  @include transition((opacity));
 
+  &.visible {
+    opacity: 1;
+  }
   .container {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    pointer-events: auto;
+    background-color: v('white');
     flex: 1;
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
   }
 

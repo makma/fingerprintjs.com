@@ -19,9 +19,13 @@ import {
 import DropdownMenu from '../DropdownMenu/DropdownMenu'
 import Dropdown from '../Dropdown/Dropdown'
 
-export default function MobileNavbar() {
+interface MobileNavbarProps {
+  visible: boolean
+}
+
+export default function MobileNavbar({ visible }: MobileNavbarProps) {
   return (
-    <nav className={styles.nav}>
+    <nav className={classNames(styles.nav, { [styles.visible]: visible })}>
       <div className={styles.container}>
         <div className={classNames(styles.links, styles.top)}>
           <Button href={PATH.contactSales} variant='orangeGradientOutline' size='medium'>
