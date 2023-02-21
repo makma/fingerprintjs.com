@@ -1,4 +1,5 @@
 {
   "extends": ["config:base", "schedule:weekly"],
-  "assignees": ["natapg"]
+  "assignees": ["natapg"],
+  "ignoreDeps": ["remark", "remark-html"]
 }

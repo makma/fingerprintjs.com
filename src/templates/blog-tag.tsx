@@ -59,16 +59,21 @@ export default function BlogTag({ data, pageContext }: BlogTagProps) {
   )
 }
 
-export const pageQuery = graphql`query BlogTag($skip: Int!, $limit: Int!, $tag: String) {
-  allMarkdownRemark(
-    filter: {fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}, frontmatter: {tags: {in: [$tag]}, templateKey: {eq: "long-form-content"}, isPublished: {ne: false}, isHidden: {ne: true}}}
-    sort: {frontmatter: {publishDate: DESC}}
-    limit: $limit
-    skip: $skip
-  ) {
-    ...PostData
+export const pageQuery = graphql`
+  query BlogTag($skip: Int!, $limit: Int!, $tag: String) {
+    allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/(blog)/.*\\.md$/" }
+        frontmatter: { tags: { in: [$tag] }, templateKey: {eq: "long-form-content"}, isPublished: {ne: false}, isHidden: {ne: true} }
+      }
+      sort: { order: DESC, fields: frontmatter___publishDate }
+      limit: $limit
+      skip: $skip
+    ) {
+      ...PostData
+    }
   }
-}`
+`
 
 interface BlogTagContext extends GeneratedPageContext {
   currentPage: number

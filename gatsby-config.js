@@ -1,5 +1,4 @@
-import path from 'path'
-import { fileURLToPath } from 'node:url'
+const path = require('path')
 
 const baseUrl = process.env.VERCEL_ENV === 'preview' ? `https://${process.env.VERCEL_URL}/` : 'https://fingerprint.com'
 
@@ -11,7 +10,6 @@ const resolvePath = (directoryName, pathName) => {
 
   return result
 }
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const gatsbyRequiredRules = path.join(process.cwd(), 'node_modules', 'gatsby', 'dist', 'utils', 'eslint-rules')
 
@@ -27,7 +25,7 @@ const rssPostQuery = `
 {
   allMarkdownRemark(
     filter: {fields: {slug: {regex: "/blog/"}}, frontmatter: {isPublished: {ne: false}, isHidden: {ne: true}}}
-    sort: {frontmatter: {publishDate: DESC}}
+    sort: {order: DESC, fields: frontmatter___publishDate}
     limit: 15
   ) {
     edges {
@@ -57,7 +55,7 @@ const rssPostQuery = `
 }
 `
 
-export default {
+module.exports = {
   siteMetadata: {
     title: 'Fingerprint Pro - Formerly FingerprintJS - Device fingerprinting API',
     description:
@@ -68,7 +66,6 @@ export default {
   graphqlTypegen: {
     generateOnBuild: true,
   },
-  trailingSlash: `always`,
   plugins: [
     {
       resolve: `gatsby-plugin-env-variables`,
@@ -109,6 +106,7 @@ export default {
     {
       resolve: 'gatsby-plugin-sass',
       options: {
+        implementation: require('sass'),
         additionalData: `@import "${resolvePath(__dirname, '/src/styles/common')}";`,
         cssLoaderOptions: {
           esModule: false,

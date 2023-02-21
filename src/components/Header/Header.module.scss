@@ -4,15 +4,20 @@
     top: 0;
     z-index: v('z-header');
   }
-  overflow: clip;
+
+  @include media('<=desktopHeader') {
+    overflow: clip;
+  }
 }
 
 .nav {
-  position: relative;
-  display: flex;
-  flex-direction: column;
   @include media('>desktopHeader') {
     background: c('white');
+  }
+  @include media('<=desktopHeader') {
+    position: relative;
+    display: flex;
+    flex-direction: column;
   }
 }
 

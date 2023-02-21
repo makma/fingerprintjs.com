@@ -26,29 +26,34 @@ export default function UseCases({ data }: UseCasesProps) {
   )
 }
 
-export const pageQuery = graphql`query UseCase {
-  useCases: allMarkdownRemark(
-    filter: {fileAbsolutePath: {regex: "/(use-cases)/(use-cases).*\\.md$/"}, frontmatter: {isPublished: {ne: false}}}
-    sort: {frontmatter: {publishDate: DESC}}
-  ) {
-    ...UseCaseData
-  }
-  funnel: allMarkdownRemark(filter: {frontmatter: {isPublished: {ne: false}}}) {
-    group(field: {frontmatter: {funnel: SELECT}}) {
-      tag: fieldValue
+export const pageQuery = graphql`
+  query UseCase {
+    useCases: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: {regex: "/(use-cases)/(use-cases).*\\.md$/"}
+        frontmatter: { isPublished: {ne: false} } 
+      }        
+      sort: { order: DESC, fields: frontmatter___publishDate }
+    ) {
+      ...UseCaseData
     }
+    funnel: allMarkdownRemark(filter: {frontmatter: {isPublished: {ne: false}}}) {
+        group(field: frontmatter___funnel) {
+          tag: fieldValue
+        }
+      }   
+    category: allMarkdownRemark(filter: {frontmatter: {isPublished: {ne: false}}}) {
+      group(field: frontmatter___category) {
+        tag: fieldValue
+      }
+    }  
+    industry: allMarkdownRemark(filter: {frontmatter: {isPublished: {ne: false}}}) {
+      group(field: frontmatter___industry) {
+        tag: fieldValue
+      }
+    }   
   }
-  category: allMarkdownRemark(filter: {frontmatter: {isPublished: {ne: false}}}) {
-    group(field: {frontmatter: {category: SELECT}}) {
-      tag: fieldValue
-    }
-  }
-  industry: allMarkdownRemark(filter: {frontmatter: {isPublished: {ne: false}}}) {
-    group(field: {frontmatter: {industry: SELECT}}) {
-      tag: fieldValue
-    }
-  }
-}`
+`
 export function Head(props: HeadProps) {
   return (
     <SEO

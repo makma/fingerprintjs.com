@@ -19,15 +19,20 @@ export default function RelatedArticles({
   titleIsCentered,
   limitPostLines,
 }: RelatedArticlesProps) {
-  const data = useStaticQuery(graphql`query RelatedArticles {
-  allMarkdownRemark(
-    filter: {fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}, frontmatter: {isPublished: {ne: false}, isHidden: {ne: true}}}
-    sort: {frontmatter: {publishDate: DESC}}
-    limit: 1000
-  ) {
-    ...PostData
+  const data = useStaticQuery(graphql`
+  query RelatedArticles {
+    allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/(blog)/.*\\.md$/" }
+        frontmatter: { isPublished: {ne: false}, isHidden: {ne: true} }
+      }
+      sort: { order: DESC, fields: frontmatter___publishDate }
+      limit: 1000
+    ) {
+      ...PostData
+    }
   }
-}`)
+`)
   const allArticles = data.allMarkdownRemark.edges.map(({ node }) => node)
   const relatedArticles = getRelatedArticles(article, allArticles, count)
   return relatedArticles.length > 0 ? (

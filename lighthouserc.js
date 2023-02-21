@@ -2,9 +2,8 @@ module.exports = {
   ci: {
     collect: {
       settings: {
+        preset: 'desktop',
         chromeFlags: '--no-sandbox',
-        emulatedFormFactor: 'desktop',
-        throttling: { rttMs: 40, throughputKbps: 10 * 1024, cpuSlowdownMultiplier: 1 },
       },
       staticDistDir: './public',
       url: [

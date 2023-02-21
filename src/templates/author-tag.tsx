@@ -54,37 +54,39 @@ export default function AuthorTag({ data, pageContext }: AuthorTagProps) {
   )
 }
 
-export const pageQuery = graphql`query BlogAuthorTag($skip: Int!, $limit: Int!, $author: String, $tag: String) {
-  allTags: allMarkdownRemark(
-    filter: {fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}, frontmatter: {authors: {in: [$author]}, templateKey: {eq: "long-form-content"}, isPublished: {ne: false}, isHidden: {ne: true}}}
-    sort: {frontmatter: {publishDate: DESC}}
-    limit: $limit
-    skip: $skip
-  ) {
-    group(field: {frontmatter: {tags: SELECT}}) {
-      tag: fieldValue
+export const pageQuery = graphql`
+  query BlogAuthorTag($skip: Int!, $limit: Int!, $author: String, $tag: String) {
+    allTags: allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}, frontmatter: {authors: {in: [$author]}, templateKey: {eq: "long-form-content"}, isPublished: {ne: false}, isHidden: {ne: true}}}
+      sort: {order: DESC, fields: frontmatter___publishDate}
+      limit: $limit
+      skip: $skip
+    ) {
+      group(field: frontmatter___tags) {
+       tag: fieldValue
+      }
     }
-  }
-  posts: allMarkdownRemark(
-    filter: {fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}, frontmatter: {authors: {in: [$author]}, tags: {in: [$tag]}, templateKey: {eq: "long-form-content"}, isPublished: {ne: false}, isHidden: {ne: true}}}
-    sort: {frontmatter: {publishDate: DESC}}
-    limit: $limit
-    skip: $skip
-  ) {
-    ...PostData
-  }
-  authorData: markdownRemark(frontmatter: {title: {eq: $author}}) {
-    frontmatter {
-      bio
-      role
-      photo {
-        childImageSharp {
-          gatsbyImageData(width: 128, height: 128, placeholder: BLURRED, formats: [AUTO])
+    posts: allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/(blog)/.*\\.md$/"}, frontmatter: {authors: {in: [$author]},tags: { in: [$tag] }, templateKey: {eq: "long-form-content"}, isPublished: {ne: false}, isHidden: {ne: true}}}
+      sort: {order: DESC, fields: frontmatter___publishDate}
+      limit: $limit
+      skip: $skip
+    ) {
+      ...PostData
+    }
+    authorData: markdownRemark(frontmatter: {title: {eq: $author}}) {
+      frontmatter {
+        bio
+        role
+        photo {
+          childImageSharp {
+            gatsbyImageData(width: 128,height: 128, placeholder: BLURRED, formats: [AUTO])
+          }
         }
       }
     }
   }
-}`
+`
 
 interface AuthorTagContext extends GeneratedPageContext {
   currentPage: number

@@ -1,16 +1,14 @@
 // eslint can't know something inside a query is a regex and complains about escaping.
 /* eslint no-useless-escape: 0 */
 
-import path from 'path'
-import { createFilePath } from 'gatsby-source-filesystem'
-import webpack from 'webpack'
-import { micromark } from 'micromark'
-import fetch from 'node-fetch'
-import module from 'node:module'
-const require = module.createRequire(import.meta.url)
-
-import { createSocialCardId } from './src/node/create-node-field/create-social-card-id.mjs'
-import { createSocialCardNode } from './src/node/social-card/create-social-card-node.mjs'
+const path = require('path')
+const { createFilePath } = require('gatsby-source-filesystem')
+const webpack = require(`webpack`)
+const remark = require(`remark`)
+const remarkHTML = require(`remark-html`)
+const fetch = require(`node-fetch`)
+const { createSocialCardNode } = require('./src/node/social-card/create-social-card-node')
+const { createSocialCardId } = require('./src/node/create-node-field/create-social-card-id')
 
 async function getFolderEdges(folder, graphql, filter = '') {
   const { data, errors } = await graphql(`
@@ -56,7 +54,7 @@ async function getArrayFieldValues(graphql, name) {
       allMarkdownRemark(
         filter: { frontmatter: { isPublished: { ne: false }, isHidden: {ne: true}, templateKey: { eq: "long-form-content" } } }
       ) {
-        group(field: {frontmatter: {${name}s: SELECT}}) {
+        group(field: frontmatter___${name}s) {
           ${name}: fieldValue
           totalCount
         }
@@ -79,7 +77,7 @@ async function getArrayAuthorsTags(graphql, author) {
       allMarkdownRemark(
         filter: { frontmatter: { authors: {in: ["${author}"]}, isPublished: { ne: false }, isHidden: {ne: true}, templateKey: { eq: "long-form-content" } } }
       ) {
-        group(field: {frontmatter: {tags: SELECT}}) {
+        group(field: frontmatter___tags) {
           tag: fieldValue
           totalCount
         }
@@ -138,7 +136,7 @@ function createPaginatedPages(numPages, itemsPerPage, pathname, template, create
   }
 }
 
-export const createPages = async ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
   const pages = await getFolderEdges('index', graphql)
@@ -225,7 +223,7 @@ export const createPages = async ({ actions, graphql }) => {
   await Promise.all(createAuthorTagPages)
 }
 
-export const onCreatePage = ({ page, actions }) => {
+exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
 
   // Check if noIndex was already set and bail early as otherwise an infinite loop could occur
@@ -256,7 +254,7 @@ function createNodePath({ node, getNode }) {
   }
 }
 
-export const onCreateNode = async ({ node, actions, getNode, getCache, createNodeId }) => {
+exports.onCreateNode = async ({ node, actions, getNode, getCache, createNodeId }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
@@ -286,7 +284,7 @@ function configureMiniCssExtractPlugin(config) {
   }
 }
 
-export const onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
+exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
   //To ignore the css order warnings in gatsby v3 in develop it is necessary to add stage === 'develop'
   if (stage === 'develop' || stage === 'build-javascript') {
     const config = getConfig()
@@ -329,7 +327,7 @@ export const onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
   })
 }
 
-export const sourceNodes = async ({ actions, getNodes, createContentDigest }) => {
+exports.sourceNodes = async ({ actions, getNodes, createContentDigest }) => {
   const { createNodeField, createNode } = actions
 
   const blogPosts = getNodes().filter(
@@ -408,7 +406,7 @@ export const sourceNodes = async ({ actions, getNodes, createContentDigest }) =>
     createPriceNode(defaultPriceData)
   }
 }
-export const createSchemaCustomization = ({ actions }) => {
+exports.createSchemaCustomization = ({ actions }) => {
   // Define the @md tag to mark a field which should be interpreted as markdown and converted to HTML
   actions.createFieldExtension({
     name: 'md',
@@ -416,10 +414,7 @@ export const createSchemaCustomization = ({ actions }) => {
       return {
         resolve(source, args, context, info) {
           const fieldValue = context.defaultFieldResolver(source, args, context, info)
-          if (fieldValue) {
-            return micromark(fieldValue)
-          }
-          return ''
+          return remark().use(remarkHTML).processSync(fieldValue).toString()
         },
       }
     },
@@ -495,7 +490,7 @@ export const createSchemaCustomization = ({ actions }) => {
     }
 `)
 }
-export const createResolvers = ({ createResolvers }) => {
+exports.createResolvers = ({ createResolvers }) => {
   const resolvers = {
     MarkdownRemarkFrontmatter: {
       integrationSdkCardsMobile: {
