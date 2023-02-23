@@ -70,4 +70,4 @@ BotD does not block bots on its own. BotD should be integrated with a web applic
 
 If you’re interested in watching the BotD overview, you can do so [here](https://youtu.be/wok4zbepmZ0). 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wok4zbepmZ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="aspect-ratio: 16 / 9; border-radius: 8px; width: 100%;" src="https://www.youtube.com/embed/wok4zbepmZ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
