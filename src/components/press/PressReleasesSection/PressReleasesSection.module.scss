@@ -59,7 +59,8 @@ $backgroundColor: #e8e8e8;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
       'title-a title-a title-b'
-      'a a b';
+      'a a b'
+      'pag-a pag-a pag-b';
 
     @include media('<=desktop') {
       padding: rem(64px) rem(70px);
@@ -67,8 +68,10 @@ $backgroundColor: #e8e8e8;
       grid-template-areas:
         'title-a'
         'a'
+        'pag-a'
         'title-b'
-        'b';
+        'b'
+        'pag-b';
     }
     @include media('<=phoneLandscape') {
       padding: rem(40px) 0 0;
@@ -99,16 +102,20 @@ $backgroundColor: #e8e8e8;
       grid-template-columns: repeat(2, 1fr);
       column-gap: rem(20px);
       row-gap: rem(32px);
+      grid-template-rows: min-content;
+      justify-content: space-evenly;
+      align-items: start;
+
+      min-height: var(--minHeight);
 
       @include media('<=desktop') {
         column-gap: rem(16px);
         row-gap: rem(16px);
-        padding-bottom: rem(64px);
+        min-height: unset;
       }
       @include media('<=phoneLandscape') {
         display: flex;
         flex-direction: column;
-        padding-bottom: rem(64px);
       }
     }
 
@@ -117,10 +124,17 @@ $backgroundColor: #e8e8e8;
 
       display: flex;
       flex-direction: column;
-
+      min-height: var(--minHeight);
+      @include media('<=desktop') {
+        min-height: unset;
+      }
       @include media('<=phoneLandscape') {
         padding-bottom: rem(64px);
       }
+    }
+    .newsCards,
+    .pressCards {
+      padding-bottom: rem(32px);
     }
     .newsTitle,
     .newsCards {
@@ -156,7 +170,10 @@ $backgroundColor: #e8e8e8;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      width: 100%;
+
       &.box {
+        min-height: rem(200px);
         padding: rem(32px);
         background: linear-gradient(0.98deg, #ffffff 0.95%, #ffffff 99.28%);
 
@@ -172,18 +189,19 @@ $backgroundColor: #e8e8e8;
       }
       &:not(.box) {
         row-gap: rem(24px);
-      }
-      &:not(.box):nth-child(1) {
         padding-bottom: rem(24px);
-      }
-      &:not(.box):nth-child(2) {
-        padding: rem(24px) 0;
+        margin-bottom: rem(24px);
         border-bottom: 1px solid #d0d0d0;
-        border-top: 1px solid #d0d0d0;
       }
-      &:not(.box):nth-child(3) {
-        padding-top: rem(24px);
+
+      &:not(.box):last-child {
+        margin-bottom: unset;
+        border-bottom: unset;
+        @include media('<=desktop') {
+          padding-bottom: 0;
+        }
       }
+
       .cardTitle {
         @include inter($size: 16px, $weight: 600, $lh: 145%);
         margin: 0;
@@ -213,5 +231,30 @@ $backgroundColor: #e8e8e8;
         }
       }
     }
+  }
+}
+.pressCardsPagination {
+  grid-area: pag-a;
+  @include media('<=desktop') {
+    padding-bottom: rem(64px);
+  }
+  @include media('<=phoneLandscape') {
+    padding-right: rem(20px);
+    padding-left: rem(20px);
+  }
+}
+.newsCardsPagination {
+  grid-area: pag-b;
+  padding-left: rem(56px);
+
+  @include media('<=desktop') {
+    padding-left: 0;
+  }
+  @include media('<=phoneLandscape') {
+    background-color: #ffffff;
+
+    padding-right: rem(20px);
+    padding-left: rem(20px);
+    padding-bottom: rem(64px);
   }
 }

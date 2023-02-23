@@ -518,3 +518,33 @@ collections:
               },
             ],
         }
+  - name: 'press'
+    label: 'Press page'
+    folder: content/press
+    create: true
+    delete: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'press-page' }
+      - {
+          label: Press Releases,
+          name: pressReleases,
+          widget: list,
+          fields:
+            [
+              { label: Title, name: title, widget: string },
+              { label: Website, name: website, widget: string },
+              { label: Article URL, name: url, widget: string },
+            ],
+        }
+      - {
+          label: News,
+          name: news,
+          widget: list,
+          fields:
+            [
+              { label: Title, name: title, widget: string },
+              { label: Website, name: website, widget: string },
+              { label: Article URL, name: url, widget: string },
+            ],
+        }

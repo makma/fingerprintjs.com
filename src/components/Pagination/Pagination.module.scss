@@ -1,0 +1,41 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  column-gap: rem(5px);
+
+  .prevNext {
+    @include inter($size: 13px, $weight: 600, $lh: 16px, $color: v('dark-gray'));
+    cursor: pointer;
+    padding: 0 rem(4px);
+    @include transition((color));
+
+    &.disabled {
+      color: #d5d5d6;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+  .dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include inter($size: 13px, $weight: 600, $lh: 16px, $color: v('dark-gray'));
+    cursor: pointer;
+    width: rem(32px);
+    height: rem(32px);
+    border-radius: rem(18px);
+    background: var(--backgroundDotColor);
+    border: rem(1px) solid #ffffff;
+    @include transition((border, color));
+
+    &.selected {
+      border: rem(1px) solid v('github-orange-gradient');
+      color: v('github-orange-gradient');
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    @include media('<=phoneLandscape') {
+      background: var(--backgroundDotColorMobile);
+    }
+  }
+}

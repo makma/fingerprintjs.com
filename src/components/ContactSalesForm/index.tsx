@@ -147,7 +147,7 @@ export default function ContactSalesForm() {
       }
       setTimeout(() => {
         updateFormState(FormState.Default)
-      }, 1000000)
+      }, 10000)
       trackLeadSubmit(false)
     }
   }

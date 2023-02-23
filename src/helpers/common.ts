@@ -17,3 +17,13 @@ export function getQueryStringParam(queryString: string, param: string) {
   const params = new URLSearchParams(queryString)
   return params.get(param)
 }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function paginate(arr: any[], size: number) {
+  return arr.reduce((acc, val, i) => {
+    const idx = Math.floor(i / size)
+    const page = acc[idx] || (acc[idx] = [])
+    page.push(val)
+    return acc
+  }, [])
+}

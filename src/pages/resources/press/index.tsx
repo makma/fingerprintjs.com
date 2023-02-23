@@ -3,12 +3,12 @@ import { LayoutTemplate } from '../../../components/Layout'
 import BreadcrumbsSEO from '../../../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../../../helpers/types'
 
-import PressReleasesSection from '../../../components/press/PressReleasesSection/PressReleasesSection'
+import PressReleasesSection, { CardProps } from '../../../components/press/PressReleasesSection/PressReleasesSection'
 import TimelineSection from '../../../components/press/TimelineSection/TimelineSection'
 import BrandAssetsSection from '../../../components/press/BrandAssetsSection/BrandAssetsSection'
 import ReachTeamSection from '../../../components/press/ReachTeamSection/ReachTeamSection'
 
-import { HeadProps } from 'gatsby'
+import { useStaticQuery, graphql, HeadProps } from 'gatsby'
 import { SEO } from '../../../components/SEO/SEO'
 
 interface SecurityProps {
@@ -17,10 +17,32 @@ interface SecurityProps {
 export default function Security({ pageContext }: SecurityProps) {
   const breadcrumbs = pageContext.breadcrumb.crumbs
 
+  const data = useStaticQuery(graphql`
+    {
+      allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "press-page" } } }) {
+        nodes {
+          frontmatter {
+            pressReleases {
+              title
+              url
+              website
+            }
+            news {
+              title
+              url
+              website
+            }
+          }
+        }
+      }
+    }
+  `)
+  const pressReleasesCards = data.allMarkdownRemark.nodes[0].frontmatter.pressReleases as CardProps[]
+  const newsCards = data.allMarkdownRemark.nodes[0].frontmatter.news as CardProps[]
   return (
     <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
-      <PressReleasesSection />
+      <PressReleasesSection pressReleasesCards={pressReleasesCards} newsCards={newsCards} />
       <TimelineSection />
       <BrandAssetsSection />
       <ReachTeamSection />

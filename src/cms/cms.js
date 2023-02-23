@@ -7,6 +7,7 @@ import { UseCaseContentPreview } from '../templates/use-case-content'
 import { NotificationBarContentPreview } from '../templates/notification-bar-content'
 import { TeamMembersContentPreview } from '../templates/team-members-content'
 import { FaqContentPreview } from '../templates/faq-content'
+import { PressPageContentPreview } from '../templates/press-page-content'
 
 CMS.registerPreviewTemplate('blog', LongFormContentPreview)
 CMS.registerPreviewTemplate('index', StaticPageContentPreview)
@@ -15,3 +16,4 @@ CMS.registerPreviewTemplate('useCases', UseCaseContentPreview)
 CMS.registerPreviewTemplate('notificationBar', NotificationBarContentPreview)
 CMS.registerPreviewTemplate('teamMembers', TeamMembersContentPreview)
 CMS.registerPreviewTemplate('faq', FaqContentPreview)
+CMS.registerPreviewTemplate('press', PressPageContentPreview)
