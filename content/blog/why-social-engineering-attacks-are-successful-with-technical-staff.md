@@ -81,4 +81,4 @@ Finally, organizations should work with technology to detect and stop credential
 
 With Fingerprint, developers can code fail-safe systems into their applications to detect and block authentication attempts. Credential theft still creates a security incident that should be investigated. Integrating Fingerprint into an application will stop brute-force attacks and account takeover botted scans against the web application. It also adds a layer of protection to stop the next exploit phase in social engineering.
 
-To get started with credential stuffing prevention and phishing attacks, check out Fingerprint's [account takeover solution](https://fingerprint.com/account-takeover/) or try out our [demo application](https://fingerprint.com/demo/).
+To get started with credential stuffing prevention and phishing attacks, check out Fingerprint's [account takeover solution](https://fingerprint.com/account-takeover/?&utm_source=blog&utm_medium=website&utm_campaign=blog) or try out our [demo application](https://fingerprint.com/demo/?&utm_source=blog&utm_medium=website&utm_campaign=blog).

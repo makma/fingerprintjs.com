@@ -48,4 +48,4 @@ You will notice that our logo is slightly changed, and we have a new domain (fin
 
 While the name change is largely cosmetic, we have many exciting product updates on the horizon.
 
-**If you have any questions, please [contact support](/support/).**
+**If you have any questions, please [contact support](/support/?&utm_source=blog&utm_medium=website&utm_campaign=blog).**

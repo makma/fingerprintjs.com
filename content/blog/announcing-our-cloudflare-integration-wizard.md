@@ -63,10 +63,10 @@ With the threat of ad blockers preventing a fingerprint from being generated now
 
 The new Cloudflare Integration Wizard makes setting up the integration seamless and quick. In addition, it is an optional step completed in new customer onboarding where previously, Fingerprint support was needed to engage the integration.
 
-The Cloudflare Integration Wizard is for new Fingerprint customers and is available during the onboarding process. However, if you are an existing customer who would like to use Cloudflare integration, you can [contact support](https://fingerprint.com/support/) to get set up. Additional information can be found in our docs [here](https://dev.fingerprint.com/docs/cloudflare-integration). 
+The Cloudflare Integration Wizard is for new Fingerprint customers and is available during the onboarding process. However, if you are an existing customer who would like to use Cloudflare integration, you can [contact support](https://fingerprint.com/support/?&utm_source=blog&utm_medium=website&utm_campaign=blog) to get set up. Additional information can be found in our docs [here](https://dev.fingerprint.com/docs/cloudflare-integration). 
 
 ## Want more information on Fingerprint? 
 
 * Curious if one of our products fits your use case? Check out our use case demos [here](https://fingerprint.com/use-cases/). 
 * Learn more about our other integrations [here](https://dev.fingerprint.com/docs). 
-* To speak with our sales team about how Fingerprint Pro can help your business, click [here](https://fingerprintjs.com/contact-sales/).
+* To speak with our sales team about how Fingerprint Pro can help your business, click [here](https://fingerprintjs.com/contact-sales/?&utm_source=blog&utm_medium=website&utm_campaign=blog).

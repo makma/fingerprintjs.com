@@ -54,7 +54,7 @@ If you use a commerce solution, such as Shopify and WooCommerce, you’re alread
 
 With so many transactions done via mobile, it is crucial to ensure retailers take great care of their customer data and verify transactions before completing checkout.
 
-#### [A few things retailers can do](https://fingerprint.com/blog/cnp-fraud-prevention-to-protect-chargebacks/) to protect their revenue and their customers:
+#### [A few things retailers can do](https://fingerprint.com/blog/cnp-fraud-prevention-to-protect-chargebacks/?&utm_source=blog&utm_medium=website&utm_campaign=blog) to protect their revenue and their customers:
 
 * Collect all your customer information, including email, billing address, and phone numbers
 * Follow the best data protection practices such as SSL on payment pages
@@ -89,4 +89,4 @@ Fraud can occur in these instances because BOPIS transactions do not always requ
 
 ### Secure user accounts through visitor authentication.
 
-There is a wide range of techniques available to identify and prevent fraudulent transactions. At a minimum, online retailers should have systems that raise alerts when unusual behavior occurs. For example, high-value purchases, multiple orders, or failed transaction attempts within a short time are tell-tale signs of fraud. In addition, Fingerprint’s [device fingerprinting technology](https://fingerprint.com/demo/) can help identify suspicious behavior patterns by flagging visitors with a history of fraudulent transactions — even if they are in incognito mode.
+There is a wide range of techniques available to identify and prevent fraudulent transactions. At a minimum, online retailers should have systems that raise alerts when unusual behavior occurs. For example, high-value purchases, multiple orders, or failed transaction attempts within a short time are tell-tale signs of fraud. In addition, Fingerprint’s [device fingerprinting technology](https://fingerprint.com/demo/?&utm_source=blog&utm_medium=website&utm_campaign=blog) can help identify suspicious behavior patterns by flagging visitors with a history of fraudulent transactions — even if they are in incognito mode.

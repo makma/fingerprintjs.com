@@ -92,7 +92,7 @@ Retailers have two main opportunities to catch BOPIS fraudsters: at the time of 
 
 #### Preventing BOPIS Fraud at the Time of Purchase
 
-Fraud and identification solutions like [Fingerprint](https://fingerprint.com/buy-now-pay-later/) can help you catch fraudsters before they  even have the chance to place a BOPIS order. Using device fingerprinting technology, Fingerprint identifies users with previous chargebacks, failed payments, and fraudulent activity, even when they attempt to conceal their identity. [Fingerprint](https://fingerprint.com/buy-now-pay-later/) can also detect other common signs of fraud, such as substantial purchases, multiple orders, or failed purchase attempts within a short time.
+Fraud and identification solutions like [Fingerprint](https://fingerprint.com/buy-now-pay-later/?&utm_source=blog&utm_medium=website&utm_campaign=blog) can help you catch fraudsters before they  even have the chance to place a BOPIS order. Using device fingerprinting technology, Fingerprint identifies users with previous chargebacks, failed payments, and fraudulent activity, even when they attempt to conceal their identity. [Fingerprint](https://fingerprint.com/buy-now-pay-later/?&utm_source=blog&utm_medium=website&utm_campaign=blog) can also detect other common signs of fraud, such as substantial purchases, multiple orders, or failed purchase attempts within a short time.
 
 Another way to discourage BOPIS fraud during the online ordering is by requiring additional personal information at checkout, such as a verifiable phone number.
 
@@ -103,4 +103,4 @@ Retailers can work to minimize BOPIS fraud during pickup by implementing a stric
 Catching fraud at the time of purchase is generally the most accurate and makes the experience most convenient for genuine customers.
 
 \
-Fingerprint is one reliable, convenient way to detect and prevent BOPIS fraud and other types of online shopping fraud, such as friendly fraud, referral fraud, and more. [Learn more about Fingerprint’s eCommerce fraud prevention solutions here.](https://fingerprint.com/ecommerce/)
+Fingerprint is one reliable, convenient way to detect and prevent BOPIS fraud and other types of online shopping fraud, such as friendly fraud, referral fraud, and more. [Learn more about Fingerprint’s eCommerce fraud prevention solutions here.](https://fingerprint.com/ecommerce/?&utm_source=blog&utm_medium=website&utm_campaign=blog)

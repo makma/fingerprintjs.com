@@ -30,7 +30,7 @@ customCTA:
   ctaText: Create Free Account
   ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
-> November 2022 Update: We're now SOC Type II compliant. You can read more [here](/blog/soc-2-type-2/). 
+> November 2022 Update: We're now SOC Type II compliant. You can read more [here](/blog/soc-2-type-2/?&utm_source=blog&utm_medium=website&utm_campaign=blog). 
 
 Fingerprint is committed to keeping our customer and company data safe to the highest possible standards.
 
@@ -65,8 +65,8 @@ SOC 2 compliance is only one of many steps we plan to take to ensure best-in-cla
 
 ## Get in touch
 
-* Current customer with questions? Reach out to our [support team.](/support/) 
-* Thinking about working with us? [Contact sales](/contact-sales/) and let us know you’re interested in seeing our SOC 2 report.
+* Current customer with questions? Reach out to our [support team.](/support/?&utm_source=blog&utm_medium=website&utm_campaign=blog) 
+* Thinking about working with us? [Contact sales](/contact-sales/?&utm_source=blog&utm_medium=website&utm_campaign=blog) and let us know you’re interested in seeing our SOC 2 report.
 * Want to read more about our privacy and security policies? See our full privacy policy in our documentation.
 
 <i>Please note that we can only provide our SOC 2 report for use in evaluating Fingerprint Pro, our paid offering. Our open source library is not SOC 2 compliant and its users are not permitted to access our SOC 2 report.</i>

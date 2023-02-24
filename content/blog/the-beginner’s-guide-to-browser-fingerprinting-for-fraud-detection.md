@@ -153,4 +153,4 @@ Here are a few ways you can get involved:
 
 * Star, follow or fork our Github projects: [Fingerprint](https://github.com/fingerprintjs/fingerprintjs) (browser fingerprinting) and [Fingerprint-Android](https://github.com/fingerprintjs/fingerprint-android).
 * Need more accurate browser fingerprinting for your business? Create a free Fingerprint Pro account for [99.5% fingerprinting accuracy](https://fingerprint.com/).
-* Think Fingerprint could help your business? [Contact our sales team](https://fingerprint.com/contact-sales/) with your questions.
+* Think Fingerprint could help your business? [Contact our sales team](https://fingerprint.com/contact-sales/?&utm_source=blog&utm_medium=website&utm_campaign=blog) with your questions.

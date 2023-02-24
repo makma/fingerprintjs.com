@@ -45,7 +45,7 @@ Browser fingerprinting is one way to stop fraudsters from attempting to hack or 
 
 Browser fingerprinting can gather a lot of information from a browser: the user’s device model, its operating system, its browser version, user timezone, preferred language settings, ad blocker used, screen resolution, and all the granular tech specs of his CPU, graphics card, and so on.
 
-Browser fingerprinting technology can capture more than enough specifics about a user’s device and settings to pinpoint them in a sea of internet users. Read our beginner's guide to learn more about [how it works](https://fingerprint.com/blog/what-is-browser-fingerprinting/) and how each signal adds to a fingerprint's overall accuracy and stability.
+Browser fingerprinting technology can capture more than enough specifics about a user’s device and settings to pinpoint them in a sea of internet users. Read our beginner's guide to learn more about [how it works](https://fingerprint.com/blog/what-is-browser-fingerprinting/?&utm_source=blog&utm_medium=website&utm_campaign=blog) and how each signal adds to a fingerprint's overall accuracy and stability.
 
 Fingerprint’s technology employs several cutting-edge browser identification methods to gather over 100 individual signals. These signals are combined with server-side analysis and deduplication to generate a visitorID, providing a persistent and valuable abstraction of a browser fingerprint, which can be volatile if a user changes settings or updates software on their device 
 
@@ -89,7 +89,7 @@ When dealing with fraud, take note that only a small number of your site visitor
 
 Browser fingerprinting techniques are helpful for identifying visitors with a pattern of fraudulent behavior and then targeting only these visitors for additional security. In addition, fraudsters often use identity concealing techniques like disabling cookies, surfing through a VPN, or using browsers in incognito mode. These are all areas where fingerprinting proves to be at its best since it identifies users quickly without relying on IP addresses and site cookies.
 
-One of the most common fraud types is [account takeover](https://fingerprint.com/account-takeover/), where malicious users try to hack a legitimate user’s account and make purchases or steal their identity. With fingerprinting and related user identification technologies, additional security can be added to the login process for suspicious traffic only. This added security makes it more difficult for untrusted traffic to log in and take over trusted users’ accounts.
+One of the most common fraud types is [account takeover](https://fingerprint.com/account-takeover/?&utm_source=blog&utm_medium=website&utm_campaign=blog), where malicious users try to hack a legitimate user’s account and make purchases or steal their identity. With fingerprinting and related user identification technologies, additional security can be added to the login process for suspicious traffic only. This added security makes it more difficult for untrusted traffic to log in and take over trusted users’ accounts.
 
 If your website is experiencing brute force or bot attacks, a best practice is to ask users to solve a CAPTCHA after each unsuccessful login attempt. Then, after three to five failed login attempts, set your system to lock out the user for a set time.
 

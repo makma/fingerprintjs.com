@@ -32,7 +32,7 @@ customCTA:
   ctaText: Create Free Account
   ctaUrl: https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog
 ---
-The chargeback process was designed as a consumer protection mechanism to shield vulnerable customers from the impact of fraud and credit card theft. Unfortunately, chargebacks penalize retailers severely, as they rarely see the product or service returned — on top of losing the original transaction amount. And with [chargeback incidents on the rise](https://www.versapay.com/blog/chargebacks-are-up-25-percent-how-to-protect-your-business-from-fraud), online retailers are well-advised to proactively implement chargeback prevention measures as part of a broader [payment fraud protection](https://fingerprint.com/payment-fraud/) strategy. The following tactics and best practices can help e-commerce store owners mitigate the risk of chargebacks and protect customers against online fraud.
+The chargeback process was designed as a consumer protection mechanism to shield vulnerable customers from the impact of fraud and credit card theft. Unfortunately, chargebacks penalize retailers severely, as they rarely see the product or service returned — on top of losing the original transaction amount. And with [chargeback incidents on the rise](https://www.versapay.com/blog/chargebacks-are-up-25-percent-how-to-protect-your-business-from-fraud), online retailers are well-advised to proactively implement chargeback prevention measures as part of a broader [payment fraud protection](https://fingerprint.com/payment-fraud/?&utm_source=blog&utm_medium=website&utm_campaign=blog) strategy. The following tactics and best practices can help e-commerce store owners mitigate the risk of chargebacks and protect customers against online fraud.
 
 ## What are online payment chargebacks?
 
@@ -72,7 +72,7 @@ First-rate customer support is crucial for fostering positive relationships with
 
 A wide range of techniques can be used to [identify and prevent fraudulent transactions](https://www.merchantfraudjournal.com/top-chargeback-protection-companies/) that could result in chargebacks. At a minimum, alerts should be raised when anomalous purchases are detected (e.g., orders made from foreign countries or requiring shipping of the items abroad). Unusually large purchases, multiple orders, or failed attempts within a short period are also tell-tale signs of fraud.
 
-Fingerprint’s [device fingerprinting technology](https://fingerprint.com/demo/) can help identify suspicious behavior patterns by flagging visitors with a history of fraudulent transactions — even if they are in incognito mode.
+Fingerprint’s [device fingerprinting technology](https://fingerprint.com/demo/?&utm_source=blog&utm_medium=website&utm_campaign=blog) can help identify suspicious behavior patterns by flagging visitors with a history of fraudulent transactions — even if they are in incognito mode.
 
 ### Improve the online store’s usability and user interface
 

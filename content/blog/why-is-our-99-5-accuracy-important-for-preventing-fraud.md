@@ -60,7 +60,7 @@ With a low accuracy alternative, your fraud system could misidentify nearly 90% 
 
 ## Getting started 
 
-Find out how much fraud Fingerprint Pro can prevent for your business by designing a trial with our expert team. [Contact us](/contact-sales/) and get hands-on guidance for how to incorporate Fingerprint Pro’s high accuracy identification into your fraud stack.
+Find out how much fraud Fingerprint Pro can prevent for your business by designing a trial with our expert team. [Contact us](/contact-sales/?&utm_source=blog&utm_medium=website&utm_campaign=blog) and get hands-on guidance for how to incorporate Fingerprint Pro’s high accuracy identification into your fraud stack.
 
 <i><small>\[1] To learn more about the methodology used to define our 99.5% identification accuracy, read [our documentation](https://dev.fingerprint.com/docs/understanding-our-995-accuracy).</small></i>
 

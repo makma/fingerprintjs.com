@@ -172,7 +172,7 @@ As you can see, traditional methods for bot detection are no longer effective. T
 
 ## How Fingerprint solves the bot problem
 
-[BotD](https://fingerprintjs.com/products/bot-detection/) is an open-source JavaScript bot detection library that uses fingerprinting to identify bots accurately in real-time. Built on the foundation of Fingerprint’s device identification platform, BotD utilizes hundreds of signals from browsers and devices to accurately determine if a “user” is a malicious bot, a harmless crawler, or a human. 
+[BotD](https://fingerprintjs.com/products/bot-detection/?&utm_source=blog&utm_medium=website&utm_campaign=blog) is an open-source JavaScript bot detection library that uses fingerprinting to identify bots accurately in real-time. Built on the foundation of Fingerprint’s device identification platform, BotD utilizes hundreds of signals from browsers and devices to accurately determine if a “user” is a malicious bot, a harmless crawler, or a human. 
 
 In addition, it provides complete transparency into what data is collected, meaning you can be sure there's no shared personal information. The library has four valuable detectors: automation tools, search engines, browser spoofing, and virtual machine detection.
 

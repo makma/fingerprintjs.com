@@ -34,7 +34,7 @@ customCTA:
 ---
 Credit card cracking is [one of the fastest-growing types of fraud](https://www.chargebackgurus.com/blog/effective-tools-strategies-to-prevent-card-testing-aka-card-cracking) globally and accounts for around 16 percent of e-commerce fraud.
 
-[Card cracking](https://fingerprint.com/payment-fraud/) (also known as carding) happens when fraudsters look to exploit the systems of e-commerce businesses to gather credit card information. Fraudsters may have obtained partial card information beforehand, or they can be starting from scratch.
+[Card cracking](https://fingerprint.com/payment-fraud/?&utm_source=blog&utm_medium=website&utm_campaign=blog) (also known as carding) happens when fraudsters look to exploit the systems of e-commerce businesses to gather credit card information. Fraudsters may have obtained partial card information beforehand, or they can be starting from scratch.
 
 Confusingly, there is [another definition for card cracking](https://www.aba.com/advocacy/community-programs/consumer-resources/protect-your-money/how-avoid-card-cracking), which is where fraudsters lure in victims with the promise of money, get them to reveal their bank details, and steal from them. 
 
@@ -118,8 +118,8 @@ Rather than risk someone succeeding with another attempt at fraud, this is a saf
 ### **Use fraud prevention tools**
 
 * Fraud prevention at payment processing (e.g. [Stripe Radar](https://stripe.com/radar))
-* [Device identification](/products/fingerprint-pro/) (Fingerprint Pro) - you can block returning fraudulent visitorIDs as well as monitor ID velocity to find bots (if someone attempts purchases multiple times in a short window)
-* [Bot Detection](/products/bot-detection/) (BotD) - bots should never be able to make purchases! Use our open source library to identify them when they attempt to test CCs and block the purchase.
+* [Device identification](/products/fingerprint-pro/?&utm_source=blog&utm_medium=website&utm_campaign=blog) (Fingerprint Pro) - you can block returning fraudulent visitorIDs as well as monitor ID velocity to find bots (if someone attempts purchases multiple times in a short window)
+* [Bot Detection](/products/bot-detection/?&utm_source=blog&utm_medium=website&utm_campaign=blog) (BotD) - bots should never be able to make purchases! Use our open source library to identify them when they attempt to test CCs and block the purchase.
 
 You can minimize card cracking and more types of payment fraud by utilizing Fingerprint’ 99.5% accurate device fingerprinting. Learn more about how we can identify & help prevent costly payment fraud. 
 

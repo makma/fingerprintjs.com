@@ -33,7 +33,7 @@ customCTA:
 ---
 Account takeover occurs anytime someone gains access to a victim’s online account and uses it without the owner’s knowledge. Also known as an ATO, or ATO attack, it’s a common type of online fraud that is often used to steal either money or personal data, and it’s becoming more and more frequent. 
 
-[Research](https://securitybrief.co.nz/story/financial-account-takeovers-on-the-rise-kaspersky) found that account takeover accounted for 54 percent of all fraudulent transactions in 2020. In a multi-billion dollar cybercrime industry, that’s a significant value being defrauded. It also means that having a good [account takeover prevention](/account-takeover/) strategy can dramatically decrease the risk of doing business online.
+[Research](https://securitybrief.co.nz/story/financial-account-takeovers-on-the-rise-kaspersky) found that account takeover accounted for 54 percent of all fraudulent transactions in 2020. In a multi-billion dollar cybercrime industry, that’s a significant value being defrauded. It also means that having a good [account takeover prevention](/account-takeover/?&utm_source=blog&utm_medium=website&utm_campaign=blog) strategy can dramatically decrease the risk of doing business online.
 
 Bank account takeover represents a huge reputational risk for businesses in the finance industry. Customers need to be able to trust that their money is safe. If they don’t, they’ll simply go to one of your competitors who they feel they can trust. 
 
@@ -101,7 +101,7 @@ This means that online security should be at the forefront of business prioritie
 
 Chargebacks are a form of fraud prevention afforded to debit and credit card holders. It often applies in ecommerce, where cardholders can seek a refund if items they purchase don’t arrive in working condition, never arrive at all, or if the purchase wasn’t authorized by the cardholder in the first place.
 
-[Chargeback fraud](/blog/cnp-fraud-prevention-to-protect-chargebacks/) is increasingly common, where customers take advantage of the protection this system gives them to buy items, claim they never arrived, and enlist the help of their card issuer to force a refund from the merchant. 
+[Chargeback fraud](/blog/cnp-fraud-prevention-to-protect-chargebacks/?&utm_source=blog&utm_medium=website&utm_campaign=blog) is increasingly common, where customers take advantage of the protection this system gives them to buy items, claim they never arrived, and enlist the help of their card issuer to force a refund from the merchant. 
 
 This impacts financial organizations because of the sheer time spent investigating chargebacks. It takes time to process disputes between customers and merchants, and implementing systems that prevent these transactions in the first place is a much more efficient approach. 
 

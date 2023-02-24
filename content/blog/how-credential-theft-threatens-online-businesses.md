@@ -82,4 +82,4 @@ Instead, developers can plug [fraud detection libraries](https://github.com/fing
 
 Fingerprint performs fraud detection for you so that developers can stop account takeover threats, bots, and other automated attacks from cybercriminal activity. It’s a library built with the cybersecurity of businesses and their customers in mind. Developers plug in our library, and they can immediately begin protecting corporate applications. 
 
-To test out Fingerprint, look at our [demo](https://fingerprint.com/demo/) or view how our customers currently use our product to [stop fraud](https://fingerprint.com/case-studies/) and automated attacks.
+To test out Fingerprint, look at our [demo](https://fingerprint.com/demo/?&utm_source=blog&utm_medium=website&utm_campaign=blog) or view how our customers currently use our product to [stop fraud](https://fingerprint.com/case-studies/) and automated attacks.

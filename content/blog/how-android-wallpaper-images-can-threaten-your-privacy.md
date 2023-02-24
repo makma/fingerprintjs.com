@@ -156,4 +156,4 @@ For some examples of more stable and reliable methods, please view our [fingerp
 
 * Star, follow, or fork our [production-grade library](https://github.com/fingerprintjs/fingerprint-android) for Android device fingerprinting.
 * Email any questions you have to [oss@fingerprint.com](mailto:oss@fingerprint.com)
-* [Join our team](https://fingerprint.com/careers/).
+* [Join our team](https://fingerprint.com/careers/?&utm_source=blog&utm_medium=website&utm_campaign=blog).

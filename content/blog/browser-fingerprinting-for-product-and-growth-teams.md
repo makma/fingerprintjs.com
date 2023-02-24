@@ -142,4 +142,4 @@ We would love to hear your questions and get feedback on our fingerprinting tech
 
 * Star, follow or fork our Github projects: [Fingerprint](https://github.com/fingerprintjs/fingerprintjs) (browser fingerprinting) and [Fingerprint-Android](https://github.com/fingerprintjs/fingerprint-android)
 * Need more accurate browser fingerprinting for your business? Create a free Fingerprint Pro account for [99.5% fingerprinting accuracy](/).
-* Think Fingerprint could help your business? [Contact our sales team](https://fingerprint.com/contact-sales/) with your questions
+* Think Fingerprint could help your business? [Contact our sales team](https://fingerprint.com/contact-sales/?&utm_source=blog&utm_medium=website&utm_campaign=blog) with your questions

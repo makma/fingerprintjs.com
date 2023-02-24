@@ -152,7 +152,7 @@ There are many fraud prevention software choices on the market, depending on you
 
 However, your fraud prevention software needs to be accurate. Otherwise, a lot of fraud will slip through the cracks. Companies can ensure their fraud prevention solution works well by keeping track of fraud instances over time to see if their efforts are improving.
 
-Introducing highly accurate identifiers can also help to improve fraud system performance. For example, Fingerprint Pro is a browser fingerprinting API that provides a [99.5% accurate visitor identifier](https://fingerprint.com/demo/) that can be a powerful signal for anti-fraud.
+Introducing highly accurate identifiers can also help to improve fraud system performance. For example, Fingerprint Pro is a browser fingerprinting API that provides a [99.5% accurate visitor identifier](https://fingerprint.com/demo/?&utm_source=blog&utm_medium=website&utm_campaign=blog) that can be a powerful signal for anti-fraud.
 
 ## Conclusion
 

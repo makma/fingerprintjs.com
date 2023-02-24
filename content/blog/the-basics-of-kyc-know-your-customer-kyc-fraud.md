@@ -130,7 +130,7 @@ Officially accepted documents are updated and may change as new forms of ID are 
 
 Fortunately, ID verification, account monitoring, flagging, [fraud detection](https://www.fraud-magazine.com/whitepapers/Whitepaper_Automating_Fraud_Detection_Guide.pdf), and [automated report generation](https://bankingjournal.aba.com/2019/12/as-synthetic-identity-fraud-rises-so-does-kyc-cdd-compliance-cost/) technologies make KYC provisions less time-consuming and prone to errors. Risks can be scored and prioritized without hiring analysts’ teams to manually scan vast volumes of data. Such innovations have helped mitigate the increasing cost of KYC implementation, which [Thomson Reuters](https://www.thomsonreuters.com/en/press-releases/2016/may/thomson-reuters-2016-know-your-customer-surveys.html) estimated can cost major financial institutions up to $500 million annually to implement correctly.
 
-For example, adding a [device identification solution](https://fingerprintjs.com/account-takeover/) helps accurately identify users even with repeated visits. Fingerprint Pro is one of those solutions, and with a 99.5% accuracy rate, it can detect repeat visits of potential bad actors and prevent fraudulent login attempts or transactions from happening in the first place. 
+For example, adding a [device identification solution](https://fingerprintjs.com/account-takeover/?&utm_source=blog&utm_medium=website&utm_campaign=blog) helps accurately identify users even with repeated visits. Fingerprint Pro is one of those solutions, and with a 99.5% accuracy rate, it can detect repeat visits of potential bad actors and prevent fraudulent login attempts or transactions from happening in the first place. 
 
 ### Conclusion
 

@@ -49,7 +49,7 @@ Fraudsters utilize a range of scenarios to come out ahead, which are discussed b
 
 ## Why do gambling platforms have an increased risk of fraud?
 
-Online fraudsters generally have a low chance of success. People are becoming increasingly wary of falling for scams, and businesses are taking steps to protect themselves from all different types of [online payment fraud](https://fingerprint.com/payment-fraud/).
+Online fraudsters generally have a low chance of success. People are becoming increasingly wary of falling for scams, and businesses are taking steps to protect themselves from all different types of [online payment fraud](https://fingerprint.com/payment-fraud/?&utm_source=blog&utm_medium=website&utm_campaign=blog).
 
 However, when fraudsters do succeed, the returns are lucrative. [IBM](https://www.capita.com/sites/g/files/nginej291/files/2020-08/Ponemon-Global-Cost-of-Data-Breach-Study-2020.pdf) found the average business cost of a cyber attack in 2020 was nearly $4 million.
 

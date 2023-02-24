@@ -85,4 +85,4 @@ Another way to detect promo fraud and all its variants is by fingerprinting user
 
 By detecting duplicate account creation, gaming developers can stop fraudulent behavior before the action takes place. Not only does it stop fraudulent activity, but Fingerprint also reduces the number of fraudulent accounts that skew analysis of the platform’s success and stops fraudulent charges from affecting real customers’ satisfaction.
 
-To test out Fingerprint, try out our [demo](https://fingerprint.com/demo/). You can also check out our [open-source SDKs and libraries](https://fingerprint.com/sdk-libraries/) for various browser, mobile, frontend, and backend applications.
+To test out Fingerprint, try out our [demo](https://fingerprint.com/demo/?&utm_source=blog&utm_medium=website&utm_campaign=blog). You can also check out our [open-source SDKs and libraries](https://fingerprint.com/sdk-libraries/) for various browser, mobile, frontend, and backend applications.

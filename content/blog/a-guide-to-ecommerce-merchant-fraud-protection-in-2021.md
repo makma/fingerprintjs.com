@@ -38,7 +38,7 @@ customCTA:
 ---
 The risk of fraud for online businesses is higher than it’s ever been in history. [Ecommerce fraud](https://www.chargebackgurus.com/blog/the-5-types-of-e-commerce-fraud) topped $12 million in 2020, with [89% of businesses](https://offers.worldpayglobal.com/global-payment-risk.html) losing money to payment fraud that year. And with cyber criminals using increasingly sophisticated and effective methods, website operators must maintain a vigilant stance in order to protect themselves and their customers.
 
-Given the soaring number of cases, [merchant fraud protection](/ecommerce/) measures have become a standard part of doing business online. This includes the implementation of effective measures for ecommerce fraud detection and protection. 
+Given the soaring number of cases, [merchant fraud protection](/ecommerce/?&utm_source=blog&utm_medium=website&utm_campaign=blog) measures have become a standard part of doing business online. This includes the implementation of effective measures for ecommerce fraud detection and protection. 
 
 The risk of fraud for online businesses has been higher than ever in history. In 2022, businesses [lost 41 billion](https://www.statista.com/statistics/1273177/ecommerce-payment-fraud-losses-globally/#:~:text=According%20to%20estimates%2C%20e%2Dcommerce,billion%20U.S.%20dollars%20by%202023.) globally to [ecommerce fraud](https://www.chargebackgurus.com/blog/the-5-types-of-e-commerce-fraud), which is expected to increase to 48 billion in 2023. And with cybercriminals using increasingly sophisticated and effective methods, website operators must maintain a vigilant stance to protect themselves and their customers.
 

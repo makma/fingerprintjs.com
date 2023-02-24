@@ -46,7 +46,7 @@ There is another way to identify users without intrusive cookies. In this articl
 
 ## How Browser Fingerprinting Works
 
-[Browser fingerprinting](https://fingerprint.com/blog/what-is-browser-fingerprinting/) identifies users uniquely and their associate sessions regardless of anonymizing tactics like incognito browsing, VPNs, and cookie blockers. In addition, unlike third-party cookies, you cannot alter your browser fingerprint. Third-party cookies can be cleared or blocked by the browser.
+[Browser fingerprinting](https://fingerprint.com/blog/what-is-browser-fingerprinting/?&utm_source=blog&utm_medium=website&utm_campaign=blog) identifies users uniquely and their associate sessions regardless of anonymizing tactics like incognito browsing, VPNs, and cookie blockers. In addition, unlike third-party cookies, you cannot alter your browser fingerprint. Third-party cookies can be cleared or blocked by the browser.
 
 Fingerprinting can identify visitors with a pattern of fraudulent behavior and then target only these visitors for additional security checks, meaning you won’t slow down legitimate users who want to access your site. But you will be able to identify those trying to brute force access or circumvent your security measures.
 
