@@ -170,8 +170,12 @@ export default function ContactSalesForm() {
             <h1 className={styles.header}>
               Complete the form, our expert team will reach out shortly to schedule a call.
             </h1>
-            <div className={styles.contactSalesForm} data-sitekey={BOTD_PUBLIC_KEY_TURING}>
-              <div className={styles.form}>
+            <div
+              id='contact-sales-form-wrapper'
+              className={styles.contactSalesForm}
+              data-sitekey={BOTD_PUBLIC_KEY_TURING}
+            >
+              <div id='contact-sales-form-element' className={styles.form}>
                 <label className={styles.label} htmlFor='formName'>
                   Your name
                 </label>
