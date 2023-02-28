@@ -29,6 +29,7 @@ export enum EventLabel {
 export enum EventType {
   LegacyEvent = 'legacy.event',
   EnableAnalytics = 'event.enableAnalytics',
+  GtmFormSubmit = 'gtm.formSubmit',
 }
 
 type SendEventProps = {
@@ -64,4 +65,9 @@ export function trackLeadSubmit(success = true) {
     category: EventCategory.Lead,
     label: success ? EventLabel.Success : EventLabel.Error,
   })
+}
+export function sendFormEvent(elementClass: string) {
+  setupDataLayer()
+
+  window.dataLayer.push({ event: EventType.GtmFormSubmit, 'gtm.elementClasses': elementClass })
 }

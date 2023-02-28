@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import { Link } from 'gatsby'
 
 import { FormState } from '../../types/FormState'
-import { trackLeadSubmit } from '../../helpers/gtm'
+import { trackLeadSubmit, sendFormEvent } from '../../helpers/gtm'
 import { Forms, useForm } from '../../hooks/useForm'
 import { createNewLead } from '../../helpers/api'
 import { ReactComponent as ConfirmSVG } from './confirmSVG.svg'
@@ -101,6 +101,7 @@ export default function ContactSalesForm() {
       } else {
         updateFormState(FormState.Success)
         trackLeadSubmit()
+        sendFormEvent('ContactSalesForm-module--form')
         amplitudeLogEvent('Sales Contacted')
 
         let calendarUrl: string
@@ -121,7 +122,7 @@ export default function ContactSalesForm() {
 
         setTimeout(() => {
           window.location.replace(calendarUrl)
-        }, 500)
+        }, 1500)
       }
     } catch (error) {
       onError()
