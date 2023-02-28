@@ -9,18 +9,14 @@ export interface RelatedUseCasesProps {
 }
 export default function RelatedUseCases({ useCase }: RelatedUseCasesProps) {
   const data = useStaticQuery(graphql`query RelatedUseCases {
-    allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: {regex: "/(use-cases)/(use-cases).*\\.md$/"}
-        frontmatter: { isPublished: {ne: false}, isHidden: {ne: true} }
-      }
-      sort: { order: DESC, fields: frontmatter___publishDate }
-      limit: 1000
-    ) {
-      ...UseCaseData
-    }
+  allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex: "/(use-cases)/(use-cases).*\\.md$/"}, frontmatter: {isPublished: {ne: false}, isHidden: {ne: true}}}
+    sort: {frontmatter: {publishDate: DESC}}
+    limit: 1000
+  ) {
+    ...UseCaseData
   }
-`)
+}`)
   const allUseCases = data.allMarkdownRemark.edges.map(({ node }) => node)
   const relatedUseCases = getRelatedUseCases(useCase, allUseCases)
 

@@ -5,6 +5,9 @@ import {
   FPJS_TLS_ENDPOINT,
   FPJS_INGRESS_ENDPOINT,
 } from './src/constants/env'
+import AppProviders from './src/AppProviders'
+
+export const wrapPageElement = ({ element }) => <AppProviders>{element}</AppProviders>
 
 export const onRenderBody = ({ setHeadComponents, setHtmlAttributes }) => {
   setHtmlAttributes({ lang: 'en' })

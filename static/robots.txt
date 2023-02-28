@@ -2,5 +2,5 @@
 
 User-agent: *
 Allow: /
-Sitemap: https://fingerprint.com/sitemap/sitemap-index.xml
+Sitemap: https://fingerprint.com/sitemap-index.xml
 Host: https://fingerprint.com

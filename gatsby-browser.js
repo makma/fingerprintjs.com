@@ -11,7 +11,7 @@ import { PAGES_RELOAD_CHATBOT } from './src/constants/content'
 import { consolePromotionMessage } from './src/helpers/consolePromotionMessage'
 import { URL } from './src/constants/content'
 
-export const wrapRootElement = ({ element }) => <AppProviders>{element}</AppProviders>
+export const wrapPageElement = ({ element }) => <AppProviders>{element}</AppProviders>
 export const onRouteUpdate = ({ location, prevLocation }) => {
   const prevPage = prevLocation ? PAGES_RELOAD_CHATBOT.includes(prevLocation.pathname) : false
   const shouldResetWidget = PAGES_RELOAD_CHATBOT.includes(location.pathname) || prevPage

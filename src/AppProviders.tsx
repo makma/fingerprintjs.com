@@ -6,7 +6,7 @@ import { GithubProvider } from './context/GithubContext'
 import { BotdProvider } from './context/BotdContext'
 import { HistoryListener } from './context/HistoryListener'
 import { FPJS_PUBLIC_TOKEN, FPJS_REGION, FPJS_SCRIPT_URL_PATTERN } from './constants/env'
-
+import { isBrowser } from './helpers/detector'
 export type Props = {
   children: React.ReactNode
 }
@@ -28,7 +28,9 @@ export default function AppProviders({ children }: Props) {
 }
 
 function AppLighthouseProvider({ children }: { children: React.ReactNode }) {
-  const isBot = navigator.userAgent.indexOf('Chrome-Lighthouse') > -1 || navigator.userAgent.indexOf('PageSpeed') > -1
+  const isBot = isBrowser()
+    ? navigator.userAgent.indexOf('Chrome-Lighthouse') > -1 || navigator.userAgent.indexOf('PageSpeed') > -1
+    : true
   const publicApiKey = FPJS_PUBLIC_TOKEN
   const region = FPJS_REGION as FingerprintJS.Region
   const scriptUrlPattern = FPJS_SCRIPT_URL_PATTERN

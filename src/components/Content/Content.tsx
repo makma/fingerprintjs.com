@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import classNames from 'classnames'
-
+import { micromark } from 'micromark'
 import styles from './Content.module.scss'
 
 export function DangerouslyRenderHtmlContent({
@@ -34,10 +34,8 @@ export function MarkdownContent({ markdown, className, useBlogStyles=true }: { m
 
   useEffect(() => {
     async function parseMarkdown(markdown: string) {
-      const remark = await import('remark')
-      const remarkHTML = await import('remark-html')
-
-      setHtmlString(remark.default().use(remarkHTML.default).processSync(markdown).toString())    }
+      setHtmlString(micromark(markdown))
+    }
 
     parseMarkdown(markdown)
   }, [markdown])
