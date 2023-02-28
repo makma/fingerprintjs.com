@@ -75,7 +75,7 @@ As fraudsters become more sophisticated with their cyberattacks, it is important
 
 ### Implement a digital identification system
 
-The primary way to stop return fraud is to verify the identity of customers. A digital identification solution, like [Fingerprint](https://fingerprint.com/ecommerce/?&utm_source=blog&utm_medium=website&utm_campaign=blog), is a crucial digital identity solution to prevent cyberattacks by authenticating users and detecting suspicious behavior. Businesses can prohibit nefarious users from taking action on their site without causing friction in the user experience. This allows businesses to maintain the integrity of their data without disrupting the user experience for genuine customers.
+The primary way to stop return fraud is to verify the identity of customers. A digital identification solution, like [Fingerprint](https://fingerprint.com/ecommerce/?utm_source=blog&utm_medium=website&utm_campaign=blog), is a crucial digital identity solution to prevent cyberattacks by authenticating users and detecting suspicious behavior. Businesses can prohibit nefarious users from taking action on their site without causing friction in the user experience. This allows businesses to maintain the integrity of their data without disrupting the user experience for genuine customers.
 
 ## Conclusion
 

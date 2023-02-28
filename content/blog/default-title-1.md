@@ -37,7 +37,7 @@ Every year, businesses lose billions of dollars to refund fraud. This type of fr
 
 Fraudulent refund requests can be a major headache for businesses. Not only do they cost businesses money, but they also take up time and resources that could be better spent elsewhere.
 
-The good news is that there are steps businesses can take to identify and stop refund fraud. In this article, we will discuss some of the most common methods used by criminals to commit refund fraud and outline how you can [protect your business against chargebacks](/blog/cnp-fraud-prevention-to-protect-chargebacks/?&utm_source=blog&utm_medium=website&utm_campaign=blog).
+The good news is that there are steps businesses can take to identify and stop refund fraud. In this article, we will discuss some of the most common methods used by criminals to commit refund fraud and outline how you can [protect your business against chargebacks](/blog/cnp-fraud-prevention-to-protect-chargebacks/?utm_source=blog&utm_medium=website&utm_campaign=blog).
 
 ## What is refund fraud?
 
@@ -70,7 +70,7 @@ They even create step-by-step documents on how to scam a refund from merchants. 
 
 The good thing about scammers working in groups is that it makes them easier to spot.
 
-Patterns make it easier for machine learning algorithms to detect refund requests that are likely fraudulent. So having a device [fingerprinting system](/products/fingerprint-pro/?&utm_source=blog&utm_medium=website&utm_campaign=blog) in place will help you automatically detect malicious actors on your ecommerce website.
+Patterns make it easier for machine learning algorithms to detect refund requests that are likely fraudulent. So having a device [fingerprinting system](/products/fingerprint-pro/?utm_source=blog&utm_medium=website&utm_campaign=blog) in place will help you automatically detect malicious actors on your ecommerce website.
 
 ![Screenshot of Fingerprint](/img/uploads/screenshot-of-fpjs.png "Screenshot of Fingerprint")
 

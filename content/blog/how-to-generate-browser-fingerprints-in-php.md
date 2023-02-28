@@ -34,7 +34,7 @@ customCTA:
 ---
 Almost every web developer has to combat fraud at some point. Attacks might include malicious users trying to brute force passwords, place fraudulent orders, initiate bot attacks, or bypass your site’s paywall.
 
-Traditional methods of tracking users in PHP often fall short when preventing fraud. This is where [browser fingerprinting comes in](https://fingerprint.com/blog/what-is-browser-fingerprinting/?&utm_source=blog&utm_medium=website&utm_campaign=blog). Browser fingerprinting is a technique that generates a highly accurate identifier that can uniquely identify someone based on their browser and device settings.
+Traditional methods of tracking users in PHP often fall short when preventing fraud. This is where [browser fingerprinting comes in](https://fingerprint.com/blog/what-is-browser-fingerprinting/?utm_source=blog&utm_medium=website&utm_campaign=blog). Browser fingerprinting is a technique that generates a highly accurate identifier that can uniquely identify someone based on their browser and device settings.
 
 ## Why Browser Fingerprinting?
 

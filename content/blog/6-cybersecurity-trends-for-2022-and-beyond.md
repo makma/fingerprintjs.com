@@ -69,11 +69,11 @@ Key principle: Businesses should start investing in AI-based security systems to
 
 ### More focus on identity security and data privacy
 
-One of the most common forms of cyber-attacks is identity threat, including identity theft or [account takeovers](/blog/account-takeover-indicators/?&utm_source=blog&utm_medium=website&utm_campaign=blog). Cyber security threats that attack an employee or person’s identity will most likely try to access confidential information.
+One of the most common forms of cyber-attacks is identity threat, including identity theft or [account takeovers](/blog/account-takeover-indicators/?utm_source=blog&utm_medium=website&utm_campaign=blog). Cyber security threats that attack an employee or person’s identity will most likely try to access confidential information.
 
 The simplest thing you can do is beef up security measures on passwords by requiring employees use complicated passwords or change them often. You should also start using multi-factor authentication as an added layer of defense from identity theft, account takeovers, or data breaches. 
 
-Multi-factor authentication (MFA for short) involves using additional authorization levels to secure access, including one-time authorization codes sent via email or SMS. Some companies also use facial recognition and [fingerprint techniques](/blog/browser-fingerprinting-techniques/?&utm_source=blog&utm_medium=website&utm_campaign=blog) to further bolster their identity and account protection with an additional layer of authentication. 
+Multi-factor authentication (MFA for short) involves using additional authorization levels to secure access, including one-time authorization codes sent via email or SMS. Some companies also use facial recognition and [fingerprint techniques](/blog/browser-fingerprinting-techniques/?utm_source=blog&utm_medium=website&utm_campaign=blog) to further bolster their identity and account protection with an additional layer of authentication. 
 
 Key principle: There’s never such a thing as too much security when it comes to protecting one’s login information.
 
@@ -99,7 +99,7 @@ Key principle:  Look into all security points and measure to maintain confidenti
 
 Scammers continue to find different ways to steal people’s information through various phishing attacks. 
 
-For example, attackers often like to impersonate official personnel of banks or financial services companies to steal credit card information, login details to banking or e-wallet platforms and the like. There has also been an increasing occurrence of phishing attacks in the form of fake COVID-19 vaccination drives and [e-commerce fraud](/blog/ecommerce-fraud-types/?&utm_source=blog&utm_medium=website&utm_campaign=blog) that attack credit card users and owners by impersonating online shops to steal people’s information. 
+For example, attackers often like to impersonate official personnel of banks or financial services companies to steal credit card information, login details to banking or e-wallet platforms and the like. There has also been an increasing occurrence of phishing attacks in the form of fake COVID-19 vaccination drives and [e-commerce fraud](/blog/ecommerce-fraud-types/?utm_source=blog&utm_medium=website&utm_campaign=blog) that attack credit card users and owners by impersonating online shops to steal people’s information. 
 
 Key principle. To avoid falling prey to phishing sites, emails, and tactics, businesses need to improve their identity management as well as teach their employees about phishing strategies and how to spot them. Cyber professionals in organizations can stay on top of this by providing educational materials on what phishing tactics might usually look like so employees don’t become victims.
 

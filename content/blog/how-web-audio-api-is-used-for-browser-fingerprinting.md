@@ -31,7 +31,7 @@ customCTA:
 ---
 Did you know you can identify web browsers without cookies or asking for permissions?
 
-[Browser fingerprinting](https://fingerprint.com/blog/browser-fingerprinting-techniques/?&utm_source=blog&utm_medium=website&utm_campaign=blog) works by reading browser attributes and combining them into a single identifier removing the need for cookies or asking for permission. This identifier is stateless and works well in normal and incognito modes.
+[Browser fingerprinting](https://fingerprint.com/blog/browser-fingerprinting-techniques/?utm_source=blog&utm_medium=website&utm_campaign=blog) works by reading browser attributes and combining them into a single identifier removing the need for cookies or asking for permission. This identifier is stateless and works well in normal and incognito modes.
 
 ![Graphic of browser fingerprinting](/img/uploads/audio-fp-browser-fingerprinting-image.png "Graphic of browser fingerprinting")
 
@@ -366,7 +366,7 @@ Audio fingerprinting is one of the many signals our [open source library](https
 
 For audio fingerprinting, we found that the signal contributes only slightly to uniqueness but is highly stable, resulting in a slight net increase in fingerprint accuracy.
 
-Our [beginner’s guide to browser fingerprinting](https://fingerprint.com/blog/what-is-browser-fingerprinting/?&utm_source=blog&utm_medium=website&utm_campaign=blog) further discusses stability, uniqueness, and accuracy.
+Our [beginner’s guide to browser fingerprinting](https://fingerprint.com/blog/what-is-browser-fingerprinting/?utm_source=blog&utm_medium=website&utm_campaign=blog) further discusses stability, uniqueness, and accuracy.
 
 ### Try Browser Fingerprinting for Yourself
 

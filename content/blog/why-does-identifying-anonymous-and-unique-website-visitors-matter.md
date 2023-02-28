@@ -50,7 +50,7 @@ Anonymous users intentionally obfuscate their identity to leave no identifiers, 
 
 ## Can anonymous users be identified? 
 
-Yes, anonymous users can be identified despite their attempts to conceal their identity. [High-level browser fingerprinting](https://fingerprint.com/blog/browser-fingerprinting-techniques/?&utm_source=blog&utm_medium=website&utm_campaign=blog) can be used to gather specific information, or signals, about a visitor that are then used to identify anonymous visitors upon returning to the website or app. Collecting multiple signals allows an anonymous user to be correctly identified, even if things like IP addresses or browsers change. The number of signals collected often dictates how accurate the browser fingerprinting technology can be - the more signals collected, the higher probability that a precise identification is made. 
+Yes, anonymous users can be identified despite their attempts to conceal their identity. [High-level browser fingerprinting](https://fingerprint.com/blog/browser-fingerprinting-techniques/?utm_source=blog&utm_medium=website&utm_campaign=blog) can be used to gather specific information, or signals, about a visitor that are then used to identify anonymous visitors upon returning to the website or app. Collecting multiple signals allows an anonymous user to be correctly identified, even if things like IP addresses or browsers change. The number of signals collected often dictates how accurate the browser fingerprinting technology can be - the more signals collected, the higher probability that a precise identification is made. 
 
 
 
@@ -73,9 +73,9 @@ Tools like Google Analytics and other visitor identification products often leav
 
 So why go through the trouble of identifying incoming traffic to your website? For starters, tracking unique visitors is vital for understanding individual user behavior, overall website/app growth, and trends to follow. On a deeper level, user identification allows for various use cases across fraud detection, marketing attribution, and improving user experience.
 
-* Fraud Detection: Track chargebacks by a unique visitor, prevent [account takeovers](https://fingerprint.com/account-takeover/?&utm_source=blog&utm_medium=website&utm_campaign=blog), and manage attempted fraudulent payment transactions. 
+* Fraud Detection: Track chargebacks by a unique visitor, prevent [account takeovers](https://fingerprint.com/account-takeover/?utm_source=blog&utm_medium=website&utm_campaign=blog), and manage attempted fraudulent payment transactions. 
 * Marketing attribution: Understand user behavior, link separate visitors together, and associate sessions from within social media app webviews with browser sessions on the same device.
-* User experience: [Personalize eCommerce shopping experiences](https://fingerprint.com/use-cases/personalization/?&utm_source=blog&utm_medium=website&utm_campaign=blog) per visitor, remember cart inventory, or reduce extensive 2FA requests to ease the overall experience. For example, use it to personalize their login experience or remember their favorite items and settings like dark mode. 
+* User experience: [Personalize eCommerce shopping experiences](https://fingerprint.com/use-cases/personalization/?utm_source=blog&utm_medium=website&utm_campaign=blog) per visitor, remember cart inventory, or reduce extensive 2FA requests to ease the overall experience. For example, use it to personalize their login experience or remember their favorite items and settings like dark mode. 
 
 
 
@@ -83,4 +83,4 @@ So why go through the trouble of identifying incoming traffic to your website? F
 
 Fingerprint uses browser fingerprinting and device identification to generate a unique visitorID for every user visiting your website or app. With over 100 signals being captured per user, Fingerprint can identify unique and anonymous visitors with 99.5% accuracy. Being an API-first product, Fingerprint can be incorporated into existing fraud engines to bolster fraud prevention and detection efforts or act as the cornerstone for your company’s identification efforts. Whether it’s fraud, attribution, user experience, or more, Fingerprint’s device identity platform has you covered. 
 
-To see how Fingerprint works, check out a demo [here](https://fingerprint.com/demo/?&utm_source=blog&utm_medium=website&utm_campaign=blog). To contact sales click [here](https://fingerprint.com/contact-sales/?&utm_source=blog&utm_medium=website&utm_campaign=blog).
+To see how Fingerprint works, check out a demo [here](https://fingerprint.com/demo/?utm_source=blog&utm_medium=website&utm_campaign=blog). To contact sales click [here](https://fingerprint.com/contact-sales/?utm_source=blog&utm_medium=website&utm_campaign=blog).

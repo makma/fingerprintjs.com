@@ -37,7 +37,7 @@ On behalf of the whole team at Fingerprint, we are excited to announce that we h
 
 ## Now more than ever is the time to try Fingerprint Pro
 
-Over the past year we have made some [major updates to our product](/blog/product-update-11-2021/?&utm_source=blog&utm_medium=website&utm_campaign=blog), improving the onboarding experience, building out dashboard insights, and increasing identifier accuracy. 
+Over the past year we have made some [major updates to our product](/blog/product-update-11-2021/?utm_source=blog&utm_medium=website&utm_campaign=blog), improving the onboarding experience, building out dashboard insights, and increasing identifier accuracy. 
 
 We also have achieved some incredible milestones over the last year that have helped to make this recent round of funding possible, and cemented our ability to continue improving our offerings for years to come.
 
@@ -62,12 +62,12 @@ Our new trial process makes it especially easy for our open source users to try 
 
 ### SOC2 Compliance
 
-We achieved [SOC2 compliance](/blog/soc-2-type-1/?&utm_source=blog&utm_medium=website&utm_campaign=blog) this August, making it possible for us to provide enterprise customers with our Type 1 report. Even if your company does not require SOC2 from technology vendors, the report provides assurance of our commitment to best-in-class data security and privacy.
+We achieved [SOC2 compliance](/blog/soc-2-type-1/?utm_source=blog&utm_medium=website&utm_campaign=blog) this August, making it possible for us to provide enterprise customers with our Type 1 report. Even if your company does not require SOC2 from technology vendors, the report provides assurance of our commitment to best-in-class data security and privacy.
 
 ## Get In Touch
 
 If you have any questions about Fingerprint, we would love to hear from you.
 
-* [Contact our team](/contact-sales/?&utm_source=blog&utm_medium=website&utm_campaign=blog)
+* [Contact our team](/contact-sales/?utm_source=blog&utm_medium=website&utm_campaign=blog)
 * [Sign up for a free Pro account](https://dashboard.fingerprint.com/signup)
 * [Join our Discord channel](https://discord.gg/ad6R2ttHVX) to discuss all things Fingerprint, cybersecurity, and privacy

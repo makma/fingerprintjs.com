@@ -38,7 +38,7 @@ customCTA:
 ---
 The risk of fraud for online businesses is higher than it’s ever been in history. [Ecommerce fraud](https://www.chargebackgurus.com/blog/the-5-types-of-e-commerce-fraud) topped $12 million in 2020, with [89% of businesses](https://offers.worldpayglobal.com/global-payment-risk.html) losing money to payment fraud that year. And with cyber criminals using increasingly sophisticated and effective methods, website operators must maintain a vigilant stance in order to protect themselves and their customers.
 
-Given the soaring number of cases, [merchant fraud protection](/ecommerce/?&utm_source=blog&utm_medium=website&utm_campaign=blog) measures have become a standard part of doing business online. This includes the implementation of effective measures for ecommerce fraud detection and protection. 
+Given the soaring number of cases, [merchant fraud protection](/ecommerce/?utm_source=blog&utm_medium=website&utm_campaign=blog) measures have become a standard part of doing business online. This includes the implementation of effective measures for ecommerce fraud detection and protection. 
 
 The risk of fraud for online businesses has been higher than ever in history. In 2022, businesses [lost 41 billion](https://www.statista.com/statistics/1273177/ecommerce-payment-fraud-losses-globally/#:~:text=According%20to%20estimates%2C%20e%2Dcommerce,billion%20U.S.%20dollars%20by%202023.) globally to [ecommerce fraud](https://www.chargebackgurus.com/blog/the-5-types-of-e-commerce-fraud), which is expected to increase to 48 billion in 2023. And with cybercriminals using increasingly sophisticated and effective methods, website operators must maintain a vigilant stance to protect themselves and their customers.
 
@@ -48,7 +48,7 @@ Given the soaring number of cases, merchant fraud protection measures have becom
 
 ### What is ecommerce fraud?
 
-Ecommerce fraud is a type of cybercrime in which criminals use stolen credit card information or fake identities to make unauthorized purchases online. It can also involve identity theft, where criminals use stolen personal information such as names, addresses, and Social Security numbers to open new accounts or take out loans in someone else's name. To learn more about the types of ecommerce fraud, read [6 Types of Ecommerce Fraud and How To Prevent Them From Harming Your Customers](https://fingerprint.com/blog/ecommerce-fraud-types/?&utm_source=blog&utm_medium=website&utm_campaign=blog).
+Ecommerce fraud is a type of cybercrime in which criminals use stolen credit card information or fake identities to make unauthorized purchases online. It can also involve identity theft, where criminals use stolen personal information such as names, addresses, and Social Security numbers to open new accounts or take out loans in someone else's name. To learn more about the types of ecommerce fraud, read [6 Types of Ecommerce Fraud and How To Prevent Them From Harming Your Customers](https://fingerprint.com/blog/ecommerce-fraud-types/?utm_source=blog&utm_medium=website&utm_campaign=blog).
 
 
 
@@ -160,8 +160,8 @@ As its name implies, [Hypertext Transfer Protocol Secure](https://www.bigcommerc
 
 #### Use fraud detection solutions to protect your online store.
 
-Online merchants have many solutions for detecting suspicious activity and apprehending malicious actors. For example, [Fingerprint](https://fingerprint.com/?&utm_source=blog&utm_medium=website&utm_campaign=blog) helps identify suspicious online activity by flagging visitors with multiple accounts or a history of fraudulent transactions.
+Online merchants have many solutions for detecting suspicious activity and apprehending malicious actors. For example, [Fingerprint](https://fingerprint.com/?utm_source=blog&utm_medium=website&utm_campaign=blog) helps identify suspicious online activity by flagging visitors with multiple accounts or a history of fraudulent transactions.
 
 ### Conclusion
 
-In short, without the proper merchant fraud protection measures in place, online businesses are highly vulnerable to the continuously evolving tactics of cybercriminals. To learn more about how Fingerprint can help you mitigate the risk of ecommerce fraud and account takeovers, [contact sales for a demo](https://fingerprint.com/contact-sales/?&utm_source=blog&utm_medium=website&utm_campaign=blog) or [test-drive our solution](https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog) — it's free for ten days with unlimited API access.
+In short, without the proper merchant fraud protection measures in place, online businesses are highly vulnerable to the continuously evolving tactics of cybercriminals. To learn more about how Fingerprint can help you mitigate the risk of ecommerce fraud and account takeovers, [contact sales for a demo](https://fingerprint.com/contact-sales/?utm_source=blog&utm_medium=website&utm_campaign=blog) or [test-drive our solution](https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog) — it's free for ten days with unlimited API access.

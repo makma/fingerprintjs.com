@@ -106,6 +106,6 @@ What’s more, if a scammer has defrauded individuals with a romance scam, who�
 It’s possible to prevent romance scammers from defrauding your business – even scammers using highly sophisticated methods. Here are a few simple tools and processes to implement in your online store to prevent this specific type of fraud from harming your bottom line:
 
 * Educate your customers about fraud. Simply linking to an article like this one can go a long way in letting your customers know what’s out there and how to protect against scams.
-* Use a fraud and identification solution like Fingerprint. Using device fingerprinting technology, [Fingerprint](https://fingerprint.com/?&utm_source=blog&utm_medium=website&utm_campaign=blog) helps identify suspicious users with previous chargebacks, failed payments, and fraudulent activity, even when they attempt to conceal their identity. 
+* Use a fraud and identification solution like Fingerprint. Using device fingerprinting technology, [Fingerprint](https://fingerprint.com/?utm_source=blog&utm_medium=website&utm_campaign=blog) helps identify suspicious users with previous chargebacks, failed payments, and fraudulent activity, even when they attempt to conceal their identity. 
 
 Keep an eye out for common signs of fraud. Substantial purchases, multiple orders, and failed attempts within a short time can signify romance scammers placing illegitimate orders using stolen credit card credentials.

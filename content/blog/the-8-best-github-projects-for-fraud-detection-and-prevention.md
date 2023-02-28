@@ -60,7 +60,7 @@ A solution from one of these libraries on GitHub can be a great starting point. 
 
 Only a tiny percentage of your website visitors will be responsible for any kind of fraud, so your role is to find and isolate these users. Online fraudsters are experts at hiding their identities when performing attacks, so you can count on them disguising their device, using a VPN, and clearing their browser’s cookies.
 
-This is where a solution like Fingerprint shines. It uses a technology called [fingerprinting](/blog/what-is-browser-fingerprinting/?&utm_source=blog&utm_medium=website&utm_campaign=blog) to identify users on your website accurately. It does this without the need for any additional information or permissions from the user, so you won’t affect usability by implementing it.
+This is where a solution like Fingerprint shines. It uses a technology called [fingerprinting](/blog/what-is-browser-fingerprinting/?utm_source=blog&utm_medium=website&utm_campaign=blog) to identify users on your website accurately. It does this without the need for any additional information or permissions from the user, so you won’t affect usability by implementing it.
 
 Fingerprinting with this open-source tool has proven to be over [90% accurate](https://arstechnica.com/information-technology/2017/02/now-sites-can-fingerprint-you-online-even-when-you-use-multiple-browsers/), allowing you to identify users on your website uniquely even if they’re trying to hide their identity to perform a malicious attack. These results are possible using a combination of browser attributes, hardware specifications, IP address identification, and geolocation.
 

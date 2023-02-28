@@ -36,7 +36,7 @@ We are excited to announce the latest in furthering our commitment to keeping ou
 
 This SOC 2 Type II Certification demonstrates that an independent accounting and auditing firm reviewed and examined our company and that we achieved stringent benchmarks in security, privacy, availability, processing integrity, and confidentiality. 
 
-We completed [our first SOC 2 Type I report](https://fingerprint.com/blog/soc-2-type-1/?&utm_source=blog&utm_medium=website&utm_campaign=blog) in 2021, and this SOC 2 Type II report builds upon that initial report. 
+We completed [our first SOC 2 Type I report](https://fingerprint.com/blog/soc-2-type-1/?utm_source=blog&utm_medium=website&utm_campaign=blog) in 2021, and this SOC 2 Type II report builds upon that initial report. 
 
 * Our full press release about this announcement is available [here](https://www.businesswire.com/news/home/20221108005314/en/Fingerprint-Achieves-SOC-2-Type-II-Certification). 
 * You can read more about our security and privacy standards and certifications on [our Security page](https://fingerprint.com/security/).

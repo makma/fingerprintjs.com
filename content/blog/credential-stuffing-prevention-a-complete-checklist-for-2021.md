@@ -60,7 +60,7 @@ Even if you haven't heard the term credential stuffing attack before, there's a 
 * In 2019, Dunkin' was the victim of [two credential stuffing attacks](https://www.zdnet.com/article/dunkin-donuts-accounts-compromised-in-second-credential-stuffing-attack-in-three-months/) that compromised the account details of its more than 10 million DD Perks members.
 * In 2020, around 500,000 usernames and passwords were [stolen from Zoom](https://www.forbes.com/sites/daveywinder/2020/04/28/zoom-gets-stuffed-heres-how-hackers-got-hold-of-500000-passwords/?sh=6a5438ba5cdc), published on the dark web, and made available for purchase.
 * In 2022, The North Face, an outdoor apparel company, fell victim to a credential stuffing attack resulting in an [information leak of nearly 200,000 users](https://www.cpomagazine.com/cyber-security/the-north-face-credential-stuffing-attack-compromises-200000-accounts/). This included the users' full name, telephone number, gender, account creation date, purchase history, billing and shipping addresses, and loyalty points.
-* You can read about recent data breaches in our blog, [2022 Fraud in the News](https://fingerprint.com/blog/2022-fraud-in-the-news/?&utm_source=blog&utm_medium=website&utm_campaign=blog).
+* You can read about recent data breaches in our blog, [2022 Fraud in the News](https://fingerprint.com/blog/2022-fraud-in-the-news/?utm_source=blog&utm_medium=website&utm_campaign=blog).
 
 While the information you have on your Dunkin' Donuts account may seem insignificant, using the same password for your online bank account can become a much larger (and more expensive) problem.
 
@@ -118,7 +118,7 @@ There are a few different ways to block IP addresses, but often it's best done t
 
 #### Device fingerprinting
 
-Device fingerprinting uses the combination of your activity on one device to confirm your identity. Also known as [browser fingerprinting](https://fingerprint.com/blog/browser-fingerprinting-techniques/?&utm_source=blog&utm_medium=website&utm_campaign=blog), it's a tracking technique based on your browser and device settings, such as screen resolution, location, language, and operating system.
+Device fingerprinting uses the combination of your activity on one device to confirm your identity. Also known as [browser fingerprinting](https://fingerprint.com/blog/browser-fingerprinting-techniques/?utm_source=blog&utm_medium=website&utm_campaign=blog), it's a tracking technique based on your browser and device settings, such as screen resolution, location, language, and operating system.
 
 This information comes together to make up your device's fingerprint. It can also be used as a substitute for cookie data to allow advertisers to trace website activity and target ads to specific types of users.
 
@@ -144,4 +144,4 @@ Cybersecurity and protecting data online is a responsibility website and busines
 
 A proactive approach to credential stuffing prevention can be the difference between a straightforward online experience and constantly dealing with data breaches, notifying customers, and risking losing your business permanently.
 
-To learn more about how Fingerprint can help protect your business from credential stuffing, visit our website and [sign up for a free demo today](https://fingerprint.com/contact-sales/?&utm_source=blog&utm_medium=website&utm_campaign=blog).
+To learn more about how Fingerprint can help protect your business from credential stuffing, visit our website and [sign up for a free demo today](https://fingerprint.com/contact-sales/?utm_source=blog&utm_medium=website&utm_campaign=blog).

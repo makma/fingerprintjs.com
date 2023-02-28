@@ -41,7 +41,7 @@ While respecting your users’ privacy is best, you cannot turn a blind eye to m
 
 ## What is Canvas Fingerprinting?
 
-Browsers have a lot of information that might seem trivial but can be used to create a fingerprint to identify people with high accuracy. This is known as a [browser fingerprint](/blog/browser-fingerprinting-techniques/?&utm_source=blog&utm_medium=website&utm_campaign=blog), and statistics show that if you put this information together, your browser fingerprint will only match[ 1 in 286,777](https://pixelprivacy.com/resources/browser-fingerprinting/) others.
+Browsers have a lot of information that might seem trivial but can be used to create a fingerprint to identify people with high accuracy. This is known as a [browser fingerprint](/blog/browser-fingerprinting-techniques/?utm_source=blog&utm_medium=website&utm_campaign=blog), and statistics show that if you put this information together, your browser fingerprint will only match[ 1 in 286,777](https://pixelprivacy.com/resources/browser-fingerprinting/) others.
 
 Canvas fingerprinting is a specific kind of browser fingerprinting. For example, in HTML5, drawing operations can render differently depending on your computer’s software and hardware characteristics. So, you can run JavaScript code that can generate an image and use it to make a unique fingerprint.
 

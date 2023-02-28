@@ -81,4 +81,4 @@ Moreover, integrating the Fingerprint visitor identifier before the payment and 
 
 In today's cyber threat landscape, security and user privacy should be front and center. That said, PSD2’s more stringent requirements invariably lead to a high risk of cart abandonment and subsequent loss of revenue—unfortunate outcomes faced by all online merchants. [Fingerprint Pro](/) helps website operators mitigate this risk by providing unique visitor identifiers for frictionless, accurate customer verification. 
 
-Want to learn more? **[Contact our sales team](/contact-sales/?&utm_source=blog&utm_medium=website&utm_campaign=blog)** and let them know you’re interested in using Fingerprint with PSD2 and/or 3D Secure.
+Want to learn more? **[Contact our sales team](/contact-sales/?utm_source=blog&utm_medium=website&utm_campaign=blog)** and let them know you’re interested in using Fingerprint with PSD2 and/or 3D Secure.

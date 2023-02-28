@@ -47,7 +47,7 @@ Ecommerce fraud is rising due to a significant gap between its rapid growth and 
 
 Online shopping has been experiencing [209% growth](https://www.businesswire.com/news/home/20200511005666/en/Global-eCommerce-Retail-Sales-Up-209-Percent-in-April-ACI-Worldwide-Research-Reveals) year-on-year, but traditional security and fraud detection solutions haven't innovated fast enough to thwart malicious actors. These failures end up [costing businesses](https://www.javelinstrategy.com/coverage-area/financial-impact-fraud) around 7.5% of their annual revenue.
 
-This highlights the need for businesses to turn to digital identification solutions, such as [Fingerprint](https://fingerprint.com/ecommerce/?&utm_source=blog&utm_medium=website&utm_campaign=blog), to keep up with the expanding number of online transactions and the sophistication of malicious actors. 
+This highlights the need for businesses to turn to digital identification solutions, such as [Fingerprint](https://fingerprint.com/ecommerce/?utm_source=blog&utm_medium=website&utm_campaign=blog), to keep up with the expanding number of online transactions and the sophistication of malicious actors. 
 
 ## Six types of ecommerce fraud
 
@@ -59,7 +59,7 @@ Below are six types of ecommerce fraud that online businesses should be aware of
 
 ### 1. Card cracking 
 
-[Card cracking](https://fingerprint.com/blog/what-is-card-cracking-and-prevention-tips/?&utm_source=blog&utm_medium=website&utm_campaign=blog) occurs when cyber criminals make small charges to test whether a credit card will work for larger transactions. Targeted victims of this fraud include small businesses, companies that accept micro-transactions, and organizations reliant on donations. These entities typically lack sufficient authentication processes or resources to detect such fraud more efficiently, making them vulnerable to these schemes.
+[Card cracking](https://fingerprint.com/blog/what-is-card-cracking-and-prevention-tips/?utm_source=blog&utm_medium=website&utm_campaign=blog) occurs when cyber criminals make small charges to test whether a credit card will work for larger transactions. Targeted victims of this fraud include small businesses, companies that accept micro-transactions, and organizations reliant on donations. These entities typically lack sufficient authentication processes or resources to detect such fraud more efficiently, making them vulnerable to these schemes.
 
 Card cracking can result in the following:
 
@@ -71,15 +71,15 @@ Since stolen credit cards are often quickly canceled and reported, criminals may
 
 #### How to prevent card cracking:
 
-* Include [AVS and CVV tracking](https://fingerprint.com/blog/what-is-card-cracking-and-prevention-tips/?&utm_source=blog&utm_medium=website&utm_campaign=blog) in payment processes.
+* Include [AVS and CVV tracking](https://fingerprint.com/blog/what-is-card-cracking-and-prevention-tips/?utm_source=blog&utm_medium=website&utm_campaign=blog) in payment processes.
 * Monitor small transactions.
 * Blocklist users with a history of card cracking.
-* Implement a [digital identification solution](https://fingerprint.com/products/fingerprint-pro/?&utm_source=blog&utm_medium=website&utm_campaign=blog).
-* Implement [bot detection](https://fingerprint.com/products/bot-detection/?&utm_source=blog&utm_medium=website&utm_campaign=blog).
+* Implement a [digital identification solution](https://fingerprint.com/products/fingerprint-pro/?utm_source=blog&utm_medium=website&utm_campaign=blog).
+* Implement [bot detection](https://fingerprint.com/products/bot-detection/?utm_source=blog&utm_medium=website&utm_campaign=blog).
 
 ### 2. Chargeback fraud
 
-[Chargeback](https://fingerprint.com/blog/chargeback-prevention-tips-for-ecommerce-merchants/?&utm_source=blog&utm_medium=website&utm_campaign=blog) fraud occurs when a customer makes a legitimate purchase, then reports the transaction as fraudulent to receive a refund directly from the credit card company.
+[Chargeback](https://fingerprint.com/blog/chargeback-prevention-tips-for-ecommerce-merchants/?utm_source=blog&utm_medium=website&utm_campaign=blog) fraud occurs when a customer makes a legitimate purchase, then reports the transaction as fraudulent to receive a refund directly from the credit card company.
 
 In some cases, chargeback fraud can also be classified as friendly fraud, where the card owner is complicit or somehow benefits from the purchase. The card owner may want a refund because they regret their initial purchase, do not remember making the purchase itself or possibly had their card used by a friend or family member. Other cases involve a malicious actor with no relation to the card owner.
 
@@ -91,7 +91,7 @@ Either way, chargeback fraud is the most common and expensive type for businesse
 * Check orders - some examples of fraud indications include many small purchases in a short time or completely different billing and shipping addresses.
 * Automatically send email confirmation that an order has been made. This makes it harder for customers to claim that they never made a purchase and keep a paper trail.
 * Making sure transaction details clearly state your business name and inform customers how it will show up on their account.
-* Secure website payments against fraudulent activity/transactions before they happen with [ecommerce fraud prevention software.](https://fingerprint.com/ecommerce/?&utm_source=blog&utm_medium=website&utm_campaign=blog)
+* Secure website payments against fraudulent activity/transactions before they happen with [ecommerce fraud prevention software.](https://fingerprint.com/ecommerce/?utm_source=blog&utm_medium=website&utm_campaign=blog)
 
 
 
@@ -111,11 +111,11 @@ The following is an example of a typical triangulation fraud incident. Three dis
 
 #### How to prevent triangulation:
 
-Triangulation can be challenging to identify, so it's crucial to have systems in place that automatically detect suspicious activity. This includes implementing a [digital identification solution](https://fingerprint.com/products/fingerprint-pro/?&utm_source=blog&utm_medium=website&utm_campaign=blog) that identifies visitor behavior and bolsters payment systems to reduce the number of fraudulent transactions and chargebacks.
+Triangulation can be challenging to identify, so it's crucial to have systems in place that automatically detect suspicious activity. This includes implementing a [digital identification solution](https://fingerprint.com/products/fingerprint-pro/?utm_source=blog&utm_medium=website&utm_campaign=blog) that identifies visitor behavior and bolsters payment systems to reduce the number of fraudulent transactions and chargebacks.
 
 ### 4. Account takeover 
 
-As its name implies, an [account takeover](https://fingerprint.com/blog/account-takeover-indicators/?&utm_source=blog&utm_medium=website&utm_campaign=blog) occurs when a scammer takes over a legitimate customer's account. This could also involve the takeover of employee/business accounts to gain sensitive information about customers while posing as an official account. To make matters more complicated, [bots](https://fingerprint.com/blog/fingerprint-prevent-bot-attacks/?&utm_source=blog&utm_medium=website&utm_campaign=blog) are typically used to automate the process of gaining brute-force access to accounts.
+As its name implies, an [account takeover](https://fingerprint.com/blog/account-takeover-indicators/?utm_source=blog&utm_medium=website&utm_campaign=blog) occurs when a scammer takes over a legitimate customer's account. This could also involve the takeover of employee/business accounts to gain sensitive information about customers while posing as an official account. To make matters more complicated, [bots](https://fingerprint.com/blog/fingerprint-prevent-bot-attacks/?utm_source=blog&utm_medium=website&utm_campaign=blog) are typically used to automate the process of gaining brute-force access to accounts.
 
 #### How to prevent account takeover:
 
@@ -156,6 +156,6 @@ Identity theft occurs when a scammer uses the victim's details to steal even mor
 
 ## Conclusion
 
-Online shoppers inherently trust the merchants they purchase from; in return, businesses need to ensure customers that their data won't fall into the hands of cybercriminals. [Fingerprint](https://fingerprint.com/ecommerce/?&utm_source=blog&utm_medium=website&utm_campaign=blog) helps online merchants stay ahead of fraudsters with browser fingerprinting by identifying unique and anonymous users with 99.5% accuracy.
+Online shoppers inherently trust the merchants they purchase from; in return, businesses need to ensure customers that their data won't fall into the hands of cybercriminals. [Fingerprint](https://fingerprint.com/ecommerce/?utm_source=blog&utm_medium=website&utm_campaign=blog) helps online merchants stay ahead of fraudsters with browser fingerprinting by identifying unique and anonymous users with 99.5% accuracy.
 
-By uniquely identifying malicious visitors and related patterns of fraudulent activity, ecommerce store owners can take proactive measures to reduce the risk of compromise. Give Fingerprint a [test drive today](https://dashboard.fingerprint.com/signup/?&utm_source=blog&utm_medium=website&utm_campaign=blog); it's free for ten days with unlimited API calls.
+By uniquely identifying malicious visitors and related patterns of fraudulent activity, ecommerce store owners can take proactive measures to reduce the risk of compromise. Give Fingerprint a [test drive today](https://dashboard.fingerprint.com/signup/?utm_source=blog&utm_medium=website&utm_campaign=blog); it's free for ten days with unlimited API calls.

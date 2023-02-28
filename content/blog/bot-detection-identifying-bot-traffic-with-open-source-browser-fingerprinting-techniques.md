@@ -40,9 +40,9 @@ Unfortunately, bot detection is challenging because these malicious bots are goo
 
 > "Sophisticated bots look and act like humans when they visit websites, click on ads, fill out forms, take over accounts, and commit payment fraud...causing billions of dollars in losses to companies and impacting the customer experience." - [Dan Lowden](https://www.techradar.com/news/sophisticated-bots-pose-a-massive-threat), CMO at White Ops
 
-On top of that, [browsers have added privacy measures](/blog/browser-fingerprinting-privacy/?&utm_source=blog&utm_medium=website&utm_campaign=blog) that make it harder for programmers to identify real traffic from bot traffic consistently. Fortunately, some proven methods exist to stand up to bots in your web application.
+On top of that, [browsers have added privacy measures](/blog/browser-fingerprinting-privacy/?utm_source=blog&utm_medium=website&utm_campaign=blog) that make it harder for programmers to identify real traffic from bot traffic consistently. Fortunately, some proven methods exist to stand up to bots in your web application.
 
-In this article, I'll introduce a few standard bot detection techniques and show you how to implement bot detection and threat mitigation using [Fingerprint BotD](https://fingerprint.com/products/bot-detection/?&utm_source=blog&utm_medium=website&utm_campaign=blog), one of the most robust open-source fingerprinting libraries.
+In this article, I'll introduce a few standard bot detection techniques and show you how to implement bot detection and threat mitigation using [Fingerprint BotD](https://fingerprint.com/products/bot-detection/?utm_source=blog&utm_medium=website&utm_campaign=blog), one of the most robust open-source fingerprinting libraries.
 
 
 
@@ -60,7 +60,7 @@ Bots are getting [much more sophisticated](https://datadome.co/bot-management-pr
 
 ## Detecting Bot Traffic with Fingerprint
 
-While it's worth learning about all the above bot detection methods (and probably others), I will focus on fingerprinting for the remainder of this article. [Browser fingerprinting](/blog/what-is-browser-fingerprinting/?&utm_source=blog&utm_medium=website&utm_campaign=blog) uses hardware details, browser extensions, WebGL behavior, [and many other factors](/blog/browser-fingerprinting-techniques/?&utm_source=blog&utm_medium=website&utm_campaign=blog) to generate a unique visitor ID for each user on your site.
+While it's worth learning about all the above bot detection methods (and probably others), I will focus on fingerprinting for the remainder of this article. [Browser fingerprinting](/blog/what-is-browser-fingerprinting/?utm_source=blog&utm_medium=website&utm_campaign=blog) uses hardware details, browser extensions, WebGL behavior, [and many other factors](/blog/browser-fingerprinting-techniques/?utm_source=blog&utm_medium=website&utm_campaign=blog) to generate a unique visitor ID for each user on your site.
 
 When a user signs up or confirms their email address, you can use a library like  [Fingerprint](/) to create and associate this visitor ID with the user. Then, when someone comes back to your site and attempts to log in, you can block the attempt or force them to perform a second authentication factor if their fingerprint doesn't match the one known to this user.
 

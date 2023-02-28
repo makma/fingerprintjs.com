@@ -109,4 +109,4 @@ Even when users visit a webview link from within an app, accurate device identif
 
 Device identification wins where cookies and other methods of third-party data cant and can easily be incorporated into user analytics, reporting, and attribution models. 
 
-For more on Fingerprint's device identification and its application for marketing attribution, check out our website. If you’re interested in speaking to a sales representative, click [here](https://fingerprint.com/?&utm_source=newsletter&utm_medium=email&utm_campaign=newsletters).
+For more on Fingerprint's device identification and its application for marketing attribution, check out our website. If you’re interested in speaking to a sales representative, click [here](https://fingerprint.com/?utm_source=newsletter&utm_medium=email&utm_campaign=newsletters).

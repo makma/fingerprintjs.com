@@ -43,7 +43,7 @@ You should know: while a VPN can hide a person's IP address and location, VPNs a
 
 But if you're an eCommerce business owner who's intent on keeping fraudsters and malicious attacks far away from your business, it's excellent news.
 
-Using sophisticated device fingerprinting tools like [Fingerprint Pro](https://fingerprint.com/products/fingerprint-pro/?&utm_source=blog&utm_medium=website&utm_campaign=blog) can help you identify malicious users and prevent them from defrauding your business, even when they attempt to conceal their identity with a VPN or other encrypted connections.
+Using sophisticated device fingerprinting tools like [Fingerprint Pro](https://fingerprint.com/products/fingerprint-pro/?utm_source=blog&utm_medium=website&utm_campaign=blog) can help you identify malicious users and prevent them from defrauding your business, even when they attempt to conceal their identity with a VPN or other encrypted connections.
 
 
 
@@ -89,17 +89,17 @@ VPNs often achieve this using one of the following [types of VPN security protoc
 
 ## Why are VPNs ineffective against browser fingerprinting?
 
-[Browser fingerprinting](https://fingerprint.com/blog/browser-fingerprinting-techniques/?&utm_source=blog&utm_medium=website&utm_campaign=blog) goes beyond detecting a user's IP address. Browser fingerprinting is an identification method to associate individual browsing sessions with one site visitor. It uses Javascript to collect data about a user's web browser and device to determine a user's unique fingerprint across browsing sessions – even when a user browses in incognito mode or uses a VPN for surfing the web.
+[Browser fingerprinting](https://fingerprint.com/blog/browser-fingerprinting-techniques/?utm_source=blog&utm_medium=website&utm_campaign=blog) goes beyond detecting a user's IP address. Browser fingerprinting is an identification method to associate individual browsing sessions with one site visitor. It uses Javascript to collect data about a user's web browser and device to determine a user's unique fingerprint across browsing sessions – even when a user browses in incognito mode or uses a VPN for surfing the web.
 
 The following browser fingerprinting techniques can help to gather browser data:
 
-* [Javascript canvas fingerprinting](https://fingerprint.com/blog/canvas-fingerprinting/?&utm_source=blog&utm_medium=website&utm_campaign=blog) – uses the HTML5 canvas element to identify variances in a user's GPU, graphics drivers, or graphics card.
-* [WebGL fingerprinting](https://fingerprint.com/blog/browser-fingerprinting-techniques/?&utm_source=blog&utm_medium=website&utm_campaign=blog) – similar to canvas fingerprinting, this method distinguishes users based on graphics drivers and device hardware.
-* [Media device fingerprinting](https://fingerprint.com/blog/browser-fingerprinting-techniques/?&utm_source=blog&utm_medium=website&utm_campaign=blog) – uncovers a list of all connected media devices and respective IDs on a user's laptop or PC.
-* [Audio fingerprinting](https://fingerprint.com/blog/audio-fingerprinting/?&utm_source=blog&utm_medium=website&utm_campaign=blog) – checks how a device plays sound, measuring minute differences in sound waves generated.
+* [Javascript canvas fingerprinting](https://fingerprint.com/blog/canvas-fingerprinting/?utm_source=blog&utm_medium=website&utm_campaign=blog) – uses the HTML5 canvas element to identify variances in a user's GPU, graphics drivers, or graphics card.
+* [WebGL fingerprinting](https://fingerprint.com/blog/browser-fingerprinting-techniques/?utm_source=blog&utm_medium=website&utm_campaign=blog) – similar to canvas fingerprinting, this method distinguishes users based on graphics drivers and device hardware.
+* [Media device fingerprinting](https://fingerprint.com/blog/browser-fingerprinting-techniques/?utm_source=blog&utm_medium=website&utm_campaign=blog) – uncovers a list of all connected media devices and respective IDs on a user's laptop or PC.
+* [Audio fingerprinting](https://fingerprint.com/blog/audio-fingerprinting/?utm_source=blog&utm_medium=website&utm_campaign=blog) – checks how a device plays sound, measuring minute differences in sound waves generated.
 
 Browser fingerprinting is valuable in helping business owners prevent fraud. It can help automatically identify visitors with a pattern of fraudulent behavior and target those suspicious visitors with additional security – even when they use identity concealing techniques like using a VPN, incognito mode, or disabling cookies.
 
-A VPN might be a sufficient concealment measure if a company employs less advanced security measures that combine only basic browser information with or without IP address information. But more sophisticated tools such as [Fingerprint Pro](https://fingerprint.com/products/fingerprint-pro/?&utm_source=blog&utm_medium=website&utm_campaign=blog) can still precisely identify a visitor even when using a VPN since they use more advanced identification techniques, calculating based on many browser attributes besides an IP address.
+A VPN might be a sufficient concealment measure if a company employs less advanced security measures that combine only basic browser information with or without IP address information. But more sophisticated tools such as [Fingerprint Pro](https://fingerprint.com/products/fingerprint-pro/?utm_source=blog&utm_medium=website&utm_campaign=blog) can still precisely identify a visitor even when using a VPN since they use more advanced identification techniques, calculating based on many browser attributes besides an IP address.
 
-Sophisticated online fraud prevention software can help you identify suspicious users and prevent malicious attacks. [Schedule a demo today to see how Fingerprint Pro can help prevent fraud in your business](https://fingerprint.com/contact-sales/?&utm_source=blog&utm_medium=website&utm_campaign=blog).
+Sophisticated online fraud prevention software can help you identify suspicious users and prevent malicious attacks. [Schedule a demo today to see how Fingerprint Pro can help prevent fraud in your business](https://fingerprint.com/contact-sales/?utm_source=blog&utm_medium=website&utm_campaign=blog).

@@ -51,7 +51,7 @@ Using an authenticator, which is based on the Time-based One-time Password (TOTP
 
 ## Using Browser Fingerprinting as a Supplement to SMS 2FA
 
-[Browser fingerprinting](/blog/what-is-browser-fingerprinting/?&utm_source=blog&utm_medium=website&utm_campaign=blog) is another technique that can help solve the high cost of 2FA via SMS. The user’s browser and device carry a lot of information that can be compiled to form a unique fingerprint for a user. Using this fingerprint, you can continue using SMS for two-factor authentication while cutting down on the number of paid verification attempts.
+[Browser fingerprinting](/blog/what-is-browser-fingerprinting/?utm_source=blog&utm_medium=website&utm_campaign=blog) is another technique that can help solve the high cost of 2FA via SMS. The user’s browser and device carry a lot of information that can be compiled to form a unique fingerprint for a user. Using this fingerprint, you can continue using SMS for two-factor authentication while cutting down on the number of paid verification attempts.
 
 In this post, I’ll demonstrate how you can use browser fingerprinting as a supplement to SMS-based two-factor authentication. I’ll show you how to build a small NodeJS application that uses Twilio Verify for 2FA, and then I’ll add [Fingerprint](/) for browser fingerprinting.
 

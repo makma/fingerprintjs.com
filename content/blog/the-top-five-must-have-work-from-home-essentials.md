@@ -35,7 +35,7 @@ customCTA:
 ---
 Look around your desk; what do you see on your desk, table, or side table? With a fully remote team worldwide, I don’t get to see what’s on my coworkers’ desks while on my way to a meeting or the kitchen in a traditional office. It’s one way to spark a conversation while in-office with someone you may not commonly work with. However, when remote, you may never get a glimpse of someone’s desk, even with a video call. 
 
-Fingerprint is a remote company, our “offices” are located in more than 20 countries, and each one is unique to the team member that works from it. There are several amazing benefits to working remotely, and I documented a few of them [in a recent article](https://fingerprint.com/blog/secret-benefits-of-working-fully-remote/?&utm_source=blog&utm_medium=website&utm_campaign=blog). 
+Fingerprint is a remote company, our “offices” are located in more than 20 countries, and each one is unique to the team member that works from it. There are several amazing benefits to working remotely, and I documented a few of them [in a recent article](https://fingerprint.com/blog/secret-benefits-of-working-fully-remote/?utm_source=blog&utm_medium=website&utm_campaign=blog). 
 
 But, I still wanted to know what my coworkers keep on their desks or in their offices. So, I asked them on Slack through a poll what their top five must-haves for their WFH (work-from-home) setups were, and they responded!
 
@@ -109,4 +109,4 @@ We organize our collaboration software into three main categories:
 
 Having a second (or, in some cases, third & fourth) monitor can aid your organization and productivity. In addition, if you regularly present during conference calls, having a dedicated presentation screen can make it much easier to share and manage conference calls simultaneously. PCMag has [a detailed list](https://www.pcmag.com/picks/the-best-computer-monitors) of the best monitors available to help you find the best one for your needs. 
 
-Lastly, visit our [Careers page](https://fingerprint.com/careers/?&utm_source=blog&utm_medium=website&utm_campaign=blog) to learn more about our current career opportunities.
+Lastly, visit our [Careers page](https://fingerprint.com/careers/?utm_source=blog&utm_medium=website&utm_campaign=blog) to learn more about our current career opportunities.

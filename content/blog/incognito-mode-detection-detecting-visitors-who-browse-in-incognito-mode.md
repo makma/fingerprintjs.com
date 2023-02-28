@@ -376,7 +376,7 @@ Finally, to see the “answer,” add the following in the HTML:
 
 Now, you’re ready to detect whether visitors are using Incognito mode or not.
 
-Let’s test this on different major browsers. Also, you can test using the live version deployed [here](/demo/?&utm_source=blog&utm_medium=website&utm_campaign=blog).
+Let’s test this on different major browsers. Also, you can test using the live version deployed [here](/demo/?utm_source=blog&utm_medium=website&utm_campaign=blog).
 
 ### Testing on Chrome
 

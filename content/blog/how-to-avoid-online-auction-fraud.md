@@ -49,17 +49,17 @@ Victims of this type of fraud may also be targeted through phishing scams, where
 
 Product authenticity is another common related auction scam, meaning an item is created to look like an expensive brand item. For example, fraudulent sellers often make auctions promising delivery of the latest Nike sneaker, but the image does not represent a legitimate Nike shoe. It isn't until a buyer receives the item that they realize the product is fraudulent.
 
-Buyers can also be scammers. A seller might have expensive items for sale that can be resold on dark markets. The seller will ship an item after payment, but the payment is later reversed using the online auction's refund system. If the card used to pay for products is stolen, the card owner files a chargeback, the seller loses the item, and the payment is reversed. Credit card [chargebacks](https://fingerprint.com/blog/prevent-credit-card-chargeback-fraud/?&utm_source=blog&utm_medium=website&utm_campaign=blog) are expensive risks for online auction sellers.
+Buyers can also be scammers. A seller might have expensive items for sale that can be resold on dark markets. The seller will ship an item after payment, but the payment is later reversed using the online auction's refund system. If the card used to pay for products is stolen, the card owner files a chargeback, the seller loses the item, and the payment is reversed. Credit card [chargebacks](https://fingerprint.com/blog/prevent-credit-card-chargeback-fraud/?utm_source=blog&utm_medium=website&utm_campaign=blog) are expensive risks for online auction sellers.
 
 Generally, online auction fraud falls under one of the following categories:
 
 * Misrepresentation of merchandise - The item shown in an auction is not what is delivered to the buyer.
 * Hidden charges - Buyers purchase items, and sellers scam them to pay more or charge unnecessary fees.
 * Fake bidding - To increase pricing, sellers create additional accounts to increase the current bid amount, often called [bid shilling](https://www.ebay.com/help/policies/selling-policies/selling-practices-policy/shill-bidding-policy?id=4353).
-* [Credit card fraud](https://fingerprint.com/payment-fraud/?&utm_source=blog&utm_medium=website&utm_campaign=blog) - Stolen credit cards are used to purchase items, which results in a chargeback on the card and a seller's loss of payment.
-* [Triangulation](https://fingerprint.com/blog/ecommerce-fraud-types/?&utm_source=blog&utm_medium=website&utm_campaign=blog) - Seller uses a stolen credit card to buy their product and delivers it to the credit card owner's address.
+* [Credit card fraud](https://fingerprint.com/payment-fraud/?utm_source=blog&utm_medium=website&utm_campaign=blog) - Stolen credit cards are used to purchase items, which results in a chargeback on the card and a seller's loss of payment.
+* [Triangulation](https://fingerprint.com/blog/ecommerce-fraud-types/?utm_source=blog&utm_medium=website&utm_campaign=blog) - Seller uses a stolen credit card to buy their product and delivers it to the credit card owner's address.
 * Black market goods - Similar to merchandise misrepresentation, a buyer might unknowingly purchase fraudulent products sold on black markets.
-* [Account takeover](https://fingerprint.com/account-takeover/?&utm_source=blog&utm_medium=website&utm_campaign=blog) - Buyers and sellers with hacked accounts can use legitimate information to steal products or create fake auctions.
+* [Account takeover](https://fingerprint.com/account-takeover/?utm_source=blog&utm_medium=website&utm_campaign=blog) - Buyers and sellers with hacked accounts can use legitimate information to steal products or create fake auctions.
 
 
 
@@ -121,9 +121,9 @@ For buyers, always read the item description carefully. Images can be deceiving,
 
 Any suspicious seller or buyer activity should be reported to site administrators, but site administrators must also be able to identify potential fraud. The quicker fraud is eliminated, the better a site can protect its user base.
 
-Including technology that detects all site visitors can help site owners and administrators proactively detect fraud.  [Browser fingerprinting](https://fingerprint.com/blog/browser-fingerprinting-techniques/?&utm_source=blog&utm_medium=website&utm_campaign=blog) uses advanced technology that assigns an identifier to a user. If the user is labeled a risk in the application, developers can identify any additional accounts and automatically blocklist them from the application. Developers can immediately shadowban the user, alert trust and safety teams for further review, or put the account on hold until it's verified. 
+Including technology that detects all site visitors can help site owners and administrators proactively detect fraud.  [Browser fingerprinting](https://fingerprint.com/blog/browser-fingerprinting-techniques/?utm_source=blog&utm_medium=website&utm_campaign=blog) uses advanced technology that assigns an identifier to a user. If the user is labeled a risk in the application, developers can identify any additional accounts and automatically blocklist them from the application. Developers can immediately shadowban the user, alert trust and safety teams for further review, or put the account on hold until it's verified. 
 
-Fingerprinting also offers an easy and secure solution for online auction sites to ensure that each user is securely connected to one and only one account. This prevents users from creating [multiple accounts](https://fingerprint.com/blog/prevent-multiple-signups-tutorial/?&utm_source=blog&utm_medium=website&utm_campaign=blog) and attempting fraud, assuring that all participating customers are on a level playing field. 
+Fingerprinting also offers an easy and secure solution for online auction sites to ensure that each user is securely connected to one and only one account. This prevents users from creating [multiple accounts](https://fingerprint.com/blog/prevent-multiple-signups-tutorial/?utm_source=blog&utm_medium=website&utm_campaign=blog) and attempting fraud, assuring that all participating customers are on a level playing field. 
 
 
 

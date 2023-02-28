@@ -47,7 +47,7 @@ Tailor the user experience for trusted and verified users with ease-of-use and u
 
 Preventing credential stuffing is crucial to providing a safe, secure, and reliable login experience for your users. We show you how to set up Fingerprint Pro to build in additional authentication actions such as suspicious user flagging and challenge actions to keep fraudsters from taking over accounts through credential stuffing. 
 
-[Payment Fraud](https://fingerprint.com/use-cases/payment-fraud/?&utm_source=blog&utm_medium=website&utm_campaign=blog)
+[Payment Fraud](https://fingerprint.com/use-cases/payment-fraud/?utm_source=blog&utm_medium=website&utm_campaign=blog)
 
 Stolen credit card information or fraudulent chargebacks cost not just the consumer but also it costs businesses revenue year after year. Fingerprint Pro helps prevent costly payment fraud such as credit card cracking, credit card abuse, and chargeback fraud. We now have a technical demo with code snippets to show you how to set it up in your environment. 
 

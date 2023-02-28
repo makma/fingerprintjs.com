@@ -54,7 +54,7 @@ In most cases, an identity thief targets a large number of consumers to collect 
 
 After a nefarious buyer obtains personally identifiable information (PII) obtained on darknet markets, the actual loan application fraud begins. Using a combination of bots, VPNs (virtual private networks), and proxies, the attacker submits loan applications using a victim's information. The fraudster might be outside of the victim's country, so they get an unsuspecting co-conspirator to use their local country address to have credit cards sent. The co-conspirator then uses the cards to buy products to send to the attacker. The attacker might use the credit cards to purchase products and send the stolen products to a local co-conspirator's address so the co-conspirator can forward the stolen goods to the fraudster. 
 
-Credit card fraud isn't the only version of loan fraud. Fraudsters also target mortgages, bank accounts, payday lenders, car notes, and other "[buy now pay later](https://fingerprint.com/blog/buy-now-pay-later-bnpl/?&utm_source=blog&utm_medium=website&utm_campaign=blog)" agreements. Because loans often work with larger amounts of money and expensive products, it's a high-risk issue for lenders and a long-term credit report issue for consumers.
+Credit card fraud isn't the only version of loan fraud. Fraudsters also target mortgages, bank accounts, payday lenders, car notes, and other "[buy now pay later](https://fingerprint.com/blog/buy-now-pay-later-bnpl/?utm_source=blog&utm_medium=website&utm_campaign=blog)" agreements. Because loans often work with larger amounts of money and expensive products, it's a high-risk issue for lenders and a long-term credit report issue for consumers.
 
 ## Bot Attacks and Account Takeover
 

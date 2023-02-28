@@ -52,7 +52,7 @@ to-heading: 4
 ordered: false
 ```
 
-In addition, you'll learn how Fingerprint can help you protect your business from P2P fraud. Our product offers a comprehensive suite of tools to identify and address fraudulent activity. For more information, [get a free demo](https://fingerprint.com/contact-sales/?&utm_source=blog&utm_medium=website&utm_campaign=blog) of our product. 
+In addition, you'll learn how Fingerprint can help you protect your business from P2P fraud. Our product offers a comprehensive suite of tools to identify and address fraudulent activity. For more information, [get a free demo](https://fingerprint.com/contact-sales/?utm_source=blog&utm_medium=website&utm_campaign=blog) of our product. 
 
 ### What Are Peer-to-Peer Payments? 
 
@@ -193,7 +193,7 @@ The prevalence of Apple Pay scams concerns users, who may be unaware of the risk
 
 Walking around with coins and notes in your pocket is increasingly becoming a thing of the past. The convenience and speed of P2P payments propel us towards a cashless society, with more and more countries embracing this trend.
 
-P2P payments are central to daily life from New York to London to Singapore. Whether you're boarding a train, buying a coffee, or using a [buy now, pay later service](https://fingerprint.com/buy-now-pay-later/?&utm_source=blog&utm_medium=website&utm_campaign=blog), P2P payments are accepted everywhere. Even businesses that want to pay for their employees and vendors more quickly and conveniently are turning to P2P payments.
+P2P payments are central to daily life from New York to London to Singapore. Whether you're boarding a train, buying a coffee, or using a [buy now, pay later service](https://fingerprint.com/buy-now-pay-later/?utm_source=blog&utm_medium=website&utm_campaign=blog), P2P payments are accepted everywhere. Even businesses that want to pay for their employees and vendors more quickly and conveniently are turning to P2P payments.
 
 In the U.K., studies estimate that just [9%](https://www.thisismoney.co.uk/money/saving/article-7111681/Cash-make-just-9-transactions-Britain-2028-banking-figures-suggest.html) of all payments will be in cash by 2028. Fueled by the pandemic and the emergence of contactless cards, mobile phone payments, and digital wallets, P2P payments are seeing their popularity grow.
 
@@ -310,7 +310,7 @@ Fraudsters also send phishing emails with malicious links that take users to the
 
 #### Card Cracking
 
-[Card cracking](https://fingerprint.com/blog/what-is-card-cracking-and-prevention-tips/?&utm_source=blog&utm_medium=website&utm_campaign=blog) is a type of fraud where criminals use stolen payment card information (e.g., credit and debit cards) to transfer funds into a wallet without the cardholder's knowledge. 
+[Card cracking](https://fingerprint.com/blog/what-is-card-cracking-and-prevention-tips/?utm_source=blog&utm_medium=website&utm_campaign=blog) is a type of fraud where criminals use stolen payment card information (e.g., credit and debit cards) to transfer funds into a wallet without the cardholder's knowledge. 
 
 Card cracking is often done as part of a larger scam, like buying a cheap product and "accidentally" sending more money through P2P payments. Criminals then demand a refund for the difference, only for the seller to be on the hook for the total amount when it's discovered that the card was stolen.
 
@@ -332,4 +332,4 @@ Fingerprinting can also be used to identify and block bots, which are often used
 
 In addition to reducing fraud, fingerprinting technology can prevent other forms of abuse, such as coupon and promo abuse, friendly fraud, and mobile payment fraud. By accurately identifying users and their devices, P2P payment companies can flag suspicious activity and prevent chargebacks.
 
-To learn more about how Fingerprint can help protect your business from P2P fraud, visit our website and [sign up for a free demo](https://fingerprint.com/contact-sales/?&utm_source=blog&utm_medium=website&utm_campaign=blog) today.
+To learn more about how Fingerprint can help protect your business from P2P fraud, visit our website and [sign up for a free demo](https://fingerprint.com/contact-sales/?utm_source=blog&utm_medium=website&utm_campaign=blog) today.

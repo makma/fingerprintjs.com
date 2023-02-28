@@ -93,4 +93,4 @@ Developers and administrators have ways to stop common threats. A super app will
 
 With Fingerprint, you can protect your backend API endpoints from being the source for credential stuffing and allow it to enumerate accounts used in identity theft, fraud, financial theft, and overall customer threats. You can’t stop customers from having their data stolen on other sites or from phishing, but you can prevent your application from being used in cyber crimes to validate their stolen credentials
 
-To get started, check out [Fingerprint](https://fingerprint.com/?&utm_source=blog&utm_medium=website&utm_campaign=blog) or try out our [demo](https://fingerprint.com/demo/?&utm_source=blog&utm_medium=website&utm_campaign=blog).
+To get started, check out [Fingerprint](https://fingerprint.com/?utm_source=blog&utm_medium=website&utm_campaign=blog) or try out our [demo](https://fingerprint.com/demo/?utm_source=blog&utm_medium=website&utm_campaign=blog).

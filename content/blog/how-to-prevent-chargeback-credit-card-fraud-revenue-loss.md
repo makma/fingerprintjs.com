@@ -34,7 +34,7 @@ customCTA:
 ---
 Did you know that someone who completes a chargeback with a business is [nine times more likely to do it again](https://www.getbankcard.com/blog/chargeback-stats-merchants-must-know/)? 
 
-It's essential for online businesses, especially eCommerce brands, to have a firm grasp of how [credit card chargebacks](https://fingerprint.com/payment-fraud/?&utm_source=blog&utm_medium=website&utm_campaign=blog) work. Chargebacks don't just cost you money; they can impact customer loyalty and taint your company's reputation. Customers who report credit card fraud may wrongly blame the business and go out of their way to write negative reviews or avoid your business in the future. 
+It's essential for online businesses, especially eCommerce brands, to have a firm grasp of how [credit card chargebacks](https://fingerprint.com/payment-fraud/?utm_source=blog&utm_medium=website&utm_campaign=blog) work. Chargebacks don't just cost you money; they can impact customer loyalty and taint your company's reputation. Customers who report credit card fraud may wrongly blame the business and go out of their way to write negative reviews or avoid your business in the future. 
 
 The good news is you can protect your business. Chargebacks exploit opportunities within e-commerce systems, but you can reduce those opportunities with preventive measures that keep you and your customers safe.
 
@@ -54,8 +54,8 @@ Not only do you lose the TV and the amount of the chargeback on the credit card,
 
 There are a few different examples where chargeback fraud occurs. Some are elaborate scams involving cybercriminals, but others can be everyday consumers exploiting the system.
 
-* A fraudster uses a stolen credit card to purchase something online. Also known as a ["card not present" (or CNP) transaction](https://fingerprint.com/blog/cnp-fraud-prevention-to-protect-chargebacks/?&utm_source=blog&utm_medium=website&utm_campaign=blog).
-* The purchaser regrets making the purchase. This is one of many instances of ["friendly fraud"](https://fingerprint.com/blog/what-is-friendly-fraud-prevention-tips/?&utm_source=blog&utm_medium=website&utm_campaign=blog) where the purchaser did authorize the purchase but still disputes the transaction.
+* A fraudster uses a stolen credit card to purchase something online. Also known as a ["card not present" (or CNP) transaction](https://fingerprint.com/blog/cnp-fraud-prevention-to-protect-chargebacks/?utm_source=blog&utm_medium=website&utm_campaign=blog).
+* The purchaser regrets making the purchase. This is one of many instances of ["friendly fraud"](https://fingerprint.com/blog/what-is-friendly-fraud-prevention-tips/?utm_source=blog&utm_medium=website&utm_campaign=blog) where the purchaser did authorize the purchase but still disputes the transaction.
 * A person who knows the credit card holder uses their card to purchase on their behalf.
 * The purchaser didn't understand the purchase process.
 
@@ -182,6 +182,6 @@ Credit card chargebacks are a great form of customer protection for individuals,
 
 As we mentioned earlier, once one fraudulent chargeback is successful, it's more than likely to happen again by the same user. The risk reduction not only improves your relationships with your customers but prevents your business from processing fraudulent transactions that tarnish your reputation and create unwanted stress. 
 
-Even if you can't prevent customers from attempting chargeback fraud, implementing chargeback prevention measures gives you a much greater chance to defend disputes successfully. One of those preventive measures can be implementing software for accurate user identification, [such as Fingerprint](https://fingerprint.com/payment-fraud/?&utm_source=blog&utm_medium=website&utm_campaign=blog), which helps reduce chargebacks by authenticating purchases before they occur. 
+Even if you can't prevent customers from attempting chargeback fraud, implementing chargeback prevention measures gives you a much greater chance to defend disputes successfully. One of those preventive measures can be implementing software for accurate user identification, [such as Fingerprint](https://fingerprint.com/payment-fraud/?utm_source=blog&utm_medium=website&utm_campaign=blog), which helps reduce chargebacks by authenticating purchases before they occur. 
 
-Learn even more chargeback prevention tips [here](https://fingerprint.com/blog/chargeback-prevention-tips-for-ecommerce-merchants/?&utm_source=blog&utm_medium=website&utm_campaign=blog).
+Learn even more chargeback prevention tips [here](https://fingerprint.com/blog/chargeback-prevention-tips-for-ecommerce-merchants/?utm_source=blog&utm_medium=website&utm_campaign=blog).

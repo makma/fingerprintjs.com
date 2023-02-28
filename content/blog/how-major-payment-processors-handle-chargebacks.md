@@ -301,7 +301,7 @@ Finally, consider using a "pre-notification" service to send customers a reminde
 
 Friendly fraud is when a customer knowingly files a false chargeback to get a refund for a product or service they received and used. While this may seem a victimless crime, it's quite costly for businesses.
 
-There are a few things you can do to combat [friendly fraud](https://fingerprint.com/blog/what-is-friendly-fraud-prevention-tips/?&utm_source=blog&utm_medium=website&utm_campaign=blog). For one, have a clear and concise refund policy, and make sure that your customers know it. This way, there will be clarity about what is and is not covered by a refund.
+There are a few things you can do to combat [friendly fraud](https://fingerprint.com/blog/what-is-friendly-fraud-prevention-tips/?utm_source=blog&utm_medium=website&utm_campaign=blog). For one, have a clear and concise refund policy, and make sure that your customers know it. This way, there will be clarity about what is and is not covered by a refund.
 
 Also, keep good records of all customer communications, including order confirmations, shipping information, and refund policy correspondence. This can help prove that a customer received and used the product or service.
 
@@ -321,4 +321,4 @@ Before the advent of machine learning, businesses had to rely on rule-based syst
 
 Just as self-driving cars could never operate in the highly-complex world with a rule-based approach, the same is accurate for fraud detection. Machine learning offers the ability to learn and adapt as new fraud patterns emerge.
 
-Leading companies already use Fingerprint Pro to prevent chargeback fraud and other types of abuse by identifying returning visitors with 99.5% accuracy. To learn more about how Fingerprint Pro can help your business, [create a free account](https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog) or [contact us](https://fingerprint.com/contact-sales/?&utm_source=blog&utm_medium=website&utm_campaign=blog) for a free demo.
+Leading companies already use Fingerprint Pro to prevent chargeback fraud and other types of abuse by identifying returning visitors with 99.5% accuracy. To learn more about how Fingerprint Pro can help your business, [create a free account](https://dashboard.fingerprint.com/signup?&utm_source=blog&utm_medium=website&utm_campaign=blog) or [contact us](https://fingerprint.com/contact-sales/?utm_source=blog&utm_medium=website&utm_campaign=blog) for a free demo.

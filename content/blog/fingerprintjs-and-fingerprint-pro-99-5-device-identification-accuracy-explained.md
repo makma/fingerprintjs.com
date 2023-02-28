@@ -44,7 +44,7 @@ We define our device identification accuracy by how many returning visitors to a
 
 ### The accuracy between our FingerprintJS Open Source library and the Pro version of our product is different.
 
-This statement is 100% true: Fingerprint Pro has 99.5% accuracy, whereas our open source library’s accuracy is considerably lower. Our [open-source library (called FingerprintJS](https://github.com/fingerprintjs/fingerprintjs)) is one of the most popular repositories on GitHub with 17,000 stars; it's why our company exists today. It is a JavaScript library that combines many browser attributes to generate a [browser fingerprint](https://fingerprint.com/blog/what-is-browser-fingerprinting/?&utm_source=blog&utm_medium=website&utm_campaign=blog). However, the FingerprintJS open-source version is less accurate than the Pro version because it does not include additional server-side identification methods, as well as machine learning processing included in the Pro version. 
+This statement is 100% true: Fingerprint Pro has 99.5% accuracy, whereas our open source library’s accuracy is considerably lower. Our [open-source library (called FingerprintJS](https://github.com/fingerprintjs/fingerprintjs)) is one of the most popular repositories on GitHub with 17,000 stars; it's why our company exists today. It is a JavaScript library that combines many browser attributes to generate a [browser fingerprint](https://fingerprint.com/blog/what-is-browser-fingerprinting/?utm_source=blog&utm_medium=website&utm_campaign=blog). However, the FingerprintJS open-source version is less accurate than the Pro version because it does not include additional server-side identification methods, as well as machine learning processing included in the Pro version. 
 
 In practice, the open-source version might not be able to tell the difference between two devices with identical hardware, using the same browser and operating system, because the signals available to JavaScript to create the fingerprint are all the same. So, the same visitorID could be assigned to multiple devices if visiting the same site from different devices.
 
@@ -64,7 +64,7 @@ A small percentage of users commit the majority of fraud, often visiting a targe
 
 With a low accuracy identifier, repeat offenders appear as new visitors over time, allowing them to retarget your site for account takeover attempts, payment fraud schemes, and more. It also makes it difficult to reduce friction for trusted customers, as security checks will challenge them more frequently to ensure your system catches fraudsters in time. We've discussed this topic and how it relates to accuracy [in a prior post](https://fingerprint.com/blog/device-fingerprinting-accuracy/). The main takeaway from the webinar was that if you're relying on a quickly decaying accuracy rate, you're potentially overlooking fraudsters that are repeat offenders to your site.
 
-[Learn more about how Fingerprint Pro can help you combat costly payment fraud.](https://fingerprint.com/payment-fraud/?&utm_source=blog&utm_medium=website&utm_campaign=blog)
+[Learn more about how Fingerprint Pro can help you combat costly payment fraud.](https://fingerprint.com/payment-fraud/?utm_source=blog&utm_medium=website&utm_campaign=blog)
 
 ### Wrap-Up
 
