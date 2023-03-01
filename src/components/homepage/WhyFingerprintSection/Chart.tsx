@@ -152,7 +152,7 @@ export default function Chart() {
                     } as React.CSSProperties
                   }
                 />
-                <span className={classNames(styles.labelPro, styles.labelProStability)}>
+                <span suppressHydrationWarning className={classNames(styles.labelPro, styles.labelProStability)}>
                   {yPointsPro[index].toLocaleString()}
                 </span>
                 <div className={styles.dataPointPro} data-value={`${yPointsPro[index]}`} />
@@ -183,7 +183,7 @@ export default function Chart() {
                   }
                 />
                 <div className={styles.dataPointOss} data-value={`${yPointsOss[index]}`} />
-                <span className={classNames(styles.labelOss, styles.labelOssStability)}>
+                <span suppressHydrationWarning className={classNames(styles.labelOss, styles.labelOssStability)}>
                   {yPointsOss[index].toLocaleString()}
                 </span>
               </li>

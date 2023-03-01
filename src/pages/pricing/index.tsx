@@ -62,7 +62,7 @@ function FAQSection() {
     {
       question: 'How does billing for Fingerprint Pro work?',
       answer: (
-        <p className={styles.faqContent}>
+        <p suppressHydrationWarning className={styles.faqContent}>
           Customers are billed on a monthly basis based on API requests made over the billing period. The minimum paid
           plan is ${(overagePrice / 100) * prepaidQuantity}/mo for {prepaidQuantity.toLocaleString()} API requests - any
           additional requests will be charged at a rate of ${(overagePrice * 1000) / 100} per 1,000 requests.
@@ -88,7 +88,7 @@ function FAQSection() {
     {
       question: 'I am a developer. Can I use Fingerprint Pro for free?',
       answer: (
-        <p className={styles.faqContent}>
+        <p suppressHydrationWarning className={styles.faqContent}>
           Yes - developers and small sites can use Fingerprint Pro for free, with up to {flatAmount.toLocaleString()}{' '}
           API requests per month.
         </p>
@@ -106,7 +106,7 @@ function FAQSection() {
     {
       question: 'How does the $0 free plan differ from a paid Pro plan?',
       answer: (
-        <p className={styles.faqContent}>
+        <p suppressHydrationWarning className={styles.faqContent}>
           The two differences between our free plan and paid Pro plan is that Free plan customers can only use up to{' '}
           {flatAmount.toLocaleString()} requests per month, and RPS is limited to 3 requests per second as opposed to 5
           on the paid plan. There are no differences in features, functionality or accuracy between the Free and Paid

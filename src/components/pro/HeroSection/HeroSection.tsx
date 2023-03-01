@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from '../../common/Container'
 import Button from '../../common/Button'
 import { URL } from '../../../constants/content'
 
 import HeroAnimation from '-!svg-react-loader!./hero.inline.svg'
+import { motion, AnimatePresence } from 'framer-motion'
 
 import styles from './HeroSection.module.scss'
 
 export default function HeroSection() {
+  const [render, isRender] = useState(false)
+
+  useEffect(() => {
+    isRender(true)
+  }, [])
   return (
     <Container className={styles.heroContainer} size='large'>
       <section className={styles.heroSection}>
@@ -26,7 +32,20 @@ export default function HeroSection() {
         </Button>
       </section>
       <section className={styles.animationSection}>
-        <HeroAnimation />
+        <AnimatePresence initial={true} mode='wait'>
+          {render && (
+            <motion.div
+              initial={{
+                opacity: 0,
+                scale: 0.8,
+              }}
+              animate={{ opacity: 1, scale: 1 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <HeroAnimation />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
     </Container>
   )

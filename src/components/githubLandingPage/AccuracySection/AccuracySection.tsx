@@ -211,6 +211,7 @@ export default function AccuracySection() {
                       }
                     />
                     <span
+                      suppressHydrationWarning
                       className={classNames(styles.labelPro, {
                         [styles.labelProHover]: hoverElement,
                         [styles.labelProStability]: currentTab === tabOptions.Stability,
@@ -277,6 +278,7 @@ export default function AccuracySection() {
                       data-value={`${yPointsOss[index]}`}
                     />
                     <span
+                      suppressHydrationWarning
                       className={classNames(styles.labelOss, {
                         [styles.labelOssHover]: hoverElement,
                         [styles.labelOssStability]: currentTab === tabOptions.Stability,
