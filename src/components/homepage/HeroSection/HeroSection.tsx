@@ -43,14 +43,19 @@ export default function HeroSection({ advertisingVariant = false }: HeroSectionP
   }
 
   useEffect(() => {
+    let timer: NodeJS.Timeout
+
     if (data) {
       setVisitorId(data.visitorId)
     } else {
-      setTimeout(shuffle, 100)
+      timer = setTimeout(shuffle, 100)
     }
     function shuffle() {
       const randomVisitorId = _.shuffle(visitorId).join('')
       setVisitorId(randomVisitorId)
+    }
+    return () => {
+      clearTimeout(timer)
     }
   }, [data, visitorId])
 

@@ -45,7 +45,7 @@ export default function DemoSection() {
 
   useEffect(() => {
     let isCancelled = false
-
+    let timer: NodeJS.Timeout
     async function fetchVisits() {
       if (!visitorId) {
         const data = await getData({ ignoreCache: true })
@@ -75,7 +75,7 @@ export default function DemoSection() {
         }
         // sometimes the image of the first visit does not load automatically
         if (visits) {
-          setTimeout(() => {
+          timer = setTimeout(() => {
             swiperRef.current?.updateProgress()
             swiperRef.current?.lazy.load()
           }, 1000)
@@ -88,6 +88,7 @@ export default function DemoSection() {
     fetchVisits()
 
     return () => {
+      clearTimeout(timer)
       isCancelled = true
     }
   }, [getData, visitorId, rollbar])
