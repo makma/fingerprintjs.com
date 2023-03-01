@@ -127,4 +127,11 @@ integrationSdkCards:
     githubLink: https://github.com/fingerprintjs/fingerprint-pro-server-api-dotnet-sdk
     docsLink: https://dev.fingerprint.com/docs/fingerprint-pro-server-api-dotnet-sdk
     category: Backend
+  - cardImage: /img/uploads/integrationsCards/javasdkim.png
+    githubLink: https://github.com/fingerprintjs/fingerprint-pro-server-api-java-sdk
+    docsLink: https://dev.fingerprint.com/docs/java-server-api-sdk
+    category: Backend
+    description: This open-source library improves the experience for projects using
+      Java. It simplifies communication with our FingerprintJS Pro Server API.
+    title: Java Server API SDK
 ---
