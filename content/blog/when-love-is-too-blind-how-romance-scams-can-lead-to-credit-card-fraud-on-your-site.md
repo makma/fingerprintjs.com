@@ -32,11 +32,11 @@ heroImage:
   imageTitle: Romance Scams Image
 customCTA:
   openCtaNewTab: true
-  title: "You're Invited! "
-  description: Join us on Feb. 14 for a webinar on Romance Fraud trends and how to
-    protect your customers.
-  ctaText: Register now
-  ctaUrl: https://go.unit21.ai/register-romance-fraud-webinar-fingerprint
+  title: "[Webinar] Romance Fraud with Fingerprint, Unit21, & Elliptic"
+  description: Catch up on our partner webinar with Unit21 at Elliptic on all
+    things romance fraud.
+  ctaText: Watch the Replay
+  ctaUrl: https://go.unit21.ai/register-romance-fraud-webinar
 ---
 Love is patient, and love is kind… But not always on the internet.
 
