@@ -18,7 +18,7 @@ export default function CircuitSection() {
   })
 
   useEffect(() => {
-    return scrollYProgress.onChange((latest) => {
+    return scrollYProgress.on('change', (latest) => {
       const newIndex = Math.round(latest / indexChange)
       setImageIndex(newIndex)
     })

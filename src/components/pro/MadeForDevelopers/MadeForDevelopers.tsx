@@ -3,7 +3,6 @@ import Container from '../../common/Container'
 import Section from '../../common/Section'
 import { CodeTooltip } from '../../common/CodeWindowWithSelector'
 import styles from './MadeForDevelopers.module.scss'
-import classNames from 'classnames'
 import Prism from 'prismjs'
 
 import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
@@ -45,8 +44,8 @@ export default function MadeForDevelopers() {
               <div className={styles.button} />
               <div className={styles.button} />
             </div>
-            <pre>
-              <code key={`proTooltip`} className={classNames({ 'line-numbers': true }, `language-js`)}>
+            <pre className='line-numbers language-js' tabIndex={0}>
+              <code key={`proTooltip`} className='language-js'>
                 {proCode}
               </code>
 

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import Section from '../../../common/Section'
 import Container from '../../../common/Container'
 import classNames from 'classnames'
@@ -6,7 +6,6 @@ import { getTimezoneOffset } from '../../../../helpers/date'
 import { getVisitTitle } from '../../../../helpers/fpjs-widget'
 import Skeleton from '../../../Skeleton/Skeleton'
 import { VisitorResponse } from '../../../../types/visitorResponse'
-import { isBrowser } from '../../../../helpers/detector'
 
 import { ReactComponent as IncognitoCardSVG } from './img/IncognitoCardSVG.svg'
 import { ReactComponent as WindowSVG } from './img/WindowSVG.svg'
@@ -36,9 +35,16 @@ export default function AlgorithmSection({
   currentVisit,
   visitorId,
 }: AlgorithmSectionProps) {
-  const offset = getTimezoneOffset()
-  const width = isBrowser() ? window.screen.width : ''
-  const height = isBrowser() ? window.screen.height : ''
+  const [offset, setOffset] = useState('')
+
+  const [width, setWidth] = useState(0)
+  const [height, setHeight] = useState(0)
+
+  useEffect(() => {
+    setOffset(getTimezoneOffset())
+    setWidth(window.screen.width)
+    setHeight(window.screen.height)
+  }, [])
 
   const ref = useRef<HTMLHeadingElement | null>(null)
   const entry = useIntersectionObserver(ref, { freezeOnceVisible: true })

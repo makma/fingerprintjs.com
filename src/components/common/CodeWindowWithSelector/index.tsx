@@ -6,7 +6,6 @@ import { copyToClipboard } from '../../../helpers/clipboard'
 import { ReactComponent as CopySVG } from '../../../img/CopySVG.svg'
 import Tippy from '@tippyjs/react'
 import { ReactComponent as InfoSvg } from './InfoIconSVG.svg'
-import { isBrowser } from '../../../helpers/detector'
 
 import { AnimatePresence, motion } from 'framer-motion'
 
@@ -76,16 +75,17 @@ export default memo(function CodeWindowWithSelector({
           exit={{ opacity: 0 }}
           className={classNames(className, styles.content)}
         >
-          <pre className={styles.pre}>
-            <code
-              className={classNames(
-                styles.code,
-                {
-                  'line-numbers': hasLineNumbers,
-                },
-                `language-${activeTab.language}`
-              )}
-            >
+          <pre
+            tabIndex={0}
+            className={classNames(
+              styles.pre,
+              {
+                'line-numbers': hasLineNumbers,
+              },
+              `language-${activeTab.language}`
+            )}
+          >
+            <code className={classNames(styles.code, `language-${activeTab.language}`)}>
               {codeBlocks[activeIndex].code}
             </code>
             {tooltips && tooltips.map((tooltip) => tooltip)}
@@ -104,10 +104,15 @@ export interface CodeTooltipProps {
   theme?: string
 }
 export function CodeTooltip({ children, className, left, maxWidth, theme }: CodeTooltipProps) {
+  const [body, setBody] = useState<HTMLElement>()
+
+  useEffect(() => {
+    setBody(document.body)
+  }, [])
   return (
     <Tippy
       interactive
-      appendTo={isBrowser() ? document.body : undefined} // to prevent the tooltip from taking space from the description
+      appendTo={body} // to prevent the tooltip from taking space from the description
       placement='right'
       theme={theme ?? 'checkmark'}
       maxWidth={maxWidth ?? 460}

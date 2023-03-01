@@ -41,7 +41,7 @@ export default function PressReleasesSection({ pressReleasesCards, newsCards }: 
       <div className={styles.backgroundLayer} />
       <Container style={style} className={styles.pressContainer} size='large'>
         <h2 className={styles.pressTitle}>Press Releases</h2>
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence mode='wait'>
           <motion.div className={styles.pressCards} key={pressPage}>
             {pressReleasesPages[pressPage - 1].map((card, i) => (
               <Card {...card} key={`${card.title}-${pressPage}-${i}`} box />
@@ -54,7 +54,7 @@ export default function PressReleasesSection({ pressReleasesCards, newsCards }: 
           </div>
         )}
         <h2 className={styles.newsTitle}>In the News</h2>
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence mode='wait'>
           <motion.div className={styles.newsCards} key={newsPage}>
             {NewsPages[newsPage - 1].map((card, i) => (
               <Card {...card} key={`${card.title}-${newsPage}-${i}`} />

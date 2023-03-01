@@ -69,9 +69,9 @@ export default function AccuracySection() {
     chartPointsPro[2].y - chartPointsPro[3].y,
   ]
   const HypoPro = [
-    Math.hypot(xSidesPro[0], ySidesPro[0]),
-    Math.hypot(xSidesPro[1], ySidesPro[1]),
-    Math.hypot(xSidesPro[2], ySidesPro[2]),
+    Math.round(Math.hypot(xSidesPro[0], ySidesPro[0])),
+    Math.round(Math.hypot(xSidesPro[1], ySidesPro[1])),
+    Math.round(Math.hypot(xSidesPro[2], ySidesPro[2])),
   ]
   const AnglePro = [ySidesPro[0] / HypoPro[0], ySidesPro[1] / HypoPro[1], ySidesPro[2] / HypoPro[2]]
 
@@ -114,9 +114,9 @@ export default function AccuracySection() {
     chartPointsOss[2].y - chartPointsOss[3].y,
   ]
   const HypoOss = [
-    Math.hypot(xSidesOss[0], ySidesOss[0]),
-    Math.hypot(xSidesOss[1], ySidesOss[1]),
-    Math.hypot(xSidesOss[2], ySidesOss[2]),
+    Math.round(Math.hypot(xSidesOss[0], ySidesOss[0])),
+    Math.round(Math.hypot(xSidesOss[1], ySidesOss[1])),
+    Math.round(Math.hypot(xSidesOss[2], ySidesOss[2])),
   ]
 
   const AngleOss = [ySidesOss[0] / HypoOss[0], ySidesOss[1] / HypoOss[1], ySidesOss[2] / HypoOss[2]]

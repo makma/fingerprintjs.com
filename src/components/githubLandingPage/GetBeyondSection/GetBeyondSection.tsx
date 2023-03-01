@@ -216,12 +216,8 @@ export default function GetBeyondSection() {
                     <span>accuracy</span>
                     <span className={styles.percent}>99.5%</span>
                   </div>
-                  <pre>
-                    <motion.code
-                      key={`proTooltip`}
-                      className={classNames({ 'line-numbers': true }, `language-js`)}
-                      variants={letter}
-                    >
+                  <pre className='line-numbers language-js' tabIndex={0}>
+                    <motion.code key={`proTooltip`} className='language-js' variants={letter}>
                       {proCode}
                     </motion.code>
 
@@ -239,12 +235,8 @@ export default function GetBeyondSection() {
                     <span>accuracy</span>
                     <span className={styles.percent}>60%</span>
                   </div>
-                  <pre>
-                    <motion.code
-                      key={`ossTooltip`}
-                      className={classNames({ 'line-numbers': true }, `language-js`)}
-                      variants={letter}
-                    >
+                  <pre className='line-numbers language-js' tabIndex={0}>
+                    <motion.code key={`ossTooltip`} className='language-js' variants={letter}>
                       {ossCode}
                     </motion.code>
 

@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { memo, useState } from 'react'
 import styles from './CodeWindow.module.scss'
 import classNames from 'classnames'
 
@@ -15,6 +15,8 @@ export default memo(function CodeWindow({
   hasLineNumbers = true,
   hasControls = true,
 }: CodeWindowProps) {
+  const [codeStyle] = useState(`language-${language}`)
+  const [preStyle] = useState(classNames({ 'line-numbers': hasLineNumbers }, `language-${language}`))
   return (
     <div className={styles.window}>
       {hasControls && (
@@ -25,8 +27,8 @@ export default memo(function CodeWindow({
         </div>
       )}
       <div className={styles.content}>
-        <pre>
-          <code className={classNames({ 'line-numbers': hasLineNumbers }, `language-${language}`)}>{code}</code>
+        <pre tabIndex={0} className={preStyle}>
+          <code className={codeStyle}>{code}</code>
         </pre>
       </div>
     </div>

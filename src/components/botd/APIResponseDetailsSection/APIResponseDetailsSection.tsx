@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from '../../common/Container'
 import CodeWindowWithSelector, { CodeTooltip } from '../../common/CodeWindowWithSelector'
 import { useBotDContext } from '../../../context/BotdContext'
@@ -7,9 +7,51 @@ import styles from './APIResponseDetailsSection.module.scss'
 
 export default function APIResponseDetailsSection() {
   const characterLength = 8.4
-  const currentTime = new Date().toISOString()
   const { visitorData } = useBotDContext()
   const botData = visitorData?.products.botd.data
+
+  const [codeBlock, setCodeBlock] = useState(
+    `{
+    "products": {
+        "botd": {
+            "data": {
+                "bot": {
+                    "result": "notDetected"
+                    "type":
+                },
+                "ip": "186.XXX.XXX.XXX",
+                "time": "loading",
+                "url": "https://fingerprint.com/products/bot-detection/",
+                "userAgent": "Mozilla/5.0",
+                "requestId": "1672692443036.aCJ3kO"
+            }
+        }
+    }
+}`
+  )
+
+  useEffect(() => {
+    if (botData) {
+      setCodeBlock(`{
+    "products": {
+        "botd": {
+            "data": {
+                "bot": {
+                    "result": "${botData?.bot.result ?? 'notDetected'}"
+                    "type": ${botData?.bot.type ? '"' + botData.bot.type + '"' : ''}
+                },
+                "ip": "${botData?.ip ?? '186.XXX.XXX.XXX'}",
+                "time": "${botData?.time ?? 'loading'}",
+                "url": "${botData?.url ?? 'https://fingerprint.com/products/bot-detection/'}",
+                "userAgent": "${botData?.userAgent ?? 'Mozilla/5.0'}",
+                "requestId": "${botData?.requestId ?? '1672692443036.aCJ3kO'}"
+            }
+        }
+    }
+  }`)
+    }
+  }, [botData])
+
   return (
     <Container size='large' className={styles.container}>
       <h1 className={styles.title} id='ApiResponseDetails'>
@@ -20,23 +62,7 @@ export default function APIResponseDetailsSection() {
           <CodeWindowWithSelector
             codeBlocks={[
               {
-                code: `{
-    "products": {
-        "botd": {
-            "data": {
-                "bot": {
-                    "result": "${botData?.bot.result ?? 'notDetected'}"
-                    "type": ${botData?.bot.type ? '"' + botData.bot.type + '"' : ''}
-                },
-                "ip": "${botData?.ip ?? '186.XXX.XXX.XXX'}",
-                "time": "${botData?.time ?? currentTime}",
-                "url": "${botData?.url ?? 'https://fingerprint.com/products/bot-detection/'}",
-                "userAgent": "${botData?.userAgent ?? 'Mozilla/5.0'}",
-                "requestId": "${botData?.requestId ?? '1672692443036.aCJ3kO'}"
-            }
-        }
-    }
-}`,
+                code: codeBlock,
                 language: 'javascript',
                 type: '',
               },
@@ -81,11 +107,7 @@ export default function APIResponseDetailsSection() {
               <CodeTooltip
                 key='time'
                 className={styles.time}
-                left={
-                  botData?.time
-                    ? 280 + botData?.time.length * characterLength
-                    : 280 + currentTime.length * characterLength
-                }
+                left={botData?.time ? 280 + botData?.time.length * characterLength : 304}
               >
                 <p>
                   <strong>Time</strong> when bot detection checks were performed for the client.
