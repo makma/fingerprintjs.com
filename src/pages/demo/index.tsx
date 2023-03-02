@@ -29,6 +29,7 @@ export default function DemoPage({ pageContext }: DemoPageProps) {
         title='Fingerprint Pro Demo'
         ctaText='Create Free Account'
         ctaHref={`${URL.signupUrl}?&utm_source=homepage&utm_medium=website&utm_campaign=account-signup`}
+        buttonId='create_free_account_demo_hero'
       >
         Identify anonymous site visitors with 99.5% accuracy to prevent online fraud
       </HeroSection>

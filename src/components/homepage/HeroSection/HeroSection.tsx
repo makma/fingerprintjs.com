@@ -84,7 +84,11 @@ export default function HeroSection({ advertisingVariant = false }: HeroSectionP
             </Button>
           )}
 
-          <Button onClick={() => scrollToElementById('demo-section')} variant='orangeGradientOutline'>
+          <Button
+            buttonId='view-live-demo-homepage'
+            onClick={() => scrollToElementById('demo-section')}
+            variant='orangeGradientOutline'
+          >
             View Live Demo
           </Button>
         </div>

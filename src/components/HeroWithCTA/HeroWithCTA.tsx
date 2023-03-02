@@ -15,6 +15,7 @@ export interface HeroWithCTAProps {
   variant?: 'primary' | 'secondary'
   buttonVariant?: 'primary' | 'outline' | 'clear' | 'faded'
   openNewTab?: boolean
+  buttonId?: string
 }
 
 export default function HeroWithCTA({
@@ -26,6 +27,7 @@ export default function HeroWithCTA({
   variant = 'primary',
   buttonVariant,
   openNewTab,
+  buttonId,
 }: HeroWithCTAProps) {
   return (
     <Section className={classNames(styles.root, className)}>
@@ -40,6 +42,7 @@ export default function HeroWithCTA({
           variant={buttonVariant}
           className={classNames(styles.button, { [styles.secondaryButton]: variant === 'secondary' })}
           openNewTab={openNewTab}
+          buttonId={buttonId}
         >
           {ctaText}
         </Button>

@@ -127,6 +127,7 @@ export default function Header({ notificationBar, darkMode }: HeaderProps) {
                   size='medium'
                   variant={darkMode ? 'orangeDark' : 'orangeGradientOutline'}
                   className={styles.button}
+                  buttonId='contact-sales-top-nav'
                 >
                   Contact Sales
                 </Button>
@@ -148,6 +149,7 @@ export default function Header({ notificationBar, darkMode }: HeaderProps) {
                     className={styles.signupButton}
                     href={URL.signupUrl}
                     openNewTab
+                    buttonId='get-started-top-nav'
                   >
                     Get Started
                   </Button>
