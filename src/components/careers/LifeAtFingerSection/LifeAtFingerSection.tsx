@@ -31,7 +31,6 @@ export default function LifeAtFingerSection() {
             centeredSlides={true}
             slidesPerView='auto'
             loop
-            loopAdditionalSlides={1}
             pagination={{
               clickable: true,
             }}

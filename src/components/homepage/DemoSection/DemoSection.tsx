@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+
 import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
 import { getConfig } from '../../../helpers/fpjs'
 import { VisitorResponse } from '../../../types/visitorResponse'
@@ -11,7 +12,6 @@ import { StaticImage } from 'gatsby-plugin-image'
 import Container from '../../common/Container'
 import useRollbar from '../../../hooks/useRollbar'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Lazy } from 'swiper'
 import { Swiper as SwiperCore } from 'swiper/types'
 import Tippy from '@tippyjs/react'
 import { ReactComponent as InfoSvg } from './InfoSVG.svg'
@@ -45,7 +45,6 @@ export default function DemoSection() {
 
   useEffect(() => {
     let isCancelled = false
-    let timer: NodeJS.Timeout
     async function fetchVisits() {
       if (!visitorId) {
         const data = await getData({ ignoreCache: true })
@@ -69,16 +68,6 @@ export default function DemoSection() {
           setIncognitoSessions(homepageIncognito.length)
           setIps(homepageIps.length)
           setLocations(homepageLocations.length)
-
-          swiperRef.current?.updateProgress()
-          swiperRef.current?.lazy.load()
-        }
-        // sometimes the image of the first visit does not load automatically
-        if (visits) {
-          timer = setTimeout(() => {
-            swiperRef.current?.updateProgress()
-            swiperRef.current?.lazy.load()
-          }, 1000)
         }
       } catch (e) {
         setHistoryLoadError(true)
@@ -88,7 +77,6 @@ export default function DemoSection() {
     fetchVisits()
 
     return () => {
-      clearTimeout(timer)
       isCancelled = true
     }
   }, [getData, visitorId, rollbar])
@@ -187,13 +175,10 @@ export default function DemoSection() {
         <div className={styles.visitHistory}>
           <h3 className={styles.title}>Your visit history</h3>
           <Swiper
-            modules={[Lazy]}
             spaceBetween={8}
             slidesPerView='auto'
             watchSlidesProgress
             centeredSlides
-            lazy
-            preloadImages={false}
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper
               setSwiperInit(true)
@@ -250,15 +235,15 @@ export default function DemoSection() {
                                 </span>
                               </div>
                               <div className={styles.mapWrapper}>
-                                <Skeleton className={classNames('swiper-lazy-preloader', styles.mapSkeleton)} />
                                 <img
+                                  loading='lazy'
                                   alt='Location map'
-                                  data-src={`https://api.mapbox.com/styles/v1/mapbox/${
+                                  src={`https://api.mapbox.com/styles/v1/mapbox/${
                                     visit.incognito ? 'dark-v10' : 'outdoors-v11'
                                   }/static/${visit.ipLocation?.longitude},${
                                     visit?.ipLocation?.latitude
                                   },7.00,0/350x200?access_token=${MAPBOX_ACCESS_TOKEN}`}
-                                  className={classNames('swiper-lazy', styles.mapImage)}
+                                  className={styles.mapImage}
                                 />
                               </div>
                             </>
