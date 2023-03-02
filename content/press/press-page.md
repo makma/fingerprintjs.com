@@ -2,6 +2,10 @@
 title: Press page
 templateKey: press-page
 pressReleases:
+  - title: Fingerprint Partners with Spec to Provide Real-Time User Insights that
+      Reduce Fraud and Deliver Frictionless Digital Experiences
+    website: BusinessWire
+    url: fingerprint.com/blog/fingerprint-partners-with-spec
   - title: Fingerprint Achieves SOC 2 Type II Certification
     website: BusinessWire
     url: https://www.businesswire.com/news/home/20221108005314/en/Fingerprint-Achieves-SOC-2-Type-II-Certification
@@ -19,9 +23,6 @@ news:
   - title: Safari 15 bug leaks your iPhone and Mac browsing activity as you work
     website: MacWorld
     url: https://www.macworld.com/article/605562/safari-15-bug-expose-browsing-activity-personal-data.html
-  - title: The Quiet Way Advertisers Are Tracking Your Browsing
-    website: WIRED
-    url: https://www.wired.com/story/browser-fingerprinting-tracking-explained/
   - title: "'Scheme Flooding' Allows Websites to Track Users Across Browsers"
     website: ThreatPost
     url: https://threatpost.com/scheme-flooding-website-tracking/166185/
