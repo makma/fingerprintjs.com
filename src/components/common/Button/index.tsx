@@ -25,6 +25,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   download?: boolean
   openNewTab?: boolean
   disabled?: boolean
+  buttonId?: string
 }
 
 export default memo(function Button({
@@ -40,6 +41,7 @@ export default memo(function Button({
   download,
   openNewTab,
   disabled,
+  buttonId,
 }: ButtonProps) {
   const classes = classNames(
     styles.button,
@@ -62,18 +64,34 @@ export default memo(function Button({
 
   return href ? (
     isLocalLink(href) ? (
-      <Link to={href} className={classes} onClick={onClick} aria-label={label} download={download} {...newTabProps}>
+      <Link
+        id={buttonId}
+        to={href}
+        className={classes}
+        onClick={onClick}
+        aria-label={label}
+        download={download}
+        {...newTabProps}
+      >
         {mobileIcon && <span className={styles.mobileOnly}>{mobileIcon}</span>}
         <span className={classNames({ [styles.desktopOnly]: mobileIcon })}>{children}</span>
       </Link>
     ) : (
-      <a href={href} className={classes} onClick={onClick} aria-label={label} download={download} {...newTabProps}>
+      <a
+        id={buttonId}
+        href={href}
+        className={classes}
+        onClick={onClick}
+        aria-label={label}
+        download={download}
+        {...newTabProps}
+      >
         {mobileIcon && <span className={styles.mobileOnly}>{mobileIcon}</span>}
         <span className={classNames({ [styles.desktopOnly]: mobileIcon })}>{children}</span>
       </a>
     )
   ) : (
-    <button type={type} className={classes} onClick={onClick} aria-label={label}>
+    <button id={buttonId} type={type} className={classes} onClick={onClick} aria-label={label}>
       {mobileIcon && <span className={classNames(styles.icon, styles.mobileOnly)}>{mobileIcon}</span>}
       <span className={classNames({ [styles.desktopOnly]: mobileIcon })}>{children}</span>
     </button>

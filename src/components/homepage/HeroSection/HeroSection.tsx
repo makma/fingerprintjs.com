@@ -78,6 +78,7 @@ export default function HeroSection({ advertisingVariant = false }: HeroSectionP
               variant='orangeGradient'
               className={styles.button}
               openNewTab
+              buttonId='create-free-account-hero-homepage'
             >
               Create Free Account
             </Button>
