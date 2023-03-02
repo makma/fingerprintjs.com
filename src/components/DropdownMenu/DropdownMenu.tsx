@@ -9,14 +9,15 @@ export interface DropdownMenuProps {
   name: string
   children?: React.ReactNode
   className?: string
+  darkMode?: boolean
 }
-export default function DropdownMenu({ name, children, className }: DropdownMenuProps) {
+export default function DropdownMenu({ name, children, className, darkMode }: DropdownMenuProps) {
   const [isOpen, setIsOpen] = useState(false)
   const ref = useRef<HTMLDivElement | null>(null)
   useOnClickOutside(ref, () => setIsOpen(false))
 
   return (
-    <div className={className} ref={ref}>
+    <div className={classNames(className, { [styles.darkDropdown]: darkMode })} ref={ref}>
       <span onClick={() => setIsOpen(!isOpen)} className={styles.link}>
         {name}
         <ExpandMoreSvg

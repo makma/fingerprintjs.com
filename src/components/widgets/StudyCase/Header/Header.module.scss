@@ -22,7 +22,7 @@
 }
 
 .header {
-  background-color: c('brand-water');
+  background-color: c('dark-black');
 }
 
 .subHeader {
@@ -30,7 +30,7 @@
   flex-direction: column;
   align-items: center;
 
-  background: adjust-color(c('brand-water'), $lightness: +5%);
+  background: adjust-color(c('dark-black'), $lightness: +5%);
 }
 
 .content {

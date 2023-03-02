@@ -15,6 +15,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     | 'blue'
     | 'orangeGradient'
     | 'orangeGradientOutline'
+    | 'orangeDark'
   size?: 'small' | 'medium' | 'big'
   href?: string
   mobileIcon?: React.ReactNode
@@ -50,6 +51,7 @@ export default memo(function Button({
     { [styles.blue]: variant === 'blue' },
     { [styles.orangeGradient]: variant === 'orangeGradient' },
     { [styles.orangeGradientOutlined]: variant === 'orangeGradientOutline' },
+    { [styles.orangeDark]: variant === 'orangeDark' },
     { [styles.small]: size === 'small' },
     { [styles.medium]: size === 'medium' },
     { [styles.big]: size === 'big' },

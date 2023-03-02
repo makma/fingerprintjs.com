@@ -46,3 +46,17 @@
 
   transform: rotate(180deg);
 }
+
+.darkDropdown {
+  .link {
+    @include media('<=desktopHeader') {
+      border-bottom: 1px solid rgba(232, 232, 232, 0.3);
+    }
+  }
+  .icon {
+    fill: v('github-white');
+    path {
+      stroke: v('github-white');
+    }
+  }
+}

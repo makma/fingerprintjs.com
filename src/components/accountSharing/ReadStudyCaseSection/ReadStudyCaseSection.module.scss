@@ -11,7 +11,7 @@
 
 .container {
   @include media('<=phoneLandscape') {
-    background-color: v('brand-water');
+    background-color: v('dark-black');
     padding: 0 rem(20px);
   }
 }
@@ -21,7 +21,7 @@
   grid-template-columns: 1fr 1fr;
 
   @include media('>phoneLandscape') {
-    background-color: v('brand-water');
+    background-color: v('dark-black');
     border-radius: rem(16px);
   }
 
@@ -93,7 +93,7 @@
 }
 
 .imageSectionMobile {
-  background-color: v('brand-water');
+  background-color: v('dark-black');
 
   @include media('>phoneLandscape') {
     display: none;

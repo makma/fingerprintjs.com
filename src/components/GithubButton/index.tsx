@@ -9,14 +9,17 @@ import { useGithubFpjs } from '../../context/GithubContext'
 
 interface GithubButtonProps {
   className?: string | string[]
-  variant?: 'primary' | 'white'
+  variant?: 'primary' | 'white' | 'dark'
 }
 export default function GithubButton({ className, variant = 'primary' }: GithubButtonProps) {
   const { githubData } = useGithubFpjs()
 
   return (
     <a
-      className={classNames(styles.button, className, { [styles.white]: variant === 'white' })}
+      className={classNames(styles.button, className, {
+        [styles.white]: variant === 'white',
+        [styles.dark]: variant === 'dark',
+      })}
       href={URL.githubRepoUrl}
     >
       <div className={classNames(styles.label, { [styles.white]: variant === 'white' })}>

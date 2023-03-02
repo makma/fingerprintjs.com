@@ -296,3 +296,57 @@
     padding: rem(8px) 0 0 0;
   }
 }
+.darkDropdown {
+  @include media('>desktopHeader') {
+    background: unset;
+    filter: drop-shadow(0px 4px 15px rgba(161, 161, 161, 0.15)) drop-shadow(0px 0px 1px rgba(232, 232, 232, 0.35));
+  }
+  .dropdown {
+    background-color: v('dark-black');
+
+    .rightSection {
+      background: v('dark');
+      border-left: 1px solid rgba(208, 208, 208, 0.1);
+
+      .rightSectionLabel {
+        color: #d0d0d0;
+      }
+
+      .rightColumns {
+        .rightSectionRow {
+          @include media('>desktopHeader') {
+            &:hover {
+              background: #141415;
+            }
+          }
+        }
+      }
+    }
+  }
+  .bottomRow {
+    border-top: 1px solid rgba(208, 208, 208, 0.1);
+  }
+  .label,
+  .linkDescription {
+    color: #d0d0d0;
+  }
+  .useCasesLink {
+    color: v('github-white');
+
+    .arrowBottomLink {
+      fill: v('github-white');
+    }
+  }
+  .bottomLink {
+    .arrow {
+      fill: v('github-white');
+    }
+  }
+  .background {
+    @include media('>desktopHeader') {
+      &:hover {
+        background: #202021;
+      }
+    }
+  }
+}

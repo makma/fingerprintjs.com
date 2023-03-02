@@ -19,6 +19,8 @@ import {
 } from '../../constants/content'
 import DropdownMenu from '../DropdownMenu/DropdownMenu'
 import { ReactComponent as LogoSvg } from './fpjs.svg'
+import { ReactComponent as LogoDarkSvg } from './fpjsDark.svg'
+
 import { scrollToElementById } from '../../helpers/scrollToElementByID'
 import { useLocation } from '@reach/router'
 import Dropdown from '../Dropdown/Dropdown'
@@ -32,8 +34,9 @@ interface HeaderProps {
     url?: string
     backgroundColor?: string
   }
+  darkMode?: boolean
 }
-export default function Header({ notificationBar }: HeaderProps) {
+export default function Header({ notificationBar, darkMode }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const { pathname } = useLocation()
@@ -66,22 +69,24 @@ export default function Header({ notificationBar }: HeaderProps) {
           {<div dangerouslySetInnerHTML={{ __html: notificationBar.barBody ?? '' }} />}
         </HeaderBar>
       )}
-      <header className={styles.header}>
+      <header className={classNames(styles.header, { [styles.darkHeader]: darkMode })}>
         <div className={styles.nav}>
           <Container size='large' className={styles.root}>
             <nav className={styles.navMain}>
               <div className={styles.navLeft}>
                 <Link to='/' className={styles.link} title='Logo'>
-                  <LogoSvg className={styles.logo} />
+                  {darkMode ? <LogoDarkSvg className={styles.logo} /> : <LogoSvg className={styles.logo} />}
                 </Link>
-                <DropdownMenu name='Platform' className={styles.desktopOnly}>
+                <DropdownMenu darkMode={darkMode} name='Platform' className={styles.desktopOnly}>
                   <Dropdown
+                    darkMode={darkMode}
                     leftColumns={[{ title: 'Capabilities', list: platformDropdown.capabilities, cardBackground: true }]}
                     rightColumn={{ title: '\u00A0', list: platformDropdown.integrations }}
                   />
                 </DropdownMenu>
-                <DropdownMenu name='Solutions' className={styles.desktopOnly}>
+                <DropdownMenu darkMode={darkMode} name='Solutions' className={styles.desktopOnly}>
                   <Dropdown
+                    darkMode={darkMode}
                     leftColumns={[
                       { title: 'Protect', list: solutionsDropdown.protect },
                       { title: 'Grow', list: solutionsDropdown.grow },
@@ -91,14 +96,15 @@ export default function Header({ notificationBar }: HeaderProps) {
                     bottomLinkUrl={PATH.useCases}
                   />
                 </DropdownMenu>
-                <DropdownMenu name='Developers' className={styles.desktopOnly}>
+                <DropdownMenu darkMode={darkMode} name='Developers' className={styles.desktopOnly}>
                   <Dropdown
+                    darkMode={darkMode}
                     leftColumns={[{ title: 'Dev Resources', list: devResourcesDropdown, cardBackground: true }]}
                     rightColumn={{ title: 'Community', list: communityDropdown }}
                   />
                 </DropdownMenu>
-                <DropdownMenu name='Resources' className={styles.desktopOnly}>
-                  <Dropdown leftColumns={[{ list: resourcesDropdown, cardBackground: true }]} />
+                <DropdownMenu darkMode={darkMode} name='Resources' className={styles.desktopOnly}>
+                  <Dropdown darkMode={darkMode} leftColumns={[{ list: resourcesDropdown, cardBackground: true }]} />
                 </DropdownMenu>
                 <Link className={classNames(styles.link, styles.desktopOnly)} to={PATH.pricingUrl}>
                   Pricing
@@ -119,11 +125,12 @@ export default function Header({ notificationBar }: HeaderProps) {
                 <Button
                   href={PATH.contactSales}
                   size='medium'
-                  variant='orangeGradientOutline'
+                  variant={darkMode ? 'orangeDark' : 'orangeGradientOutline'}
                   className={styles.button}
                 >
                   Contact Sales
                 </Button>
+
                 {pathname === PATH.botD ? (
                   <Button
                     variant='orangeGradient'
@@ -160,7 +167,7 @@ export default function Header({ notificationBar }: HeaderProps) {
               </div>
             </nav>
           </Container>
-          {isMobileMenuOpen && <MobileNavbar />}
+          {isMobileMenuOpen && <MobileNavbar darkMode={darkMode} />}
         </div>
       </header>
     </>

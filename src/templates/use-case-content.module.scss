@@ -150,7 +150,7 @@ $layoutBreakpoint: '<=1250px';
     li {
       &::marker {
         content: normal;
-        color: v('brand-water');
+        color: v('dark-black');
       }
     }
   }
@@ -158,7 +158,7 @@ $layoutBreakpoint: '<=1250px';
   ol {
     li {
       &::marker {
-        color: v('brand-water');
+        color: v('dark-black');
       }
     }
   }

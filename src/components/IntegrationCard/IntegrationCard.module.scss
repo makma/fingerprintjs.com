@@ -46,7 +46,7 @@
 
       .icon {
         height: rem(20px);
-        fill: c('brand-water');
+        fill: c('dark-black');
       }
 
       @include transition((background-color));
@@ -57,12 +57,12 @@
     }
     .docsLink {
       padding: rem(8px) 0 rem(8px) 0;
-      @include inter($size: 14px, $weight: 400, $lh: 20px, $color: c('brand-water'));
+      @include inter($size: 14px, $weight: 400, $lh: 20px, $color: c('dark-black'));
 
       @include transition((color));
 
       &:hover {
-        color: adjust-color(c('brand-water'), $lightness: -20%);
+        color: adjust-color(c('dark-black'), $lightness: -20%);
       }
     }
   }

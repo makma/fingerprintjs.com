@@ -127,11 +127,11 @@
   }
 
   &.incognitoCard {
-    background-color: v('brand-water');
+    background-color: v('dark-black');
 
     .selected {
       td {
-        background-color: adjust-color(c('brand-water'), $saturation: -5%, $lightness: 13%);
+        background-color: adjust-color(c('dark-black'), $saturation: -5%, $lightness: 13%);
       }
     }
 

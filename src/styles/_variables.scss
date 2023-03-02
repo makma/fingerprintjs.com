@@ -9,17 +9,20 @@ $colors: (
   'gray': #5b5b5b,
   //#434344
   'dark-gray': hsl(240, 1%, 26%),
-  'dark': #141415,
+  //DarkMode/Black
+  'dark-black': #141415,
+  'dark': #202021,
   //#FAFAFA
   'github-white': hsl(0, 0%, 98%),
   'github-orange': hsl(8, 89%, 63%),
-  //#FF5D22
+  //#FF5D22 Orange/Main Light Mode
   'github-orange-gradient': hsl(16, 100%, 57%),
+  // Orange/Main Dark Mode
+  'github-orange-dark': #fa7545,
 );
 
 $brand-colors: (
   'brand-fire': hsl(16, 96%, 48%),
-  'brand-water': hsl(234, 52%, 11%),
 );
 
 $grid-base: 8px;

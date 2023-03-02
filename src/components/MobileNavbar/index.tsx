@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { ReactComponent as LinkedInSvg } from '../../img/linkedin.svg'
 import { ReactComponent as TwitterSvg } from '../../img/twitter.svg'
+import { ReactComponent as LinkedInDarkSvg } from '../../img/linkedinDark.svg'
+import { ReactComponent as TwitterDarkSvg } from '../../img/twitterDark.svg'
 import GithubButton from '../GithubButton'
 import Button from '../common/Button'
 import classNames from 'classnames'
@@ -19,27 +21,31 @@ import {
 import DropdownMenu from '../DropdownMenu/DropdownMenu'
 import Dropdown from '../Dropdown/Dropdown'
 
-export default function MobileNavbar() {
+interface MobileNavbarProps {
+  darkMode?: boolean
+}
+export default function MobileNavbar({ darkMode }: MobileNavbarProps) {
   return (
-    <nav className={styles.nav}>
+    <nav className={classNames(styles.nav, { [styles.darkNavHeader]: darkMode })}>
       <div className={styles.container}>
         <div className={classNames(styles.links, styles.top)}>
-          <Button href={PATH.contactSales} variant='orangeGradientOutline' size='medium'>
+          <Button href={PATH.contactSales} variant={darkMode ? 'orangeDark' : 'orangeGradientOutline'} size='medium'>
             Contact Sales
           </Button>
-          <Button variant='orangeGradient' size='medium' href={URL.signupUrl}>
+          <Button variant='orangeGradient' size='medium' href={URL.signupUrl} className={styles.signupButton}>
             Get Started
           </Button>
         </div>
         <div className={classNames(styles.links, styles.main)}>
           <div className={styles.container}>
-            <DropdownMenu name='Platform'>
+            <DropdownMenu name='Platform' darkMode={darkMode}>
               <Dropdown
                 leftColumns={[{ title: 'Capabilities', list: platformDropdown.capabilities, cardBackground: true }]}
                 rightColumn={{ list: platformDropdown.integrations }}
+                darkMode={darkMode}
               />
             </DropdownMenu>
-            <DropdownMenu name='Solutions'>
+            <DropdownMenu name='Solutions' darkMode={darkMode}>
               <Dropdown
                 leftColumns={[
                   { title: 'Protect', list: solutionsDropdown.protect },
@@ -48,16 +54,18 @@ export default function MobileNavbar() {
                 rightColumn={{ title: 'By Industry', list: industryDropdown }}
                 bottomLinkText='All Use Cases'
                 bottomLinkUrl={PATH.useCases}
+                darkMode={darkMode}
               />
             </DropdownMenu>
-            <DropdownMenu name='Developers'>
+            <DropdownMenu name='Developers' darkMode={darkMode}>
               <Dropdown
                 leftColumns={[{ title: 'Dev Resources', list: devResourcesDropdown, cardBackground: true }]}
                 rightColumn={{ title: 'Community', list: communityDropdown }}
+                darkMode={darkMode}
               />
             </DropdownMenu>
-            <DropdownMenu name='Resources'>
-              <Dropdown leftColumns={[{ list: resourcesDropdown, cardBackground: true }]} />
+            <DropdownMenu name='Resources' darkMode={darkMode}>
+              <Dropdown leftColumns={[{ list: resourcesDropdown, cardBackground: true }]} darkMode={darkMode} />
             </DropdownMenu>
             <Link to={PATH.pricingUrl} className={styles.link}>
               Pricing
@@ -76,18 +84,18 @@ export default function MobileNavbar() {
         </div>
 
         <div className={styles.contact}>
-          <GithubButton />
+          <GithubButton variant={darkMode ? 'dark' : 'primary'} />
           <div className={styles.social}>
             <p>Find us on social</p>
             <ul className={styles.links}>
               <li className={styles.link}>
                 <a href={URL.linkedinUrl} target='_blank' rel='noreferrer' aria-label='LinkedIn link'>
-                  <LinkedInSvg />
+                  {darkMode ? <LinkedInDarkSvg /> : <LinkedInSvg />}
                 </a>
               </li>
               <li className={styles.link}>
                 <a href={URL.twitterUrl} target='_blank' rel='noreferrer' aria-label='Twitter link'>
-                  <TwitterSvg />
+                  {darkMode ? <TwitterDarkSvg /> : <TwitterSvg />}
                 </a>
               </li>
             </ul>

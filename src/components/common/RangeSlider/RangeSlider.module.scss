@@ -101,7 +101,7 @@
       width: var(--thumb-size);
       cursor: pointer;
       margin-top: -4px;
-      box-shadow: 0 5px 14px 0 adjust-color(c('brand-water'), $alpha: -0.9);
+      box-shadow: 0 5px 14px 0 adjust-color(c('dark-black'), $alpha: -0.9);
     }
 
     // Firefox
@@ -126,7 +126,7 @@
       width: var(--thumb-size);
       cursor: pointer;
       margin-top: -4px;
-      box-shadow: 0 5px 14px 0 adjust-color(c('brand-water'), $alpha: -0.9);
+      box-shadow: 0 5px 14px 0 adjust-color(c('dark-black'), $alpha: -0.9);
     }
   }
   .inputLabelsBelow {

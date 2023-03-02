@@ -11,11 +11,12 @@ export interface DropdownProps {
   rightColumn?: ColumnProps
   bottomLinkText?: string
   bottomLinkUrl?: string
+  darkMode?: boolean
 }
-export default function Dropdown({ leftColumns, rightColumn, bottomLinkText, bottomLinkUrl }: DropdownProps) {
+export default function Dropdown({ leftColumns, rightColumn, bottomLinkText, bottomLinkUrl, darkMode }: DropdownProps) {
   const onlyLeftColumn = leftColumns && !rightColumn
   return (
-    <div className={styles.container}>
+    <div className={classNames(styles.container, { [styles.darkDropdown]: darkMode })}>
       <section className={styles.dropdown}>
         {leftColumns && (
           <div className={classNames(styles.columns, { [styles.onlyLeft]: onlyLeftColumn })}>

@@ -1,7 +1,7 @@
 $desktop-breakpoint: 1240px;
 
 .codeApi {
-  background-color: v('brand-water');
+  background-color: v('dark-black');
   color: v('white');
   overflow-x: hidden;
   padding-top: rem(118px);
@@ -100,7 +100,7 @@ $desktop-breakpoint: 1240px;
         @include inter($size: 20px, $lh: 130%, $weight: 600);
         letter-spacing: 0.01em;
 
-        background: adjust-color(c('brand-water'), $saturation: -5%, $lightness: 13%);
+        background: adjust-color(c('dark-black'), $saturation: -5%, $lightness: 13%);
         border-radius: 16px;
         padding: rem(24px);
         min-width: rem(280px);

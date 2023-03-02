@@ -49,7 +49,7 @@
       .icon {
         width: 1.5rem;
         height: auto;
-        fill: v('brand-water');
+        fill: v('dark-black');
       }
 
       .label {
@@ -124,6 +124,34 @@
           @include transition((opacity));
         }
       }
+    }
+  }
+}
+
+.darkNavHeader {
+  .container {
+    background: v('dark-black');
+    color: v('github-white');
+  }
+  .signupButton {
+    background-color: v('github-orange-dark');
+    &:hover {
+      background-color: adjust-color(c('github-orange-dark'), $saturation: -19%, $lightness: -6%);
+    }
+  }
+  .links {
+    @include inter($size: 16px, $weight: v('normal'), $lh: 24px);
+    letter-spacing: 0.001em;
+
+    &.main {
+      .link {
+        border-bottom: 1px solid rgba(232, 232, 232, 0.3);
+      }
+    }
+  }
+  .contact {
+    .social {
+      color: #a1a1a1;
     }
   }
 }

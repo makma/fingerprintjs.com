@@ -10,7 +10,7 @@
   top: 0;
   left: 0;
 
-  background-color: adjust-color($color: c(brand-water), $saturation: -35%, $lightness: 8%);
+  background-color: adjust-color($color: c(dark), $saturation: -35%, $lightness: 8%);
 
   z-index: v(z-modal);
 }

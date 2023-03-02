@@ -1,7 +1,7 @@
 $background-color: #202021;
 
 .background {
-  background: v('dark');
+  background: v('dark-black');
 }
 .root {
   background: $background-color;
@@ -94,9 +94,13 @@ $background-color: #202021;
     &:nth-child(1),
     &:nth-child(22) {
       position: sticky;
-      top: 0;
+      top: rem(77px);
       background: $background-color;
       z-index: 2;
+
+      @include media('<=desktopHeader') {
+        top: 0;
+      }
     }
 
     &:nth-child(10),

@@ -7,7 +7,7 @@
   @include transition((background-color));
 
   &:hover {
-    background-color: c('brand-water');
+    background-color: c('dark-black');
   }
 }
 

@@ -7,7 +7,7 @@
 .tippy-box {
   position: relative;
   background-color: v('white');
-  color: v('brand-water');
+  color: v('dark-black');
   border-radius: 1rem;
   font-size: 1.75rem;
   line-height: 1.4;
@@ -73,7 +73,7 @@
   z-index: 1;
   border-radius: 1rem;
   @include inter($weight: v('normal'));
-  box-shadow: 0 10px 20px 0 adjust-color(c('brand-water'), $alpha: -0.8);
+  box-shadow: 0 10px 20px 0 adjust-color(c('dark-black'), $alpha: -0.8);
 }
 
 // Animation shit-away
