@@ -4,8 +4,8 @@ templateKey: press-page
 pressReleases:
   - title: Fingerprint Partners with Spec to Provide Real-Time User Insights that
       Reduce Fraud and Deliver Frictionless Digital Experiences
-    website: BusinessWire
-    url: fingerprint.com/blog/fingerprint-partners-with-spec
+    website: Company Announcement
+    url: https://www.fingerprint.com/blog/fingerprint-partners-with-spec
   - title: Fingerprint Achieves SOC 2 Type II Certification
     website: BusinessWire
     url: https://www.businesswire.com/news/home/20221108005314/en/Fingerprint-Achieves-SOC-2-Type-II-Certification
