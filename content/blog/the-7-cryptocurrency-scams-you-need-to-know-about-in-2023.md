@@ -61,7 +61,7 @@ The value usually increases as more people purchase a specific cryptocurrency. S
 
 People looking for love should be aware of the [romance scams](https://fingerprint.com/blog/romance-scams-lead-to-credit-card-fraud/?utm_source=blog&utm_medium=website&utm_campaign=blog) that plague the crypto world. It starts with a dating app profile. The scammer chats with a targeted victim potentially for months before convincing the victim to send the scammer money in the form of cryptocurrency. Some scams involve fake trading apps, and the scammer continually contacts the victim to invest more, promising high rewards and often programming the fraudulent app to show occasional winning trades. This scam is also called "[pig butchering](https://www.wired.com/story/what-is-pig-butchering-scam/)" for the scammer's ability to fatten the victim until finally cashing out and disappearing. 
 
-> If you are working with cryptocurrency and are interested in learning more about preventing romance scams, [register for our upcoming webinar](https://go.unit21.ai/register-romance-fraud-webinar-fingerprint) with Unit21 and Elliptic on February 14, 2023.
+> If you are interested in learning more about romance scams, [watch our webinar](https://go.unit21.ai/register-romance-fraud-webinar) with Unit21 and Elliptic as we discuss the evolution of romance fraud, its global impact on financial organizations, and what companies can do to educate customers and keep them safe from falling victim.
 
 ### Phishing
 
