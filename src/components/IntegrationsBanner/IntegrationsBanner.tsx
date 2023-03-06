@@ -9,7 +9,7 @@ export interface IntegrationsBannerProps {
   ctaText: string
   ctaHref: string
   openNewTab: boolean
-  variant?: 'primary' | 'blue'
+  variant?: 'primary' | 'orangeGradient'
 }
 
 export default function IntegrationsBanner({
@@ -21,7 +21,7 @@ export default function IntegrationsBanner({
   variant = 'primary',
 }: IntegrationsBannerProps) {
   return (
-    <section className={classNames(styles.banner, { [styles.blue]: variant === 'blue' })}>
+    <section className={classNames(styles.banner, { [styles.orangeGradient]: variant === 'orangeGradient' })}>
       <h1 className={styles.title}>{title}</h1>
       <p className={styles.description}>{children}</p>
       <Button href={ctaHref} className={styles.button} size={'big'} openNewTab={openNewTab} variant={variant}>

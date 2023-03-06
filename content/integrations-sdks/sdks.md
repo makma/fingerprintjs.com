@@ -77,7 +77,7 @@ integrationSdkCards:
     docsLink: https://dev.fingerprint.com/docs/preact
     githubLink: https://github.com/fingerprintjs/fingerprintjs-pro-react
     category: Frontend
-  - cardImage: /img/uploads/integrationsCards/Phyton.png
+  - cardImage: /img/uploads/integrationsCards/Python.png
     title: Python Server API SDK
     description: This open-source library improves the experience for projects
       utilizing the Python environment

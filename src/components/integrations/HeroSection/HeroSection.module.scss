@@ -1,8 +1,10 @@
 .root {
   padding-top: rem(38px);
-  padding-bottom: rem(48px);
+  padding-bottom: rem(24px);
 
   @include media('<=tabletWide') {
+    padding-bottom: rem(48px);
+
     padding-top: rem(5px);
 
     flex-direction: column-reverse;
@@ -27,7 +29,7 @@
       max-width: rem(608px);
 
       .title {
-        @include inter($size: 48px, $weight: 700, $lh: 114%);
+        @include inter($size: 48px, $weight: 600, $lh: 114%);
         letter-spacing: -0.01em;
 
         @include media('<=tabletWide') {
@@ -36,7 +38,7 @@
       }
 
       .description {
-        @include inter($size: 18px, $weight: 400, $lh: 160%);
+        @include inter($size: 18px, $weight: 400, $lh: 160%, $color: v('dark-gray'));
 
         @include media('<=tabletWide') {
           font-size: rem(16px);

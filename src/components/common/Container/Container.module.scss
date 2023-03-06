@@ -1,6 +1,6 @@
 .container {
   --contentWidth: 920px;
-  padding: 0 unquote('max(20px, 50vw - var(--contentWidth) / 2)');
+  padding: 0 unquote('max(20px, calc((100vw - (100vw - 100%))/2) - var(--contentWidth) / 2)');
 }
 
 .container.large {

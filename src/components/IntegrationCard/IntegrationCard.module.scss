@@ -2,26 +2,38 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: rem(4px) rem(4px) rem(16px);
+  padding-bottom: rem(16px);
 
-  border: 1px solid #f2f2f7;
-  border-radius: rem(20px);
+  border: 1px solid #e8e8e8;
+  border-radius: rem(6px);
   width: 100%;
   height: 100%;
+  @include transition((box-shadow));
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0px 3px 2px rgba(20, 20, 21, 0.02), 0px 0px 1px rgba(114, 114, 115, 0.15),
+      0px 7px 6px rgba(20, 20, 21, 0.04), 0px 12px 10px rgba(20, 20, 21, 0.03), 0px 22px 18px rgba(20, 20, 21, 0.03),
+      0px 42px 33px rgba(20, 20, 21, 0.02), 0px 100px 80px rgba(20, 20, 21, 0.02);
+  }
   .image {
-    border-radius: rem(16px);
+    border-radius: rem(5px) rem(5px) 0px 0px;
+
+    img {
+      object-fit: contain;
+    }
   }
   .content {
-    padding: rem(16px) rem(16px) rem(32px);
+    padding: rem(24px) rem(16px) rem(32px);
 
     .title {
-      @include inter($size: 20px, $weight: v('semi'), $lh: 150%);
+      @include inter($size: 20px, $weight: v('semi'), $lh: 140%);
       letter-spacing: -0.01em;
 
       margin-bottom: rem(8px);
     }
     .description {
-      @include inter($size: 14px, $weight: 400, $lh: 20px);
+      @include inter($size: 14px, $weight: 400, $lh: 20px, $color: v('dark-gray'));
     }
   }
   .cardFooter {
@@ -36,33 +48,33 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      padding: rem(8px) rem(16px);
+      padding: rem(8.5px) rem(16px);
       margin-right: rem(8px);
-      gap: rem(6px);
-      background: #f2f2f7;
-      border-radius: rem(6px);
-
-      @include inter($size: 14px, $weight: 500, $lh: 150%);
+      gap: rem(10px);
+      background: c('dark');
+      border-radius: rem(4px);
+      color: c('white');
+      @include inter($size: 14px, $weight: 600, $lh: 150%);
 
       .icon {
         height: rem(20px);
-        fill: c('dark-black');
+        fill: c('white');
       }
 
-      @include transition((background-color));
+      @include transition((opacity));
 
       &:hover {
-        background-color: adjust-color(c('off-white'), $lightness: -3%);
+        opacity: v('faded');
       }
     }
     .docsLink {
       padding: rem(8px) 0 rem(8px) 0;
       @include inter($size: 14px, $weight: 400, $lh: 20px, $color: c('dark-black'));
 
-      @include transition((color));
+      @include transition((opacity));
 
       &:hover {
-        color: adjust-color(c('dark-black'), $lightness: -20%);
+        opacity: v('faded');
       }
     }
   }

@@ -249,7 +249,7 @@ export default function GetBeyondSection() {
             </motion.div>
           </AnimatePresence>
         </div>
-        <Button size='big' href={URL.signupUrl} className={styles.button}>
+        <Button size='big' href={URL.signupUrl} className={styles.button} buttonId='create_free_account_github_hero'>
           Create Free Account
         </Button>
         <div className={styles.tips}>

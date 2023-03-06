@@ -17,7 +17,15 @@ export default function IntegrationCard({ title, description, cardImage, githubL
   return (
     <div className={styles.integrationCard}>
       <article>
-        {imageFluid && <GatsbyImage image={imageFluid} className={styles.image} alt={`${title} card`} title={title} />}
+        {imageFluid && (
+          <GatsbyImage
+            image={imageFluid}
+            className={styles.image}
+            alt={`${title} card`}
+            title={title}
+            imgStyle={{ objectFit: `contain` }}
+          />
+        )}
         <div className={styles.content}>
           <h1 className={styles.title}>{title}</h1>
           <p className={styles.description}>{description}</p>

@@ -15,4 +15,9 @@ integrationSdkCards:
       requests and responses between your site and Fingerprint Pro's API.
     githubLink: https://github.com/fingerprintjs/fingerprintjs-pro-cloudflare-worker
     docsLink: https://dev.fingerprint.com/docs/cloudflare-integration-new-accounts
+  - cardImage: /img/uploads/integrationsCards/cloudfront.png
+    title: CloudFront
+    description: CloudFront Integration is responsible for proxying identification and agent-download requests. This helps avoid ad blockers from blocking Fingerprint’s identification requests.
+    githubLink: https://github.com/fingerprintjs/fingerprint-pro-cloudfront-integration
+    docsLink: https://dev.fingerprint.com/docs/cloudfront-proxy-integration
 ---

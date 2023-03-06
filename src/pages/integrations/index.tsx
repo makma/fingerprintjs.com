@@ -26,7 +26,7 @@ export default function Integrations({ pageContext }: IntegrationsProps) {
         ctaHref={URL.signupUrl}
         ctaText='Sign Up'
         openNewTab
-        variant='blue'
+        variant='orangeGradient'
       >
         Developers can start building with Fingerprint for free - no credit card required.
       </IntegrationsBanner>

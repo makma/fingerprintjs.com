@@ -19,7 +19,7 @@ export default function CardsSection() {
             integrationSdkCards {
               cardImage {
                 childImageSharp {
-                  gatsbyImageData(quality: 100, layout: CONSTRAINED, aspectRatio: 1.7)
+                  gatsbyImageData(quality: 100, layout: FULL_WIDTH, transformOptions: { fit: CONTAIN })
                 }
               }
               description
@@ -31,7 +31,7 @@ export default function CardsSection() {
             integrationSdkCardsMobile {
               cardImage {
                 childImageSharp {
-                  gatsbyImageData(quality: 100, layout: CONSTRAINED, aspectRatio: 1.7)
+                  gatsbyImageData(quality: 100, layout: FULL_WIDTH, transformOptions: { fit: CONTAIN })
                 }
               }
               description
@@ -43,7 +43,7 @@ export default function CardsSection() {
             integrationSdkCardsBackend {
               cardImage {
                 childImageSharp {
-                  gatsbyImageData(quality: 100, layout: CONSTRAINED, aspectRatio: 1.7)
+                  gatsbyImageData(quality: 100, layout: FULL_WIDTH, transformOptions: { fit: CONTAIN })
                 }
               }
               description
@@ -55,7 +55,7 @@ export default function CardsSection() {
             integrationSdkCardsFrontend {
               cardImage {
                 childImageSharp {
-                  gatsbyImageData(quality: 100, layout: CONSTRAINED, aspectRatio: 1.7)
+                  gatsbyImageData(quality: 100, layout: FULL_WIDTH, transformOptions: { fit: CONTAIN })
                 }
               }
               description
