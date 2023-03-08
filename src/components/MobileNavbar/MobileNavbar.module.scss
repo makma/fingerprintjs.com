@@ -35,6 +35,9 @@
           margin-left: 1rem;
         }
       }
+      @include media('>tablet') {
+        display: none;
+      }
     }
 
     &.main {
@@ -72,6 +75,10 @@
         &:hover {
           opacity: v('faded');
         }
+      }
+
+      @include media('>tablet') {
+        padding-top: rem(16px);
       }
     }
   }

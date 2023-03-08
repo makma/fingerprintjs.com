@@ -60,7 +60,7 @@ export default function Header({ notificationBar, darkMode }: HeaderProps) {
 
   return (
     <>
-      {notificationBar && (
+      {notificationBar && !isMobileMenuOpen && (
         <HeaderBar
           linkUrl={notificationBar.url}
           arrowText={notificationBar.arrowText}
