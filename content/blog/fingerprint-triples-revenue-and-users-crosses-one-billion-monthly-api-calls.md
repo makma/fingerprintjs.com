@@ -72,7 +72,9 @@ Fingerprint is available as an open-source project, a free trial version, or as 
 
 Fingerprint, powered by the most accurate device fingerprinting technology, enables companies to prevent fraud and improve user experiences. Fingerprint processes hundreds of signals from the browser, device, and network to generate a stable and persistent unique VisitorID that can be used to understand visitor behavior. With a commitment to best-in-class data security and privacy, Fingerprint is proud to be SOC 2 Type II, GDPR, and CCPA compliant. Fingerprint is trusted by over 6,000 companies worldwide, including 16% of the top 500 websites, to help catch sophisticated fraudsters and personalize experiences for trusted users. Learn more at [fingerprint.com](http://www.fingerprint.com).
 
-Follow us on Twitter: [@Fingerprint](https://twitter.com/FingerprintJs/)Join us on LinkedIn: [Fingerprint](https://www.linkedin.com/company/fingerprintjs)Star us on GitHub: [Fingerprint](https://github.com/fingerprintjs/fingerprintjs)
+Follow us on Twitter: [@Fingerprint](https://twitter.com/FingerprintJs/)\
+Join us on LinkedIn: [Fingerprint](https://www.linkedin.com/company/fingerprintjs)\
+Star us on GitHub: [Fingerprint](https://github.com/fingerprintjs/fingerprintjs)
 
 **Media Contact**\
 Courtney Rogin for Fingerprint\
