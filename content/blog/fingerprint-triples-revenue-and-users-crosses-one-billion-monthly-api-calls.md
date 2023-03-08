@@ -21,6 +21,10 @@ tags:
   - announcements
 authors:
   - Courtney Rogin
+heroImage:
+  image: /img/uploads/infographic-fy23-fingerprint.jpg
+  imageAlt: FY23 momentum press release
+  imageTitle: FY23 momentum press release
 customCTA:
   openCtaNewTab: false
 ---
