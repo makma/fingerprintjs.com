@@ -74,11 +74,15 @@
     }
   }
   .videoWrapper {
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
     position: relative;
     @include media('<=desktopHeader') {
       align-self: center;
     }
     .videoSection {
+      // possible fix for thin border around the video on Safari
+      overflow: hidden;
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
       transform: translateZ(-100px);
       width: rem(427px);
       height: 100%;

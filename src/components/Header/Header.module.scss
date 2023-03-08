@@ -5,9 +5,6 @@
     z-index: v('z-header');
   }
 
-  @include media('<=desktopHeader') {
-    overflow: clip;
-  }
   .nav {
     @include media('>desktopHeader') {
       background: c('white');
