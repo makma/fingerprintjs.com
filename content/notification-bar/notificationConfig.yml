@@ -1,7 +1,7 @@
-showNotBar: false
-barBody: You're Invited! Join us on Feb. 14 for a webinar on Romance Fraud
-  trends and how to protect your customers.
-arrowText: Register Now
-url: https://go.unit21.ai/register-romance-fraud-webinar-fingerprint
+showNotBar: true
+barBody: "Announcement: Fingerprint Triples Revenue and Users, Crosses One
+  Billion Monthly API Calls"
+arrowText: Read more
+url: https://fingerprint.com/blog/fy23-momentum-press-release
 openUrlNewTab: false
 backgroundColor: "#f04405"
