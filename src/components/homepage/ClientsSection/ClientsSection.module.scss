@@ -13,7 +13,7 @@
   }
   .marquee {
     display: flex;
-
+    min-height: rem(49px);
     .logos {
       align-items: center;
       min-width: max-content;
@@ -94,6 +94,72 @@
       .dropbox {
         width: rem(130px);
         height: rem(25px);
+      }
+
+      .zee5 {
+        width: rem(47px);
+        height: rem(47px);
+      }
+      .naukri {
+        width: rem(106px);
+        height: rem(18px);
+      }
+      .jungle {
+        width: rem(44px);
+        height: rem(47px);
+      }
+      .uni {
+        width: rem(37px);
+        height: rem(34px);
+      }
+      .happyfresh {
+        width: rem(90px);
+        height: rem(18px);
+      }
+      .dana {
+        width: rem(64px);
+        height: rem(19px);
+      }
+      .xendit {
+        width: rem(97px);
+        height: rem(28px);
+      }
+      .paisa {
+        width: rem(94px);
+        height: rem(23px);
+      }
+      .apna {
+        width: rem(47px);
+        height: rem(47px);
+      }
+
+      .klarna {
+        width: rem(77px);
+        height: rem(18px);
+      }
+      .virgin {
+        width: rem(95px);
+        height: rem(47px);
+      }
+      .sinch {
+        width: rem(103px);
+        height: rem(22px);
+      }
+      .turkish {
+        width: rem(160px);
+        height: rem(25px);
+      }
+      .cartier {
+        width: rem(87px);
+        height: rem(25px);
+      }
+      .qiwi {
+        width: rem(87px);
+        height: rem(32px);
+      }
+      .worldCoin {
+        width: rem(128px);
+        height: rem(22px);
       }
     }
   }

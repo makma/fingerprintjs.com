@@ -8,7 +8,6 @@ export const useUserLocation = () => {
   const userCountry = data?.ipLocation?.country?.code?.toUpperCase()
   const visitorId = data?.visitorId
   const countryRegion = userCountry ? getCountryRegion(userCountry) : Region.AMER
-
   const isEuUser = userRegion === 'EU'
   return { isEuUser, userRegion, userCountry, visitorId, countryRegion }
 }
