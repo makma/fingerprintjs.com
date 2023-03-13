@@ -34,7 +34,7 @@ export default function IncludedSection() {
   return (
     <Section className={styles.root}>
       <Container size='large' className={styles.container}>
-        <h2 className={styles.title}>What&apos;s included in a Fingerprint Pro Request?</h2>
+        <h2 className={styles.title}>What&apos;s included in a Fingerprint Pro Response?</h2>
         <div className={styles.cards}>{cards.map((card) => card)}</div>
       </Container>
       <Swiper
