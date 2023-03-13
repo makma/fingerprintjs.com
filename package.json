@@ -114,7 +114,7 @@
     "@typescript-eslint/parser": "5.50.0",
     "babel-jest": "29.4.1",
     "babel-loader": "9.1.2",
-    "babel-plugin-inline-react-svg": "2.0.1",
+    "babel-plugin-inline-react-svg": "2.0.2",
     "babel-plugin-prismjs": "2.1.0",
     "babel-preset-gatsby": "3.5.0",
     "babel-preset-react-app": "10.0.1",
