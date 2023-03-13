@@ -63,7 +63,7 @@ export function LayoutTemplate({ children, notificationBar, darkVariant }: Layou
     if (visitorData && visitorId) {
       amplitudeLogEvent(
         'view marketing page',
-        { route: pathname, botDetected: visitorData.products.botd.data.bot.result },
+        { route: pathname, botDetected: visitorData?.products?.botd?.data?.bot?.result ?? 'BotD data not available' },
         visitorId
       )
     }

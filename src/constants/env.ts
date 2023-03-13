@@ -52,4 +52,4 @@ export const ROLLBAR_ACCESS_TOKEN = process.env.GATSBY_ROLLBAR_ACCESS_TOKEN ?? '
 export const BRANCH = process.env.BRANCH
 
 export const HOST =
-  process.env.VERCEL_ENV === 'preview' && process.env.VERCEL_URL ? process.env.VERCEL_URL : 'https://fingerprint.com'
+  process.env.GATSBY_VERCEL_ENV === 'preview' ? `https://${process.env.GATSBY_VERCEL_URL}` : 'https://fingerprint.com'

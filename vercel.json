@@ -1,4 +1,17 @@
 {
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-function",
+          "value": "event"
+        }
+      ],
+      "destination": "/api/redirect/events/"
+    }
+  ],
   "redirects": [
     {
       "source": "/blog/wallpaper-id/",

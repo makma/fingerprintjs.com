@@ -60,10 +60,10 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (visitorData) {
-      if (visitorData.products.botd.data.bot.result === 'good') {
+      if (visitorData?.products?.botd?.data?.bot?.result === 'good') {
         dispatch({ detected: BotType.SearchEngine })
       }
-      if (visitorData.products.botd.data.bot.result === 'bad') {
+      if (visitorData?.products?.botd?.data?.bot?.result === 'bad') {
         dispatch({ detected: BotType.AutomationTool })
       }
       setIsLoaded(true)

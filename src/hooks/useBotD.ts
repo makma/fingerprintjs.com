@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
 import { SuccessResponse } from '../types/botResponse'
-import { FPJS_SECRET_TOKEN, BOTD_VERIFY_AGENT_ENDPOINT } from '../constants/env'
+import { BASE_URL } from '../constants/content'
 import { getErrorMessage } from '../helpers/error'
 import { getConfig } from '../helpers/fpjs'
+import axios from 'axios'
+import { generateRandomString } from '../helpers/common'
 
 export const useBotD = () => {
   const [visitorData, setVisitorData] = useState<SuccessResponse>()
@@ -21,21 +23,26 @@ export const useBotD = () => {
 
       const data = await getData({ ignoreCache: true })
       if (data?.requestId) {
+        const randomPath = generateRandomString(5)
         try {
-          const response = await fetch(`${BOTD_VERIFY_AGENT_ENDPOINT}/events/${data.requestId}`, {
-            method: 'GET',
-            headers: {
-              'Auth-API-Key': FPJS_SECRET_TOKEN,
+          const result = await axios.post(
+            `${BASE_URL}/${randomPath}/`,
+            {
+              requestId: data.requestId,
             },
-          })
-          if (!response.ok) {
-            throw new Error()
+            {
+              headers: {
+                'x-vercel-function': 'event',
+              },
+            }
+          )
+          if (result.data.products.botd.error) {
+            throw new Error(result.data.products.botd.error.message)
           }
-          const result: SuccessResponse = await response.json()
-          if (result.products.botd.error) {
-            throw new Error(result.products.botd.error.message)
+          if (!result.data.products.botd.data) {
+            throw new Error('BotD field is empty')
           }
-          setVisitorData(result)
+          setVisitorData(result.data)
         } catch (error) {
           setHasError(true)
           setError(getErrorMessage(error))
