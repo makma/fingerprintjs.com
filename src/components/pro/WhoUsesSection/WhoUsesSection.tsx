@@ -6,7 +6,7 @@ import styles from './WhoUsesSection.module.scss'
 
 import { ReactComponent as DropboxSVG } from './DropboxSVG.svg'
 import { ReactComponent as TripleWhaleSVG } from './TripleWhaleSVG.svg'
-import { ReactComponent as RealtorSVG } from './RealtorSVG.svg'
+import { ReactComponent as CheckoutSVG } from './CheckoutSVG.svg'
 
 export default function WhoUsesSection() {
   return (
@@ -27,10 +27,10 @@ export default function WhoUsesSection() {
             linkHref='https://www.triplewhale.com/'
           />
           <Card
-            logo={<RealtorSVG />}
+            logo={<CheckoutSVG />}
             title='Expert growth teams'
             description='Better understand logged-out traffic, serve personalized content, and improve attribution.'
-            linkHref='https://www.realtor.com/'
+            linkHref='https://www.checkout.com/'
           />
         </div>
       </Container>
