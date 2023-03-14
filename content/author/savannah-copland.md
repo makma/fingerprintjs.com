@@ -1,5 +1,5 @@
 ---
 title: Savannah Copland
-role: Marketing Lead
-photo: /img/uploads/img_4728.jpg
+role: Director of Marketing
+photo: /img/uploads/20230207_wise_20318.jpg
 ---
