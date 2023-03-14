@@ -1,5 +1,5 @@
 ---
 title: Alexey Verkhovsky
-role: Android Researcher
+role: Android Research & Development
 photo: /img/uploads/alexey.jpeg
 ---
