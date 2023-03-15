@@ -122,7 +122,7 @@ export function mapToPost(data: any, editing?: boolean): PostProps {
   return {
     title,
     description,
-    publishDate: displayDateFormatter.format(new Date(publishDate)),
+    publishDate: displayDateFormatter(new Date(publishDate)),
     image: image as Queries.File,
     imageAlt,
     imageTitle,

@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 export function pluralize(num, one, many) {
   num = Math.floor(num)
 
@@ -31,7 +33,7 @@ export function getVisitTitle(timestamp, now = Date.now()) {
     return pluralize(secondsDiff / (60 * 60 * 24), 'day ago', 'days ago')
   }
 
-  return new Date(timestamp).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  return moment.utc(timestamp).format('MMMM D, YYYY')
 }
 
 export function getBrowserName({ browserName, browserVersion, os, osVersion, device }) {

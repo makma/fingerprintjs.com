@@ -21,7 +21,7 @@ export interface ActionBarProps {
 export default function ActionBar({ siteUrl, publishDate, description, tags = [] }: ActionBarProps) {
   const camelizedTags = tags.map((tag) => camelize(tag))
 
-  const date = displayDateFormatter.format(new Date(publishDate))
+  const date = displayDateFormatter(new Date(publishDate))
   return (
     <div className={styles.root}>
       <span className={styles.publishDate}>{date}</span>

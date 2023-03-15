@@ -111,7 +111,7 @@ export function mapToUseCase(data: any, editing?: boolean): UseCaseProps {
   return {
     title,
     description,
-    publishDate: displayDateFormatter.format(new Date(publishDate)),
+    publishDate: displayDateFormatter(new Date(publishDate)),
     image: image as Queries.File,
     imageAlt,
     imageTitle,

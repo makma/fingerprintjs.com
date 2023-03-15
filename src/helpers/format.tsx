@@ -1,5 +1,9 @@
+import moment from 'moment'
+
 export const dateFormatter = new Intl.DateTimeFormat()
-export const displayDateFormatter = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+export const displayDateFormatter = (date: Date | string): string => {
+  return moment.utc(date).format('LL')
+}
 export const numberFormatter = new Intl.NumberFormat('en-US')
 
 export function kFormatter(num: number) {
