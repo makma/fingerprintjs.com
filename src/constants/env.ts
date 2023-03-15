@@ -53,3 +53,5 @@ export const BRANCH = process.env.BRANCH
 
 export const HOST =
   process.env.GATSBY_VERCEL_ENV === 'preview' ? `https://${process.env.GATSBY_VERCEL_URL}` : 'https://fingerprint.com'
+
+export const GIT_SHA = process.env.GATSBY_VERCEL_GIT_COMMIT_SHA

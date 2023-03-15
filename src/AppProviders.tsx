@@ -5,25 +5,46 @@ import * as FingerprintJS from '@fingerprintjs/fingerprintjs-pro'
 import { GithubProvider } from './context/GithubContext'
 import { BotdProvider } from './context/BotdContext'
 import { HistoryListener } from './context/HistoryListener'
-import { FPJS_PUBLIC_TOKEN, FPJS_REGION, FPJS_SCRIPT_URL_PATTERN } from './constants/env'
+import { FPJS_PUBLIC_TOKEN, FPJS_REGION, FPJS_SCRIPT_URL_PATTERN, ROLLBAR_ACCESS_TOKEN, GIT_SHA } from './constants/env'
 import { isBrowser } from './helpers/detector'
+import { Provider as RollbarProvider, ErrorBoundary } from '@rollbar/react'
+
 export type Props = {
   children: React.ReactNode
 }
 
+const rollbarConfig = {
+  accessToken: ROLLBAR_ACCESS_TOKEN,
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+  payload: {
+    environment: 'production',
+    client: {
+      javascript: {
+        source_map_enabled: true,
+        code_version: GIT_SHA,
+      },
+    },
+  },
+}
+
 export default function AppProviders({ children }: Props) {
   return (
-    <AppLighthouseProvider>
-      <BotdProvider>
-        <FormProvider>
-          <GithubProvider>
-            <HistoryListener>
-              <React.StrictMode>{children}</React.StrictMode>
-            </HistoryListener>
-          </GithubProvider>
-        </FormProvider>
-      </BotdProvider>
-    </AppLighthouseProvider>
+    <RollbarProvider config={rollbarConfig}>
+      <ErrorBoundary>
+        <AppLighthouseProvider>
+          <BotdProvider>
+            <FormProvider>
+              <GithubProvider>
+                <HistoryListener>
+                  <React.StrictMode>{children}</React.StrictMode>
+                </HistoryListener>
+              </GithubProvider>
+            </FormProvider>
+          </BotdProvider>
+        </AppLighthouseProvider>
+      </ErrorBoundary>
+    </RollbarProvider>
   )
 }
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import useRollbar from '../../../hooks/useRollbar'
+import { useRollbar } from '@rollbar/react'
 import { VisitorResponse } from '../../../types/visitorResponse'
 import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
 import { loadFpjsHistory } from '../../../helpers/api'

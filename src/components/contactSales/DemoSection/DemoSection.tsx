@@ -4,7 +4,7 @@ import Container from '../../common/Container'
 import DiagramSection from '../../AccuracySection/DiagramSection/DiagramSection'
 import Visits from '../../demo/DemoSection/VisitsSection/Visits/Visits'
 
-import useRollbar from '../../../hooks/useRollbar'
+import { useRollbar } from '@rollbar/react'
 import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
 import { getConfig } from '../../../helpers/fpjs'
 import { loadFpjsHistory } from '../../../helpers/api'
