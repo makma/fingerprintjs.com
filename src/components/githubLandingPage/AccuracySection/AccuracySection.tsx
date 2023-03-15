@@ -73,8 +73,11 @@ export default function AccuracySection() {
     Math.round(Math.hypot(xSidesPro[1], ySidesPro[1])),
     Math.round(Math.hypot(xSidesPro[2], ySidesPro[2])),
   ]
-  const AnglePro = [ySidesPro[0] / HypoPro[0], ySidesPro[1] / HypoPro[1], ySidesPro[2] / HypoPro[2]]
-
+  const AnglePro = [
+    Math.round(Math.asin(ySidesPro[0] / HypoPro[0]) * (180 / Math.PI)),
+    Math.round(Math.asin(ySidesPro[1] / HypoPro[1]) * (180 / Math.PI)),
+    Math.round(Math.asin(ySidesPro[2] / HypoPro[2]) * (180 / Math.PI)),
+  ]
   const yPointsOss = [60000, 36000, 21600, 12960]
 
   const chartPointsOss = [
@@ -119,8 +122,11 @@ export default function AccuracySection() {
     Math.round(Math.hypot(xSidesOss[2], ySidesOss[2])),
   ]
 
-  const AngleOss = [ySidesOss[0] / HypoOss[0], ySidesOss[1] / HypoOss[1], ySidesOss[2] / HypoOss[2]]
-
+  const AngleOss = [
+    Math.round(Math.asin(ySidesOss[0] / HypoOss[0]) * (180 / Math.PI)),
+    Math.round(Math.asin(ySidesOss[1] / HypoOss[1]) * (180 / Math.PI)),
+    Math.round(Math.asin(ySidesOss[2] / HypoOss[2]) * (180 / Math.PI)),
+  ]
   return (
     <Section className={styles.root}>
       <Container size='large' className={styles.container}>
@@ -191,22 +197,24 @@ export default function AccuracySection() {
                 const hoverElement = parseInt(HoverIndex) === index && currentTab === tabOptions.Accuracy
                 return (
                   <li
-                    key={`pro-${x}`}
+                    suppressHydrationWarning
+                    key={`pro-${Math.round(x)}`}
                     style={
                       {
-                        '--y': `${y}px`,
-                        '--x': `${x}px`,
-                        '--yLine': `${yLine}px`,
-                        '--xLine': `${xLine}px`,
+                        '--y': `${Math.round(y)}px`,
+                        '--x': `${Math.round(x)}px`,
+                        '--yLine': `${Math.round(yLine)}px`,
+                        '--xLine': `${Math.round(xLine)}px`,
                       } as React.CSSProperties
                     }
                   >
                     <div
+                      suppressHydrationWarning
                       className={styles.lineSegmentPro}
                       style={
                         {
                           '--hypotenuse': HypoPro[index],
-                          '--angle': Math.asin(AnglePro[index]) * (180 / Math.PI),
+                          '--angle': AnglePro[index],
                         } as React.CSSProperties
                       }
                     />
@@ -255,10 +263,10 @@ export default function AccuracySection() {
                     key={`oss-${x}`}
                     style={
                       {
-                        '--y': `${y}px`,
-                        '--x': `${x}px`,
-                        '--yLine': `${yLine}px`,
-                        '--xLine': `${xLine}px`,
+                        '--y': `${Math.round(y)}px`,
+                        '--x': `${Math.round(x)}px`,
+                        '--yLine': `${Math.round(yLine)}px`,
+                        '--xLine': `${Math.round(xLine)}px`,
                       } as React.CSSProperties
                     }
                   >
@@ -267,7 +275,7 @@ export default function AccuracySection() {
                       style={
                         {
                           '--hypotenuse': HypoOss[index],
-                          '--angle': Math.asin(AngleOss[index]) * (180 / Math.PI),
+                          '--angle': AngleOss[index],
                         } as React.CSSProperties
                       }
                     />

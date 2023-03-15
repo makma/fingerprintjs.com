@@ -188,7 +188,13 @@ function Visit({ current, incognito, title, isLoading }: visitProps) {
           <PointSVG />
         </span>
       )}
-      {isLoading ? <Skeleton width={100} height={19} /> : <h3 className={styles.visitTitle}>{title}</h3>}
+      {isLoading ? (
+        <Skeleton width={100} height={19} />
+      ) : (
+        <h3 suppressHydrationWarning className={styles.visitTitle}>
+          {title}
+        </h3>
+      )}
     </div>
   )
 }

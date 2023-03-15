@@ -4,7 +4,6 @@ import Prism from 'prismjs'
 import MobileNavbar from '../MobileNavbar'
 import Button from '../common/Button'
 import Container from '../common/Container'
-import { isBrowser } from '../../helpers/detector'
 import HeaderBar from '../../components/HeaderBar/HeaderBar'
 import classNames from 'classnames'
 import {
@@ -43,7 +42,7 @@ export default function Header({ notificationBar, darkMode }: HeaderProps) {
 
   useEffect(() => {
     const mobileBodyClass = 'isMobileMenuOpen'
-    if (isBrowser() && isMobileMenuOpen) {
+    if (isMobileMenuOpen) {
       document.body.classList.add(mobileBodyClass)
     } else {
       document.body.classList.remove(mobileBodyClass)

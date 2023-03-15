@@ -57,7 +57,11 @@ export default function Chart() {
     Math.round(Math.hypot(xSidesPro[1], ySidesPro[1])),
     Math.round(Math.hypot(xSidesPro[2], ySidesPro[2])),
   ]
-  const AnglePro = [ySidesPro[0] / HypoPro[0], ySidesPro[1] / HypoPro[1], ySidesPro[2] / HypoPro[2]]
+  const AnglePro = [
+    Math.round(Math.asin(ySidesPro[0] / HypoPro[0]) * (180 / Math.PI)),
+    Math.round(Math.asin(ySidesPro[1] / HypoPro[1]) * (180 / Math.PI)),
+    Math.round(Math.asin(ySidesPro[2] / HypoPro[2]) * (180 / Math.PI)),
+  ]
 
   const yPointsOss = [60000, 36000, 21600, 12960]
 
@@ -103,7 +107,11 @@ export default function Chart() {
     Math.round(Math.hypot(xSidesOss[2], ySidesOss[2])),
   ]
 
-  const AngleOss = [ySidesOss[0] / HypoOss[0], ySidesOss[1] / HypoOss[1], ySidesOss[2] / HypoOss[2]]
+  const AngleOss = [
+    Math.round(Math.asin(ySidesOss[0] / HypoOss[0]) * (180 / Math.PI)),
+    Math.round(Math.asin(ySidesOss[1] / HypoOss[1]) * (180 / Math.PI)),
+    Math.round(Math.asin(ySidesOss[2] / HypoOss[2]) * (180 / Math.PI)),
+  ]
 
   return (
     <Section className={styles.root}>
@@ -129,26 +137,32 @@ export default function Chart() {
             </li>
           ))}
         </ul>
-        <ul className={styles.chartLine} style={{ height: `${chartHeight}px`, width: `${chartWidth}px` }}>
+        <ul
+          suppressHydrationWarning
+          className={styles.chartLine}
+          style={{ height: `${chartHeight}px`, width: `${chartWidth}px` }}
+        >
           {chartPointsPro.map(({ y, x, yLine, xLine }, index) => {
             return (
               <li
-                key={`pro-${x}`}
+                suppressHydrationWarning
+                key={`pro-${Math.round(x)}`}
                 style={
                   {
-                    '--y': `${y}px`,
-                    '--x': `${x}px`,
-                    '--yLine': `${yLine}px`,
-                    '--xLine': `${xLine}px`,
+                    '--y': `${Math.round(y)}px`,
+                    '--x': `${Math.round(x)}px`,
+                    '--yLine': `${Math.round(yLine)}px`,
+                    '--xLine': `${Math.round(xLine)}px`,
                   } as React.CSSProperties
                 }
               >
                 <div
+                  suppressHydrationWarning
                   className={styles.lineSegmentPro}
                   style={
                     {
                       '--hypotenuse': HypoPro[index],
-                      '--angle': Math.asin(AnglePro[index]) * (180 / Math.PI),
+                      '--angle': AnglePro[index],
                     } as React.CSSProperties
                   }
                 />
@@ -163,13 +177,14 @@ export default function Chart() {
           {chartPointsOss.map(({ y, x, yLine, xLine }, index) => {
             return (
               <li
+                suppressHydrationWarning
                 key={`oss-${x}`}
                 style={
                   {
-                    '--y': `${y}px`,
-                    '--x': `${x}px`,
-                    '--yLine': `${yLine}px`,
-                    '--xLine': `${xLine}px`,
+                    '--y': `${Math.round(y)}px`,
+                    '--x': `${Math.round(x)}px`,
+                    '--yLine': `${Math.round(yLine)}px`,
+                    '--xLine': `${Math.round(xLine)}px`,
                   } as React.CSSProperties
                 }
               >
@@ -178,11 +193,11 @@ export default function Chart() {
                   style={
                     {
                       '--hypotenuse': HypoOss[index],
-                      '--angle': Math.asin(AngleOss[index]) * (180 / Math.PI),
+                      '--angle': AngleOss[index],
                     } as React.CSSProperties
                   }
                 />
-                <div className={styles.dataPointOss} data-value={`${yPointsOss[index]}`} />
+                <div suppressHydrationWarning className={styles.dataPointOss} data-value={`${yPointsOss[index]}`} />
                 <span suppressHydrationWarning className={classNames(styles.labelOss, styles.labelOssStability)}>
                   {yPointsOss[index].toLocaleString()}
                 </span>

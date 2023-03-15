@@ -115,6 +115,7 @@ export default function HeroSection({ advertisingVariant = false }: HeroSectionP
           <p className={styles.animationVisitorId}>{visitorId}</p>
         </div>
         <video
+          suppressHydrationWarning
           onTimeUpdate={(e) => handleAnimationStart(e)}
           muted
           playsInline

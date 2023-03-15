@@ -36,7 +36,7 @@ export default function Visits({ isLoading, currentVisit, visits, className, isV
                     id={`visit_${requestId}`}
                     key={requestId}
                   >
-                    <td>{i === 0 ? 'Current visit' : getVisitTitle(timestamp)}</td>
+                    <td suppressHydrationWarning>{i === 0 ? 'Current visit' : getVisitTitle(timestamp)}</td>
                     <td className={classNames({ [styles.incognito]: incognito })}>{incognito ? 'Yes' : 'No'}</td>
                   </tr>
                 )

@@ -275,7 +275,7 @@ export default function DemoSection() {
                             })}
                           />
                         </div>
-                        <h3 className={styles.navigationTitle}>
+                        <h3 suppressHydrationWarning className={styles.navigationTitle}>
                           {visit.requestId === visits[visits.length - 1].requestId
                             ? 'Current Visit'
                             : getVisitTitle(visit.timestamp)}
