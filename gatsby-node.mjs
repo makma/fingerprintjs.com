@@ -312,12 +312,32 @@ export const onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
       rules: [
         {
           test: /\.(mov)$/,
-          loader: 'file-loader',
-          options: {
-            name: '[name].[hash].[ext]',
-            publicPath: './assets',
-            outputPath: './assets',
-          },
+          type: 'asset/resource',
+        },
+        {
+          test: /\.svg$/,
+          include: /\.inline\.svg$/,
+          use: [
+            {
+              loader: require.resolve('@svgr/webpack'),
+              options: {
+                icon: false,
+                svgoConfig: {
+                  plugins: [
+                    {
+                      name: 'preset-default',
+                      params: {
+                        overrides: {
+                          removeViewBox: false,
+                        },
+                      },
+                    },
+                    'prefixIds',
+                  ],
+                },
+              },
+            },
+          ],
         },
       ],
     },
