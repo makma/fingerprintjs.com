@@ -299,13 +299,7 @@ export const onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
   actions.setWebpackConfig({
     resolve: {
       fallback: {
-        assert: require.resolve('assert/'),
         crypto: require.resolve('crypto-browserify'),
-        http: require.resolve('stream-http'),
-        https: require.resolve('https-browserify'),
-        os: require.resolve('os-browserify/browser'),
-        stream: require.resolve('stream-browserify'),
-        zlib: require.resolve('browserify-zlib'),
       },
     },
     module: {
