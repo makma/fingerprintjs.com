@@ -10,6 +10,17 @@
         }
       ],
       "destination": "/api/redirect/events/"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-function",
+          "value": "visits"
+        }
+      ],
+      "destination": "/api/redirect/visits/"
     }
   ],
   "redirects": [

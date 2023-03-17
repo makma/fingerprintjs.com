@@ -1,9 +1,23 @@
-import { FPJS_SECRET_TOKEN, FPJS_VISITORS_ENDPOINT, FPJS_MGMT_API_HOST, GREENHOUSE_COMPANY_ID } from '../constants/env'
+import { FPJS_MGMT_API_HOST, GREENHOUSE_COMPANY_ID } from '../constants/env'
+import { BASE_URL } from '../constants/content'
+import axios from 'axios'
+import { generateRandomString } from './common'
 
 export async function loadFpjsHistory(visitorId: string) {
-  // 21 to show >20 on homepage
-  const response = await fetch(`${FPJS_VISITORS_ENDPOINT}${visitorId}?token=${FPJS_SECRET_TOKEN}&limit=21`)
-  return await response.json()
+  const randomPath = generateRandomString(4)
+
+  const response = await axios.post(
+    `${BASE_URL}/${randomPath}/`,
+    {
+      visitorId: visitorId,
+    },
+    {
+      headers: {
+        'x-vercel-function': 'visits',
+      },
+    }
+  )
+  return response.data
 }
 
 export enum IpRegion {
