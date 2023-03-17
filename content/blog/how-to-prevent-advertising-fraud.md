@@ -8,9 +8,9 @@ metadata:
     advertising fraud. Learn how you can prevent advertising fraud and boost
     your return on ad spend (ROAS).
   imageTitle: online advertisment fraud
-  socialImage: /img/uploads/advertisement-fraud.jpg
+  socialImage: /img/uploads/adv-fraud.jpg
   imageAlt: online advertisment fraud
-  image: /img/uploads/advertisement-fraud.jpg
+  image: /img/uploads/adv-fraud.jpg
 featured: true
 publishDate: 2023-03-16T17:11:03.379Z
 title: How to prevent advertising fraud
@@ -26,7 +26,7 @@ authors:
 heroImage:
   imageAlt: online advertisment fraud
   imageTitle: online advertisment fraud
-  image: /img/uploads/advertisement-fraud.jpg
+  image: /img/uploads/adv-fraud.jpg
 customCTA:
   openCtaNewTab: true
   title: Sign Up for Fingerprint
