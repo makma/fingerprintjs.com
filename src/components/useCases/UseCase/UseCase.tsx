@@ -6,7 +6,7 @@ import TagList from '../../TagList/TagList'
 import { graphql, Link } from 'gatsby'
 
 import styles from './UseCase.module.scss'
-import { dateFormatter, displayDateFormatter } from '../../../helpers/format'
+import { createDateTimeFormatter, displayDateFormatter } from '../../../helpers/format'
 
 export interface UseCaseProps {
   title: string
@@ -65,6 +65,7 @@ export function mapToUseCase(data: any, editing?: boolean): UseCaseProps {
   if ((!data.frontmatter || !data.frontmatter.metadata) && !editing) {
     throw new Error('Use Cases should always have frontmatter and metadata.')
   }
+  const dateFormatter = createDateTimeFormatter()
 
   if (editing) {
     const useCase: UseCaseProps = {

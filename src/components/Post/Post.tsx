@@ -6,7 +6,7 @@ import TagList from '../TagList/TagList'
 import { graphql, Link } from 'gatsby'
 
 import styles from './Post.module.scss'
-import { dateFormatter, displayDateFormatter } from '../../helpers/format'
+import { createDateTimeFormatter, displayDateFormatter } from '../../helpers/format'
 
 export interface PostProps {
   title: string
@@ -83,6 +83,8 @@ export default function Post({
 // TODO [VL] Write a proper type for this. It's not as straight forward because it has to accept a lot of different generated gatsby types.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function mapToPost(data: any, editing?: boolean): PostProps {
+  const dateFormatter = createDateTimeFormatter()
+
   if ((!data.frontmatter || !data.frontmatter.metadata) && !editing) {
     throw new Error('Posts should always have frontmatter and metadata.')
   }
