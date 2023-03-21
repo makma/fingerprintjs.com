@@ -15,12 +15,6 @@ strong {
   font-weight: 700 !important;
 }
 
-em {
-  color: v('brand-fire');
-  font-weight: v('semi');
-  font-style: normal;
-}
-
 @for $i from 1 to 6 {
   h#{$i},
   .h#{$i} {
