@@ -2,12 +2,12 @@
 templateKey: long-form-content
 metadata:
   title: "[WEBINAR] Why Accuracy is Everything in Device Identification"
-  description: You're invited to our June 14th webinar where we'll discuss our
-    99.5% accuracy claims with both our CTO and our Head of Product. You'll
-    learn how Fingerprint Pro is there to help you with industry-leading 99.5%
-    accuracy while detecting returning browsers or devices.
+  description: Watch our webinar where we discuss our 99.5% accuracy claims with
+    both our CTO and our Head of Product. You'll learn how Fingerprint Pro is
+    there to help you with industry-leading 99.5% accuracy while detecting
+    returning browsers or devices.
   url: https://fingerprint.com/blog/webinar-why-accuracy-is-everything-in-device-identification
-  image: /img/uploads/blog.png
+  image: /img/uploads/v2.png
   socialImage: /img/uploads/blog.png
 featured: true
 publishDate: 2022-05-24T17:43:27.910Z
