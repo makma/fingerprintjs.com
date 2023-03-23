@@ -54,7 +54,7 @@ The name “letterboxing” originates from [the film industry practice](https:/
 
 You can see letterboxing in action in comparison to a regular browser in this video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tMJlB4JtCUw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe style="aspect-ratio: 16 / 9; border-radius: 8px; width: 100%;" src="https://www.youtube.com/embed/tMJlB4JtCUw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Aside from the gray bars, [the demo](https://www.jurajuhlar.eu/letterbox) shows two differences:
 
@@ -96,7 +96,7 @@ To see how basic fingerprinting works,  use our open-source [FingperprintJS dem
 
 However, you can reset your fingerprint by resizing your window if you open the demo with letterboxing on. This is because letterboxing spoofs the screen resolution and returns the approximate window size instead.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZjNRB-ffkjQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe style="aspect-ratio: 16 / 9; border-radius: 8px; width: 100%;" src="https://www.youtube.com/embed/ZjNRB-ffkjQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 While letterboxing can reset a simple hash-based fingerprint, there are more sophisticated solutions, such as [ Fingerprint Pro.](https://fingerprint.com/?utm_source=blog&utm_medium=website&utm_campaign=blog) In addition to client-side browser attributes, it collects server-side signals such as HTTP headers or the [TLS fingerprint,](https://fingerprint.com/blog/what-is-tls-fingerprinting-transport-layer-security/?utm_source=blog&utm_medium=website&utm_campaign=blog) which are much harder to spoof. Instead of simply hashing all the signals together, it uses prioritization, fuzzy matching, and machine-learning algorithms to create a visitor identifier that remains stable even if some of the signals change over time.
 
@@ -106,7 +106,7 @@ While letterboxing can reset a simple hash-based fingerprint, there are more sop
 
 If you use Firefox with letterboxing to access the [Fingerprint Pro demo](https://fingerprint.com/?utm_source=blog&utm_medium=website&utm_campaign=blog), you can see that the fingerprint is stable even though letterboxing changes your reported screen size as you resize your window:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_BtgHXLD-r0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe style="aspect-ratio: 16 / 9; border-radius: 8px; width: 100%;" src="https://www.youtube.com/embed/_BtgHXLD-r0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Can letterboxing prevent browser fingerprinting?
 
