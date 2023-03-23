@@ -8,8 +8,9 @@ export const displayDateFormatter = (date: Date | string): string => {
 
 export const createNumberFormatter = () => new Intl.NumberFormat('en-US')
 
-export function kFormatter(num: number) {
+export function kFormatter(num: number, lowercase?: boolean) {
+  const letter = lowercase ? 'k' : 'K'
   return Math.abs(num) > 999
-    ? (Math.sign(num) * Math.round(Math.abs(num) / 100)) / 10 + 'K'
+    ? Math.sign(num) * Math.floor(Math.abs(num) / 1000) + letter
     : Math.sign(num) * Math.abs(num)
 }

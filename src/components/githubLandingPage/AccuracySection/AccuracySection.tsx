@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Section from '../../common/Section'
 import Container from '../../common/Container'
-
+import { useGithubFpjs } from '../../../context/GithubContext'
+import { kFormatter } from '../../../helpers/format'
 import { ReactComponent as LineSVG } from './LineSVG.svg'
+import { ReactComponent as GitHubSVG } from './GitHubSVG.svg'
 import classNames from 'classnames'
+import { URL } from '../../../constants/content'
 
 import styles from './AccuracySection.module.scss'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useInView } from 'framer-motion'
 
 enum xOptions {
   X1 = '0',
@@ -20,6 +24,11 @@ enum tabOptions {
   Stability,
 }
 export default function AccuracySection() {
+  const ref = useRef(null)
+  const isInView = useInView(ref)
+
+  const { githubData } = useGithubFpjs()
+
   const chartWidth = 860
   const chartHeight = 414
   const xPoints = 4
@@ -130,6 +139,20 @@ export default function AccuracySection() {
   return (
     <Section className={styles.root}>
       <Container size='large' className={styles.container}>
+        <a
+          target='_blank'
+          rel='noreferrer'
+          href={URL.githubRepoUrl}
+          className={classNames(styles.starsBox, {
+            [styles.hoverMobile]: isInView,
+          })}
+        >
+          <span className={styles.logo}>
+            <GitHubSVG />
+            {githubData ? `${kFormatter(githubData.stargazers_count, true)}+` : '..k+'}
+          </span>
+          <span className={styles.stars}>Github Stars</span>
+        </a>
         <h2 className={styles.title}>The world’s most accurate visitor identifier</h2>
         <div className={styles.cardsSection}>
           <div
@@ -142,7 +165,7 @@ export default function AccuracySection() {
               <span className={styles.cardLabelText}>Accuracy</span>
             </span>
             <h4 className={styles.cardTitle}>99.5% Accuracy</h4>
-            <p className={styles.cardDescription}>
+            <p className={styles.cardDescription} ref={ref}>
               Highest identification accuracy using fingerprinting, fuzzy matching and server-side techniques.
             </p>
           </div>

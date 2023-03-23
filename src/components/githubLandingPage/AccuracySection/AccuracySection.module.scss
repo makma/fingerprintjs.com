@@ -7,6 +7,70 @@
     padding-top: rem(64px);
     padding-bottom: rem(96px);
   }
+  .starsBox {
+    margin-bottom: rem(32px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: rem(2px);
+    padding: rem(16px) rem(32px);
+
+    background: #141415;
+    transform: rotate(-1.5deg);
+
+    border-radius: rem(4px);
+    border: 0.5px solid #444444;
+
+    @include media('<=phoneLandscape') {
+      padding: rem(12px) rem(16px);
+      margin-bottom: rem(40px);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      column-gap: rem(10px);
+      @include jb-mono($size: 48px, $weight: 500, $lh: 130%, $color: v('github-orange-dark'));
+
+      @include media('<=phoneLandscape') {
+        column-gap: rem(7px);
+        font-size: rem(28px);
+      }
+      svg {
+        height: rem(33px);
+
+        @include media('<=phoneLandscape') {
+          height: rem(22px);
+        }
+      }
+    }
+    .stars {
+      @include inter($size: 20px, $weight: 400, $lh: 160%, $color: v('github-white'));
+      letter-spacing: rem(1px);
+      text-transform: uppercase;
+
+      @include media('<=phoneLandscape') {
+        font-size: rem(12px);
+        letter-spacing: rem(0.8px);
+      }
+    }
+
+    @include transition((border, box-shadow, transform));
+
+    &:hover {
+      border: 0.5px solid v('github-orange-dark');
+      box-shadow: 0px 4.27027px 16.0135px rgba(161, 161, 161, 0.15), 0px 0px 1.06757px rgba(232, 232, 232, 0.35);
+      transform: scale(1.05);
+    }
+    &.hoverMobile {
+      @include media('<=phoneLandscape') {
+        border: 0.5px solid v('github-orange-dark');
+        box-shadow: 0px 4.27027px 16.0135px rgba(161, 161, 161, 0.15), 0px 0px 1.06757px rgba(232, 232, 232, 0.35);
+        transform: scale(1.05);
+      }
+    }
+  }
+
   .container {
     display: flex;
     flex-direction: column;
@@ -25,6 +89,7 @@
 
       @include media('<=phoneLandscape') {
         text-align: left;
+        padding-bottom: rem(24px);
 
         font-size: rem(28px);
         letter-spacing: -0.01em;
