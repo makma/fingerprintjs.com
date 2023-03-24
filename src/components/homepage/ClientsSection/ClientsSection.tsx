@@ -30,6 +30,7 @@ import { ReactComponent as KlarnaSVG } from '../../../../static/img/company-logo
 import { ReactComponent as VirginSVG } from '../../../../static/img/company-logos/emea/virgin.svg'
 import { ReactComponent as SinchSVG } from '../../../../static/img/company-logos/emea/sinch.svg'
 import { ReactComponent as TurkishAirlinesSVG } from '../../../../static/img/company-logos/emea/turkishAirlines.svg'
+import { ReactComponent as TrustpilotSVG } from '../../../../static/img/company-logos/emea/trustpilot.svg'
 import { ReactComponent as CartierSVG } from '../../../../static/img/company-logos/emea/cartier.svg'
 import { ReactComponent as QiwiSVG } from '../../../../static/img/company-logos/emea/qiwi.svg'
 import { ReactComponent as WorldCoin } from '../../../../static/img/company-logos/emea/worldcoin.svg'
@@ -53,6 +54,7 @@ export default function ClientsSection() {
         <AmeritradeSVG className={classNames(styles.logo, styles.ameritrade)} />
         <WesternUnionSVG className={classNames(styles.logo, styles.western)} />
         <BookingSVG className={classNames(styles.logo, styles.booking)} />
+        <TrustpilotSVG className={styles.trustpilot} />
         <AgodaSVG className={classNames(styles.logo, styles.agoda)} />
         <DropboxSVG className={classNames(styles.logo, styles.dropbox)} />
         <CoinBaseSVG className={classNames(styles.logo, styles.coinbase)} />
@@ -93,6 +95,7 @@ export default function ClientsSection() {
         <CheckoutSVG className={classNames(styles.logo, styles.checkout)} />
         <DropboxSVG className={classNames(styles.logo, styles.dropbox)} />
         <TurkishAirlinesSVG className={styles.turkish} />
+        <TrustpilotSVG className={styles.trustpilot} />
         <CartierSVG className={styles.cartier} />
         <BookingSVG className={classNames(styles.logo, styles.booking)} />
         <QiwiSVG className={styles.qiwi} />

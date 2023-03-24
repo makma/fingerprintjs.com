@@ -14,8 +14,8 @@ export default function CardSection() {
           </section>
           <section className={styles.labelsSection}>
             <Card value='6k+' field='companies' />
-            <Card value='12%' field='of top 500 sites' />
-            <Card value='500M+' field='requests/month' />
+            <Card value='16%' field='of top 500 sites' />
+            <Card value='1.2B+' field='API calls/month' />
           </section>
         </div>
       </Container>
