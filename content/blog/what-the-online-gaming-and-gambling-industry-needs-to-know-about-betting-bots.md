@@ -46,19 +46,15 @@ Arbers often take advantage of bookmakers and betting exchanges by taking positi
 
 To identify suitable bets, betting bots are programmed to scrape gaming and gambling sites in order to find new opportunities before the odds change. This can put a massive strain on gaming and betting web servers as betting bots try to access various information simultaneously.
 
-
-
 ## What is a betting bot? 
 
 A betting bot is designed to automate the gambling process by actively scanning gambling and gaming websites for any changes in odds so users can quickly capitalize on them before they disappear. Players usually download a script from the internet or pay an expert to create a custom script to set up a bot. When this script executes, it becomes a bot. 
 
 Betting bots can run on an individual's machine or virtual machines across data centers where servers run multiple accounts simultaneously. The betting bot takes input from the player and performs actions based on player instructions. It is meant to bring monetary returns using automated cheating or make decisions based on scraped statistics and markers. With multiple bots playing the same game, a player can take advantage of arbitrage decisions or set up a game so that one bot wins by betting against other botted accounts. Collaborated bots make multiple bets with net positive winnings.
 
-Some players wonder if betting bots are legal; they [are legal](https://professionalbettingonline.com/are-betting-bots-illegal/), according to Professional Bettting Online. However, they are considered unethical since certain games involve other players' money. For example, if a player sets up a bot to play poker, the bot could win to the detriment of other players, forcing them to unfairly lose their money. 
+Some players wonder if betting bots are legal; they [are legal](https://professionalbettingonline.com/are-betting-bots-illegal/), according to Professional Betting Online. However, they are considered unethical since certain games involve other players' money. For example, if a player sets up a bot to play poker, the bot could win to the detriment of other players, forcing them to unfairly lose their money. 
 
 Automated betting in card games and online casinos aren't the only types of bots. Data scrapers crawl the web and collect data for various sports betting arbitrage bots and bot betting software. Bot betting software can be resold to others for profit, and a sports betting bot can be used to place automated bets with bookmakers. Developers even have APIs to help script writers automate bets, scrape the web, and perform arbitrage against multiple platforms to earn money from unethical activities. While ethics might not be a legal concern, it negatively impacts platform revenue.
-
-
 
 ## How does a betting bot work?
 
@@ -72,8 +68,6 @@ Online poker sites are also targets for betting bots. Using numerous fake accoun
 
 [Account takeover](https://fingerprint.com/account-takeover/?utm_source=blog&utm_medium=website&utm_campaign=blog) is a common occurrence in the botting world, especially with [phishing](https://fingerprint.com/blog/how-to-recognize-phishing-emails/?utm_source=blog&utm_medium=website&utm_campaign=blog). Cyber-criminals use phishing to trick players into divulging their credentials, or they buy credentials on the darknet. They can then take over player accounts and use bots on stolen gambling accounts. 
 
-
-
 ## The impact of betting bots on the gaming and gambling industry
 
 Using betting bots to automatically place bets is a popular way for players to increase their chances of winning, but for organized cyber-criminals, automating multiple accounts to place bets is much more lucrative. In poorly monitored gaming platforms, there may be only one human user and several bots at the playing table. If players pick up on the automated activity, they might leave for a competitor site, resulting in a player loss for the gaming organization.
@@ -85,8 +79,6 @@ Cybercriminals use bots to create [multiple accounts](https://fingerprint.com/bl
 Another option is to download a password list from darknet markets and use it to [take over accounts](https://fingerprint.com/account-takeover/?utm_source=blog&utm_medium=website&utm_campaign=blog). Using account automation scripts, cyber-criminals authenticate potentially thousands of accounts to identify which ones can be taken over. The accounts with a successful authentication request are compromised and can be used for further unethical activities.
 
 [Promo abuse](https://fingerprint.com/blog/detecting-signup-promo-abuse-gaming-gambling/?utm_source=blog&utm_medium=website&utm_campaign=blog) is another form of income for cyber-criminals that requires no betting. Using automated account creation, cyber-criminals take advantage of discounts or initial betting bonuses on new accounts. If a gambling site has referral bonuses, cyber-criminals use them across their accounts, which could bank them thousands of dollars in promo awards.
-
-
 
 ## How to protect your business with Fingerprint
 
