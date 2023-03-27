@@ -9,9 +9,8 @@ import { Link } from 'gatsby'
 import { PATH } from '../../../constants/content'
 import styles from './GetDemoSection.module.scss'
 import { ReactComponent as CheckoutSVG } from '../../../../static/img/company-logos/checkout.svg'
-import { ReactComponent as YahooSVG } from '../../../../static/img/company-logos/yahoo.svg'
-import { ReactComponent as BookingSVG } from '../../../../static/img/company-logos/booking.svg'
-import { ReactComponent as UsBankSVG } from '../../../../static/img/company-logos/us-bank.svg'
+import { ReactComponent as DropboxSVG } from '../../../../static/img/company-logos/dropbox.svg'
+import { ReactComponent as TrustpilotSVG } from './Trustpilot.svg'
 
 export default function GetDemoSection() {
   return (
@@ -49,11 +48,10 @@ export default function GetDemoSection() {
           <div className={styles.logos}>
             <div className={styles.logoRow}>
               <CheckoutSVG className={styles.checkout} />
-              <YahooSVG className={styles.yahoo} />
+              <DropboxSVG className={styles.dropbox} />
             </div>
             <div className={styles.logoRow}>
-              <BookingSVG className={styles.booking} />
-              <UsBankSVG className={styles.usBank} />
+              <TrustpilotSVG className={styles.trustpilot} />
             </div>
           </div>
         </div>
@@ -84,10 +82,9 @@ function ClientsSection() {
       </ul>
       <div className={styles.logosSection}>
         <div className={styles.logos}>
+          <TrustpilotSVG className={styles.trustpilot} />
           <CheckoutSVG className={styles.checkout} />
-          <YahooSVG className={styles.yahoo} />
-          <BookingSVG className={styles.booking} />
-          <UsBankSVG className={styles.usBank} />
+          <DropboxSVG className={styles.dropbox} />
         </div>
       </div>
       <ContactSupportMessage />

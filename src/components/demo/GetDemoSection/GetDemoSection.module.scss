@@ -126,6 +126,8 @@
   .logos {
     display: flex;
     column-gap: rem(40px);
+    align-items: center;
+    height: rem(36px);
   }
 
   .logo {
@@ -143,30 +145,25 @@
 }
 
 .checkout {
-  width: 138.01px;
-  height: 18.29px;
-}
-.yahoo {
-  width: 74.57px;
-  height: 20.68px;
+  width: 144px;
+  height: 24px;
 }
 
-.usBank {
-  width: 86.88px;
-  height: 22.76px;
+.dropbox {
+  width: 121px;
+  height: 24px;
+}
+.trustpilot {
+  width: 124px;
+  height: 30.4px;
+  align-self: flex-start;
 }
 
-.booking {
-  width: 109.19px;
-  height: 18.25px;
-}
 .checkout,
-.yahoo,
-.usBank,
-.booking {
-  fill: v('gray');
+.dropbox {
+  fill: v('dark-gray');
   path {
-    fill: v('gray');
+    fill: v('dark-gray');
   }
 }
 
@@ -192,6 +189,7 @@
 
 .clientsMobile {
   background: #141415;
+  padding-bottom: rem(60px);
   .learn {
     padding-top: rem(40px);
     padding-bottom: rem(16px);
