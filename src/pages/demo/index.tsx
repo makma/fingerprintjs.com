@@ -7,9 +7,8 @@ import { URL } from '../../constants/content'
 import HeroSection from '../../components/HeroWithCTA/HeroWithCTA'
 import DemoSection from '../../components/demo/DemoSection/DemoSection'
 import SolveAnyFraudSection from '../../components/demo/SolveAnyFraudSection/SolveAnyFraudSection'
-import GetStartedSection from '../../components/demo/GetStartedSection/GetStartedSection'
 import CatchFraudstersSection from '../../components/demo/DemoSection/VisitsSection/CatchFraudstersSection'
-
+import GetDemoSection from '../../components/demo/GetDemoSection/GetDemoSection'
 import { HeadProps } from 'gatsby'
 import { SEO } from '../../components/SEO/SEO'
 
@@ -27,16 +26,16 @@ export default function DemoPage({ pageContext }: DemoPageProps) {
       <HeroSection
         className={styles.heroSection}
         title='Fingerprint Pro Demo'
-        ctaText='Create Free Account'
-        ctaHref={`${URL.signupUrl}?&utm_source=homepage&utm_medium=website&utm_campaign=account-signup`}
-        buttonId='create_free_account_demo_hero'
+        ctaText1='Create Free Account'
+        ctaHref1={`${URL.signupUrl}?&utm_source=homepage&utm_medium=website&utm_campaign=account-signup`}
+        buttonId1='create_free_account_demo_hero'
       >
         Identify anonymous site visitors with 99.5% accuracy to prevent online fraud
       </HeroSection>
       <DemoSection />
       <CatchFraudstersSection />
       <SolveAnyFraudSection />
-      <GetStartedSection />
+      <GetDemoSection />
     </LayoutTemplate>
   )
 }

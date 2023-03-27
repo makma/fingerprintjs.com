@@ -13,7 +13,15 @@
     flex-direction: column;
   }
 }
+.buttonsSection {
+  display: flex;
+  column-gap: rem(12px);
 
+  @include media('<=phoneLandscape') {
+    flex-direction: column;
+    row-gap: rem(12px);
+  }
+}
 .descriptionSection {
   padding-top: rem(140px);
 

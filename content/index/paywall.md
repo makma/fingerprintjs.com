@@ -23,6 +23,9 @@ hero:
   ctaText: Try our Live Paywall Demo
   ctaHref: https://paywall-example.fingerprintjs.com/
   openCtaNewTab: true
+  ctaText2: Get Custom Demo
+  ctaHref2: /demo/#get-demo
+  openCtaNewTab2: false
 cardSection:
   title: Fingerprint Pro's Paywall Services
   subtitle: Internet savvy users know how to circumvent your paywall and get

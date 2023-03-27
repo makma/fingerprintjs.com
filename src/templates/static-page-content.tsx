@@ -80,6 +80,9 @@ export const pageQuery = graphql`
           ctaText
           ctaHref
           openCtaNewTab
+          ctaText2
+          ctaHref2
+          openCtaNewTab2
         }
         cardSection {
           title
@@ -171,6 +174,9 @@ function mapToHero(queryHero: QueryHero): HeroProps {
     ctaText: queryHero?.ctaText ?? 'Lorem ipsum',
     ctaHref: queryHero?.ctaHref ?? '/',
     openCtaNewTab: queryHero?.openCtaNewTab ?? false,
+    ctaText2: queryHero?.ctaText2 ?? 'Lorem ipsum',
+    ctaHref2: queryHero?.ctaHref2 ?? '/',
+    openCtaNewTab2: queryHero?.openCtaNewTab2 ?? false,
   } as HeroProps
 }
 

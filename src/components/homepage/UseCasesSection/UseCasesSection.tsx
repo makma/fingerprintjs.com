@@ -16,8 +16,12 @@ import { ReactComponent as Traffic1 } from './Traffic1SVG.svg'
 import { ReactComponent as Traffic2 } from './Traffic2SVG.svg'
 import { ReactComponent as Traffic3 } from './Traffic3SVG.svg'
 
+import { ReactComponent as ArrowSVG } from './ArrowSVG.svg'
+
 import { useInView } from 'framer-motion'
 import classNames from 'classnames'
+import { Link } from 'gatsby'
+import { PATH } from '../../../constants/content'
 
 export default function UseCasesSection() {
   const ref = useRef(null)
@@ -33,6 +37,10 @@ export default function UseCasesSection() {
           Fingerprint enables engineering, fraud, and product teams to quickly solve their toughest challenges within
           security, analytics and UI/UX.
         </p>
+        <Link to={`${PATH.demoUrl}#get-demo`} className={styles.demoLink}>
+          Get Custom Demo
+          <ArrowSVG className={styles.arrow} />
+        </Link>
         <div ref={ref} className={styles.cards}>
           <Card
             icon={<PreventFraudSVG isInView={isInView} />}

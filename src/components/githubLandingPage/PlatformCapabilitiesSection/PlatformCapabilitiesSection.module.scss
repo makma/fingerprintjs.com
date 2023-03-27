@@ -44,6 +44,12 @@
     padding: rem(40px) rem(20px);
     align-items: flex-start;
   }
+  @include media('<=phoneLandscape') {
+    background: unset;
+    border: unset;
+    border-radius: unset;
+    padding: 0;
+  }
 
   .title {
     @include inter($size: 48px, $weight: 600, $lh: 64px);
@@ -55,16 +61,42 @@
       line-height: rem(34px);
     }
   }
+  .demoLink {
+    display: flex;
+    column-gap: rem(3px);
+    @include jb-mono($size: 14px, $weight: 500, $lh: 100%);
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-top: rem(12px);
+
+    background: linear-gradient(94.48deg, #f5614b 0%, #f5614b 0.01%, #fa7545 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    .arrow {
+      margin-top: rem(2px);
+
+      width: rem(10px);
+    }
+  }
 }
 .cardsWrapper:nth-child(3) {
   margin-top: rem(32px);
+
+  @include media('<=phoneLandscape') {
+    border-top: rem(1px) solid #323233;
+    padding-top: rem(40px);
+    margin-top: rem(40px);
+  }
 }
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: rem(20px);
 
-  padding-top: rem(40px);
+  padding-top: rem(48px);
   @include media('<=desktop') {
     display: flex;
     flex-direction: column;
@@ -74,7 +106,7 @@
   }
 
   @include media('<=phoneLandscape') {
-    padding-top: rem(32px);
+    padding-top: rem(40px);
   }
   .card,
   .cardStep {

@@ -10,26 +10,21 @@
     padding: 7rem 0;
   }
 
-  &::before {
-    content: '';
-    opacity: 0.2;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    background-repeat: no-repeat;
-    background-image: url('../../../img/hero-1920+.png');
-    background-position: center 75%;
-
-    @include media('<=tabletWide') {
-      background-image: url('../../../img/hero-1366+.png');
-      background-size: 80vw auto;
+  .buttonContainer {
+    display: flex;
+    column-gap: rem(12px);
+    justify-content: center;
+    padding-top: rem(40px);
+    @include media('<=phoneLandscape') {
+      flex-direction: column;
+      row-gap: rem(12px);
     }
 
-    @include media('<=phone') {
-      background-image: url('../../../img/hero-768+.png');
-      background-size: 80vw auto;
+    @include media('<=tablet') {
+      width: 100%;
+    }
+    .secondaryButton {
+      background-color: var(--white);
     }
   }
 }
@@ -43,9 +38,4 @@
 
 .subHeader {
   background-color: c('white');
-}
-
-.button {
-  margin: 0 auto;
-  margin-top: 0.5rem;
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Container from '../../common/Container'
 import Button from '../../common/Button'
-import { URL } from '../../../constants/content'
+import { URL, PATH } from '../../../constants/content'
 
 import HeroAnimation from '-!svg-react-loader!./hero.inline.svg'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -22,14 +22,19 @@ export default function HeroSection() {
           Fingerprint Pro&apos;s visitor identification API identifies 99.5% of returning visitors, even when they
           attempt to conceal their identity.
         </p>
-        <Button
-          href={`${URL.signupUrl}?&utm_source=homepage&utm_medium=website&utm_campaign=account-signup`}
-          variant='orangeGradient'
-          className={styles.button}
-          openNewTab
-        >
-          Create Free Account
-        </Button>
+        <div className={styles.buttonsSection}>
+          <Button
+            href={`${URL.signupUrl}?&utm_source=homepage&utm_medium=website&utm_campaign=account-signup`}
+            variant='orangeGradient'
+            className={styles.button}
+            openNewTab
+          >
+            Create Free Account
+          </Button>
+          <Button href={`${PATH.demoUrl}#get-demo`} variant='orangeGradientOutline' className={styles.button}>
+            Get Custom Demo
+          </Button>
+        </div>
       </section>
       <section className={styles.animationSection}>
         <AnimatePresence initial={true} mode='wait'>

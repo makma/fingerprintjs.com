@@ -20,6 +20,9 @@ hero:
   ctaText: Create Free Account
   ctaHref: https://dashboard.fingerprint.com/signup
   openCtaNewTab: false
+  ctaText2: Get Custom Demo
+  ctaHref2: /demo/#get-demo
+  openCtaNewTab2: false
 cardSection:
   title: Stop gaming fraud by adding fingerprinting to your tech stack
   subtitle: "Fraud in online gaming can be challenging to prevent as players are

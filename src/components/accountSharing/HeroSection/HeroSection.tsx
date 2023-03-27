@@ -29,9 +29,19 @@ export default function HeroSection() {
             Easily detect account sharing users and convert them into happy customers while keeping customer
             satisfaction high
           </p>
-          <Button href={PATH.contactSales} variant='primary' size='big' className={styles.button}>
-            Contact Us
-          </Button>
+          <div className={styles.buttonsSection}>
+            <Button href={PATH.contactSales} variant='orangeGradient' size='big' className={styles.button}>
+              Talk to Sales
+            </Button>
+            <Button
+              href={`${PATH.demoUrl}#get-demo`}
+              variant='orangeGradientOutline'
+              size='big'
+              className={styles.button}
+            >
+              Get Custom Demo
+            </Button>
+          </div>
         </section>
         <section className={styles.imageSection}>
           <HeroSVG className={styles.heroImage} />

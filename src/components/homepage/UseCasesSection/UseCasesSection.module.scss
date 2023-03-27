@@ -69,6 +69,33 @@
         font-size: rem(16px);
       }
     }
+    .demoLink {
+      display: flex;
+      column-gap: rem(5px);
+      @include jb-mono($size: 16px, $weight: 500, $lh: 100%);
+      letter-spacing: -0.01em;
+      text-align: left;
+      margin-top: rem(16px);
+
+      background: linear-gradient(94.48deg, #f5614b 0%, #f5614b 0.01%, #fa7545 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+
+      @include media('<=phoneLandscape') {
+        column-gap: rem(3px);
+        font-size: rem(14px);
+      }
+      .arrow {
+        margin-top: rem(3px);
+        @include media('<=phoneLandscape') {
+          margin-top: rem(2px);
+
+          width: rem(10px);
+        }
+      }
+    }
   }
 }
 .cards {
@@ -86,7 +113,7 @@
   }
 
   @include media('<=phoneLandscape') {
-    padding-top: rem(32px);
+    padding-top: rem(40px);
   }
   .card {
     display: flex;

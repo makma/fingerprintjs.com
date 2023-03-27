@@ -7,12 +7,13 @@ import styles from './PlatformCapabilitiesSection.module.scss'
 import { ReactComponent as WebSVG } from './WebSVG.svg'
 import { ReactComponent as WebhooksSVG } from './WebhooksSVG.svg'
 import { ReactComponent as ServerSideSVG } from './ServerSideSVG.svg'
+import { ReactComponent as ArrowSVG } from './ArrowSVG.svg'
 
-import Button from '../../common/Button'
-import { URL } from '../../../constants/content'
+import { PATH } from '../../../constants/content'
 
 import { useInView } from 'framer-motion'
 import classNames from 'classnames'
+import { Link } from 'gatsby'
 
 export default function PlatformCapabilitiesSection() {
   const ref = useRef(null)
@@ -54,6 +55,10 @@ export default function PlatformCapabilitiesSection() {
         </div>
         <div className={styles.cardsWrapper}>
           <h2 className={styles.title}>Easy to Install</h2>
+          <Link to={`${PATH.demoUrl}#get-demo`} className={styles.demoLink}>
+            Get Custom Demo
+            <ArrowSVG className={styles.arrow} />
+          </Link>
           <div
             ref={refBottom}
             className={classNames(styles.cards, {
@@ -72,17 +77,6 @@ export default function PlatformCapabilitiesSection() {
               description='Use your own domain with Fingerprint Pro to improve accuracy.'
             />
           </div>
-          <Button
-            className={classNames(styles.button, {
-              [styles.visibleButton]: isInViewBottom,
-            })}
-            variant='whiteOutline'
-            size='big'
-            href={URL.signupUrl}
-            openNewTab
-          >
-            Get Started
-          </Button>
         </div>
       </Container>
     </Section>

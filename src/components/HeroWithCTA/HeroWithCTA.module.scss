@@ -11,7 +11,16 @@
     @include media('<=phoneLandscape') {
       text-align: left;
     }
+    .buttonContainer {
+      display: flex;
+      column-gap: rem(12px);
+      justify-content: center;
 
+      @include media('<=phoneLandscape') {
+        flex-direction: column;
+        row-gap: rem(12px);
+      }
+    }
     .title {
       font-size: rem(48px);
       font-weight: v('bold');

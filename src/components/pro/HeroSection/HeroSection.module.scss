@@ -46,6 +46,16 @@
       flex-direction: column;
     }
   }
+
+  .buttonsSection {
+    display: flex;
+    column-gap: rem(12px);
+
+    @include media('<=phoneLandscape') {
+      flex-direction: column;
+      row-gap: rem(12px);
+    }
+  }
   .animationSection {
     width: 100%;
     max-width: rem(320px);

@@ -27,8 +27,8 @@ export default function DemoPage({ pageContext }: DemoPageProps) {
       <HeroSection
         className={styles.heroSection}
         title='Fingerprint Pro Demo'
-        ctaText='Contact Sales'
-        ctaHref={PATH.contactSales}
+        ctaText1='Contact Sales'
+        ctaHref1={PATH.contactSales}
       >
         Identify anonymous site visitors with 99.5% accuracy to prevent online fraud
       </HeroSection>

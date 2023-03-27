@@ -192,3 +192,47 @@ export async function contactPress({ email, message, utmParams, sessionId, visit
     }),
   })
 }
+
+interface GetDemoRequestParams extends TrackParams {
+  formName: string
+  email: string
+  url: string
+  jobTitle: string
+  description: string
+  landingPage: string
+  previousPage: string
+  utmParams: Record<string, string>
+  sessionId: string
+}
+
+export async function getDemoRequest({
+  formName,
+  email,
+  url,
+  jobTitle,
+  description,
+  landingPage,
+  previousPage,
+  utmParams,
+  sessionId,
+  visitorId,
+  ipRegion,
+}: GetDemoRequestParams) {
+  return fetch(`${FPJS_MGMT_API_HOST}/hubspot/get_demo/`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: formName,
+      email,
+      url,
+      description,
+      jobTitle,
+      utm_info: utmParams,
+      landingPage,
+      previousPage,
+      sessionId,
+      visitorId,
+      ipRegion,
+    }),
+  })
+}

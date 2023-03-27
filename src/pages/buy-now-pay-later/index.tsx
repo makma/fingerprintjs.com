@@ -27,9 +27,11 @@ export default function Bnpl({ pageContext }: BnplProps) {
       <HeroSection
         className={styles.heroSection}
         title='Buy now, pay later fraud prevention'
-        ctaText='Contact us'
-        ctaHref={PATH.contactSales}
+        ctaText1='Contact us'
+        ctaHref1={PATH.contactSales}
         variant='secondary'
+        ctaText2='Get Custom Demo'
+        ctaHref2={`${PATH.demoUrl}#get-demo`}
       >
         Increase approval rates and minimize fraud losses with high accuracy device identification.
       </HeroSection>

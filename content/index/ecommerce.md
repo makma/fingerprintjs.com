@@ -23,6 +23,9 @@ hero:
   ctaText: Create Free Account
   ctaHref: https://dashboard.fingerprint.com/signup
   openCtaNewTab: false
+  ctaText2: Get Custom Demo
+  ctaHref2: /demo/#get-demo
+  openCtaNewTab2: false
 cardSection:
   title: "Add Fingerprint to your tech stack to:"
   subtitle: ""

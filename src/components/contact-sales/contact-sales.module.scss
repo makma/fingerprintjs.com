@@ -83,7 +83,8 @@
     }
   }
   .logosSection {
-    flex-grow: 1;
+    padding-bottom: rem(80px);
+
     @include media('<=1200px') {
       padding: rem(20px) rem(24px);
       border: 1px solid #e8e8e8;

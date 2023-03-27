@@ -7,16 +7,15 @@ import { Link } from 'gatsby'
 import { FormState } from '../../types/FormState'
 import { trackLeadSubmit, sendFormEvent } from '../../helpers/gtm'
 import { Forms, useForm } from '../../hooks/useForm'
-import { createNewLead } from '../../helpers/api'
+import { createNewLead, getDemoRequest } from '../../helpers/api'
 import { ReactComponent as ConfirmSVG } from './confirmSVG.svg'
 import { ReactComponent as ErrorSVG } from './errorSVG.svg'
 import { ReactComponent as InfoSVG } from './info.svg'
 
-import { URL_CALENDAR, PATH, MAILTO_SALES } from '../../constants/content'
+import { URL_CALENDAR, PATH, DOC_URL } from '../../constants/content'
 import { useViewTracking } from '../../context/HistoryListener'
 import * as Turing from '@fpjs-incubator/turing'
 import { initTuring } from '../../helpers/turing'
-import { ReactComponent as BotD } from '../../img/BotdBowl.svg'
 import Tippy from '@tippyjs/react'
 import { useUserLocation } from '../../hooks/useUserLocation'
 import { Region, getIpRegion } from '../../helpers/region'
@@ -26,7 +25,10 @@ import { amplitudeLogEvent } from '../../helpers/amplitude'
 import styles from './ContactSalesForm.module.scss'
 import { BOTD_PUBLIC_KEY_TURING, TURING_DEFAULT_SESSION_ID } from '../../constants/env'
 
-export default function ContactSalesForm() {
+interface ContactSalesFormParams {
+  variant?: 'contactSales' | 'getDemo'
+}
+export default function ContactSalesForm({ variant = 'contactSales' }: ContactSalesFormParams) {
   const [formName, setFormName] = useState('')
   const [email, setEmail] = useState('')
   const [url, setUrl] = useState('')
@@ -36,7 +38,9 @@ export default function ContactSalesForm() {
   const [visibleWebsite, setVisibleWebsite] = useState(false)
   const [description, setDescription] = useState('')
 
-  const { formState, errorMessage, updateFormState, updateErrorMessage } = useForm(Forms.ContactSales)
+  const { formState, errorMessage, updateFormState, updateErrorMessage } = useForm(
+    variant === 'contactSales' ? Forms.ContactSales : Forms.GetDemo
+  )
   const { landingPage, previousPage, utmParams } = useViewTracking()
   const { countryRegion, visitorId } = useUserLocation()
 
@@ -80,19 +84,41 @@ export default function ContactSalesForm() {
         throw new Error()
       }
       const ipRegion = getIpRegion(countryRegion)
-      const response = await createNewLead({
-        formName,
-        email,
-        url,
-        jobTitle,
-        description,
-        landingPage,
-        previousPage,
-        utmParams,
-        sessionId,
-        visitorId,
-        ipRegion,
-      })
+      let response
+      switch (variant) {
+        case 'getDemo':
+          response = await getDemoRequest({
+            formName,
+            email,
+            url,
+            jobTitle,
+            description,
+            landingPage,
+            previousPage,
+            utmParams,
+            sessionId,
+            visitorId,
+            ipRegion,
+          })
+          break
+        case 'contactSales':
+        default:
+          response = await createNewLead({
+            formName,
+            email,
+            url,
+            jobTitle,
+            description,
+            landingPage,
+            previousPage,
+            utmParams,
+            sessionId,
+            visitorId,
+            ipRegion,
+          })
+          break
+      }
+
       const status = response.status
       const { ok, error } = await response.json()
 
@@ -100,10 +126,6 @@ export default function ContactSalesForm() {
         onError(error)
       } else {
         updateFormState(FormState.Success)
-        trackLeadSubmit()
-        sendFormEvent('ContactSalesForm-module--form')
-        amplitudeLogEvent('Sales Contacted')
-
         let calendarUrl: string
         switch (countryRegion) {
           case Region.LATAM:
@@ -120,9 +142,21 @@ export default function ContactSalesForm() {
             calendarUrl = URL_CALENDAR.contactSalesCalendarAmer
         }
 
-        setTimeout(() => {
-          window.location.replace(calendarUrl)
-        }, 1500)
+        switch (variant) {
+          case 'getDemo':
+            sendFormEvent('GetDemo-module--form')
+            amplitudeLogEvent('Get Demo Contacted')
+            break
+          case 'contactSales':
+          default:
+            trackLeadSubmit()
+            sendFormEvent('ContactSalesForm-module--form')
+            amplitudeLogEvent('Sales Contacted')
+            setTimeout(() => {
+              window.location.replace(calendarUrl)
+            }, 1500)
+            break
+        }
       }
     } catch (error) {
       onError()
@@ -168,15 +202,13 @@ export default function ContactSalesForm() {
       >
         {(formState === FormState.Default || formState === FormState.Loading) && (
           <>
-            <h1 className={styles.header}>
-              Complete the form, our expert team will reach out shortly to schedule a call.
-            </h1>
-            <div
-              id='contact-sales-form-wrapper'
-              className={styles.contactSalesForm}
-              data-sitekey={BOTD_PUBLIC_KEY_TURING}
-            >
-              <div id='contact-sales-form-element' className={styles.form}>
+            {variant === 'contactSales' && (
+              <h1 className={styles.header}>
+                Complete the form, our expert team will reach out shortly to schedule a call.
+              </h1>
+            )}
+            <div className={styles.contactSalesForm} data-sitekey={BOTD_PUBLIC_KEY_TURING}>
+              <div className={styles.form}>
                 <label className={styles.label} htmlFor='formName'>
                   Your name
                 </label>
@@ -295,7 +327,6 @@ export default function ContactSalesForm() {
                   Submit
                 </Button>
               </div>
-              <PoweredByBotD className={styles.desktopOnly} />
             </div>
           </>
         )}
@@ -325,35 +356,17 @@ export default function ContactSalesForm() {
           </>
         )}
       </Section>
-      <PoweredByBotD className={styles.mobileOnly} />
-    </>
-  )
-}
-export interface PoweredByBotDProps {
-  className: string
-}
-function PoweredByBotD({ className }: PoweredByBotDProps) {
-  return (
-    <div className={classNames(className, styles.poweredBy)}>
-      <p className={styles.botdDescription}>
-        <span>
-          <BotD className={styles.botD} />
-        </span>
-        <span>
-          Our form spam detection is powered by{' '}
-          <a className={styles.link} href={PATH.botD}>
-            BotD
+      <div>
+        <p className={styles.messageBottom}>
+          We&apos;re committed to your privacy. Fingerprint uses the information you provide to us to contact you about
+          our relevant content, products, and services. You may unsubscribe from these communications at any time. For
+          more information, check out our{' '}
+          <a target='_blank' rel='noreferrer' href={DOC_URL.privacyPolicyUrl}>
+            privacy policy
           </a>
           .
-        </span>
-      </p>
-      <p className={styles.text}>
-        If you have problems with submission please{' '}
-        <a className={styles.link} href={MAILTO_SALES.mailToUrl}>
-          contact us via email
-        </a>
-        .
-      </p>
-    </div>
+        </p>
+      </div>
+    </>
   )
 }

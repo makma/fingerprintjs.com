@@ -21,6 +21,9 @@ hero:
   ctaText: Create Account
   ctaHref: https://dashboard.fingerprint.com/signup
   openCtaNewTab: false
+  ctaText2: Get Custom Demo
+  ctaHref2: /demo/#get-demo
+  openCtaNewTab2: false
 cardSection:
   title: Prevent online fraud from putting your exchange at risk
   subtitle: ""

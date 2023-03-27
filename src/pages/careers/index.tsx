@@ -44,8 +44,8 @@ export default function CareersPage({ pageContext }: CareersPageProps) {
       <HeroSection
         className={styles.heroSection}
         title='Work at Fingerprint'
-        ctaText='Explore our jobs'
-        ctaHref={PATH.jobs}
+        ctaText1='Explore our jobs'
+        ctaHref1={PATH.jobs}
         openNewTab
         variant='secondary'
       >
