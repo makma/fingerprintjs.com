@@ -4,6 +4,7 @@ import { SuccessResponse } from '../types/botResponse'
 
 const BotdContext = createContext<{
   visitorData?: SuccessResponse
+  requestId?: string
   isLoading?: boolean
   hasError?: boolean
   error?: string

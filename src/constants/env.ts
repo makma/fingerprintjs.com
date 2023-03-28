@@ -32,6 +32,8 @@ export const GREENHOUSE_COMPANY_ID = process.env.GATSBY_GREENHOUSE_COMPANY_ID ??
 
 export const TURING_DEFAULT_SESSION_ID = process.env.GATSBY_FPJS_TURING_DEFAULT_SESSION_ID
 
+export const RECAPTCHA_BOTD_PUBLIC_KEY = process.env.GATSBY_RECAPTCHA_BOTD_PUBLIC_KEY ?? ''
+
 export const APP_STORE_DEMO_URL = process.env.GATSBY_APP_STORE_DEMO_URL
 export const GOOGLE_PLAY_DEMO_URL = process.env.GATSBY_GOOGLE_PLAY_DEMO_URL
 
@@ -55,3 +57,5 @@ export const HOST =
   process.env.GATSBY_VERCEL_ENV === 'preview' ? `https://${process.env.GATSBY_VERCEL_URL}` : 'https://fingerprint.com'
 
 export const GIT_SHA = process.env.GATSBY_VERCEL_GIT_COMMIT_SHA
+
+export const IS_PRODUCTION = process.env.GATSBY_VERCEL_ENV === 'production'

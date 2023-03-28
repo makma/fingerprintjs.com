@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { LayoutTemplate } from '../../../components/Layout'
 import BreadcrumbsSEO from '../../../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../../../helpers/types'
 import Container from '../../../components/common/Container'
 import RelatedArticles from '../../../components/RelatedArticles/RelatedArticles'
+import { useBotDContext } from '../../../context/BotdContext'
+import { SEO } from '../../../components/SEO/SEO'
+import { URL, BASE_URL } from '../../../constants/content'
+import { getErrorMessage } from '../../../helpers/error'
+import { RECAPTCHA_BOTD_PUBLIC_KEY } from '../../../constants/env'
 
 import HeroSection from '../../../components/botd/HeroSection/HeroSection'
 import GenerateKeySection from '../../../components/botd/GenerateKeySection/GenerateKeySection'
@@ -14,22 +19,54 @@ import FeaturesSection from '../../../components/botd/FeaturesSection/FeaturesSe
 import FaqSection from '../../../components/botd/FaqSection/FaqSection'
 import JoinCommunitySection from '../../../components/JoinCommunitySection/JoinCommunitySection'
 
-import { URL } from '../../../constants/content'
-
-import { HeadProps } from 'gatsby'
-import { SEO } from '../../../components/SEO/SEO'
+import { HeadProps, Script } from 'gatsby'
+import axios from 'axios'
+import { useRollbar } from '@rollbar/react'
 
 import styles from './botd.module.scss'
 
 interface BotdProps {
   pageContext: GeneratedPageContext
 }
+
 export default function Botd({ pageContext }: BotdProps) {
   const breadcrumbs = pageContext.breadcrumb.crumbs
+  const [scriptLoaded, setScriptLoaded] = useState(false)
+  const { visitorData, requestId } = useBotDContext()
+  const rollbar = useRollbar()
 
+  useEffect(() => {
+    const executeReCaptcha = async () => {
+      if (typeof window !== 'undefined' && window.grecaptcha) {
+        try {
+          const token = await window.grecaptcha.execute(RECAPTCHA_BOTD_PUBLIC_KEY, {
+            action: 'botd',
+          })
+          await axios.post(`${BASE_URL}/api/validation/`, {
+            token,
+            isBot: visitorData?.products?.botd?.data?.bot?.result !== 'notDetected',
+            requestId,
+          })
+        } catch (error) {
+          rollbar.error('reCAPTCHA error', getErrorMessage(error))
+        }
+      }
+    }
+
+    if (scriptLoaded && visitorData) {
+      window.grecaptcha.ready(executeReCaptcha)
+    }
+  }, [scriptLoaded, visitorData, requestId, rollbar])
   return (
     <LayoutTemplate>
       {breadcrumbs && <BreadcrumbsSEO breadcrumbs={breadcrumbs} />}
+      <Script
+        src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_BOTD_PUBLIC_KEY}`}
+        async
+        defer
+        onLoad={() => setScriptLoaded(true)}
+        strategy={'idle'}
+      />
       <HeroSection />
       <GenerateKeySection />
       <APIResponseDetailsSection />

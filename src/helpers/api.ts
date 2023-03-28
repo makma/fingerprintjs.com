@@ -1,22 +1,33 @@
-import { FPJS_MGMT_API_HOST, GREENHOUSE_COMPANY_ID } from '../constants/env'
+import {
+  FPJS_MGMT_API_HOST,
+  GREENHOUSE_COMPANY_ID,
+  IS_PRODUCTION,
+  FPJS_VISITORS_ENDPOINT,
+  FPJS_SECRET_TOKEN,
+} from '../constants/env'
 import { BASE_URL } from '../constants/content'
 import axios from 'axios'
 import { generateRandomString } from './common'
 
 export async function loadFpjsHistory(visitorId: string) {
   const randomPath = generateRandomString(4)
-
-  const response = await axios.post(
-    `${BASE_URL}/${randomPath}/`,
-    {
-      visitorId: visitorId,
-    },
-    {
-      headers: {
-        'x-vercel-function': 'visits',
+  let response
+  if (IS_PRODUCTION) {
+    response = await axios.post(
+      `${BASE_URL}/${randomPath}/`,
+      {
+        visitorId: visitorId,
       },
-    }
-  )
+      {
+        headers: {
+          'x-vercel-function': 'visits',
+        },
+      }
+    )
+  } else {
+    response = await axios.get(`${FPJS_VISITORS_ENDPOINT}${visitorId}?token=${FPJS_SECRET_TOKEN}&limit=21`)
+  }
+
   return response.data
 }
 

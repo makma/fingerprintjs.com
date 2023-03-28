@@ -6,9 +6,12 @@ import { getErrorMessage } from '../helpers/error'
 import { getConfig } from '../helpers/fpjs'
 import axios from 'axios'
 import { generateRandomString } from '../helpers/common'
+import { IS_PRODUCTION, FPJS_SECRET_TOKEN, BOTD_VERIFY_AGENT_ENDPOINT } from '../constants/env'
 
 export const useBotD = () => {
   const [visitorData, setVisitorData] = useState<SuccessResponse>()
+  const [requestId, setRequestId] = useState<string>()
+
   const { getData } = useVisitorData(getConfig, { immediate: false })
 
   const [hasError, setHasError] = useState(false)
@@ -23,19 +26,30 @@ export const useBotD = () => {
 
       const data = await getData({ ignoreCache: true })
       if (data?.requestId) {
+        setRequestId(data?.requestId)
         const randomPath = generateRandomString(5)
         try {
-          const result = await axios.post(
-            `${BASE_URL}/${randomPath}/`,
-            {
-              requestId: data.requestId,
-            },
-            {
-              headers: {
-                'x-vercel-function': 'event',
+          let result
+          if (IS_PRODUCTION) {
+            result = await axios.post(
+              `${BASE_URL}/${randomPath}/`,
+              {
+                requestId: data.requestId,
               },
-            }
-          )
+              {
+                headers: {
+                  'x-vercel-function': 'event',
+                },
+              }
+            )
+          } else {
+            result = await axios.get(`${BOTD_VERIFY_AGENT_ENDPOINT}/events/${data.requestId}`, {
+              headers: {
+                'Auth-API-Key': FPJS_SECRET_TOKEN,
+              },
+            })
+          }
+
           if (result.data.products.botd.error) {
             throw new Error(result.data.products.botd.error.message)
           }
@@ -62,5 +76,5 @@ export const useBotD = () => {
   const refresh = () => {
     setReload(true)
   }
-  return { visitorData, isLoading, hasError, error, refresh }
+  return { visitorData, requestId, isLoading, hasError, error, refresh }
 }
