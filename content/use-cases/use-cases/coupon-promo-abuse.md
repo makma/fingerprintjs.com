@@ -26,7 +26,7 @@ useCaseCode:
   button2:
     buttonText: View demo source on GitHub
     url: https://github.com/fingerprintjs/fingerprintjs-pro-use-cases
-  iframeUrl: https://fingerprinthub.com/coupon-fraud
+  iframeUrl: https://stackblitz.com/github/fingerprintjs/fingerprintjs-pro-use-cases?embed=1&file=server/coupon-fraud/visitor-validations.js
 ---
 ### **Why is coupon & promo abuse prevention important?**
 

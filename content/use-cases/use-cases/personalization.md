@@ -21,7 +21,7 @@ category:
 industry:
   - Identity Management
 useCaseCode:
-  iframeUrl: https://stackblitz.com/edit/nextjs-dmv5c7?file=README.md
+  iframeUrl: https://stackblitz.com/github/fingerprintjs/fingerprintjs-pro-use-cases?embed=1&file=server/personalization/visitor-validations.js
   button1:
     url: ""
     buttonText: ""

@@ -26,7 +26,7 @@ industry:
   - Financial
 bottomLinks: []
 useCaseCode:
-  iframeUrl: https://stackblitz.com/edit/nextjs-dmv5c7?file=README.md
+  iframeUrl: https://stackblitz.com/github/fingerprintjs/fingerprintjs-pro-use-cases?embed=1&file=pages/api/credential-stuffing/authenticate.js
   button1:
     url: ""
     buttonText: ""

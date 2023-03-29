@@ -25,12 +25,12 @@ category:
 industry:
   - Payment Processing
 useCaseCode:
-  iframeUrl: https://stackblitz.com/edit/nextjs-dmv5c7?file=README.md
+  iframeUrl: https://stackblitz.com/github/fingerprintjs/fingerprintjs-pro-use-cases?embed=1&file=pages/api/payment-fraud/place-order.js
   button1:
     url: ""
     buttonText: ""
   button2:
-    url: https://github.com/makma/use-cases-credential-stuffing
+    url: https://github.com/fingerprintjs/fingerprintjs-pro-use-cases
     buttonText: View demo source on GitHub
 ---
 ## What is Payment Fraud?
