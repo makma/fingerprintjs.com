@@ -78,8 +78,8 @@ The usefulness of a fingerprinting signal depends on two dimensions:
 
 Screen size, available screen size, and window size differ in these dimensions:
 
-* **Screen size** is stable (people rarely change screens) and has moderate entropy.Many people will share a common value like a 1080p resolution. This is not a problem, as the added entropy still helps identify browsers when combined with other attributes.
-* **Window size** is the opposite.The dimensions of a randomly resized browser window are much more unique than those of the screen size. However, stability is low and depends on user behavior.ome users don’t resize their browsers, while others do it frequently.
+* **Screen size** is stable (people rarely change screens) and has moderate entropy. Many people will share a common value like a 1080p resolution. This is not a problem, as the added entropy still helps identify browsers when combined with other attributes.
+* **Window size** is the opposite. The dimensions of a randomly resized browser window are much more unique than those of the screen size. However, stability is low and depends on user behavior. Some users don’t resize their browsers, while others do it frequently.
 * **Available screen size** is screen size minus the operating system UI elements like a dock or a toolbar. It sits somewhere in between the other dimensions on our usefulness chart. It has [more possible values](https://old.reddit.com/r/TOR/comments/ebwcte/does_changing_the_window_size_still_reduce_my/) than screen size but is also less stable, and the opposite compared to window size.
 
 ![](https://lh3.googleusercontent.com/IUd5sX0bTK8MNVsSALYHDtJCpIz7VWbzaDkLZwYmSTra3ESpKvFW0wtxhQ9p24brvCwu9g_nE5EYi4wrtUjiBvgtwECimi6-N21e21jDYPJquCNncyeCf4JtAGdhZc4IStTv7zRo6NR4Mx9O9pbpm4c)
@@ -106,7 +106,9 @@ While letterboxing can reset a simple hash-based fingerprint, there are more sop
 
 If you use Firefox with letterboxing to access the [Fingerprint Pro demo](https://fingerprint.com/?utm_source=blog&utm_medium=website&utm_campaign=blog), you can see that the fingerprint is stable even though letterboxing changes your reported screen size as you resize your window:
 
-<iframe style="aspect-ratio: 16 / 9; border-radius: 8px; width: 100%;" src="https://www.youtube.com/embed/_BtgHXLD-r0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe style="aspect-ratio: 16 / 9; border-radius: 8px; width: 100%;" src="https://www.youtube.com/embed/ge5N24RyuZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
 
 ## Can letterboxing prevent browser fingerprinting?
 
