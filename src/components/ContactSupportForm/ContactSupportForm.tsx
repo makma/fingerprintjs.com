@@ -14,7 +14,6 @@ import { URL, MAILTO } from '../../constants/content'
 import { useViewTracking } from '../../context/HistoryListener'
 import * as Turing from '@fpjs-incubator/turing'
 import { initTuring } from '../../helpers/turing'
-import 'react-phone-input-2/lib/style.css'
 import Tippy from '@tippyjs/react'
 
 import styles from './ContactSupportForm.module.scss'

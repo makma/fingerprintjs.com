@@ -44,7 +44,12 @@ export default function PressReleasesSection({ pressReleasesCards, newsCards }: 
         <AnimatePresence mode='wait'>
           <motion.div className={styles.pressCards} key={pressPage}>
             {pressReleasesPages[pressPage - 1].map((card, i) => (
-              <Card {...card} key={`${card.title}-${pressPage}-${i}`} box />
+              <Card
+                {...card}
+                key={`${card.title}-${pressPage}-${i}`}
+                keyString={`${card.title}-${pressPage}-${i}`}
+                box
+              />
             ))}
           </motion.div>
         </AnimatePresence>
@@ -57,7 +62,7 @@ export default function PressReleasesSection({ pressReleasesCards, newsCards }: 
         <AnimatePresence mode='wait'>
           <motion.div className={styles.newsCards} key={newsPage}>
             {NewsPages[newsPage - 1].map((card, i) => (
-              <Card {...card} key={`${card.title}-${newsPage}-${i}`} />
+              <Card {...card} key={`${card.title}-${newsPage}-${i}`} keyString={`${card.title}-${newsPage}-${i}`} />
             ))}
           </motion.div>
         </AnimatePresence>
@@ -80,13 +85,13 @@ export interface CardProps {
   title: string
   website: string
   url: string
-  key: string
+  keyString: string
   box?: boolean
 }
-function Card({ title, website, url, key, box }: CardProps) {
+function Card({ title, website, url, keyString, box }: CardProps) {
   return (
     <motion.div
-      key={key}
+      key={keyString}
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}

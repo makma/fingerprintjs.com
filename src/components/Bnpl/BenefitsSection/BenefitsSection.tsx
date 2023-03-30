@@ -70,7 +70,7 @@ const blocks = [
     title: 'Build your data lake with advanced device signals',
     image: DataLakeSVG,
     content: (
-      <p>
+      <div>
         Incorporate more than 100+ signals to your risk models for advanced fraud analysis:
         <ul>
           <li>ID confidence score</li>
@@ -78,7 +78,7 @@ const blocks = [
           <li>IP and geolocation</li>
           <li>Incognito mode detection</li>
         </ul>
-      </p>
+      </div>
     ),
   },
 ] as BlockWithImage[]
