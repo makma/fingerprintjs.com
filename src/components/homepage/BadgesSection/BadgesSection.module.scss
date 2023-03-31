@@ -14,7 +14,10 @@
     justify-content: space-between;
     align-items: center;
 
-    min-width: rem(600px);
+    min-width: rem(758px);
+    @include media('<=tabletWide') {
+      min-width: rem(539px);
+    }
     @include media('<=phoneLandscape') {
       min-width: rem(320px);
     }
@@ -22,20 +25,20 @@
       min-width: 100%;
     }
     .fastestSVG,
-    .easiestSVG {
-      width: rem(121px);
-      height: rem(158px);
+    .easiestSVG,
+    .highSVG,
+    .leaderSVG {
+      width: rem(139px);
+      height: rem(181px);
+
+      @include media('<=tabletWide') {
+        width: rem(101.5px);
+        height: rem(131px);
+      }
+
       @include media('<=phoneLandscape') {
         width: rem(64px);
         height: rem(83px);
-      }
-    }
-    .highSVG {
-      width: rem(179px);
-      height: rem(233px);
-      @include media('<=phoneLandscape') {
-        width: rem(94px);
-        height: rem(122px);
       }
     }
   }

@@ -5,6 +5,7 @@ import Container from '../../common/Container'
 import styles from './BadgesSection.module.scss'
 
 import { ReactComponent as FastestSVG } from './FastestSVG.svg'
+import { ReactComponent as LeaderSVG } from './LeaderSVG.svg'
 import { ReactComponent as HighSVG } from './HighSVG.svg'
 import { ReactComponent as EasiestSVG } from './EasiestSVG.svg'
 
@@ -21,6 +22,7 @@ export default function BadgesSection() {
           className={styles.badgesContainer}
           aria-label='g2 review'
         >
+          <LeaderSVG className={styles.leaderSVG} />
           <FastestSVG className={styles.fastestSVG} />
           <HighSVG className={styles.highSVG} />
           <EasiestSVG className={styles.easiestSVG} />
