@@ -39,8 +39,6 @@ Online auction fraud is a risk for buyers and sellers, and it's one of the easie
 
 Online auction fraud is so prevalent that governments have a list of [common warning signs](https://archives.fbi.gov/archives/news/stories/2009/june/auctionfraud_063009), but millions of people are still at risk. Site owners must also take precautions to protect buyers and sellers, but detecting fake auctions is a team effort that requires everyone involved to be vigilant. 
 
-
-
 ## What is online auction fraud?
 
 Online auction fraud is a type of online fraud where scammers attempt to steal money and goods from unsuspecting victims by creating fake accounts on online auction websites and bidding on items they never intend to pay for. Scammers often use stolen credit cards or fraudulent payment methods to “win” auctions, leaving the seller with no recourse when the items are not delivered or paid for. 
@@ -57,11 +55,9 @@ Generally, online auction fraud falls under one of the following categories:
 * Hidden charges - Buyers purchase items, and sellers scam them to pay more or charge unnecessary fees.
 * Fake bidding - To increase pricing, sellers create additional accounts to increase the current bid amount, often called [bid shilling](https://www.ebay.com/help/policies/selling-policies/selling-practices-policy/shill-bidding-policy?id=4353).
 * [Credit card fraud](https://fingerprint.com/payment-fraud/?utm_source=blog&utm_medium=website&utm_campaign=blog) - Stolen credit cards are used to purchase items, which results in a chargeback on the card and a seller's loss of payment.
-* [Triangulation](https://fingerprint.com/blog/ecommerce-fraud-types/?utm_source=blog&utm_medium=website&utm_campaign=blog) - Seller uses a stolen credit card to buy their product and delivers it to the credit card owner's address.
+* [Triangulation](https://fingerprint.com/blog/triangulation-fraud/?utm_source=blog&utm_medium=website&utm_campaign=blog) - Seller uses a stolen credit card to buy their product and delivers it to the credit card owner's address.
 * Black market goods - Similar to merchandise misrepresentation, a buyer might unknowingly purchase fraudulent products sold on black markets.
 * [Account takeover](https://fingerprint.com/account-takeover/?utm_source=blog&utm_medium=website&utm_campaign=blog) - Buyers and sellers with hacked accounts can use legitimate information to steal products or create fake auctions.
-
-
 
 ## 7 tips for buyers and sellers to avoid auction fraud
 
@@ -69,27 +65,19 @@ Buying and selling items online can be a great way to get a good deal, but it ca
 
 Here are seven tips to help you avoid auction fraud:
 
-
-
 ### 1 - Caution when working with new users
 
 One common risk is working with new sellers or buyers. Not every new seller or buyer is a scammer, but many scammers use new accounts to avoid being tracked. Online auction sites have systems to detect fraudulent actions, but sophisticated scammers can bypass security systems undetected. This leaves the responsibility on you to detect fraudulent auctions, which requires little due diligence.
 
-
-
 ### 2 - Research the seller and buyer
 
 Check the seller's feedback and ratings before you bid. If the seller has a history of negative reviews, it's best to look elsewhere. It's best to work with small cheaper items with new sellers than make large, expensive purchases. For sellers, do the same with buyer profiles. Look at their feedback and review their previous purchases.
-
-
 
 ### 3 - Be wary too-good-to-be-true deals
 
 Sellers looking for targets often put up deals too good to be true. If an item is priced far below its market value, it's likely a scam.
 
 For example, a seller might advertise products normally worth thousands of dollars for only a few hundred dollars. It might take time for the buyer to realize that the merchandise is fraudulent, but by then, the seller already cashes out. The psychology of a scam is to build on a target's greed to convince them to send money on a deal that they can't get anywhere else, so take a minute to question if a deal seems too good to be true.
-
-
 
 ### 4 - Watch for payment scams
 
@@ -103,19 +91,13 @@ Before purchasing anything on an online auction, never be afraid to ask question
 
 Once a purchase is made, a buyer and seller should keep records of the purchase until the order is complete: the buyer has received the intended item. Documentation includes emails, payment receipts, and shipping information.
 
-
-
 ### 6 - Read the terms and conditions
 
 Make sure you understand the terms and conditions of the sale, including the return policy. Buyers and sellers can also take proactive steps to protect themselves from fraud. Don't forget to check the shipping and return policies, which can hide hidden fees and terms that could extend delivery times. If the shipping cost is too high, it may be a sign of fraud. Users looking to bypass these rules should also be treated with caution.
 
-
-
 ### 7 - Review the item description
 
 For buyers, always read the item description carefully. Images can be deceiving, so don't be afraid to ask questions if the deal seems too good to be true. Sellers might hide details in fine print to trick buyers into buying merchandise and then point to the fine print when a buyer doesn't receive the expected product.
-
-
 
 ## Fraud prevention for auction site owners
 
@@ -124,8 +106,6 @@ Any suspicious seller or buyer activity should be reported to site administrator
 Including technology that detects all site visitors can help site owners and administrators proactively detect fraud.  [Browser fingerprinting](https://fingerprint.com/blog/browser-fingerprinting-techniques/?utm_source=blog&utm_medium=website&utm_campaign=blog) uses advanced technology that assigns an identifier to a user. If the user is labeled a risk in the application, developers can identify any additional accounts and automatically blocklist them from the application. Developers can immediately shadowban the user, alert trust and safety teams for further review, or put the account on hold until it's verified. 
 
 Fingerprinting also offers an easy and secure solution for online auction sites to ensure that each user is securely connected to one and only one account. This prevents users from creating [multiple accounts](https://fingerprint.com/blog/prevent-multiple-signups-tutorial/?utm_source=blog&utm_medium=website&utm_campaign=blog) and attempting fraud, assuring that all participating customers are on a level playing field. 
-
-
 
 ## Conclusion
 
