@@ -39,8 +39,6 @@ customCTA:
 ---
 With ecommerce fraud projected to cost businesses over [$48 billion in 2023](https://www.juniperresearch.com/press/ecommerce-losses-online-payment-fraud-48bn), online retailers need to be aware of the threats they are exposed to. This article will discuss why ecommerce fraud is on the rise, six primary fraud techniques, and steps businesses can take to prevent each type of ecommerce fraud. 
 
-
-
 ## Why is ecommerce fraud on the rise?
 
 Ecommerce fraud is rising due to a significant gap between its rapid growth and inadequate fraud prevention capabilities. Cybercriminals are drawn by the potential for monetary gain, making ecommerce fraud highly attractive.
@@ -54,8 +52,6 @@ This highlights the need for businesses to turn to digital identification soluti
 Online merchants are responsible for ensuring that customer transactions are secure. Unfortunately, fraud is common for online business owners, so it's essential to be aware of the types that might affect your business and customers.
 
 Below are six types of ecommerce fraud that online businesses should be aware of to protect themselves and their customers.
-
-
 
 ### 1. Card cracking 
 
@@ -93,11 +89,9 @@ Either way, chargeback fraud is the most common and expensive type for businesse
 * Making sure transaction details clearly state your business name and inform customers how it will show up on their account.
 * Secure website payments against fraudulent activity/transactions before they happen with [ecommerce fraud prevention software.](https://fingerprint.com/ecommerce/?utm_source=blog&utm_medium=website&utm_campaign=blog)
 
-
-
 ### 3. Triangulation 
 
-Triangulation fraud happens when an innocent customer makes a legitimate purchase on a third-party marketplace from a scammer who orders from the original retailer using stolen credit details to complete the initial transaction.
+[Triangulation fraud](https://fingerprint.com/blog/triangulation-fraud/?utm_source=blog&utm_medium=website&utm_campaign=blog) happens when an innocent customer makes a legitimate purchase on a third-party marketplace from a scammer who orders from the original retailer using stolen credit details to complete the initial transaction.
 
 This fraud type is a complicated and increasingly common issue unique to online retailers, especially those with business models that sell on behalf of wholesalers and don't require direct customer-supplier interactions.
 
@@ -140,8 +134,6 @@ Interception fraud may involve:
 * Use data encryption—specifically, by enabling HTTPS on all websites and applications.
 * Use a third-party service rather than internal email for invoicing, requiring employees to change their passwords regularly, scan corporate devices for malware (especially those configured for corporate email), and check email filters for suspicious forwarding addresses.
 
-
-
 ### 6. Identity theft
 
 Identity theft occurs when a scammer uses the victim's details to steal even more personal data, drain financial accounts, or commit a crime under the stolen persona. This fraud [affects millions of people every year](https://www.idology.com/blog/infographic-protecting-your-customers-from-identity-theft/) and leads to lost revenue, wasted time, and compromised trust for consumers and businesses.
@@ -151,8 +143,6 @@ Identity theft occurs when a scammer uses the victim's details to steal even mor
 * Implement site-wide encryption to protect customer data/privacy.
 * Use multi-faceted verification methods. 
 * [Restrict employee access](https://www.businessnewsdaily.com/5531-identity-theft-prevention.html) to critical systems depending on specific job duties and requirements.
-
-
 
 ## Conclusion
 
