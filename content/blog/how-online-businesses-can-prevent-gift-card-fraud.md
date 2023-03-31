@@ -40,13 +40,9 @@ According to the FTC's [latest Consumer Protection Data Spotlight](https://www.f
 
 In this article, we will discuss gift card fraud, how some of the most common scams work, and how online businesses can use digital identity platforms to stay ahead of scammers and prevent chargebacks.
 
-
-
 ## What is gift card fraud?
 
 Gift card fraud involves the use of gift cards for illegitimate purchases. This type of fraud usually involves either the theft of gift card numbers or the use of [social engineering](https://fingerprint.com/blog/why-social-engineering-attacks-are-successful-with-technical-staff/?utm_source=blog&utm_medium=website&utm_campaign=blog) to trick people into buying gift cards for fraudsters. Gift card fraud can occur online as well as in-store at physical establishments. 
-
-
 
 ## Why do hackers ask for gift cards?
 
@@ -66,31 +62,21 @@ Gift card fraud can take [many forms](https://fingerprint.com/blog/ecommerce-fra
 
 Refund fraud is the most commonly reported type of gift card fraud. It involves a fraudster fraudulently purchasing an item from an online store using a stolen credit card, only to return the item for a refund via a gift card. This enables fraudsters to receive the goods for free and leave the actual owner of the stolen credit card liable. As they usually file a [chargeback](https://fingerprint.com/blog/chargeback-prevention-tips-for-ecommerce-merchants/?utm_source=blog&utm_medium=website&utm_campaign=blog) with their bank, businesses often feel the brunt of this fraud through not being paid and losing out on their product.
 
-
-
 ### Account takeover
 
 [Account takeover](https://fingerprint.com/account-takeover/?utm_source=blog&utm_medium=website&utm_campaign=blog) is when fraudsters gain access to a customer's online account. Once they have access, they can make small gift card purchases that may not be detected quickly. The scammer will cash out the gift cards and cause loss to the consumer and the business. The consumer will likely file a chargeback to regain their money, and the business can face fees and damage to their reputation. This makes account takeover a dangerous type of refund fraud that businesses must take seriously to protect both customers and their revenue.
 
-
-
 ### Triangulation
 
-Another common gift card scam is known as [triangulation](https://chargebacks911.com/triangulation-fraud/). As the name suggests, this method uses a triangular pattern, where fraudsters purchase goods from a legitimate seller using an anonymous gift card while simultaneously using stolen credit card information to purchase the same item from another online retailer. The fraudster then ships the purchased item to the gift card purchaser's address and cashes out the gift card balance before the fraud is discovered. This leaves legitimate sellers with a nonexistent inventory and an inevitable chargeback–potentially costing thousands of dollars in damages.
-
-
+Another common gift card scam is known as [triangulation](https://fingerprint.com/blog/triangulation-fraud/?utm_source=blog&utm_medium=website&utm_campaign=blog). As the name suggests, this method uses a triangular pattern, where fraudsters purchase goods from a legitimate seller using an anonymous gift card while simultaneously using stolen credit card information to purchase the same item from another online retailer. The fraudster then ships the purchased item to the gift card purchaser's address and cashes out the gift card balance before the fraud is discovered. This leaves legitimate sellers with a nonexistent inventory and an inevitable chargeback–potentially costing thousands of dollars in damages.
 
 ## How businesses can prevent gift card fraud
 
 With many ways for scammers to sidestep security measures and fool the average consumer, it is often up to the business owner to prevent [gift card fraud](https://www.chargebackgurus.com/blog/gift-card-fraud). After all, the seller is usually responsible for the costs and lost inventory. So, what can an online business do to avoid scams?
 
-
-
 ### Place limits on large or repeated gift card purchases
 
 Online businesses can prevent gift card fraud by limiting large or repeated gift card purchases. Fraudsters frequently attempt to purchase many gift cards at once, often far more than a typical user might do. To combat these schemes, businesses can implement limits on the number of gift cards that can be purchased in a single transaction and within a specific time frame. This can help reduce the risk of gift card fraud and protect customers from financial harm.
-
-
 
 ### Implement user identification and fraud detection software
 
