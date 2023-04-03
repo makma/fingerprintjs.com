@@ -6,6 +6,8 @@ import classNames from 'classnames'
 
 import styles from './Chart.module.scss'
 
+import { formatNumberWithCommas } from '../../../helpers/format'
+
 export default function Chart() {
   const chartWidth = 615
   const chartHeight = 334
@@ -167,7 +169,7 @@ export default function Chart() {
                   }
                 />
                 <span suppressHydrationWarning className={classNames(styles.labelPro, styles.labelProStability)}>
-                  {yPointsPro[index].toLocaleString()}
+                  {formatNumberWithCommas(yPointsPro[index])}
                 </span>
                 <div className={styles.dataPointPro} data-value={`${yPointsPro[index]}`} />
                 <span className={styles.xPoint}>{xScale[index]}</span>
@@ -199,7 +201,7 @@ export default function Chart() {
                 />
                 <div suppressHydrationWarning className={styles.dataPointOss} data-value={`${yPointsOss[index]}`} />
                 <span suppressHydrationWarning className={classNames(styles.labelOss, styles.labelOssStability)}>
-                  {yPointsOss[index].toLocaleString()}
+                  {formatNumberWithCommas(yPointsOss[index])}
                 </span>
               </li>
             )

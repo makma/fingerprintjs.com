@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import Section from '../../common/Section'
 import Container from '../../common/Container'
 import { useGithubFpjs } from '../../../context/GithubContext'
-import { kFormatter } from '../../../helpers/format'
+import { kFormatter, formatNumberWithCommas } from '../../../helpers/format'
 import { ReactComponent as LineSVG } from './LineSVG.svg'
 import { ReactComponent as GitHubSVG } from './GitHubSVG.svg'
 import classNames from 'classnames'
@@ -242,13 +242,12 @@ export default function AccuracySection() {
                       }
                     />
                     <span
-                      suppressHydrationWarning
                       className={classNames(styles.labelPro, {
                         [styles.labelProHover]: hoverElement,
                         [styles.labelProStability]: currentTab === tabOptions.Stability,
                       })}
                     >
-                      {yPointsPro[index].toLocaleString()}
+                      {yPointsPro[index]}
                     </span>
                     <div
                       className={classNames(styles.dataPointPro, {
@@ -315,7 +314,7 @@ export default function AccuracySection() {
                         [styles.labelOssStability]: currentTab === tabOptions.Stability,
                       })}
                     >
-                      {yPointsOss[index].toLocaleString()}
+                      {formatNumberWithCommas(yPointsOss[index])}
                     </span>
                   </li>
                 )

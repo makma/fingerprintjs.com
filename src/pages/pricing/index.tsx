@@ -8,6 +8,7 @@ import Button from '../../components/common/Button'
 import { PATH, URL } from '../../constants/content'
 import PriceCalculator from '../../components/PriceCalculator'
 import { Link } from 'gatsby'
+import { formatNumberWithCommas } from '../../helpers/format'
 
 import BreadcrumbsSEO from '../../components/Breadcrumbs/BreadcrumbsSEO'
 import { GeneratedPageContext } from '../../helpers/types'
@@ -64,12 +65,13 @@ function FAQSection() {
       answer: (
         <p suppressHydrationWarning className={styles.faqContent}>
           Customers are billed on a monthly basis based on API requests made over the billing period. The minimum paid
-          plan is ${(overagePrice / 100) * prepaidQuantity}/mo for {prepaidQuantity.toLocaleString()} API requests - any
-          additional requests will be charged at a rate of ${(overagePrice * 1000) / 100} per 1,000 requests.
+          plan is ${(overagePrice / 100) * prepaidQuantity}/mo for {formatNumberWithCommas(prepaidQuantity)} API
+          requests - any additional requests will be charged at a rate of ${(overagePrice * 1000) / 100} per 1,000
+          requests.
           <br />
           <br />
-          Developers and small sites can access Fingerprint Pro for free for a maximum of {flatAmount.toLocaleString()}{' '}
-          API requests per month.
+          Developers and small sites can access Fingerprint Pro for free for a maximum of{' '}
+          {formatNumberWithCommas(flatAmount)} API requests per month.
         </p>
       ),
     },
@@ -89,8 +91,8 @@ function FAQSection() {
       question: 'I am a developer. Can I use Fingerprint Pro for free?',
       answer: (
         <p suppressHydrationWarning className={styles.faqContent}>
-          Yes - developers and small sites can use Fingerprint Pro for free, with up to {flatAmount.toLocaleString()}{' '}
-          API requests per month.
+          Yes - developers and small sites can use Fingerprint Pro for free, with up to{' '}
+          {formatNumberWithCommas(flatAmount)} API requests per month.
         </p>
       ),
     },
@@ -108,9 +110,9 @@ function FAQSection() {
       answer: (
         <p suppressHydrationWarning className={styles.faqContent}>
           The two differences between our free plan and paid Pro plan is that Free plan customers can only use up to{' '}
-          {flatAmount.toLocaleString()} requests per month, and RPS is limited to 3 requests per second as opposed to 5
-          on the paid plan. There are no differences in features, functionality or accuracy between the Free and Paid
-          plans.
+          {formatNumberWithCommas(flatAmount)} requests per month, and RPS is limited to 3 requests per second as
+          opposed to 5 on the paid plan. There are no differences in features, functionality or accuracy between the
+          Free and Paid plans.
         </p>
       ),
     },

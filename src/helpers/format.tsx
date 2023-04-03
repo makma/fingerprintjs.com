@@ -1,6 +1,6 @@
 import moment from 'moment'
 
-export const createDateTimeFormatter = () => new Intl.DateTimeFormat()
+export const createDateTimeFormatter = () => new Intl.DateTimeFormat('en-US', { timeZone: 'UTC' })
 
 export const displayDateFormatter = (date: Date | string): string => {
   return moment.utc(date).format('LL')
@@ -13,4 +13,8 @@ export function kFormatter(num: number, lowercase?: boolean) {
   return Math.abs(num) > 999
     ? Math.sign(num) * Math.floor(Math.abs(num) / 1000) + letter
     : Math.sign(num) * Math.abs(num)
+}
+
+export function formatNumberWithCommas(num: number) {
+  return new Intl.NumberFormat('en-US', { style: 'decimal' }).format(num)
 }
