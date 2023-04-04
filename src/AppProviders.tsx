@@ -2,6 +2,7 @@ import React from 'react'
 import { FormProvider } from './hooks/useForm'
 import { FpjsProvider } from '@fingerprintjs/fingerprintjs-pro-react'
 import * as FingerprintJS from '@fingerprintjs/fingerprintjs-pro'
+import { CacheLocation } from '@fingerprintjs/fingerprintjs-pro-spa'
 import { GithubProvider } from './context/GithubContext'
 import { BotdProvider } from './context/BotdContext'
 import { HistoryListener } from './context/HistoryListener'
@@ -73,6 +74,7 @@ function AppLighthouseProvider({ children }: { children: React.ReactNode }) {
           region,
           scriptUrlPattern,
         }}
+        cacheLocation={CacheLocation.NoCache}
       >
         {children}
       </FpjsProvider>
