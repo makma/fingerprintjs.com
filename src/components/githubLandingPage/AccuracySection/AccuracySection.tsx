@@ -247,7 +247,7 @@ export default function AccuracySection() {
                         [styles.labelProStability]: currentTab === tabOptions.Stability,
                       })}
                     >
-                      {yPointsPro[index]}
+                      {formatNumberWithCommas(yPointsPro[index])}
                     </span>
                     <div
                       className={classNames(styles.dataPointPro, {
