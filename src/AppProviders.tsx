@@ -17,6 +17,15 @@ const rollbarConfig = {
   accessToken: ROLLBAR_ACCESS_TOKEN,
   captureUncaught: true,
   captureUnhandledRejections: true,
+  checkIgnore: function (_isUncaught, _args, payload) {
+    const error = payload.body.trace.exception.message
+    // Due to the fact that these errors are not actionable at the moment (impossible to know where they come from) in order to consume less quotas we will filter them until they are more actionable
+    // https://github.com/facebook/react/issues/26224
+    if (error && error.includes('Minified React error')) {
+      return true
+    }
+    return false
+  },
   payload: {
     environment: 'production',
     client: {
